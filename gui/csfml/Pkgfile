@@ -1,0 +1,30 @@
+# Depends on: sfml doxygen
+
+description="C bindings for sfml"
+url="http://www.sfml-dev.org/"
+packager="rems <rems@yaolinux.org>"
+contributors=""
+
+name=csfml
+version=2.5
+
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/LaurentGomila/CSFML/archive/61f17e3.tar.gz)
+
+prepare() {
+	mkdir build
+}
+
+build() {
+
+cd build
+
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+              -DCSFML_BUILD_DOC=true \
+              ../CSFML-*
+
+	make
+	make doc
+	make DESTDIR=$PKG install
+}
