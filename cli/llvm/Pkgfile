@@ -1,4 +1,4 @@
-# Depends on: libffi python2 cmake ninja
+# Depends on: libffi python2 cmake ninja libxml2 libedit 
 
 description="Low Level Virtual Machine, collection of modular and reusable compiler and toolchain."
 url="http://llvm.org/"
@@ -8,6 +8,7 @@ contributors="Pierre B, Tnut, Remy"
 
 name=llvm
 version=7.0.1
+release=2
 
 source=(${url}releases/$version/$name-$version.src.tar.xz
 	${url}releases/$version/cfe-$version.src.tar.xz
@@ -30,7 +31,11 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr  \
 	-DLLVM_BUILD_LLVM_DYLIB=ON \
 	-DLLVM_LINK_LLVM_DYLIB=ON  \
 	-DLLVM_TARGETS_TO_BUILD="host;AMDGPU;BPF" \
-	-Wno-dev -G Ninja ..
+	-DLLVM_ENABLE_RTTI=ON \
+        -DLLVM_ENABLE_EH=ON \
+        -DLLVM_ENABLE_LIBXML2=ON \
+        -DLLVM_ENABLE_LIBEDIT=ON \
+        -Wno-dev -G Ninja ..
 
 ninja
 
