@@ -1,0 +1,33 @@
+# Depends on: libsndfile xorg-libxrandr openal glew freetype xorg-libx11 mesa systemd cmake doxygen
+
+description="A simple, fast, cross-platform, and object-oriented multimedia API"
+url="http://www.sfml-dev.org/"
+packager="rems <rems@yaolinux.org>"
+contributors=""
+
+name=sfml
+version=2.5.1
+
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/SFML/SFML/archive/$version.tar.gz)
+
+prepare() {
+	mkdir build
+}
+
+build() {
+
+cd build
+
+	cmake -DCMAKE_INSTALL_PREFIX=/usr \
+              -SFML_USE_SYSTEM_DEPS=ON \
+              -DSFML_BUILD_EXAMPLES=1 \
+              -DSFML_BUILD_DOC=1 \
+              -DSFML_INSTALL_PKGCONFIG_FILES=1 \
+              ../SFML-$version
+
+	make
+	make doc
+	make DESTDIR=$PKG install
+}
