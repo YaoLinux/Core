@@ -1,4 +1,4 @@
-# Depends on: qtbase qtdeclarative desktop-file-utils hicolor-icon-theme xdg-utils 
+# Depends on: qtbase qtdeclarative desktop-file-utils hicolor-icon-theme xdg-utils vulkan-headers 
 
 description="A cross-platform application and UI framework, QtTools files"
 url="http://qt-project.org/"
@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B"
 
 name=qttools
-version=5.12.0
+version=5.12.1
 
 _name="${name}-everywhere-src"
 
