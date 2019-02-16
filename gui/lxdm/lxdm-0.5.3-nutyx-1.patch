@@ -66,7 +66,7 @@ diff -Naur a/data/themes/Industrial/gtkrc b/data/themes/Industrial/gtkrc
  			shadow=NONE
  			state = NORMAL
 -			file="wave.svg"
-+			file="nutyx.jpg"
++			file="screen.jpg"
  			stretch=TRUE
  			detail = "base"
  		}
