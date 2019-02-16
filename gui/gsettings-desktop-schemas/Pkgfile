@@ -15,7 +15,7 @@ build() {
 cd $name-$version
 
 # NuTyX Background
-sed -i "s@gnome/adwaita-timed.xml@nutyx/nutyx.jpg@" \
+sed -i "s@gnome/adwaita-timed.xml@yaolinux/wallpaper1.jpg@" \
 schemas/org.gnome.desktop.background.gschema.xml.in
 
 sed -i -r 's:"(/system):"/org/gnome\1:' schemas/*.in
