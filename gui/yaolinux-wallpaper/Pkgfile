@@ -1,0 +1,17 @@
+description="Wallpaper of YaoLinuX"
+contributors="Graknu"
+packager="YaoLinux Teams"
+maintainer="Graknu"
+url="http://yaolinux.org"
+
+name=yaolinux-wallpaper
+version=1.0.0
+release=1
+
+source=(http://download.yaolinux.org/wallpaper/wall1.jpg)
+
+build(){
+   install -D -m644 wall1.jpg \
+   $PKG/usr/share/backgrounds/yaolinux/wallpaper1.jpg
+}
+
