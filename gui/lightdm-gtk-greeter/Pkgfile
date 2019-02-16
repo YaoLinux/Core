@@ -30,6 +30,6 @@ CFLAGS+=" -Wno-declaration-after-statement \
 
 make
 make DESTDIR=$PKG install
-sed -i "s@#background=@background=/usr/share/backgrounds/nutyx/nutyx.jpg@" \
+sed -i "s@#background=@background=/usr/share/backgrounds/yaolinux/wallpaper1.jpg@" \
 $PKG/etc/lightdm/lightdm-gtk-greeter.conf
 }
