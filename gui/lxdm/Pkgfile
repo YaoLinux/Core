@@ -10,7 +10,7 @@ run=(librsvg xorg-xinit)
 
 name=lxdm
 version=0.5.3
-release=17
+release=18
 source=(lxdm-$version-nutyx-1.patch 
 	login.png
 	screen.jpg
