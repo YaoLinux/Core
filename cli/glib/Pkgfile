@@ -11,7 +11,6 @@ name=glib
 version=2.58.3
 
 source=(http://ftp.gnome.org/pub/gnome/sources/glib/${version:0:4}/$name-$version.tar.xz
-	https://download.tuxfamily.org/nutyx/WallPapers/nutyx-11.0.jpg
 	glib-$version-skip_warnings-1.patch)
 
 build () {
@@ -26,11 +25,6 @@ build () {
   ninja
 
   DESTDIR=$PKG ninja install
-
-
-  # Default NuTyX Wallpaper
-  install -D -m644 ../../nutyx-11.0.jpg \
-  $PKG/usr/share/backgrounds/nutyx/nutyx.jpg
 
 }
 uptodate(){
