@@ -1,27 +1,46 @@
 # Depends on: geoip-database
 
-description="Non-DNS IP-to-country resolver C library & utils."
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
+description="Non-DNS IP-to-country resolver C library & utils"
 url="http://www.maxmind.com/app/c"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=geoip
 version=1.6.12
+release=2
 
-PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/maxmind/${name}-api-c/archive/v${version}.tar.gz)
+source=(https://github.com/maxmind/$name-api-c/archive/v$version.tar.gz)
+
+
+prepare(){
+
+  cd geoip-api-c-$version
+  ./bootstrap
+
+}
 
 build() {
-	cd geoip-api-c-$version
-        ./bootstrap
 
-	./configure \
-		--sysconfdir=/etc/geoip \
-		--prefix=/usr \
-		--mandir=/usr/share/man
-	make
-	make DESTDIR=$PKG install
+  cd geoip-api-c-$version
 
-        # Obsolet lib
-        rm $PKG/usr/lib/libGeoIP.la
+  ./configure \
+    --prefix=/usr \
+    --mandir=/usr/share/man \
+    --sysconfdir=/etc/geoip
+  make
+
 }
+
+package() {
+
+  cd geoip-api-c-$version
+  make DESTDIR="$PKG" install
+
+}
+
