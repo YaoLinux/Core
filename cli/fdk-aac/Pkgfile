@@ -1,24 +1,48 @@
-description="Fraunhofer FDK AAC Advanced Audio Codec library."
-url="http://www.iis.fraunhofer.de/en/ff/amm/impl/fdkaaccodec.html"
-packager="tnut <tnut@nutyx.org>"
+# Depends on:  git
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
+description="Fraunhofer FDK AAC codec library"
+url="http://sourceforge.net/projects/opencore-amr/"
+
 
 name=fdk-aac
 version=2.0.0
+release=1
 
-PKGMK_KEEP_SOURCES="no"
 
-source=(https://sourceforge.net/projects/opencore-amr/files/$name/$name-$version.tar.gz)
+source=()
+
+
+prepare(){
+
+  git clone https://github.com/mstorsjo/fdk-aac.git
+  cd fdk-aac
+  ./autogen.sh
+
+}
 
 build() {
 
+  cd fdk-aac
 
-cd $name-$version
+  ./configure \
+    --prefix='/usr' \
+    --disable-static
+  make
 
-./configure --prefix=/usr \
-            --disable-rpath
-make
-
-make DESTDIR=$PKG install
-
-rm $PKG/usr/lib/libfdk-aac.la
 }
+
+package () {
+
+  cd fdk-aac
+
+  make DESTDIR="${PKG}" install
+  install -Dm 644 NOTICE -t "${PKG}"/usr/share/licenses/fdk-aac/
+
+}
+
