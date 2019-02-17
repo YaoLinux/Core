@@ -1,20 +1,36 @@
 # Depends on : glib ninja meson
 
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="A Free Implementation of the Unicode Bidirectional Algorithm"
 url="http://fribidi.freedesktop.org/wiki/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=fribidi
 version=1.0.5
 
+
 source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.bz2)
 
+
 build() {
-cd $name-$version
-mkdir -pv build
-cd build
-meson -D docs=false ..
-ninja
-DESTDIR=$PKG ninja install
+
+	cd $name-$version
+	mkdir -pv build
+	cd build
+	meson -D docs=false ..
+	ninja
+
+}
+
+package() {
+
+	cd $name-$version/build
+	DESTDIR=$PKG ninja install
+    #rm $PKG/usr/lib/libfribidi.la
+
 }
