@@ -1,30 +1,52 @@
-description="Spell checker and morphological analyzer library and program"
-url="http://hunspell.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+# Depends on:
 
-PKGMK_KEEP_SOURCES="no"
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
+description="Spell checker and morphological analyzer library and program"
+url="https://hunspell.github.io/"
+
 
 name=hunspell
 version=1.7.0
+release=2
 
-source=(https://github.com/hunspell/hunspell/archive/v$version.tar.gz )
+
+source=(https://github.com/hunspell/hunspell/archive/v$version.tar.gz)
+
+
+prepare(){
+
+  cd hunspell-$version
+  autoreconf -vfi
+
+}
+
 
 build() {
-	cd $name-$version
-	autoreconf -vfi
-        ./configure --prefix=/usr \
-		    --disable-static \
-        	    --with-ui \
-		    --with-readline
-		    
-        make
-        make DESTDIR=$PKG install
-# add generic hunspell.so for development and projects not using pkgconfig flags
-pushd $PKG/usr/lib
+
+  cd hunspell-$version
+  ./configure --prefix=/usr --disable-static \
+	--with-ui --with-readline # --with-experimental breaks build in this release
+  make
+
+}
+
+
+package() {
+
+  cd hunspell-$version
+  make DESTDIR="$PKG" install
+  
+  # add generic hunspell.so for development and projects not using pkgconfig flags - FS#30592
+  pushd $PKG/usr/lib
   ln -s libhunspell-?.?.so libhunspell.so
-popd
+  popd
 
 # Obsolet lib
   rm $PKG/usr/lib/libhunspell-1.?.la
+
 }
