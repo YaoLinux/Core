@@ -1,18 +1,26 @@
 # Depends on: libogg
 
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+
 description="Free Lossless Audio Codec similar to MP3"
-ur="http://flac.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+url="http://flac.sourceforge.net/"
+
 
 name=flac
 version=1.3.2
-release=2
+release=3
+
 
 source=(http://downloads.xiph.org/releases/$name/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
+
+build() { 
+
+  cd $name-$version
 
   ./configure --prefix=/usr   \
     --mandir=/usr/share/man   \
@@ -21,6 +29,13 @@ cd $name-$version
 
   make
 
+} 
+
+package() {
+
+  cd $name-$version
   make DESTDIR=$PKG install
   rm $PKG/usr/lib/libFLAC{,++}.la
+
 } 
+
