@@ -1,16 +1,42 @@
 # Depends on: boost
 
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="Cross-platform C++ library for ASynchronous network I/O"
-url="http://asio.sourceforge.net"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+url="https://think-async.com/Asio/"
+
 
 name=asio
 version=1.12.2
+release=2
 
-source=(http://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
+
+source=(https://sourceforge.net/projects/asio/files/asio/1.12.2%20%28Stable%29/$name-$version.tar.bz2)
+
+
+prepare(){
+  cd ${name}-${version}/
+
+  autoreconf -fiv
+}
+
+build() {
+  cd ${name}-${version}/
+
+  ./configure \
+    --prefix=/usr
+  make
+}
+
 
 package() {
-cd $name-$version
-install -D -m644 LICENSE_1_0.txt $PKG/usr/share/licenses/$name/LICENSE
+  cd ${name}-${version}/
+
+  make DESTDIR=${PKG} install
+  install -Dm 644 COPYING LICENSE_1_0.txt -t "${PKG}/usr/share/licenses/${name}"
 }
+
