@@ -1,11 +1,15 @@
 # Depends on: aspell
+
 description="Various dictionaries for Aspell"
 url="http://aspell.net"
-packager="tnut at nutyx dot org"
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
 
 name=aspell-dict
 version=0.60.6.1
-release=1
+release=2
 
 fr_ver=0.50-3
 de_ver=0.50-2
@@ -29,6 +33,7 @@ source=(ftp://ftp.gnu.org/gnu/aspell/dict/fr/aspell-fr-${fr_ver}.tar.bz2
 	)
 
 build() {
+
 for i in fr de es it nl pt nn da sv
 do
   cd aspell-$i*
@@ -37,4 +42,5 @@ do
   make DESTDIR=$PKG install
   cd ..
 done
+
 }
