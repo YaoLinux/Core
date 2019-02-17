@@ -1,25 +1,42 @@
-# Depends : pcsclite libusb flex
+# Depends on: pcsclite libusb flex
+
+
+packager="sipo"
+contributors="Pierre B, Tnut"
+maintainer="sipo"
+
 
 description="A generic USB Chip/Smart Card Interface Devices driver"
-url="http://pcsclite.alioth.debian.org/ccid.html"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+url="https://ccid.apdu.fr/"
+
 
 name=ccid
 version=1.4.30
+release=2
+
 
 source=(https://ccid.apdu.fr/files/ccid-$version.tar.bz2)
 
-build() {
-  cd $name-$version
-  ./configure --prefix=/usr \
-              --sysconfdir=/etc \
-              --enable-twinserial \
-              --enable-serialconfdir=/etc/reader.conf.d
+
+build(){
+  cd "${SRC}/${name}-${version}"
+
+  ./configure \
+    LEXLIB='' \
+    --prefix=/usr \
+    --sysconfdir=/etc \
+    --enable-twinserial \
+    --enable-serialconfdir=/etc/reader.conf.d
   make
-  make DESTDIR=$PKG install
- 
-  mv "$PKG/usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist" "$PKG/etc/libccid_Info.plist"
-  ln -s /etc/libccid_Info.plist $PKG/usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
+}
+
+package() {
+  cd "${SRC}/${name}-${version}"
+
+  make DESTDIR="${PKG}" install
+  # move the configuration file in /etc and create a symbolic link
+  mv "${PKG}/usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist" "${PKG}/etc/libccid_Info.plist"
+  ln -s /etc/libccid_Info.plist ${PKG}/usr/lib/pcsc/drivers/ifd-ccid.bundle/Contents/Info.plist
+
   install -Dm644 src/92_pcscd_ccid.rules "${PKG}/usr/lib/udev/rules.d/92_pcscd_ccid.rules"
 }
