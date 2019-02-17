@@ -1,22 +1,31 @@
 # Depends on: libogg 
 
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="Low-latency audio communication codec"
 url="http://www.celt-codec.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=celt
 version=0.11.3
-release=2
+release=1
+
 
 source=(http://downloads.us.xiph.org/releases/celt/celt-$version.tar.gz)
 
-build() {
-cd celt-$version
-./configure --prefix=/usr --enable-custom-modes --disable-static
-make
-make DESTDIR=$PKG install
 
-install -Dm644 COPYING $PKG/usr/share/licenses/celt/LICENSE
-rm $PKG/usr/lib/libcelt0.la
+build(){
+  cd $name-$version
+  ./configure --prefix=/usr --enable-custom-modes --disable-static
+  make
+}
+
+package() {
+  cd $name-$version
+  make DESTDIR="$PKG" install
+  install -Dm644 COPYING "$PKG/usr/share/licenses/$name/LICENSE"
 }
