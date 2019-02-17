@@ -1,6 +1,10 @@
-description="clex (light file manager)"
-url="http://www.clex.sk/"
-packager="tnut <tnut@nutyx.org>"
+# Depends on:
+
+
+packager="sipo"
+contributors="tnut"
+maintainer="sipo"
+
 
 name=clex
 version=4.6.patch8
