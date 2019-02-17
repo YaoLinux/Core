@@ -1,26 +1,38 @@
-description="Partitioning tool that works on Globally Unique Identifier Partition Table disks"
-url="http://www.rodsbooks.com/gdisk/index.html"
-contributors="Pierre B, Greg"
-packager="tnut <tnut@nutyx.org>"
-
 # Depends on: popt icu 
+
+
+packager="sipo"
+contributors=""
+maintainer="sipo"
+
+
+description="A text-mode partitioning tool that works on GUID Partition Table (GPT) disks"
+url="https://www.rodsbooks.com/gdisk/"
+
 
 name=gptfdisk
 version=1.0.4
-release=4
+release=5
 
 
 source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz 
-	    http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-convenience-1.patch)
+	    http://www.linuxfromscratch.org/patches/blfs/svn/gptfdisk-1.0.4-convenience-1.patch)
 	
-	
-build () {
+
+prepare() {
 
 	cd $name-$version
 	patch -Np1 -i ../$name-$version-convenience-1.patch
+
+}
+	
+build() {
+
+	cd $name-$version
 	make POPT=1 ICU=1
 
 	install -d $PKG/usr/{bin,share/man/man8}
 	install -t $PKG/usr/bin {,c,s}gdisk fixparts
 	install -m644 -t $PKG/usr/share/man/man8 {{,c,s}gdisk,fixparts}.8
+
 }
