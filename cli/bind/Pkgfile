@@ -1,19 +1,30 @@
 # Depends on: kerberos libxml2 openssl python libcap python-ply
 
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="The BIND package includes the client side programs nslookup, dig and host."
 url="http://www.isc.org/downloads/bind/"
-packager="tnut at nutyx dot org"
+
 
 name=bind
 version=9.13.5
-nutyx_version=10.92.3
+nutyx_version=11-RC1
+release=2
 
-source=(http://downloads.tuxfamily.org/nutyx/files/nutyx-${nutyx_version}.tar.xz
-	ftp://ftp.isc.org/isc/bind9/$version/$name-$version.tar.gz)
+
+source=(http://nutyx.pausex.fr/nutyx-${nutyx_version}.tar.xz
+		ftp://ftp.isc.org/isc/bind9/$version/$name-$version.tar.gz)
+
 
 run=(python-ply)
 
+
 build(){
+
     cd $name-$version
     ./configure --prefix=/usr \
                 --sysconfdir=/etc/bind \
@@ -31,6 +42,12 @@ build(){
 	make -C lib/irs
 	make -C bin/dig
 
+}
+
+
+package(){
+
+    cd $name-$version
 	make DESTDIR=$PKG -C bin/dig install
 
     # doc
@@ -42,15 +59,8 @@ build(){
 	$PKG/usr/share/doc/bind-$version/misc
 
 # Service
-cd $SRC/nutyx-${nutyx_version}
-make DESTDIR=$PKG install-named
+	cd $SRC/nutyx-${nutyx_version}
+	make DESTDIR=$PKG install-named
 
 }
-uptodate() {
-local url ext
-ext=".tar.bz2"
-url="https://ftp.isc.org/isc/bind9/"
 
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url?C=M\;O=D|sed "s@$url@@"|grep [0-9]/$|head -1|sed "s@/\$@@"
-}
