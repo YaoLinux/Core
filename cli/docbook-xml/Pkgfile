@@ -1,13 +1,19 @@
 # Depends on: libxml2 unzip
 
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="A widely used XML scheme for writing documentation and help"
 url="http://www.docbook.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=docbook-xml
 version=4.5
-release=1
+release=2
+
 
 source=(http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip \
 	http://www.docbook.org/xml/4.4/docbook-xml-4.4.zip \
@@ -15,10 +21,13 @@ source=(http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip \
 	http://www.docbook.org/xml/4.2/docbook-xml-4.2.zip \
 	http://www.docbook.org/xml/4.1.2/docbkx412.zip)
 
+
 # override pkgmk's unpack_source() function so that source files
 # don't get munged together in the same directory and lost
 
-unpack_source() {
+
+prepare() {
+
 	# similarly-named versions first
 	for DB_VER in 4.5 4.4 4.3 4.2
 	do
@@ -28,9 +37,12 @@ unpack_source() {
 	# now 4.1.2, named differently
 	mkdir $SRC/$name-4.1.2
 	unzip -q -d $SRC/$name-4.1.2 $PKGMK_SOURCE_DIR/docbkx412.zip
+
 }
 
+
 build() {
+
 	# copy to proper locations
 	for DB_VER in 4.5 4.4 4.3 4.2 4.1.2
 	do
