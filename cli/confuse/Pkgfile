@@ -1,22 +1,35 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="C-library for parsing configuration files"
 url="https://github.com/martinh/libconfuse"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=confuse
 version=3.2.2
+release=1
+
 
 source=(https://github.com/martinh/libconfuse/releases/download/v$version/$name-$version.tar.gz)
 
-build() {
 
-  cd $name-$version
+build(){
+
+  cd "${SRC}/${name}-${version}"
   ./configure --prefix=/usr --enable-shared
-
   make
 
-  make DESTDIR=$PKG install
+}
 
-# Obsolet lib
 
-  rm $PKG/usr/lib/libconfuse.la
+package() {
+
+  cd "${SRC}/${name}-${version}"
+  make DESTDIR="${PKG}" install
+
 }
