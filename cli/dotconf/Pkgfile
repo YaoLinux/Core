@@ -1,20 +1,40 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="A C library for parsing configuration files"
 url="https://github.com/williamh/dotconf"
+
+
 name=dotconf
 version=1.3
-release=3
-packager="tnut <tnut@nutyx.org>"
+release=1
+
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/williamh/${name}/tarball/v${version})
 
-build() {
-tar xf v${version}
-cd williamh-$name-4cd7b3a
-autoreconf -i
-./configure --prefix=/usr
-make DESTDIR=$PKG install
+source=(https://github.com/williamh/$name/archive/v$version.tar.gz)
 
-rm $PKG/usr/lib/libdotconf.la
+
+build(){
+
+  cd $name-$version
+  autoreconf -i
+  ./configure --prefix=/usr
+  make
+
 }
+
+package() {
+
+  cd $name-$version
+  make DESTDIR="${PKG}" install
+  rm $PKG/usr/lib/libdotconf.la
+
+}
+
