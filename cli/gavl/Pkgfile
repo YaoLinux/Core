@@ -1,24 +1,37 @@
 # Depends on: doxygen
 
-description="A low level library, upon which multimedia APIs can be built"
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
+description="Low level library, upon which multimedia APIs can be built"
 url="http://gmerlin.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=gavl
 version=1.4.0
-release=2
+release=1
 
-source=(http://downloads.sourceforge.net/sourceforge/gmerlin/$name-$version.tar.gz)
 
-build() {
-cd $name-$version
-LIBS=-lm \
-./configure --prefix=/usr \
---docdir=/usr/share/doc/gavl-$version
-make
-make DESTDIR=$PKG install
+source=(https://downloads.sourceforge.net/gmerlin/$name-$version.tar.gz)
 
-# Obsolet lib
-rm $PKG/usr/lib/libgavl.la
+
+build(){
+
+  cd $name-$version
+  LIBS=-lm \
+  ./configure --prefix=/usr \
+			  --docdir=/usr/share/doc/gavl-$version
+  make
+
+}
+
+package() {
+
+  cd $name-$version
+  make DESTDIR="$PKG" install
+  rm $PKG/usr/lib/libgavl.la
+
 }
