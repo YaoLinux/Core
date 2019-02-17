@@ -1,22 +1,47 @@
-description="Charset analyser and converter."
+# Depends on:
+
+
+packager="sipo"
+contributors="Pierre B, Fanch, Tnut"
+maintainer="sipo"
+
+
+description="Charset analyser and converter"
 url="http://cihar.com/software/enca/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Fanch V"
+
 
 name=enca
-release=2
 version=1.19
-source=(http://dl.cihar.com/${name}/${name}-${version}.tar.xz)
+release=3
+
+
+source=(http://dl.cihar.com/${name}/${name}-${version}.tar.xz 
+		enca-bad-file-descriptor.patch)
+
+
+prepare(){
+
+  cd $name-$version
+  patch -p1 -i ../enca-bad-file-descriptor.patch
+
+}
 
 build() {
-cd $name-$version
-./configure --prefix=/usr \
+
+  cd ${name}-${version}
+
+  ./configure --prefix=/usr \
               --libexecdir=/usr/lib \
               --mandir=/usr/share/man \
               --with-librecode=/usr \
-              --enable-external      
-make
-make DESTDIR=$PKG install
+              --enable-external
+  make
 
-rm $PKG/usr/lib/libenca.la
+}
+
+package() {
+
+  cd ${name}-${version}
+  make DESTDIR="${PKG}" install
+
 }
