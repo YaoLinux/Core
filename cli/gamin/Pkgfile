@@ -1,32 +1,52 @@
-# Depends on: python glib
+# Depends on: glib python
 
-description="File and directory monitoring system defined to be a subset of the File Alteration Monitor"
+
+packager="sipo"
+contributors="Pierre B, Tnut"
+maintainer="sipo"
+
+
+description="File and directory monitoring system defined to be a subset of the FAM (File Alteration Monitor)"
 url="http://www.gnome.org/~veillard/gamin"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=gamin
 version=0.1.10
-release=4
+release=1
 
-source=(http://www.gnome.org/~veillard/gamin/sources/$name-$version.tar.gz
-	remove_deprecated_G_CONST_RETURN.patch)
+
+source=(http://www.gnome.org/~veillard/gamin/sources/gamin-0.1.10.tar.gz
+		remove_deprecated_G_CONST_RETURN.patch)
+
+
+prepare(){
+
+  cd $name-$version
+  patch -p0 < ../remove_deprecated_G_CONST_RETURN.patch
+  sed -i 's/G_CONST_RETURN/const/' server/gam_{node,subscription}.{c,h}
+
+}
+
 
 build() {
-cd $name-$version
-patch -p0 < ../remove_deprecated_G_CONST_RETURN.patch
-sed -i 's/G_CONST_RETURN/const/' server/gam_{node,subscription}.{c,h}
 
-./configure --prefix=/usr \
---mandir=/usr/share/man \
---infodir=/usr/share/info \
---libexecdir=/usr/bin \
---disable-static
+  cd $name-$version
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man \
+              --infodir=/usr/share/info \
+              --libexecdir=/usr/bin \
+              --disable-static
 
-make
-make DESTDIR=$PKG install
+  make
 
-# Obsolets libs
-rm $PKG/usr/lib/lib{fam,gamin-1}.la
-rm $PKG/usr/lib/python2.7/site-packages/_gamin.la
 }
+
+package() {
+
+  cd $name-$version
+  make DESTDIR="$PKG" install
+  rm $PKG/usr/lib/lib{fam,gamin-1}.la
+  rm $PKG/usr/lib/python2.7/site-packages/_gamin.la
+
+}
+
