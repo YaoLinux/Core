@@ -1,16 +1,25 @@
 # Depends on: icu python python2
 
+
+packager="sipo"
+contributors="Remy, Tnut"
+maintainer="sipo"
+
+
 description="Boost provides a set of free peer-reviewed portable C++ source libraries."
 url="http://boost.sourceforge.net/"
-packager="rems at nutyx dot org"
-contributors="tnut"
+
+
 name=boost
-version=1.68.0
-release=2
+version=1.69.0
+release=1
+
 
 source=(https://dl.bintray.com/boostorg/release/$version/source/${name}_${version//./_}.tar.bz2)
 
+
 build() {
+
 cd ${name}_${version//./_}
 
 ./bootstrap.sh --prefix=/usr --with-python=/usr/bin/python2
@@ -29,7 +38,6 @@ python=3.7 \
 --with-python
 
 ln -svf detail/sha1.hpp $PKG/usr/include/boost/uuid/sha1.hpp
+
 }
-uptodate() {
-lynx -dump http://www.boost.org/users/download/|grep 'Current Release'|tail -n 1 | sed 's/.*]\(.*\) -.*/\1/'
-}
+
