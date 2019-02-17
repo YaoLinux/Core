@@ -1,33 +1,32 @@
-# Depends on: glibc 
+# Depends on:
+
+
+packager="sipo"
+contributors=""
+maintainer="sipo"
+
 
 description="Minimalistic C client library for Redis"
 url="https://github.com/redis/hiredis/"
-packager="greg<greg@nutyx.org>"
-contributors=""
-
-run=()
-
 
 
 name=hiredis
 version=0.13.3
-release=1
+release=2
 
-source=(https://github.com/redis/$name/archive/v$version/hiredis-$version.tar.gz
-)
 
-build() {
-cd $name-$version
-make PREFIX=/usr
+source=(https://github.com/redis/$name/archive/v$version/hiredis-$version.tar.gz)
+
+
+build(){
+  cd "$SRC"/$name-$version
+  make PREFIX=/usr
 }
+
 
 package() {
-cd $name-$version
-make DESTDIR=$PKG PREFIX=/usr install
+  cd "$SRC"/$name-$version
+  make DESTDIR="$PKG" PREFIX=/usr install
+
+  install -Dm 644 COPYING "$PKG"/usr/share/licenses/$name/COPYING
 }
-
-uptodate() {
-echo "Fonction uptodate sans objet"
-}
-
-
