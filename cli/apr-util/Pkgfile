@@ -1,42 +1,54 @@
 # Depends on: apr expat
 
-description="Apache Portable Runtime Utility Library"
+
+packager="sipo"
+contributors="Jmilot, Tnut"
+maintainer="sipo"
+
+
+description="The Apache Portable Runtime"
 url="http://apr.apache.org/"
-contributors="Jmilot, Greg"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=apr-util
 version=1.6.1
-release=2
+release=4
 
-source=(http://archive.apache.org/dist/apr/$name-$version.tar.bz2)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr \
---with-apr=/usr \
---with-gdbm=/usr \
---with-openssl=/usr \
---with-crypto
-make
-make DESTDIR=$PKG install
+source=(https://www.apache.org/dist/apr/$name-$version.tar.bz2 
+		disable_failing_test.patch 
+		buildconf_config.guess_sub_location.patch)
 
-# Obsolets libs
-rm $PKG/usr/lib/apr-util-1/apr_crypto_openssl.la
-rm $PKG/usr/lib/apr-util-1/apr_dbd_sqlite3.la
-rm $PKG/usr/lib/apr-util-1/apr_dbm_gdbm.la
-rm $PKG/usr/lib/libaprutil-1.la
+
+prepare(){
+
+  cd apr-util-${version}
+  patch -Np1 -i ../buildconf_config.guess_sub_location.patch
+  patch -Np1 -i ../disable_failing_test.patch
+  #./buildconf --with-apr=`apr-1-config --SRC`
 
 }
 
-uptodate() {
-local url ext name
-name="apr"
-url="http://archive.apache.org/dist/$name/"
-ext=".tar.bz2"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url|grep $name-util-[0-9]|grep [0-9]$ext$| \
-sed "s@$url$name-util-@@"|sed "s@$ext@@"| \
-sort|tail -1
+build() {
+
+  cd apr-util-${version}
+  ./configure --prefix=/usr \
+	--with-apr=/usr \
+	--with-gdbm=/usr \
+	--with-openssl=/usr \
+	--with-crypto
+make
+
+}
+
+
+package() {
+
+  cd apr-util-${version}
+  make DESTDIR="${PKG}" install
+  rm $PKG/usr/lib/apr-util-1/apr_crypto_openssl.la
+  rm $PKG/usr/lib/apr-util-1/apr_dbd_sqlite3.la
+  rm $PKG/usr/lib/apr-util-1/apr_dbm_gdbm.la
+  rm $PKG/usr/lib/libaprutil-1.la
 
 }
