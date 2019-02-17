@@ -1,0 +1,46 @@
+# Depends on: llvm ninja cmake
+
+description="Linker from the LLVM project"
+url="https://lld.llvm.org/"
+packager="rems <rems@yaolinux.org>"
+contributors=""
+
+name=lld
+version=7.0.1
+
+source=(https://releases.llvm.org/${version}/${name}-${version}.src.tar.xz
+        https://releases.llvm.org/${version}/llvm-${version}.src.tar.xz)
+
+prepare () {
+
+mkdir build
+
+}
+
+build() {
+
+cd build
+
+cmake ../${name}-${version}.src -G Ninja \
+         -DCMAKE_BUILD_TYPE=Release \
+         -DCMAKE_INSTALL_PREFIX=/usr \
+         -DPYTHON_EXECUTABLE=/usr/bin/python2 \
+         -DBUILD_SHARED_LIBS=ON \
+         -DLLVM_LINK_LLVM_DYLIB=ON \
+         -DLLVM_INCLUDE_TESTS=ON \
+         -DLLVM_BUILD_TESTS=ON \
+         -DLLVM_ENABLE_SPHINX=OFF \
+         -DLLVM_EXTERNAL_LIT=/usr/bin/lit \
+         -DLLVM_MAIN_SRC_DIR="../llvm-$version.src"
+
+ninja
+
+}
+
+package() {
+
+cd build
+
+DESTDIR="${PKG}" ninja install
+
+}
