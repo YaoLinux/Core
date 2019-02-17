@@ -1,26 +1,33 @@
 # Depends on: unzip
 
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="A free C++ class library of cryptographic schemes"
 url="https://www.cryptopp.com/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=crypto++
 version=7.0.0
+release=2
+
 
 source=(${url}cryptopp${version//./}.zip
         libcrypto++.pc)
 
+
 build() {
   
-export CXXFLAGS="${CXXFLAGS} -DNDEBUG -fPIC"  
-make dynamic cryptest.exe
-make install DESTDIR="$PKG" PREFIX="/usr"
-install -d "${PKG}/usr/lib/pkgconfig"
-install -m644 "libcrypto++.pc" "${PKG}/usr/lib/pkgconfig/libcrypto++.pc"
-# Remove cryptest.exe and test files, only needed for check() and bloats the package
-# because cryptest.exe is linked statically.
-rm "$PKG/usr/bin/cryptest.exe"
-rmdir "$PKG/usr/bin/"
-rm -r "$PKG/usr/share/cryptopp/"
+    export CXXFLAGS="${CXXFLAGS} -DNDEBUG -fPIC"  
+    make dynamic cryptest.exe
+    make install DESTDIR="$PKG" PREFIX="/usr"
+    install -d "${PKG}/usr/lib/pkgconfig"
+    install -m644 "libcrypto++.pc" "${PKG}/usr/lib/pkgconfig/libcrypto++.pc"
+    rm "$PKG/usr/bin/cryptest.exe"
+    rmdir "$PKG/usr/bin/"
+    rm -r "$PKG/usr/share/cryptopp/"
+
 }
