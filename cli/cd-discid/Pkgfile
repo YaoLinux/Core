@@ -1,24 +1,37 @@
-# Depends on:
+# Depends on: 
 
-description="Backend utility to get cddb information"
-url="http://lly.org/~rcw/cd-discid/"
-packager="greg<greg@nutyx.org>"
+
+packager="sipo"
+contributors=""
+maintainer="sipo"
+
+
+description="A backend utility to get CDDB discid information from a CD-ROM disc"
+url="http://linukz.org/cd-discid.shtml"
+
 
 name=cd-discid
 version=1.4
+release=2
+
 
 source=(http://linukz.org/download/$name-$version.tar.gz)
 
-build () {
 
-    cd $name-$version
-    make
+build(){
+
+  cd $name-$version
+  make
+
 }
 
-package () {
 
-cd $name-$version
-make DESTDIR=$PKG \
-        PREFIX=/usr  STRIP="/bin/true" \
+package() {
+
+  cd $name-$version
+  make DESTDIR=$PKG \
+        PREFIX=/usr \
+        mandir=$PKG/usr/man/man1 \
         install
+
 }
