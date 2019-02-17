@@ -1,10 +1,34 @@
+# Depends on:  
+
+
+packager="sipo"
+contributors=""
+maintainer="sipo"
+
+
 description="FT Jam - an enhanced version of the Jam build tool"
 url="http://freetype.org/jam/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Chris Farrell"
+
 
 name=ftjam
 version=2.5.3rc2
-release=3
+release=1
+
 
 source=(http://david.freetype.org/jam/${name}-${version}.tar.bz2)
+
+
+build() {
+
+  cd ${name}-${version}
+  ./configure --prefix=/usr
+  make
+
+}
+
+package() {
+
+  cd ${name}-${version}
+  make DESTDIR="${PKG}" install
+
+}
