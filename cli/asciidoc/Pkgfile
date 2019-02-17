@@ -1,35 +1,60 @@
-# Depends on: docbook-xsl libxslt python2
+# Depends on: python2 libxslt docbook-xsl 
 
-description="Text document format for short documents, articles, books and UNIX man pages"
+
+packager="sipo"
+contributors="Alienus, Remy, Tnut"
+maintainer="sipo"
+
+
+description="Text document format for short documents, articles, books and UNIX man pages."
 url="http://www.methods.co.nz/asciidoc/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus, Remy"
 
-PKGMK_KEEP_SOURCES="no"
 
 name=asciidoc
 version=8.6.10
+release=2
 
 
 source=(https://github.com/$name/$name/archive/$version.tar.gz)
 
 
-build(){
+prepare(){
+  cd ${name}-${version}
 
-    cd $name-$version
-    sed -i -e 's#python a2x.py#python2 a2x.py#' Makefile.in
-    autoconf
-    ./configure --prefix=/usr \
-                --sysconfdir=/etc
-    make
+  # python2 fix
+  #for file in asciidocapi.py a2x.py asciidoc.py filters/music/music2png.py filters/latex/latex2png.py \
+	  #filters/code/code-filter.py filters/graphviz/graphviz2png.py; do
+	#sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' $file
+  #done
+  #sed -i -e 's_sys:python_sys:python2_g' -e 's_sys3:python_sys3:python2_g' xhtml11.conf
+  #sed -i 's_sys:python_sys:python2_g' xhtml11-quirks.conf
+  #sed -i -e 's/{python}/{python2}/g' \
+	  #-e 's#{language@python:py:#{language@python2:py:#' \
+	  #filters/source/source-highlight-filter.conf \
+	  #html5.conf xhtml11.conf xhtml11-quirks.conf
+  #sed -i -e "s#'python'#'python2'#g" filters/code/code-filter.py
+  sed -i -e 's#python a2x.py#python2 a2x.py#' Makefile.in
 }
 
+build() {
+  cd ${name}-${version}
+
+  autoconf
+  ./configure \
+    --prefix=/usr \
+    --sysconfdir=/etc
+}
 
 package() {
+  cd ${name}-${version}
 
-  cd $name-$version
-    make DESTDIR=$PKG install
-    make docs DESTDIR=$PKG
-    install -Dm644 asciidocapi.py \
-    ${pkgdir}/usr/lib/python2.7/site-packages/asciidocapi.py  
+  make install DESTDIR=${PKG}
+  make docs DESTDIR=${PKG}
+
+  install -Dm644 asciidocapi.py \
+    ${PKG}/usr/lib/python2.7/site-packages/asciidocapi.py
+
+  # fix FS#21579 - [asciidoc] 8.6.2-2 "asciidoc" table style doesn't work (mismatched python version) 
+  #sed -i 's/python/python2/' \
+    #${PKG}/etc/asciidoc/asciidoc.conf
 }
