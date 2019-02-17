@@ -1,40 +1,48 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Pierre B, tnut"
+maintainer="sipo"
+
+
 description="Dynamic, any to any, pixel format conversion library"
 url="http://gegl.org/babl"
-maintainer="http://gegl.org/babl/#Authors"
-contributors="Pierre B, tnut, greg"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=babl
 version=0.1.60
+release=2
+
 
 source=(http://download.gimp.org/pub/$name/${version:0:3}/$name-$version.tar.bz2)
 
+
 build() {
-cd $name-$version
-./configure --prefix=/usr
-make
-make DESTDIR=$PKG install
+
+	cd $name-$version
+	./configure --prefix=/usr
+	make
+
+}
+
+package() {
+
+	cd $name-$version
+	make DESTDIR=$PKG install
 
 # Documentation
-install -v -m755 -d \
-$PKG/usr/share/gtk-doc/html/babl/graphics
+	install -v -m755 -d \
+	$PKG/usr/share/gtk-doc/html/babl/graphics
 
-install -v -m644 docs/*.{css,html} \
-$PKG/usr/share/gtk-doc/html/babl
+	install -v -m644 docs/*.{css,html} \
+	$PKG/usr/share/gtk-doc/html/babl
 
-install -v -m644 docs/graphics/*.{html,png,svg} \
-$PKG/usr/share/gtk-doc/html/babl/graphics
+	install -v -m644 docs/graphics/*.{html,png,svg} \
+	$PKG/usr/share/gtk-doc/html/babl/graphics
 
-rm $PKG/usr/lib/babl-0.1/*.la
-rm $PKG/usr/lib/libbabl-0.1.la
+	rm $PKG/usr/lib/babl-0.1/*.la
+	rm $PKG/usr/lib/libbabl-0.1.la
+
 }
-uptodate() {
-local last url ext
-ext=".tar.bz2"
-url="https://download.gimp.org/pub/$name"
 
-last="`lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url/?C=N\;O=D|grep [0-9]/|head -1`"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$last/?C=M\;O=D|grep $ext$|head -1|sed "s@$last/$name-@@"|sed "s@$ext@@"
-}
