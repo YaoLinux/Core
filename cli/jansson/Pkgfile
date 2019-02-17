@@ -1,16 +1,37 @@
-description="C library for encoding, decoding and manipulating JSON data."
+# Depends on: 
+
+
+packager="sipo"
+contributors="Alan M., Tnut"
+maintainer="sipo"
+
+
+description="C library for encoding, decoding and manipulating JSON data"
 url="http://www.digip.org/jansson/"
-contributors="Alan M., Greg"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=jansson
 version=2.12
+release=2
+
 
 source=(http://www.digip.org/$name/releases/$name-$version.tar.bz2)
 
-package() {
-  install -Dm644 $name-$version/LICENSE $PKG/usr/share/licenses/$name/LICENSE
 
-  # Obsolet lib
+build(){
+
+  cd "$SRC/$name-$version"
+  ./configure --prefix=/usr
+  make
+
+}
+
+package() {
+
+  cd "$SRC/$name-$version"
+  make DESTDIR="$PKG" install
+  install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+# Obsolet lib
   rm $PKG/usr/lib/libjansson.la
+
 }
