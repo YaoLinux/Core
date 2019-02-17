@@ -1,18 +1,37 @@
-# Depends on: libpcap
+# Depends on: libpcap ncurses 
 
-description="Real-time bandwidth usage information on a network interface" 
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
+description="Display bandwidth usage on an interface"
 url="http://www.ex-parrot.com/~pdw/iftop/"
-maintainer="Juergen Daubert, jue at crux dot nu"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=iftop
 version=1.0pre4
 release=1
+
+
 source=(http://www.ex-parrot.com/~pdw/iftop/download/$name-$version.tar.gz)
 
-build () {
-    cd $name-$version
-    ./configure --prefix=/usr
-    make iftop
-    make DESTDIR=$PKG install
+
+build(){
+
+  cd $name-$version
+
+  ./configure --prefix=/usr --sbindir=/usr/bin --mandir=/usr/share/man
+  make
+
 }
+
+package() {
+
+  cd $name-$version
+
+  make DESTDIR="$PKG" install
+
+}
+
