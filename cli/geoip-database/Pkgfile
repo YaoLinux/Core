@@ -1,17 +1,30 @@
-description="GeoLite country geolocation database compiled by MaxMind"
+# Depends on:
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
+description="GeoLite2 IP geolocation databases compiled by MaxMind"
 url="http://www.maxmind.com/app/c"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=geoip-database
-version=20180403
+version=20190212
+release=1
 
-source=(http://geolite.maxmind.com/download/geoip/database/GeoLiteCountry/GeoIP.dat.gz
-        http://geolite.maxmind.com/download/geoip/database/GeoIPv6.dat.gz)
+
+
+source=(https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz)
+
 
 build() {
-	umask 022
-	install -d $PKG/usr/share/GeoIP
-	for i in GeoIP.dat GeoIPv6.dat; do
-		gzip -dc $i.gz > $PKG/usr/share/GeoIP/$i
-	done
+
+  cd "$SRC"/GeoLite2-City_20190212
+
+  install -d "$PKG/usr/share/GeoIP"
+  install -m644 -t "$PKG/usr/share/GeoIP" GeoLite2-City.mmdb
+  
 }
+
