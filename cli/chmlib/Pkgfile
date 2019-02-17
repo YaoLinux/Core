@@ -1,20 +1,33 @@
-name=chmlib
-version=0.40
-release=3
+# Depends on: 
+
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
 
 description="Library for dealing with Microsoft ITSS/CHM format files"
-maintainer="Matthew T. Russotto's"
-packager="tnut at nutyx dot org"
 url="http://www.jedrea.com/chmlib/"
 
-source=($url/$name-$version.tar.bz2)
+
+name=chmlib
+version=0.40
+release=4
+
+
+source=(http://www.jedrea.com/$name/$name-$version.tar.bz2)
+
 
 build(){
-    cd $name-$version
-    ./configure --prefix=/usr \
-                --enable-examples=yes
-    make
-    make DESTDIR=$PKG install
+  cd ${name}-${version}
 
-    rm $PKG/usr/lib/libchm.la
+  ./configure --prefix=/usr \
+              --enable-examples=yes
+  make
+}
+
+package() {
+  cd ${name}-${version}
+
+  make DESTDIR="${PKG}" install
 }
