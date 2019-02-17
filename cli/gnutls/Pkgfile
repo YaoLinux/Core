@@ -1,27 +1,44 @@
 # Depends on: libtasn1 nettle libidn p11-kit libunistring ca-certificates
 
-description="Libraries and userspace tools which provide a secure layer over a reliable transport layer." 
-url="http://www.gnu.org/software/gnutls/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
+description="A library which provides a secure layer over a reliable transport layer"
+url="https://www.gnutls.org/"
+
 
 name=gnutls
-version=3.6.5
+version=3.6.6
+release=1
+
 
 source=(ftp://ftp.gnutls.org/gcrypt/$name/v${version:0:3}/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr \
---with-zlib \
---with-default-trust-store-file="pkcs11:" \
---disable-guile \
---disable-static
 
-make
-make DESTDIR=$PKG install
+build() {
+
+	cd $name-$version
+	./configure --prefix=/usr \
+				--with-zlib \
+				--with-default-trust-store-file="pkcs11:" \
+				--disable-guile \
+				--disable-static
+
+	make
+
+}
+
+
+package() {
+
+	cd $name-$version
+	make DESTDIR=$PKG install
 
 # Obsolet lib
+	rm $PKG/usr/lib/libgnutls{,xx}.la
 
-rm $PKG/usr/lib/libgnutls{,xx}.la
 }
+
