@@ -1,20 +1,41 @@
+# Depends on:
 
-packager="tnut <tnut@nutyx.org>"
-contributors="Rémy"
+
+packager="sipo"
+contributors="Tnut, Remy"
+maintainer="sipo"
+
+
+description="General-purpose scalable concurrent malloc implementation"
+url="http://www.canonware.com/jemalloc/"
+
 
 name=jemalloc
 version=5.1.0
+release=2
 
-description='General-purpose scalable concurrent malloc implementation'
 
-url='http://www.canonware.com/jemalloc/'
+source=(https://github.com/jemalloc/jemalloc/releases/download/$version/$name-$version.tar.bz2)
 
-source=("https://github.com/jemalloc/jemalloc/releases/download/$version/$name-$version.tar.bz2")
 
-build() {
+build(){
+
   cd $name-$version
-  ./configure --prefix=/usr --enable-autogen
+
+  ./configure \
+    --enable-autogen \
+    --prefix=/usr
   make
-  make DESTDIR="$pkgdir" install
-  find "$PKG" -name \*.a -type f -exec chmod 644 '{}' \;
+
+}
+
+package() {
+
+  cd $name-$version
+
+  make DESTDIR="$PKG" install
+
+  install -Dm644 COPYING "$PKG/usr/share/licenses/$name/COPYING"
+  chmod 644 "$PKG/usr/lib/libjemalloc_pic.a"
+
 }
