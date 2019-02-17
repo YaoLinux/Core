@@ -1,25 +1,40 @@
-description="Exif and Iptc metadata manipulation library and tools"
-url="http://www.exiv2.org/index.html"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+# Depends on: cmake
+
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
+description="Exif, Iptc and XMP metadata manipulation library and tools"
+url="http://exiv2.org"
+
 
 name=exiv2
-version=0.26
-release=2
+version=0.27
+release=1
 
-source=(http://www.exiv2.org/builds/$name-$version-trunk.tar.gz)
+
+source=(https://github.com/Exiv2/exiv2/archive/$version.tar.gz)
+
 
 build() {
-cd $name-trunk
-./configure --prefix=/usr \
-	--enable-video \
-	--enable-webready \
-	--without-ssh \
-	--disable-static 
-make
-make DESTDIR=$PKG install
-chmod -v 755 $PKG/usr/lib/libexiv2.so
 
-# Obsolet lib
-rm $PKG/usr/lib/libexiv2.la
+  cd $name-$version 
+  cmake . \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DEXIV2_ENABLE_VIDEO=ON \
+    -DEXIV2_ENABLE_BUILD_PO=ON \
+    -DEXIV2_ENABLE_BUILD_SAMPLES=OFF \
+    -DCMAKE_INSTALL_LIBDIR=lib
+  make
+
+}
+
+
+package() {
+
+  cd $name-$version
+  make DESTDIR="${PKG}" install
+
 }
