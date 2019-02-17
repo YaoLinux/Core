@@ -6,12 +6,22 @@ url="http://yaolinux.org"
 
 name=yaolinux-wallpaper
 version=1.0.0
-release=1
+release=2
 
-source=(http://download.yaolinux.org/wallpaper/wall1.jpg)
+source=(http://download.yaolinux.org/wallpaper/wall1.jpg
+	http://download.yaolinux.org/wallpaper/wall2.jpg
+	http://download.yaolinux.org/wallpaper/wall3.jpg
+	http://download.yaolinux.org/wallpaper/wall4.jpg
+	http://download.yaolinux.org/wallpaper/wall5.jpg
+	)
 
 build(){
-   install -D -m644 wall1.jpg \
-   $PKG/usr/share/backgrounds/yaolinux/wallpaper1.jpg
+   for i in {1,2,3,4,5}
+   do
+   	install -D -m644 wall$i.jpg \
+   	$PKG/usr/share/backgrounds/yaolinux/wallpaper$i.jpg
+   done
+
+
 }
 
