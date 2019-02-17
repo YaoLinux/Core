@@ -1,17 +1,25 @@
 # Depends on: cmake libjpeg-turbo2 doxygen
 
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+
 description="A software-based implementation of the codec specified in the emerging JPEG-2000 Part1 std"
 url="http://www.ece.uvic.ca/~frodo/jasper/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=jasper
 version=2.0.14
-release=2
+release=4
 
-source=(${url}software/$name-$version.tar.gz)
+
+source=(http://www.ece.uvic.ca/~frodo/jasper/software/$name-$version.tar.gz)
+
 
 build() {
+
 	cd $name-$version
 	mkdir BUILD
 	cd BUILD
@@ -21,10 +29,17 @@ build() {
 	-DCMAKE_BUILD_TYPE=Release \
 	-DCMAKE_SKIP_INSTALL_RPATH=YES \
 	-DCMAKE_INSTALL_DOCDIR=/usr/share/doc/jasper-$version \
-      	..
+    ..
 	make
+
+}
+
+package() {
+
+	cd $name-$version/BUILD
 	make DESTDIR=$PKG install
 
 	install -v -m755 -d $PKG/usr/share/doc/jasper-$version
 	install -v -m644 ../doc/*.pdf $PKG/usr/share/doc/$name-$version
+
 }
