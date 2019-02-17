@@ -1,32 +1,44 @@
 # Depends on: cyrus-sasl json-c libidn liboauth libxml2 openldap pcre 
 
-description="bti (twitter/identi.ca console client)"
+
+packager="sipo"
+contributors="Alienus, Tnut"
+maintainer="sipo"
+
+
+description="Console client for Twitter and identi.ca"
 url="http://gregkh.github.com/bti/"
 
-contributors="Alienus"
-packager="tnut <tnut@nutyx.org>"
+
 name=bti
 version=034
+release=2
 
-source=(https://www.kernel.org/pub/software/web/bti/bti-$version.tar.xz
-        0001-Replace-removed-is_error-macro.patch)
 
-build(){
-    cd $name-$version
-    patch -Np1 -i ../0001-Replace-removed-is_error-macro.patch
-    ./configure --prefix=/usr
-    make
-    make DESTDIR=$PKG install
+source=(https://www.kernel.org/pub/software/web/bti/bti-034.tar.xz 
+		0001-Replace-removed-is_error-macro.patch)
 
-    install -Dm644 bti-bashcompletion \
-        $PKG/etc/bash_completion.d/bti
-    install -Dm644 README \
-        $PKG/usr/share/doc/$name-$version/README
+
+prepare(){
+
+  cd "${SRC}"/$name-$version
+  patch -Np1 -i $SRC/0001-Replace-removed-is_error-macro.patch
+
 }
-uptodate() {
-local url ext
-url="https://www.kernel.org/pub/software/web/$name/"
-ext=".tar.xz"
-lynx -read_timeout=20 -dump -listonly -nonumbers $url|grep $ext$|tail -1|\
-sed "s@$url$name-@@"|sed "s@$ext@@"
+
+build() {
+
+  cd "${SRC}"/$name-$version
+  ./configure --prefix=/usr
+
+  make
+
+}
+
+package() {
+
+  cd "${SRC}"/$name-$version
+
+  make DESTDIR="${PKG}" install
+
 }
