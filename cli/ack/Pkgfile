@@ -1,27 +1,31 @@
-#Depends on:
+# Depends on: perl-file-next 
 
-description="tool like grep, aimed at programmers with large trees of heterogeneous source code"
-url="http://beyondgrep.com/"
-contributors="berlius"
-packager="greg<greg@nutyx.org>"
+
+packager="sipo"
+contributors="sipo"
+maintainer="sipo"
+
+
+description="A Perl-based grep replacement, aimed at programmers with large trees of heterogeneous source code"
+url="http://betterthangrep.com/"
 
 
 name=ack
 version=2.24
+release=2
+
 
 source=(http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/$name-$version.tar.gz)
 
-build() {
 
-cd $name-$version
-PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
-make
-make DESTDIR="$PKG" install
-
+build(){
+  cd "$SRC/$name-$version"
+  PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
+  make
 }
-uptodate() {
-local url
-url="https://beyondgrep.com/"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url/install/?C=M\;O=D|grep single-file$|head -1|sed "s@$url$name-@@"|sed "s@-single-file@@"
+
+
+package() {
+  cd "$SRC/$name-$version"
+  make DESTDIR="$PKG" install
 }
