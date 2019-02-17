@@ -1,37 +1,55 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="Base libraries from ILM for OpenEXR"
-url="http://openexr.com/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+url="http://www.openexr.com"
+
 
 name=ilmbase
 version=2.3.0
+release=1
 
-source=(https://github.com/openexr/openexr/releases/download/v$version/$name-$version.tar.gz)
 
-build() {
-# build package
+source=(https://github.com/openexr/openexr/releases/download/v$version/$name-$version.tar.gz 
+		ilmbase-2.0.1-no_undefined.patch 
+		ilmbase-1.0.3-pkgconfig.patch)
 
-cd $name-$version
-./configure --prefix=/usr \
---disable-build-docs \
---mandir=/usr/share/man \
---infodir=/usr/share/info
-make PTHREAD_LIBS="-pthread -lpthread"
-make DESTDIR=$PKG install
 
-# Obsolet libs
-rm $PKG/usr/lib/libHalf.la
-rm $PKG/usr/lib/libIex.la
-rm $PKG/usr/lib/libIexMath.la
-rm $PKG/usr/lib/libIlmThread.la
-rm $PKG/usr/lib/libImath.la
+prepare(){
+
+  cd "${SRC}/$name-$version"
+  # patches from fedora
+  patch -p1 -i ../ilmbase-2.0.1-no_undefined.patch
+  patch -p1 -i ../ilmbase-1.0.3-pkgconfig.patch
 
 }
-uptodate() {
-local url ext
-url="http://download.savannah.nongnu.org/releases/openexr/"
-ext=".tar.gz"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url?C=M\;O=A|grep $url$name-[0-9]|grep [0-9]$ext$| \
-sed "s@$url$name-@@"|sed "s@$ext@@"|tail -1
+
+build() {
+
+  cd "${SRC}/$name-$version"
+  ./configure --prefix=/usr
+  # manually set PTHREAD_LIBS to include -lpthread until libtool bogosity is fixed,
+  # https://bugzilla.redhat.com/show_bug.cgi?id=661333
+  make PTHREAD_LIBS="-pthread -lpthread"
+
+}
+
+
+package() {
+
+  cd "${SRC}/$name-$version"
+  make DESTDIR="${PKG}" install
+  install -D -m644 LICENSE -t "$PKG/usr/share/licenses/$name"
+# Obsolet libs
+  rm $PKG/usr/lib/libHalf.la
+  rm $PKG/usr/lib/libIex.la
+  rm $PKG/usr/lib/libIexMath.la
+  rm $PKG/usr/lib/libIlmThread.la
+  rm $PKG/usr/lib/libImath.la
+
 }
