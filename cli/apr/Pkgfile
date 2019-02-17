@@ -1,34 +1,52 @@
-# Depends on: python
+# Depends on: python2 util-linux
 
-description="Apache Portable Runtime (APR)"
+
+packager="sipo"
+contributors="Jmilot, Tnut"
+maintainer="sipo"
+
+
+description="The Apache Portable Runtime"
 url="http://apr.apache.org/"
-contributors="Jmilot, Greg"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=apr
 version=1.6.5
+release=2
 
-source=(http://archive.apache.org/dist/$name/$name-$version.tar.bz2)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr --disable-static \
---with-installbuilddir=/usr/share/apr-1/build
-make
-make DESTDIR=$PKG install
+source=(http://www-us.apache.org/dist/$name/$name-$version.tar.bz2
+		fix_apr-config.patch
+		ship_find_apr.m4.patch 
+		fix-apr.pc.patch 
+		omit_extra_libs.patch 
+		dont_override_external_buildflags)
 
-# Obsolet lib
-rm $PKG/usr/lib/libapr-1.la
+
+prepare(){
+  cd apr-$version
+  patch -Np1 -i ../fix_apr-config.patch
+  patch -Np1 -i ../ship_find_apr.m4.patch
+  patch -Np1 -i ../fix-apr.pc.patch
+  patch -Np1 -i ../omit_extra_libs.patch
+  patch -Np1 -i ../dont_override_external_buildflags
+  sed -e 's/env python/env python2/' -i build/gen-build.py
+  sed -e 's/python/python2/g' -i build/buildcheck.sh
+  ./buildconf
 }
 
-uptodate() {
-local url ext
+build() {
+  cd apr-$version
+  ./configure --prefix=/usr --includedir=/usr/include/apr-1 \
+    --with-installbuilddir=/usr/share/apr-1/build \
+    --enable-nonportable-atomics \
+    --with-devrandom=/dev/urandom --disable-static
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  make
+}
 
-url="http://archive.apache.org/dist/$name/"
-ext=".tar.bz2"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url|grep $name-[0-9]|grep [0-9]$ext$| \
-sed "s@$url$name-@@"|sed "s@$ext@@"| \
-sort|tail -1
-
+package() {
+  cd apr-$version
+  make DESTDIR="$PKG" install
+  rm $PKG/usr/lib/libapr-1.la
 }
