@@ -1,34 +1,45 @@
-description="Library to enforce passwords by comparing user selected passwords to words lists"
-url="http://sourceforge.net/projects/cracklib/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+# Depends on:
+
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
+description="Password Checking Library"
+url="https://github.com/cracklib/cracklib"
+
+
 name=cracklib
 version=2.9.6
 release=3
 
-source=(https://github.com/cracklib/cracklib/releases/download/$name-$version/$name-$version.tar.gz
-	https://github.com/cracklib/cracklib/releases/download/$name-$version/$name-words-2.9.6.gz)
 
-build()
-{
-cd $name-$version
-sed -i '/skipping/d' util/packer.c
-./configure --prefix=/usr \
---with-default-dict=/$LIB/cracklib/pw_dict
-make
-make DESTDIR=$PKG  install
+source=(http://yao.pausex.fr/sources/cracklib-2.9.6.tar.gz)
 
-mkdir $PKG/lib
-mv -v $PKG/usr/lib/libcrack.so.2* $PKG/lib
-ln -v -sf ../../lib/libcrack.so.2.9.0 $PKG/usr/lib/libcrack.so
+prepare(){
 
-install -v -m644 -D ../cracklib-words-2.9.6.gz \
-$PKG/usr/share/dict/cracklib-words.gz
+  cd $name-$version
+  sed -i '/skipping/d' util/packer.c
+  
+}
 
-gunzip -v $PKG/usr/share/dict/cracklib-words.gz
-ln -v -sf cracklib-words $PKG/usr/share/dict/words
-echo $(hostname) >> $PKG/usr/share/dict/cracklib-extra-words
-install -v -m755 -d  $PKG/lib/cracklib
+build(){
 
-rm $PKG/usr/lib/libcrack.la
+  cd $name-$version
+  ./configure --prefix=/usr    \
+              --disable-static \
+              --with-default-dict=/lib/cracklib/pw_dict
+  make
+  
+}
+
+
+package() {
+
+  cd $name-$version
+  make DESTDIR=$PKG install
+  #mv -v /usr/lib/libcrack.so.* /lib
+  #rm $PKG/usr/lib/libcrack.la
+  
 }
