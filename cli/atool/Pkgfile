@@ -1,9 +1,35 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="A script for managing file archives of various types"
 url="http://www.nongnu.org/atool/"
-packager="tnut at nutyx dot org"
+
 
 name=atool
 version=0.39.0
 release=2
 
+
 source=(http://savannah.nongnu.org/download/$name/$name-$version.tar.gz)
+
+
+build(){
+
+  cd ${name}-${version}
+
+  ./configure --prefix=/usr --sysconfdir=/etc
+
+}
+
+package() {
+
+  cd ${name}-${version}
+
+  make DESTDIR="${PKG}" install
+
+}
