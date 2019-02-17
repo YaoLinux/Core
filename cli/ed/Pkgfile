@@ -1,31 +1,42 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="A POSIX-compliant line-oriented text editor"
 url="http://www.gnu.org/software/ed/ed.html"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=ed
 version=1.14.2
-release=1
+release=2
+
 
 source=(https://ftp.gnu.org/gnu/ed/$name-$version.tar.lz)
 
-build() {
-  cd $name-$version
+
+build(){
+
+  cd "$name-$version"
+
   ./configure --prefix=/ \
               --bindir=/usr/bin \
               --mandir=/usr/share/man \
-              --infodir=/usr/share/info
+              --infodir=/usr/share/info \
+              "CPPFLAGS=$CPPFLAGS" \
+              "CFLAGS=$CFLAGS" \
+              "LDFLAGS=$LDFLAGS"
 
   make
-  make DESTDIR=$PKG install
-  rm -f $PKG/usr/share/info/dir
+
 }
-uptodate() {
-local url ext
-url="https://ftp.gnu.org/gnu/$name/"
-ext=".tar.lz"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url?C=M\;O=A|grep $name-[0-9]|grep [0-9]$ext$| \
-sed "s@$url$name-@@"|sed "s@$ext@@"|tail -1
+
+
+package() {
+
+  make -C "$name-$version" "DESTDIR=$PKG" install
 
 }
