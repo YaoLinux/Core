@@ -1,18 +1,24 @@
 # Depends on: libuv
 
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="A cross-platform open-source make system"
 url="http://www.cmake.org/"
-packager="tnut <tnut@nutyx.org"
-contributors="Greg"
+
 
 name=cmake
 version=3.13.4
+release=1
 
 
-source=($url/files/v${version%.*}/$name-$version.tar.gz
-)
+source=($url/files/v${version%.*}/$name-$version.tar.gz)
 
-build() {
+
+build(){
 
 cd $name-$version
 sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
@@ -26,5 +32,11 @@ sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
 
 make
 
-make DESTDIR=$PKG install
+}
+
+package() {
+
+  cd ${name}-${version}
+  make DESTDIR="${PKG}" install
+
 }
