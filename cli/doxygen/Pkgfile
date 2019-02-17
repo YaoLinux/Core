@@ -1,26 +1,47 @@
 # Depends on: python2 cmake xapian
 
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+
 description="A documentation system for C++, C, Java, IDL and PHP languages"
 url="http://www.doxygen.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+
 name=doxygen
-version=1.8.15
+version=1.8.14
+release=2
 
 source=(https://github.com/doxygen/doxygen/archive/Release_${version//./_}.tar.gz)
+
+prepare() {
+
+	cd $name-Release_"${version//./_}"
+	mkdir -v build
+
+}
+
+
 build() {
-cd $name-Release_"${version//./_}"
-mkdir -v build
-cd build
-cmake -G "Unix Makefiles" \
--DCMAKE_BUILD_TYPE=Release \
--DCMAKE_INSTALL_PREFIX=/usr \
--Dbuild_search=ON \
--Wno-dev ..
-make
 
-make DESTDIR=$PKG install
+	cd $name-Release_"${version//./_}"/build
+	cmake -G "Unix Makefiles" \
+		-DCMAKE_BUILD_TYPE=Release \
+		-DCMAKE_INSTALL_PREFIX=/usr \
+		-Dbuild_search=ON \
+		-Wno-dev ..
+	make
 
-mkdir -p $PKG/usr/share/man/man1
-install -vm644 ../doc/*.1 $PKG/usr/share/man/man1
+}
+
+
+package() {
+
+	cd $name-Release_"${version//./_}"/build
+	make DESTDIR=$PKG install
+	mkdir -p $PKG/usr/share/man/man1
+	install -vm644 ../doc/*.1 $PKG/usr/share/man/man1
+
 }
