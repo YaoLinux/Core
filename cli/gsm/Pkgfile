@@ -1,26 +1,53 @@
-description="GSM 06.10 lossy speech compression library"
+# Depends on: 
+
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
+description="Shared libraries for GSM 06.10 lossy speech compression"
 url="http://www.quut.com/gsm/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=gsm
 version=1.0.18
+release=2
 
-source=(http://www.quut.com/$name/$name-$version.tar.gz
-        gsm.patch)
 
-build() {
-  cd $name-*
-  patch -Np0 -i ../gsm.patch
-  CFLAGS="${CFLAGS} -fPIC"
-  make CCFLAGS="-c ${CFLAGS}"
+source=(http://www.quut.com/gsm/gsm-1.0.18.tar.gz 
+		gsm.patch)
 
-  install -m755 -d $PKG/usr/{bin,lib,include/gsm,share/{licenses/${name},man/man{1,3}}}
 
-  make -j1 INSTALL_ROOT=$PKG/usr              \
-    GSM_INSTALL_INC=$PKG/usr/include/gsm      \
-    GSM_INSTALL_MAN=$PKG/usr/share/man/man3   \
-    TOAST_INSTALL_MAN=$PKG/usr/share/man/man1 \
-    install
+prepare(){
+
+  cd ${name}-${version%.*}-pl${version##*.}
+  patch -p0 -i ../gsm.patch
+
 }
 
+
+build() {
+
+  cd ${name}-${version%.*}-pl${version##*.}
+  make CCFLAGS="-c ${CFLAGS} -fPIC"
+
+}
+
+
+package() {
+
+  cd ${name}-${version%.*}-pl${version##*.}
+  # Prepare directories
+  install -m755 -d "${PKG}"/usr/{bin,lib,include/gsm,share/{licenses/${name},man/man{1,3}}}
+
+  make -j1 INSTALL_ROOT="${PKG}/usr" \
+    GSM_INSTALL_INC="${PKG}/usr/include/gsm" \
+    GSM_INSTALL_MAN="${PKG}/usr/share/man/man3" \
+    TOAST_INSTALL_MAN="${PKG}/usr/share/man/man1" \
+    install
+
+  # Install license
+  install -m644 COPYRIGHT ${PKG}/usr/share/licenses/${name}/license.txt
+
+}
