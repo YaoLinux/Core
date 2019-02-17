@@ -1,31 +1,45 @@
 # Depends on: cdrtools
 
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+
 description="DVD+-RW/R tools"
 url="http://fy.chalmers.se/~appro/linux/DVD+RW/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=dvd+rw-tools
 version=7.1
-release=4
+release=6
+
 
 source=(http://fy.chalmers.se/~appro/linux/DVD+RW/tools/dvd+rw-tools-$version.tar.gz \
         https://sources.debian.org/data/main/d/dvd+rw-tools/7.1-14/debian/patches/glibc-2.28.patch
-	dvd+rw-tools-7.0-dvddl.patch
-	dvd+rw-tools-7.0-wctomb.patch
-	dvd+rw-tools-7.0-wexit.patch
-	dvd+rw-tools-7.1-layerbreaksetup.patch)
+		dvd+rw-tools-7.0-dvddl.patch
+		dvd+rw-tools-7.0-wctomb.patch
+		dvd+rw-tools-7.0-wexit.patch
+		dvd+rw-tools-7.1-layerbreaksetup.patch)
+
+
+prepare() {
+
+	cd $name-$version
+  	patch -p0 -i ../dvd+rw-tools-7.0-dvddl.patch
+  	patch -p1 -i ../glibc-2.28.patch
+  	patch -p0 -i ../dvd+rw-tools-7.0-wctomb.patch
+  	patch -p1 -i ../dvd+rw-tools-7.0-wexit.patch
+  	patch -p1 -i ../dvd+rw-tools-7.1-layerbreaksetup.patch
+
+}
 
 build() {
+
 	cd $name-$version
-  patch -p0 -i ../dvd+rw-tools-7.0-dvddl.patch
-  patch -p1 -i ../glibc-2.28.patch
-  patch -p0 -i ../dvd+rw-tools-7.0-wctomb.patch
-  patch -p1 -i ../dvd+rw-tools-7.0-wexit.patch
-  patch -p1 -i ../dvd+rw-tools-7.1-layerbreaksetup.patch
 	make
 	mkdir -p $PKG/usr/bin $PKG/usr/share/man/man1
-        for exec in \
+    for exec in \
 	dvd+rw-booktype \
 	dvd+rw-format \
 	dvd+rw-mediainfo \
@@ -35,4 +49,5 @@ build() {
 		install -m 755 $exec $PKG/usr/bin/
 	done
 	install -m 644 growisofs.1 $PKG/usr/share/man/man1/
+
 }
