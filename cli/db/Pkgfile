@@ -1,29 +1,47 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="The Berkeley DB embedded database system"
 url="http://www.oracle.com/technology/software/products/berkeley-db/index.html"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
 
-alias=(berkeley-db)
 
 name=db
+alias=(berkeley-db)
 version=6.2.32
-release=3
+release=4
+
 
 source=(http://download.oracle.com/berkeley-db/$name-$version.tar.gz)
 
-build() {
-cd $name-$version
-cd build_unix
-../dist/configure --prefix=/usr \
---enable-compat185 \
---enable-shared \
---enable-cxx --enable-dbm
-make
-make DESTDIR=$PKG \
-docdir=/usr/share/doc/$name-$version install
 
-chown -R 0:0 $PKG
-chmod -R +w $PKG
-rm $PKG/usr/lib/{libdb-6.2.la,libdb_cxx-6.2.la}
+
+build() {
+
+	cd $name-$version
+	cd build_unix
+	../dist/configure --prefix=/usr \
+		--enable-compat185 \
+		--enable-shared \
+		--enable-cxx --enable-dbm
+	make
+
+}
+
+
+
+package() {
+
+	cd $name-$version/build_unix
+	make DESTDIR=$PKG \
+	docdir=/usr/share/doc/$name-$version install
+
+	chown -R 0:0 $PKG
+	chmod -R +w $PKG
+	rm $PKG/usr/lib/{libdb-6.2.la,libdb_cxx-6.2.la}
 
 }
