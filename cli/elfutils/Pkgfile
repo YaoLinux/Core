@@ -1,19 +1,36 @@
-# Depends on: libelf
-description="Set of utilities and libraries for handling elf files."
-url="http://xiph.org/ao/"
-packager="tnut <tnut@nutyx.org>"
+# Depends on: zlib bzip2 xz libelf
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
+description="Utilities to handle ELF object files and DWARF debugging information"
+url="https://sourceware.org/elfutils/"
+
 
 name=elfutils
 version=0.175
+release=2
 
-source=(https://sourceware.org/elfutils/ftp/$version/elfutils-$version.tar.bz2 )
 
-build() {
-cd $name-$version
-./configure --prefix=/usr \
---program-prefix="eu-"
-make
-make prefix=$PKG/usr install
-# Aready present in libelf
-rm -r "${PKG}"/usr/{lib,include}
+source=(https://sourceware.org/elfutils/ftp/$version/elfutils-$version.tar.bz2)
+
+
+build(){
+
+  cd ${name}-${version}
+  ./configure --prefix=/usr --program-prefix="eu-" --enable-deterministic-archives
+  make
+
+}
+
+
+package() {
+
+  cd ${name}-${version}
+  make DESTDIR="${PKG}" install
+  rm -r "${PKG}"/usr/{lib,include}
+
 }
