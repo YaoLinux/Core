@@ -1,35 +1,43 @@
-description="Portable version of the NetBSD 'make' build tool"
+# Depends on: python 
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
+description="Portable version of the NetBSD make build tool"
 url="http://www.crufty.net/help/sjg/bmake.html"
-packager="tnut at nutyx dot org"
+
 
 name=bmake
-version=20180919
+version=20181221
+release=2
+
 
 source=(http://www.crufty.net/ftp/pub/sjg/bmake-$version.tar.gz)
 
-build(){
-    cd $name
-    # Add missing bsd.*.mk symlinks (thanks to Arch)
-    _links_orig="dep doc init lib links man nls obj own prog subdir"
-    _links_new="dep doc inc init lib links man nls obj own prog subdir"
-    sed -i -e "s/$_links_orig/$_links_new/" mk/install-mk
 
-    cd ..
-    mkdir -p bmake-build
-    cd bmake-build
-    sh ../bmake/boot-strap --prefix=/usr op=build
+build() {
 
-    cd ../bmake-build
-    # Fix directory permissions on install
-    install -dm0755 $PKG/usr/bin
-    install -dm0755 $PKG/usr/share/man/cat1
-    sh ../bmake/boot-strap --prefix=/usr --install-destdir=$PKG op=install
+	cd bmake
+	./boot-strap --prefix=/usr op=build
+
 }
-uptodate() {
-local url ext
-ext=".tar.gz"
-url="http://www.crufty.net/ftp/pub/sjg/"
 
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url?C=M\;O=D|grep $ext$|grep $url$name-|sed "s@$url$name-@@"|sed "s@$ext@@"|head -1
+
+package() {
+
+	cd bmake
+
+	# Fix directory permissions on install
+	install -d "$PKG/usr/bin" "$PKG/usr/share/licenses/$name"
+
+	./boot-strap --install-destdir="$PKG" --prefix=/usr op=install
+
+	rm -rf "$PKG/usr/share/man/cat1"
+	install -D -m 644 bmake.1 "$PKG/usr/share/man/man1/bmake.1"
+
+	head -n70 main.c >"$PKG"/usr/share/licenses/$name/LICENSE
+
 }
