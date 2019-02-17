@@ -1,25 +1,45 @@
-description="A decentralized revision control system (bazaar)"
-url="http://bazaar.canonical.com/en/"
-contributors="alienus, tnut, greg"
-packager="tnut <tnut@nutyx.org>"
+# Depends on: python2 
 
-# Depends on: python2
+
+packager="sipo"
+contributors="Alienus, Tnut"
+maintainer="sipo"
+
+
+description="A decentralized revision control system (bazaar)"
+url="https://bazaar.canonical.com/"
+
 
 name=bzr
 version=2.7.0
 release=1
 
-source=(http://launchpad.net/bzr/${version%.*}/$version/+download/bzr-$version.tar.gz)
 
+source=(https://launchpad.net/bzr/2.7/$version/+download/$name-$version.tar.gz 
+        bzr-lazy-regex.patch)
+
+
+prepare(){
+  cd bzr-${version}
+
+  sed 's|man/man1|share/man/man1|' -i setup.py
+  sed 's|/usr/bin/env python|/usr/bin/env python2|' -i bzrlib/{plugins/bash_completion/bashcomp.py,tests/ssl_certs/create_ssls.py,patiencediff.py,_patiencediff_py.py}
+
+  patch -Np0 -i ../bzr-lazy-regex.patch
+}
 
 build() {
+  cd bzr-${version}
 
-    cd $name-$version
-    sed -i -e 's|man/man1|share/&|' setup.py
-    python2 setup.py install --prefix=/usr --root=$PKG
-
-    # bash-completion
-    install -Dm644 contrib/bash/bzr \
-        $PKG/usr/share/bash-completion/completions/bzr
-        
+  python2 setup.py build
 }
+
+package() {
+  cd bzr-${version}
+
+  python2 setup.py install --prefix='/usr' --root="${PKG}" --optimize='1'
+
+  install -dm 755 "${PKG}"/usr/share/bash-completion/completions
+  install -m 644 contrib/bash/bzr "${PKG}"/usr/share/bash-completion/completions/
+}
+
