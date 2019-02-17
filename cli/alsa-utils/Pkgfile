@@ -1,40 +1,40 @@
 # Depends on: alsa-lib xmlto libsamplerate gawk systemd dialog
 
-description="Utilities for configuring and using ALSA"
+
+packager="sipo"
+contributors=""
+maintainer="sipo"
+
+
+description="An alternative implementation of Linux sound support"
 url="http://www.alsa-project.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 run=(gawk)
 PKGMK_GROUPS=(man)
 
+
 name=alsa-utils
 version=1.1.8
-nutyx_version=10.92.3
+release=2
 
-source=(http://downloads.nutyx.org/files/nutyx-${nutyx_version}.tar.xz
-	ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2)
 
-build() {
+source=(http://yao.pausex.fr/sources/$name-$version.tar.bz2)
 
-cd $name-$version
-./configure --prefix=/usr \
---disable-alsaconf \
---disable-bat \
---disable-xmlto \
---with-curses=ncursesw \
---with-udev-rules-dir=/lib/udev/rules.d \
---with-systemdsystemunitdir=/lib/systemd/system
 
-make
-make DESTDIR=$PKG install
+build(){
+  cd ${name}-${version}
+  ./configure --prefix=/usr --disable-alsaconf --sbindir=/usr/bin \
+    --with-udev-rules-dir=/lib/udev/rules.d \
+    --with-systemdsystemunitdir=/lib/systemd/system
+  make
 }
-uptodate() {
-local url ext
 
-url="ftp://ftp.alsa-project.org/pub/utils/"
-ext=".tar.bz2"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url|grep $name-[0-9]|sed "s@$url$name-@@"|sed "s@$ext@@"|\
-sort|tail -1
+
+package() {
+  cd ${name}-${version}
+  make DESTDIR="${PKG}" install
+
+  # dir where to save ALSA state
+  install -d "${PKG}/var/lib/alsa"
 }
