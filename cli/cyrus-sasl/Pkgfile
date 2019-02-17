@@ -1,16 +1,24 @@
 # Depends on: db
 
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
 description="Cyrus saslauthd SASL authentication daemon"
 url="http://cyrusimap.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=cyrus-sasl
 version=2.1.27
-nutyx_version=10.92.3
+nutyx_version=11-RC1
 
-source=(ftp://ftp.cyrusimap.org/cyrus-sasl/$name-$version.tar.gz
-        http://downloads.tuxfamily.org/nutyx/files/nutyx-${nutyx_version}.tar.xz)
+
+source=(https://www.cyrusimap.org/releases/cyrus-sasl-${version}.tar.gz
+        http://nutyx.pausex.fr/nutyx-${nutyx_version}.tar.xz)
+
+
 build() {
 	cd $name-$version
 	./configure --prefix=/usr \
@@ -21,6 +29,10 @@ build() {
 		--with-saslauthd=/var/run/saslauthd
 
 	make
+
+
+prepare() {
+
 	make DESTDIR=$PKG install
 	install -v -m700 -d $PKG/var/lib/sasl $PKG/var/run/saslauthd
 
