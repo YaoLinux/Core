@@ -12,10 +12,10 @@ url="http://www.alsa-project.org"
 
 name=alsa-lib
 version=1.1.8
-release=2
+release=3
 
 
-source=(http://yao.pausex.fr/sources/$name-$version.tar.bz2)
+source=(ftp://ftp.alsa-project.org/pub/lib/$name-$version.tar.bz2)
 
 
 build(){
