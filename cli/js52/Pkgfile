@@ -1,31 +1,43 @@
 # Depends on: autoconf2-13 icu libffi nspr python2 zip
 
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="JS is Mozilla's JavaScript engine written in C."
 url="https://people.mozilla.org"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=js52
-version=52.2.1
-release=3
+version=52.6.0
+release=4
 
-source=( http://ftp.gnome.org/pub/gnome/teams/releng/tarballs-needing-help/mozjs/mozjs-${version}gnome1.tar.gz)
+
+source=(http://ftp.acc.umu.se/pub/gnome/teams/releng/tarballs-needing-help/mozjs/mozjs-52.6.0gnome1.tar.xz)
+
 
 build() {
 
-  cd mozjs-52.2.1gnome1
+    cd js/src
 
-  cd js/src
-
-  ./configure --prefix=/usr       \
-              --with-intl-api     \
-              --with-system-zlib  \
-              --with-system-nspr  \
-              --with-system-icu   \
-              --enable-threadsafe \
-              --enable-readline
-
-  make
-
-  make DESTDIR=$PKG install
+    ./configure --prefix=/usr       \
+                --with-intl-api     \
+                --with-system-zlib  \
+                --with-system-nspr  \
+                --with-system-icu   \
+                --enable-threadsafe \
+                --enable-readline
+    make
 
 }
+
+
+package() {
+
+    cd js/src
+    make DESTDIR=$PKG install
+
+}
+
