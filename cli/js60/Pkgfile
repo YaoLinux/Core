@@ -1,33 +1,56 @@
 # Depends on: autoconf2-13 icu libffi nspr python2 zip
 
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="JS is Mozilla's JavaScript engine written in C."
-url="https://people.mozilla.org"
-packager="tnut <tnut@nutyx.org>"
+url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
+
 
 name=js60
 version=60.1.0
+release=1
 
-source=( http://ftp.gnome.org/pub/gnome/teams/releng/tarballs-needing-help/mozjs/mozjs-60.1.0.tar.bz2)
+
+source=(http://ftp.acc.umu.se/pub/gnome/teams/releng/tarballs-needing-help/mozjs/mozjs-$version.tar.bz2)
+
+
+prepare(){
+
+    cd mozjs-$version
+
+    mkdir mozjs-build
+    cd    mozjs-build
+
+
+}
+
 
 build() {
 
-  cd mozjs-$version
-
-  mkdir mozjs-build
-  cd    mozjs-build
-
-  ../js/src/configure --prefix=/usr       \
-              --with-intl-api     \
-              --with-system-zlib  \
-              --with-system-nspr  \
-              --with-system-icu   \
-              --disable-jemalloc  \
-              --enable-readline
+   cd mozjs-$version/mozjs-build
+   ../js/src/configure --prefix=/usr       \
+                       --with-intl-api     \
+                       --with-system-zlib  \
+                       --with-system-nspr  \
+                       --with-system-icu   \
+                       --disable-jemalloc  \
+                       --enable-readline
 
   make
 
-  make DESTDIR=$PKG install
+}
+
+
+package() {
+
+   cd mozjs-$version/mozjs-build
+   make DESTDIR=$PKG install
 
   # Already present on js38
   rm $PKG/usr/lib/libjs_static.ajs
+
 }
