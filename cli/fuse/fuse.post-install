@@ -1,3 +1,0 @@
-if ! grep "fuse" /etc/modules-load.d >/dev/null; then
-        sed -i '/End/ i fuse' /etc/modules-load.d
-fi
