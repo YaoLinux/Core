@@ -1,0 +1,34 @@
+# Depends on: doxygen systemd fuse2
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+description="Library that makes it possible to implement a filesystem in a userspace program."
+url="http://fuse.sourceforge.net/"
+
+name=fuse3
+version=3.4.1
+release=1
+
+source=(https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.xz)
+
+build() {
+
+	meson --prefix=/usr fuse-$version build
+        ninja -C build
+}
+
+package() {
+
+	DESTDIR=$PKG ninja -C build install
+
+	mkdir -p $PKG/lib
+
+	mv -v $PKG/usr/lib/libfuse3.so.* $PKG/lib
+	ln -sfv ../../lib/libfuse3.so.$version $PKG/usr/lib/libfuse3.so
+
+	rm -r $PKG/dev
+	install -v -m755 -d $PKG/usr/share/doc/fuse-$version
+
+}
