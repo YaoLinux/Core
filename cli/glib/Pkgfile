@@ -19,41 +19,24 @@ release=1
 
 
 source=(http://ftp.gnome.org/pub/gnome/sources/glib/${version:0:4}/$name-$version.tar.xz
-<<<<<<< Updated upstream
 	glib-$version-skip_warnings-1.patch)
-=======
-	    http://nutyx.pausex.fr/yao.jpg)
->>>>>>> Stashed changes
 
 
 prepare() {
-
 	cd $name-$version
 	# patch -Np1 -i ../glib-$version-skip_warnings-1.patch
 	mkdir build-glib
-
 }
 
-
-<<<<<<< Updated upstream
-=======
 build() {
-
 	cd $name-$version/build-glib
 	meson --prefix=/usr -Dman=true -Dselinux=false ..
 	ninja
-
->>>>>>> Stashed changes
 }
 
 package() {
-
 	cd $name-$version/build-glib
 	DESTDIR=$PKG ninja install
-# Default YAO Wallpaper
-	install -D -m644 ../../yao.jpg \
-	$PKG/usr/share/backgrounds/yao/yao.jpg
-
 }
 
 
