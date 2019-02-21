@@ -30,8 +30,8 @@ build() {
 
 	make
 
-
-prepare() {
+}
+package() {
 
 	make DESTDIR=$PKG install
 	install -v -m700 -d $PKG/var/lib/sasl $PKG/var/run/saslauthd
