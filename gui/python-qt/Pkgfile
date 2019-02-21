@@ -8,8 +8,9 @@ contributors="Pierre B"
 name=python-qt
 version=5.12
 
-source=(http://sourceforge.net/projects/pyqt/files/PyQt5/PyQt-$version/PyQt5_gpl-$version.tar.gz)
+source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/PyQt5_gpl-${version}.tar.gz)
 build() {
+
 cd PyQt5_gpl-$version
 
 python3 configure.py   \
@@ -18,7 +19,6 @@ python3 configure.py   \
      --qsci-api
 make
 make DESTDIR=$PKG INSTALL_ROOT=$PKG install -j1
-
 
 # Already in python2-qt
 mkdir -p $PKG/usr/local/{bin,share/qt/qsci/api/python}
