@@ -19,7 +19,6 @@ release=4
 source=(http://download.oracle.com/berkeley-db/$name-$version.tar.gz)
 
 
-
 build() {
 
 	cd $name-$version
