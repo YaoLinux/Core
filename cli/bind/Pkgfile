@@ -12,12 +12,12 @@ url="http://www.isc.org/downloads/bind/"
 
 name=bind
 version=9.13.5
-nutyx_version=11-RC1
+yaolinux_version=1.0-RC1
 release=2
 
 
-source=(http://nutyx.pausex.fr/nutyx-${nutyx_version}.tar.xz
-		ftp://ftp.isc.org/isc/bind9/$version/$name-$version.tar.gz)
+source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
+	https://ftp.isc.org/isc/bind/${version}/${name}-${version}.tar.gz)
 
 
 run=(python-ply)
@@ -59,7 +59,7 @@ package(){
 	$PKG/usr/share/doc/bind-$version/misc
 
 # Service
-	cd $SRC/nutyx-${nutyx_version}
+	cd $SRC/yaolinux-${yaolinux_version}
 	make DESTDIR=$PKG install-named
 
 }
