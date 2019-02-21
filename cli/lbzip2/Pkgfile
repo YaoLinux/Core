@@ -1,21 +1,46 @@
 # Depends on: gnulib
+
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
 description="A parallel, SMP-based, bzip2-compatible compression utility"
 url="http://lbzip2.org"
-packager="tnut <tnut@nutyx.org>"
+
 
 name=lbzip2
 version=2.5
+release=2
 
-source=(http://archive.lbzip2.org/$name-$version.tar.bz2)
 
-build() {
+source=(http://archive.$name.org/$name-$version.tar.bz2
+        lbzip2-2.5-glibc-2.28.patch)
 
-cd $name-$version
 
-build-aux/autogen.sh
+prepare(){
 
-./configure --prefix=/usr
+cd "${SRC}"/$name-$version
+patch -p1 -i ../lbzip2-2.5-glibc-2.28.patch
 
-make
-make DESTDIR=$PKG install
+}
+
+
+build(){
+
+  cd "${SRC}"/$name-$version
+ 
+  ./configure --prefix=/usr
+  make
+
+}
+
+
+package() {
+
+  cd "${SRC}"/$name-$version
+ 
+  make DESTDIR="${PKG}" install
+
 }
