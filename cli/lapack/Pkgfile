@@ -1,31 +1,66 @@
-# Depends on: cmake
+# Depends on: cmake python doxygen
 
-description="Basic Linear Algebra Subprograms"
-url="http://www.netlib.org/blas"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+
+description="Linear Algebra PACKage"
+url="http://www.netlib.org/lapack"
+
 
 name=lapack
 version=3.8.0
+release=2
 
-source=(http://www.netlib.org/$name/$name-$version.tar.gz )
 
-build() {
-cd $name-$version
-mkdir build
-cd build
-cmake .. \
--DCMAKE_BUILD_TYPE=Release \
--DCMAKE_SKIP_RPATH=ON \
--DBUILD_SHARED_LIBS=ON \
--DCMAKE_INSTALL_PREFIX=/usr \
--DCMAKE_INSTALL_LIBDIR=lib \
--DCMAKE_Fortran_COMPILER=gfortran \
--DLAPACKE=ON \
--DCBLAS=ON \
--DLAPACKE_WITH_TMG=ON \
--DBUILD_TESTING=OFF
+source=(http://www.netlib.org/lapack/lapack-3.8.0.tar.gz 
+        LICENSE.blas)
 
-make
-make DESTDIR=$PKG install
+
+build(){
+  install -d build
+  cd build
+  cmake ../${name}-${version} \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_SKIP_RPATH=ON \
+    -DBUILD_SHARED_LIBS=ON \
+    -DBUILD_TESTING=OFF \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DCMAKE_Fortran_COMPILER=gfortran \
+    -DLAPACKE_WITH_TMG=ON \
+    -DCBLAS=ON \
+    -DBUILD_DEPRECATED=ON
+  make
+
+# Build man pages
+  cd ../$name-$version
+  doxygen DOCS/Doxyfile_man
+}
+
+package() {
+
+  cd build
+  make DESTDIR="$PKG" install
+
+  rm -r "$PKG"/usr/lib/{libblas.*,libcblas.*,liblapacke.*}
+  rm -r "$PKG"/usr/lib/pkgconfig/{blas.*,cblas.*,lapacke.*}
+  rm -r "$PKG"/usr/lib/cmake/{cblas*,lapacke*}
+  rm -r "$PKG"/usr/include
+
+  cd $SRC/build/BLAS
+  make DESTDIR="$PKG" install
+  
+  install -m755 -d "${PKG}/usr/share/licenses/blas"
+  install -m644 "${SRC}/LICENSE.blas" \
+    "${PKG}/usr/share/licenses/blas/"
+
+  cd $SRC/build/CBLAS
+  make DESTDIR="$PKG" install
+
+  cd $SRC/build/LAPACKE
+  make DESTDIR="$PKG" install
+
 }
