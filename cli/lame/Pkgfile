@@ -1,21 +1,38 @@
 # Depends on: libsndfile nasm
 
+
+packager="sipo"
+contributors="Tnut,Pierre B. "
+maintainer="sipo"
+
+
 description="MP3 encoder, an MP3 frame analyzer useful for creating, analyzing compressed audio files."
 url="http://lame.sourceforge.net/index.php"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=lame
 version=3.100
+release=4
+
 
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz)
+
+
 build() {
-cd $name-$version
-./configure --prefix=/usr --enable-nasm --disable-static
-make
-make DESTDIR=$PKG install
 
-# Obsolet lib
+  cd lame-${version}
 
-rm $PKG/usr/lib/libmp3lame.la
+  ./configure \
+    --prefix='/usr' \
+    --enable-nasm \
+    --enable-shared
+  make
+
+}
+
+package() {
+
+  cd lame-${version}
+  make DESTDIR="${PKG}" install
+
 }
