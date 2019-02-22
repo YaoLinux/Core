@@ -1,26 +1,36 @@
-description="A library to control A/V devices using the 1394ta AV/C commands."
-url="https://ieee1394.wiki.kernel.org/index.php/Main_Page"
-contributors="fanch"
-packager="greg<greg@nutyx.org>"
+# Depends on: libraw1394 
 
-# Depends on: libraw1394
+
+packager="sipo"
+contributors=""
+maintainer="sipo"
+
+
+description="A library to control A/V devices using the 1394ta AV/C commands."
+url="https://sourceforge.net/projects/libavc1394/"
+
 
 name=libavc1394
 version=0.5.4
-release=2
+release=1
+
 
 source=(http://downloads.sourceforge.net/sourceforge/libavc1394/${name}-${version}.tar.gz)
 
-build() {
 
-   cd $SRC/$name-$version
-   ./configure --prefix=/usr \
-   --mandir=/usr/share/man \
-   --disable-static
-   make
+build(){
 
-   make DESTDIR=$PKG install
+  cd "${SRC}/${name}-${version}"
+  ./configure --prefix=/usr --mandir=/usr/share/man --disable-static
+  make
 
-   # Obsolet libs
-   rm $PKG/usr/lib/lib{avc,rom}1394.la
+}
+
+package() {
+
+  cd "${SRC}/${name}-${version}"
+  make DESTDIR="${PKG}" install
+# Obsolet libs
+  rm $PKG/usr/lib/lib{avc,rom}1394.la
+
 }
