@@ -7,6 +7,9 @@ contributors="Pierre B"
 
 name=python2-qt
 version=5.12
+release=2
+
+run=(python2-enum34 python2-sip-qt5)
 
 source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/PyQt5_gpl-${version}.tar.gz)
 build() {
