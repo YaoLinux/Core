@@ -1,0 +1,25 @@
+#Depends on : freetype python2-pip python2-pillow mercurial python python-pillow
+
+description="A proven industry-strength PDF generating solution"
+url="https://bitbucket.org/rptlab/reportlab"
+packager="rems <rems@yaolinux.org>"
+contributors=""
+
+name=python-reportlab
+version=3.5.13
+
+source=(https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-${version}.tar.gz)
+
+prepare() {
+
+cp -rf reportlab-${version} reportlab-${version}-py2
+
+}
+
+build() {
+cd reportlab-${version}
+python3 setup.py install --root=$PKG --optimize=1
+
+cd ../reportlab-${version}-py2
+python2 setup.py install --root=$PKG --optimize=1
+}
