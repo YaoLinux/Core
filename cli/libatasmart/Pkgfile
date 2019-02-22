@@ -1,27 +1,42 @@
-#Depends on: systemd
+# Depends on: systemd
 
-description="A disk reporting library. It only supports a subset of the ATA S.M.A.R.T. functionality."
+
+packager="sipo"
+contributors="Pierre B., Tnut"
+maintainer="sipo"
+
+
+description="ATA S.M.A.R.T. Reading and Parsing Library"
 url="http://0pointer.de/blog/projects/being-smart.html"
-maintainer="Lennart"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=libatasmart
 version=0.19
-release=4
+release=1
 
-source=(http://0pointer.de/public/$name-$version.tar.xz)
+
+source=(http://0pointer.de/public/$name-$version.tar.xz 
+        0001-Dont-test-undefined-bits.patch 
+        0002-Drop-our-own-many-bad-sectors-heuristic.patch)
+
+
+prepare(){
+  cd $name-$version
+  patch -Np1 -i ../0001-Dont-test-undefined-bits.patch
+  patch -Np1 -i ../0002-Drop-our-own-many-bad-sectors-heuristic.patch
+}
 
 build() {
-cd $name-$version
-./configure --prefix=/usr \
---disable-static
+  cd "${SRC}/${name}-${version}"
+  ./configure --prefix=/usr \
+    --sysconfdir=/etc \
+    --localstatedir=/var \
+    --sbindir=/usr/bin \
+    --disable-static
+  make
+}
 
-make
-
-make DESTDIR=$PKG docdir=/usr/share/doc/libatasmart-$version install
-
-# Obsolet libs
-
-rm $PKG/usr/lib/libatasmart.la
+package() {
+  cd "${SRC}/${name}-${version}"
+  make DESTDIR="${PKG}" install
 }
