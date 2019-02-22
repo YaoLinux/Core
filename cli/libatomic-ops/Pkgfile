@@ -1,37 +1,45 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+
 description="Implementations for atomic memory update operations on a number of architectures."
 url="http://www.hpl.hp.com/research/linux/atomic_ops/"
-packager="tnut<tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=libatomic-ops
 version=7.6.8
 
+
 source=(http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-$version.tar.gz)
+
 
 build() {
 
-cd libatomic_ops-$version
+    cd libatomic_ops-$version
 
-./configure --prefix=/usr    \
-            --enable-shared  \
-            --disable-static \
-            --docdir=/usr/share/doc/libatomic_ops-$version
+    ./configure --prefix=/usr    \
+                --enable-shared  \
+                --disable-static \
+                --docdir=/usr/share/doc/libatomic_ops-$version
 
-make
-make DESTDIR=$PKG install
+    make
 
-rm -vrf $PKG/usr/share/libatomic_ops
+}
+
+
+package() {
+
+    cd libatomic_ops-$version
+    make DESTDIR=$PKG install
+
+    rm -vrf $PKG/usr/share/libatomic_ops
 
 # Obsolet lib
-rm $PKG/usr/lib/libatomic_ops.la
-rm $PKG/usr/lib/libatomic_ops_gpl.la
-}
-uptodate() {
-local url ext name
-name=libatomic_ops
-url="http://www.ivmaisoft.com/_bin/atomic_ops/"
-ext=".tar.gz"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url?C=M\;O=A|grep $name-[0-9]|grep [0-9]$ext$| \
-sed "s@$url$name-@@"|sed "s@$ext@@"|tail -1
+    rm $PKG/usr/lib/libatomic_ops.la
+    rm $PKG/usr/lib/libatomic_ops_gpl.la
+
 }
