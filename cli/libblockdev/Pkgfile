@@ -1,23 +1,44 @@
-# Depends on: glib gobject-introspection libbytesize lvm2 volume_key parted gptfdisk gtk-doc yaml
+# Depends on: glib gobject-introspection libbytesize lvm2 volume_key parted gptfdisk gtk-doc yaml systemd python-yaml python autoconf-archive 
 
-description="C library supporting GObject introspection for manipulation of block devices"
-url="https://github.com/storaged-project/libblockdev"
-packager="tnut <tnut@nutyx.org>"
+
+packager="sipo"
+contributors="Tnut"
+maintainer="sipo"
+
+
+description="A library for manipulating block devices"
+url="https://github.com/rhinstaller/libblockdev"
+
 
 run=(gptfdisk)
 
-name=libblockdev
-version=2.20
 
-source=( https://github.com/storaged-project/$name/releases/download/$version-1/$name-$version.tar.gz)
-build() {
-cd $name-$version
-./configure --prefix=/usr \
---with-python3 \
---without-dm   \
---without-nvdimm \
---sysconfdir=/etc
-make
-make DESTDIR=$PKG install
-rm $PKG/usr/lib/*.la
+name=libblockdev
+version=2.21
+release=1
+
+
+source=(https://github.com/storaged-project/$name/archive/$version-1.tar.gz)
+
+
+build(){
+
+  cd "$SRC"/$name-$version-1
+  ./autogen.sh
+  ./configure --prefix=/usr \
+              --with-python3 \
+              --without-dm   \
+              --without-nvdimm \
+              --sysconfdir=/etc
+  make
+
+}
+
+
+package() {
+
+  cd "$SRC"/$name-$version-1
+  make DESTDIR="$PKG" install
+  rm $PKG/usr/lib/*.la
+
 }
