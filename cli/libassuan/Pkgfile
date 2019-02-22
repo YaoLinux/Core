@@ -1,33 +1,33 @@
 # Depends on: libgpg-error 
 
-description="Contains an IPC library used by some of the other GnuPG related packages"
-url="http://www.gnupg.org/related_software/libassuan/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="sipo"
+contributors="Tnut, Pierre B."
+maintainer="sipo"
+
+
+description="IPC library used by some GnuPG related software"
+url="https://www.gnupg.org/related_software/libassuan/"
+
 
 name=libassuan
-version=2.5.2
+version=2.5.3
+release=1
 
-source=( ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2)
 
-build() {
+source=(https://gnupg.org/ftp/gcrypt/libassuan/$name-$version.tar.bz2)
 
-cd $name-$version
-./configure --prefix=/usr \
---mandir=/usr/share/man \
---infodir=/usr/share/info
 
-make
-make DESTDIR=$PKG install
-
-# Obsolet lib
-rm $PKG/usr/lib/libassuan.la
+build(){
+	cd "${SRC}/${name}-${version}"
+	./configure --prefix=/usr
+	make
 }
-uptodate() {
-local url ext
 
-url="https://www.gnupg.org/ftp/gcrypt/$name"
-ext=".tar.bz2"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url|grep $name-|head -1|sed "s@$url/$name-@@"|sed "s@$ext@@"
+
+package() {
+	cd "${SRC}/${name}-${version}"
+	make DESTDIR="${PKG}" install
+# Obsolet lib
+    rm $PKG/usr/lib/libassuan.la
 }
