@@ -11,8 +11,8 @@ url="http://www.doxygen.org/"
 
 
 name=doxygen
-version=1.8.14
-release=2
+version=1.8.15
+release=1
 
 source=(https://github.com/doxygen/doxygen/archive/Release_${version//./_}.tar.gz)
 
