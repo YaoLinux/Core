@@ -11,19 +11,19 @@ url="https://acpica.org"
 
 
 name=acpica
-version=20190108
-release=2
+version=20190215
+release=1
 
 
-source=(https://acpica.org/sites/acpica/files/$name-unix-$version.tar.gz)
+source=(https://github.com/acpica/acpica/archive/R02_15_19.tar.gz)
 
 
 build(){
-  cd acpica-unix-${version}
+  cd $name-R02_15_19
   make
 }
 
 package() {
-  cd acpica-unix-${version}
+  cd $name-R02_15_19
   make DESTDIR=${PKG} install
 }
