@@ -1,27 +1,38 @@
+# Depends on:
+
+
+packager="sipo"
+contributors="Tnut,Pierre B "
+maintainer="sipo"
+
+
 description="Contains a library that defines common error values for all GnuPG components"
 url="http://www.gnupg.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
 
 name=libgpg-error
-version=1.33
+version=1.35
+
 
 source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr
-make
-make DESTDIR=$PKG install
-install -v -m644 -D README \
-$PKG/usr/share/doc/$name-$version/README
-rm -f $PKG/usr/lib/$name.la
-}
-uptodate() {
-local url ext
 
-url="https://www.gnupg.org/ftp/gcrypt/$name"
-ext=".tar.bz2"
-lynx -read_timeout=20 -dump -listonly -nonumbers \
-$url|grep $name-|head -1|sed "s@$url/$name-@@"|sed "s@$ext@@"
+build() {
+
+    cd $name-$version
+    ./configure --prefix=/usr
+    make
+
 }
+
+
+package() {
+
+    cd $name-$version
+    make DESTDIR=$PKG install
+    install -v -m644 -D README \
+    $PKG/usr/share/doc/$name-$version/README
+    rm -f $PKG/usr/lib/$name.la
+
+}
+
