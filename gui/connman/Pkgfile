@@ -1,0 +1,49 @@
+#Depends on: bluez wpa-supplicant openvpn iwd dbus iptables gnutls glib polkit
+
+pkgdesc="Intel's modular network connection manager"
+url="https://01.org/connman"
+packager="Dania <Dania@nutyx.org>"
+contributors=""                                                                                                       
+
+name=connman
+version=1.36
+
+source=(https://www.kernel.org/pub/linux/network/$name/$name-$version.tar.xz
+        allow_group_network.diff)
+
+prepare(){
+  cd $name-$version
+  patch -Np1 -i ../allow_group_network.diff
+}
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+      --bindir=/usr/bin \
+      --sbindir=/usr/bin \
+      --with-systemdunitdir=/lib/systemd/system \
+      --enable-openvpn \
+      --enable-polkit \
+      --enable-client \
+      --enable-nmcompat \
+      --enable-pie \
+      --enable-iwd
+  make
+
+}
+
+package() {
+  cd $name-$version
+  
+  make DESTDIR=$PKG install
+
+  install -Dm755 $SRC/$name-$version/client/${name}ctl $PKG/usr/bin/${name}ctl
+  find $PKG/usr -name \*.service -exec sed -i 's/s\(bin\)/\1/' {} +
+
+ # See FS#48044
+  sed -i 's/ProtectSystem=full/ProtectSystem=true/' $PKG/lib/systemd/system/connman.service
+  
+  rm -r $PKG/usr/lib/tmpfiles.d
+
+}
