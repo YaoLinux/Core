@@ -1,0 +1,20 @@
+#Depends on: efl dbus-python
+
+description="python2 bindings for the Enlightenment Foundation Libraries"
+url="http://www.enlightenment.org"
+packager="YaoLinux Teams"
+maintainer="Dania <Dania@nutyx.org>"
+
+name=python2-efl
+version=1.21.0
+_pkgname=python-efl
+
+source=(http://download.enlightenment.org/rel/bindings/python/$_pkgname-$version.tar.xz)
+
+build() {
+  cd $_pkgname-$version
+
+   python2 setup.py install --root=$PKG --optimize=1
+
+}
+
