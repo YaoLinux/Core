@@ -1,0 +1,19 @@
+# Depends on: xorg-fontconfig
+
+description=""
+packager="YaoLinux Teams"
+maintainer="Graknu <Graknu@yaolinux.org>"
+url="https://www.google.com/get/noto/#emoji-zsye"
+
+name=font-emojie-color
+version=unhinted
+release=1
+
+source=(https://noto-website-2.storage.googleapis.com/pkgs/NotoColorEmoji-unhinted.zip)
+
+
+build () {
+  mkdir -pv $PKG/usr/share/fonts/noto
+  install -m644 NotoColorEmoji.ttf $PKG/usr/share/fonts/noto
+}
+
