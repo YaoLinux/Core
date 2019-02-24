@@ -1,0 +1,27 @@
+#Depends on: dbus glibc
+
+description="Internet Wireless Daemon" 
+url="https://git.kernel.org/cgit/network/wireless/iwd.git/"
+maintainer="Dania <Dania@nutyx.org>"
+packager="YaoLinux Teams"
+
+pkgname=iwd
+pkgver=0.14
+
+source=(https://www.kernel.org/pub/linux/network/wireless/iwd-${pkgver}.tar.xz
+        iwd.tmpfiles)
+
+build() {
+  cd $name-$version
+	./configure --prefix=/usr \
+	--sysconfdir=/etc \
+	--libexecdir=/usr/lib/iwd \
+	--localstatedir=/var
+  make
+}
+
+package() {
+   cd $name-$version
+   make install DESTDIR=$PKG
+}
+
