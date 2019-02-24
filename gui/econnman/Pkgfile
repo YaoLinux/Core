@@ -1,0 +1,29 @@
+#Depends on: python2-efl connman 
+
+description="Enlightenment ConnMan user interface"
+url="https://phab.enlightenment.org/w/projects/econnman/"
+maintainer="Dania <Dania@nutyx.org>"
+packager="YaoLinux Team"
+
+name=econnman
+version=1.1
+
+run=(python2-efl dbus-python)
+
+source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+
+  ./autogen.sh
+  ./configure --prefix=/usr
+
+  make
+
+}
+
+package() {
+  cd $name-$version  
+
+  make DESTDIR=$PKG install
+}
