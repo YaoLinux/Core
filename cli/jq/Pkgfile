@@ -1,0 +1,26 @@
+# Depends on: 
+
+description="Json processor in cli"
+packager="YaoLinux Teams"
+maintainer="Graknu <graknu@yaolinux.org>"
+url="https://stedolan.github.io/jq/"
+
+name=jq
+version=1.6
+release=1
+
+source=(https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz)
+
+
+build () {
+  cd $name-$version
+  autoreconf -i
+  ./configure --prefix=/usr \
+     --disable-maintainer-mode
+  make
+}
+
+package() {
+  cd $name-$version
+  make DESTDIR=$PKG install
+}
