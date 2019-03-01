@@ -2,23 +2,26 @@
 
 description="A garbage collector for C and C++"
 url="http://downloads.sourceforge.net/giflib/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+maintainer="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
+
+PKGMK_IGNORE_UNPACK="yes"
 
 name=giflib
-version=5.1.4
-release=2
+version=5.1.6
 
-source=(http://downloads.sourceforge.net/giflib/giflib-$version.tar.bz2 )
+source=(https://sourceforge.net/projects/giflib/files/giflib-$version.tar.gz)
+
 build() {
+
+tar xf giflib-$version.tar.gz
+
 cd $name-$version
-./configure --prefix=/usr --disable-static
+
 make
 make DESTDIR=$PKG install
+
 install -v -dm755 $PKG/usr/share/doc/giflib-$version/html
 install -v -m644 doc/*.html \
 $PKG/usr/share/doc/giflib-$version/html
-
-# Obsolet lib
-rm $PKG/usr/lib/libgif.la
 }
