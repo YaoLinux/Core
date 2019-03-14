@@ -4,7 +4,7 @@ description="HTTP library with thread-safe connection pooling and file post supp
 packager="tnut <tnut@nutyx.org>"
 
 name=python-urllib3
-version=1.23
+version=1.24.1
 
 _name=urllib3
 
