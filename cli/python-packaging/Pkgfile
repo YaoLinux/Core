@@ -6,7 +6,7 @@ packager="Rocket"
 contributors="rems"
 
 name=python-packaging
-version=18.0
+version=19.0
 release=2
 
 source=(https://pypi.io/packages/source/p/packaging/packaging-$version.tar.gz)
