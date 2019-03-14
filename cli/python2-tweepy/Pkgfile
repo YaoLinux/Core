@@ -7,10 +7,10 @@ packager="tnut <tnut@nutyx.org>"
 
 
 name=python2-tweepy
-version=3.5.0
+version=3.7.0
 release=1
 
-source=(https://pypi.python.org/packages/a8/2d/dee8fd23f8315e88717dffbfc3dc036d78897ac1571624dca87d5f9e64f6/tweepy-3.5.0.tar.gz)
+source=(https://files.pythonhosted.org/packages/9c/dc/ac8f5648ea96b7a48e9a17f55a8f77eba470cbba439d7e2aa92d9b6ff811/tweepy-3.7.0.tar.gz)
 
 build() {
 
