@@ -6,7 +6,7 @@ packager="Rocket"
 contributors="rems"
 
 name=python-sphinx
-version=1.8.3
+version=1.8.4
 
 source=(https://pypi.org/packages/source/S/Sphinx/Sphinx-$version.tar.gz)
 
