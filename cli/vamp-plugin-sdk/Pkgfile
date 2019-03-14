@@ -6,10 +6,10 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B"
 
 name=vamp-plugin-sdk
-version=2.6
+version=2.8.0
 release=2
 
-source=(https://code.soundsoftware.ac.uk/attachments/download/1520/$name-$version.tar.gz)
+source=(https://code.soundsoftware.ac.uk/attachments/download/2450/$name-$version.tar.gz)
 
 build() {
 cd $SRC/$name-$version
