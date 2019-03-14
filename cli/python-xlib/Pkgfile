@@ -6,7 +6,7 @@ packager="Dania <Dania@nutyx.org>"
 contributors=""
 
 name=python-xlib
-version=0.23
+version=0.24
 
 source=(https://github.com/python-xlib/python-xlib/archive/$version.tar.gz)
 
