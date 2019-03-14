@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Greg"
 
 name=mbedtls
-version=2.13.0
+version=2.16.0
 
 source=(https://tls.mbed.org/download/mbedtls-$version-gpl.tgz
 )
