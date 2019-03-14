@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Alienus"
 
 name=python2-setuptools
-version=40.6.3
+version=40.8.0
 release=1
 
 PKGMK_KEEP_SOURCES=no
