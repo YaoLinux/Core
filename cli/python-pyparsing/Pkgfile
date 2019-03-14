@@ -6,7 +6,7 @@ contributors=""
 packager="rems <rems@nutyx.org>"
  
 name=python-pyparsing
-version=2.3.0
+version=2.3.1
 
 run=(python)
 
