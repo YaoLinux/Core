@@ -6,7 +6,7 @@ packager="tnut@nutyx.org>"
 contributors="Greg"
 
 name=python-lxml
-version=4.2.5
+version=4.3.2
 
 source=(https://lxml.de/files/lxml-$version.tgz)
 
