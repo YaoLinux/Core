@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Remy"
 
 name=python-mutagen
-version=1.40.0
+version=1.42.0
 
 source=(https://github.com/quodlibet/mutagen/releases/download/release-$version/mutagen-$version.tar.gz)
 
