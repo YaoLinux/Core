@@ -6,17 +6,10 @@ packager="Dania <Dania@nutyx.org>"
 contributors=""
 
 name=python-psutil
-version=5.4.8
+version=5.5.0
 
-source=(https://github.com/giampaolo/psutil/archive/release-$version.tar.gz
-        fix_disk_io_counters.patch
-        fix_test_disk_io_counters_sysfs.patch)
+source=(https://github.com/giampaolo/psutil/archive/release-$version.tar.gz)
 
-prepare() {
-  cd psutil-release-$version
-  patch -Np1 -i $SRC/fix_disk_io_counters.patch
-  patch -Np1 -i $SRC/fix_test_disk_io_counters_sysfs.patch
-}
 
 build() {
 
