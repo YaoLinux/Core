@@ -7,7 +7,9 @@ contributors="Rémy"
 
 name=python-sgmllib
 version=5.2.1
-release=2
+release=3
+
+PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/kurtmckee/feedparser/archive/$version.tar.gz)
 
