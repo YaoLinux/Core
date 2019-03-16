@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B"
 
 name=v4l-utils
-version=1.16.2
+version=1.16.3
 release=2
 
 source=(http://linuxtv.org/downloads/v4l-utils/$name-$version.tar.bz2)
