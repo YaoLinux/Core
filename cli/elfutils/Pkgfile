@@ -11,7 +11,7 @@ url="https://sourceware.org/elfutils/"
 
 
 name=elfutils
-version=0.175
+version=0.176
 release=2
 
 
