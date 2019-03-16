@@ -6,13 +6,13 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B"
 
 name=libpgf
-version=7.15.32
+version=7.19.3
 release=2
 
 source=(http://sourceforge.net/projects/$name/files/$name/$version-latest/libPGF-codec-and-console-src.zip)
 
 build() {
- cd $SRC/PGF/Codec
+ cd $SRC/libPGF-codec-and-console-src/PGF/Codec
  dos2unix configure.ac
  sh ./autogen.sh
  ./configure --prefix=/usr
