@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 
 name=efl
 version=1.21.1
-release=2
+release=3
 
 run=(shared-mime-info)
 
