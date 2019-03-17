@@ -7,21 +7,35 @@ contributors="Pierre B"
 
 name=libvpx
 version=1.8.0
-release=1
+release=2
 
 PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/webmproject/$name/archive/v$version.tar.gz)
 build() {
 cd $name-$version
+
 sed   -e 's/cp -p/cp/'       \
       -i build/make/Makefile 
+
 chmod -v 644 vpx/*.h 
-mkdir ../libvpx-build
-cd ../libvpx-build
-../libvpx-$version/configure --prefix=/usr \
---enable-shared --disable-static
+
+mkdir ../build
+cd ../build
+
+../libvpx-$version/configure \
+                   --prefix=/usr \
+                   --enable-shared \
+                   --disable-static \
+                   --enable-pic \
+                   --enable-postproc \
+                   --enable-runtime-cpu-detect \
+                   --enable-vp8 \
+                   --enable-vp9 \
+                   --enable-vp9-highbitdepth \
+                   --enable-vp9-temporal-denoising
+
 make
 
-make DESTDIR=$PKG install
+make DIST_DIR="${PKG}"/usr install
 }
