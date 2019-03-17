@@ -7,7 +7,7 @@ packager="greg<greg@nutyx.org>"
 
 name=libiec61883
 version=1.2.0
-release=2
+release=3
 
 source=(https://www.kernel.org/pub/linux/libs/ieee1394/${name}-${version}.tar.xz)
 
