@@ -5,17 +5,19 @@ url="https://git.kernel.org/cgit/network/wireless/iwd.git/"
 maintainer="Dania <Dania@nutyx.org>"
 packager="YaoLinux Teams"
 
-pkgname=iwd
-pkgver=0.14
+name=iwd
+version=0.17
 
-source=(https://www.kernel.org/pub/linux/network/wireless/iwd-${pkgver}.tar.xz
+source=(https://www.kernel.org/pub/linux/network/wireless/iwd-${version}.tar.xz
         iwd.tmpfiles)
 
 build() {
   cd $name-$version
-	./configure --prefix=/usr \
+
+      ./configure --prefix=/usr \
 	--sysconfdir=/etc \
 	--libexecdir=/usr/lib/iwd \
+        --enable-wired \
 	--localstatedir=/var
   make
 }
@@ -23,5 +25,7 @@ build() {
 package() {
    cd $name-$version
    make install DESTDIR=$PKG
+   install -Dm644 $SRC/iwd.tmpfiles $PKG/usr/lib/tmpfiles.d/iwd.conf
+
 }
 
