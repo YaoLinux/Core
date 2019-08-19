@@ -1,6 +1,5 @@
 # Depends on: pcre apr-util sqlite expat
 
-
 packager="sipo"
 contributors=""
 maintainer="sipo"
@@ -9,16 +8,16 @@ maintainer="sipo"
 description="A high performance Unix-based HTTP server"
 url="http://www.apache.org/dist/httpd"
 
-
 name=apache
-version=2.4.38
-nutyx_version=11-RC1
-release=2
+version=2.4.41
+nutyx_version=1.0-RC1
+release=3
 
 
-source=(http://pausex.fr/nutyx-${nutyx_version}.tar.xz
-		http://archive.apache.org/dist/httpd/httpd-$version.tar.bz2
-		http://www.linuxfromscratch.org/patches/blfs/svn/httpd-$version-blfs_layout-1.patch)
+source=(http://download.pausex.fr/files/yaolinux-1.0-RC1.tar.xz
+	http://archive.apache.org/dist/httpd/httpd-$version.tar.bz2
+	http://www.linuxfromscratch.org/patches/blfs/svn/httpd-$version-blfs_layout-1.patch
+)
 
 
 prepare(){
@@ -62,10 +61,9 @@ package() {
 	chmod 4754 $PKG/usr/lib/httpd/suexec
 
 	chown -v -R apache:apache $PKG/srv/www
-	rm -f $PKG/srv/www/htdocs/index.html
 
 	# Service
-	cd $SRC/nutyx-${nutyx_version}
+	cd $SRC/yaolinux-${nutyx_version}
 	make DESTDIR=$PKG install-httpd
 
 }
