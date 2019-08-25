@@ -1,4 +1,5 @@
-# Depends on: glib js52 gobject-introspection intltool perl-xml-parser libxslt docbook-xsl systemd
+# Depends on: glib js60 gobject-introspection intltool perl-xml-parser 
+libxslt docbook-xsl systemd
 
 description="Application development toolkit for controlling system-wide privileges"
 url="http://hal.freedesktop.org/docs/polkit"
@@ -6,15 +7,13 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B"
 
 name=polkit
-version=0.115
-release=3
+version=0.116
+release=2
 
-source=(http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-security_patch-3.patch
-	http://www.freedesktop.org/software/polkit/releases/$name-$version.tar.gz)
+source=(http://www.freedesktop.org/software/polkit/releases/$name-$version.tar.gz)
 
 build() {
 cd $name-$version
-patch -Np1 -i ../$name-$version-security_patch-3.patch
 
 ./configure --prefix=/usr \
 --sysconfdir=/etc \
