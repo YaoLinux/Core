@@ -6,7 +6,8 @@ maintainer="Dania <Dania@nutyx.org>"
 packager="YaoLinux Teams"
 
 name=iwd
-version=0.17
+version=0.19
+release=2
 
 source=(https://www.kernel.org/pub/linux/network/wireless/iwd-${version}.tar.xz
         iwd.tmpfiles)
@@ -15,7 +16,7 @@ build() {
   cd $name-$version
 
       ./configure --prefix=/usr \
-	--sysconfdir=/etc \
+	--sysconfdir=/etc/iwd \
 	--libexecdir=/usr/lib/iwd \
         --enable-wired \
 	--localstatedir=/var
