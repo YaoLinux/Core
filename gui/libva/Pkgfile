@@ -2,11 +2,11 @@
 
 description="Video Acceleration (VA) API for Linux"
 url="https://01.org/linuxmedia/vaapi"
-packager="tnut <tnut@nutyx.org>"
-contributors="greg, remy"
+packager="Yaolinux Team"
+maintainer="remy"
 
 name=libva
-version=2.4.0
+version=2.5.0
 
 source=(https://github.com/01org/libva/releases/download/$version/$name-$version.tar.bz2)
 
