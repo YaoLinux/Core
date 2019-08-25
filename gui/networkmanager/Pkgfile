@@ -23,8 +23,8 @@ sed '/initrd/d' -i src/meson.build
 
 grep -rl '^#!.*python$' | xargs sed -i '1s/python/&3/'
 
-mkdir build &&
-cd    build    &&
+mkdir build 
+cd    build
 
 CXXFLAGS+="-O2 -fPIC"            \
 meson --prefix /usr              \
@@ -49,7 +49,7 @@ meson --prefix /usr              \
 ninja
 DESTDIR=$PKG ninja install
  
-mv -v $PKG/usr/share/doc/NetworkManager{,-1.18.1}
+mv -v $PKG/usr/share/doc/NetworkManager{,-$version}
 
 cat >> $PKG/etc/NetworkManager/NetworkManager.conf << "EOF"
 [main]
@@ -81,7 +81,3 @@ polkit.addRule(function(action, subject) {
 EOF
 
 }
-
-
-
-
