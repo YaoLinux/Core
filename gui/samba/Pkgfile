@@ -6,10 +6,10 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B, Tnut, Greg"
 
 name=samba
-version=4.9.4
-nutyx_version=10.92.3
+version=4.10.7
+yao_version=1.0-RC1
 
-source=(http://downloads.tuxfamily.org/nutyx/files/nutyx-${nutyx_version}.tar.xz
+source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yao_version}.tar.xz
 	https://download.samba.org/pub/samba/stable/$name-$version.tar.gz)
 
 build() {
@@ -27,7 +27,7 @@ LDFLAGS+=" -ltirpc"                       \
     --with-pammodulesdir=/lib/security  \
     --without-ad-dc                     \
     --enable-fhs                        \
-    --with-systemd                   \
+    --with-systemd                      \
     --enable-selftest                   \
     --bundled-libraries=!talloc,!pytalloc-util,!tevent,!popt,!tdb,!ldb
 
@@ -59,7 +59,7 @@ install -d cups/backend
 ln -v -sf $PKG/usr/bin/smbspool $PKG/usr/lib/cups/backend/smb
 
 # service
-cd $SRC/nutyx-${nutyx_version}
+cd $SRC/yaolinux-${yao_version}
 make DESTDIR=$PKG install-samba
 make DESTDIR=$PKG install-winbindd
 
