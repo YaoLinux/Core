@@ -1,4 +1,4 @@
-# Depends on: nettle
+# Depends on: nettle gnutls
 
 description="Small and modern C++ library for Filezilla" 
 url="https://lib.filezilla-project.org/"
@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Greg, Rémy"
 
 name=libfilezilla
-version=0.15.1
+version=0.18.1
 
 source=(https://download.filezilla-project.org/libfilezilla/libfilezilla-$version.tar.bz2)
 
@@ -14,9 +14,11 @@ build() {
 
 cd $SRC/$name-$version
 ./configure --prefix=/usr \
---disable-static
+            --disable-static
+
 make
 make DESTDIR=$PKG install
+
 # Obsolets libs
 rm $PKG/usr/lib/libfilezilla.la
 }
