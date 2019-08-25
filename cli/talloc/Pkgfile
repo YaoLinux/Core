@@ -1,17 +1,21 @@
-# Depends on: python2 docbook-xsl libxslt
+# Depends on: python docbook-xsl libxslt
 
 description="Hierarchical, reference counted memory pool system with destructors."
 url="https://talloc.samba.org"
 packager="tnut <tnut@nutyx.org>"
 
 name=talloc
-version=2.1.14
+version=2.2.0
 
 source=(https://www.samba.org/ftp/$name/$name-$version.tar.gz)
 
 build() {
 cd $name-$version
-./configure --prefix=/usr
+./configure --prefix=/usr \
+            --bundled-libraries=NONE \
+            --builtin-libraries=replace \
+            --enable-talloc-compat1
+
 make
 make DESTDIR=$PKG install
 }
