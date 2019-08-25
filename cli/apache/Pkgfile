@@ -1,6 +1,6 @@
 # Depends on: pcre apr-util sqlite expat
 
-packager="sipo"
+packager="Yaolinux Team"
 contributors=""
 maintainer="sipo"
 
