@@ -8,7 +8,7 @@ contributors="Pierre B, Greg"
 name=xorg-libxklavier
 _name=libxklavier
 version=5.4
-release=2
+release=4
 
 source=(http://pkgs.fedoraproject.org/repo/pkgs/libxklavier/${_name}-$version.tar.bz2/13af74dcb6011ecedf1e3ed122bd31fa/${_name}-$version.tar.bz2)
 
