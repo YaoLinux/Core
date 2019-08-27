@@ -1,4 +1,4 @@
-# Depends on: intltool xorgproto xorg-libx11 perl-xml-parser
+# Depends on: intltool xorgproto xorg-libx11
 
 description="X keyboard configuration database"
 url="http://www.freedesktop.org/wiki/Software_2fXKeyboardConfig"
@@ -9,7 +9,7 @@ _name=xkeyboard-config
 name=xorg-xkeyboard-config
 
 alias=(xkeyboard-config)
-version=2.25
+version=2.27
 
 source=( http://xorg.freedesktop.org/archive/individual/data/${_name}/${_name}-$version.tar.bz2)
 
