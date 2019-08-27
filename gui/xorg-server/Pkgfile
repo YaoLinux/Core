@@ -6,7 +6,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B, Greg"
 
 name=xorg-server
-version=1.20.4
+version=1.20.5
 
 source=(http://ftp.x.org/pub/individual/xserver/$name-$version.tar.bz2)
 
@@ -14,18 +14,22 @@ build() {
 
 cd $name-$version
 
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
---with-xkb-output=/var/lib/xkb \
---enable-glamor \
---with-fontrootdir=/usr/share/fonts \
---enable-install-setuid \
---enable-systemd-logind \
---enable-suid-wrapper \
---enable-config-udev \
---enable-config-udev-kms
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --with-xkb-output=/var/lib/xkb \
+            --enable-glamor \
+            --with-fontrootdir=/usr/share/fonts \
+            --enable-install-setuid \
+            --enable-systemd-logind \
+            --enable-suid-wrapper \
+            --enable-config-udev \
+            --enable-config-udev-kms
 
 make
+
 make DESTDIR=$PKG install
+
 rm -rf $PKG/var
 rm $PKG/usr/lib/xorg/modules/{libexa,libfb,libfbdevhw,libglamoregl,libint10,libshadow,libshadowfb,libvbe,libvgahw,libwfb}.la
 rm $PKG/usr/lib/xorg/modules/drivers/modesetting_drv.la
