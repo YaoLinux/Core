@@ -1,4 +1,4 @@
-# Depends on: meson ninja gcr gtk3 iso-codes gobject-introspection libsecret libnotify networkmanager polkit-gnome modemmanager gtk-update-icon-cache
+# Depends on: meson ninja gcr gtk3 iso-codes gobject-introspection libsecret libnotify networkmanager polkit-gnome modemmanager gtk-update-icon-cache jansson
 
 description="Applet for managing network connections."
 url="http://www.gnome.org/"
@@ -8,19 +8,22 @@ contributors="Fanch"
 run=(polkit-gnome gtk-update-icon-cache)
 
 name=network-manager-applet
-version=1.8.18
+version=1.8.22
 
 source=(http://ftp.gnome.org/pub/gnome/sources/${name}/${version%.*}/${name}-$version.tar.xz)
  
 build() {
 cd $name-$version
+
 mkdir build
 cd    build
+
 meson --prefix=/usr     \
       --sysconfdir=/etc \
       -Dselinux=false   \
-      -Dteam=false      \
+      -Dteam=true       \
       -Dmobile_broadband_provider_info=false ..
+
 ninja
 DESTDIR=$PKG ninja install
 }
