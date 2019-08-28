@@ -8,7 +8,7 @@ maintainer="Dania Rems"
 alias=(NetworkManager)
 
 name=networkmanager
-version=1.18.1
+version=1.20.0
 _name=NetworkManager
 
 run=(wpa-supplicant)
@@ -47,14 +47,10 @@ meson --prefix /usr              \
       -Dsystemdsystemunitdir=/lib/systemd/system 
       
 ninja
+
 DESTDIR=$PKG ninja install
  
 mv -v $PKG/usr/share/doc/NetworkManager{,-$version}
-
-cat >> $PKG/etc/NetworkManager/NetworkManager.conf << "EOF"
-[main]
-plugins=keyfile
-EOF                                                                                                                       
 
 cat > $PKG/etc/NetworkManager/conf.d/polkit.conf << "EOF"
 [main]
