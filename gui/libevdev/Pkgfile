@@ -2,17 +2,25 @@
 
 description="The Libevdev package contains common functions for Xorg input drivers."
 url="http://www.freedesktop.org/wiki/Software/libevdev/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libevdev
-version=1.6.0
+version=1.8.0
 
-source=( http://www.freedesktop.org/software/libevdev/$name-$version.tar.xz)
+source=(http://www.freedesktop.org/software/libevdev/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
-make
-make DESTDIR=$PKG install
+
+   ./configure --prefix=/usr \
+               --sysconfdir=/etc \
+               --localstatedir=/var
+
+   make
+
+   make DESTDIR=$PKG install
+
+# Obsolet lib
 rm $PKG/usr/lib/$name.la
 }
