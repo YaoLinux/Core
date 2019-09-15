@@ -1,37 +1,29 @@
-# Depends on: pcsclite libusb flex
+makedepends=(pcsclite libusb flex)
 
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A generic USB Chip/Smart Card Interface Devices driver"
 url="https://ccid.apdu.fr/"
 
-
 name=ccid
-version=1.4.30
-release=2
-
+version=1.4.31
 
 source=(https://ccid.apdu.fr/files/ccid-$version.tar.bz2)
 
-
 build(){
-  cd "${SRC}/${name}-${version}"
+  cd "${name}-${version}"
 
-  ./configure \
-    LEXLIB='' \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --enable-twinserial \
-    --enable-serialconfdir=/etc/reader.conf.d
+  ./configure LEXLIB='' \
+              --prefix=/usr \
+              --sysconfdir=/etc \
+              --enable-twinserial \
+              --enable-serialconfdir=/etc/reader.conf.d
   make
 }
 
 package() {
-  cd "${SRC}/${name}-${version}"
+  cd "${name}-${version}"
 
   make DESTDIR="${PKG}" install
   # move the configuration file in /etc and create a symbolic link
