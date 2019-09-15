@@ -1,7 +1,8 @@
 description="C library that performs DNS requests and name resolves asynchronously"
 url="https://c-ares.haxx.se/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+maintainer="Greg"
 
 name=c-ares
 version=1.15.0
