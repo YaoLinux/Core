@@ -1,19 +1,13 @@
-# Depends on: zlib cmake boost
+makedepends=(zlib cmake boost)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="C++ port of the high-performance text search engine Lucene"
 url="http://clucene.sourceforge.net/"
 
-
 name=clucene
 version=2.3.3.4
-release=1
-
 
 source=(http://downloads.sourceforge.net/clucene/$name/$name-core-$version.tar.gz 
 		clucene-core-2.3.3.4-pkgconfig.patch 
@@ -27,7 +21,7 @@ source=(http://downloads.sourceforge.net/clucene/$name/$name-core-$version.tar.g
 
 
 build(){
-  cd $SRC/$name-core-$version
+  cd $name-core-$version
 
   # add missing contrib-libs needed by LibO 3.6, patch by FC
   patch -Np1 -i ${SRC}/clucene-core-2.3.3.4-install_contribs_lib.patch
@@ -59,7 +53,7 @@ build(){
 
 
 package() {
-  cd $SRC/$name-core-$version
+  cd $name-core-$version
   make DESTDIR="$PKG" install -C build
   rm -rfv $PKG/usr/lib/CLuceneConfig.cmake
   
