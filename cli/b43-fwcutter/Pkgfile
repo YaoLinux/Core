@@ -1,7 +1,8 @@
 description="firmware extractor for the b43 kernel module"
 url="http://wireless.kernel.org/en/users/Drivers/b43"
-contributors="Pierre B, Greg"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=b43-fwcutter
 version=019
