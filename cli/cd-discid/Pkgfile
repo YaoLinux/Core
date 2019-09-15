@@ -1,22 +1,14 @@
-# Depends on: 
-
-
-packager="sipo"
-contributors=""
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A backend utility to get CDDB discid information from a CD-ROM disc"
 url="http://linukz.org/cd-discid.shtml"
-
 
 name=cd-discid
 version=1.4
 release=2
 
-
 source=(http://linukz.org/download/$name-$version.tar.gz)
-
 
 build(){
 
@@ -25,7 +17,6 @@ build(){
 
 }
 
-
 package() {
 
   cd $name-$version
@@ -33,5 +24,4 @@ package() {
         PREFIX=/usr \
         mandir=$PKG/usr/man/man1 \
         install
-
 }
