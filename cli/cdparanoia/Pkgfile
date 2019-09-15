@@ -1,23 +1,15 @@
-# Depends on: glibc 
-
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Compact Disc Digital Audio extraction tool"
 url="http://www.xiph.org/paranoia/"
-
 
 name=cdparanoia
 version=10.2
 release=2
 
-
 source=(https://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz 
 		gcc.patch)
-
 
 prepare(){
   cd cdparanoia-III-$version
