@@ -1,35 +1,28 @@
-# Depends on: alsa-lib xmlto libsamplerate gawk systemd dialog
+makedepends=(alsa-lib xmlto libsamplerate gawk systemd dialog)
 
-
-packager="sipo"
-contributors=""
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="An alternative implementation of Linux sound support"
 url="http://www.alsa-project.org"
 
-
 run=(gawk)
 PKGMK_GROUPS=(man)
 
-
 name=alsa-utils
-version=1.1.8
-release=3
-
+version=1.1.9
 
 source=(ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2)
 
-
 build(){
   cd ${name}-${version}
-  ./configure --prefix=/usr --disable-alsaconf --sbindir=/usr/bin \
-    --with-udev-rules-dir=/lib/udev/rules.d \
-    --with-systemdsystemunitdir=/lib/systemd/system
+  ./configure --prefix=/usr \
+              --disable-alsaconf \
+              --sbindir=/usr/bin \
+              --with-udev-rules-dir=/lib/udev/rules.d \
+              --with-systemdsystemunitdir=/lib/systemd/system
   make
 }
-
 
 package() {
   cd ${name}-${version}
