@@ -1,19 +1,14 @@
-# Depends on: cyrus-sasl json-c libidn liboauth libxml2 openldap pcre 
+makedepends=(cyrus-sasl json-c libidn liboauth libxml2 openldap pcre)
 
-
-packager="sipo"
-contributors="Alienus, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Console client for Twitter and identi.ca"
 url="http://gregkh.github.com/bti/"
 
-
 name=bti
 version=034
 release=2
-
 
 source=(https://www.kernel.org/pub/software/web/bti/bti-034.tar.xz 
 		0001-Replace-removed-is_error-macro.patch)
@@ -21,24 +16,6 @@ source=(https://www.kernel.org/pub/software/web/bti/bti-034.tar.xz
 
 prepare(){
 
-  cd "${SRC}"/$name-$version
+  cd $name-$version
   patch -Np1 -i $SRC/0001-Replace-removed-is_error-macro.patch
-
-}
-
-build() {
-
-  cd "${SRC}"/$name-$version
-  ./configure --prefix=/usr
-
-  make
-
-}
-
-package() {
-
-  cd "${SRC}"/$name-$version
-
-  make DESTDIR="${PKG}" install
-
 }
