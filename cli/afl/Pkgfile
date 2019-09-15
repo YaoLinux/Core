@@ -1,22 +1,15 @@
-# Depends on: wget python llvm
+makedepends=(wget python llvm)
 
-
-packager="sipo"
-contributors=""
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Security-oriented fuzzer using compile-time instrumentation and genetic algorithms"
 url="http://lcamtuf.coredump.cx/afl/"
 
-
 name=afl
-version=2.52b
-release=2
-
+version=2.54b
 
 source=(http://lcamtuf.coredump.cx/afl/releases/$name-$version.tgz)
-
 
 build(){
   cd ${name}-${version}
@@ -29,5 +22,3 @@ package() {
   make PREFIX=/usr DESTDIR="${PKG}" install
   install -Dm 644 llvm_mode/README.llvm -t "${PKG}/usr/share/doc/${name}"
 }
-
-# vim: ts=2 sw=2 et:
