@@ -1,19 +1,13 @@
-# Depends on: libuv
+makedepends=(libuv)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A cross-platform open-source make system"
 url="http://www.cmake.org/"
 
-
 name=cmake
-version=3.14.0
-release=1
-
+version=3.15.3
 
 source=($url/files/v${version%.*}/$name-$version.tar.gz)
 
@@ -24,19 +18,17 @@ cd $name-$version
 sed -i '/"lib64"/s/64//' Modules/GNUInstallDirs.cmake
 
 ./bootstrap --prefix=/usr \
---mandir=/share/man \
---system-libs \
---no-system-jsoncpp \
---no-system-librhash \
---docdir=/share/doc/cmake-$version
+            --mandir=/share/man \
+            --system-libs \
+            --no-system-jsoncpp \
+            --no-system-librhash \
+            --docdir=/share/doc/cmake-$version
 
 make
-
 }
 
 package() {
 
   cd ${name}-${version}
   make DESTDIR="${PKG}" install
-
 }
