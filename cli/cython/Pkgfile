@@ -1,4 +1,4 @@
-# Depends on: python python2 python2-setuptools
+makedepends=(python2 python2-setuptools)
 
 description="C extensions for Python."
 url="http://www.cython.org/"
@@ -8,8 +8,7 @@ packager="tnut <tnut@nutyx.org>"
 PKGMK_KEEP_SOURCES="no"
 
 name=cython
-version=0.29.6
-release=2
+version=0.29.13
 
 run=(python python2 python2-setuptools)
 
