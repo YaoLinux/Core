@@ -1,22 +1,15 @@
 # Depends on: flex bison
 
-
-packager="sipo"
-contributors=""
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="ACPI tools, including Intel ACPI Source Language compiler"
 url="https://acpica.org"
 
-
 name=acpica
-version=20190215
-release=1
+version=20190816
 
-
-source=(https://github.com/acpica/acpica/archive/R02_15_19.tar.gz)
-
+source=(https://github.com/acpica/acpica/archive/R08_16_19.tar.gz)
 
 build(){
   cd $name-R02_15_19
