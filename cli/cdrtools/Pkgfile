@@ -1,25 +1,20 @@
-# Depends on: acl libcap cmake
+makedepends=(acl libcap cmake)
 
-
-packager="sipo"
+packager="Yaolinux Team"
 contributors="Pierre B., Tnut"
 maintainer="sipo"
 
-
 description="Original cdrtools supporting CD, DVD and BluRay burning"
 url="http://cdrecord.org/"
-
 
 name=cdrtools
 version=3.02a09
 release=2
 
-
 source=(https://downloads.sourceforge.net/cdrtools/$name-$version.tar.bz2)
 
-
 build(){
-  cd "$SRC"/cdrtools-${version%%a*}
+  cd cdrtools-${version%%a*}
   sed -i 's|/opt/schily|/usr|g' DEFAULTS/Defaults.linux
   sed -i 's|DEFINSGRP=.*|DEFINSGRP=root|' DEFAULTS/Defaults.linux
   # install rscsi to /usr/bin instead of /usr/sbin
@@ -31,7 +26,7 @@ build(){
 
 
 package() {
-  cd "$SRC"/cdrtools-${version%%a*}
+  cd cdrtools-${version%%a*}
 
   export GMAKE_NOWARN=true
   make INS_BASE=/usr INS_RBASE=/ DESTDIR="$PKG" install
