@@ -1,14 +1,13 @@
-# Depends on: aspell
+makedepends=(aspell)
 
 description="Various dictionaries for Aspell"
 url="http://aspell.net"
 
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 name=aspell-dict
-version=0.60.6.1
+version=0.60.7
 release=2
 
 fr_ver=0.50-3
