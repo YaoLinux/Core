@@ -1,24 +1,18 @@
-# Depends on: apr expat
+makedepends=(apr expat)
 
-
-packager="sipo"
-contributors="Jmilot, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="The Apache Portable Runtime"
 url="http://apr.apache.org/"
-
 
 name=apr-util
 version=1.6.1
 release=4
 
-
 source=(https://www.apache.org/dist/apr/$name-$version.tar.bz2 
 		disable_failing_test.patch 
 		buildconf_config.guess_sub_location.patch)
-
 
 prepare(){
 
