@@ -1,22 +1,17 @@
-# Depends on: boost
+makedepends=(boost)
 
-
-packager="sipo"
+packager="Yaolinux Team"
 contributors="Tnut"
 maintainer="sipo"
 
-
 description="Cross-platform C++ library for ASynchronous network I/O"
 url="https://think-async.com/Asio/"
-
 
 name=asio
 version=1.12.2
 release=2
 
-
 source=(https://sourceforge.net/projects/asio/files/asio/1.12.2%20%28Stable%29/$name-$version.tar.bz2)
-
 
 prepare(){
   cd ${name}-${version}/
@@ -27,8 +22,7 @@ prepare(){
 build() {
   cd ${name}-${version}/
 
-  ./configure \
-    --prefix=/usr
+  ./configure --prefix=/usr
   make
 }
 
