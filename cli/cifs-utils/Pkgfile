@@ -1,32 +1,26 @@
-# Depends on: keyutils talloc systemd pam kerberos
+makedepends=(keyutils talloc systemd pam kerberos)
 
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="CIFS filesystem user-space tools"
 url="http://wiki.samba.org/index.php/LinuxCIFS_utils"
-
 
 name=cifs-utils
 version=6.8
 release=2
 
-
 source=(http://ftp.samba.org/pub/linux-cifs/$name/$name-$version.tar.bz2)
 
-
 build(){
-  cd "$SRC/$name-$version"
+  cd $name-$version
   autoreconf -i
   ./configure --prefix=/usr --sbindir=/usr/bin --disable-systemd
   make
 }
 
 package() {
-  cd "$SRC/$name-$version"
+  cd $name-$version
   make DESTDIR="$PKG" ROOTSBINDIR=/usr/bin install
   mkdir -p $PKG/etc/request-key.d
   install -m 644 contrib/request-key.d/cifs.idmap.conf $PKG/etc/request-key.d
