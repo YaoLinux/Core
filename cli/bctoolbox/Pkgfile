@@ -1,24 +1,18 @@
-# Depends on: mbedtls bcunit cmake
+makedepends=(mbedtls bcunit cmake)
 
-
-packager="sipo"
-contributors="Remy"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A library written in C that allows you to create and run audio and video streams"
 url="https://github.com/BelledonneCommunications/bctoolbox"
-
 
 name=bctoolbox
 version=0.6.0
 release=2
 
-
 source=(https://github.com/BelledonneCommunications/bctoolbox/archive/$version.tar.gz
         https://sources.debian.org/data/main/b/bctoolbox/0.6.0-2/debian/patches/fix-ftbfs-with-mbedtls-2.7.patch
         https://sources.debian.org/data/main/b/bctoolbox/0.6.0-2/debian/patches/deprecated_mbedtls_header)
-
 
 prepare(){
 
@@ -35,7 +29,6 @@ build(){
   cmake -DCMAKE_SKIP_RPATH=ON -DENABLE_TESTS_COMPONENT=OFF \
         -DENABLE_SHARED=ON -DCMAKE_INSTALL_PREFIX=/usr ..
   make
-
 }
 
 package() {
