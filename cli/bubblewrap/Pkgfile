@@ -1,48 +1,34 @@
-# Depends on: glibc libcap libxslt docbook-xsl git
+makedepends=(libcap libxslt docbook-xsl git)
 
-
-packager="sipo"
-contributors=""
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Unprivileged sandboxing tool"
 url="https://github.com/projectatomic/bubblewrap"
 
-
 name=bubblewrap
-version=0.3.1
-release=2
-
+version=0.3.3
 
 PKGMK_KEEP_SOURCES="no"
 
-
 source=(https://github.com/projectatomic/bubblewrap/archive/v$version.tar.gz)
-
 
 prepare() {
 
 	cd $name-$version
 	NOCONFIGURE=1 ./autogen.sh
-
 }
-
 
 build() {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-	--with-priv-mode=setuid
+                    --with-priv-mode=setuid
 	make
-
 }
-
 
 package() {
 
 	cd $name-$version 
 	make DESTDIR=$PKG install
-	
 }
-
