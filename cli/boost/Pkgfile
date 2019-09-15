@@ -1,22 +1,15 @@
-# Depends on: icu python python2
+makedepends=(icu python2)
 
-
-packager="sipo"
-contributors="Remy, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Boost provides a set of free peer-reviewed portable C++ source libraries."
 url="http://boost.sourceforge.net/"
 
-
 name=boost
-version=1.69.0
-release=1
-
+version=1.71.0
 
 source=(https://dl.bintray.com/boostorg/release/$version/source/${name}_${version//./_}.tar.bz2)
-
 
 build() {
 
@@ -40,4 +33,3 @@ python=3.7 \
 ln -svf detail/sha1.hpp $PKG/usr/include/boost/uuid/sha1.hpp
 
 }
-
