@@ -1,22 +1,14 @@
-# Depends on: python 
-
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Portable version of the NetBSD make build tool"
 url="http://www.crufty.net/help/sjg/bmake.html"
-
 
 name=bmake
 version=20181221
 release=2
 
-
 source=(http://www.crufty.net/ftp/pub/sjg/bmake-$version.tar.gz)
-
 
 build() {
 
@@ -24,7 +16,6 @@ build() {
 	./boot-strap --prefix=/usr op=build
 
 }
-
 
 package() {
 
