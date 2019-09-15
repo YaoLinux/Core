@@ -1,35 +1,22 @@
-# Depends on: rustc git
+makedepends=(rustc)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A tool for generating C bindings to Rust code"
 url="https://github.com/eqrion/cbindgen"
 
-
 name=cbindgen
-version=git
-release=2
+version=0.9.1
 
+PKGMK_KEEP_SOURCES="no"
 
-source=()
-
-
-prepare(){
-
-git clone https://github.com/eqrion/cbindgen
-
-}
-
+source=(https://github.com/eqrion/cbindgen/archive/v$version.tar.gz)
 
 build(){
   cd $name
-  cargo build --release
+  cargo build --release --frozen
 }
-
 
 package() {
   cd $name
