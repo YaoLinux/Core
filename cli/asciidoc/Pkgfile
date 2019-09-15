@@ -1,38 +1,20 @@
-# Depends on: python2 libxslt docbook-xsl 
+makedepends=(python2 libxslt docbook-xsl)
 
-
-packager="sipo"
-contributors="Alienus, Remy, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Text document format for short documents, articles, books and UNIX man pages."
 url="http://www.methods.co.nz/asciidoc/"
-
 
 name=asciidoc
 version=8.6.10
 release=2
 
-
 source=(https://github.com/$name/$name/archive/$version.tar.gz)
-
 
 prepare(){
   cd ${name}-${version}
 
-  # python2 fix
-  #for file in asciidocapi.py a2x.py asciidoc.py filters/music/music2png.py filters/latex/latex2png.py \
-	  #filters/code/code-filter.py filters/graphviz/graphviz2png.py; do
-	#sed -i 's_#!/usr/bin/env python_#!/usr/bin/env python2_' $file
-  #done
-  #sed -i -e 's_sys:python_sys:python2_g' -e 's_sys3:python_sys3:python2_g' xhtml11.conf
-  #sed -i 's_sys:python_sys:python2_g' xhtml11-quirks.conf
-  #sed -i -e 's/{python}/{python2}/g' \
-	  #-e 's#{language@python:py:#{language@python2:py:#' \
-	  #filters/source/source-highlight-filter.conf \
-	  #html5.conf xhtml11.conf xhtml11-quirks.conf
-  #sed -i -e "s#'python'#'python2'#g" filters/code/code-filter.py
   sed -i -e 's#python a2x.py#python2 a2x.py#' Makefile.in
 }
 
@@ -40,9 +22,8 @@ build() {
   cd ${name}-${version}
 
   autoconf
-  ./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc
 }
 
 package() {
