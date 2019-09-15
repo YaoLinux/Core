@@ -1,19 +1,13 @@
-# Depends on: python2 util-linux
+makedepends=(python2 util-linux)
 
-
-packager="sipo"
-contributors="Jmilot, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="The Apache Portable Runtime"
 url="http://apr.apache.org/"
 
-
 name=apr
-version=1.6.5
-release=2
-
+version=1.7.0
 
 source=(http://www-us.apache.org/dist/$name/$name-$version.tar.bz2
 		fix_apr-config.patch
@@ -21,7 +15,6 @@ source=(http://www-us.apache.org/dist/$name/$name-$version.tar.bz2
 		fix-apr.pc.patch 
 		omit_extra_libs.patch 
 		dont_override_external_buildflags)
-
 
 prepare(){
   cd apr-$version
