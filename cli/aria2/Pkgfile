@@ -1,22 +1,16 @@
-# Depends on: c-ares ca-certificates gnutls libssh2 libxml2 sqlite
+makedepends=(c-ares ca-certificates gnutls libssh2 libxml2 sqlite)
 
-
-packager="sipo"
-contributors="rems"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Download utility that supports HTTP(S), FTP, BitTorrent, and Metalink"
 url="http://aria2.sourceforge.net/"
-
 
 name=aria2
 version=1.34.0
 release=2
 
-
 source=(https://github.com/tatsuhiro-t/$name/releases/download/release-$version/$name-$version.tar.xz)
-
 
 build(){
   cd $name-$version
@@ -28,7 +22,6 @@ build(){
 
   make
 }
-
 
 package() {
   cd $name-$version
