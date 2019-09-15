@@ -1,15 +1,13 @@
 # Depends on: glib openjdk 
 
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 description="Ant package is a Java-based build tool."
 url="http://ant.apache.org/"
 
 name=apache-ant
-version=1.10.5
-release=5
+version=1.10.7
 
 source=(https://www.apache.org/dist/ant/binaries/$name-$version-bin.tar.xz)
 
