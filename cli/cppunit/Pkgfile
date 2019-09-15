@@ -1,29 +1,19 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A C++ unit testing framework"
 url="https://www.freedesktop.org/wiki/Software/cppunit"
 
-
 name=cppunit
 version=1.14.0
-release=1
-
 
 source=(http://dev-www.libreoffice.org/src/$name-$version.tar.gz)
-
 
 build(){
    cd ${name}-${version}
    ./configure --prefix=/usr --disable-static
    make
 }
-
 
 package() {
    cd ${name}-${version}
