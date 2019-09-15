@@ -1,4 +1,4 @@
-# Depends on: glib openjdk 
+makedepends=(glib openjdk)
 
 packager="Yaolinux Team"
 maintainer="sipo"
