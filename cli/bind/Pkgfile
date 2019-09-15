@@ -1,27 +1,18 @@
-# Depends on: kerberos libxml2 openssl python libcap python-ply
-
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="The BIND package includes the client side programs nslookup, dig and host."
 url="http://www.isc.org/downloads/bind/"
 
-
 name=bind
-version=9.13.7
+version=9.14.5
 yaolinux_version=1.0-RC1
-release=2
-
 
 source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
 	https://ftp.isc.org/isc/bind/${version}/${name}-${version}.tar.gz)
 
-
+makedepends=(kerberos libxml2 openssl python libcap python-ply)
 run=(python-ply)
-
 
 build(){
 
@@ -59,7 +50,7 @@ package(){
 	$PKG/usr/share/doc/bind-$version/misc
 
 # Service
-	cd $SRC/yaolinux-${yaolinux_version}
+	cd ../yaolinux-${yaolinux_version}
 	make DESTDIR=$PKG install-named
 
 }
