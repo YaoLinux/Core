@@ -1,22 +1,13 @@
-# Depends on:  
-
-
-packager="sipo"
-contributors="Remy"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A program to extract Microsoft cabinet (.CAB) files"
 url="http://www.cabextract.org.uk/"
 
-
 name=cabextract
-version=1.9
-release=2
-
+version=1.9.1
 
 source=(https://cabextract.org.uk/$name-$version.tar.gz)
-
 
 build(){
   cd "$name-$version"
