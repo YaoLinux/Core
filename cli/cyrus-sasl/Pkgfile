@@ -1,22 +1,18 @@
-# Depends on: db
+makedepends=(db)
 
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Cyrus saslauthd SASL authentication daemon"
 url="http://cyrusimap.org/"
 
-
 name=cyrus-sasl
 version=2.1.27
-nutyx_version=11-RC1
+yaolinux_version=1.0-RC1
 
 
 source=(https://www.cyrusimap.org/releases/cyrus-sasl-${version}.tar.gz
-        http://nutyx.pausex.fr/nutyx-${nutyx_version}.tar.xz)
+        http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
 
 
 build() {
@@ -33,6 +29,8 @@ build() {
 }
 package() {
 
+        cd $name-$version
+	
 	make DESTDIR=$PKG install
 	install -v -m700 -d $PKG/var/lib/sasl $PKG/var/run/saslauthd
 
@@ -47,7 +45,7 @@ rm $PKG/usr/lib/sasl2/libsasldb.la
 rm $PKG/usr/lib/sasl2/libscram.la
 
 # Service
-cd $SRC/nutyx-${nutyx_version}
+cd $SRC/yaolinux-${yaolinux_version}
 make DESTDIR=$PKG install-saslauthd
 
 }
