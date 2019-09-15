@@ -1,22 +1,14 @@
-# Depends on: 
-
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Library for dealing with Microsoft ITSS/CHM format files"
 url="http://www.jedrea.com/chmlib/"
-
 
 name=chmlib
 version=0.40
 release=4
 
-
 source=(http://www.jedrea.com/$name/$name-$version.tar.bz2)
-
 
 build(){
   cd ${name}-${version}
