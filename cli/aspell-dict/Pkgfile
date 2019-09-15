@@ -8,9 +8,8 @@ maintainer="sipo"
 
 name=aspell-dict
 version=0.60.7
-release=2
 
-fr_ver=0.50-3
+fr_ver=0.50.3-8
 de_ver=0.50-2
 es_ver=0.50-2
 it_ver=0.53-0
