@@ -1,35 +1,17 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Pierre B, tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Dynamic, any to any, pixel format conversion library"
 url="http://gegl.org/babl"
 
-
 name=babl
-version=0.1.60
-release=2
-
+version=0.1.66
 
 source=(http://download.gimp.org/pub/$name/${version:0:3}/$name-$version.tar.bz2)
-
-
-build() {
-
-	cd $name-$version
-	./configure --prefix=/usr
-	make
-
-}
 
 package() {
 
 	cd $name-$version
-	make DESTDIR=$PKG install
 
 # Documentation
 	install -v -m755 -d \
@@ -41,8 +23,9 @@ package() {
 	install -v -m644 docs/graphics/*.{html,png,svg} \
 	$PKG/usr/share/gtk-doc/html/babl/graphics
 
-	rm $PKG/usr/lib/babl-0.1/*.la
+# Obsolet libs
+
+        rm $PKG/usr/lib/babl-0.1/*.la
 	rm $PKG/usr/lib/libbabl-0.1.la
 
 }
-
