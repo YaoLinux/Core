@@ -1,24 +1,17 @@
-# Depends on: lame libvorbis libmad libao
+makedepends=(lame libvorbis libmad libao)
 
-
-packager="sipo"
-contributors="Pierre B., Fanch, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Records audio/data CD-Rs in disk-at-once (DAO) mode"
 url="http://cdrdao.sourceforge.net/"
 
-
 name=cdrdao
 version=1.2.4
-release=1
-
 
 source=(https://downloads.sourceforge.net/cdrdao/cdrdao-1.2.4.tar.bz2 
 		cdrdao-1.2.3-autoconf-update.patch 
 		cdrdao-1.2.3-k3b.patch)
-
 
 prepare(){
   cd ${name}-${version}
