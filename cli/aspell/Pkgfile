@@ -1,24 +1,17 @@
-# Depends on: ncurses 
-
+makedepends=(ncurses)
 
 packager="sipo"
 contributors="Tnut"
 maintainer="sipo"
 
-
 description="A spell checker designed to eventually replace Ispell"
 url="http://aspell.net/"
 
-
 name=aspell
-version=0.60.7-rc1
-_version=0.60.7
+version=0.60.7
 _pkgmajorver=0.60
-release=2
 
-
-source=(https://github.com/GNUAspell/aspell/archive/rel-0.60.7-rc1.tar.gz)
-
+source=(https://github.com/GNUAspell/aspell/archive/rel-$version.tar.gz)
 
 build(){
 
