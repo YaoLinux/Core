@@ -1,38 +1,33 @@
-# Depends on: libgcrypt nettle nss openssl popt lvm2 json-c python2 libpwquality
+makedepends=(libgcrypt nettle nss openssl popt lvm2 json-c python2 libpwquality)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux"
 maintainer="sipo"
-
 
 description="Userspace setup tool for transparent encryption of block devices using dm-crypt"
 url="https://gitlab.com/cryptsetup/cryptsetup/"
 
-
 name=cryptsetup
-version=2.1.0
-release=1
-
+version=2.2.1
 
 source=(https://www.kernel.org/pub/linux/utils/cryptsetup/v2.1/$name-${version}.tar.xz)
 
-
 build(){
 
-  cd "${SRC}"/$name-${version}
+  cd $name-${version}
 
-  ./configure \
-    --prefix=/usr \
-    --disable-static
+  ./configure --prefix=/usr \
+              --disable-static
+    
   make
 
 }
 
 package() {
 
-  cd "${SRC}"/$name-${version}
+  cd $name-${version}
   make DESTDIR="${PKG}" install
+  
+  #Obsolet lib
   rm $PKG/usr/lib/libcryptsetup.la
 
 }
