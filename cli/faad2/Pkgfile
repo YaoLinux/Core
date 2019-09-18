@@ -1,29 +1,19 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="ISO AAC audio decoder"
 url="http://faac.sourceforge.net/"
 
-
 name=faad2
 version=2.8.8
-release=1
-
 
 source=(http://downloads.sourceforge.net/sourceforge/faac/$name-$version.tar.gz)
-
 
 build(){
 
   cd ${name}-${version}
   ./configure --prefix=/usr
   make
-
 }
 
 package() {
@@ -31,5 +21,4 @@ package() {
   cd ${name}-${version}
   make DESTDIR="${PKG}" install
   rm $PKG/usr/lib/libfaad{,_drm}.la
-
 }
