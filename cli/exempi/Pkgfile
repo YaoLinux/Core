@@ -1,23 +1,26 @@
-# Depends on: expat boost
+makedepends=(expat boost)
 
 description="Implementation of xmp (Adobe's Extensible Metadata Platform)"
 url="http://libopenraw.freedesktop.org/wiki/Exempi/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=exempi
-version=2.5.0
+version=2.5.1
 
 source=( http://libopenraw.freedesktop.org/download/$name-$version.tar.bz2)
 
 build() {
 cd $name-$version
 
-./configure \
---prefix=/usr \
---mandir=/usr/share/man \
---disable-static
+./configure --prefix=/usr \
+            --mandir=/usr/share/man \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
+
+# Obsolet lib
 rm $PKG/usr/lib/libexempi.la
 }
 uptodate() {
