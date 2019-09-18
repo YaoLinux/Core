@@ -29,4 +29,5 @@ package() {
   install -dm755 ${PKG}/etc/ld.so.conf.d/
   echo '/usr/lib/libfakeroot/fakechroot/' > ${PKG}/etc/ld.so.conf.d/fakechroot.conf
   rm $PKG/usr/lib/libfakeroot/fakechroot/libfakechroot.la
+  
 }
