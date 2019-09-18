@@ -1,48 +1,38 @@
-# Depends on:  git
+makedepends=(git)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Fraunhofer FDK AAC codec library"
 url="http://sourceforge.net/projects/opencore-amr/"
 
-
 name=fdk-aac
-version=2.0.0
-release=1
-
+version=2.0.0-git
 
 source=()
 
-
 prepare(){
 
-  git clone https://github.com/mstorsjo/fdk-aac.git
-  cd fdk-aac
+  git clone https://github.com/mstorsjo/fdk-aac.git $name
+  cd $name
   ./autogen.sh
 
 }
 
 build() {
 
-  cd fdk-aac
+  cd $name
 
-  ./configure \
-    --prefix='/usr' \
-    --disable-static
-  make
+  ./configure --prefix='/usr' \
+              --disable-static
 
+make
 }
 
 package () {
 
-  cd fdk-aac
+  cd $name
 
   make DESTDIR="${PKG}" install
   install -Dm 644 NOTICE -t "${PKG}"/usr/share/licenses/fdk-aac/
-
 }
-
