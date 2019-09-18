@@ -1,36 +1,26 @@
-# Depends on : glib ninja meson
+makedepends=(glib)
 
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A Free Implementation of the Unicode Bidirectional Algorithm"
 url="http://fribidi.freedesktop.org/wiki/"
 
-
 name=fribidi
 version=1.0.5
 
-
 source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.bz2)
-
 
 build() {
 
-	cd $name-$version
-	mkdir -pv build
-	cd build
-	meson -D docs=false ..
+	mkdir -v build && cd build
+	meson -D docs=false ../$name-$version
 	ninja
 
 }
 
 package() {
 
-	cd $name-$version/build
+	cd build
 	DESTDIR=$PKG ninja install
-    #rm $PKG/usr/lib/libfribidi.la
-
 }
