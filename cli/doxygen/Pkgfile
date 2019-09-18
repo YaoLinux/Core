@@ -1,18 +1,13 @@
-# Depends on: python2 cmake xapian
+makdedepends=(python2 cmake xapian)
 
-
-packager="sipo"
-contributors="Tnut, Pierre B."
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A documentation system for C++, C, Java, IDL and PHP languages"
 url="http://www.doxygen.org/"
 
-
 name=doxygen
-version=1.8.15
-release=1
+version=1.8.16
 
 source=(https://github.com/doxygen/doxygen/archive/Release_${version//./_}.tar.gz)
 
@@ -20,9 +15,7 @@ prepare() {
 
 	cd $name-Release_"${version//./_}"
 	mkdir -v build
-
 }
-
 
 build() {
 
@@ -35,7 +28,6 @@ build() {
 	make
 
 }
-
 
 package() {
 
