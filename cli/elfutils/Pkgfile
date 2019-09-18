@@ -1,36 +1,29 @@
-# Depends on: zlib bzip2 xz libelf
+makdepends=(zlib bzip2 xz libelf)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Utilities to handle ELF object files and DWARF debugging information"
 url="https://sourceware.org/elfutils/"
-
 
 name=elfutils
 version=0.176
 release=2
 
-
 source=(https://sourceware.org/elfutils/ftp/$version/elfutils-$version.tar.bz2)
-
 
 build(){
 
   cd ${name}-${version}
   ./configure --prefix=/usr --program-prefix="eu-" --enable-deterministic-archives
   make
-
 }
-
 
 package() {
 
   cd ${name}-${version}
   make DESTDIR="${PKG}" install
-  rm -r "${PKG}"/usr/{lib,include}
-
+  
+ # Alreay présent in libelf in base collection
+ rm -r "${PKG}"/usr/{lib,include}
 }
