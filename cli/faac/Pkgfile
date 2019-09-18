@@ -1,22 +1,13 @@
-# Depends on: 
-
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="An AAC audio encoder"
 url="http://www.audiocoding.com/"
 
-
 name=faac
 version=1.29.9.2
-release=1
-
 
 source=(https://sourceforge.net/projects/faac/files/faac-src/$name-1.29/$name-$version.tar.gz)
-
 
 build(){
 
@@ -34,5 +25,4 @@ package() {
   install -Dm644 "${SRC}"/${name}-${version}/COPYING \
   "${PKG}"/usr/share/licenses/faac/LICENSE
    rm $PKG/usr/lib/libfaac.la
-
 }
