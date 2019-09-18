@@ -1,30 +1,23 @@
-# Depends on: libxml2 docbook-xml
+makedepends=(libxml2 docbook-xml)
 
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="XML stylesheets for Docbook-xml transformations"
 url="http://scrollkeeper.sourceforge.net/docbook.shtml"
-
 
 name=docbook-xsl
 version=1.79.2
 release=2
 
-
 source=(http://www.linuxfromscratch.org/patches/blfs/svn/docbook-xsl-nons-1.79.2-stack_fix-1.patch
    		https://github.com/docbook/xslt10-stylesheets/releases/download/release/$version/$name-$version.tar.bz2
    		https://github.com/docbook/xslt10-stylesheets/releases/download/release/$version/docbook-xsl-doc-$version.tar.bz2)
-
 
 prepare() {
 
 	cd $name-$version
 	patch -Np1 -i ../docbook-xsl-nons-1.79.2-stack_fix-1.patch
-
 }
 
 build() {
