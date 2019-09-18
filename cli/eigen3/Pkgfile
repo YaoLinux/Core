@@ -1,27 +1,19 @@
-# Depends on: cmake
+makedepends=(cmake)
 
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Lightweight C++ template library for vector and matrix math, a.k.a. linear algebra."
 url="http://eigen.tuxfamily.org"
 
-
 name=eigen3
 version=3.3.7
-release=1
-
 
 source=(http://bitbucket.org/eigen/eigen/get/$version.tar.bz2)
-
 
 prepare(){
 
   mkdir -p build
-
 }
 
 build() {
@@ -29,7 +21,7 @@ build() {
 	cd build
 	cmake ../eigen-eigen-* \
 		-DCMAKE_INSTALL_PREFIX=/usr \
-        -DCMAKE_INSTALL_LIBDIR=lib
+                -DCMAKE_INSTALL_LIBDIR=lib
 }
 
 package() {
@@ -41,5 +33,4 @@ package() {
 	install -Dm644 ../eigen-eigen-*/COPYING.MPL2 "$PKG/usr/share/licenses/$name/LICENSE"
     install -Dm644 ../eigen-eigen-*/COPYING.BSD "$PKG/usr/share/licenses/$name/LICENSE"
     install -Dm644 ../eigen-eigen-*/COPYING.MINPACK "$PKG/usr/share/licenses/$name/LICENSE"
-
 }
