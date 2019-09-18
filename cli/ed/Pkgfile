@@ -1,22 +1,13 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team
 maintainer="sipo"
-
 
 description="A POSIX-compliant line-oriented text editor"
 url="http://www.gnu.org/software/ed/ed.html"
 
-
 name=ed
 version=1.15
-release=1
-
 
 source=(https://ftp.gnu.org/gnu/ed/$name-$version.tar.lz)
-
 
 build(){
 
@@ -31,12 +22,9 @@ build(){
               "LDFLAGS=$LDFLAGS"
 
   make
-
 }
-
 
 package() {
 
-  make -C "$name-$version" "DESTDIR=$PKG" install
-
+  make -C "$name-$version" DESTDIR=$PKG install
 }
