@@ -1,28 +1,20 @@
-# Depends on: perl
+makedepends=(perl)
 
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Text file format converter"
 url="http://waterlan.home.xs4all.nl/dos2unix.html"
 
-
 name=dos2unix
 version=7.4.0
-release=1
-
 
 source=(http://waterlan.home.xs4all.nl/$name/$name-$version.tar.gz)
-
 
 build(){
 
   cd $name-$version
   make
-
 }
 
 package() {
@@ -31,5 +23,4 @@ package() {
 
   make DESTDIR=$PKG install
   install -D -m644 COPYING.txt $PKG/usr/share/licenses/$name/LICENSE
-
 }
