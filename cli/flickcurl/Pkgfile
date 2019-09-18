@@ -17,7 +17,6 @@ prepare(){
   cd ${name}-${version}
   patch -p1 -i ../a5cc2a5d2fc7074f50fbaa772232b6e0fea7ce89.patch
   sed -i 's|#include <curl/types.h>||' src/flickcurl_internal.h
-
 }
 
 build() {
