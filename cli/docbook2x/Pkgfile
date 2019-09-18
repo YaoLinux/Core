@@ -1,38 +1,29 @@
-# Depends on: openjade libxslt perl-xml-sax
+makedepends=(openjade libxslt perl-xml-sax)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A software package that converts DocBook documents into the traditional Unix man page."
 url="http://docbook2x.sourceforge.net"
-
 
 name=docbook2x
 version=0.8.8
 release=3
 
-
-
 source=(http://downloads.sourceforge.net/$name/docbook2X-$version.tar.gz
 		datadir.diff)
 
-
-
 prepare(){
 
-  cd "$SRC"/docbook2X-$version
-  patch -p1 <"$SRC"/datadir.diff
+  cd docbook2X-$version
+  patch -p1 < ../datadir.diff
   sed -e 's/AM_CONFIG_HEADER(/AC_CONFIG_HEADERS(/' -i configure.ac
 
 }
 
-
 build()  {
 
-  cd "$SRC"/docbook2X-$version
+  cd docbook2X-$version
   autoreconf -i -f
   ./configure \
     --prefix=/usr \
@@ -42,10 +33,9 @@ build()  {
 
 }
 
-
 package() {
 
-  cd "$SRC"/docbook2X-$version
+  cd docbook2X-$version
   make DESTDIR="$PKG" install
   install -D -m0644 COPYING "$PKG"/usr/share/licenses/$name/license
   sed -i 's|http://docbook2x.sf.net/latest|/usr/share/docbook2X|g' \
