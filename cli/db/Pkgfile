@@ -1,23 +1,14 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="The Berkeley DB embedded database system"
 url="http://www.oracle.com/technology/software/products/berkeley-db/index.html"
 
-
 name=db
 alias=(berkeley-db)
-version=6.2.32
-release=4
-
+version=6.2.38
 
 source=(http://download.oracle.com/berkeley-db/$name-$version.tar.gz)
-
 
 build() {
 
@@ -28,10 +19,7 @@ build() {
 		--enable-shared \
 		--enable-cxx --enable-dbm
 	make
-
 }
-
-
 
 package() {
 
@@ -42,5 +30,4 @@ package() {
 	chown -R 0:0 $PKG
 	chmod -R +w $PKG
 	rm $PKG/usr/lib/{libdb-6.2.la,libdb_cxx-6.2.la}
-
 }
