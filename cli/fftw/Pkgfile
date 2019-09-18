@@ -1,43 +1,34 @@
-# Depends on: gcc
-
-packager="sipo"
-contributors="Tnut, Pierre B."
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A library for computing the discrete Fourier transform (DFT)"
 url="http://www.fftw.org/"
-
 
 name=fftw
 version=3.3.8
 release=4
 
-
 source=(http://www.fftw.org/$name-$version.tar.gz)
-
 
 prepare(){
 
 	cp -a $name-$version $name-$version-double
 	cp -a $name-$version $name-$version-long-double
-
 }
-
 
 build() {
 
 	CFLAGS+=" -O3 -fomit-frame-pointer -malign-double -fstrict-aliasing -ffast-math"
 	CONFIGURE="./configure F77=gfortran --prefix=/usr \
-                                    	--enable-shared --enable-threads \
-                                    	--enable-openmp"
+                                    	    --enable-shared \
+					    --enable-threads \
+                                    	    --enable-openmp"
 
 	cd $name-$version-double
      	$CONFIGURE --enable-sse2 --enable-avx
      	make
 
-
-     make DESTDIR=$PKG install
+        make DESTDIR=$PKG install
 
 
 	cd ../$name-$version-long-double
@@ -53,17 +44,8 @@ build() {
 	    make
 
 
-    make DESTDIR=$PKG install
+        make DESTDIR=$PKG install
 
-
-	rm $PKG/usr/lib/libfftw3.la
-	rm $PKG/usr/lib/libfftw3_omp.la
-	rm $PKG/usr/lib/libfftw3_threads.la
-	rm $PKG/usr/lib/libfftw3f.la
-	rm $PKG/usr/lib/libfftw3f_omp.la
-	rm $PKG/usr/lib/libfftw3f_threads.la
-	rm $PKG/usr/lib/libfftw3l.la
-	rm $PKG/usr/lib/libfftw3l_omp.la
-	rm $PKG/usr/lib/libfftw3l_threads.la
+        find $PKG/usr/lib -name "*.la" -print -delete
 
 }
