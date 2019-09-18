@@ -1,29 +1,22 @@
-# Depends on: cmake libxml2 libzip
+makedepends=(cmake libxml2 libzip)
 
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Tools for accessing and converting various ebook file formats"
 url="https://sourceforge.net/projects/ebook-tools/"
-
 
 name=ebook-tools
 version=0.2.2
 release=2
 
-
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz)
-
 
 prepare(){
 
   mkdir -p build
 
 }
-
 
 build() {
 
@@ -35,7 +28,6 @@ build() {
 
 }
 
-
 package() {
 
   cd build
@@ -43,5 +35,4 @@ package() {
 
   install -Dm644 "$SRC"/$name-$version/LICENSE \
     -t "$PKG"/usr/share/licenses/$name/
-
 }
