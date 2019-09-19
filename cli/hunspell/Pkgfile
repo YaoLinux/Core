@@ -1,40 +1,30 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Spell checker and morphological analyzer library and program"
 url="https://hunspell.github.io/"
-
 
 name=hunspell
 version=1.7.0
 release=2
 
-
 source=(https://github.com/hunspell/hunspell/archive/v$version.tar.gz)
-
 
 prepare(){
 
   cd hunspell-$version
   autoreconf -vfi
-
 }
-
 
 build() {
 
   cd hunspell-$version
-  ./configure --prefix=/usr --disable-static \
-	--with-ui --with-readline # --with-experimental breaks build in this release
+  ./configure --prefix=/usr \
+              --disable-static \
+              --with-ui \
+	      --with-readline
   make
-
 }
-
 
 package() {
 
@@ -48,5 +38,4 @@ package() {
 
 # Obsolet lib
   rm $PKG/usr/lib/libhunspell-1.?.la
-
 }
