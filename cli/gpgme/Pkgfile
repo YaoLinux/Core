@@ -1,38 +1,25 @@
-# Depends on: libassuan
+makedepends=(libassuan libgpg-error)
 
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A C wrapper library for GnuPG"
 url="http://www.gnupg.org/related_software/gpgme/"
 
-
 name=gpgme
-version=1.12.0
-
+version=1.13.1
 
 source=(https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2)
-
-
-prepare() {
-
-	cd $name-$version
-	sed 's#@libsuffix@#.so#' -i lang/cpp/src/GpgmeppConfig.cmake.in.in
-
-}
 
 build() {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-				--disable-gpg-test
+	            --disable-static \
+		    --disable-fd-passing \
+                    --disable-gpgsm-test
 	make
-
 }
-
 
 package() {
 
@@ -41,4 +28,3 @@ package() {
 	rm $PKG/usr/lib/libgpgme{,pp}.la
 
 }
-
