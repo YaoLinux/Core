@@ -1,37 +1,26 @@
-# Depends on: 
-
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Shared libraries for GSM 06.10 lossy speech compression"
 url="http://www.quut.com/gsm/"
-
 
 name=gsm
 version=1.0.18
 release=2
 
-
 source=(http://www.quut.com/gsm/gsm-1.0.18.tar.gz 
 		gsm.patch)
-
 
 prepare(){
 
   cd ${name}-${version%.*}-pl${version##*.}
   patch -p0 -i ../gsm.patch
-
 }
-
 
 build() {
 
   cd ${name}-${version%.*}-pl${version##*.}
   make CCFLAGS="-c ${CFLAGS} -fPIC"
-
 }
 
 
@@ -49,5 +38,4 @@ package() {
 
   # Install license
   install -m644 COPYRIGHT ${PKG}/usr/share/licenses/${name}/license.txt
-
 }
