@@ -16,7 +16,7 @@ source=(https://hisham.hm/htop/releases/$version/$name-$version.tar.gz
 prepare(){
 
   cd "$name-$version"
-  patch -Np1 < "${SRC}"/0001-fix-option-string.patch
+  patch -Np1 < ../0001-fix-option-string.patch
 }
 
 build() {
