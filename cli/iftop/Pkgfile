@@ -1,30 +1,24 @@
-# Depends on: libpcap ncurses 
+makedepends=(libpcap ncurses)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Display bandwidth usage on an interface"
 url="http://www.ex-parrot.com/~pdw/iftop/"
 
-
 name=iftop
 version=1.0pre4
-release=1
-
 
 source=(http://www.ex-parrot.com/~pdw/iftop/download/$name-$version.tar.gz)
-
 
 build(){
 
   cd $name-$version
 
-  ./configure --prefix=/usr --sbindir=/usr/bin --mandir=/usr/share/man
+  ./configure --prefix=/usr \
+              --sbindir=/usr/bin \
+              --mandir=/usr/share/man
   make
-
 }
 
 package() {
@@ -32,6 +26,4 @@ package() {
   cd $name-$version
 
   make DESTDIR="$PKG" install
-
 }
-
