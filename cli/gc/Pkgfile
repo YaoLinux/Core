@@ -1,7 +1,6 @@
-# Depends on: libatomic-ops
+makedepends=(libatomic-ops)
 
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 description="A garbage collector for C and C++"
@@ -15,17 +14,20 @@ source=(https://github.com/ivmai/bdwgc/releases/download/v$version/$name-$versio
 build() {
 
   cd ${name}-${version}
-  ./configure --prefix=/usr --enable-cplusplus --disable-static
+  ./configure --prefix=/usr \
+              --enable-cplusplus \
+              --disable-static
+  
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+  
   make
-
 }
 
 package() {
 
   cd ${name}-${version}
   make DESTDIR="${PKG}" install
-  sed 's|GC_MALLOC 1L|gc 3|g' doc/gc.man |
-   install -Dm644 /dev/stdin "${PKG}/usr/share/man/man3/gc.3"
 
+sed 's|GC_MALLOC 1L|gc 3|g' doc/gc.man |
+   install -Dm644 /dev/stdin "${PKG}/usr/share/man/man3/gc.3"
 }
