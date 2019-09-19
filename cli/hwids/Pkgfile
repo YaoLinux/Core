@@ -1,24 +1,17 @@
-# Depends on:  git
+makedepends=(git)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="hardware identification databases"
 url="https://github.com/gentoo/hwids"
 
-
 name=hwids
-version=20180917-git
-release=1
-
+version=20190818-git
 
 prepare() {
 
-git clone git://github.com/gentoo/$name.git
-
+git clone git://github.com/gentoo/$name.git $name
 }
 
 build() {
@@ -33,5 +26,4 @@ git checkout $name-${version:0:8}
     		install -Dm644 $i \
     		$PKG/usr/share/hwdata/$i
 	done
-
 }
