@@ -1,34 +1,25 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Jayce, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Common development macros for GNOME"
 url="https://www.gnome.org"
-
 
 name=gnome-common
 version=3.18.0
 release=4
 
-
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
-
 
 build(){
 
   cd $name-$version
-  ./configure --prefix=/usr --with-autoconf-archive
+  ./configure --prefix=/usr \
+              --with-autoconf-archive
   make
-
 }
 
 package() {
 
   cd $name-$version
   make DESTDIR="$PKG" install
-
 }
