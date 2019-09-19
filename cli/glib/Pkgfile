@@ -1,47 +1,29 @@
-# Depends on: libffi pcre python elfutils meson ninja libxslt docbook-xsl
+makedepends=(pcre elfutils libxslt docbook-xsl)
 
-
-packager="sipo"
-contributors="Tnut, Fanch"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="The GLib package contains a low-level libraries useful for providing data structure handling"
 url="http://www.gtk.org/"
 
-
 PKGMK_GROUPS=(man devel doc)
 
-
 name=glib
-version=2.58.3
-release=1
+version=2.62.0
 
-
-source=(http://ftp.gnome.org/pub/gnome/sources/glib/${version:0:4}/$name-$version.tar.xz
-	glib-$version-skip_warnings-1.patch)
-
+source=(http://ftp.gnome.org/pub/gnome/sources/glib/${version:0:4}/$name-$version.tar.xz)
 
 prepare() {
-	cd $name-$version
-	# patch -Np1 -i ../glib-$version-skip_warnings-1.patch
 	mkdir build-glib
 }
 
 build() {
-	cd $name-$version/build-glib
-	meson --prefix=/usr -Dman=true -Dselinux=false ..
+	cd build-glib
+	meson --prefix=/usr -Dman=true -Dselinux=false ../$name-$version
 	ninja
 }
 
 package() {
-	cd $name-$version/build-glib
+	cd build-glib
 	DESTDIR=$PKG ninja install
 }
-
-
-
-
-
-
-
