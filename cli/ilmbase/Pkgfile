@@ -1,55 +1,42 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Pierre B., Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Base libraries from ILM for OpenEXR"
 url="http://www.openexr.com"
 
-
 name=ilmbase
 version=2.3.0
-release=1
-
 
 source=(https://github.com/openexr/openexr/releases/download/v$version/$name-$version.tar.gz 
 		ilmbase-2.0.1-no_undefined.patch 
 		ilmbase-1.0.3-pkgconfig.patch)
 
-
 prepare(){
 
-  cd "${SRC}/$name-$version"
+  cd $name-$version
   # patches from fedora
   patch -p1 -i ../ilmbase-2.0.1-no_undefined.patch
   patch -p1 -i ../ilmbase-1.0.3-pkgconfig.patch
-
 }
 
 build() {
 
-  cd "${SRC}/$name-$version"
+  cd $name-$version
+
   ./configure --prefix=/usr
+
   # manually set PTHREAD_LIBS to include -lpthread until libtool bogosity is fixed,
   # https://bugzilla.redhat.com/show_bug.cgi?id=661333
+  
   make PTHREAD_LIBS="-pthread -lpthread"
-
 }
-
 
 package() {
 
-  cd "${SRC}/$name-$version"
+  cd $name-$version
   make DESTDIR="${PKG}" install
   install -D -m644 LICENSE -t "$PKG/usr/share/licenses/$name"
-# Obsolet libs
-  rm $PKG/usr/lib/libHalf.la
-  rm $PKG/usr/lib/libIex.la
-  rm $PKG/usr/lib/libIexMath.la
-  rm $PKG/usr/lib/libIlmThread.la
-  rm $PKG/usr/lib/libImath.la
 
+# Obsolet libs
+  find $PKG/usr/lib -name "*.la" -print -delete
 }
