@@ -1,19 +1,24 @@
 description="Scientific Library (GSL) is a numerical library for C and C++ programmers."
 url="http://www.gnu.org/software/gsl/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gsl
-version=2.5
+version=2.6
 
 source=(http://ftp.gnu.org/pub/gnu/$name/$name-$version.tar.gz)
 
 build() {
+
 cd $name-$version
+
 ./configure --prefix=/usr \
---disable-static
+            --disable-static
+
 make
 make DESTDIR=$PKG install
+
 rm $PKG/usr/lib/libgsl{,cblas}.la
 }
 uptodate() {
