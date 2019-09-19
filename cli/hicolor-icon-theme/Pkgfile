@@ -1,34 +1,12 @@
-# Depends on:  
-
-
-packager="sipo"
+packager="Yaolinux Team"
 contributors="Pierre B., Tnut"
 maintainer="sipo"
 
-
 description="Freedesktop.org Hicolor icon theme"
 url="https://www.freedesktop.org/wiki/Software/icon-theme/"
-
 
 name=hicolor-icon-theme
 version=0.17
 release=2
 
-
 source=(http://icon-theme.freedesktop.org/releases/$name-$version.tar.xz)
-
-
-build(){
-
-  cd $name-$version
-  ./configure --prefix=/usr
-  make
-
-}
-
-package() {
-
-  cd $name-$version
-  make DESTDIR="${PKG}" install
-
-}
