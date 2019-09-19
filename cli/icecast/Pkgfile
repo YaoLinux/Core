@@ -1,9 +1,10 @@
-#Depends on: curl libvorbis libxslt speex libtheora
+makedepends=(curl libvorbis libxslt speex libtheora)
 
 description="Streaming audio over the Internet"
 url="http://www.icecast.org/"
-packager="Hugo <graknu@nutyx.org>"
 
+packager="Yaolinux Team"
+maintainer="hugo"
 
 name=icecast
 version=2.4.3
