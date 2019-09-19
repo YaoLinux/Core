@@ -1,51 +1,41 @@
-# Depends on: ncurses libnl python2
+makedepends=(ncurses libnl python2)
 
-
-packager="sipo"
-contributors="Fanch, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Interactive process viewer"
 url="https://hisham.hm/htop/"
-
 
 name=htop
 version=2.2.0
 release=2
 
-
 source=(https://hisham.hm/htop/releases/$version/$name-$version.tar.gz
 		0001-fix-option-string.patch)
-
 
 prepare(){
 
   cd "$name-$version"
   patch -Np1 < "${SRC}"/0001-fix-option-string.patch
-
 }
 
 build() {
 
   cd "$name-$version"
 
-  ./configure \
-      --prefix=/usr \
-      --sysconfdir=/etc \
-      --enable-cgroup \
-      --enable-delayacct \
-      --enable-openvz \
-      --enable-unicode \
-      --enable-vserver
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc \
+              --enable-cgroup \
+              --enable-delayacct \
+              --enable-openvz \
+              --enable-unicode \
+              --enable-vserver
 
-  make
-
+make
 }
 
 package() {
 
   cd "$name-$version"
   make DESTDIR="${PKG}" install
-
 }
