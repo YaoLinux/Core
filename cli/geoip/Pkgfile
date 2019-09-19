@@ -1,46 +1,35 @@
-# Depends on: geoip-database
+makedepends=(geoip-database)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Non-DNS IP-to-country resolver C library & utils"
 url="http://www.maxmind.com/app/c"
-
 
 name=geoip
 version=1.6.12
 release=2
 
-
 source=(https://github.com/maxmind/$name-api-c/archive/v$version.tar.gz)
-
 
 prepare(){
 
   cd geoip-api-c-$version
   ./bootstrap
-
 }
 
 build() {
 
   cd geoip-api-c-$version
 
-  ./configure \
-    --prefix=/usr \
-    --mandir=/usr/share/man \
-    --sysconfdir=/etc/geoip
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man \
+              --sysconfdir=/etc/geoip
   make
-
 }
 
 package() {
 
   cd geoip-api-c-$version
   make DESTDIR="$PKG" install
-
 }
-
