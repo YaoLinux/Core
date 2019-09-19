@@ -1,19 +1,12 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Tnut, Fanch"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="High quality hyphenation and justification library based on the TeX hyphenation algorithm."
 url="http://hunspell.sourceforge.net/"
 
-
 name=hyphen
 version=2.8.8
 release=3
-
 
 source=(http://downloads.sourceforge.net/hunspell/$name-$version.tar.gz)
 
@@ -21,9 +14,8 @@ build() {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-				--disable-static 
+                    --disable-static 
 	make
-
 }
 
 
@@ -31,6 +23,7 @@ package() {
 
 	cd $name-$version
 	make DESTDIR=$PKG install
-	rm $PKG/usr/lib/libhyphen.la
 
+# obsolet lib
+rm $PKG/usr/lib/libhyphen.la
 }
