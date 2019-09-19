@@ -1,41 +1,32 @@
-# Depends on: gc libunistring libffi gdb
+makedepends=(gc libunistring libffi gdb)
 
-
-packager="sipo"
-contributors="Berlius, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Portable, embeddable Scheme implementation written in C"
 url="https://www.gnu.org/software/guile/"
 
-
 name=guile
-version=2.2.4
-release=2
-
+version=2.2.6
 
 source=(ftp://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
-
 
 build(){
 
 	cd $name-$version
 	./configure --prefix=/usr \
-				--disable-static  \
-				--disable-error-on-warning
+                    --disable-static  \
+                    --disable-error-on-warning
+
 	sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 	make
-
 }
-
 
 package() {
 
 	make -C $name-$version DESTDIR="$PKG" install
 	rm "$PKG"/usr/lib/libguile-2.?.so.*-gdb.scm
-# Obsolets libs
-	rm $PKG/usr/lib/guile/2.2/extensions/guile-readline.la
-	rm $PKG/usr/lib/libguile-2.2.la
 
+# Obsolets libs
+	find $PKG/usr/lib -name "*.la" -print -delete
 }
