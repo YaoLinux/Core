@@ -1,32 +1,23 @@
-# Depends on: glib python
+makedepends=(glib)
 
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="File and directory monitoring system defined to be a subset of the FAM (File Alteration Monitor)"
 url="http://www.gnome.org/~veillard/gamin"
 
-
 name=gamin
 version=0.1.10
-release=1
-
 
 source=(http://www.gnome.org/~veillard/gamin/sources/gamin-0.1.10.tar.gz
 		remove_deprecated_G_CONST_RETURN.patch)
-
 
 prepare(){
 
   cd $name-$version
   patch -p0 < ../remove_deprecated_G_CONST_RETURN.patch
   sed -i 's/G_CONST_RETURN/const/' server/gam_{node,subscription}.{c,h}
-
 }
-
 
 build() {
 
@@ -38,15 +29,11 @@ build() {
               --disable-static
 
   make
-
 }
 
 package() {
 
   cd $name-$version
   make DESTDIR="$PKG" install
-  rm $PKG/usr/lib/lib{fam,gamin-1}.la
-  rm $PKG/usr/lib/python2.7/site-packages/_gamin.la
-
+  find $PKG/usr/lib -name "*.la" -print -delete
 }
-
