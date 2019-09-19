@@ -1,43 +1,33 @@
-# Depends on: llvm python2 git ninja
+makedepends=(llvm python2 git)
 
-
-packager="sipo"
-contributors="Remy"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Meta-build system that generates build files for Ninja"
 url="https://gn.googlesource.com/gn/+/master/README.md"
 
-
 name=gn
-version=0.1497.13
-
+version=0.1576.81
 
 source=()
-
 
 prepare () {
 
     git clone https://gn.googlesource.com/gn ${name}-${version}
     cd ${name}-${version}
-    git checkout 13ac6ca4d5cd9e127096a2073743d2d12ce8a70e
+    git checkout 81ee1967d3fcbc829bac1c005c3da59739c88df9
 
 }
-
 
 build() {
 
     cd ${name}-${version}
     python2 ./build/gen.py
     ninja -C out gn
-
 }
-
 
 package() {
 
     cd ${name}-${version}
     install -D out/gn "${PKG}/usr/bin/gn"
-
 }
