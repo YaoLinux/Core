@@ -1,22 +1,16 @@
-# Depends on: autoconf2-13 icu libffi nspr python2 zip
+makedepends=(autoconf2-13 icu libffi nspr python2 zip)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="JS is Mozilla's JavaScript engine written in C."
 url="https://people.mozilla.org"
-
 
 name=js52
 version=52.9.0
 release=4
 
-
 source=(http://ftp.acc.umu.se/pub/gnome/teams/releng/tarballs-needing-help/mozjs/mozjs-52.6.0gnome1.tar.xz)
-
 
 build() {
 
@@ -29,8 +23,8 @@ build() {
                 --with-system-icu   \
                 --enable-threadsafe \
                 --enable-readline
-    make
 
+make
 }
 
 
@@ -38,6 +32,4 @@ package() {
 
     cd js/src
     make DESTDIR=$PKG install
-
 }
-
