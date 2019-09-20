@@ -1,32 +1,22 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Tnut, Remy"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="General-purpose scalable concurrent malloc implementation"
 url="http://www.canonware.com/jemalloc/"
 
-
 name=jemalloc
-version=5.1.0
-release=2
-
+version=5.2.1
 
 source=(https://github.com/jemalloc/jemalloc/releases/download/$version/$name-$version.tar.bz2)
-
 
 build(){
 
   cd $name-$version
 
-  ./configure \
-    --enable-autogen \
-    --prefix=/usr
+  ./configure --enable-autogen \
+              --prefix=/usr
+  
   make
-
 }
 
 package() {
@@ -37,5 +27,4 @@ package() {
 
   install -Dm644 COPYING "$PKG/usr/share/licenses/$name/COPYING"
   chmod 644 "$PKG/usr/lib/libjemalloc_pic.a"
-
 }
