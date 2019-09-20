@@ -1,22 +1,15 @@
-# Depends on: autoconf2-13 icu libffi nspr python2 zip
+makedepends=(autoconf2-13 icu libffi nspr python2 zip)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="JS is Mozilla's JavaScript engine written in C."
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
 
-
 name=js60
-version=60.1.0
-release=1
-
+version=60.9.0
 
 source=(http://ftp.acc.umu.se/pub/gnome/teams/releng/tarballs-needing-help/mozjs/mozjs-$version.tar.bz2)
-
 
 prepare(){
 
@@ -24,10 +17,7 @@ prepare(){
 
     mkdir mozjs-build
     cd    mozjs-build
-
-
 }
-
 
 build() {
 
