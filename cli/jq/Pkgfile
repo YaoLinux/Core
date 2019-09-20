@@ -1,22 +1,19 @@
-# Depends on: 
-
-description="Json processor in cli"
 packager="YaoLinux Teams"
 maintainer="Graknu <graknu@yaolinux.org>"
+
 url="https://stedolan.github.io/jq/"
+description="Json processor in cli"
 
 name=jq
 version=1.6
-release=1
 
 source=(https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz)
-
 
 build () {
   cd $name-$version
   autoreconf -i
   ./configure --prefix=/usr \
-     --disable-maintainer-mode
+              --disable-maintainer-mode
   make
 }
 
