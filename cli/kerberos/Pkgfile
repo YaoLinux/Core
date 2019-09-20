@@ -1,24 +1,17 @@
-# Depends on: glib meson ninja gobject-introspection gtk-doc
+makedepends=(e2fsprogs keyutils perl)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="The Kerberos network authentication system"
 url="http://web.mit.edu/kerberos/"
 
-
 name=kerberos
-version=1.16.1
+version=1.17
 yaolinux_version=1.0-RC1
-release=2
-
 
 source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
         http://web.mit.edu/$name/dist/krb5/${version:0:4}/krb5-$version.tar.gz)
-
 
 build()  {
 
@@ -31,10 +24,10 @@ build()  {
                 --with-system-ss         \
                 --with-system-verto=no   \
                 --enable-dns-for-realm
+
 make
 
 }
-
 
 package()  {
 
@@ -51,7 +44,6 @@ package()  {
     cp -vfr ../doc/*  $PKG/usr/share/doc/krb5-$version
 
 # Service
-    cd $SRC/yaolinux-${yaolinux_version}
+    cd ../yaolinux-${yaolinux_version}
     make DESTDIR=$PKG install-krb5
-
 }
