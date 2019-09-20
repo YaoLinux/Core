@@ -1,38 +1,31 @@
-# Depends on: 
-
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A JSON implementation in C"
 url="https://github.com/json-c/json-c/wiki"
-
 
 name=json-c
 version=0.13.1
 release=4
 
-
 source=(https://s3.amazonaws.com/${name}_releases/releases/$name-$version.tar.gz)
-
 
 build(){
 
     cd $name-$version
     ./configure --prefix=/usr \
-                --disable-static
+                --disable-static \
+                --enable-threading
+
     make || make -j1
-
-
 }
 
 package(){
 
     cd $name-$version
-    make DESTDIR=$PKG install    
+
+    make DESTDIR=$PKG install
+
 # Obsolet lib
     rm $PKG/usr/lib/libjson-c.la
-
 }
