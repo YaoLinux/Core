@@ -1,26 +1,23 @@
-# Depends on: libgpg-error
+makedepends=(libgpg-error)
 
 description="A general purpose crypto library based on the code used in GnuPG."
 url="http://ftp.gnupg.org/gcrypt/libgcrypt/"
-packager="tnut <tnut2nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libgcrypt
-version=1.8.4
+version=1.8.5
 
 source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2 )
 
-build() {
-cd $name-$version
-./configure --prefix=/usr --disable-static
-make
-make DESTDIR=$PKG install
+build=autotools
 
+package() {
 install -v -dm755 $PKG/usr/share/doc/libgcrypt-$version
 install -v -m644 README doc/{README.apichanges,fips*,libgcrypt*} \
-$PKG/usr/share/doc/libgcrypt-$version
+                 $PKG/usr/share/doc/libgcrypt-$version
 
 # Obsolet lib
-
 rm $PKG/usr/lib/libgcrypt.la
 }
