@@ -1,7 +1,8 @@
 description="Library to create an ISO-9660 filesystem with extensions like RockRidge or Joliet"
 url="http://libburnia.pykix.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libisofs
 version=1.5.0
@@ -9,11 +10,17 @@ version=1.5.0
 source=(http://files.libburnia-project.org/releases/$name-$version.tar.gz)
 
 build() {
+
 cd $name-$version
-./configure --prefix=/usr --disable-static \
-            --enable-libacl --enable-xattr
+
+./configure --prefix=/usr \
+            --disable-static \
+            --enable-libacl \
+            --enable-xattr
             
 make
 make DESTDIR=$PKG install
+
+#Obsolet lib
 rm $PKG/usr/lib/$name.la
 }
