@@ -1,7 +1,8 @@
 description="Implements the different protocols (CDDBP, HTTP, SMTP) to access data on a CDDB server"
 url="http://sourceforge.net/projects/libcddb/"
-packager="tnut <tnut@nutyx.org>"
-conttibutors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libcddb
 version=1.3.2
@@ -10,6 +11,7 @@ release=2
 source=(http://downloads.sourceforge.net/sourceforge/${name}/${name}-${version}.tar.bz2)
 
 package() {
+
 # Obsolet lib
 rm $PKG/usr/lib/libcddb.la
 }
