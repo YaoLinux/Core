@@ -1,21 +1,19 @@
-# Depends on: libcddb
+makedepends=(libcddb)
 
 description="GNU Compact Disc Input and Control Library"
 url="http://www.gnu.org/software/libcdio/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libcdio
-version=2.0.0
-release=2
+version=2.1.0
 
 source=( http://ftp.gnu.org/gnu/$name/$name-$version.tar.gz)
 
-build() {
-	cd $name-$version
-	./configure --prefix=/usr --disable-static 
-	make
-	make DESTDIR=$PKG install
+build=autotools
+
+package() {
 
 # Obsolets libs
 rm $PKG/usr/lib/libcdio{,++}.la
