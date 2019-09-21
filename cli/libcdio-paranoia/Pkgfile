@@ -1,21 +1,24 @@
-# Depends on: libcdio
+makedepends=(libcdio)
 
 description="GNU Compact Disc Input and Control Library"
 url="http://www.gnu.org/software/libcdio/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libcdio-paranoia
-version=10.2
-release=3
+version=10.2+2.0.0
 
 source=( http://ftp.gnu.org/gnu/libcdio/libcdio-paranoia-${version}+0.94+1.tar.bz2)
 
 build() {
-	cd $SRC/libcdio-paranoia-${version}+0.94+1
-	./configure --prefix=/usr --disable-static 
-	make	
-	make DESTDIR=$PKG install
+	cd libcdio-paranoia-${version}
+
+        ./configure --prefix=/usr \
+	            --disable-static 
+
+        make
+        make -j1 DESTDIR=$PKG install
 
 # Obsolets libs
 rm $PKG/usr/lib/libcdio_{cdda,paranoia}.la
