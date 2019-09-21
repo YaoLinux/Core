@@ -1,22 +1,23 @@
-# Depends on: glib pcre python python2 gtk-doc
+makedepends=(glib pcre python2 gtk-doc)
 
 description="Library facilitates the common operations with sizes in bytes."
 url="https://github.com/storaged-project/libblockdev"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libbytesize
-version=1.4
+version=2.1
 
 source=( https://github.com/storaged-project/$name/releases/download/$version/$name-$version.tar.gz)
 build() {
-cd ${name}-$version
 
+cd $name-$version
 ./configure --prefix=/usr
 
 make
 make DESTDIR=$PKG install
 
 # Obsolet lib
-
 rm $PKG/usr/lib/libbytesize.la
 }
