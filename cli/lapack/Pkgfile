@@ -1,23 +1,17 @@
-# Depends on: cmake python doxygen
+makedepends=(cmake doxygen)
 
-
-packager="sipo"
-contributors="Tnut, Pierre B."
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Linear Algebra PACKage"
 url="http://www.netlib.org/lapack"
-
 
 name=lapack
 version=3.8.0
 release=2
 
-
 source=(http://www.netlib.org/lapack/lapack-3.8.0.tar.gz 
         LICENSE.blas)
-
 
 build(){
   install -d build
@@ -62,5 +56,4 @@ package() {
 
   cd $SRC/build/LAPACKE
   make DESTDIR="$PKG" install
-
 }
