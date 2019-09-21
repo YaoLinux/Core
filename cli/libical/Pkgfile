@@ -1,25 +1,27 @@
-# Depends on: libxml2 cmake gobject-introspection icu doxygen glib ninja
+makedepends=(libxml2 cmake gobject-introspection icu doxygen glib)
 
 description="Implementation of the iCalendar protocols and data formats."
 url="http://sourceforge.net/projects/freeassociation/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libical
-version=3.0.4
+version=3.0.5
 
-source=( https://github.com/libical/libical/releases/download/v$version/$name-$version.tar.gz)
+source=(https://github.com/libical/libical/releases/download/v$version/$name-$version.tar.gz)
 
 build() {
-cd $name-$version
-mkdir build
+
+mkdir -pv build
 cd build
 cmake -G Ninja \
 -DCMAKE_INSTALL_PREFIX=/usr \
 -DCMAKE_INSTALL_LIBDIR=/usr/lib \
 -DCMAKE_BUILD_TYPE=Release  \
 -DSHARED_ONLY=yes \
-..
+../$name-$version
+
 ninja
 DESTDIR=$PKG ninja install
 }
