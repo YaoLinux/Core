@@ -1,20 +1,25 @@
-# Depends on: doxygen
+makedepends=(doxygen)
 
 description="Library utilities to manage software packages on NuTyX distribution."
 url="https://git.tuxfamily.org/nutyx/cards.git"
+
 maintainer="Tnut, Gianni"
-packager="tnut <tnut@nutyx dot org>"
+packager="Yaolinux Team"
+
 name=libcards
-version=2.4.94
+version=2.4.99.1
 
 source=(http://downloads.tuxfamily.org/nutyx/files/cards-$version.tar.gz)
+
 build () {
 cd cards-$version
+
 make libs
 make DESTDIR=$PKG install-libs
-cd documentation
-make DESTDIR=$PKG html install
+
+make -C documentaion DESTDIR=$PKG html install
 }
+
 doc() {
 cd $PKG
 bsdtar -cf \
