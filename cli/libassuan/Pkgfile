@@ -12,7 +12,6 @@ version=2.5.3
 source=(https://gnupg.org/ftp/gcrypt/libassuan/$name-$version.tar.bz2)
 
 package() {
-	cd ${name}-${version}"
 
 # Obsolet lib
     rm $PKG/usr/lib/libassuan.la
