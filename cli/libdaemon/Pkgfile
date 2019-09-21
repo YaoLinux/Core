@@ -1,7 +1,8 @@
 description="Lightweight C library that eases the writing of UNIX daemons"
 url="http://0pointer.de/lennart/projects/libdaemon/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libdaemon
 version=0.14
@@ -12,10 +13,11 @@ source=( http://pkgs.fedoraproject.org/repo/pkgs/libdaemon/libdaemon-0.14.tar.gz
 build() {
 	cd $name-$version
 	./configure --prefix=/usr \
-		--disable-doxygen \
-		--disable-lynx
-	make
-	make DESTDIR=$PKG install
+                    --disable-doxygen \
+                    --disable-lynx
+
+        make
+        make DESTDIR=$PKG install
 
 # Obsolet lib
 rm $PKG/usr/lib/libdaemon.la
