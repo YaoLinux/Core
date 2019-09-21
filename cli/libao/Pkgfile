@@ -1,26 +1,18 @@
-# Depends on: alsa-lib git 
+makedepends=(alsa-lib git)
 
-
-packager="sipo"
-contributors="Rémy"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 description="Cross-platform audio output library and plugins"
 url="http://xiph.org/ao/"
 
-
 name=libao
-version=1.2.2-git
-release=2
+version=1.2.2
 
-source=()
+PKGMK_KEEP_SOURCES="no"
 
-prepare() {
+source=(https://github.com/xiph/$name/archive/$version.tar.gz)
 
-git clone https://git.xiph.org/libao.git $name
-
-}   
-     
 build() {
 
     cd $name
@@ -29,7 +21,6 @@ build() {
                 --enable-alsa-mmap
 
     make
-
 }
 
 package() {
@@ -49,5 +40,4 @@ EOF
     rm $PKG/usr/lib/ao/plugins-4/libalsa.la
     rm $PKG/usr/lib/ao/plugins-4/liboss.la
     rm $PKG/usr/lib/libao.la
-
 }
