@@ -1,21 +1,13 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Tnut, Pierre B."
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Implementations for atomic memory update operations on a number of architectures."
 url="http://www.hpl.hp.com/research/linux/atomic_ops/"
 
-
 name=libatomic-ops
-version=7.6.8
-
+version=7.6.10
 
 source=(http://www.ivmaisoft.com/_bin/atomic_ops/libatomic_ops-$version.tar.gz)
-
 
 build() {
 
@@ -27,7 +19,6 @@ build() {
                 --docdir=/usr/share/doc/libatomic_ops-$version
 
     make
-
 }
 
 
@@ -41,5 +32,4 @@ package() {
 # Obsolet lib
     rm $PKG/usr/lib/libatomic_ops.la
     rm $PKG/usr/lib/libatomic_ops_gpl.la
-
 }
