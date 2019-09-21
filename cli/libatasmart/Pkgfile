@@ -1,24 +1,17 @@
-# Depends on: systemd
-
+makedepends=(systemd)
 
 packager="sipo"
-contributors="Pierre B., Tnut"
 maintainer="sipo"
-
 
 description="ATA S.M.A.R.T. Reading and Parsing Library"
 url="http://0pointer.de/blog/projects/being-smart.html"
 
-
 name=libatasmart
 version=0.19
-release=1
-
 
 source=(http://0pointer.de/public/$name-$version.tar.xz 
         0001-Dont-test-undefined-bits.patch 
         0002-Drop-our-own-many-bad-sectors-heuristic.patch)
-
 
 prepare(){
   cd $name-$version
@@ -27,16 +20,17 @@ prepare(){
 }
 
 build() {
-  cd "${SRC}/${name}-${version}"
+  cd ${name}-${version}
   ./configure --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --sbindir=/usr/bin \
-    --disable-static
-  make
+              --sysconfdir=/etc \
+              --localstatedir=/var \
+              --sbindir=/usr/bin \
+              --disable-static
+
+make
 }
 
 package() {
-  cd "${SRC}/${name}-${version}"
+  cd ${name}-${version}
   make DESTDIR="${PKG}" install
 }
