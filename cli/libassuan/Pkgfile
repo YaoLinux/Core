@@ -1,33 +1,19 @@
-# Depends on: libgpg-error 
+makedepends=(libgpg-error)
 
-
-packager="sipo"
-contributors="Tnut, Pierre B."
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="IPC library used by some GnuPG related software"
 url="https://www.gnupg.org/related_software/libassuan/"
 
-
 name=libassuan
 version=2.5.3
-release=1
-
 
 source=(https://gnupg.org/ftp/gcrypt/libassuan/$name-$version.tar.bz2)
 
-
-build(){
-	cd "${SRC}/${name}-${version}"
-	./configure --prefix=/usr
-	make
-}
-
-
 package() {
-	cd "${SRC}/${name}-${version}"
-	make DESTDIR="${PKG}" install
+	cd ${name}-${version}"
+
 # Obsolet lib
     rm $PKG/usr/lib/libassuan.la
 }
