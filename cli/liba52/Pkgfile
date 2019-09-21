@@ -1,45 +1,37 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Tnut, Pierre B"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A free library for decoding ATSC A/52 streams"
 url="http://liba52.sourceforge.net/"
-
 
 name=liba52
 version=0.7.4
 release=3
 
-
 source=(http://liba52.sourceforge.net/files/a52dec-$version.tar.gz)
-
 
 build() {
 
 	cd a52dec-$version
 	./configure --prefix=/usr \
-            --mandir=/usr/share/man \
-            --enable-shared \
-            --disable-static \
-           CFLAGS="-g -O2 $([ $(uname -m) = x86_64 ] && echo -fPIC)"
+                    --mandir=/usr/share/man \
+                    --enable-shared \
+                    --disable-static \
+                    CFLAGS="-g -O2 $([ $(uname -m) = x86_64 ] && echo -fPIC)"
 
 	make
-
 }
 
 package() {
 
 	cd a52dec-$version
 	make DESTDIR=$PKG install
+
 # required for xine-lib
     install -m644 liba52/a52_internal.h $PKG/usr/include/a52dec/
 	install -v -m644 -D doc/liba52.txt \
     $PKG/usr/share/doc/liba52-$version/liba52.txt
+
 # Obsolet lib
 	rm $PKG/usr/lib/liba52.la
-
 }
