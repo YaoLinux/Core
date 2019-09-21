@@ -1,14 +1,16 @@
 description="A software for reading and writing Data Matrix 2D barcodes"
 url="https://libdmtx.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libdmtx
-version=0.7.4
-release=2
+version=0.7.5
 
 source=(https://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
 
 package() {
+
 # Obsolet lib
 rm $PKG/usr/lib/libdmtx.la
 }
