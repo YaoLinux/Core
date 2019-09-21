@@ -1,7 +1,6 @@
-# Depends on: libraw1394 
+makedepends=(libraw1394)
 
 packager="Yaolinux Team"
-contributors=""
 maintainer="sipo"
 
 description="A library to control A/V devices using the 1394ta AV/C commands."
@@ -13,22 +12,22 @@ release=2
 
 source=(http://downloads.sourceforge.net/sourceforge/libavc1394/${name}-${version}.tar.gz)
 
-
 build(){
 
   cd "${name}-${version}"
 
-  ./configure --prefix=/usr --mandir=/usr/share/man --disable-static
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man \
+              --disable-static
 
   make
-
 }
 
 package() {
 
   cd "${name}-${version}"
   make DESTDIR="${PKG}" install
+
 # Obsolet libs
   rm $PKG/usr/lib/lib{avc,rom}1394.la
-
 }
