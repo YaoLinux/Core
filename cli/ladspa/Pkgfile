@@ -1,23 +1,16 @@
-# Depends on: glib meson ninja gobject-introspection gtk-doc
+makedepends=(glib meson ninja gobject-introspection gtk-doc)
 
-
-packager="sipo"
-contributors="Tnut,Pierre B. "
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Linux Audio Developer's Simple Plugin API (LADSPA)"
 url="http://www.ladspa.org/"
 
-
 name=ladspa
 version=1.15
-release=1
-
 
 source=(https://ladspa.org/download/ladspa_sdk_${version}.tgz
        ladspa-fix-memleak-in-plugin-scanning.patch)
-
 
 prepare() {
 
@@ -29,16 +22,12 @@ prepare() {
 
 }
 
-
-
 build() {
 
   cd "${name}-${version}/src"
   make targets
 
 }
-
-
 
 package() {
 
