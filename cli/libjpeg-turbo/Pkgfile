@@ -1,9 +1,10 @@
-# Depends on: nasm
+makedepends=(nasm)
 
 description="Fork of the original IJG libjpeg which uses SIMD to accelerate baseline JPEG"
 url="http://libjpeg-turbo.virtualgl.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libjpeg-turbo
 version=1.5.3
@@ -12,13 +13,19 @@ release=4
 source=(http://sourceforge.net/projects/libjpeg-turbo/files/$version/libjpeg-turbo-$version.tar.gz)
 
 build() {
+
 cd $name-$version
+
 ./configure --prefix=/usr \
---mandir=/usr/share/man \
---disable-static
+            --mandir=/usr/share/man \ 
+            --disable-static
+            
 make
 make DESTDIR=$PKG install
+
 rm -rf $PKG/usr/{bin,include,lib/pkgconfig,share}
 rm $PKG/usr/lib/lib{jpeg.so,turbojpeg.so*}
+
+# Obsolet lib
 rm $PKG/usr/lib/lib{turbo,}jpeg.la
 }
