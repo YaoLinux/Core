@@ -1,32 +1,26 @@
-# Depends on: libsndfile nasm
+makedepends=(libsndfile nasm)
 
-
-packager="sipo"
-contributors="Tnut,Pierre B. "
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="MP3 encoder, an MP3 frame analyzer useful for creating, analyzing compressed audio files."
 url="http://lame.sourceforge.net/index.php"
-
 
 name=lame
 version=3.100
 release=4
 
-
 source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz)
-
 
 build() {
 
   cd lame-${version}
 
-  ./configure \
-    --prefix='/usr' \
-    --enable-nasm \
-    --enable-shared
-  make
+  ./configure --prefix=/usr \
+              --enable-nasm \
+              --enable-shared
+
+   make
 
 }
 
@@ -34,5 +28,4 @@ package() {
 
   cd lame-${version}
   make DESTDIR="${PKG}" install
-
 }
