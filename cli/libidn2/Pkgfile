@@ -1,36 +1,20 @@
-# Depends on: libunistring
+makedepends=(libunistring)
 
-
-packager="sipo"
-contributors="Tnut, Pierre B."
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Designed for internationalized string handling based on the Stringprep"
 url="http://www.gnu.org/software/libidn/"
 
-
 name=libidn2
-version=2.1.1
-release=1
-
+version=2.2.0
 
 source=(https://ftp.gnu.org/gnu/libidn/$name-$version.tar.gz)
 
-
-build() {
-
-    cd $name-$version
-    ./configure --prefix=/usr --disable-static
-    make
-
-}
-
+build=autotools
 
 package() {
 
-    cd $name-$version
-    make DESTDIR=$PKG install
+# Obsolet lib
     rm $PKG/usr/lib/$name.la
-
 }
