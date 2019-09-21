@@ -23,8 +23,8 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-rm -rf $PKG/usr/{bin,include,lib/pkgconfig,share}
-rm $PKG/usr/lib/lib{jpeg.so,turbojpeg.so*}
+rm -rvf $PKG/usr/{bin,include,lib/pkgconfig,share}
+rm -v $PKG/usr/lib/lib{jpeg.so,turbojpeg.so*}
 
 # Obsolet lib
 rm $PKG/usr/lib/lib{turbo,}jpeg.la
