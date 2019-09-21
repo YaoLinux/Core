@@ -11,7 +11,7 @@ source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2)
 
 package() {
 
-    install -v -m644 -D README \
+    install -v -m644 -D $name-$version/README \
                         $PKG/usr/share/doc/$name-$version/README
 
 # Obsolet lib
