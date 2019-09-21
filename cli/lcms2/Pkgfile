@@ -1,28 +1,22 @@
-# Depends on: libjpeg-turbo2 libtiff
+makedepends=(libtiff)
 
-
-packager="sipo"
-contributors="Pierre B, Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Small-footprint color management engine, version 2"
 url="http://www.littlecms.com/"
-
 
 name=lcms2
 version=2.9
 release=2
 
-
 source=(https://downloads.sourceforge.net/sourceforge/lcms/lcms2-2.9.tar.gz)
-
 
 build(){
   cd ${name}-${version}
 
-  ./configure \
-    --prefix=/usr
+  ./configure --prefix=/usr
+  
   make
 }
 
