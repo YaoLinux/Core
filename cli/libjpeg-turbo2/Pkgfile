@@ -14,7 +14,11 @@ source=(http://sourceforge.net/projects/libjpeg-turbo/files/$version/libjpeg-tur
 build() {
 mkdir -pv build
 
+cd $name-$version
+
 sed 's/Szathmáry/Szathmary/g' -i java/org/libjpegturbo/turbojpeg/*.java
+
+cd ../build
 
 cmake -DWITH_JAVA=1 \
       -DWITH_JPEG8=1 \
