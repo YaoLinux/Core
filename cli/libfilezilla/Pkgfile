@@ -1,18 +1,20 @@
-# Depends on: nettle gnutls
+makedepends=(nettle gnutls)
 
 description="Small and modern C++ library for Filezilla" 
 url="https://lib.filezilla-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg, Rémy"
+
+packager="Yaolinux Team"
+maintainer="Rémy"
 
 name=libfilezilla
-version=0.18.1
+version=0.18.2
 
 source=(https://download.filezilla-project.org/libfilezilla/libfilezilla-$version.tar.bz2)
 
 build() {
 
-cd $SRC/$name-$version
+cd $name-$version
+
 ./configure --prefix=/usr \
             --disable-static
 
@@ -20,5 +22,5 @@ make
 make DESTDIR=$PKG install
 
 # Obsolets libs
-rm $PKG/usr/lib/libfilezilla.la
+rm $PKG/usr/lib/$name.la
 }
