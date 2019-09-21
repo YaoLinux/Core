@@ -1,38 +1,19 @@
-# Depends on:
-
-
-packager="sipo"
-contributors="Tnut,Pierre B "
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Contains a library that defines common error values for all GnuPG components"
 url="http://www.gnupg.org"
 
-
 name=libgpg-error
-version=1.35
-
+version=1.36
 
 source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2)
 
-
-build() {
-
-    cd $name-$version
-    ./configure --prefix=/usr
-    make
-
-}
-
-
 package() {
 
-    cd $name-$version
-    make DESTDIR=$PKG install
     install -v -m644 -D README \
-    $PKG/usr/share/doc/$name-$version/README
-    rm -f $PKG/usr/lib/$name.la
+                        $PKG/usr/share/doc/$name-$version/README
 
+# Obsolet lib
+rm -f $PKG/usr/lib/$name.la
 }
-
