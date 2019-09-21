@@ -1,13 +1,14 @@
 description="Minimalistic user-space library oriented to Netlink developers"
 url="http://www.netfilter.org/projects/libmnl/"
+
 packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
 
 name=libmnl
 version=1.0.4
 release=2
 
-source=(
-http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
+source=(http://www.netfilter.org/projects/$name/files/$name-$version.tar.bz2)
 
 package() {
 # Obsolet lib
