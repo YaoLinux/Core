@@ -1,6 +1,8 @@
 description="libburn is a library for writing preformatted data onto optical media"
 url="http://icculus.org/burn/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libburn
 version=1.5.0
@@ -9,7 +11,10 @@ source=(http://files.libburnia-project.org/releases/$name-$version.tar.gz)
 
 build() {
 cd $name-${version/.pl01/}
-./configure --prefix=/usr --disable-static
+
+./configure --prefix=/usr \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
 
