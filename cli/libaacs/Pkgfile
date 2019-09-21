@@ -1,37 +1,28 @@
-# Depend on: libgcrypt
+makedepends=(libgcrypt)
 
-
-packager="sipo"
-contributors="Rémy"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="Advanced Access Content System"
 url="http://www.videolan.org/developers/libaacs.html"
-
 
 name=libaacs
 version=0.9.0
 release=3
 
-
 source=(ftp://ftp.videolan.org/pub/videolan/$name/$version/$name-$version.tar.bz2)
-
 
 prepare() {
 
     cd $name-$version
     ./bootstrap
-
 }
-
 
 build() {
 
     cd $name-$version
     ./configure --prefix=/usr
     make
-
 }
 
 package() {
@@ -43,5 +34,4 @@ package() {
 
 # Obsolet lib
     rm $PKG/usr/lib/libaacs.la
-
 }
