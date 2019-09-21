@@ -1,28 +1,20 @@
-# Depends on: 
-
-
-packager="sipo"
-contributors="sipo"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A library for high-performance 2D graphics"
 url="http://www.levien.com/libart/"
-
 
 name=libart-lgpl
 version=2.3.21
 release=4
 
-
 source=(http://ftp.gnome.org/pub/GNOME/sources/libart_lgpl/2.3/libart_lgpl-$version.tar.bz2)
-
 
 build() {
 
   cd libart_lgpl-$version
-  ./configure --prefix=/usr --disable-static
-
+  ./configure --prefix=/usr \
+              --disable-static
 }
 
 package(){
@@ -32,6 +24,4 @@ package(){
 
   # Obsolet lib
   rm $PKG/usr/lib/libart_lgpl_2.la
-
 }
-
