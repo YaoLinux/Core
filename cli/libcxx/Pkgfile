@@ -1,36 +1,34 @@
-# Depends on : cmake python libunwind ninja
+makedepends=(cmake libunwind)
 
 url="http://libcxx.llvm.org/"
 description="A new implementation of the C++ standard library, targeting C++11."
-packager="sipo <sipo@linuxnutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_IGNORE_UNPACK="yes"
 
 run=(python)
 
 name=libcxx
-version=7.0.0
+version=8.0.1
 
 source=(https://releases.llvm.org/$version/llvm-$version.src.tar.xz
         https://releases.llvm.org/$version/libcxx-$version.src.tar.xz
-        https://releases.llvm.org/$version/libcxxabi-$version.src.tar.xz
-)
-
-
+        https://releases.llvm.org/$version/libcxxabi-$version.src.tar.xz)
 
 prepare() {
   [[ -d llvm ]] || mkdir llvm
   bsdtar --strip-components 1 --uid 0 --gid 0 -zxf \
-         $SRC/llvm-$version.src.tar.xz -C \
+         ../llvm-$version.src.tar.xz -C \
          llvm
   [[ -d llvm/projects/libcxx ]] || mkdir llvm/projects/libcxx
   bsdtar --strip-components 1 --uid 0 --gid 0 -zxf \
-         $SRC/libcxx-$version.src.tar.xz -C \
+         ../libcxx-$version.src.tar.xz -C \
          llvm/projects/libcxx
   [[ -d llvm/projects/libcxxabi ]] || mkdir  llvm/projects/libcxxabi
   bsdtar --strip-components 1 --uid 0 --gid 0 -zxf \
-         $SRC/libcxxabi-$version.src.tar.xz -C \
+         ../libcxxabi-$version.src.tar.xz -C \
          llvm/projects/libcxxabi
   sed -i 's/CREDITS.TXT/CREDITS/' llvm/projects/libcxx/LICENSE.TXT
   sed -i 's/CREDITS.TXT/CREDITS/' llvm/projects/libcxxabi/LICENSE.TXT
@@ -45,24 +43,24 @@ build() {
     -DLIBCXX_INSTALL_EXPERIMENTAL_LIBRARY=Off \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_INSTALL_PREFIX=/usr \
-    $SRC/llvm
+    ../llvm
   make cxx cxx_experimental
 }
 
 package() {
 
-  cd $SRC/build
+  cd build
   make DESTDIR=$PKG/ install-libcxx
-  install -Dm644 $SRC/llvm/projects/libcxx/CREDITS.TXT $PKG/usr/share/licenses/${name}/CREDITS"
-  install -Dm644 $SRC/llvm/projects/libcxx/LICENSE.TXT $PKG/usr/share/licenses/${name}/LICENSE"
+  install -Dm644 ../llvm/projects/libcxx/CREDITS.TXT $PKG/usr/share/licenses/${name}/CREDITS"
+  install -Dm644 ../llvm/projects/libcxx/LICENSE.TXT $PKG/usr/share/licenses/${name}/LICENSE"
 
   make DESTDIR=$PKG/ install-libcxxabi
-  install -Dm644 $SRC/build/include/c++/v1/cxxabi.h $PKG/usr/include/c++/v1/cxxabi.h"
-  install -Dm644 $SRC/build/include/c++/v1/__cxxabi_config.h $PKG/usr/include/c++/v1/__cxxabi_config.h"
-  install -Dm644 $SRC/llvm/projects/libcxxabi/CREDITS.TXT $PKG/usr/share/licenses/${name}/CREDITS"
-  install -Dm644 $SRC/llvm/projects/libcxxabi/LICENSE.TXT $PKG/usr/share/licenses/${name}/LICENSE"
+  install -Dm644 include/c++/v1/cxxabi.h $PKG/usr/include/c++/v1/cxxabi.h"
+  install -Dm644 include/c++/v1/__cxxabi_config.h $PKG/usr/include/c++/v1/__cxxabi_config.h"
+  install -Dm644 ../llvm/projects/libcxxabi/CREDITS.TXT $PKG/usr/share/licenses/${name}/CREDITS"
+  install -Dm644 ../llvm/projects/libcxxabi/LICENSE.TXT $PKG/usr/share/licenses/${name}/LICENSE"
 
-  install -Dm644 $SRC/build/lib/libc++experimental.a $PKG/usr/lib/libc++experimental.a
-  install -Dm644 $SRC/llvm/projects/libcxx/CREDITS.TXT $PKG/usr/share/licenses/${name}/CREDITS"
-  install -Dm644 $SRC/llvm/projects/libcxx/LICENSE.TXT $PKG/usr/share/licenses/${name}/LICENSE"
+  install -Dm644 lib/libc++experimental.a $PKG/usr/lib/libc++experimental.a
+  install -Dm644 ../llvm/projects/libcxx/CREDITS.TXT $PKG/usr/share/licenses/${name}/CREDITS"
+  install -Dm644 ../llvm/projects/libcxx/LICENSE.TXT $PKG/usr/share/licenses/${name}/LICENSE"
 }
