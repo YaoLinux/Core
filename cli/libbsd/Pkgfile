@@ -1,11 +1,11 @@
 description="This library provides useful functions commonly found on BSD systems, and lacking on others"
 url="http://libbsd.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libbsd
 version=0.9.1
-release=2
 
 source=(http://libbsd.freedesktop.org/releases/$name-$version.tar.xz)
 
