@@ -1,9 +1,10 @@
-# Depends on: libusb libgcrypt systemd
+makedepends=(libusb libgcrypt systemd)
 
 description="Library implementation of the Media Transfer Protocol."
 url="http://libmtp.sourceforge.net"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libmtp
 version=1.1.16
@@ -15,6 +16,7 @@ build(){
     ./configure --prefix=/usr \
                 --disable-static \
                 --with-udev=/lib/udev
+
     make
     make -k check
     make DESTDIR=$PKG install
