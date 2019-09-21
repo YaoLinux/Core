@@ -1,29 +1,21 @@
-# Depends on: glib gobject-introspection libbytesize lvm2 volume_key parted gptfdisk gtk-doc yaml systemd python-yaml python autoconf-archive 
+makedepends=(glib gobject-introspection libbytesize lvm2 volume_key parted gptfdisk gtk-doc yaml systemd python-yaml autoconf-archive)
 
-
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
-
 
 description="A library for manipulating block devices"
 url="https://github.com/rhinstaller/libblockdev"
 
-
 run=(gptfdisk)
 
-
 name=libblockdev
-version=2.21
-release=1
-
+version=2.22
 
 source=(https://github.com/storaged-project/$name/archive/$version-1.tar.gz)
 
-
 build(){
 
-  cd "$SRC"/$name-$version-1
+  cd $name-$version-1
   ./autogen.sh
   ./configure --prefix=/usr \
               --with-python3 \
@@ -31,14 +23,12 @@ build(){
               --without-nvdimm \
               --sysconfdir=/etc
   make
-
 }
-
 
 package() {
 
-  cd "$SRC"/$name-$version-1
+  cd $name-$version-1
   make DESTDIR="$PKG" install
-  rm $PKG/usr/lib/*.la
-
+  
+  find $PKG/usr/lib/ -name "*.la" -print -delete
 }
