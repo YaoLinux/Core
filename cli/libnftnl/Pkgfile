@@ -1,16 +1,15 @@
-# Depends on: libmnl
+makedepends=(libmnl)
 
 description="Netfilter library providing interface to the nf_tables subsystem"
 url="http://netfilter.org/projects/libnftnl/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libnftnl
-version=1.1.1
+version=1.1.4
 
 source=(http://netfilter.org/projects/libnftnl/files/libnftnl-$version.tar.bz2)
-
-build=autotools
     
 package() {
     # Obsolet lib
