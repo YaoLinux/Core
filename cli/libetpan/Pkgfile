@@ -1,4 +1,4 @@
-#makedepends=(libgcrypt expat cyrus-sasl gnutls zlib)
+makedepends=(libgcrypt expat cyrus-sasl gnutls zlib)
 
 description="A portable middleware for email access"
 url="http://www.etpan.org/"
