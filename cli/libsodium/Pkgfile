@@ -1,13 +1,13 @@
 description="P(ortable|ackageable) NaCl-based crypto library"
 url="https://github.com/jedisct1/libsodium"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libsodium
-version=1.0.16
+version=1.0.18
 
-source=(https://download.libsodium.org/libsodium/releases/libsodium-$version.tar.gz
-)
+source=(https://download.libsodium.org/libsodium/releases/libsodium-$version.tar.gz)
 
 package() {
 rm $PKG/usr/lib/libsodium.la
