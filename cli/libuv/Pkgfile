@@ -1,10 +1,11 @@
-contributors="Greg, Remy"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
+
 description="Cross-platform asynchronous I/O"
 url="https://github.com/"
 
 name=libuv
-version=1.27.0
+version=1.32.0
 
 source=($url$name/$name/archive/v$version/$name-$version.tar.gz)
 
@@ -19,5 +20,6 @@ make
 
 make DESTDIR=$PKG install
 
+# Obsolet lib
 rm $PKG/usr/lib/libuv.la
 }
