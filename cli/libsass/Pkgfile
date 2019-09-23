@@ -1,21 +1,21 @@
-# Depends on: 
-
 description="C implementation of Sass CSS preprocessor (library)."
 url="http://libsass.org/"
+
 packager="fanch <fanch@nutyx.org>"
 contributors="Fanch"
 
 name=libsass
 version=3.5.5
 
-PKGMK_KEEP_SOURCES="no"
-
 source=(https://github.com/sass/$name/archive/$version/$name-$version.tar.gz)
 
 build() {
 cd $name-$version
-autoreconf -i
-	./configure --prefix=/usr
+
+autoreconf -iv
+
+        ./configure --prefix=/usr
+	
 	make
 	make DESTDIR=$PKG install
 
