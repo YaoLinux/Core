@@ -1,25 +1,30 @@
-# Depends on: libjpeg-turbo2 jasper lcms2 
+makedepends=(libjpeg-turbo2 jasper lcms2)
 
 description="A library for reading RAW files obtained from digital photo cameras (CRW/CR2, NEF, RAF, DNG, and others)"
 url="http://www.libraw.org/"
-packager="tnut<tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+mainbtainer="rems"
 
 name=libraw
-version=0.19.2
-release=2
+version=0.19.5
 
 source=(http://www.libraw.org/data/LibRaw-$version.tar.gz)
-build ()
-{
+
+build () {
+
 cd LibRaw-$version
+
 ./configure --prefix=/usr \
- --enable-jpeg \
- --enable-jasper \
- --enable-lcms \
- --disable-static \
- --docdir=/usr/share/doc/libraw-$version
+            --enable-jpeg \
+            --enable-jasper \
+            --enable-lcms \
+            --disable-static \
+            --docdir=/usr/share/doc/libraw-$version
+
 make
 make DESTDIR=$PKG install
 
+#Obsolet libs
 rm $PKG/usr/lib/libraw{,_r}.la
 }
