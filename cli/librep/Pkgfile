@@ -1,9 +1,10 @@
-# Depends on: libffi
+makedepends=(libffi)
 
 description="The librep package contains a Lisp system."
 url="http://librep.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=librep
 version=0.92.7
@@ -12,11 +13,15 @@ release=2
 source=(http://download.tuxfamily.org/$name/${name}_$version.tar.xz)
 
 build() {
+
 cd ${name}_$version
+
 ./configure --prefix=/usr \
---disable-static
+            --disable-static
+
 make || make -j1
 make prefix=$PKG/usr install
-find $PKG/usr/lib/rep -name "*.la" -exec rm -v {} \;
-rm $PKG/usr/lib/$name.la
+
+#Obsolet libs
+find $PKG/usr/lib -name "*.la" -print -delete
 }
