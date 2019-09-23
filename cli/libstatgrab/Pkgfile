@@ -1,13 +1,11 @@
 description="Cross platform access to statistics about the system on which it's run."
 url="http://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab"
+
 contributors="berlius"
 packager="greg<greg@nutyx.org>"
 
-# Depends on:  	
-
 name=libstatgrab
-version=0.91
-release=2
+version=0.92
 
 source=(http://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab/$name-$version.tar.gz)
 
@@ -16,10 +14,10 @@ build () {
     cd $name-$version
     
  	./configure --prefix=/usr  \
- 	        --disable-static \
-            --docdir=/usr/share/doc/libstatgrab-0.91                
-    make
+                    --disable-static \
+                    --docdir=/usr/share/doc/libstatgrab-$version
 
+    make
 }
 
 
