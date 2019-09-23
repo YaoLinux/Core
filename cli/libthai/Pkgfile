@@ -2,8 +2,9 @@
 
 description="Thai language support routines"
 url="http://linux.thai.net/projects/libthai"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libthai
 version=0.1.28
