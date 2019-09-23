@@ -1,20 +1,25 @@
-# Depends on: libogg libvorbis
+makedepends=(libogg libvorbis)
 
 description="An open video codec developed by the Xiph.org"
 url="http://www.xiph.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libtheora
 version=1.1.1
 release=2
 
 source=(http://downloads.xiph.org/releases/theora/$name-$version.tar.xz)
-build() {
+prepare() {
+
 cd $name-$version
+
 sed -i 's/png_\(sizeof\)/\1/g' examples/png2theora.c
-./configure --prefix=/usr --disable-static
-make
-make DESTDIR=$PKG install
+}
+
+package() {
+
+#Obsolet lib
 rm $PKG/usr/lib/${name}{,dec,enc}.la
 }
