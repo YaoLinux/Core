@@ -1,9 +1,8 @@
 description="A simple way for applications to take actions based on a system/user-specified paper size"
 url="http://ftp.debian.org/debian/pool/main/libp/libpaper"
-contributors="berlius"
-packager="greg<greg@nutyx.org>"
 
-# Depends on:  	
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=libpaper
 version=1.1.24
@@ -16,17 +15,18 @@ build () {
 
   cd $name-$version+nmu4  
   ./configure --prefix=/usr  \
-  --sysconfdir=/etc \
-  --disable-static                 
+              --sysconfdir=/etc \
+              --disable-static                 
+
   make
   make DESTDIR=$PKG install
 	
-  cp -v $SRC/run-parts $PKG/usr/bin/
+  cp -v ../run-parts $PKG/usr/bin/
   chmod -v 755 $PKG/usr/bin/run-parts
 
   make DESTDIR=$PKG install
 	
-  cp -v $SRC/run-parts $PKG/usr/bin/
+  cp -v ../run-parts $PKG/usr/bin/
   chmod -v 755 $PKG/usr/bin/run-parts
 
   # Obsolet libs
