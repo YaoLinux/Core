@@ -1,24 +1,30 @@
-# Depends on: libvorbis libtheora speex 
+makedepends=(libvorbis libtheora speex)
 
 description="Library for accessing a shoutcast/icecast server"
 url="http://www.icecast.org/"
+
 packager="tnut <tnut@nutyx.org>"
 contributors="Pierre B"
 
 name=libshout
-version=2.4.1
-release=2
+version=2.4.3
 
 source=(http://downloads.xiph.org/releases/$name/$name-$version.tar.gz)
 
 build() {
-cd $name-$version
-sed -e 's/SSLeay_add_all_algorithms/OpenSSL_add_all_algorithms/g' \
--i src/tls.c
 
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+cd $name-$version
+
+sed -e 's/SSLeay_add_all_algorithms/OpenSSL_add_all_algorithms/g' \
+    -i src/tls.c
+
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var
+
 make
 make DESTDIR=$PKG install
 
+#Obsolet lib
 rm $PKG/usr/lib/$name.la
 }
