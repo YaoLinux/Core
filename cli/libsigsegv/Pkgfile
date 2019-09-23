@@ -24,6 +24,7 @@ build () {
 	# Obsolet lib
 	rm $PKG/usr/lib/libsigsegv.la
 }
+
 uptodate() {
 local url ext
 url="https://ftp.gnu.org/gnu/$name/"
