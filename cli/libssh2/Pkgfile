@@ -1,17 +1,19 @@
-# Depends on: openssl zlib
+makedepends=(openssl zlib)
 
 description="A library implementing the SSH2 protocol as defined by Internet Drafts"
 url="http://www.libssh2.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Remy, Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libssh2
-version=1.8.0
-release=2
+version=1.9.0
 
 source=(https://www.libssh2.org/download/$name-$version.tar.gz)
 
 package() {
+
+#Obsolet lib
 rm $PKG/usr/lib/libssh2.la
 }
 
