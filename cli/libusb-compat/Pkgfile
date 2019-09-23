@@ -1,9 +1,10 @@
-# Depends on: libusb 
+makedepends=(libusb)
 
 description="Aims to look, feel and behave exactly like libusb-0.1."
 url="http://libusb.wiki.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libusb-compat
 version=0.1.5
@@ -13,9 +14,11 @@ source=( http://sourceforge.net/projects/libusb/files/libusb-compat-0.1/libusb-c
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---mandir=/usr/share/man \
---infodir=/usr/share/info
+            --mandir=/usr/share/man \
+            --infodir=/usr/share/info
+
 make
 make DESTDIR=$PKG install
 
