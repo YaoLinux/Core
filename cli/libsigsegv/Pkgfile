@@ -1,7 +1,8 @@
 description="Handling page faults in user mode."
 url="http://ftp.debian.org/debian/pool/main/libp/libpaper"
-contributors="Berlius, Greg"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=libsigsegv
 version=2.12
@@ -13,7 +14,8 @@ build () {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-	--enable-shared --disable-static
+                    --enable-shared \
+		    --disable-static
 
 	make
 
