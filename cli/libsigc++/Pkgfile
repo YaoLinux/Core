@@ -1,20 +1,23 @@
 description="The libsigc++ package implements a typesafe callback system for standard C++."
 url="http://libsigc.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libsigc++
-version=2.10.0
-release=2
+version=2.10.2
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
-build() {
+prepare() {
 cd $name-$version
+
 sed -e '/^libdocdir =/ s/$(book_name)/libsigc++-2.10.0/' -i docs/Makefile.in
-./configure --prefix=/usr 
-make
-make DESTDIR=$PKG install
+}
+
+package() {
+
+# Obsolet lib
 rm $PKG/usr/lib/libsigc-2.0.la
 }
 uptodate(){
