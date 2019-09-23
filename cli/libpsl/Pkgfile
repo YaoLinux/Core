@@ -1,18 +1,26 @@
-# Depends on: python2 libidn libunistring
+makedepends=(python2 libidn libunistring)
 
 description="C library to handle the Public Suffix List"
 url="https://github.com/rockdaboot/libpsl"
+
 packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
 
 name=libpsl
-version=0.20.2
+version=0.21.0
 
 source=(https://github.com/rockdaboot/libpsl/releases/download/$name-$version/$name-$version.tar.gz)
+
 build() {
+
 cd $name-$version
-./configure --prefix=/usr --disable-static
+
+./configure --prefix=/usr \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
+
 # Obsolet libs
 rm $PKG/usr/lib/libpsl.la
 }
