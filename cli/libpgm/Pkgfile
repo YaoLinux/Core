@@ -1,8 +1,10 @@
-# Depends on: python2
+makedepends=(python2)
 
 description="OpenPGM: implementation of the Pragmatic General Multicast (PGM, RFC3208)"
 url="https://www.freshports.org/net/openpgm/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libpgm
 version=5.2.122
@@ -12,8 +14,11 @@ source=(https://storage.googleapis.com/google-code-archive-downloads/v2/code.goo
 
 build() {
 cd $name-$version/openpgm/pgm
+
 ./configure --prefix=/usr
+
 make
+
 make prefix=$PKG/usr install
 
 # Obsolet lib
