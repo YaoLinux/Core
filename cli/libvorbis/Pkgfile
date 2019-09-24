@@ -1,9 +1,10 @@
-# Depends on: libogg doxygen
+makedepends=(libogg doxygen)
 
 description="Audio codec, free, open and unpatented, it is roughly comparable to other formats."
 url="http://www.vorbis.com/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libvorbis
 version=1.3.6
@@ -14,9 +15,13 @@ source=( http://downloads.xiph.org/releases/vorbis/$name-$version.tar.gz)
 build() {
 cd $name-$version
 ./configure --prefix=/usr \
---disable-static
+            --disable-static
+
 make
 make DESTDIR=$PKG install
+
 install -v -m644 doc/Vorbis* $PKG/usr/share/doc/libvorbis-$version
+
+# Obsolet lib
 rm $PKG/usr/lib/${name}{,file,enc}.la
 }
