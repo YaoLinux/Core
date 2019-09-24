@@ -1,25 +1,27 @@
-# Depends on: cmake
+makedepends=(cmake)
 
 description="A C library for reading, creating, and modifying zip archives"
 url="http://www.nih.at/libzip/index.html"
-packager="tnut <tnut@nutyx.org>"
-contribributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libzip
-version=1.5.1
+version=1.5.2
 
 source=(http://www.nih.at/$name/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
+
 mkdir build
 cd build
+
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
--DCMAKE_INSTALL_LIBDIR=lib \
-..
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      ../$name-$version
+
 make
 make DESTDIR=$PKG install
 
 install -Dm644 ../LICENSE $PKG/usr/share/licenses/$name/LICENSE
-
 }
