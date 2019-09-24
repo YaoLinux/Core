@@ -1,6 +1,8 @@
 description="Shared library for libmediainfo and mediainfo"
 url="http://mediainfo.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libzen
 version=0.4.37
@@ -10,24 +12,34 @@ source=(http://mediaarea.net/download/source/$name/$version/"${name}"_$version.t
 
 build(){
     cd ZenLib/Project/GNU/Library
+    
     ./autogen.sh
+    
     ./configure --prefix=/usr --enable-shared
+    
     make clean
+    
     make
     make DESTDIR=$PKG install
 
     install -dm755 $PKG/usr/include/ZenLib
+    
     install -m644 $SRC/ZenLib/Source/ZenLib/*.h $PKG/usr/include/ZenLib
+    
     for i in HTTP_Client Format/Html Format/Http; do
         install -dm0755 $PKG/usr/include/ZenLib/$i
         install -m0644 $SRC/ZenLib/Source/ZenLib/$i/*.h \
             $PKG/usr/include/ZenLib/$i
     done
+    
     install -dm755 $PKG/usr/lib/pkgconfig
+    
     install -m644 $SRC/ZenLib/Project/GNU/Library/libzen.pc \
         $PKG/usr/lib/pkgconfig
+    
     sed -i -e 's|Version: |Version: '$version'|g' \
         $PKG/usr/lib/pkgconfig/libzen.pc
-    # Obsolet lib
+
+# Obsolet lib
     rm $PKG/usr/lib/libzen.la
 }
