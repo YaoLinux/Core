@@ -1,25 +1,20 @@
-# Depends on: llvm ninja cmake
+makedepends=(llvm cmake)
 
 description="Linker from the LLVM project"
 url="https://lld.llvm.org/"
-packager="rems <rems@yaolinux.org>"
-contributors=""
+
+maintainer="rems"
+packger="Yaolinux Team"
 
 name=lld
-version=7.0.1
+version=8.0.1
 
 source=(https://releases.llvm.org/${version}/${name}-${version}.src.tar.xz
         https://releases.llvm.org/${version}/llvm-${version}.src.tar.xz)
 
-prepare () {
-
-mkdir build
-
-}
-
 build() {
 
-cd build
+mkdir -pv build && cd build
 
 cmake ../${name}-${version}.src -G Ninja \
          -DCMAKE_BUILD_TYPE=Release \
@@ -35,12 +30,5 @@ cmake ../${name}-${version}.src -G Ninja \
 
 ninja
 
-}
-
-package() {
-
-cd build
-
 DESTDIR="${PKG}" ninja install
-
 }
