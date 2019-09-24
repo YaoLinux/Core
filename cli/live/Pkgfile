@@ -1,26 +1,28 @@
 description="A set of C++ libraries for multimedia streaming"
 url="http://www.live555.com/liveMedia/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=live
-version=2018.12.14
-release=1
+version=2019.05.12
 
 source=(http://www.live555.com/liveMedia/public/${name}.$version.tar.gz)
 
 build() {
-cd $SRC/live
+cd live
 
   sed \
       -e 's/$(INCLUDES) -I. -O2 -DSOCKLEN_T/$(INCLUDES) -I. -O2 -I. -fPIC -DRTSPCLIENT_SYNCHRONOUS_INTERFACE=1 -DSOCKLEN_T/g' \
       -e 's/\(LIBRARY_LINK =\).*/\1 $(LD) -o/g' \
       -e 's/\(LIBRARY_LINK_OPTS =\).*/\1 $(LINK_OPTS) -r -Bstatic/g' \
       -i config.linux
-  ./genMakefiles linux
-  sed -i "s@xlocale.h@locale.h@" liveMedia/include/Locale.hh
-  make
 
+  ./genMakefiles linux
+  
+  sed -i "s@xlocale.h@locale.h@" liveMedia/include/Locale.hh
+  
+  make
 
   for dir in BasicUsageEnvironment groupsock liveMedia UsageEnvironment; do
     install -dm755 $PKG/usr/{bin,lib,include/${dir}}
@@ -31,5 +33,4 @@ cd $SRC/live
   for testprog in `find testProgs -type f -perm 755`; do
     install ${testprog} $PKG/usr/bin
   done
-
 }
