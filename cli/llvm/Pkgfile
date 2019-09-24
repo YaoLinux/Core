@@ -1,14 +1,13 @@
-# Depends on: libffi python2 cmake ninja libxml2 libedit 
+makedepends=(libffi python2 cmake libxml2 libedit)
 
 description="Low Level Virtual Machine, collection of modular and reusable compiler and toolchain."
 url="http://llvm.org/"
-maintainer="Chris Lattner <sabre at nondot dot org>"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Tnut, Remy"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=llvm
-version=7.0.1
-release=2
+version=8.0.1
 
 source=(${url}releases/$version/$name-$version.src.tar.xz
 	${url}releases/$version/cfe-$version.src.tar.xz
