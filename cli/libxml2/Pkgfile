@@ -1,15 +1,15 @@
-# Depends on: python2 python
+makedepends=(python2)
 
 description="Libraries and utilities used for parsing XML files."
 url="http://xmlsoft.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Fanch"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libxml2
-version=2.9.8
-release=5
+version=2.9.9
 
-source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz  http://www.linuxfromscratch.org/patches/blfs/svn/libxml2-2.9.8-python3_hack-1.patch)
+source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz)
 
 prepare() {
 mkdir build-py{2,3}
@@ -17,26 +17,32 @@ mkdir build-py{2,3}
 
 build() {
 cd build-py2
-../$name-$version/configure \
-    --prefix=/usr \
-    --disable-static \
-    --with-history \
-    --with-python=/usr/bin/python2
+
+../$name-$version/configure --prefix=/usr \
+                            --disable-static \
+                            --with-history \
+                            --with-python=/usr/bin/python2
+
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' libtool
+
   PYTHONHASHSEED=0 make
+
   find doc -type f -exec chmod 0644 {} +
 
 cd ../$name-$version
-patch -Np1 -i ../libxml2-2.9.8-python3_hack-1.patch
+
 sed -i '/_PyVerify_fd/,+1d' python/types.c
 
 cd ../build-py3
 ../$name-$version/configure --prefix=/usr    \
-            --disable-static \
-            --with-history   \
-            --with-python=/usr/bin/python3
+                            --disable-static \
+                            --with-history   \
+                            --with-python=/usr/bin/python3
+  
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0 /g' libtool
+  
   PYTHONHASHSEED=0 make
+  
   find doc -type f -exec chmod 0644 {} +
 
 cd ..
@@ -44,6 +50,7 @@ cd ..
 make -C build-py2 DESTDIR=$PKG install
 make -C build-py3/python DESTDIR=$PKG install
 
+# Obsolet libs
 rm $PKG/usr/lib/$name.la
 rm $PKG/usr/lib/python3.7/site-packages/libxml2mod.la
 rm $PKG/usr/lib/python2.7/site-packages/libxml2mod.la
