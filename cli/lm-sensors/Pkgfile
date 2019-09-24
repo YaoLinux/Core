@@ -1,11 +1,11 @@
 description="Collection of user space tools for general SMBus access and hardware monitoring"
 url="http://dl.lm-sensors.org/lm-sensors/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lm-sensors
 version=3.5.0
-release=1
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -13,9 +13,11 @@ source=(https://github.com/lm-sensors/lm-sensors/archive/V${version//./-}.tar.gz
 
 build() {
 	cd $name-${version//./-}
+	
 	make PREFIX=/usr DESTDIR=$PKG \
 	BUILD_STATIC_LIB=0 \
 	MANDIR=/usr/share/man
+	
 	make PREFIX=/usr DESTDIR=$PKG \
 	BUILD_STATIC_LIB=0 \
 	MANDIR=/usr/share/man install
