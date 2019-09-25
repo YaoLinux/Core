@@ -1,21 +1,24 @@
-# Depends on: lua
+makedepends=(lua)
 
 description="File System Library for the Lua Programming Language"
 url="http://www.keplerproject.org/luafilesystem/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lua-filesystem
 version=1.7.0.2
+_version=${version//./_}
 release=2
+
 
 PKGMK_KEEP_SOURCES="no"
 
-_version=${version//./_}
 source=(https://github.com/keplerproject/luafilesystem/archive/v${_version}.tar.gz)
 
 build(){
     cd luafilesystem-${_version}
+
     make
     make PREFIX=$PKG/usr LUA_LIBDIR=$PKG/lib/lua/5.2 install
 }
