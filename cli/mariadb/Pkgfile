@@ -1,12 +1,13 @@
-# Depends on: lzo cmake libevent boost libxml2 cracklib pcre ruby libaio openssl systemd
+makedepends=(lzo cmake libevent boost libxml2 cracklib pcre ruby libaio openssl systemd)
 
 description="MariaDB is a fork and a replacement for the MySQL relational database management system."
 url="http://www.mariadb.org/en/about/"
-packager="tnut <tnu@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=mariadb
-version=10.4.7
+version=10.4.8
 yaolinux_version=1.0-RC1
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
