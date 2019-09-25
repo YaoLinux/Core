@@ -1,32 +1,22 @@
 description="Lightweight, fast, simple, free, and strives to be correct libc"
-
 url="http://www.musl-libc.org/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=musl
-version=1.1.19
-release=2
+version=1.1.23
 
-linux_version=4.14
+source=(https://www.musl-libc.org/releases/musl-$version.tar.gz)
 
-source=(https://www.kernel.org/pub/linux/kernel/v4.x/linux-${linux_version}.tar.xz
-	https://www.musl-libc.org/releases/musl-$version.tar.gz)
-
-prepare() {
-
-cd linux-${linux_version}
-make mrproper
-make headers_check
-make INSTALL_HDR_PATH=dest headers_install
-mkdir -p $PKG/usr/include/musl
-cp -rv dest/include/* $PKG/usr/include/musl
-}
 build() {
 cd $name-$version
- ./configure --prefix=/usr/lib/musl \
---exec-prefix=/usr \
---enable-wrapper=all \
---includedir=/usr/include/musl
+
+./configure --prefix=/usr/lib/musl \
+             --exec-prefix=/usr \
+             --enable-wrapper=all \
+             --includedir=/usr/include/musl
+
 make
 make DESTDIR=$PKG install
 }
