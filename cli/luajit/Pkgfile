@@ -1,15 +1,11 @@
-# Depends:
-
-
 description="a Just-In-Time Compiler for Lua"
 url="http://luajit.org/"
-contributors="NuTyX core team"
-packager="greg<greg@nutyx.org>"
 
+packager="Yaolinux team"
+maintainer="rems"
 
 name=luajit
 version=2.0.5
-release=1
 
 source=(http://luajit.org/download/LuaJIT-$version.tar.gz)
 
@@ -22,5 +18,4 @@ build() {
   make
 
   make DESTDIR=$PKG install
-
 }
