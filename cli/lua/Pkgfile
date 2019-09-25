@@ -1,30 +1,40 @@
 description="A programming language designed for extending applications"
 url="http://www.lua.org"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
 contributors="Pierre B"
 
 name=lua
 version=5.3.5
 release=2
+
 _majorver=${version%.*}
 
 source=(http://www.lua.org/ftp/$name-$version.tar.gz lua.pc
 	http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-shared_library-1.patch)
+
 build() {
 	cd $name-$version
-	patch -Np1 -i ../$name-$version-shared_library-1.patch
+
+        patch -Np1 -i ../$name-$version-shared_library-1.patch
+	
 	sed -i '/#define LUA_ROOT/s:/usr/local/:/usr/:' src/luaconf.h
 
     	make linux
 	make INSTALL_TOP=$PKG/usr  TO_LIB="liblua.so liblua.so.5.3 liblua.so.5.3.4" \
 	INSTALL_DATA="cp -d" INSTALL_MAN=$PKG/usr/share/man/man1 install
+	
 	mkdir -pv $PKG/usr/share/doc/$name-$version
+	
 	cp -v doc/*.{html,css,gif,png} $PKG/usr/share/doc/$name-$version
+	
 	mkdir -p $PKG/usr/lib/pkgconfig
+	
 	sed "s/%VER%/$_majorver/g;s/%REL%/$version/g" ../lua.pc \
 	> lua.pc
 
 	install -Dm644 lua.pc $PKG/usr/lib/pkgconfig/${name}53.pc
+	
 	ln -sf /usr/lib/pkgconfig/${name}53.pc \
 	$PKG/usr/lib/pkgconfig/$name.pc
 }
