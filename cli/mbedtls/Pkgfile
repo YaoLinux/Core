@@ -1,19 +1,18 @@
-# Depends on: 
-
 description="Portable cryptographic and SSL/TLS library, aka polarssl"
 url="https://tls.mbed.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=mbedtls
 version=2.16.0
 
-source=(https://tls.mbed.org/download/mbedtls-$version-gpl.tgz
-)
+source=(https://tls.mbed.org/download/mbedtls-$version-gpl.tgz)
 
 build() {
 
 cd $name-$version
+
 sed -i 's|//\(#define MBEDTLS_THREADING_C\)|\1|' include/mbedtls/config.h
 sed -i 's|//\(#define MBEDTLS_THREADING_PTHREAD\)|\1|' include/mbedtls/config.h
 sed -i 's|<time.h>|"platform.h"|' include/mbedtls/ssl.h
@@ -21,6 +20,4 @@ sed -i 's|<time.h>|"platform.h"|' include/mbedtls/ssl.h
 LDFLAGS+=" -I../include " make SHARED=1 no_test
 
 make DESTDIR=$PKG/usr install
-	
 }
-
