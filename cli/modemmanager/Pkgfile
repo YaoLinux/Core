@@ -1,16 +1,18 @@
-# Depends on: libgudev gobject-introspection libmbim libqmi polkit gtk-doc
+makedepends=(libgudev gobject-introspection libmbim libqmi polkit gtk-doc)
 
 description="Mobile broadband modem management service."
 url="http://www.freedesktop.org/wiki/Software/ModemManager/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=modemmanager
-version=1.10.0
-release=3
+version=1.10.6
 
 source=(http://www.freedesktop.org/software/ModemManager/ModemManager-$version.tar.xz)
 build() {
 cd ModemManager-$version
+
 ./configure --prefix=/usr             \
             --sysconfdir=/etc/ModemManager         \
             --localstatedir=/var      \
@@ -18,6 +20,7 @@ cd ModemManager-$version
             --disable-static \
             --with-systemd-journal        \
             --with-systemd-suspend-resume
+
 make
 make DESTDIR=$PKG install
 
