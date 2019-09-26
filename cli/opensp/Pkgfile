@@ -1,8 +1,10 @@
-# Depends on: sgml-common
+makedepends=(sgml-common)
 
 description="C++ library for using SGML/XML files."
 url="URL: http://openjade.sourceforge.net/doc/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=opensp
 version=1.5.2
@@ -22,6 +24,7 @@ build(){
                 --enable-default-catalog=/etc/sgml/catalog \
                 --enable-http \
                 --enable-default-search-path=/usr/share/sgml
+
     make DESTDIR=$PKG install
     
     # create the SP equivalents of OpenSP executables and libraries
