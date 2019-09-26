@@ -1,9 +1,10 @@
-#Depends on: lzo systemd
+makedepends=(lzo systemd)
 
 description="VPN client"
 url="http://www.openvpn.net"
-contributor="Graknu, Greg"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="hugo"
+packager="Yaolinux Team"
 
 name=openvpn
 version=2.4.7
@@ -17,10 +18,9 @@ build(){
 
     autoreconf -iv
     
-    ./configure \
-        --prefix=/usr \
-        --enable-iproute2 \
-        --enable-systemd
+    ./configure --prefix=/usr \
+                --enable-iproute2 \
+                --enable-systemd
 
     make
     make DESTDIR=$PKG install
