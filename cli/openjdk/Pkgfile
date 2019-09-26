@@ -1,13 +1,13 @@
 description="A set of programs called a Java Development Kit (JDK)."
 url="http://openjdk.java.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
 
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=openjdk
-version=10.0.2u13
+version=12.0.2u10
 release=1
-_version=10.0.2+13
+_version=12.0.2+10
 
 source=(http://anduin.linuxfromscratch.org/BLFS/OpenJDK/OpenJDK-${_version:0:6}/OpenJDK-${_version}-`uname -m`-bin.tar.xz)
 	
