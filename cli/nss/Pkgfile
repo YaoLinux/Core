@@ -1,12 +1,13 @@
-# Depends on: nspr sqlite
+makedepends=(nspr sqlite)
 
 description="Cross-platform development of security-enabled client and server applications."
 url="http://www.mozilla.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=nss
-version=3.45
+version=3.46
 
 source=(http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${version//./_}_RTM/src/nss-$version.tar.gz \
 	  http://www.linuxfromscratch.org/patches/blfs/svn/nss-$version-standalone-1.patch)
@@ -15,6 +16,7 @@ build () {
 	cd $name-$version
 	patch -Np1 -i ../nss-$version-standalone-1.patch
 	cd nss
+
 # Compilation
 	make -j1 nss_build_all BUILD_OPT=1     		     \
   		NSPR_INCLUDE_DIR=/usr/include/nspr           \
