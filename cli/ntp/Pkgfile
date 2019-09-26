@@ -1,33 +1,37 @@
-# Depends on: wget
+makedepends=(wget)
 
 description="Client and server to keep the time synchronized between various computers over a network."
 url="http://www.ntp.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(wget)
-name=ntp
-version=4.2.8p12
-nutyx_version=10.92.3
 
-source=(http://downloads.nutyx.org/files/nutyx-${nutyx_version}.tar.xz
+name=ntp
+version=4.2.8p13
+yaolinux_version=1.0-RC1
+
+source=(http://downloads.yaolinux.org/files/yaolinux-${yaolinux_version}.tar.xz
 	https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/$name-4.2/$name-$version.tar.gz)
 
 
 build() {
 
 cd $name-$version
+
 ./configure --prefix=/usr \
---bindir=/usr/sbin \
---sysconfdir=/etc \
---mandir=/usr/share/man \
---infodir=/usr/share/info \
---enable-linuxcaps \
---with-lineeditlibs=readline \
---docdir=/usr/share/doc/$name-$version
+            --bindir=/usr/sbin \
+            --sysconfdir=/etc \
+            --mandir=/usr/share/man \
+            --infodir=/usr/share/info \
+            --enable-linuxcaps \
+            --with-lineeditlibs=readline \
+            --docdir=/usr/share/doc/$name-$version
 
 make
 make DESTDIR=$PKG install
+
 mkdir -p $PKG/var/lib/ntp
 install -v -o ntp -g ntp -d $PKG/var/lib/ntp
 mkdir -p $PKG/etc
@@ -67,7 +71,8 @@ restrict -6 default limited kod nomodify notrap nopeer noquery
 restrict 127.0.0.1
 restrict ::1
 EOF
+
 # service
-cd ../nutyx-${nutyx_version}
+cd ../yaolinux-${yaolinux_version}
 make DESTDIR=$PKG install-ntpd
 }
