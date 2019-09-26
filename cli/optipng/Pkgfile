@@ -1,22 +1,26 @@
-# Depends on: glibc libpng zlib
+makedepends=(libpng zlib)
 
 description="Compresses PNG files to a smaller size, without losing any information."
 url="http://optipng.sourceforge.net/"
-packager="greg<greg@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=optipng
-version=0.7.6
-release=1
+version=0.7.7
 
 
 source=(http://downloads.sourceforge.net/sourceforge/$name/$name-$version.tar.gz)
 
-
 build() {
 
-    cd ${name}-${version}
-	./configure --prefix=/usr --mandir=/usr/share/man --with-system-libs
-	make
+cd ${name}-${version}
+   
+   ./configure --prefix=/usr \
+               --mandir=/usr/share/man \
+	       --with-system-libs
+   
+   make
 }
 
 
@@ -25,5 +29,3 @@ package() {
   cd ${name}-${version}
   make prefix=$PKG/usr mandir=$PKG/usr/share/man install
 }
-
- 
