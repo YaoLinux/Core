@@ -23,5 +23,5 @@ sed -e 's/^LIBNEWT =/#&/' \
             --with-gpm-support
 
 make
-make DESTDIR=$PKG install
+make prefix=$PKG/usr install
 }
