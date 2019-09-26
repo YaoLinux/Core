@@ -1,22 +1,26 @@
 description="Netscape Portable Runtime library (NSPR)"
 url="http://www.mozilla.org/projects/nspr/"
-packager="tnut <tnut@nuty.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=nspr
-version=4.21
+version=4.22
 
-source=( http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v$version/src/$name-$version.tar.gz )
+source=(http://ftp.mozilla.org/pub/mozilla.org/nspr/releases/v$version/src/$name-$version.tar.gz)
+
 build () {
 
 cd $name-$version/$name
-sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in &&
-sed -i 's#$(LIBRARY) ##' config/rules.mk &&
+
+sed -ri 's#^(RELEASE_BINS =).*#\1#' pr/src/misc/Makefile.in
+sed -i 's#$(LIBRARY) ##' config/rules.mk
+
 ./configure --prefix=/usr \
             --with-mozilla \
             --with-pthreads \
-            $([ $(uname -m) = x86_64 ] && echo --enable-64bit) &&
-make
+            $([ $(uname -m) = x86_64 ] && echo --enable-64bit)
 
+make
 make DESTDIR=$PKG install
 }
