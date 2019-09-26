@@ -1,21 +1,27 @@
-# Depends on: popt slang
+makedepends=(popt slang)
 
 description="Library for color text mode, widget based user interfaces."
 url="http://releases.paagure.org/newt"
-packager="tnut <tnut@nutyx.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=newt
-version=0.52.20
+version=0.52.21
 
-source=( http://fedorahosted.org/releases/n/e/$name/$name-$version.tar.gz )
+source=(http://fedorahosted.org/releases/n/e/$name/$name-$version.tar.gz)
+
 build() {
+
 cd $name-$version
 sed -e 's/^LIBNEWT =/#&/' \
     -e '/install -m 644 $(LIBNEWT)/ s/^/#/' \
     -e 's/$(LIBNEWT)/$(LIBNEWTSONAME)/g' \
     -i Makefile.in
 
-./configure --prefix=/usr --with-gpm-support &&
+./configure --prefix=/usr \
+            --with-gpm-support
+
 make
 make DESTDIR=$PKG install
 }
