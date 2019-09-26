@@ -1,7 +1,8 @@
 description="Open source implementation of the Adaptive Multi Rate (AMR) speech codec"
 url="http://opencore-amr.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=opencore-amr
 version=0.1.5
@@ -9,11 +10,9 @@ release=2
 
 source=(http://downloads.sourceforge.net/sourceforge/$name/$name-$version.tar.gz)
 
-build() {
-  cd $name-$version
-  ./configure --prefix=/usr --disable-static
-  make
-  make DESTDIR=$PKG install
+build=autotools
+
+package() {
 
   # Obsolets libs
   rm $PKG/usr/lib/libopencore-amr{n,w}b.la
