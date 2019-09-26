@@ -1,9 +1,10 @@
-# Depends on: lcms2 libpng libtiff 
+makedepends=(lcms2 libpng libtiff)
 
 description="OpenJPEG is an open-source implementation of the JPEG-2000 standard."
 url="http://www.ijg.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=openjpeg
 version=1.5.2
@@ -11,15 +12,19 @@ release=2
 
 source=(http://downloads.sourceforge.net/openjpeg.mirror/$name-$version.tar.gz )
 
+build=autotools
 
-build() {
-	cd openjpeg-$version
-	autoreconf -f -i
-	./configure --prefix=/usr --disable-static
-	make
-	make DESTDIR=$PKG install
-	ln -s openjpeg-1.5/openjpeg.h $PKG/usr/include
+prepare() {
+	cd $name-$version
+	autoreconf -fiv
+}
 
-	# Obsolet lib
-	rm $PKG/usr/lib/libopenjpeg.la
+package() {
+
+cd $name-$version
+
+ln -s openjpeg-1.5/openjpeg.h $PKG/usr/include
+
+# Obsolet lib
+rm $PKG/usr/lib/libopenjpeg.la
 }
