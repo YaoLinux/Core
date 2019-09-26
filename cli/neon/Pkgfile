@@ -1,9 +1,10 @@
-# Depends on: kerberos libxml2 expat
+makedepends=(kerberos libxml2 expat)
 
 description="Wrapper for common HTTP and WebDAV"
 url="http://www.webdav.org/neon/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=neon
 version=0.30.2
@@ -11,15 +12,15 @@ release=2
 
 source=( http://www.webdav.org/neon/$name-$version.tar.gz)
 
-
 build() {
 cd $name-$version
 ./configure --prefix=/usr \
---with-expat \
---with-ssl=openssl \
---enable-shared \
---mandir=/usr/share/man \
---infodir=/usr/share/info
+            --with-expat \
+            --with-ssl=openssl \
+            --enable-shared \
+            --mandir=/usr/share/man \
+            --infodir=/usr/share/info
+
 make
 make DESTDIR=$PKG install
 
