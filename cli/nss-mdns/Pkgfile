@@ -1,9 +1,8 @@
-# Depends on: 
-
 description="glibc plugin providing host name resolution via mDNS"
 url="http://0pointer.de/lennart/projects/nss-mdns/"
-contributors="Remy"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=nss-mdns
 version=0.14.1
@@ -15,11 +14,10 @@ build() {
 
 cd $name-$version
 
-./configure \
-    --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --disable-lynx
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --disable-lynx
 
   make
   make DESTDIR=$PKG install
