@@ -1,23 +1,36 @@
-# Depends on: openssl10 python2 c-ares icu zlib libuv
+makedepends=(openssl python2 c-ares icu zlib libuv)
 
 description="Evented I/O for V8 JavaScript"
 url="http://nodejs.org/"
-packager="greg <greg@nutyx.org>"
-contributors="Alienus, tnut"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=node
 alias=(nodejs node-js)
-version=11.5.0
+
+version=12.11.0
 source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz)
 
 build() {
 
 	cd node-v$version
+	find -type f -exec sed \
+             -e 's_^#!/usr/bin/env python$_&2_' \
+             -e 's_^\(#!/usr/bin/python2\).[45]$_\1_' \
+             -e 's_^#!/usr/bin/python$_&2_' \
+             -e 's_^\( *exec \+\)python\( \+.*\)$_\1python2\2_'\
+             -e 's_^\(.*\)python\( \+-c \+.*\)$_\1python2\2_'\
+             -e "s_'python'_'python2'_" -i {} \;
 
-	./configure \
-		--prefix=/usr \
-		--without-npm \
-		--shared-zlib
+  find test/ -type f -exec sed 's_python _python2 _' -i {} \;
+
+	./configure --prefix=/usr \
+                    --with-intl=system-icu \
+                    --shared-openssl \
+                    --shared-libuv \
+                    --shared-cares \
+                    --shared-zlib
 
 	make
 	make DESTDIR=$PKG install
