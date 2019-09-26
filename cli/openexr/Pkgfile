@@ -1,9 +1,10 @@
-# Depends on: ilmbase 
+makedepends=(ilmbase)
 
 description="An high dynamic-range image file format library"
 url="http://www.openexr.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=openexr
 version=2.3.0
@@ -14,11 +15,13 @@ build() {
 cd $name-$version
 
 ./configure --prefix=/usr \
---localstatedir=/var \
---sysconfdir=/etc
+            --localstatedir=/var \
+            --sysconfdir=/etc
 
 make
 make DESTDIR=$PKG install
+
+# Obsolet libs
 rm $PKG/usr/lib/libIlmImf.la
 rm $PKG/usr/lib/libIlmImfUtil.la
 }
