@@ -1,24 +1,39 @@
-# Depends on: glibc
+makedepends=(git)
 
 description="The Net-tools package is a collection of programs for controlling the network subsystem of the Linux kernel"
 url="http://net-tools.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Jayce"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=net-tool-cvs
-version=20101030
-release=5
+version=1.60.20181103
 
-source=(http://anduin.linuxfromscratch.org/sources/BLFS/svn/n/net-tools-CVS_20101030.tar.gz
-net-tools-CVS_20101030-remove_dups-1.patch)
+source=()
+
+unset MAKEFLAGS
+
+prepare() {
+git clone git clone http://git.code.sf.net/p/net-tools/code.git $name
+cd $name
+git checkout 0eebece8c9
+}
 
 build() {
-cd net-tools-CVS_20101030
-patch -Np1 -i ../net-tools-CVS_20101030-remove_dups-1.patch 
-sed -i '/#include <netinet\/ip.h>/d'  iptunnel.c
-yes "" | make config 
-make
-make update DESTDIR=$PKG install
+cd $name
+sed -i "s#/usr##" man/Makefile
+
+yes "" | make
+make update DESTDIR=$PKG/usr install
+
+ # the following is provided by yp-tools
+  rm $PKG/usr/bin/{nis,yp}domainname
+  rm $PKG/usr/share/man/man1/{nis,yp}domainname.1
+
+  # hostname is provided by inetutils
+  rm $PKG/usr/bin/{hostname,dnsdomainname,domainname}
+  rm -rf $PKG/usr/share/man/man1
+
 mv $PKG/bin $PKG/usr
 mv $PKG/sbin $PKG/usr
 }
