@@ -1,33 +1,43 @@
-# Depends on: lvm2 
+makedepends=(lvm2)
 
 description="A program for creating, destroying, resizing, checking and copying partitions"
 url="http://www.gnu.org/software/parted/index.shtml"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=parted
 version=3.2
 release=2
 
 source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
- http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-devmapper-1.patch)
+        http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-devmapper-1.patch)
 
-build() {
+build=autotools
+
+prepare() {
 cd $name-$version
+
 patch -Np1 -i ../parted-3.2-devmapper-1.patch
+
 sed -i '/utsname.h/a#include <sys/sysmacros.h>' libparted/arch/linux.c
-./configure --prefix=/usr \
---disable-static
-make
-make DESTDIR=$PKG install
+}
+
+package() {
+cd $name-$version
+
 rm $PKG/usr/share/info/dir
+
 make -C doc html
+
 makeinfo --html -o doc/html doc/parted.texi
 makeinfo --plaintext -o doc/parted.txt doc/parted.texi
 
 install -v -m755 -d $PKG/usr/share/doc/parted-$version/html
+
 install -v -m644    doc/html/* \
 $PKG/usr/share/doc/parted-$version/html
+
 install -v -m644 doc/{FAT,API,parted.{txt,html}} \
 $PKG/usr/share/doc/parted-$version
 
