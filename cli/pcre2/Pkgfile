@@ -1,12 +1,13 @@
 description="Perl Compatible Regular Expression libraries, 2nd version."
 url="http://www.pcre.org/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=pcre2
-version=10.31
-release=2
+version=10.33
 
-source=( ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/$name-$version.tar.bz2 )
+source=(ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/$name-$version.tar.bz2)
 
 build() {
 cd $name-$version
@@ -14,14 +15,15 @@ cd $name-$version
 [ "${CARCH}" = "x86_64" ] && export CFLAGS="${CFLAGS} -fPIC"
 
 ./configure --prefix=/usr \
---docdir=/usr/share/doc/pcre-$version \
---enable-unicode-properties \
---enable-pcre2-16 \
---enable-pcre2-32 \
---enable-pcre2grep-libz \
---enable-pcre2grep-libbz2 \
---enable-pcre2test-libreadline \
---disable-static
+            --docdir=/usr/share/doc/pcre-$version \
+            --enable-unicode-properties \
+            --enable-pcre2-16 \
+            --enable-pcre2-32 \
+            --enable-pcre2grep-libz \
+            --enable-pcre2grep-libbz2 \
+            --enable-pcre2test-libreadline \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
 
