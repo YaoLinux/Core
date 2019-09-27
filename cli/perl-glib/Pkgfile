@@ -9,7 +9,7 @@ maintainer="rems"
 run=(perl)
 
 name=perl-glib
-version=1.326
+version=1.329
 
 source=(http://www.cpan.org/authors/id/X/XA/XAOC/Glib-$version.tar.gz)
 
