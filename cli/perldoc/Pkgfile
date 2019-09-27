@@ -1,7 +1,8 @@
 description="perldoc (Official Perl documentation)"
 url="http://perldoc.perl.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_KEEP_SOURCES="no"
 PKGMK_GROUPS=()
@@ -11,8 +12,7 @@ version=5.30
 
 source=(http://perldoc.perl.org/perldoc-html.tar.gz
         perldoc.desktop
-        perldoc.png
-)
+        perldoc.png)
 
 build(){
 mkdir -p $PKG/usr/share/doc/$name-$version
