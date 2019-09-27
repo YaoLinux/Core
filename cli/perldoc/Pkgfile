@@ -7,21 +7,22 @@ PKGMK_KEEP_SOURCES="no"
 PKGMK_GROUPS=()
 
 name=perldoc
-version=5.26
-release=1
+version=5.30
 
-source=(
-http://perldoc.perl.org/perldoc-html.tar.gz
-perldoc.desktop
-perldoc.png
+source=(http://perldoc.perl.org/perldoc-html.tar.gz
+        perldoc.desktop
+        perldoc.png
 )
 
 build(){
 mkdir -p $PKG/usr/share/doc/$name-$version
-cp -rf $SRC/perldoc-html/* \
-$PKG/usr/share/doc/$name-$version/
-install -Dm 644 $SRC/$name.desktop \
-$PKG/usr/share/applications/$name.desktop
-install -Dm 644 $SRC/$name.png \
-$PKG/usr/share/icons/hicolor/48x48/apps/$name.png
+
+cp -rf perldoc-html/* \
+       $PKG/usr/share/doc/$name-$version/
+
+install -Dm 644 $name.desktop \
+                $PKG/usr/share/applications/$name.desktop
+
+install -Dm 644 $name.png \
+                $PKG/usr/share/icons/hicolor/48x48/apps/$name.png
 }
