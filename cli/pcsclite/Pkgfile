@@ -11,8 +11,7 @@ version=1.8.25
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://pcsclite.apdu.fr/files/pcsc-lite-$version.tar.bz2
-	pcscd)
+source=(https://pcsclite.apdu.fr/files/pcsc-lite-$version.tar.bz2)
 
 build() {
   cd pcsc-lite-$version
