@@ -1,23 +1,26 @@
-# Depends on: jack 
+makedepends=(jack)
 
 description="A free, cross-platform, open source, audio I/O library"
 url="http://www.portaudio.com"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=portaudio
-version=19_20140130
-release=2
+version=190600_20161030
 
 source=(http://www.portaudio.com/archives/pa_stable_v${version}.tgz)
 
 build() {
 cd portaudio
-./configure --prefix=/usr --enable-cxx
+
+./configure --prefix=/usr \
+            --enable-cxx
+
 make||make -j1
 make DESTDIR=$PKG install
 
-install -Dm0644 LICENSE.txt $SRC/usr/share/licenses/portaudio/LICENSE.txt
+install -Dm0644 LICENSE.txt $PKG/usr/share/licenses/portaudio/LICENSE.txt
 
 # Obsolet lib
 rm $PKG/usr/lib/libportaudio{,cpp}.la
