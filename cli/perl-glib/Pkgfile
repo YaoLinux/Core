@@ -1,15 +1,15 @@
-# Depends on: perl-extutils-depends gobject-introspection perl-extutils-pkgconfig 
+makedepends=(perl-extutils-depends gobject-introspection perl-extutils-pkgconfig)
 
 description="Perl connector for glib"
 url="http://www.gtkperl.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
 
-run=( perl )
+packager="Yaolinux Team"
+maintainer="rems"
+
+run=(perl)
 
 name=perl-glib
 version=1.326
-release=1
 
 source=(http://www.cpan.org/authors/id/X/XA/XAOC/Glib-$version.tar.gz)
 
