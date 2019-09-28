@@ -1,8 +1,8 @@
-# Depends on: python
-
 description="Internationalized Domain Names in Applications (IDNA)"
 url="https://github.com/kjd/idna"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-idna
 version=2.8
