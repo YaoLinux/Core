@@ -1,13 +1,13 @@
-# Depends on: python python-six
+makedepends=(python python-six)
 
 description="Python 3 Useful miscellaneous modules used by Logilab projects."
 url="https://bitbucket.org/logilab/astroid"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B."
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-astroid
-version=2.2.4
-release=2
+version=2.2.5
 
 source=(https://pypi.python.org/packages/source/a/astroid/astroid-${version}.tar.gz)
 
