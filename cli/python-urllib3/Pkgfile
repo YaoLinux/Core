@@ -1,10 +1,11 @@
-# Depends on: python
-
 description="HTTP library with thread-safe connection pooling and file post support"
-packager="tnut <tnut@nutyx.org>"
+url="https://github.com/shazow/urllib3"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-urllib3
-version=1.24.1
+version=1.25.5
 
 _name=urllib3
 
