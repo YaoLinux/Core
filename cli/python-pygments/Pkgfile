@@ -1,18 +1,18 @@
-# Depends on: python
-
 description="Python 3 syntax highlighter"
 url="http://pygments.org"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-pygments
-version=2.3.0
-release=3
+version=2.4.2
 
 source=(https://pypi.org/packages/source/P/Pygments/Pygments-${version}.tar.gz)
 
 build() {
     cd Pygments-$version
     python3 setup.py install --root=$PKG -O1
-    # Part of pygmentize
+
+# Part of pygmentize
     rm -rv $PKG/usr/bin
 }
