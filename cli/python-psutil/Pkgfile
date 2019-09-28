@@ -1,19 +1,17 @@
-# Depends on: python
-
 description="A cross-platform process and system utilities module for Python3"
 url="https://github.com/giampaolo/psutil"
-packager="Dania <Dania@nutyx.org>"
-contributors=""
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-psutil
-version=5.5.0
+version=5.6.3
 
 source=(https://github.com/giampaolo/psutil/archive/release-$version.tar.gz)
-
 
 build() {
 
   cd psutil-release-$version
-  python3 setup.py build 
-  python3 setup.py install --skip-build --root=$PKG --optimize=1
+  python3 setup.py build --build-lib=build/python \
+                   install --root=$PKG --optimize=1
 }
