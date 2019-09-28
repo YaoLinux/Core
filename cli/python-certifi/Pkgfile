@@ -1,12 +1,11 @@
-# Depends on: python 
-
 description="Python package for providing Mozilla's CA Bundle"
 url="https://pypi.python.org/pypi/certifi"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-certifi
-version=2018.4.16
-
+version=2019.6.16
 
 _name=certifi
 source=(https://pypi.io/packages/source/c/certifi/certifi-$version.tar.gz)
