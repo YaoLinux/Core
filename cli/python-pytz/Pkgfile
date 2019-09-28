@@ -1,11 +1,13 @@
-# Depends on: python2 python
+makedepends=(python2)
 
 description="Cross platform time zone library for Python 2&3"
 url="http://pypi.python.org/pypi/pytz"
+
 packager="rems@nutyx.org"
+maintainer="rems"
 
 name=python-pytz
-version=2018.9
+version=2019.2
 
 run=(python2 python)
 
@@ -14,9 +16,7 @@ source=(https://pypi.io/packages/source/p/pytz/pytz-$version.tar.gz)
 prepare() {
 
 cp -r pytz-$version pytz-$version-py2
-
 }
-
 
 build() {
 
@@ -25,5 +25,4 @@ python2 setup.py install --root="$PKG"
 
 cd ../pytz-$version
 python3 setup.py install --root="$PKG"
-
 }
