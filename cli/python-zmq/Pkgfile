@@ -1,11 +1,13 @@
-# Depends on: zeromq python
+makedepends=(zeromq)
 
 description="Python bindings for zeromq, written in Cython"
 url="http://www.zeromq.org/bindings:python"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-zmq
-version=17.0.0
+version=18.0.2
 
 source=(https://files.pythonhosted.org/packages/source/p/pyzmq/pyzmq-$version.tar.gz)
 
