@@ -1,13 +1,14 @@
-#Depends on : python python-urllib3 python-chardet python-certifi python-idna
+makedepends=(python-urllib3 python-chardet python-certifi python-idna)
 
 description="Python HTTP for Humans"
 url="https://pypi.python.org/pypi/requests"
-packager="tnut <tnut@nutyx.org>"
-contributors="Hugo"
+
+packager="Yaolinux Team"
+rems="rems"
 
 name=python-requests
-version=2.21.0
-
+version=2.22.0
+_name=requests
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -15,8 +16,4 @@ run=(python-urllib3 python-chardet python-certifi python-idna)
 
 source=(https://github.com/kennethreitz/requests/archive/v$version.tar.gz )
 
-build(){
-cd requests-$version
-python3 setup.py build
-python3 setup.py install --prefix=/usr --root=$PKG
-}
+build=python3
