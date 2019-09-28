@@ -1,13 +1,15 @@
-# Depends on: python curl
+makedepends=(curl)
 
 description="PycURL is a Python interface to libcurl"
 url="http://pycurl.io/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-curl
-version=7.43.0.2
-
+version=7.43.0.3
 _name=pycurl
+
 source=(https://dl.bintray.com/pycurl/pycurl/pycurl-$version.tar.gz)
 
 build=python3
