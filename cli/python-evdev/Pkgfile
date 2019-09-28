@@ -1,17 +1,20 @@
-# Depends on: python python2 git
+makedepends=(python2 git)
 
 description="Python bindings for the Linux input subsystem"
 url="https://python-evdev.readthedocs.io/en/latest/"
-contributors=""
-packager="rems <rems@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
  
 name=python-evdev
-version=1.1.2-git
+version=1.2.0-git
 
 source=()
 
 prepare() {
 git clone https://github.com/gvalkov/python-evdev.git $name
+cd $name
+git checkout 91710cd7b86573f9bdb139ff9e9cfce212c94879
 }
 
 build() {
