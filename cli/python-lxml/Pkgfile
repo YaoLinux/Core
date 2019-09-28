@@ -1,16 +1,16 @@
-# Depends on: libxslt libxml2 python cython
+makedepends=(libxslt libxml2 cython)
 
 description="Python binding for the libxml2 and libxslt libraries"
 url="http://lxml.de/"
-packager="tnut@nutyx.org>"
-contributors="Greg"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-lxml
-version=4.3.2
+version=4.4.1
 
 source=(https://lxml.de/files/lxml-$version.tgz)
 
-	
 build() {
 export LC_ALL=en_US.utf8
 
