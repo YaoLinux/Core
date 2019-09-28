@@ -1,8 +1,10 @@
-# Depends on: libxml2 python-sgmllib
+makedepends=(libxml2 python-sgmllib)
 
 description="Parse RSS and Atom feeds in Python
 url="https://github.com/kurtmckee/feedparser
-packager="remy <remy@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-feedparser
 version=5.2.1
@@ -22,6 +24,5 @@ build() {
 
   cd feedparser-$version
   /usr/bin/python3 setup.py build
-  /usr/bin/python3 setup.py install --prefix=/usr --root=$PKG
-  
+  /usr/bin/python3 setup.py install --prefix=/usr --root=$PKG 
 }
