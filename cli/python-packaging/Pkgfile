@@ -1,13 +1,13 @@
-# Depends on: python2-setuptools python2-markupsafe python2-pyparsing python-pyparsing python python-markupsafe python2-six python-six
+makedepends=(python2-setuptools python2-markupsafe python2-pyparsing python-pyparsing python-markupsafe python2-six python-six)
 
 description="Core utilities for Python packages in python 2&3"
 url="https://github.com/pypa/packaging"
-packager="Rocket"
-contributors="rems"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-packaging
-version=19.0
-release=2
+version=19.2
 
 source=(https://pypi.io/packages/source/p/packaging/packaging-$version.tar.gz)
 
@@ -16,9 +16,7 @@ run=(python2-six python-six python2-pyparsing python-pyparsing)
 prepare() {
 
 cp -r packaging-$version packaging-$version-py2
-
 }
-
 
 build() {
 
