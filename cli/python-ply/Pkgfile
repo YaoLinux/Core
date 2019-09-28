@@ -1,8 +1,10 @@
-# Depends on: python python2
+makedepends=(python2)
 
 description="Implementation of lex and yacc parsing tools"
 url="http://www.dabeaz.com/ply/"
-packager="rems <rems@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-ply
 version=3.11
