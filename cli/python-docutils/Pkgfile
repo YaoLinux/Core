@@ -1,9 +1,8 @@
-# Depends on: python
-
 description="Set of tools for processing plaintext docs into formats such as HTML, XML, or LaTeX"
 url="http://docutils.sourceforge.net"
-contributors="tnut, greg, rems"
-packager="Rocket"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=python-docutils
 version=0.14
@@ -14,5 +13,4 @@ build() {
 
     cd docutils-$version
     python3 setup.py install --root=$PKG
-    
 }
