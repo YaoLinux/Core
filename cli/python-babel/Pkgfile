@@ -1,12 +1,13 @@
-# Depends on: python2-setuptools python-pytz python
+makedepends=(python2-setuptools python-pytz python)
 
 description="A collection of tools for internationalizing Python applications"
 url="http://babel.pocoo.org/"
-packager="rems <rems@nutyx.org>"
-contributors="tnut, rocket"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=python-babel
-version=2.6.0
+version=2.7.0
 _core=33
 
 PKGMK_KEEP_SOURCES="no"
