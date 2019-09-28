@@ -1,9 +1,10 @@
-# Depends on: python2-setuptools python
+makedepends=(python2-setuptools)
  
 description="Sphinx default theme in python 2&3"
 url="https://github.com/bitprophet/alabaster"
-packager="Rocket"
-contributors="rems"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-sphinx-alabaster-theme
 version=0.7.12
@@ -15,9 +16,7 @@ run=(python2 python)
 prepare() {
 
 cp -r alabaster-$version alabaster-$version-py2
-
 }
-
 
 build() {
 
