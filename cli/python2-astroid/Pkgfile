@@ -1,14 +1,13 @@
-description="Python 2 and 3 Useful miscellaneous modules used by Logilab projects"
+description="Python 2 Useful miscellaneous modules used by Logilab projects"
 url="https://bitbucket.org/logilab/astroid"
-contributors="pierre"
-packager="greg<greg@nutyx.org>"
 
+maintainer="rems"
+packager="Yaolinux Team"
 
-# Depends on: python2 python2-setuptools python2-six
+makedepends=(python2-setuptools python2-six)
 
 name=python2-astroid
 version=1.6.5
-release=1
 
 source=(https://github.com/PyCQA/astroid/archive/astroid-$version.tar.gz)
 
@@ -16,5 +15,4 @@ build() {
 
     cd astroid-astroid-$version
     python2 setup.py build install --prefix=/usr --root=$PKG
-    
 }
