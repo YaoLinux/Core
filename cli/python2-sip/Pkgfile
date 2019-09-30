@@ -1,12 +1,13 @@
-# Depends on: python2
+makedepends=(python2)
 
 description="A tool that makes it easy to create Python bindings for C and C++ libraries"
 url="http://www.riverbankcomputing.co.uk/software/sip/intro"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python2-sip
-version=4.19.14
+version=4.19.19
 
 source=(https://www.riverbankcomputing.com/static/Downloads/sip/sip-$version.tar.gz)
 
