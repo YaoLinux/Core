@@ -1,37 +1,18 @@
-# Depends on: python2 python2-setuptools
+makedepends=(python2-setuptools)
 
 description="A Python HTML/XML parser designed for quick turnaround projects like screen-scraping"
 url="http://www.crummy.com/software/BeautifulSoup/index.html"
-packager="greg@nutyx.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python2-beautifulsoup4
-version=4.6.0
-release=1
+version=4.8.0
+
+_name=beautifulsoup4
 
 run=(python2 python2-setuptools)
 
-source=(http://www.crummy.com/software/BeautifulSoup/bs4/download/${version%.*}/${name#*-}-$version.tar.gz
-)
+source=(http://www.crummy.com/software/BeautifulSoup/bs4/download/${version%.*}/${name#*-}-$version.tar.gz)
 
-prepare() {
-
-cp -a beautifulsoup4-$version{,-py2}
-
-}
-
-
-build() {
-
-cd $SRC/beautifulsoup4-$version-py2
-python2 setup.py build
-
-}
-
-
-package() {
-
-cd beautifulsoup4-$version-py2
-python2 setup.py install --root=$PKG --optimize=1 --skip-build
-	
-}
-
+build=python2
