@@ -1,20 +1,20 @@
-# Depends on: python2-setuptools
+makedepends=(python2-setuptools)
 
 description="Python syntax highlighter"
 url="http://pypi.python.org/"
-contributors="Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=python2-pygments
-version=2.3.1
-release=2
+version=2.4.2
 
-source=(https://files.pythonhosted.org/packages/64/69/413708eaf3a64a6abb8972644e0f20891a55e621c6759e2c3f3891e05d63/Pygments-2.3.1.tar.gz)
+source=(https://files.pythonhosted.org/packages/64/69/413708eaf3a64a6abb8972644e0f20891a55e621c6759e2c3f3891e05d63/Pygments-$version.tar.gz)
 
 build() {
 
     cd Pygments-$version
     python2 setup.py install --prefix=/usr --root=$PKG
-    # Part of pygmentize 
+    # Part of pygmentize
     rm -r $PKG/usr/bin
 }
