@@ -1,13 +1,13 @@
 description="Implementation of ECDSA in Python"
 url="https://github.com/warner/python-ecdsa"
-contributors="tnut"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: python2
+maintainer="rems"
+packager="Yaolinux Team"
+
+makedepends=(python2)
 
 name=python2-ecdsa
-version=0.13
-release=1
+version=0.13.2
 
 source=(https://files.pythonhosted.org/packages/source/e/ecdsa/ecdsa-$version.tar.gz)
 
@@ -15,5 +15,4 @@ build() {
 
     cd ecdsa-$version
     python2 setup.py install --prefix=/usr --root=$PKG
-    
 }
