@@ -1,8 +1,9 @@
-# Depends on: python2-setuptools python2-six python2
+makedepends=(python2-setuptools python2-six)
 
 description="Provides powerful extensions to the standard datetime module"
 url="https://github.com/dateutil/dateutil"
-packager="greg@nutyx.org"
+
+packager="Yaolinux Team"
 
 name=python2-dateutil
 version=2.8.0
@@ -13,20 +14,8 @@ PKGMK_KEEP_SOURCES="no"
 
 source=(https://files.pythonhosted.org/packages/ad/99/5b2e99737edeb28c71bcbec5b5dda19d0d9ef3ca3e92e3e925e7c0bb364c/python-dateutil-$version.tar.gz)
 
-prepare() {
-
-cd $SRC
-cp -r  python-dateutil-$version python2-dateutil-$version
-
-}
-
-
 build() {
 
-cd python2-dateutil-$version
+cd dateutil-$version
 python2 setup.py build install --root=$PKG --optimize=1
-
 }
-
-
-
