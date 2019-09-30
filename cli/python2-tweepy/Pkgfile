@@ -1,20 +1,18 @@
-# Depends on: python2-simplejson python2-pip
+makedepends=(python2-simplejson python2-pip)
 
 description="A Python library for accessing the entire Twitter API."
 url="http://pypi.python.org/pypi/tweepy/"
-contributors="Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
 
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=python2-tweepy
-version=3.7.0
-release=1
+version=3.8.0
 
-source=(https://files.pythonhosted.org/packages/9c/dc/ac8f5648ea96b7a48e9a17f55a8f77eba470cbba439d7e2aa92d9b6ff811/tweepy-3.7.0.tar.gz)
+source=(https://files.pythonhosted.org/packages/9c/dc/ac8f5648ea96b7a48e9a17f55a8f77eba470cbba439d7e2aa92d9b6ff811/tweepy-$version.tar.gz)
 
 build() {
 
     cd tweepy-$version
     python2 setup.py install --prefix=/usr --root=$PKG
-    
 }
