@@ -1,36 +1,19 @@
-# Depends on: python2-setuptools python2
+makedepends=(python2-setuptools)
 
 description="A DNS toolkit for Python"
 url="http://www.dnspython.org"
-packager="greg@nutyx.org"
+
+packager="Yaolinux Team"
 
 name=python2-dnspython
-version=1.15.0
-release=1
+version=1.16.0
 
 run=(python2-setuptools python2)
 
-source=(http://www.dnspython.org/kits/$version/dnspython-$version.tar.gz
-)
-
-prepare() {
-
-cd $SRC/dnspython-$version
-
-}
-
+source=(http://www.dnspython.org/kits/$version/dnspython-$version.tar.gz)
 
 build() {
 
-cd $SRC/dnspython-$version
+cd dnspython-$version
 python2 setup.py install --root=$PKG
-
 }
-
-
-package() {
-
-cd $SRC/dnspython-$version  
-	
-}
-
