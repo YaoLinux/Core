@@ -1,18 +1,18 @@
-#Depends on : python2-setuptools lcms2 libtiff freetype openjpeg2 libwebp
+makedepends=(python2-setuptools lcms2 libtiff freetype openjpeg2 libwebp)
 
 description="Python 2 Imaging Library"
 url="https://pypi.python.org/pypi/Pillow"
-packager="remy <remy@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(python2-setuptools)
 
 name=python2-pillow
-version=5.3.0
+version=6.1.0
+
+_name=Pillow
 
 source=(https://files.pythonhosted.org/packages/source/P/Pillow/Pillow-$version.tar.gz)
 
-build(){
-cd Pillow-$version
-python2 setup.py build
-python2 setup.py install --root=$PKG --optimize=1
-}
+build=python2
