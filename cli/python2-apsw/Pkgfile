@@ -20,7 +20,6 @@ build() {
   python3 setup.py build --enable=load_extension
 }
 
-
 package() {
 
 cd apsw-${version}-r1
