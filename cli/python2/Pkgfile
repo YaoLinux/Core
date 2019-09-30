@@ -1,19 +1,19 @@
-# Depends on: libffi sqlite
+makedepends=(libffi sqlite)
 
 description="Next generation of the python high-level scripting language"
 url="http://www.python.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(devel man doc)
 
 _pybasever=2.7
 
 name=python2
-version=2.7.15
+version=2.7.16
 
-source=(
-${url}/ftp/python/$version/Python-$version.tar.xz
+source=(${url}/ftp/python/$version/Python-$version.tar.xz
 $name.png)
 
 
@@ -24,8 +24,10 @@ build() {
                 --with-system-ffi \
                 --enable-shared \
                 --enable-unicode=ucs4
+
     make
     make DESTDIR=$PKG install
+    
     chmod -v 755 $PKG/usr/lib/libpython2.7.so.1.0
 
     # Part of python3
@@ -34,8 +36,11 @@ build() {
     # Install all HTML Docs files with desktop menu integration
 
     install -v -dm755 $PKG/usr/share/doc/$name-$version
+    
     cd $SRC
+    
     wget --no-check-certificate http://docs.python.org/ftp/python/doc/$version/python-$version-docs-html.tar.bz2
+    
     tar --strip-components=1 -C $PKG/usr/share/doc/$name-$version \
         --no-same-owner -xvf python-$version-docs-html.tar.bz2
 
@@ -43,6 +48,7 @@ build() {
     find $PKG/usr/share/doc/$name-$version -type f -exec chmod 0644 {} \;
 
     mkdir -p $PKG/usr/share/applications
+    
     echo "[Desktop Entry]
 Categories=Development;Documentation
 Exec=xdg-open file:///usr/share/doc/$name-$version/index.html
@@ -55,6 +61,7 @@ Name[fr]=Documentation Python" > $PKG/usr/share/applications/$name.desktop
     install -Dm644 $SRC/$name.png \
         $PKG/usr/share/icons/hicolor/48x48/apps/$name.png
 }
+
 doc () {
 cd $PKG
 bsdtar -cf \
