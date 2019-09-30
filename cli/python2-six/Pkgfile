@@ -1,15 +1,15 @@
-# Depends on: python2
+makedepends=(python2)
 
 description="Python2 compatibility utilities."
 url="http://pypi.python.org/pypi/six/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python2-six
 version=1.12.0
-release=1
 
-source=(
-http://pypi.python.org/packages/source/s/six/six-$version.tar.gz)
+source=(http://pypi.python.org/packages/source/s/six/six-$version.tar.gz)
 
 build() {
     cd six-$version
