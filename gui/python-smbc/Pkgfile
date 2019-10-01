@@ -1,8 +1,8 @@
-# Depends on: python samba
+makedepends=(python samba)
 
 description="Python bindings for the libsmbclient library from the samba project."
 url="https://pypi.python.org/pypi/pysmbc/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=python-smbc
 version=1.0.15.8
