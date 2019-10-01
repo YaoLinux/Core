@@ -1,8 +1,8 @@
-# Depends on: xorg-mkfontscale
+makedepends=(xorg-mkfontscale)
 
 description="Create an index of X font files in a directory."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
