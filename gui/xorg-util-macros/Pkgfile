@@ -1,4 +1,3 @@
-makedepends=()
 
 description="util-macros, contains the macros m4 used by the packages xorg"
 url="http://www.x.org"
