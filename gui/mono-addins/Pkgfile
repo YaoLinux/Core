@@ -1,9 +1,9 @@
-# Depends on: gtksharp2 mono
+makedepends=(gtksharp2 mono)
 
 description="Generic framework for creating extensible applications"
 url="http://www.mono-project.com/Mono.Addins"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=mono-addins
 version=1.3.3
