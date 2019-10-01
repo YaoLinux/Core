@@ -1,9 +1,9 @@
-# Depends on: doxygen graphviz libevdev mtdev libwacom gtk3 check libunwind meson valgrind
+makedepends=(doxygen graphviz libevdev mtdev libwacom gtk3 check libunwind valgrind)
 
 description="Library for display servers and other applications that need to deal with input devices"
 url="http://www.freedesktop.org/wiki/Software/libinput/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Pierre B, Jayce"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libinput
 version=1.12.4
@@ -14,9 +14,9 @@ build() {
 cd $name-$version
 mkdir build
 cd build
-meson --prefix=/usr -Dtests=false -Ddebug-gui=false -Ddocumentation=false
+--prefix=/usr -Dtests=false -Ddebug-gui=false -Ddocumentation=false
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
 uptodate() {
 local url ext
