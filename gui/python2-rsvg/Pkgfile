@@ -1,9 +1,9 @@
-# Depends on: python2-gtk librsvg 
+makedepends=(python2-gtk librsvg )
 
 description="Connector python for the library librsvg"
 url="http://www.gnome.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=gnome-python-desktop
 
