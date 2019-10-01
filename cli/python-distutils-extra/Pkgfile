@@ -1,7 +1,7 @@
 description="Enhancements to the Python build system"
 url="https://launchpad.net/python-distutils-extra"
 
-packager="Yaolinux Team
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-distutils-extra
