@@ -1,9 +1,9 @@
-# Depends on: mesa python xorg-util-macros
+makedepends=(mesa python xorg-util-macros)
 
 description="Library for handling OpenGL function pointer management"
 url="https://github.com/anholt/libepoxy"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libepoxy
 version=1.5.3
@@ -16,8 +16,8 @@ cd $name-$version
 mkdir build
 cd build
 
-meson --prefix=/usr
+--prefix=/usr
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 
 }
