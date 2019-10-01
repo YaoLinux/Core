@@ -1,9 +1,9 @@
-# Depends on: boost curl libxml2 docbook2x cppunit
+makedepends=(boost curl libxml2 docbook2x cppunit)
 
 description="a C/C++ client library for the CMIS protocol"
 url="https://github.com/tdf/libcmis"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libcmis
 version=0.5.2
