@@ -1,9 +1,9 @@
-# Depends on: telepathy-glib libsoup libnice sqlite libxslt
+makedepends=(telepathy-glib libsoup libnice sqlite libxslt)
 
 description="A Jabber/XMPP connection manager for Telepathy"
 url="http://telepathy.freedesktop.org"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=telepathy-gabble
 version=0.18.4
