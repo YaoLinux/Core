@@ -2,7 +2,7 @@ description="C implementation of Sass CSS preprocessor (library)."
 url="http://libsass.org/"
 
 packager="Yaolinux Team"
-contributors="Fanch"
+maintainer="rems"
 
 name=libsass
 version=3.6.1
