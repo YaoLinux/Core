@@ -1,9 +1,9 @@
-# Depends on: gtk3 libgcrypt pam pcre gobject-introspection xorg-libxklavier vala
+makedepends=(gtk3 libgcrypt pam pcre gobject-introspection xorg-libxklavier vala)
 
 description="Lightweight X11 Display Manager based on Gtk"
 url="https://en.wikipedia.org/wiki/LightDM"
-packager="dania@nutyx.org"
-contributors="Rems, Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lightdm
 version=1.28.0
