@@ -3,7 +3,7 @@ makedepends=(cmake git)
 description="Video stabilization library"
 url="http://public.hronopik.de/vid.stab"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=vid-stab
 version=1.1
