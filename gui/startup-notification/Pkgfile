@@ -1,9 +1,9 @@
-# Depends on: xorg-libx11 xcb-util 
+makedepends=(xorg-libx11 xcb-util )
 
 description="Monitor and display application startup"
 url="http://freedesktop.org/wiki/Software/startup-notification"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=startup-notification
 version=0.12
