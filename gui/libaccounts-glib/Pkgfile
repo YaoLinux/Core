@@ -1,9 +1,9 @@
-# Depends on : check meson dbus-glib libxml2 sqlite python-gobject docbook-xsl gtk-doc vala
+# Depends on : check dbus-glib libxml2 sqlite python-gobject docbook-xsl gtk-doc vala
 
 description="Glib-based client library for accessing the online accounts database" 
 url="https://gitlab.com/accounts-sso/libaccounts-glib"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libaccounts-glib
 version=1.24
