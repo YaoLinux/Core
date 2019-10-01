@@ -1,8 +1,8 @@
-# Depends on: glibc
+makedepends=(glibc)
 description="Library for manipulating the IPTC metadata" 
 url="http://libiptcdata.sourceforge.net/" 
-packager="indoo@nutyx.org" 
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libiptcdata
 version=1.0.4
