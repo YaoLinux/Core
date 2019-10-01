@@ -1,9 +1,9 @@
-# Depends on: libgsf libglade pango pcre gtk3 librsvg
+makedepends=(libgsf libglade pango pcre gtk3 librsvg)
 
 description="The GOffice package contains a library of GLib/GTK document centric objects and utilities."
 url="http://freecode.com/projects/goffice"
-contributors="Tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=goffice
 version=0.10.44
