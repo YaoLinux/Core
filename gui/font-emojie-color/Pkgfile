@@ -1,8 +1,7 @@
-# Depends on: xorg-fontconfig
+makedepends=(xorg-fontconfig)
 
 description=""
-packager="YaoLinux Teams"
-maintainer="Graknu <Graknu@yaolinux.org>"
+packager="Yaolinux Team"
 url="https://www.google.com/get/noto/#emoji-zsye"
 
 name=font-emojie-color
