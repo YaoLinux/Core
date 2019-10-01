@@ -1,9 +1,9 @@
-# Depends on: itstool libxslt intltool perl-xml-parser
+makedepends=(itstool libxslt intltool perl-xml-parser)
 
 description="Stylesheets for Yelp."
 url="http://www.gnome.org/"
 maintainer="git.gnome.org/brownse/yelp-xsl/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=yelp-xsl
 version=3.30.0
