@@ -1,8 +1,8 @@
-# Depends on: xorg-libxmu
+makedepends=(xorg-libxmu)
 
 description="Users preferences utility for X."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
