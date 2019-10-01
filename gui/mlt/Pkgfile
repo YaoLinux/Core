@@ -1,9 +1,9 @@
-# Depends on: ladspa frei0r-plugins libdv sdl-image libsamplerate sox ffmpeg vid-stab qtsvg jack libexif swig movit eigen3
+makedepends=(ladspa frei0r-plugins libdv sdl-image libsamplerate sox ffmpeg vid-stab qtsvg jack libexif swig movit eigen3)
 
 description="An open source multimedia framework"
 url="http://www.mltframework.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 name=mlt
 version=6.12.0
 
