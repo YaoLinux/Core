@@ -1,9 +1,9 @@
-# Depends on: cmake
+makedepends=(cmake)
 
 description="A Library for reading and editing the meta-data of several popular audio formats"
 url="http://developer.kde.org/~wheeler/taglib.html"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=taglib
 version=1.11.1
