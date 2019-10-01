@@ -1,9 +1,9 @@
-# Depends on: libsoup gobject-introspection 
+makedepends=(libsoup gobject-introspection )
 
 description="Gives more easily access to internet services which says be 'RESTful'."
 url="http://www.gnome.org/"
-packager="fanch <fanch@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=librest
 version=0.8.1
