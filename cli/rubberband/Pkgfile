@@ -1,29 +1,18 @@
 description="Time-stretching and pitch-shifting audio library and utility"
 url="http://www.breakfastquay.com/rubberband/"
-packager="greg<greg@nutyx.org>"
 
-# Depends on: ladspa libsamplerate fftw vamp-plugin-sdk
+packager="Yaolinux Team"
+maintainer="rems"
+
+makedepends=(ladspa libsamplerate fftw vamp-plugin-sdk)
 
 name=rubberband
-version=1.8.1
-release=1
+version=1.8.2
 
-source=http://code.breakfastquay.com/attachments/download/34/$name-$version.tar.bz2
+source=(http://code.breakfastquay.com/attachments/download/34/$name-$version.tar.bz2)
 
-build() {
+prepare() {
 
-	cd $name-$version
-	./configure --prefix=/usr
-	make
-
+cd $name-$version
+autoreconf -fiv
 }
-
-
-package() {
-
-	cd $name-$version
-	make DESTDIR=$PKG install
-
-}
-
-
