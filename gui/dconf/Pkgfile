@@ -1,9 +1,9 @@
-# Depends on: ninja meson dbus gtk3 libxml2 vala bash-completion 
+makedepends=(dbus gtk3 libxml2 vala bash-completion )
 
 description="A low-level configuration system."
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=dconf
 version=0.30.1
