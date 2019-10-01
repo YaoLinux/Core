@@ -1,9 +1,9 @@
-# Depends on: xorg-libx11
+makedepends=(xorg-libx11)
 
 description="AAlib is an portable ascii art GFX library."
 url="http://aa-project.sourceforge.net/aalib"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=aalib
 version=1.4rc5
