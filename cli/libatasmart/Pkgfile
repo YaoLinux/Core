@@ -1,6 +1,6 @@
 makedepends=(systemd)
 
-packager="sipo"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 description="ATA S.M.A.R.T. Reading and Parsing Library"
