@@ -1,9 +1,9 @@
-# Depends on: libnotify python2-gtk dbus-glib 
+makedepends=(libnotify python2-gtk dbus-glib )
 
 description="Connector python for libnotify"
 url="http://www.galago-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python2-notify
 version=0.1.1
