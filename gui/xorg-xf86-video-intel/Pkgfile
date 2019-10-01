@@ -1,7 +1,7 @@
-# Depends on: xcb-util xorg-libxscrnsaver xorg-libxtst xorg-libxrandr xorg-libxinerama xorg-libxcursor xorg-libx11 xorg-libxtst xorg-libxvmc mesa xorg-server
+makedepends=(xcb-util xorg-libxscrnsaver xorg-libxtst xorg-libxrandr xorg-libxinerama xorg-libxcursor xorg-libx11 xorg-libxtst xorg-libxvmc mesa xorg-server)
 
 description="Xorg intel video driver."
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 name=xorg-xf86-video-intel
 version=20180223
 _name=${name/xorg-/}
