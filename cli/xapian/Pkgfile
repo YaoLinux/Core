@@ -1,6 +1,6 @@
 description="Xapian is an open source search engine library."
 url="http://oligarchy.co.uk/xapian.html"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=xapian
 version=1.4.5
