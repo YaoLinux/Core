@@ -1,6 +1,6 @@
 makedepends=(libgcrypt nettle nss openssl popt lvm2 json-c python2 libpwquality)
 
-packager="Yaolinux"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 description="Userspace setup tool for transparent encryption of block devices using dm-crypt"
