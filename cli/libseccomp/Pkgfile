@@ -1,7 +1,7 @@
 description="Enhanced seccomp library"
 url="http://sourceforge.net/projects/libseccomp/"
 
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=libseccomp
