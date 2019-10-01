@@ -1,9 +1,9 @@
-# Depends on: cmake xorg-fontconfig freetype libidn libpng libtiff lua51 
+makedepends=(cmake xorg-fontconfig freetype libidn libpng libtiff lua51 )
 
 description="C++ library to work with the PDF file format"
 url="http://podofo.sourceforge.net"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=podofo
 version=0.9.5
