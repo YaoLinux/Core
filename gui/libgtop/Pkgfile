@@ -1,9 +1,9 @@
-# Depends on: gtk-doc intltool gobject-introspection
+makedepends=(gtk-doc intltool gobject-introspection)
 
 description="A library that read information about processes and the running system"
 url="http://www.gnu.org/directory/libs/LibGTop.html"
-packager="remy <remy@nutyx.org>"
-contributors="B juglas, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libgtop
 version=2.38.0
