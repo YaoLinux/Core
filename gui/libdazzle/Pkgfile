@@ -1,10 +1,10 @@
-# Depends on: gtk3
+makedepends=(gtk3)
 
 description="A library to delight your users with fancy features"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Fanch"
-run=(meson vala gobject-introspection)
+packager="Yaolinux Team"
+maintainer="rems"
+run=(vala gobject-introspection)
 
 name=libdazzle
 version=3.30.2
@@ -14,7 +14,7 @@ build() {
 cd $name-$version
 mkdir build
 cd    build
-meson --prefix=/usr 
+--prefix=/usr 
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
