@@ -1,9 +1,9 @@
-# Depends on: libsoup gobject-introspection vala gtk-doc
+makedepends=(libsoup gobject-introspection vala gtk-doc)
 
 description="The uhttpmock package contains a library for mocking web service APIs which use HTTP or HTTPS"
 url="https://github.com/Distrotech/uhttpmock"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=uhttpmock
 version=0.5.1
