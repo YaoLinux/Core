@@ -1,6 +1,6 @@
 description="Client-side application which queries directory service"
 url="http://ftp.debian.org/debian/pool/main/w/whois"
-packager="remy <remy@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Alienus,tnut"
 
 name=whois
