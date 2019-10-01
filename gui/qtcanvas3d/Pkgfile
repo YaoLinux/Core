@@ -1,9 +1,9 @@
-# Depends on: qtbase qtdeclarative
+makedepends=(qtbase qtdeclarative)
 
 description="A JavaScript 3D rendering API for Qt Quick"
 url="http://qt-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qtcanvas3d 
 version=5.12.2
