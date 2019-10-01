@@ -1,9 +1,9 @@
-# Depends on: libxcb  xcb-util-renderutil xcb-util-image
+makedepends=(libxcb  xcb-util-renderutil xcb-util-image)
 
 description="XCB cursor library"
 url="http://cgit.freedesktop.org/xcb/util-cursor"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xcb-util-cursor
 version=0.1.3
