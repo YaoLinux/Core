@@ -1,8 +1,7 @@
-# Depends on: xmlto 
+makedepends=(xmlto )
 
 description="A garbage collector for C and C++"
 url="http://downloads.sourceforge.net/giflib/"
-maintainer="tnut <tnut@nutyx.org>"
 packager="Yaolinux Team"
 
 PKGMK_IGNORE_UNPACK="yes"
