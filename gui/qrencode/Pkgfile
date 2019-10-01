@@ -1,9 +1,9 @@
-# Depends on: libpng sdl 
+makedepends=(libpng sdl )
 
 description="C library for encoding data in a QR Code symbol."
 url="http://megaui.net/fukuchi/works/qrencode/index.en.html"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qrencode
 version=4.0.2
