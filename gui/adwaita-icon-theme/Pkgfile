@@ -1,9 +1,8 @@
-# Depends on: intltool gtk-update-icon-cache hicolor-icon-theme icon-naming-utils librsvg
+makedepends=(intltool gtk-update-icon-cache hicolor-icon-theme icon-naming-utils librsvg)
 
 description="Adwaita icon theme."
 url="http://www.gnome.org/"
-maintainer="http://linuxfromscratch.org/"
-packager="tnut <tnut@nuty.org>"
+packager="Yaolinux Team"
 
 run=(librsvg hicolor-icon-theme gtk-update-icon-cache)
 
