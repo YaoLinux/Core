@@ -1,10 +1,9 @@
-# Depends on: gtk-update-icon-cache
+makedepends=(gtk-update-icon-cache)
 
 description="The LXDE Icon Theme package contains nuoveXT 2.2 Icon Theme for LXDE."
 url="http://lxde.org/"
-maintainer="Hong Jen Yee (PCMan) pcman dot tw at gmail.com"
-packager="tnut <tnut@nutyx.org>"
-contributors="Geantbrun"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(gtk-update-icon-cache)
 
