@@ -1,9 +1,9 @@
-# Depends on: cairo dbus-glib gobject-introspection js60 xorg-libxxf86vm
+makedepends=(cairo dbus-glib gobject-introspection js60 xorg-libxxf86vm)
 
 description="Set of Javascript Bindings for GNOME"
 url="http://www.gnome.org/"
-packager="remy <remy@nutyx.org>"
-contributors="Pierre B, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gjs
 version=1.54.0
