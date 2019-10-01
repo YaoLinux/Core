@@ -1,9 +1,9 @@
-# Depends on: alsa-lib expat pulseaudio at-spi2-core python-gobject python2-gobject
+makedepends=(alsa-lib expat pulseaudio at-spi2-core python-gobject python2-gobject)
 
 description="contains the bindings Python2 for the components of heart GNOME Accessibility"
 url="http://www.cairographics.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-atspi
 version=2.30.0
