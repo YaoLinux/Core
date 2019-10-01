@@ -3,7 +3,7 @@ makedepends=(python2)
 description="Cross platform time zone library for Python 2&3"
 url="http://pypi.python.org/pypi/pytz"
 
-packager="rems@nutyx.org"
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-pytz
