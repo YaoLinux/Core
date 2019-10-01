@@ -1,8 +1,8 @@
-# Depends on: cryptsetup glib gpgme swig python2 python
+makedepends=(cryptsetup glib gpgme swig python2 python)
 
 description="Storage volume encryption keys and storing them separately from volumes to handle forgotten passphrases."
 url="https://releases.pagure.org/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=volume_key
 version=0.3.11
