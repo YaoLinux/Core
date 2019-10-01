@@ -1,9 +1,9 @@
-# Depends on: intltool gtk3 libcanberra 
+makedepends=(intltool gtk3 libcanberra )
 
 description="Notification daemon for the desktop notifications framework"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=notification-daemon
 version=3.20.0
