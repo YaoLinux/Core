@@ -1,9 +1,9 @@
-# Depends on: xorg-libx11 xorgproto xorg-libxfixes 
+makedepends=(xorg-libx11 xorgproto xorg-libxfixes )
 
 description="libXdamage, library X Damage extension client"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-libxdamage
 alias=(libxdamage libXdamage)
