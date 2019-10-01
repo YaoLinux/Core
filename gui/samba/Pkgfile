@@ -1,9 +1,9 @@
-# Depends on: systemd jansson rpcsvc-proto libtirpc docbook-xsl talloc tevent avahi gnutls libgpg-error popt python2 cups kerberos libcap openldap tdb ldb
+makedepends=(systemd jansson rpcsvc-proto libtirpc docbook-xsl talloc tevent avahi gnutls libgpg-error popt python2 cups kerberos libcap openldap tdb ldb)
 
 description="SMB Fileserver and AD Domain server"
 url="http://www.samba.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=samba
 version=4.10.7
