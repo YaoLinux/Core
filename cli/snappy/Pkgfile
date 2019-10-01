@@ -1,22 +1,25 @@
 description="A fast compressor/decompressor library"
 url="http://code.google.com/p/snappy/"
-maintainers="https://code.google.com/p/snappy/people/list"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+maintainers="rems"
+packager="Yaolinux Team"
 
 PKGMK_KEEP_SOURCES="no"
 
 name=snappy
-version=1.1.6
-release=2
+version=1.1.7
 
 source=(https://github.com/google/snappy/archive/$version.tar.gz)
 
 build () {
 cd $name-$version
-autoreconf -i
+
+autoreconf -fiv
+
 touch ./README
+
 CXXFLAGS+=\ -DNDEBUG
+
 ./configure --prefix=/usr
 make
 make DESTDIR=$PKG install
