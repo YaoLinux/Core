@@ -1,8 +1,8 @@
-# Depends on: glib iso-codes gtk3 enchant
+makedepends=(glib iso-codes gtk3 enchant)
 
 description="Spell library"
 url="http://gnome.org"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=gspell
 version=1.8.1
