@@ -1,7 +1,7 @@
 description="Interface for terminal emulators to record user sessions to utmp and wtmp files."
 url="ftp://ftp.altlinux.org/pub/people/ldv/utempter"
 
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=libutempter
