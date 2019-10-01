@@ -3,7 +3,7 @@ makedepends=(bctoolbox)
 description="A Real-time Transport Protocol (RTP) library"
 url="https://github.com/BelledonneCommunications/ortp"
 
-packager="greg@nutyx.org"
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=ortp
