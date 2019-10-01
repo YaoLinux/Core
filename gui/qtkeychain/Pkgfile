@@ -1,9 +1,9 @@
-# Depends on: qtbase cmake qttools
+makedepends=(qtbase cmake qttools)
 
 description="Provides support for secure credentials storage"
 url="https://github.com/frankosterfeld/qtkeychain"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qtkeychain
 version=0.9.1
