@@ -1,4 +1,4 @@
-#Depends on: efl dbus-python
+makedepends=(efl dbus-python)
 
 description="python2 bindings for the Enlightenment Foundation Libraries"
 url="http://www.enlightenment.org"
