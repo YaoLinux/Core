@@ -2,7 +2,7 @@
 
 description="X Window System font support for Pango"
 url="http://www.pango.org/"
-packager="Greg"
+packager="Yaolinux Team"
 
 name=pangox-compat
 version=0.0.2+2+gedb9e09
