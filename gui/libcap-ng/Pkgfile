@@ -1,6 +1,6 @@
 description="A library making programming with POSIX capabilities easier than traditional libcap."
 url="http://people.redhat.com/sgrubb/libcap-ng/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=libcap-ng
 version=0.7.9
