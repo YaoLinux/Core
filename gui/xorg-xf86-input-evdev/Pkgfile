@@ -1,7 +1,7 @@
-# Depends on: mtdev libevdev xorg-server
+makedepends=(mtdev libevdev xorg-server)
 
 description="Xorg evdev input drivers"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=xorg-xf86-input-evdev
 version=2.10.6
