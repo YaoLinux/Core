@@ -1,9 +1,9 @@
-# Depends on: vim db libcanberra gnome-online-accounts gnome-common gperf icu ninja libgdata libical libsecret libsoup nss libgweather vala gobject-introspection  kerberos gtk3 gtk-doc openldap
+makedepends=(vim db libcanberra gnome-online-accounts gnome-common gperf icu libgdata libical libsecret libsoup nss libgweather vala gobject-introspection  kerberos gtk3 gtk-doc openldap)
 
 description="Programs that work with contacts, tasks, and calendar information"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch, Tnut, Jayce, Remy"
+packager="Yaolinux Team"
+maintainer="rems"
 name=evolution-data-server
 version=3.30.5
 
@@ -22,5 +22,5 @@ cmake . -G Ninja \
       -DWITH_KRB5=OFF               \
       -DENABLE_INTROSPECTION=ON
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
