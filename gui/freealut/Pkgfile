@@ -1,8 +1,8 @@
-# Depends on: openal
+makedepends=(openal)
 
 description="OpenAL Utility Toolkit (ALUT)"
 url="http://www.openal.org"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=freealut
 version=1.1.0
