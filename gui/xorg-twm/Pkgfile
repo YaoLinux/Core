@@ -1,10 +1,10 @@
-# Depends on: xorg-libxt xorg-libxmu xorg-libice xorg-libsm xorg-server 
+makedepends=(xorg-libxt xorg-libxmu xorg-libice xorg-libsm xorg-server )
 
 
 description="The twm package contains a very minimal window manager."
 url="http://xorg.freedesktop.org" 
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-twm
 _name=twm
