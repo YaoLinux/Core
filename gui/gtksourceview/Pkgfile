@@ -1,8 +1,8 @@
-# Depends on: gtk3 libxml2
+makedepends=(gtk3 libxml2)
 
 description="Syntax highlighting for the GtkTextView widget"
 url="http://mail.gnome.org/mailman/listinfo/gnome-devtools"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=gtksourceview
 version=3.24.8
