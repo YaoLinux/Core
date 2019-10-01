@@ -1,5 +1,5 @@
 url="http://mama.indstate.edu/users/ice/tree/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Berlius"
 description="A directory listing program displaying a depth indented list of files"
 name=tree
