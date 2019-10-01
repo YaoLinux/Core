@@ -2,7 +2,7 @@ makedepends=(python2 python2-setuptools)
 
 description="C extensions for Python."
 url="http://www.cython.org/"
-contributors="Berlius, Greg"
+maintainer="rems"
 packager="Yaolinux Team"
 
 PKGMK_KEEP_SOURCES="no"
