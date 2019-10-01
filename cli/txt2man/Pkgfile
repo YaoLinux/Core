@@ -1,9 +1,7 @@
-# Depends on: 
 
 description="Converts flat ASCII text to man page format"
 url="https://github.com/mvertes/txt2man"
-packager="greg<greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
 
 run=()
 
