@@ -1,9 +1,9 @@
-# Depends on: cmake extra-cmake-modules qtbase qtx11extras kwayland 
+makedepends=(cmake extra-cmake-modules qtbase qtx11extras kwayland )
 
 description="KDE screen management software "
 url="https://www.kde.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libkscreen
 version=5.15.2
