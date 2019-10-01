@@ -1,25 +1,22 @@
-# Depends on: glibc
-
 description="DSP library derived from Speex"
 url="http://www.speex.org"
-packager="rems <rems@nutyx.org>"
-contributors=""
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=speexdsp
-version=1.2rc3
+version=1.2.0
 
-source=(https://downloads.us.xiph.org/releases/speex/$name-$version.tar.gz
-        speexdsp-fixbuilds-774c87d.patch)
+source=(https://downloads.us.xiph.org/releases/speex/$name-$version.tar.gz)
 
 build() {
   cd $name-$version
-patch -Np1 -i ../speexdsp-fixbuilds-774c87d.patch
-autoreconf -vi
-./configure --prefix=/usr \
+
+  ./configure --prefix=/usr \
             --sysconfdir=/etc \
             --localstatedir=/var \
             --disable-static
-            
+
   make
   make DESTDIR=$PKG install
 }
