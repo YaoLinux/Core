@@ -1,7 +1,7 @@
-# Depends on: mesa xorg-server
+makedepends=(mesa xorg-server)
 
 description="Open Source 2D acceleration driver for nVidia cards."
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 name=xorg-xf86-video-nouveau
 version=1.0.15
 release=3
