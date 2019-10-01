@@ -1,9 +1,9 @@
-# Depends on: mesa
+makedepends=(mesa)
 
 description="library graphic 3D table OpenGL"
 url="http://www.xorg-mesa3d.org"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-glu
 _name=glu
