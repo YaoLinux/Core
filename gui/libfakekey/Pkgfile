@@ -1,9 +1,9 @@
-# Depends on: xorg-libxtst 
+makedepends=(xorg-libxtst )
 
 description="X virtual keyboard library."
 url="https://www.yoctoproject.org/tools-resources/projects/matchbox"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 
 name=libfakekey
