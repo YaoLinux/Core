@@ -1,7 +1,7 @@
 description="Creates PKZIP-compatible .zip files"
 url="http://infozip.sourceforge.net/Zip.html"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=zip
 version=3.0
