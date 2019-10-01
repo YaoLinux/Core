@@ -1,9 +1,9 @@
-# Depends on: clutter gtk3 gobject-introspection
+makedepends=(clutter gtk3 gobject-introspection)
 
 description="GTK clutter widget." 
 url="http://www.clutter-project.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch, Tnut, Jayce"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=clutter-gtk
 version=1.8.4
