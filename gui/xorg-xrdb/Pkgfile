@@ -1,8 +1,8 @@
-# Depends on: xorgproto xorg-libxmu xorg-libx11
+makedepends=(xorgproto xorg-libxmu xorg-libx11)
 
 description="X server resources database utility"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
