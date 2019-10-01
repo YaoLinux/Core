@@ -3,7 +3,7 @@ makedepends=(python,libxslt,docbook-xsl)
 description="A Trivial Database similar to GDBM but allows simultaneous commits"
 url="http://tdb.samba.org/"
 packager="Yaolinux Team"
-contributors="tnut"
+maintainer="rems"
 
 name=tdb
 version=1.3.18
