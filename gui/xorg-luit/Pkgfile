@@ -1,8 +1,8 @@
-# Depends on: xorg-libfontenc
+makedepends=(xorg-libfontenc)
 
 description="Filter that can be run between an arbitrary application and UTF8 emulator."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
