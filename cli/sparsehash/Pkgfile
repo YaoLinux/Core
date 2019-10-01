@@ -11,7 +11,9 @@ source=(https://github.com/sparsehash/sparsehash/archive/sparsehash-$version.tar
 
 build() {
  cd $name--$name-$version
+
  ./configure --prefix=/usr
+
  make
  make DESTDIR=$PKG install
 }
