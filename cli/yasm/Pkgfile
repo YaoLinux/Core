@@ -1,6 +1,6 @@
 description="A rewrite of NASM to allow for multiple syntax supported (NASM, TASM, GAS, etc.)"
 url="http://www.tortall.net/projects/yasm/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Pierre B"
 
 name=yasm
