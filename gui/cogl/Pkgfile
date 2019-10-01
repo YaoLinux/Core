@@ -1,9 +1,9 @@
-# Depends on: xorg-libxrandr gdk-pixbuf mesa xorg-glu pango xorg-libdrm gobject-introspection
+makedepends=(xorg-libxrandr gdk-pixbuf mesa xorg-glu pango xorg-libdrm gobject-introspection)
 
 description="An object oriented GL/GLES Abstraction/Utility Layer"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 name=cogl
 version=1.22.2
 release=3
