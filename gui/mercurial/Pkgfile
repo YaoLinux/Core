@@ -1,10 +1,9 @@
-# Depends on: openssh python gnupg subversion bzr python-docutils ca-certificates
+makedepends=(openssh python gnupg subversion bzr python-docutils ca-certificates)
 
 description="A scalable distributed SCM tool"
 url="http://mercurial.selenic.com"
 packager="Yaolinux Team"
-maintainer="rems <rems@yaolinux.org>"
-contributors=""
+maintainer="rems"
 
 run=(openssh) 
 
