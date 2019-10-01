@@ -1,9 +1,9 @@
-# Depends on: geoclue2 geocode-glib libgweather librsvg meson networkmanager ninja nss intltool cups colord gnome-desktop libcanberra libnotify libgnomekbd libwacom pulseaudio upower gsettings-desktop-schemas gtk-update-icon-cache
+makedepends=(geoclue2 geocode-glib libgweather librsvg networkmanager nss intltool cups colord gnome-desktop libcanberra libnotify libgnomekbd libwacom pulseaudio upower gsettings-desktop-schemas gtk-update-icon-cache)
 
 description="The GNOME Settings daemon"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch, Tnut, jayce, Remy"
+packager="Yaolinux Team"
+maintainer="rems"
 run=(gtk-update-icon-cache gsettings-desktop-schemas)
 
 name=gnome-settings-daemon
