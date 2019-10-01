@@ -1,8 +1,8 @@
-# Depends on: libxml2 freetype xorg-fontconfig apache-ant
+makedepends=(libxml2 freetype xorg-fontconfig apache-ant)
 
 description="Blu-Ray access library."
 url="http://www.videolan.org/developers/libbluray.html"
-packager="greg<greg@nutyx.org>"
+packager="Yaolinux Team"
 
 
 name=libbluray
