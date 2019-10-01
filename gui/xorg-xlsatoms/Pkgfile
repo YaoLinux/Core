@@ -1,8 +1,8 @@
-# Depends on: xcb-util
+makedepends=(xcb-util)
 
 description="List interned atoms defined on server."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
