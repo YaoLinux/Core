@@ -1,9 +1,9 @@
-# Depends on: network-manager-applet libsecret openvpn intltool python
+makedepends=(network-manager-applet libsecret openvpn intltool python)
 
 description="NetworkManager VPN plugin for OpenVPN"
 url="https://wiki.gnome.org/Projects/NetworkManager"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=networkmanager-openvpn
 version=1.8.8
