@@ -1,8 +1,8 @@
-# Depends on: xorgproto xorg-libx11 xorg-libxmu
+makedepends=(xorgproto xorg-libx11 xorg-libxmu)
 
 description="Server access control program for X."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
