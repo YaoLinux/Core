@@ -1,9 +1,9 @@
-# Depends on: cups python python-requests
+makedepends=(cups python python-requests)
 
 description="Python CUPS Bindings"
 url="http://cyberelk.net/tim/software/pycups/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-cups
 version=1.9.73
