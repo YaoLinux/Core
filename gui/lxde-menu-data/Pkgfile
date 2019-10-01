@@ -1,8 +1,8 @@
-# Depends on: intltool perl-xml-parser
+makedepends=(intltool perl-xml-parser)
 
 description="Provides files required to build freedesktop.org menu spec-compliant desktop menus for LXDE"
 url="http://lxde.org/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=lxde-menu-data
 version=0.1.5
