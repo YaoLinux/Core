@@ -1,9 +1,9 @@
-# Depends on: qtbase qtwebchannel qtlocation xorg-libxcomposite xorg-libxrandr pciutils libvpx libevent snappy nss protobuf libxslt ffmpeg git gperf icu zlib libwebp xorg-libxscrnsaver
+makedepends=(qtbase qtwebchannel qtlocation xorg-libxcomposite xorg-libxrandr pciutils libvpx libevent snappy nss protobuf libxslt ffmpeg git gperf icu zlib libwebp xorg-libxscrnsaver)
 
 description="Provides support for web applications using the Chromium browser project"
 url="http://qt-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qtwebengine
 version=5.12.2
