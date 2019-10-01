@@ -1,7 +1,6 @@
 makedepends=(acl libcap cmake)
 
 packager="Yaolinux Team"
-contributors="Pierre B., Tnut"
 maintainer="sipo"
 
 description="Original cdrtools supporting CD, DVD and BluRay burning"
