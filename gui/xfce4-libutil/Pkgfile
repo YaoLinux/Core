@@ -1,13 +1,13 @@
-# Depends on: vim glib intltool
+makedepends=(vim glib intltool)
 
 description="Basic utility non-GUI functions for Xfce"
 url="http://www.xfce.org/"
-packager="greg <greg@nutyx.org>"
-contributors="tyrry,tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xfce4-libutil
 _name=libxfce4util
-version=4.12.1
+version=4.13.0
 release=2
 
 source=(http://archive.xfce.org/src/xfce/${_name}/${version%.*}/${_name}-$version.tar.bz2)
