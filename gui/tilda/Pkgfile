@@ -1,9 +1,9 @@
-# Depends on: confuse vte3 libglade
+makedepends=(confuse vte3 libglade)
 
 description="A quake-style popup terminal."
 url="https://github.com/lanoxx/tilda"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=tilda
 version=1.4.1
