@@ -1,9 +1,9 @@
-# Depends on: qtbase speech-dispatcher 
+makedepends=(qtbase speech-dispatcher )
 
 description="A cross-platform application and UI framework, QtSpeech files"
 url="http://qt-project.org/"
-contributors="Pierre B"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=qtspeech
 version=5.12.2
