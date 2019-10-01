@@ -1,9 +1,9 @@
-# Depends on: xorg-libdrm libva doxygen wayland
+makedepends=(xorg-libdrm libva doxygen wayland)
 
 description="Intel VA-API driver"
 url="http://www.intel.com"
-packager="remy <remy@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=intel-vaapi-driver
 version=2.1.0
