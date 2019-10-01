@@ -1,8 +1,8 @@
-# Depends on: libxslt libxml2 yelp-xsl, itstool
+makedepends=(libxslt libxml2 yelp-xsl, itstool)
 
 description="Tools for creating Yelp documentation."
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Piernov"
 
 name=yelp-tools
