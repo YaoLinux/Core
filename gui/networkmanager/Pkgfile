@@ -3,7 +3,6 @@
 description="Tools which simplify and make the network more directly manageable."
 url="http://projects.gnome.org/NetworkManager/"
 packager="Yaolinux Team"
-maintainer="Dania Rems"
 
 alias=(NetworkManager)
 
@@ -27,7 +26,7 @@ mkdir build
 cd    build
 
 CXXFLAGS+="-O2 -fPIC"            \
-meson --prefix /usr              \
+--prefix /usr              \
       --sysconfdir /etc          \
       --localstatedir /var       \
       -Djson_validation=false    \
@@ -48,7 +47,7 @@ meson --prefix /usr              \
       
 ninja
 
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
  
 mv -v $PKG/usr/share/doc/NetworkManager{,-$version}
 
