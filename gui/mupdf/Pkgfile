@@ -1,8 +1,8 @@
-# Depends on: lcms2 harfbuzz libjpeg-turbo2 openjpeg2 freeglut xorg-libx11 xorg-libxcursor xorg-libxext xorg-libxrandr xorg-libxinerama freetype
+makedepends=(lcms2 harfbuzz libjpeg-turbo22 openjpeg2 freeglut xorg-libx11 xorg-libxcursor xorg-libxext xorg-libxrandr xorg-libxinerama freetype)
 
 description="Lightweight PDF and XPS viewer"
 url="http://www.mupdf.com"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=mupdf
 version=1.14.0
