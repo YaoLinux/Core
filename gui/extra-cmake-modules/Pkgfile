@@ -1,9 +1,9 @@
-# Depends on: cmake qtbase qttools 
+makedepends=(cmake qtbase qttools )
 
 description="Extra CMake modules used by all KDE Frameworks 5 packages"
 url="https://www.kde.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=extra-cmake-modules
 version=5.56.0
