@@ -1,9 +1,8 @@
-# Depends on: python libpcap openssl
+makedepends=(python libpcap openssl)
 
 description="Virtual Distributed Ethernet for emulators like qemu"
 url="https://sourceforge.net/projects/vde/"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
 
 name=vde2
 version=2.3.2
