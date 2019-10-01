@@ -1,8 +1,8 @@
-# Depends on: xorgproto xorg-libx11 xorg-libxxf86vm
+makedepends=(xorgproto xorg-libx11 xorg-libxxf86vm)
 
 description="Alter a monitor's gamma correction."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
