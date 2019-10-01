@@ -1,8 +1,8 @@
-# Depends on: python docbook-xsl libxslt
+makedepends=(python docbook-xsl libxslt)
 
 description="Hierarchical, reference counted memory pool system with destructors."
 url="https://talloc.samba.org"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=talloc
 version=2.2.0
