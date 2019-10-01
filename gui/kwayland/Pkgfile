@@ -1,9 +1,9 @@
-# Depends on: extra-cmake-modules qtbase wayland
+makedepends=(extra-cmake-modules qtbase wayland)
 
 description="Qt-style Client and Server library wrapper for the Wayland libraries"
 url="https://www.kde.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=kwayland
 version=5.56.0
