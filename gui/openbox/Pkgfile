@@ -1,8 +1,8 @@
-# Depends on: pcre pango freetype libpng xorg-fontconfig harfbuzz dbus imlib2 librsvg startup-notification xcb-util libxcb libxml2
+makedepends=(pcre pango freetype libpng xorg-fontconfig harfbuzz dbus imlib2 librsvg startup-notification xcb-util libxcb libxml2)
 
 description="Openbox is a highly configurable window manager."
 url="http://openbox.org/wiki/Main_Page"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 run=( startup-notification dbus )
 name=openbox
