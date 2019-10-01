@@ -3,7 +3,7 @@ makedepends=(doxygen )
 description="C library for parsing and emitting YAML (YAML Ain't Markup Language)"
 url="http://pyyaml.org/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=yaml
 version=0.2.1
