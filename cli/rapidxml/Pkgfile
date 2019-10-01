@@ -1,9 +1,10 @@
-# Depends on: git
+makedepends=(git)
 
 description="RapidXml is an attempt to create the fastest XML parser possible, written in modern C++"
 url="https://www.github.com/hydranix/"
-packager="rems <rems@nutyx.org>"
-contributors=""
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=rapidxml
 version=1.13
@@ -18,6 +19,7 @@ git clone https://github.com/hydranix/RapidXml.git $name-$version
 
 build() {
 patch -p1 --binary < "0001-fix-for-a-bug-in-gcc-that-won-t-let-rapidxml-compile.patch"
+
 cd $name-$version
 
 mkdir -pv $PKG/usr/include/$name
@@ -26,5 +28,4 @@ install -Dm644 rapidxml.hpp $PKG/usr/include/$name/rapidxml.hpp
 install -Dm644 rapidxml_iterators.hpp $PKG/usr/include/$name/rapidxml_iterators.hpp
 install -Dm644 rapidxml_print.hpp $PKG/usr/include/$name/rapidxml_print.hpp"
 install -Dm644 rapidxml_utils.hpp $PKG/usr/include/$name/rapidxml_utils.hpp"
-
 }
