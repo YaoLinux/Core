@@ -1,13 +1,13 @@
-# Depends on: apr apr-util neon expat sqlite db cyrus-sasl serf lz4
+makedpends=(apr apr-util neon expat sqlite db cyrus-sasl serf lz4)
 
 description="Version control System (Replacement of cvs)"
 url="http://subversion.tigris.org"
-contributors="pierre, tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
 
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=subversion
-version=1.11.0
+version=1.12.2
 
 source=(http://archive.apache.org/dist/$name/$name-$version.tar.bz2)
 
@@ -16,27 +16,15 @@ build() {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-		--with-serf \
-		--with-utf8proc=internal \
-		--disable-static
+                    --with-serf \
+                    --with-utf8proc=internal \
+                    --disable-static
+
 	make
 
 	make DESTDIR=$PKG install
 
 # Obsolets libs
-rm $PKG/usr/lib/libsvn_client-1.la
-rm $PKG/usr/lib/libsvn_delta-1.la
-rm $PKG/usr/lib/libsvn_diff-1.la
-rm $PKG/usr/lib/libsvn_fs-1.la
-rm $PKG/usr/lib/libsvn_fs_fs-1.la
-rm $PKG/usr/lib/libsvn_fs_util-1.la
-rm $PKG/usr/lib/libsvn_fs_x-1.la
-rm $PKG/usr/lib/libsvn_ra-1.la
-rm $PKG/usr/lib/libsvn_ra_local-1.la
-rm $PKG/usr/lib/libsvn_ra_serf-1.la
-rm $PKG/usr/lib/libsvn_ra_svn-1.la
-rm $PKG/usr/lib/libsvn_repos-1.la
-rm $PKG/usr/lib/libsvn_subr-1.la
-rm $PKG/usr/lib/libsvn_wc-1.la
+find $PKG/usr/lib -name "*.la" -print -delete
 
 }
