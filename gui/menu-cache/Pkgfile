@@ -1,9 +1,8 @@
-# Depends on: libfm-extra
+makedepends=(libfm-extra)
 
 url="http://lxde.org/"
-maintainer="git.lxde.org/gitweb/?p=debian/menu-cache.git;a=summary"
-packager="tnut <tnut@nutyx.org>"
-contributors="Geantbrun"
+packager="Yaolinux Team"
+maintainer="rems"
 description="For creating and utilizing caches to speed up the manipulation for freedesktop.org defined application menus."
 
 name=menu-cache
