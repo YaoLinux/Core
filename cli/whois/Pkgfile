@@ -1,7 +1,7 @@
 description="Client-side application which queries directory service"
 url="http://ftp.debian.org/debian/pool/main/w/whois"
 packager="Yaolinux Team"
-contributors="Alienus,tnut"
+maintainer="rems"
 
 name=whois
 version=5.4.1
