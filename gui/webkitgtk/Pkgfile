@@ -1,9 +1,9 @@
-# Depends on: ninja enchant cmake gstreamer-plugins-base gstreamer-plugins-bad xorg-libxt gtk2 gtk3 gtk-doc hunspell hyphen icu libgudev libsecret libsoup libwebp mesa ruby sqlite enchant geoclue2 gobject-introspection hicolor-icon-theme llvm harfbuzz gtk-doc libnotify wayland woff2
+makedepends=(enchant cmake gstreamer-plugins-base gstreamer-plugins-bad xorg-libxt gtk2 gtk3 gtk-doc hunspell hyphen icu libgudev libsecret libsoup libwebp mesa ruby sqlite enchant geoclue2 gobject-introspection hicolor-icon-theme llvm harfbuzz gtk-doc libnotify wayland woff2)
 
 description="engine of made Web free for the browsers web version 3"
 url="http://webkitgtk.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=webkitgtk
 version=2.22.5
@@ -28,8 +28,8 @@ cmake -G Ninja \
       -DENABLE_MINIBROWSER=ON     \
       -DUSE_WOFF2=OFF             \
       -Wno-dev ..
-ninja || ninja -j1
-DESTDIR=$PKG ninja install || DESTDIR=$PKG ninja -j1 install
+|| ninja -j1
+DESTDIR=$PKG install || DESTDIR=$PKG ninja -j1 install
 
 install -vdm755 $PKG/usr/share/gtk-doc/html/webkit{2,dom}gtk-4.0
 install -vm644  ../Documentation/webkit2gtk-4.0/html/* \
