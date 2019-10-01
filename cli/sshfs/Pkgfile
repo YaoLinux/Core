@@ -1,11 +1,13 @@
-# Depends on: fuse3 glib openssh meson ninja
+makedepends=(fuse3 glib openssh)
 
 description="Contains a filesystem client based on the SSH File Transfer Protocol"
 url="http://fuse.sourceforge.net/sshfs.html"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=sshfs
-version=3.5.1
+version=3.5.2
 
 source=(https://github.com/libfuse/$name/releases/download/$name-$version/$name-$version.tar.xz)
 
