@@ -1,7 +1,7 @@
 description="Audio compression format with lossless, lossy and hybrid compression modes"
 url="http://www.wavpack.com/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=wavpack
 version=5.1.0
