@@ -1,7 +1,7 @@
 description="Providing application developers a predictable API with which to access Data Sources"
 url="http://www.unixodbc.org/"
 packager="Yaolinux Team"
-contributors="Pierre B,tnut"
+maintainer="rems"
 
 name=unixodbc
 version=2.3.6
