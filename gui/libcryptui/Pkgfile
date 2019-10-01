@@ -1,9 +1,9 @@
-# Depends on: gtk3 gpgme dbus-glib gnupg libnotify libgnome-keyring dconf gobject-introspection intltool
+makedepends=(gtk3 gpgme dbus-glib gnupg libnotify libgnome-keyring dconf gobject-introspection intltool)
 
 description="Library for OpenPGP prompts"
 url="http://git.gnome.org/libcryptui"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libcryptui
 version=3.12.2
