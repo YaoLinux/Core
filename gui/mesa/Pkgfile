@@ -1,9 +1,9 @@
-# Depends on: xorgproto pkg-config libtool xorg-xrandr wayland wayland-protocols xorg-libx11 xorg-libdrm xorg-libxext xorg-libxdamage expat llvm elfutils xorg-libxshmfence libva libvdpau python python-mako python-beaker python-markupsafe
+makedepends=(xorgproto pkg-config libtool xorg-xrandr wayland wayland-protocols xorg-libx11 xorg-libdrm xorg-libxext xorg-libxdamage expat llvm elfutils xorg-libxshmfence libva libvdpau python python-mako python-beaker python-markupsafe)
 
 description="Mesa is an OpenGL compatible 3D graphics library."
 url="http://www.xorg-mesa3d.org"
-packager="rems <rems@nutyx.org>"
-contributors="Pierre B, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 alias=(xorg-mesa Mesa mesa3d Mesa3D mesa3)
 
 run=(python python-mako python-beaker python-markupsafe)
