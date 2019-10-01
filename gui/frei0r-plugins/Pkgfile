@@ -1,9 +1,9 @@
-# Depends on: gavl doxygen
+makedepends=(gavl doxygen)
 
 description="A  minimalistic plugin API for video sources and filters"
 url="http://www.piksel.org/frei0r"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=frei0r-plugins
 version=1.6.1
