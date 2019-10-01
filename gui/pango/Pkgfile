@@ -1,9 +1,9 @@
-# Depends on: ninja meson cairo libthai freetype xorg-libxft gobject-introspection harfbuzz xorg-libxxf86vm gtk-doc fribidi
+makedepends=(cairo libthai freetype xorg-libxft gobject-introspection harfbuzz xorg-libxxf86vm gtk-doc fribidi)
 
 description="Library for layout and rendering of text"
 url="http://www.pango.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=pango
 version=1.42.4
@@ -17,11 +17,11 @@ cd $name-$version
 mkdir build
 cd    build
 
-meson --prefix=/usr --sysconfdir=/etc ..
+--prefix=/usr --sysconfdir=/etc ..
 
 ninja
 
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
 uptodate(){
 local latest lastversion url
