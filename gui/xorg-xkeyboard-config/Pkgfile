@@ -1,9 +1,9 @@
-# Depends on: intltool xorgproto xorg-libx11
+makedepends=(intltool xorgproto xorg-libx11)
 
 description="X keyboard configuration database"
 url="http://www.freedesktop.org/wiki/Software_2fXKeyboardConfig"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, tnut, greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=xkeyboard-config
 name=xorg-xkeyboard-config
