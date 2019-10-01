@@ -1,7 +1,7 @@
-# Description: Composite Window-effects manager for X.org
-# URL: http://xorg.freedesktop.org/
-# Packager: Chris Farrell, timcowchip at gmail dot com
-# Maintainer: Chris Farrell, timcowchip at gmail dot com
+description="Composite Window-effects manager for X.org"
+url="http://xorg.freedesktop.org/"
+packager="Chris Farrell, timcowchip at gmail dot com"
+maintainer="remsChris Farrell, timcowchip at gmail dot com"
 makedepends=(xorg-libxcomposite xorg-libxdamage xorg-libxrender xorg-libxext)
 
 name=xcompmgr
