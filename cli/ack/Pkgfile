@@ -1,8 +1,7 @@
-# Depends on: perl-file-next 
+makedepends=(perl-file-next )
 
 
-packager="sipo"
-contributors="sipo"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 
