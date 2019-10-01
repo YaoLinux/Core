@@ -1,9 +1,8 @@
-# Depends on: python
+makedepends=(python)
 
 description="The Libevdev package contains common functions for Xorg input drivers."
 url="http://www.freedesktop.org/wiki/Software/libevdev/"
 packager="Yaolinux Team"
-maintainer="rems"
 
 name=libevdev
 version=1.8.0
