@@ -1,8 +1,8 @@
-# Depends on: xorg-mkfontdir xorg-fontconfig xorg-font-util xorg-font-alias xorg-encodings
+makedepends=(xorg-mkfontdir xorg-fontconfig xorg-font-util xorg-font-alias xorg-encodings)
 
 description="Xorg Luxi Truetype fonts."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
