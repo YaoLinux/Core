@@ -1,8 +1,8 @@
-# Depends on: xorgproto xorg-libxfont
+makedepends=(xorgproto xorg-libxfont)
 
 description="Convert X font from Bitmap Distribution Format to Portable Compiled Format."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
