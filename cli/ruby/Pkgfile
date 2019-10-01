@@ -1,19 +1,23 @@
-# Depends on: doxygen
+makedepends=(doxygen)
 
 description="An object-oriented language for quick and easy programming"
 url="http://ruby-lang.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=ruby
-version=2.6.1
+version=2.6.5
 
 source=(http://cache.ruby-lang.org/pub/ruby/2.6/ruby-$version.tar.xz)
 
 build() {
 cd ruby-$version
-./configure --prefix=/usr --enable-shared \
---docdir=/usr/share/doc/$name-$version
+
+./configure --prefix=/usr \
+            --enable-shared \
+            --docdir=/usr/share/doc/$name-$version
+
 make
 make DESTDIR=$PKG install
 }
