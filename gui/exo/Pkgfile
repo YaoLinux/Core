@@ -1,9 +1,9 @@
-# Depends on: perl-uri xfce4-libui xfce4-libutil gtk-doc
+makedepends=(perl-uri xfce4-libui xfce4-libutil gtk-doc)
 
 description="Extensions to Xfce by os-cillation"
 url="http://www.xfce.org/"
-packager="greg <greg@nutyx.org>"
-contributors="tyrry,tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=exo
 version=0.12.3
