@@ -1,9 +1,9 @@
-# Depends on: pango glibmm cairomm
+makedepends=(pango glibmm cairomm)
 
 description="C++ bindings for pango"
 url="http://cairographics.org/cairomm/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=pangomm
 version=2.42.0
