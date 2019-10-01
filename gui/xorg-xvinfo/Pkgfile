@@ -1,8 +1,8 @@
-# Depends on: xorg-libx11 xorg-libxv
+makedepends=(xorg-libx11 xorg-libxv)
 
 description="Prints out the capabilities of any video adaptors associated with the display."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
