@@ -1,4 +1,3 @@
-makedepends=()
 
 description="library libpciaccess for access generic PCI"
 url="http://xorg.freedesktop.org"
