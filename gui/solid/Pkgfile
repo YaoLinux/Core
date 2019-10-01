@@ -1,9 +1,9 @@
-# Depends on: qtdeclarative qttools extra-cmake-modules udisks2 upower media-player-info gvfs systemd
+makedepends=(qtdeclarative qttools extra-cmake-modules udisks2 upower media-player-info gvfs systemd)
 
 description="Hardware integration and detection "
 url="https://www.kde.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(systemd upower udisks2 media-player-info gvfs)
 
