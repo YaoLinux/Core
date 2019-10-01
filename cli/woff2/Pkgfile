@@ -2,7 +2,7 @@ makedepends=(brotli git cmake ninja)
 description="Web Open Font Format 2 reference implementation"
 url="https://github.com/google/woff2"
 packager="Yaolinux Team"
-contributors="Fanch"
+maintainer="rems"
 
 name=woff2
 version=1.0.2
