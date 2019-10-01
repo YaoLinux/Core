@@ -1,15 +1,14 @@
-# Depends on: xfce4-libutil dbus-glib perl-glib gtk-doc
+makedepends=(xfce4-libutil dbus-glib perl-glib gtk-doc)
 
 description="A simple client-server configuration storage and query system"
 url="http://www.xfce.org/"
-packager="greg <greg@nutyx.org>"
-contributors="tyrry,tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xfce4-conf
 alias=(xfconf)
 _name=xfconf
-version=4.12.1
-release=2
+version=4.14.1
 
 source=(http://archive.xfce.org/src/xfce/${_name}/${version%.*}/${_name}-$version.tar.bz2)
 
