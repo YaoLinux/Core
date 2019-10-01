@@ -3,7 +3,7 @@ makedepends=(cmake)
 description="Lightweight unit testing framework for C++"
 url="https://github.com/unittest-cpp/unittest-cpp/"
 packager="Yaolinux Team"
-contributors="Remy"
+maintainer="rems"
 
 PKGMK_KEEP_SOURCES="no"
 
