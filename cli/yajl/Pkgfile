@@ -1,9 +1,9 @@
 description="Yet Another JSON Library."
 url="http://www.gnu.org/software/screen/screen.html"
 contributors="pierre"
-packager="greg<greg@nutyx.org>"
+packager="Yaolinux Team"
 
-# Depends on: cmake
+makedepends=(cmake)
 
 name=yajl
 version=2.1.0
