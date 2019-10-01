@@ -1,9 +1,9 @@
-# Depends on: xorg-libx11 xorg-libxext xorg-libxv
+makedepends=(xorg-libx11 xorg-libxext xorg-libxv)
 
 description="Library X Video Motion Compensation extension client"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-libxvmc
 alias=(libXvMC)
