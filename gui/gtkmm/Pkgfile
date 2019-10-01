@@ -1,9 +1,9 @@
-# Depends on: gtk3 pangomm cairomm atkmm
+makedepends=(gtk3 pangomm cairomm atkmm)
 
 description="C++ bindings for gtk3"
 url="http://gtkmm.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gtkmm
 version=3.24.0
