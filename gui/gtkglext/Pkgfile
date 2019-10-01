@@ -2,7 +2,7 @@
 
 description="opengl extensions for gtk2"
 url="http://gtkglext.sourceforge.net/"
-packager="Greg"
+packager="Yaolinux Team"
 
 name=gtkglext
 version=1.2.0
