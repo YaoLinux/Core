@@ -1,9 +1,9 @@
-# Depends on: gtk-update-icon-cache cmake qtbase extra-cmake-modules
+makedepends=(gtk-update-icon-cache cmake qtbase extra-cmake-modules)
 
 description="The Breeze Icon Theme for kf5"
 url="https://www.kde.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=breeze-icons
 version=5.56.0
