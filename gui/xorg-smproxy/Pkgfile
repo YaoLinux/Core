@@ -1,8 +1,8 @@
-# Depends on: xorg-libsm xorg-libice xorg-libxt xorg-libxmu
+makedepends=(xorg-libsm xorg-libice xorg-libxt xorg-libxmu)
 
 description="Allow X applications that do not support X11R6 session to participate in a X11R6 session."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
