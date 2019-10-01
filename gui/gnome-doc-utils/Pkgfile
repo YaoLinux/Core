@@ -1,9 +1,9 @@
-# Depends on: python2-lxml intltool libxslt libxml2 rarian perl-xml-parser
+makedepends=(python2-lxml intltool libxslt libxml2 rarian perl-xml-parser)
 
 description="Documentation utilities for Gnome"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gnome-doc-utils
 version=0.20.10
