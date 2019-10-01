@@ -1,9 +1,9 @@
-# Depends on: gssdp util-linux
+makedepends=(gssdp util-linux)
 
 description="An object-oriented UPNP framework"
 url="http://gupnp.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanchyannmaria"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gupnp
 version=1.0.3
