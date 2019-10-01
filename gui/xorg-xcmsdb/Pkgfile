@@ -1,8 +1,8 @@
-# Depends on: xorg-libx11
+makedepends=(xorg-libx11)
 
 description="Device Color Characterization utility for X Color Management System."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
