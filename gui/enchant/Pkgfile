@@ -1,8 +1,8 @@
-# Depends on: glib aspell dbus-glib
+makedepends=(glib aspell dbus-glib)
 
 description="Generic Spell Checking Library."
 url="http://www.abisource.com/enchant/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=enchant
 version=2.2.3
