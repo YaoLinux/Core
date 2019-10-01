@@ -1,9 +1,8 @@
-# Depends on: git
+makedepends=(git)
 
 description="AudioProcessing library based on Google's implementation of WebRTC"
 url="https://freedesktop.org/software/pulseaudio/webrtc-audio-processing/"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
 
 name=webrtc-audio-processing
 version=0.3.1
