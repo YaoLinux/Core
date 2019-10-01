@@ -1,9 +1,9 @@
-# Depends on: gtk3
+makedepends=(gtk3)
 
 description="A set of symbols and convience functions for Ayatana indicators."
 url="https://launchpad.net/libindicator"
-packager="tnut <tnut@nutyx.org>"
-contributors="Jayce"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libindicator-gtk3
 version=12.10.1
