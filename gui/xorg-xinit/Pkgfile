@@ -1,9 +1,9 @@
-# Depends on: font-bh-ttf xorg-server xorg-xkbcomp xorg-xkeyboard-config xorg-xauth xorg-xrdb xorg-xmodmap xorg-xf86-input-evdev xorg-twm xorg-term xorg-xclock dbus-x11
+makedepends=(font-bh-ttf xorg-server xorg-xkbcomp xorg-xkeyboard-config xorg-xauth xorg-xrdb xorg-xmodmap xorg-xf86-input-evdev xorg-twm xorg-term xorg-xclock dbus-x11)
 
 description="The xinit package contains a usable script to start the xserver."
 url="https://xorg.freedesktop.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=xinit
 run=(font-bh-ttf xorg-server xorg-xkbcomp xorg-xkeyboard-config xorg-xauth xorg-xrdb xorg-xmodmap xorg-xf86-input-evdev xorg-twm xorg-term xorg-xclock dbus-x11)
