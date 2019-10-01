@@ -1,9 +1,9 @@
-# Depends on: boost lua qtbase
+makedepends=(boost lua qtbase)
 
 description="Fast and flexible source code highlighter (CLI version)"
 url="http://www.andre-simon.de/doku/highlight/highlight.html"
-packager="remy <remy@nutyx.org>"
-contributors="Pierre B,tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=highlight
 version=3.48
