@@ -1,8 +1,8 @@
-# Depends on: python ffmpeg x264 json-cpp qtmultimedia cmake swig doxygen libopenshot-audio zeromq unittestpp
+makedepends=(python ffmpeg x264 json-cpp qtmultimedia cmake swig doxygen libopenshot-audio zeromq unittestpp)
 
 description="A high quality, open-source video library for C++ and Python"
 url="http://openshot.org/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=libopenshot
 version=0.2.2
