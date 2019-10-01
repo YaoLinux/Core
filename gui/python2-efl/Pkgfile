@@ -2,8 +2,7 @@
 
 description="python2 bindings for the Enlightenment Foundation Libraries"
 url="http://www.enlightenment.org"
-packager="YaoLinux Teams"
-maintainer="Dania <Dania@nutyx.org>"
+packager="Yaolinux Team"
 
 name=python2-efl
 version=1.21.0
