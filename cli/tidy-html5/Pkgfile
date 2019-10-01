@@ -1,7 +1,7 @@
 makedepends=(cmake)
 
 packager="Yaolinux Team"
-contributors="Berlius, Fanch"
+maintainer="rems"
 url="http://tidy.sourceforge.net/"
 description="Tools and libraries used to read HTML, XHTML and XML files and write cleaned up markup"
 
