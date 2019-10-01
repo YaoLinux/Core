@@ -2,7 +2,7 @@ description="libunistring is a library that provides functions for manipulating 
 URL="http://www.gnu.org/software/bison/"
 
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=libunistring
 version=0.9.10
