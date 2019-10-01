@@ -1,9 +1,9 @@
-# Depends on: xorg-server 
+makedepends=(xorg-server )
 
 description="Set of free outline fonts covering the Unicode character set"
 url="http://www.nongnu.org/freefont/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 
 name=freefont-ttf
