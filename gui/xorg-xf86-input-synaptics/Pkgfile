@@ -1,7 +1,7 @@
-# Depends on: libevdev xorg-libxtst xorg-libx11 xorg-libxi xorg-server 
+makedepends=(libevdev xorg-libxtst xorg-libx11 xorg-libxi xorg-server )
 
 description="Xorg Synaptics drivers for notebook touchpads."
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 name=xorg-xf86-input-synaptics
 version=1.9.1
 _name=${name/xorg-/}
