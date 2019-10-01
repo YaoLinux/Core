@@ -1,7 +1,6 @@
 makedepends=(cdrtools)
 
 packager="Yaolinux Team"
-contributors="Tnut, Pierre B."
 maintainer="sipo"
 
 description="DVD+-RW/R tools"
