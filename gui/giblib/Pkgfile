@@ -1,9 +1,9 @@
-# Depends on: imlib2 freetype 
+makedepends=(imlib2 freetype )
 
 description="A library that feh uses as a wrapper to imlib2"
 url="http://www.linuxbrit.co.uk/giblib"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=giblib
 version=1.2.4
