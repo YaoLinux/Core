@@ -1,8 +1,8 @@
-# Depends on: intltool dotconf pulseaudio
+makedepends=(intltool dotconf pulseaudio)
 
 description="High-level device independent layer for speech synthesis interface"
 url="https://devel.freebsoft.org/speechd"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=speech-dispatcher
 version=0.8.8
