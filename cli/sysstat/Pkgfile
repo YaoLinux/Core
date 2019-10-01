@@ -4,7 +4,7 @@ packager="tnut <tnut@nutyx.org>"
 contributors="Fanch, Pierre B"
 
 name=sysstat
-version=12.0.2
+version=12.1.6
 
 source=($url/$name-$version.tar.xz)
 
@@ -20,11 +20,13 @@ conf_dir=/etc/sysconfig   \
             --mandir=/usr/share/man \
             --enable-copy-only \
             --disable-man-group
+
 make
 make DESTDIR=$PKG install
 
 install -vdm755 $PKG/lib/systemd/system/
-install -v -m644 sysstat.service $PKG/lib/systemd/system/sysstat.service
-sed -i "/^Also=/d" $PKG/lib/systemd/system/sysstat.service
 
+install -v -m644 sysstat.service $PKG/lib/systemd/system/sysstat.service
+
+sed -i "/^Also=/d" $PKG/lib/systemd/system/sysstat.service
 }
