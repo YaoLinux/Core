@@ -1,8 +1,10 @@
-# Depends on: git gnutls
+makedepends=(git gnutls)
 
 description="Tool to download rtmp streams"
 url="https://rtmpdump.mplayerhq.hu/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=rtmpdump
 version=2.4
@@ -10,14 +12,13 @@ version=2.4
 source=()
 
 build() {
-	git clone https://git.ffmpeg.org/rtmpdump.git
-	cd rtmpdump
+	git clone https://git.ffmpeg.org/rtmpdump.git $name
+	cd $name
+	
 	sed -e 's/^CRYPTO=OPENSSL/#CRYPTO=OPENSSL/' -e 's/#CRYPTO=GNUTLS/CRYPTO=GNUTLS/' -i Makefile -i librtmp/Makefile
 
 	make  OPT="$CFLAGS" XLDFLAGS="$LDFLAGS"
 
 	mkdir -pv $PKG/usr/{bin,lib/pkgconfig}
 	make prefix=/usr mandir=/usr/share/man DESTDIR=$PKG install
-
-	
 }
