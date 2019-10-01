@@ -1,7 +1,7 @@
 
 description="Generator documents in multiple output formats"
 url="http://txt2tags.sourceforge.net"
-contributors="pierre at nutyx dot org"
+maintainer="rems"
 packager="Yaolinux Team"
 
 name=txt2tags
