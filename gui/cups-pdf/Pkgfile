@@ -1,4 +1,4 @@
-#Depends on: cups ghostscript
+makedepends=(cups ghostscript)
 
 description="A virtual printer for cups to produce PDF files."
 url="http://www.ciups-pdf.de/"
