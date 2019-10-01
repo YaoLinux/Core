@@ -1,6 +1,6 @@
 url="http://www.tcl.tk/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 description="The Tcl scripting language"
 
