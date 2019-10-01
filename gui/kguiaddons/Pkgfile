@@ -1,9 +1,9 @@
-# Depends on: extra-cmake-modules qtx11extras
+makedepends=(extra-cmake-modules qtx11extras)
 
 description="Addons to QtGui "
 url="https://www.kde.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=kguiaddons
 version=5.56.0
