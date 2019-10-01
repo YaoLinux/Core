@@ -1,9 +1,9 @@
-# Depends on: gtksourceview2 python2-gtk 
+makedepends=(gtksourceview2 python2-gtk )
 
 description="For expand the functions text of GTK for include the highlighting of the syntax."
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python2-gtksourceview2
 version=2.10.1
