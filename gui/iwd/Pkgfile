@@ -1,4 +1,4 @@
-#Depends on: dbus glibc
+makedepends=(dbus glibc)
 
 description="Internet Wireless Daemon" 
 url="https://git.kernel.org/cgit/network/wireless/iwd.git/"
