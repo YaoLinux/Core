@@ -1,9 +1,9 @@
-# Depends on: gstreamer-plugins-base yasm 
+makedepends=(gstreamer-plugins-base yasm )
 
 description="GStreamer Multimedia Framework libav Plugins (fork of ffmpeg)"
 url="http://gstreamer.freedesktop.org/modules/gst-libav.html"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=gst-libav
 name=gstreamer-plugins-libav
