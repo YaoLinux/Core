@@ -1,8 +1,10 @@
-# Depends on: systemd
+makedepends=(systemd)
+
 description="Control and monitor S.M.A.R.T. enabled ATA and SCSI Hard Drives"
 url="http://smartmontools.sourceforge.net"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=smartmontools
 version=7.0
@@ -12,11 +14,13 @@ source=(http://downloads.sourceforge.net/sourceforge/$name/$name-$version.tar.gz
 build() {
 
 	cd $name-$version
+
 	./configure --prefix=/usr \
-	--sysconfdir=/etc         \
-	--with-initscriptdir=no   \
-	--docdir=/usr/share/doc/smartmontools-$version \
-        --with-systemdsystemunitdir=/lib/systemd/system
-	make
+                    --sysconfdir=/etc         \
+                    --with-initscriptdir=no   \
+                    --docdir=/usr/share/doc/smartmontools-$version \
+                    --with-systemdsystemunitdir=/lib/systemd/system
+
+        make
 	make DESTDIR=$PKG install
 }
