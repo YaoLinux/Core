@@ -1,9 +1,9 @@
-# Depends on: python2 cairo
+makedepends=(python2 cairo)
 
 description="Connector Python2 for the cairo library"
 url="http://www.cairographics.org/"
-packager="jayce <jayce.net@gmail.com>"
-contributors="tnut,Pierre"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python2-cairo
 version=1.18.0
