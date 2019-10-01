@@ -1,9 +1,9 @@
-# Depends on: python 
+makedepends=(python )
 
 description="XCB X protocol descriptions"
 url="http://xcb.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=()
 
