@@ -3,7 +3,7 @@ makedepends=(pcre)
 description="SWIG Simplified Wrapper and Interface Generator"
 url="http://www.swig.org/"
 
-packagers="Yaolinux Team"
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=swig
