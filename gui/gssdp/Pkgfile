@@ -1,9 +1,9 @@
-# Depends on: libsoup
+makedepends=(libsoup)
 
 description="A GObject-based API for handling resource discovery and announcement over SSDP"
 url="http://gupnp.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanchyannmaria"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gssdp
 version=1.0.2
