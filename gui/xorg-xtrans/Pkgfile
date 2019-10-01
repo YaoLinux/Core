@@ -1,9 +1,9 @@
-# Depends on: libxcb
+makedepends=(libxcb)
 
 description="xorg lib xtrans"
 url="http://xorg.freedesktop.org"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
  
 _name=xtrans
 name=xorg-xtrans
