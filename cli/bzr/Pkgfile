@@ -1,6 +1,6 @@
 makedepends=(python2)
 
-packager="Yaolinux"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 description="A decentralized revision control system (bazaar)"
