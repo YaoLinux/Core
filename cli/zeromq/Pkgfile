@@ -1,8 +1,8 @@
-# Depends on: util-linux libsodium asciidoc xmlto libpgm
+makedepends=(util-linux libsodium asciidoc xmlto libpgm)
 
 description="Fast messaging system built on sockets.  C and C++ bindings.  aka 0MQ, ZMQ"
 url="http://www.zeromq.org"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Remy"
 
 name=zeromq
