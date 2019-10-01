@@ -1,8 +1,8 @@
-# Depends on: systemd expat xorg-libx11 xorg-libsm xorg-libice
+makedepends=(systemd expat xorg-libx11 xorg-libsm xorg-libice)
 
 description="Bus message system"
 url="http://dbus.freedesktop.org/releases/dbus"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=dbus-x11
 _name=dbus
