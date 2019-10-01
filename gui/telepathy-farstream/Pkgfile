@@ -1,9 +1,9 @@
-# Depends on: farstream telepathy-glib dbus-glib gobject-introspection 
+makedepends=(farstream telepathy-glib dbus-glib gobject-introspection )
 
 description="A telepathy-backend to use stream engine."
 url="http://telepathy.freedesktop.org/"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=telepathy-farstream
 version=0.6.2
