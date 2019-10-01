@@ -1,7 +1,7 @@
 description="libunistring is a library that provides functions for manipulating Unicode strings"
 URL="http://www.gnu.org/software/bison/"
 
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Pierre B"
 
 name=libunistring
