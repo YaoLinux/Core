@@ -1,9 +1,8 @@
-# Depends on: perl-xml-parser
+makedepends=(perl-xml-parser)
 
 description="Convert xml to man pages in groff format or html"
 url="http://xmltoman.sourceforge.net/"
-packager="greg<greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
 
 run=()
 
