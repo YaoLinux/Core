@@ -3,7 +3,7 @@ makedepends=(talloc python libtirpc libxslt)
 description="Event system based on the talloc memory management library"
 url="https://tevent.samba.org"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=tevent
 version=0.9.39
