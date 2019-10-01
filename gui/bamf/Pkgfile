@@ -1,9 +1,9 @@
-# Depends on: libgtop libwnck gobject-introspection python2-lxml vala
+makedepends=(libgtop libwnck gobject-introspection python2-lxml vala)
 
 description="Application matching framework"
 url="https://launchpad.net/bamf"
 
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=bamf
 version=0.5.3
