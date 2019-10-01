@@ -1,4 +1,4 @@
-# Depends on: libdatrie doxygen
+makedepends=(libdatrie doxygen)
 
 description="Thai language support routines"
 url="http://linux.thai.net/projects/libthai"
