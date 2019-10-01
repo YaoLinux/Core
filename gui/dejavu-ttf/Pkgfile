@@ -1,9 +1,9 @@
-# Depends on: xorg-libx11,xorg-fontconfig
+makedepends=(xorg-libx11,xorg-fontconfig)
 
 description="Vera font family derivate with additional characters"
 url="http://dejavu.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=dejavu-ttf
 version=2.37
