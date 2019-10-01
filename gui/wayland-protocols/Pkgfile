@@ -1,9 +1,9 @@
-# Depends on: wayland
+makedepends=(wayland)
 
 description="Additional Wayland protocols"
 url=" https://wayland.freedesktop.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=wayland-protocols
 version=1.17
