@@ -1,9 +1,9 @@
-# Depends on: gobject-introspection jasper xorg-libxcomposite libtiff libpng libjpeg-turbo shared-mime-info
+makedepends=(gobject-introspection jasper xorg-libxcomposite libtiff libpng libjpeg-turbo2 shared-mime-info)
 
 description="Toolkit for image loading and pixel buffer manipulation."
 url="http://www.gtk.org/"
-contributors="Greg, Pierre B, Jayce"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=gdk-pixbuf
 version=2.38.0
