@@ -1,8 +1,8 @@
-# Depends on: xorgproto xorg-libxmu xorg-libx11 xorg-xbitmaps xorg-libxcursor
+makedepends=(xorgproto xorg-libxmu xorg-libx11 xorg-xbitmaps xorg-libxcursor)
 
 description="Classic X utility to set your rootwindow background."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
