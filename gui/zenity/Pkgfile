@@ -1,9 +1,9 @@
-# Depends on: itstool gtk3 libnotify yelp-tools 
+makedepends=(itstool gtk3 libnotify yelp-tools )
 
 description="Display graphical dialog boxes from shell scripts."
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut,Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=zenity
 version=3.30.0
