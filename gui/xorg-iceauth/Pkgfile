@@ -1,8 +1,8 @@
-# Depends on: xorgproto xorg-libice
+makedepends=(xorgproto xorg-libice)
 
 description="ICE authority file utility."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
