@@ -1,9 +1,8 @@
-# Depends on: cmake
+makedepends=(cmake)
 
 description="Vulkan header files"
 url="https://www.khronos.org/vulkan/"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
 
 name=vulkan-headers
 version=1.1.102
