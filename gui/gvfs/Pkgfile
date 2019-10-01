@@ -1,9 +1,9 @@
-# Depends on: systemd ninja meson libcdio-paranoia avahi dbus-glib libgdata libgudev libbluray intltool libsecret gtk3 libsoup udisks2 obexd fuse2 libarchive libmtp samba bluez gcr libgphoto2
+makedepends=(systemd libcdio-paranoia avahi dbus-glib libgdata libgudev libbluray intltool libsecret gtk3 libsoup udisks2 obexd fuse2 libarchive libmtp samba bluez gcr libgphoto2)
 
 description="Userspace virtual filesystem implemented as a pluggable module for gio"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tyrry"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gvfs
 version=1.40.2
@@ -20,7 +20,7 @@ patch -Np1 -i ../handle-inactive-vfs.patch
 mkdir build &&
 cd    build &&
 
-meson --prefix=/usr     \
+--prefix=/usr     \
       --sysconfdir=/etc \
       -Dgphoto2=true    \
       -Dafc=false       \
@@ -31,7 +31,7 @@ meson --prefix=/usr     \
       -Dsystemduserunitdir=/usr/lib/systemd/user ..
 ninja
 
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
 
 uptodate(){
