@@ -1,9 +1,9 @@
-# Depends on: xorg-xcursorgen
+makedepends=(xorg-xcursorgen)
 
 description="game of themes for the curseurs X"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=xcursor-themes
 name=xorg-xcursor-themes
