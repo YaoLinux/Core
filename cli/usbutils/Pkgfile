@@ -3,7 +3,7 @@ makedepends=(libusb-compat hwids)
 description="USB Device Utilities"
 url="http://downloads.sourceforge.net/linux-usb/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 run=(hwids)
 
