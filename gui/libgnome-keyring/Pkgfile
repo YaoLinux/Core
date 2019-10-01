@@ -1,9 +1,9 @@
-# Depends on: python dbus glib intltool libgcrypt gobject-introspection vala 
+makedepends=(python dbus glib intltool libgcrypt gobject-introspection vala )
 
 description="GNOME keyring client library"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libgnome-keyring
 version=3.12.0
