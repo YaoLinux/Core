@@ -1,8 +1,8 @@
-# Depends on: xcb-util xorg-util-macros xorg-libx11
+makedepends=(xcb-util xorg-util-macros xorg-libx11)
 
 description="XCB utility functions for the X resource manager"
 url="https://github.com/Airblader/xcb-util-xrm"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=xcb-util-xrm
 version=1.2
