@@ -1,9 +1,9 @@
-# Depends on: gtk3 gobject-introspection 
+makedepends=(gtk3 gobject-introspection )
 
 description="Library for writing single instance applications for GTK3"
 url="http://live.gnome.org/LibUnique"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libunique
 version=3.0.2
