@@ -1,9 +1,9 @@
-# Depends on: dbus gcr pam libxslt libcap-ng gnupg openssh valgrind
+makedepends=(dbus gcr pam libxslt libcap-ng gnupg openssh valgrind)
 
 description="GNOME Password Management daemon"
 url="http://www.gnome.org/"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Fanch, Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gnome-keyring
 version=3.28.2
