@@ -1,9 +1,9 @@
-# Depends on: lightdm exo gobject-introspection
+makedepends=(lightdm exo gobject-introspection)
 
 description="Gtk greeter for lightdm"
 url="https://en.wikipedia.org/wiki/LightDM"
-packager="tnut <tnut@nutyx.org>"
-contributor="Rems, Dania"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=lightdm-gtk-greeter
 version=2.0.6
