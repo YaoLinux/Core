@@ -1,9 +1,9 @@
-# Depends on: polkit gtk3 
+makedepends=(polkit gtk3 )
 
 description="Legacy polkit authentication agent for GNOME"
 url="http://hal.freedesktop.org/docs/polkit-gnome"
-packager="tnut <tnut@nutyx.org>"
-contributors="B Juglas"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=polkit-gnome
 version=0.105
