@@ -1,23 +1,20 @@
 description="Contains utilities that can create 'shell' archives."
 url="https://www.gnu.org/software/sharutils/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
 
 name=sharutils
 version=4.15.2
-release=1
 
 source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
 
-build() {
+prepare() {
 cd $name-$version
 
 sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
 echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
-
-./configure --prefix=/usr
-make
-make DESTDIR=$PKG install
 }
+
 uptodate() {
 local url ext
 url="https://ftp.gnu.org/gnu/$name/"
