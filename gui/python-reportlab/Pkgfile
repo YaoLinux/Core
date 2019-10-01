@@ -2,8 +2,8 @@
 
 description="A proven industry-strength PDF generating solution"
 url="https://bitbucket.org/rptlab/reportlab"
-packager="rems <rems@yaolinux.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-reportlab
 version=3.5.13
