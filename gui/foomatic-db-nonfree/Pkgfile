@@ -1,9 +1,9 @@
-# Depends on: cups perl libxml2 
+makedepends=(cups perl libxml2 )
 
 PKGMK_KEEP_SOURCES="no"
 description="Non-free licenses database extension from manufacturer-supplied PPD files released"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 url="http://www.linuxprinting.org/foomatic.html"
 name=foomatic-db-nonfree
 version=4.0
