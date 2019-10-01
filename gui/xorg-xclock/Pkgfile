@@ -1,9 +1,9 @@
-# Depends on: xorg-libxft xorg-server xorg-libxaw xorg-libxmu
+makedepends=(xorg-libxft xorg-server xorg-libxaw xorg-libxmu)
 
 description="clock analog for X mainly pout tester all X"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=xclock
 name=xorg-xclock
