@@ -1,25 +1,30 @@
-# Depends on: pcre
+makedepends=(pcre)
 
 description="SWIG Simplified Wrapper and Interface Generator"
 url="http://www.swig.org/"
-packagers="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packagers="Yaolinux Team"
+maintainer="rems"
 
 name=swig
-version=3.0.12
-release=1
+version=4.0.1
 
 source=("http://downloads.sourceforge.net/$name/$name-$version.tar.gz")
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---without-clisp \
---without-maximum-compile-warnings
+            --without-clisp \
+            --without-maximum-compile-warnings
+
 make
 make DESTDIR=$PKG install
+
 install -v -m755 -d $PKG/usr/share/doc/$name-$version
+
 cp -v -R Doc/* \
 $PKG/usr/share/doc/$name-$version
+
 install -D -m644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
 }
