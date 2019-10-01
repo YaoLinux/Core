@@ -1,9 +1,9 @@
-# Depends on: intltool glib gobject-introspection
+makedepends=(intltool glib gobject-introspection)
 
 description="GNOME menu specifications."
 url="http://www.gnome.org/"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gnome-menus
 version=3.13.3
