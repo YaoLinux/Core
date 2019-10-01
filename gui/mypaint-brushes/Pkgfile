@@ -1,9 +1,9 @@
-# Depends on: libmypaint
+makedepends=(libmypaint)
 
 description="A fast and easy painting library for digital painters, with brush dynamics"
 url="http://mypaint.intilinux.com/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Rémy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=mypaint-brushes
 version=1.3.0
