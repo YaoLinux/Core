@@ -1,9 +1,9 @@
-# Depends on: gstreamer-plugins-base gstreamer-plugins-bad libva
+makedepends=(gstreamer-plugins-base gstreamer-plugins-bad libva)
 
 description="GStreamer Multimedia Framework"
 url="http://gstreamer.freedesktop.org/"
-packager="tnut <tnut@nutyx.>"
-contributors="Remy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gstreamer-vaapi
 version=1.14.4
