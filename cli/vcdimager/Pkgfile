@@ -3,7 +3,7 @@ makedepends=(libcdio libxml2 popt)
 description="A full-featured mastering suite for authoring disassembling and analyzing Video CDs"
 url="http://www.vcdimager.org/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=vcdimager
 version=2.0.1
