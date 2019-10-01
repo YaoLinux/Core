@@ -1,9 +1,9 @@
-# Depends on: boost llvm gdb libxslt
+makedepends=(boost llvm gdb libxslt)
 
 description="An instrumentation framework for building dynamic analysis tools." 
 url="http://valgrind.org"
-packager="greg <greg@nutyx.org>"
-contributors="Fanch, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=valgrind
 version=3.14.0
