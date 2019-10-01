@@ -1,9 +1,9 @@
-# Depends on: qtdeclarative qtsvg hunspell
+makedepends=(qtdeclarative qtsvg hunspell)
 
 description="A cross-platform application and UI framework, QtVirtualKeyboard files"
 url="http://qt-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qtvirtualkeyboard
 version=5.12.2
