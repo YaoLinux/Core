@@ -1,9 +1,9 @@
-# Depends on: ghostscript 
+makedepends=(ghostscript )
 
 description="library for the made of documents postscript"
 url="http://libspectre.freedesktop.org/wiki/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libspectre
 version=0.2.8
