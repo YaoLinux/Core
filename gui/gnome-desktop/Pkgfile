@@ -1,9 +1,9 @@
-# Depends on: freefont-ttf iso-codes itstool gtk3 docbook-xml libseccomp gnome-doc-utils gsettings-desktop-schemas gobject-introspection startup-notification xorg-xkeyboard-config
+makedepends=(freefont-ttf iso-codes itstool gtk3 docbook-xml libseccomp gnome-doc-utils gsettings-desktop-schemas gobject-introspection startup-notification xorg-xkeyboard-config)
 
 description="Library with common API for various GNOME modules"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Fanch, Jayce, Remy"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(gsettings-desktop-schemas freefont-ttf)
 
