@@ -1,9 +1,9 @@
-# Depends on: xorgproto xorg-libice xorg-xtrans 
+makedepends=(xorgproto xorg-libice xorg-xtrans )
 
 description="libSM, library X Session Management client"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-libsm
 version=1.2.3
