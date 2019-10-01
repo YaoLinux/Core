@@ -1,9 +1,9 @@
-# Depends on: meson libgudev sqlite polkit lcms2 gobject-introspection libusb dbus vala libgusb
+makedepends=(libgudev sqlite polkit lcms2 gobject-introspection libusb dbus vala libgusb)
 
 description="System daemon for managing color devices"
 url="http://www.freedesktop.org/software/colord/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=colord
 version=1.4.3
@@ -14,7 +14,7 @@ build() {
 cd $name-$version
 mkdir build
 cd    build
-meson --prefix=/usr              \
+--prefix=/usr              \
 	--sysconfdir=/etc        \
 	--localstatedir=/var     \
 	-Ddaemon_user=colord     \
@@ -26,7 +26,7 @@ meson --prefix=/usr              \
 	-Ddocs=false             \
 	-Dman=false ..
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
 uptodate() {
 local url ext
