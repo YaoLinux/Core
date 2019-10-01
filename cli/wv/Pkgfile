@@ -3,7 +3,7 @@ makedepends=(libgsf libpng )
 description="MSWord library can load and parse Word 2000, 97, 95 and 6 file formats"
 url="http://wvware.sourceforge.net/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=wv
 version=1.2.9
