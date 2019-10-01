@@ -1,9 +1,9 @@
-# Depends on: intltool gconf gtk2 libgnome-keyring libgtop startup-notification gtk-doc
+makedepends=(intltool gconf gtk2 libgnome-keyring libgtop startup-notification gtk-doc)
 
 description="Vgksu authorization library"
 url="http://www.nongnu.org/gksu/index.html"
-packager="greg<greg@nutyx.org>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(intltool gtk-doc)
 
