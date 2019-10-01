@@ -1,9 +1,9 @@
-# Depends on: dbus-glib libusb intltool perl-xml-parser polkit gobject-introspection libgudev pm-utils
+makedepends=(dbus-glib libusb intltool perl-xml-parser polkit gobject-introspection libgudev pm-utils)
 
 description="To enumerating power devices, listening to device events, querying history and statistics"
 url="http://upower.freedesktop.org"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=upower
 version=0.99.9
