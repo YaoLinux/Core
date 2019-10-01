@@ -1,9 +1,9 @@
-# Depends on: qtbase libgpg-error gnupg gpgme
+makedepends=(qtbase libgpg-error gnupg gpgme)
 
 description="Qt bindings for GPGme"
 url="http://www.gnupg.org/related_software/gpgme/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qgpgme
 version=1.12.0
