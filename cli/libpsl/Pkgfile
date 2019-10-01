@@ -3,7 +3,7 @@ makedepends=(python2 libidn libunistring)
 description="C library to handle the Public Suffix List"
 url="https://github.com/rockdaboot/libpsl"
 
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=libpsl
