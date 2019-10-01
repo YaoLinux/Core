@@ -1,9 +1,9 @@
-# Depends on: telepathy-glib 
+makedepends=(telepathy-glib )
 
 description="An IRC connection manager for Telepathy"
 url="http://telepathy.freedesktop.org/"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=telepathy-idle
 version=0.2.0
