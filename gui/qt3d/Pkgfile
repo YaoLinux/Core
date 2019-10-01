@@ -1,9 +1,9 @@
-# Depends on: qtdeclarative assimp
+makedepends=(qtdeclarative assimp)
 
 description="C++ and QML APIs for easy inclusion of 3D graphics"
 url="http://qt-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qt3d
 version=5.12.2
