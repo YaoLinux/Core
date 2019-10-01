@@ -1,8 +1,8 @@
-# Depends on: freetype ghostscript lcms libgsf giflib libxml2 openexr libwmf libpng librsvg libwebp djvulibre
+makedepends=(freetype ghostscript lcms libgsf giflib libxml2 openexr libwmf libpng librsvg libwebp djvulibre)
 
 description="An image viewing/manipulation program"
 url="http://www.imagemagick.org/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=imagemagick
 version=7.0.8.20
