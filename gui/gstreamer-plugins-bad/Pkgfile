@@ -1,9 +1,9 @@
-# Depends on: gstreamer-plugins-base libdvdread libdvdnav faac faad2 libexif libmpeg2 mpg123
+makedepends=(gstreamer-plugins-base libdvdread libdvdnav faac faad2 libexif libmpeg2 mpg123)
 
 description="GStreamer Multimedia Framework Bad Plugins"
 url="http://gstreamer.freedesktop.org/modules/gst-plugins-base.html"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gstreamer-plugins-bad
 version=1.14.4
