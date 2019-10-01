@@ -1,23 +1,22 @@
-# Depends on: libsndfile
-
-url="https://fr.wikipedia.org/wiki/SBC_%28codec%29"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+makedepends=(libsndfile)
 
 description="Digital audio encoder and decoder used to transfer data to Bluetooth audio output devices."
+url="https://fr.wikipedia.org/wiki/SBC_%28codec%29"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
 name=sbc
 version=1.4
 release=2
 
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
 
-build()
-{
-cd $name-$version
-./configure --prefix=/usr \
---disable-static
-make
-make DESTDIR=$PKG install
+build=autotools
 
+package() {
+cd $name-$version
+
+# Obsolet lib
 rm $PKG/usr/lib/libsbc.la
 }
