@@ -1,8 +1,8 @@
-# Depends on: libcdio libxml2 popt
+makedepends=(libcdio libxml2 popt)
 
 description="A full-featured mastering suite for authoring disassembling and analyzing Video CDs"
 url="http://www.vcdimager.org/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Pierre B"
 
 name=vcdimager
