@@ -1,9 +1,9 @@
-# Depends on: glib graphviz libxslt help2man
+makedepends=(glib graphviz libxslt help2man)
 
 description="Programming language which bring news features of languages of programming modern to developers GNOME"
 url="http://live.gnome.org/Vala"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=vala
 version=0.42.4
