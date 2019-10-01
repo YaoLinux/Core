@@ -1,9 +1,9 @@
-# Depends on: json-glib icu networkmanager python2 sqlite upower libsoup vala gtk-doc desktop-file-utils gtk-update-icon-cache libseccomp
+makedepends=(json-glib icu networkmanager python2 sqlite upower libsoup vala gtk-doc desktop-file-utils gtk-update-icon-cache libseccomp)
 
 description="Semantic data storage"
 url="http://www.gnome.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Jayce"
+packager="Yaolinux Team"
+maintainer="rems"
 run=(desktop-file-utils gtk-update-icon-cache)
 
 name=tracker
