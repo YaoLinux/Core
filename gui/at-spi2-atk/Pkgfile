@@ -1,9 +1,9 @@
-# Depends on: intltool at-spi2-core atk meson ninja
+makedepends=(intltool at-spi2-core atk ninja)
 
 description="A GTK+ module that bridges ATK to D-Bus at-spi"
 url="http://www.gtk.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=at-spi2-atk
 version=2.30.0
