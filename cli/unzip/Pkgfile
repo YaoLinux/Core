@@ -1,7 +1,7 @@
 description="Unpacks .zip archives such as those made by PKZIP"
 url="http://www.info-zip.org"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=unzip
 version=6.0
