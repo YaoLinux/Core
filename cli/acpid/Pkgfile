@@ -1,8 +1,7 @@
-# Depends on: bash 
+makedepends=(bash )
 
 
-packager="sipo"
-contributors=""
+packager="Yaolinux Team"
 maintainer="sipo"
 
 
