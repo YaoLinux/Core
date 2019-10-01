@@ -1,9 +1,9 @@
-# Depends on: gtk3, enchant
+makedepends=(gtk3, enchant)
 
 description="Provides word-processor-style highlighting and replacement of misspelled words in a GtkTextView widget"
 url="http://gtkspell.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Jayce"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gtkspell
 _name=gtkspell3
