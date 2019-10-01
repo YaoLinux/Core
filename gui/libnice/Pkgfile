@@ -1,9 +1,9 @@
-# Depends on: glib gstreamer-plugins-base
+makedepends=(glib gstreamer-plugins-base)
 
 description="An implementation of the IETF's draft ICE (for p2p UDP data streams)"
 url="http://people.suug.ch/~tgr/libnl"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 
 name=libnice
