@@ -2,7 +2,7 @@
 
 description="Dialog box to grab password for packages requiring administrative privileges to be run"
 url="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 
 name=ssh-askpass
 version=7.5p1
