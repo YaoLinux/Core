@@ -1,9 +1,9 @@
-# Depends on: xorg-libxinerama xorg-libxft
+makedepends=(xorg-libxinerama xorg-libxft)
 
 description="dmenu is a dynamic menu for X."
 url="http://tools.suckless.org/dmenu/"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Alienus, tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=dmenu
 version=4.7
