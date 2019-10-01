@@ -1,9 +1,9 @@
-# Depends on: alsa-lib dbus glib xorg-libpciaccess xorg-libxfixes xorg-libxinerama xorg-libxrandr systemd spice-protocol desktop-file-utils
+makedepends=(alsa-lib dbus glib xorg-libpciaccess xorg-libxfixes xorg-libxinerama xorg-libxrandr systemd spice-protocol desktop-file-utils)
 
 description="Spice agent for Linux guests"
 url="https://www.spice-space.org"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=spice-vdagent
 version=0.18.0
