@@ -4,7 +4,7 @@ description="Secret Rabbit Code (aka libsamplerate) is a Sample Rate Converter f
 url="http://www.mega-nerd.com/SRC/index.html"
 
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=libsamplerate
 version=0.1.9
