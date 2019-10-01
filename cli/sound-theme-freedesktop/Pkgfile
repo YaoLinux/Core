@@ -1,9 +1,10 @@
-# Depends on: intltool perl-xml-parser
+makedepends=(intltool)
 
 description="The Sound Theme Freedesktop package contains sound themes for the desktop."
 url="http://freedesktop.org/wiki/Specifications/sound-theme-spec"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Tnut"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=sound-theme-freedesktop
 version=0.8
