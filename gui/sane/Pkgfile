@@ -1,9 +1,9 @@
-# Depends on: libusb-compat libjpeg-turbo libtiff gtk2 libexif cups net-snmp avahi
+makedepends=(libusb-compat libjpeg-turbo2 libtiff gtk2 libexif cups net-snmp avahi)
 
 description="Scanner Access Now Easy"
 url="http://www.sane-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=sane
 version=1.0.27
