@@ -1,9 +1,9 @@
-# Depends on: dbus-glib libxslt gobject-introspection vala 
+makedepends=(dbus-glib libxslt gobject-introspection vala )
 
 description="GLib bindings for the Telepathy D-Bus protocol"
 url="http://telepathy.freedesktop.org/"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(gobject-introspection vala)
 
