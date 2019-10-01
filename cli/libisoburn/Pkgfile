@@ -4,7 +4,7 @@ description="libisoburn is a frontend for libraries libburn and libisofs"
 url="http://libburnia-project.org/"
 
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=libisoburn
 version=1.5.0
