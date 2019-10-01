@@ -1,8 +1,8 @@
-# Depends on: xorg-libxaw
+makedepends=(xorg-libxaw)
 
 description="Display a message or query in a window."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
