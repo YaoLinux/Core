@@ -1,9 +1,9 @@
-# Depends on: meson ninja exiv2 vala gobject-introspection python-gobject
+makedepends=(exiv2 vala gobject-introspection python-gobject)
 
 description="GObject-based Wrapper around Exiv2 library."
 url="http://www.exiv2.org/index.html"
-packager="tnut <tnut@nutyx.org>"
-contributor="Jayce"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libgexiv2
 version=0.10.8
@@ -14,7 +14,7 @@ build() {
 cd gexiv2-$version
 mkdir build
 cd    build
-meson --prefix=/usr
+--prefix=/usr
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
