@@ -1,9 +1,9 @@
-# Depends on: libgcrypt intltool vala gobject-introspection gtk3 python2-gtk gnutls pulseaudio cyrus-sasl
+makedepends=(libgcrypt intltool vala gobject-introspection gtk3 python2-gtk gnutls pulseaudio cyrus-sasl)
 
 description="A VNC viewer widget for GTK"
 url="http://live.gnome.org/gtk-vnc"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch, Tnut, Rems"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gtk-vnc
 version=0.9.0
