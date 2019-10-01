@@ -2,7 +2,7 @@
 
 description="A virtual printer for cups to produce PDF files."
 url="http://www.ciups-pdf.de/"
-packager="Hugo <hugo@nutyx.org>"
+packager="Yaolinux Team"
 
 name=cups-pdf
 version=3.0.1
