@@ -1,9 +1,9 @@
-# Depends on: rasqal db sqlite libiodbc
+makedepends=(rasqal db sqlite libiodbc)
 
 description="Library that provides a high-level interface to RDF data"
 url="http://download.librdf.org/source/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=redland
 version=1.0.17
