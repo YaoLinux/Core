@@ -1,9 +1,9 @@
-# Depends on: libsass
+makedepends=(libsass)
 
 description="C implementation of Sass CSS preprocessor."
 url="http://libsass.org/"
-packager="fanch <fanch@nutyx.org>"
-contributors="Fanch"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=sassc
 version=3.5.0
