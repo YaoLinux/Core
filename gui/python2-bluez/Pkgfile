@@ -1,9 +1,9 @@
-# Depends on: python2-setuptools bluez
+makedepends=(python2-setuptools bluez)
 
 description="Python wrapper for the BlueZ Bluetooth stack"
 url="http://karulis.github.io/pybluez/"
-contributors="tnut"
-packager="remy <remy@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=python2-bluez
 version=0.22
