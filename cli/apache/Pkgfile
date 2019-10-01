@@ -1,7 +1,6 @@
-# Depends on: pcre apr-util sqlite expat
+makedepends=(pcre apr-util sqlite expat)
 
 packager="Yaolinux Team"
-contributors=""
 maintainer="sipo"
 
 
