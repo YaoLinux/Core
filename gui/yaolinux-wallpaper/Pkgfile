@@ -1,7 +1,6 @@
 description="Wallpaper of YaoLinuX"
-contributors="Graknu"
-packager="YaoLinux Teams"
-maintainer="Graknu"
+maintainer="rems"
+packager="Yaolinux Team"
 url="http://yaolinux.org"
 
 name=yaolinux-wallpaper
