@@ -1,9 +1,9 @@
-# Depends on: meson ninja gcr gtk3 iso-codes gobject-introspection libsecret libnotify networkmanager polkit-gnome modemmanager gtk-update-icon-cache jansson
+makedepends=(gcr gtk3 iso-codes gobject-introspection libsecret libnotify networkmanager polkit-gnome modemmanager gtk-update-icon-cache jansson)
 
 description="Applet for managing network connections."
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(polkit-gnome gtk-update-icon-cache)
 
@@ -18,14 +18,14 @@ cd $name-$version
 mkdir build
 cd    build
 
-meson --prefix=/usr     \
+--prefix=/usr     \
       --sysconfdir=/etc \
       -Dselinux=false   \
       -Dteam=true       \
       -Dmobile_broadband_provider_info=false ..
 
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
 uptodate(){
 local latest lastversion url
