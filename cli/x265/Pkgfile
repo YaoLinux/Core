@@ -3,7 +3,7 @@ makedepends=(yasm cmake)
 description="Open Source H265/HEVC video encoder."
 url="https://bitbucket.org/multicoreware/x265/wiki/Home"
 packager="Yaolinux Team"
-contriutors="Chris Farrell"
+maintainer="rems"="Chris Farrell"
 
 name=x265
 version=3.0
