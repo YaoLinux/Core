@@ -1,8 +1,8 @@
-packager="Sipo at nutyx dot org"
+packager="Yaolinux Team"
 description="A library for registering global keyboard shortcuts"
 url="https://github.com/engla/keybinder/tree/keybinder-3.0"
 
-# Depends on: gtk3 
+makedepends=(gtk3 )
 
 name=keybinder3
 alias=(libkeybinder3)
