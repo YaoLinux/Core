@@ -1,9 +1,9 @@
-# Depends on: xorgproto printproto xorg-libx11 xorg-libxext
+makedepends=(xorgproto printproto xorg-libx11 xorg-libxext)
 
 description="Library libXp, X print client library"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 
 name=xorg-libxp
