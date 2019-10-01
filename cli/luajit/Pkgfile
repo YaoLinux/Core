@@ -1,7 +1,7 @@
 description="a Just-In-Time Compiler for Lua"
 url="http://luajit.org/"
 
-packager="Yaolinux team"
+packager="Yaolinux Team"
 maintainer="rems"
 
 name=luajit
