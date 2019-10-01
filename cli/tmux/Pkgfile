@@ -1,8 +1,8 @@
-# Depends on: libevent
+makedepends=(libevent)
 
 description="A terminal multiplexer"
 url="https://tmux.github.io"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 name=tmux
 version=2.8
 
