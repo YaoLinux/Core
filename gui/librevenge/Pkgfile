@@ -1,9 +1,9 @@
-# Depends on: boost cppunit doxygen
+makedepends=(boost cppunit doxygen)
 
 description="library for REVerses ENGineered formats filters"
 url="http://sf.net/p/libwpd/librevenge/"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=librevenge
 version=0.0.4
