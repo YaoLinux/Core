@@ -1,9 +1,9 @@
-# Depends on: python2-gtk gconf
+makedepends=(python2-gtk gconf)
 
 description="Bindings Python2 for GConf"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=gnome-python
 
