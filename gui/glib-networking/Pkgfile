@@ -1,9 +1,9 @@
-# Depends on: meson ninja glib dbus gnutls libgcrypt gsettings-desktop-schemas p11-kit 
+makedepends=(glib dbus gnutls libgcrypt gsettings-desktop-schemas p11-kit )
 
 description="Network-related giomodules for glib"
 url="http://www.gnome.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=( gsettings-desktop-schemas )
 
@@ -18,11 +18,11 @@ cd $name-$version
 mkdir build
 cd    build
 
-meson --prefix=/usr            \
+--prefix=/usr            \
       -Dlibproxy_support=false \
       -Dca_certificates_path=/etc/ssl/ca-bundle.crt
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
 uptodate(){
 local latest lastversion url
