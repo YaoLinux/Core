@@ -1,9 +1,9 @@
-# Depends on: glib 
+makedepends=(glib )
 
 description="A front-end for CORBA 2.2 IDL and Netscape's XPIDL"
 url="http://www.gnome.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libidl
 version=0.8.14
