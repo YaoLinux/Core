@@ -1,18 +1,24 @@
 description="Audio processing library that allows changing the sound tempo, pitch and playback rate."
 url="http://www.surina.net/soundtouch/"
-maintainer="Olli Parviainen <oparviai 'at' iki' dot' fi>"
-packager="tnut <tnut@nutyx.org>"
+
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=soundtouch
 version=2.1.2
 release=2
 
 source=(https://gitlab.com/$name/$name/-/archive/$version/$name-$version.tar.gz)
+
 build() {
+
 cd $name-$version
+
 ./bootstrap
+
 ./configure --prefix=/usr \
---docdir=/usr/share/doc/$name-$version
+            --docdir=/usr/share/doc/$name-$version
+
 make
 make DESTDIR=$PKG install
 
