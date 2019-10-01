@@ -1,14 +1,13 @@
-# Depends on: python
-
-packager="tnut <tnut@nutyx.org>"
-
-name=setconf
-version=0.7.5
-release=1
-run=(python)
+packager="Yaolinux Team"
+maintainer="rems"
 
 description='Utility for easily changing settings in configuration files'
 url='http://setconf.roboticoverlords.org/'
+
+name=setconf
+version=0.7.6
+
+run=(python)
 
 source=("http://setconf.roboticoverlords.org/$name-$version.tar.xz")
 
