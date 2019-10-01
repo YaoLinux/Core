@@ -1,9 +1,10 @@
-# Depends on: libogg 
+makedepends=(libogg)
 
 description="A free codec for free speech"
 url="http://www.speex.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=speex
 version=1.2.0
@@ -11,14 +12,16 @@ release=2
 
 source=(  http://downloads.us.xiph.org/releases/$name/$name-$version.tar.gz)
 
-
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---disable-static \
---docdir=/usr/share/doc/speex-$version
+            --disable-static \
+            --docdir=/usr/share/doc/speex-$version
+
 make
 make DESTDIR=$PKG install
 
+#Obsolet lib
 rm $PKG/usr/lib/libspeex.la
-}  
+}
