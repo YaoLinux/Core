@@ -1,9 +1,9 @@
-# Depends on: clutter-gtk libsoup cairo sqlite gobject-introspection
+makedepends=(clutter-gtk libsoup cairo sqlite gobject-introspection)
 
 description="Gtk3 widget for displaying rasterized maps"
 url="http://projects.gnome.org/libchamplain/"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libchamplain
 version=0.12.16
