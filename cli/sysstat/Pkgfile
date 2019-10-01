@@ -1,7 +1,7 @@
 description="Utilities to monitor system performance and usage activity."
 url="http://perso.wanadoo.fr/sebastien.godard"
 packager="Yaolinux Team"
-contributors="Fanch, Pierre B"
+maintainer="rems"
 
 name=sysstat
 version=12.1.6
