@@ -1,9 +1,9 @@
-# Depends on: qtbase qtdeclarative 
+makedepends=(qtbase qtdeclarative )
 
 description="Graphical effects for use with Qt Quick 2"
 url="http://qt-project.org/"
-contributors="Pierre B"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=qtgraphicaleffects 
 version=5.12.2
