@@ -1,9 +1,9 @@
-# Depends on: liboauth libsoup json-glib gnome-online-accounts gcr uhttpmock gtk-doc
+makedepends=(liboauth libsoup json-glib gnome-online-accounts gcr uhttpmock gtk-doc)
 
 description="GLib-based library for accessing online service APIs using the GData protocol"
 url="http://live.gnome.org/libgdata"
-packager="jayce <jayce.net@gmail.com>"
-contributors="Fanch, Tnut"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libgdata
 version=0.17.9
