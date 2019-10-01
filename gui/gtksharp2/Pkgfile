@@ -1,9 +1,9 @@
-# Depends on: mono gtk2 libglade
+makedepends=(mono gtk2 libglade)
 
 description="Gtk2 bindings for C Sharp"
 url="http://www.mono-project.com/docs/gui/gtksharp/"
-contributors=""
-packager="rems <rems@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
  
 name=gtksharp2
 version=2.12.45
