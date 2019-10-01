@@ -1,9 +1,9 @@
-# Depends on: colord gtk3 gobject-introspection vala
+makedepends=(colord gtk3 gobject-introspection vala)
 
 description="GTK integration for libcolord"
 url="http://www.freedesktop.org/software/colord/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=colord-gtk
 version=0.1.26
