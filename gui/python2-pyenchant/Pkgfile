@@ -1,8 +1,8 @@
-# Depends on: python2-setuptools enchant python2
+makedepends=(python2-setuptools enchant python2)
 
 description="PyEnchant is a spellchecking library for Python2 based on the Enchant library"
 url="https://pypi.python.org/pypi/pyenchant"
-packager="greg<greg@nutyx.org"
+packager="Yaolinux Team"
 
 name=python2-pyenchant
 version=2.0.0
