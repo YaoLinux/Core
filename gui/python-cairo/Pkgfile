@@ -1,9 +1,9 @@
-# Depends on: python cairo 
+makedepends=(python cairo )
 
 description="connector Python (3) for the library cairo"
 url="http://www.cairographics.org/"
-packager="tnut <tnut nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-cairo
 version=1.18.0
