@@ -1,4 +1,4 @@
-# Depends on: flex bison
+makedepends=(flex bison)
 
 packager="Yaolinux Team"
 maintainer="sipo"
