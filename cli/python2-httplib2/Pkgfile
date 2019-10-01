@@ -3,7 +3,7 @@ makedepends=(python2-setuptools)
 description="Comprehensive HTTP client library, supporting many features."
 url="https://pypi.python.org/pypi/httplib2"
 
-contributors="tnut"
+maintainer="rems"
 packager="Yaolinux Team"
 
 name=python2-httplib2
