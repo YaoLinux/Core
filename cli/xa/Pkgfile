@@ -1,8 +1,7 @@
-#Depends on:  
 
 description="Cross-assembler for 6502 microprocessor"
 url="http://www.floodgap.com/retrotech/xa/"
-packager="Greg"
+packager="Yaolinux Team"
 
 name=xa
 version=2.3.8
