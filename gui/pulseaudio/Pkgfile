@@ -1,9 +1,9 @@
-# Depends on: fftw intltool json-c libsndfile alsa-lib dbus glib libcap openssl speex speexdsp libsamplerate bluez sbc gconf webrtc-audio-processing jack
+makedepends=(fftw intltool json-c libsndfile alsa-lib dbus glib libcap openssl speex speexdsp libsamplerate bluez sbc gconf webrtc-audio-processing jack)
 
 description="A featureful, general-purpose sound server"
 url="http://www.pulseaudio.org"
-packager="tnut <tnut@nutyx.org"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(bluez sbc)
 
