@@ -4,12 +4,14 @@ packager="tnut <tnut@nutyx.org>"
 name=rpcsvc-proto
 version=1.4
 
-
 source=(https://github.com/thkukuk/rpcsvc-proto/archive/v$version/$name-$version.tar.gz)
+
 build() {
 cd $name-$version
 autoreconf -fi
+
 ./configure --sysconfdir=/etc
+
 make
 make DESTDIR=$PKG install
 }
