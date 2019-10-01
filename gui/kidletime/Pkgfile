@@ -1,9 +1,9 @@
-# Depends on: extra-cmake-modules qtbase qtx11extras
+makedepends=(extra-cmake-modules qtbase qtx11extras)
 
 description="Monitoring user activity "
 url="https://www.kde.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=kidletime
 version=5.56.0
