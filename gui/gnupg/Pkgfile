@@ -1,9 +1,9 @@
-# Depends on: npth libgpg-error libgcrypt libassuan libksba pinentry openldap libusb-compat curl
+makedepends=(npth libgpg-error libgcrypt libassuan libksba pinentry openldap libusb-compat curl)
 
 description="Complete and free implementation of the OpenPGP standard"
 url="http://www.gnupg.org/"
-packager="tnut <tnut2nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gnupg
 version=2.2.12
@@ -15,7 +15,6 @@ cd gnupg-$version
 
 ./configure --prefix=/usr \
 --enable-symcryptrun      \
---enable-maintainer-mode  \
 --docdir=/usr/share/doc/gnupg-$version
 make
 
