@@ -1,9 +1,9 @@
-# Depends on: libjpeg-turbo libpng xorg-libxft xorg-libxi xorg-libxinerama mesa doxygen
+makedepends=(libjpeg-turbo2 libpng xorg-libxft xorg-libxi xorg-libxinerama mesa doxygen)
 
 description="Graphical user interface toolkit for X"
 url="http://www.fltk.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=fltk
 version=1.3.4.1
