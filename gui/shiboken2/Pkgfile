@@ -2,8 +2,8 @@
 
 description="Generates bindings for C++ libraries using CPython source code"
 url="http://qt-project.org/"
-packager="Greg"
-contributors=(rems)
+packager="Yaolinux Team"
+maintainer="rems"
 name=shiboken2
 version=5.12.1
 _qtver=$version
