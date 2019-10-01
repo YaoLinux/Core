@@ -1,8 +1,8 @@
-# Depends on: libxcb xorg-libx11
+makedepends=(libxcb xorg-libx11)
 
 description="Command line utility to print information about windows on X server."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
