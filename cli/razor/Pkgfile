@@ -1,15 +1,17 @@
-# Depends on: perl perl-net-dns perl-digest-sha1 perl-uri perl-digest-nilsimsa 
+makedepends=(perl perl-net-dns perl-digest-sha1 perl-uri perl-digest-nilsimsa)
 
 description="A distributed, collaborative, spam detection and filtering network"
 url="http://search.cpan.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=razor
 version=2.85
 release=2
 
 unset MAKEFLAGS
+
 source=(http://sourceforge.net/projects/razor/files/razor-agents/$version/razor-agents-$version.tar.bz2
 	$name-$version-cosmetic-pv-fix.patch
 	$name-$version-makefile-quoting-fix.patch )
@@ -17,14 +19,15 @@ source=(http://sourceforge.net/projects/razor/files/razor-agents/$version/razor-
 build() {
 cd razor-agents-$version
 
-patch -p1 -i $SRC/$name-$version-cosmetic-pv-fix.patch
-patch -p1 -i $SRC/$name-$version-makefile-quoting-fix.patch
+patch -p1 -i ../$name-$version-cosmetic-pv-fix.patch
+patch -p1 -i ../$name-$version-makefile-quoting-fix.patch
 
 perl Makefile.PL INSTALLDIRS=vendor
+
 make
 make DESTDIR=$PKG install
-find $PKG \
-         -name '*.bs' -or \
-         -name '.packlist' -or \
-         -name 'perllocal.pod' | xargs rm
+
+find $PKG -name '*.bs' -or \
+          -name '.packlist' -or \
+          -name 'perllocal.pod' -print -delete
 }
