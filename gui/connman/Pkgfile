@@ -3,7 +3,6 @@
 description="Intel's modular network connection manager"
 url="https://01.org/connman"
 packager="Yaolinux Team"
-maintainer="Dania"                                                                                                    
 
 name=connman
 version=1.37
