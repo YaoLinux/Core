@@ -1,9 +1,9 @@
-# Depends on: xorgproto xorg-libx11 xorg-libxext xorg-libxi
+makedepends=(xorgproto xorg-libx11 xorg-libxext xorg-libxi)
 
 description="libXtst, library Xorg"
 url="http://xorg.freedesktop.org"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-libxtst
 alias=(libXtst)
