@@ -1,9 +1,9 @@
-# Depends on: qtbase qtdeclarative
+makedepends=(qtbase qtdeclarative)
 
 description="Static and runtime integration of SCXML models into Qt code"
 url="http://qt-project.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=qtscxml
 version=5.12.2
