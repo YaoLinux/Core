@@ -1,9 +1,9 @@
-# Depends on: taglib cmake
+makedepends=(taglib cmake)
 
 description="Additional taglib plugins for KDE"
 url="http://developer.kde.org/~wheeler/taglib.html"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=taglib-extras
 version=1.0.1
