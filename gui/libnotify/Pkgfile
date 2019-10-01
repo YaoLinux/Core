@@ -1,9 +1,9 @@
-# Depends on: gobject-introspection gdk-pixbuf gtk3
+makedepends=(gobject-introspection gdk-pixbuf gtk3)
 
 description="Desktop notification library"
 url="http://www.galago-project.org/news/index.php"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libnotify
 version=0.7.7
