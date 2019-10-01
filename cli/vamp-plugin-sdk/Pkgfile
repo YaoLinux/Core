@@ -3,7 +3,7 @@ makedepends=(libsndfile )
 description="The Vamp audio analysis plug-in system"
 url="http://www.vamp-plugins.org/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=vamp-plugin-sdk
 version=2.8.0
