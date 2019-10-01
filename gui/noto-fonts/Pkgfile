@@ -2,8 +2,8 @@
 
 description="Google Noto TTF fonts"
 url="https://www.google.com/get/noto/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=noto-fonts
 version=20171113
