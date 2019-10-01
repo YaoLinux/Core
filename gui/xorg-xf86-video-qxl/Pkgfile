@@ -1,7 +1,7 @@
-# Depends on: xorg-server xorgproto spice python2 git libcacard
+makedepends=(xorg-server xorgproto spice python2 git libcacard)
 
 description="Xorg X11 qxl video driver"
-packager="rems <rems@nutyx.org>"
+packager="Yaolinux Team"
 name=xorg-xf86-video-qxl
 version=0.1.5
 release=2
