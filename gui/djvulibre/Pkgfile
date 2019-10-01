@@ -1,9 +1,9 @@
-# Depends on: librsvg libtiff libjpeg-turbo hicolor-icon-theme 
+makedepends=(librsvg libtiff libjpeg-turbo2 hicolor-icon-theme )
 
 description="Suite to create, manipulate and view DjVu ('déjà vu') documents"
 url="http://djvu.sourceforge.net"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=( librsvg hicolor-icon-theme )
 
