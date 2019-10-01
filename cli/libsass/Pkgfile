@@ -1,7 +1,7 @@
 description="C implementation of Sass CSS preprocessor (library)."
 url="http://libsass.org/"
 
-packager="fanch <fanch@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Fanch"
 
 name=libsass
