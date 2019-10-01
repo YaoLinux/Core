@@ -1,7 +1,7 @@
-# Depends on: xorg-server
+makedepends=(xorg-server)
 
 description="Xorg framebuffer video driver."
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 name=xorg-xf86-video-fbdev
 version=0.5.0
 _name=${name/xorg-/}
