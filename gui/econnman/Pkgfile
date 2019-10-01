@@ -2,8 +2,7 @@
 
 description="Enlightenment ConnMan user interface"
 url="https://phab.enlightenment.org/w/projects/econnman/"
-maintainer="Dania <Dania@nutyx.org>"
-packager="YaoLinux Team"
+packager="Yaolinux Team"
 
 name=econnman
 version=1.1
