@@ -1,9 +1,9 @@
-# Depends on: libsndfile xorg-libxrandr openal glew freetype xorg-libx11 mesa systemd cmake doxygen
+makedepends=(libsndfile xorg-libxrandr openal glew freetype xorg-libx11 mesa systemd cmake doxygen)
 
 description="A simple, fast, cross-platform, and object-oriented multimedia API"
 url="http://www.sfml-dev.org/"
-packager="rems <rems@yaolinux.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=sfml
 version=2.5.1
