@@ -1,8 +1,8 @@
-# Depends on: doxygen 
+makedepends=(doxygen )
 
 description="C library for parsing and emitting YAML (YAML Ain't Markup Language)"
 url="http://pyyaml.org/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Pierre B"
 
 name=yaml
