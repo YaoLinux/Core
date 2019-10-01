@@ -1,9 +1,9 @@
-# Depends on: libical libvorbis alsa-lib libusb-compat libsndfile cups glib
+makedepends=(libical libvorbis alsa-lib libusb-compat libsndfile cups glib)
 
 description="The BlueZ package contains the Bluetooth protocol stack for Linux."
 url="http://www.bluez.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=bluez
 version=5.50
