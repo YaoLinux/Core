@@ -1,10 +1,9 @@
-# Depends on: avahi libsoup json-glib modemmanager libnotify geoip python2 gobject-introspection intltool
+makedepends=(avahi libsoup json-glib modemmanager libnotify geoip python2 gobject-introspection intltool)
 
 description="Modular geoinformation service built on the D-Bus messaging system."
 url="http://freedesktop.org/software/geoclue/docs/"
-maintainer="Zeeshan Ali <zeeshanak at gnome dot org>" 
-packagers="tnut <tnut@nutyx.org>"
-contributors="Fanch"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=geoclue2
 version=2.5.2
@@ -16,7 +15,7 @@ build() {
 
 mkdir -pv build
 cd build
-meson --prefix=/usr
+--prefix=/usr
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 }
