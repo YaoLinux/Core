@@ -3,7 +3,7 @@ makedepends=(libxslt docbook-xsl docbook-xml links)
 description="Convert xml to many other formats"
 url="http://cyberelk.net/tim/software/xmlto/"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=xmlto
 version=0.0.28
