@@ -1,9 +1,9 @@
-# Depends on: libtiff cairo giflib glib libexif
+makedepends=(libtiff cairo giflib glib libexif)
 
 description="An Open Source Implementation of the GDI+ API"
 url="http://www.mono-project.com"
-packager="greg<greg@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libgdiplus
 version=5.6
