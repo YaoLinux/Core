@@ -1,4 +1,4 @@
-#Depends on: bluez wpa-supplicant openvpn iwd dbus iptables gnutls glib polkit
+makedepends=(bluez wpa-supplicant openvpn iwd dbus iptables gnutls glib polkit)
 
 description="Intel's modular network connection manager"
 url="https://01.org/connman"
