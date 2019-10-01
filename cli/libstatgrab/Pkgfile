@@ -1,7 +1,7 @@
 description="Cross platform access to statistics about the system on which it's run."
 url="http://www.mirrorservice.org/sites/ftp.i-scream.org/pub/i-scream/libstatgrab"
 
-contributors="berlius"
+maintainer="rems"
 packager="Yaolinux Team"
 
 name=libstatgrab
