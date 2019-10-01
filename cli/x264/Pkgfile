@@ -1,8 +1,8 @@
-# Depends on: yasm l-smash
+makedepends=(yasm l-smash)
 
 description="Library for encoding H264/AVC video streams"
 url="http://www.videolan.org/developers/x264.html"
-packager="greg <greg@nutyx.org>"
+packager="Yaolinux Team"
 contributors="PierreB Tnut"
 
 name=x264
