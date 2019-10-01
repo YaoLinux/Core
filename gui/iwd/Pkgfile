@@ -2,8 +2,7 @@
 
 description="Internet Wireless Daemon" 
 url="https://git.kernel.org/cgit/network/wireless/iwd.git/"
-maintainer="Dania <Dania@nutyx.org>"
-packager="YaoLinux Teams"
+packager="Yaolinux Team"
 
 name=iwd
 version=0.19
