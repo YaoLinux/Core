@@ -1,9 +1,9 @@
-# Depends on: gtk2 gtk3 gstreamer-plugins-base libnotify xorg-libsm xorg-libxxf86vm xorg-glu gconf webkitgtk
+makedepends=(gtk2 gtk3 gstreamer-plugins-base libnotify xorg-libsm xorg-libxxf86vm xorg-glu gconf webkitgtk)
 
 description="GTK+ implementation of wxWidgets API for GUI"
 url="http://wxwidgets.org"
-packager="remy <remy@nutyx.org>"
-contributors="Pierre B,tnut,greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=wxgtk
 version=3.0.4
