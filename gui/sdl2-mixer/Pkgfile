@@ -1,9 +1,9 @@
-# Depends on:  sdl2 libvorbis libmodplug mpg123 flac
+makedepends=(sdl2 libvorbis libmodplug mpg123 flac)
 
 description="A simple multi-channel audio mixer (Version 2)"
 url="http://www.libsdl.org/projects/SDL_mixer/"
-packager="remy <remy@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=sdl2-mixer
 version=2.0.4
