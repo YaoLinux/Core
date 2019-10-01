@@ -1,9 +1,9 @@
-# Depends on: xorg-libxkbfile xorg-libx11
+makedepends=(xorg-libxkbfile xorg-libx11)
 
 
 description="Set the keyboard using the X keyboard Extension"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
