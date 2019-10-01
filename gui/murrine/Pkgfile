@@ -1,10 +1,9 @@
-# Depends on: gtk2 perl-xml-parser
+makedepends=(gtk2 perl-xml-parser)
 
 description="Cairo based GTK engine."
 url="http://www.cimitan.com/murrine/"
-maintainer="Danny Rawlins, monster dot romster at gmail dot com"
-packager="tnut <tnut@nutyx.org>"
-contributors="Tyrry"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=murrine
 version=0.98.2
