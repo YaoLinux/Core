@@ -1,8 +1,8 @@
-# Depends on: xorgproto xorg-libxrandr xorg-libx11
+makedepends=(xorgproto xorg-libxrandr xorg-libx11)
 
 description="Print contents of X events."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
