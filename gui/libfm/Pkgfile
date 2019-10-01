@@ -1,9 +1,9 @@
-# Depends on: shared-mime-info gtk3 libexif menu-cache gtk-doc
+makedepends=(shared-mime-info gtk3 libexif menu-cache gtk-doc)
 
 description="Library used to develop file managers providing some file management utilities"
 url="http://pcmanfm.sourceforge.net/"
-contributors="geantbrun, tnut, Greg"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 
 name=libfm
