@@ -1,9 +1,9 @@
-# Depends on: libxcb 
+makedepends=(libxcb )
 
 description="XCB utilities library"
 url="http://xcb.freedesktop.org"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xcb-util
 version=0.4.0
