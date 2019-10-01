@@ -1,8 +1,8 @@
-# Depends on: libjpeg-turbo2 alsa-lib doxygen systemd
+makedepends=(libjpeg-turbo2 alsa-lib doxygen systemd)
 
 description="Userspace tools and conversion library for Video 4 Linux"
 url="http://freshmeat.net/projects/libv4l"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Pierre B"
 
 name=v4l-utils
