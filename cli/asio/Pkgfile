@@ -1,7 +1,6 @@
 makedepends=(boost)
 
 packager="Yaolinux Team"
-contributors="Tnut"
 maintainer="sipo"
 
 description="Cross-platform C++ library for ASynchronous network I/O"
