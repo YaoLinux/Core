@@ -1,9 +1,9 @@
-# Depends on: ghostscript groff
+makedepends=(ghostscript groff)
 
 description="A library that is used to make fuzzy comparisons of strings and byte arrays"
 url="http://fstrcmp.sourceforge.net/"
-packager="rems"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=fstrcmp
 version=0.7.D001
