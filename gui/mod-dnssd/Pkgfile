@@ -1,9 +1,9 @@
-# Depends on: avahi apache
+makedepends=(avahi apache)
 
 description="Zeroconf module for Apache"
 url="http://0pointer.de/lennart/projects/mod_dnssd"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 _name=mod_dnssd
 name=mod-dnssd
