@@ -1,7 +1,7 @@
 description="Display the network route that packets take to reach a specified host."
 url="http://traceroute.sourceforge.net/"
 packager="Yaolinux Team"
-contributors="Alienus B"
+maintainer="rems"
 
 name=traceroute
 version=2.1.0
