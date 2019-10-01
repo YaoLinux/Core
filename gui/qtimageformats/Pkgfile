@@ -1,9 +1,9 @@
-# Depends on: qtbase libwebp libmng jasper
+makedepends=(qtbase libwebp libmng jasper)
 
 description="A cross-platform application and UI framework, QtImageFormat files"
 url="http://qt-project.org/"
-contributors="Pierre B"
-packager="tnut <tnut@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=qtimageformats 
 version=5.12.2
