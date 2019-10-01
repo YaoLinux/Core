@@ -1,9 +1,9 @@
-# Depends on: sip dbus-python python-sip qtbase qtconnectivity qtmultimedia qttools qtserialport qtsvg qtx11extras qtnetworkauth qtwebengine qtwebkit qtwebsockets
+makedepends=(sip dbus-python python-sip qtbase qtconnectivity qtmultimedia qttools qtserialport qtsvg qtx11extras qtnetworkauth qtwebengine qtwebkit qtwebsockets)
 
 description="connector python for qt"
 url="http://www.riverbankcomputing.co.uk/software/pyqt/intro"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=python-qt
 version=5.12
