@@ -1,8 +1,8 @@
-# Depends on: xorg-libxkbfile
+makedepends=(xorg-libxkbfile)
 
 description="X keyboards descriptions compiler."
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
