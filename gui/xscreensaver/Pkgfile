@@ -1,9 +1,9 @@
-# Depends on: bc libglade xorg-libxmu xorg-libxt xorg-libxpm
+makedepends=(bc libglade xorg-libxmu xorg-libxt xorg-libxpm)
 
 description="Screen saver and locker for the X Window System"
 url="http://www.jwz.org/xscreensaver/"
-packager="greg <greg@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xscreensaver
 version=5.40
