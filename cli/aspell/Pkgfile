@@ -1,7 +1,6 @@
 makedepends=(ncurses)
 
-packager="sipo"
-contributors="Tnut"
+packager="Yaolinux Team"
 maintainer="sipo"
 
 description="A spell checker designed to eventually replace Ispell"
