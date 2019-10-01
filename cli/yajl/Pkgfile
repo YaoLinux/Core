@@ -1,6 +1,6 @@
 description="Yet Another JSON Library."
 url="http://www.gnu.org/software/screen/screen.html"
-contributors="pierre"
+maintainer="rems"
 packager="Yaolinux Team"
 
 makedepends=(cmake)
