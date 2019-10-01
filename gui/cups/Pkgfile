@@ -1,9 +1,9 @@
-# Depends on: systemd libusb avahi python gnutls xdg-utils gtk-update-icon-cache
+makedepends=(systemd libusb avahi python gnutls xdg-utils gtk-update-icon-cache)
 
 description="The Common Unix Printing System (CUPS) is a print spooler and associated utilities"
 url="http://www.cups.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(xdg-utils gtk-update-icon-cache)
 
