@@ -1,9 +1,9 @@
-# Depends on: python2-setuptools
+makedepends=(python2-setuptools)
 
 description="Python 3.4 Enum backported"
 url="http://pypi.python.org/pypi/enum34"
-packager="rems <rems@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(python2-setuptools)
 name=python2-enum34
