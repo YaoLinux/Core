@@ -1,9 +1,9 @@
-# Depends on: asciidoc babl gtk2 librsvg ruby lua ffmpeg librsvg openexr exiv2 graphviz libjpeg-turbo libwebp python2 sdl gobject-introspection vala json-glib gtk-doc
+makedepends=(asciidoc babl gtk2 librsvg ruby lua ffmpeg librsvg openexr exiv2 graphviz libjpeg-turbo2 libwebp python2 sdl gobject-introspection vala json-glib gtk-doc)
 
 description="Generic Graphics Library"
 url="http://gegl.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=gegl
 version=0.4.12
