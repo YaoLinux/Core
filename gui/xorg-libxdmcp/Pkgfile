@@ -1,9 +1,9 @@
-# Depends on: xorgproto 
+makedepends=(xorgproto )
 
 description="libxdmcp, library Xorg"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B, tnut, Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-libxdmcp
 _name=libXdmcp
