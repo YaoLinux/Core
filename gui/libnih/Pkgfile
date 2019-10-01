@@ -1,9 +1,9 @@
-# Depends on: dbus
+makedepends=(dbus)
 
 description="Small library for C application development"
 url="https://launchpad.net/libnih"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=libnih
 version=1.0.3
