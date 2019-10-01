@@ -4,7 +4,7 @@ description="Library for accessing a shoutcast/icecast server"
 url="http://www.icecast.org/"
 
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=libshout
 version=2.4.3
