@@ -1,4 +1,4 @@
-#Depends on: python2-efl connman 
+makedepends=(python2-efl connman )
 
 description="Enlightenment ConnMan user interface"
 url="https://phab.enlightenment.org/w/projects/econnman/"
