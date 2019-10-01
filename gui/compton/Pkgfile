@@ -1,9 +1,9 @@
-# Depends on: dbus libconfig libev pcre mesa xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage freeglut xcb-util-renderutil xcb-util-image
+makedepends=(dbus libconfig libev pcre mesa xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage freeglut xcb-util-renderutil xcb-util-image)
 
 description="A compositor for X, and a fork of xcompmgr-dana."
 url="http://github.com/chjj/compton"
-packager="tnut <tnut@nutyx.org>"
-contributors="greg <greg@nutyx.org>"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=compton
 version=4.0
@@ -22,9 +22,9 @@ build() {
 
 mkdir -pv build
 cd build
-meson --prefix=/usr
+--prefix=/usr
 ninja
-DESTDIR=$PKG ninja install
+DESTDIR=$PKG install
 install -Dm644 $SRC/compton.conf $PKG/etc/xdg/compton.conf
 	
 }
