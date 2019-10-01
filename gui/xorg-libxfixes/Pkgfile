@@ -1,9 +1,9 @@
-# Depends on: xorgproto xorg-libx11
+makedepends=(xorgproto xorg-libx11)
 
 description="Library Fixes extension client"
 url="http://xorg.freedesktop.org"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=xorg-libxfixes
 version=5.0.3
