@@ -1,9 +1,9 @@
-# Depends on: sdl xorg-libx11
+makedepends=(sdl xorg-libx11)
 
 description="A SDL MPEG player library."
 url="http://www.lokigames.com/development/smpeg.php3"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=smpeg
 version=0.4.5
