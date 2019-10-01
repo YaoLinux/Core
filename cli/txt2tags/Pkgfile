@@ -1,9 +1,8 @@
-# Depends on: 
 
 description="Generator documents in multiple output formats"
 url="http://txt2tags.sourceforge.net"
 contributors="pierre at nutyx dot org"
-packager="greg<greg@nutyx.org>"
+packager="Yaolinux Team"
 
 name=txt2tags
 version=2.6
