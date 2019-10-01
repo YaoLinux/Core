@@ -1,9 +1,9 @@
-# Depends on: gdk-pixbuf libcroco pango vala gtk-doc rustc
+makedepends=(gdk-pixbuf libcroco pango vala gtk-doc rustc)
 
 description="Library and tools used to manipulate, convert and view Scalable Vector Graphic images."
 url="http://librsvg.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Pierre B"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=librsvg
 version=2.44.10
