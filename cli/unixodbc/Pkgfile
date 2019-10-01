@@ -1,6 +1,6 @@
 description="Providing application developers a predictable API with which to access Data Sources"
 url="http://www.unixodbc.org/"
-packager="remy <remy@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Pierre B,tnut"
 
 name=unixodbc
