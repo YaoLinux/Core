@@ -1,8 +1,8 @@
-# Depends on: libxslt docbook-xsl
+makedepends=(libxslt docbook-xsl)
 
 description="Manage user directories like ~/Desktop and ~/Music"
 url="http://www.freedesktop.org/wiki/Software/xdg-user-dirs"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 maintainer="Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>"
 
 name=xdg-user-dirs
