@@ -1,9 +1,9 @@
-# Depends on: cmake qtbase boost mesa openexr jasper glew libtiff opencolorio freetype xorg-fontconfig xorg-libxrender python
+makedepends=(cmake qtbase boost mesa openexr jasper glew libtiff opencolorio freetype xorg-fontconfig xorg-libxrender python)
 
 description="For reading and writing images, including classes, utilities, and applications"
 url="http://www.openimageio.org/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Greg"
+packager="Yaolinux Team"
+maintainer="rems"
 
 run=(python)
 
