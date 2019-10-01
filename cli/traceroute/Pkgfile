@@ -1,6 +1,6 @@
 description="Display the network route that packets take to reach a specified host."
 url="http://traceroute.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Alienus B"
 
 name=traceroute
