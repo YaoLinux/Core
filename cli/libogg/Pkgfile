@@ -1,7 +1,7 @@
 description="Ogg bitstream and framing library"
 url="http://xiph.org/ogg/"
 packager="Yaolinux Team"
-contributors="Pierre B, Alienus"
+maintainer="rems"
 
 name=libogg
 version=1.3.4
