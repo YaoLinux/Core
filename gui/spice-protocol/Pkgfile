@@ -1,4 +1,3 @@
-makedepends=()
 
 description="Headers for SPICE protocol"
 url="http://www.spice-space.org"
