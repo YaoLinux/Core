@@ -3,7 +3,7 @@ makedepends=(libjpeg-turbo2 alsa-lib doxygen systemd)
 description="Userspace tools and conversion library for Video 4 Linux"
 url="http://freshmeat.net/projects/libv4l"
 packager="Yaolinux Team"
-contributors="Pierre B"
+maintainer="rems"
 
 name=v4l-utils
 version=1.16.3
