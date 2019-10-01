@@ -1,8 +1,8 @@
-# Depends on: python cython autoconf-archive python2-setuptools 
+makedepends=(python cython autoconf-archive python2-setuptools )
 description="A library to handle Apple Property List format whereas it's binary or XML"
 url="http://libimobiledevice.org/"
-contributors=""
-packager="remy <remy@nutyx.org>"
+maintainer="rems"
+packager="Yaolinux Team"
 
 name=libplist
 version=2.0.0
