@@ -1,8 +1,7 @@
-# Depends on: xorg-libxfixes doxygen graphviz
+makedepends=(xorg-libxfixes doxygen graphviz)
 
 description="Video Acceleration vdpau for Linux"
 url="https://01.org/linuxmedia/vaapi"
-maintainer="remy"
 packager="Yaolinux Team"
 
 name=libvdpau
