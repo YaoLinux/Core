@@ -1,9 +1,9 @@
-# Depends on: cmake
+makedepends=(cmake)
 
 description="Platform support library used by libCEC and binary add-ons for Kodi"
 url="https://github.com/Pulse-Eight/platform"
-packager="remy <remy@nutyx.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=p8-platform
 version=2.1.0.1
