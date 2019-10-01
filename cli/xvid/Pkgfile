@@ -1,8 +1,8 @@
-# Depends on: yasm
+makedepends=(yasm)
 
 description="XviD is an open source MPEG-4 video codec"
 url="http://xvid.org"
-packager="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
 contributors="Pierre B"
 
 name=xvid
