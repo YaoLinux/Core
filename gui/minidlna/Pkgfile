@@ -1,9 +1,9 @@
-# Depends on: libexif libjpeg-turbo libid3tag flac libvorbis ffmpeg sqlite 
+makedepends=(libexif libjpeg-turbo2 libid3tag flac libvorbis ffmpeg sqlite )
 
 description="A DLNA/UPnP-AV Media server (aka ReadyDLNA)"
 url="URL: http://minidlna.sourceforge.net/"
-packager="tnut <tnut@nutyx.org>"
-contributors="Alienus"
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=minidlna
 version=1.2.1
