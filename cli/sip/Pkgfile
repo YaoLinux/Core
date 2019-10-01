@@ -1,20 +1,20 @@
-# Depends on: python
-
 description="A tool that makes it easy to create Python bindings for C and C++ libraries"
 url="http://www.riverbankcomputing.co.uk/software/sip/intro"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
 
 name=sip
-version=4.19.14
+version=4.19.19
 
 source=(https://www.riverbankcomputing.com/static/Downloads/sip/sip-$version.tar.gz)
 
 build() {
-	cd sip-$version
-	mkdir build
-	cd build
-        python3 ../configure.py CFLAGS="$CFLAGS" LFLAGS="$LDFLAGS"
-        make DESTDIR=$PKG install -C sipgen
-        mv "$PKG"/usr/include/{python*/sip.h,}
+	mkdir -pv build && cd build
+        
+	python3 ../sip-$version/configure.py CFLAGS="$CFLAGS" LFLAGS="$LDFLAGS"
+        
+	make DESTDIR=$PKG install -C sipgen
+        
+	mv "$PKG"/usr/include/{python*/sip.h,}
         rm -r "$PKG"/usr/include/python*
 }
