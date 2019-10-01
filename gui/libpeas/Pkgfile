@@ -1,9 +1,9 @@
-# Depends on: gdb, gtk3, gjs, vala, gobject-introspection, python2-gobject2, python-gobject, lua, valgrind
+makedepends=(gdb, gtk3, gjs, vala, gobject-introspection, python2-gobject2, python-gobject, lua, valgrind)
 
 description="A GObject-based plugins engine."
 url="https://wiki.gnome.org/Projects/Libpeas"
-packager="tnut <tnut@nutyx.org>"
-contributors="Fanch"
+packager="Yaolinux Team"
+maintainer="rems"
 
 
 name=libpeas
