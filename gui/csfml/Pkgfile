@@ -1,9 +1,9 @@
-# Depends on: sfml doxygen
+makedepends=(sfml doxygen)
 
 description="C bindings for sfml"
 url="http://www.sfml-dev.org/"
-packager="rems <rems@yaolinux.org>"
-contributors=""
+packager="Yaolinux Team"
+maintainer="rems"
 
 name=csfml
 version=2.5
