@@ -3,7 +3,7 @@ makedepends=(util-linux libsodium asciidoc xmlto libpgm)
 description="Fast messaging system built on sockets.  C and C++ bindings.  aka 0MQ, ZMQ"
 url="http://www.zeromq.org"
 packager="Yaolinux Team"
-contributors="Remy"
+maintainer="rems"
 
 name=zeromq
 version=4.3.1
