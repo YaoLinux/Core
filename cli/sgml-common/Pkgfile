@@ -1,20 +1,24 @@
 description="Tools for maintaining centralized SGML catalogs."
 url="http://www.docbook.org/xml/"
-packager="tnut <tnut@nutyx.org>"
+
+packager="Yaolinux Team"
 
 name=sgml-common
 version=0.6.3
-release=1
 
 source=( http://anduin.linuxfromscratch.org/BLFS/sgml-common/sgml-common-$version.tgz
 http://www.linuxfromscratch.org/patches/blfs/7.5/sgml-common-$version-manpage-1.patch)
 
 build(){
     cd $name-$version
+
     patch -Np1 -i ../sgml-common-$version-manpage-1.patch &&
-    autoreconf -f -i
+
+    autoreconf -fiv
+
     ./configure --prefix=/usr \
                 --sysconfdir=/etc
+
     make
     make DESTDIR=$PKG install
 
