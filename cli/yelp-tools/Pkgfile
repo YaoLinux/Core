@@ -2,10 +2,11 @@ makedepends=(libxslt libxml2 yelp-xsl, itstool)
 
 description="Tools for creating Yelp documentation."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=yelp-tools
-version=3.28.0
-release=1
+version=3.32.2
+
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
