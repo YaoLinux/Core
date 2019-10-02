@@ -1,18 +1,20 @@
 description="Extraction utility used for extracting files from RAR archives."
 url="http://www.rarlab.com/"
+
 packager="Yaolinux Team"
+maintainer="rems"
 
 name=unrar
-version=5.6.8
-release=1
+version=5.8.2
 
 source=(
-http://www.rarlab.com/rar/unrarsrc-$version.tar.gz
-)
+http://www.rarlab.com/rar/unrarsrc-$version.tar.gz)
 
 build() {
 cd $name
+
 make -f makefile
+
 install -Dm755 unrar $PKG/usr/bin/unrar
 
 # doc & license
