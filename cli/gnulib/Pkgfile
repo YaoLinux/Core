@@ -1,0 +1,46 @@
+makedepends=(git)
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+description="GNU Portability Library"
+url="http://www.gnu.org/software/gnulib"
+
+name=gnulib
+version=0.1.2033.gf402ce6e1
+
+source=()
+
+prepare() {
+
+git clone git://git.savannah.gnu.org/gnulib.git $name
+}
+
+build() {
+
+cd $name
+sed -i "/^[ ]*gnulib_dir=/s#\`[^\`]*\`#/usr/share/$name#" gnulib-tool
+  make info
+}
+
+package() {
+cd $name
+
+  install -dm755 $PKG/usr/share/$name
+  install -m755 -t $PKG/usr/share/$name check-module gnulib-tool
+
+  dir=$(find build-aux lib m4 modules top -type d)
+
+  for i in $dir; do
+    install -dm755 $PKG/usr/share/$name/$i
+    install -Dm644 -t $PKG/usr/share/$name/$i $(find $i -maxdepth 1 -type f) 
+  done
+  cp -r doc tests $PKG/usr/share/$name/
+
+  install -dm755 $PKG/usr/bin
+  ln -s /usr/share/gnulib-git/gnulib-tool $PKG/usr/bin/
+  ln -s /usr/share/gnulib-git/check-module $PKG/usr/bin/
+
+  install -Dm644 doc/gnulib.info $PKG/usr/share/info/gnulib.info
+  install -Dm644 COPYING $PKG/usr/share/licenses/${pkgname}/COPYING
+}
