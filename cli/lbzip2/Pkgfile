@@ -1,3 +1,5 @@
+makedepends=(gnulib)
+
 packager="Yaolinux Team"
 maintainer="sipo"
 
