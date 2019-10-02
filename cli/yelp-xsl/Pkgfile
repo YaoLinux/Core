@@ -2,12 +2,13 @@ makedepends=(itstool libxslt intltool perl-xml-parser)
 
 description="Stylesheets for Yelp."
 url="http://www.gnome.org/"
-maintainer="git.gnome.org/brownse/yelp-xsl/"
+
+maintainer="rems"
 packager="Yaolinux Team"
 
 name=yelp-xsl
-version=3.30.0
-release=1
+version=3.34.0
+
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
 uptodate(){
