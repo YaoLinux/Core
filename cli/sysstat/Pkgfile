@@ -6,7 +6,7 @@ maintainer="rems"
 name=sysstat
 version=12.1.6
 
-source=($url/$name-$version.tar.xz)
+source=(http://sebastien.godard.pagesperso-orange.fr/sysstat-$version.tar.xz)
 
 build() {
 
