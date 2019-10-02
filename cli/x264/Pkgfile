@@ -2,21 +2,21 @@ makedepends=(yasm l-smash)
 
 description="Library for encoding H264/AVC video streams"
 url="http://www.videolan.org/developers/x264.html"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=x264
-version=20180205-2245
-release=1
+version=20190815-2245
 
-source=(http://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-20180205-2245-stable.tar.bz2)
+source=(http://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-$version-stable.tar.bz2)
 
 build() {
 cd x264-snapshot-${version/./-}-stable
-./configure \
---prefix=/usr \
---enable-pic \
---enable-shared
+
+./configure --prefix=/usr \
+            --disable-cli \
+            --enable-shared
 
 make
 make DESTDIR=$PKG install
