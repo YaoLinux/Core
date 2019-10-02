@@ -2,17 +2,20 @@ makedepends=(doxygen )
 
 description="C library for parsing and emitting YAML (YAML Ain't Markup Language)"
 url="http://pyyaml.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=yaml
-version=0.2.1
+version=0.2.2
 
 source=(http://pyyaml.org/download/libyaml/yaml-$version.tar.gz)
 
-build() {
+build=autotools
+
+package() {
 cd yaml-$version
-./configure --prefix=/usr --disable-static 
-make DESTDIR=$PKG install
+
+# Obsolet libs
 rm $PKG/usr/lib/libyaml.la
 } 
