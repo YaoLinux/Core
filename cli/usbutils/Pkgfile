@@ -2,23 +2,25 @@ makedepends=(libusb-compat hwids)
 
 description="USB Device Utilities"
 url="http://downloads.sourceforge.net/linux-usb/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 run=(hwids)
 
 name=usbutils
-version=010
-release=2
+version=012
 
 source=(http://www.kernel.org/pub/linux/utils/usb/usbutils/usbutils-$version.tar.xz)
 
 build() {
 cd $name-$version
 
+./autogen.sh
+
 ./configure --prefix=/usr \
---datadir=/usr/share/hwdata \
---disable-zlib
+            --datadir=/usr/share/hwdata \
+            --disable-zlib
 
 mkdir -p $PKG/usr/share/hwdata
 
