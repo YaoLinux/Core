@@ -10,7 +10,7 @@ version=2.0.3
 source=(https://github.com/sparsehash/sparsehash/archive/sparsehash-$version.tar.gz)
 
 build() {
- cd $name--$name-$version
+ cd $name-$name-$version
 
  ./configure --prefix=/usr
 
