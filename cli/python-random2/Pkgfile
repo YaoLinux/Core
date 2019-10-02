@@ -6,7 +6,7 @@ maintainer="rems"
 
 name=python-random2
 version=1.0.1
-_name=ramdom2
+_name=random2
 
 source=(https://pypi.python.org/packages/source/r/random2/random2-$version.zip)
 
