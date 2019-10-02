@@ -32,5 +32,4 @@ package() {
 
 	chown -R 0:0 $PKG
 	chmod -R +w $PKG
-	rm $PKG/usr/lib/{libdb-6.2.la,libdb_cxx-6.2.la}
 }
