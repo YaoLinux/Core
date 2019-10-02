@@ -2,22 +2,28 @@ makedepends=(libjpeg-turbo2 alsa-lib doxygen systemd)
 
 description="Userspace tools and conversion library for Video 4 Linux"
 url="http://freshmeat.net/projects/libv4l"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=v4l-utils
-version=1.16.3
-release=2
+version=1.16.7
 
 source=(http://linuxtv.org/downloads/v4l-utils/$name-$version.tar.bz2)
 
 build() {
 	cd $name-$version
-	./configure --prefix=/usr --sysconfdir=/etc/$name
-	MAKEFLAGS="-j1" make install DESTDIR=$PKG
-	rm -f $PKG/usr/bin/ivtv-ctl
-  	mv $PKG/lib/udev $PKG/usr/lib/
-  	rm -rf $PKG/lib
+	./configure --prefix=/usr \
+	            --sysconfdir=/etc/$name
+
+        MAKEFLAGS="-j1" make install DESTDIR=$PKG
+
+        rm -f $PKG/usr/bin/ivtv-ctl
+  	
+	mv $PKG/lib/udev $PKG/usr/lib/
+  	
+	rm -rf $PKG/lib
+	
 	# Remove la files
 	find $PKG -name '*.la' | xargs rm -v
 }
