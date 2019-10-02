@@ -30,8 +30,4 @@ package() {
 
   # remove Slackware's makepkg completion
   rm "$PKG/usr/share/bash-completion/completions/makepkg"
-
-  # remove completions which overlap with util-linux
-  rm "$PKG/usr/share/bash-completion/completions"/{u,}mount
-
 }
