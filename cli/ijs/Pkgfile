@@ -2,7 +2,7 @@ description="A library which implements a protocol for transmission of raster pa
 url="http://www.linuxfoundation.org/collaborate/workgroups/openprinting"
 
 packager="Yaolinux Team"
-maintainer=(rems"
+maintainer="rems"
 
 name=ijs
 version=0.35
