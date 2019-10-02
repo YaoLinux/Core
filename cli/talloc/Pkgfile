@@ -2,10 +2,12 @@ makedepends=(python docbook-xsl libxslt)
 
 description="Hierarchical, reference counted memory pool system with destructors."
 url="https://talloc.samba.org"
+
 packager="Yaolinux Team"
+maintainer="rems"
 
 name=talloc
-version=2.2.0
+version=2.3.0
 
 source=(https://www.samba.org/ftp/$name/$name-$version.tar.gz)
 
