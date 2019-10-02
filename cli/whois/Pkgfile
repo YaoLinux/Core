@@ -1,17 +1,17 @@
 description="Client-side application which queries directory service"
 url="http://ftp.debian.org/debian/pool/main/w/whois"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=whois
-version=5.4.1
-release=1
+version=5.5.1
 
 source=(https://github.com/rfc1036/$name/archive/v$version/$name-$version.tar.gz)
 
-
 build() {
 cd $name-$version
+
 make prefix=/usr 
 make prefix=/usr BASEDIR=$PKG install-whois
 make prefix=/usr BASEDIR=$PKG install-mkpasswd
