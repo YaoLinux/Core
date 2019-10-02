@@ -1,24 +1,29 @@
 description="Providing application developers a predictable API with which to access Data Sources"
 url="http://www.unixodbc.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=unixodbc
-version=2.3.6
-release=2
+version=2.3.7
 
 source=(ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-$version.tar.gz)
 
 build() { 
 cd unixODBC-$version
-./configure --prefix=/usr --sysconfdir=/etc/unixODBC \
---enable-gui=no
+./configure --prefix=/usr \
+            --sysconfdir=/etc/unixODBC \
+            --enable-gui=no
+
 make
 }
+
 package() {
 cd unixODBC-$version
 make DESTDIR=$PKG install
+
 find doc -name "Makefile*" -delete
+
 chmod 644 doc/{lst,ProgrammerManual/Tutorial}/*
 
 install -vm755 -d /usr/share/doc/unixODBC-$version
