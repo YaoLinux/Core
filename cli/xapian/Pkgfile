@@ -1,18 +1,24 @@
 description="Xapian is an open source search engine library."
 url="http://oligarchy.co.uk/xapian.html"
+
 packager="Yaolinux Team"
+maintainer="rems"
 
 name=xapian
-version=1.4.5
+version=1.4.12
 
 source=( http://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz)
 build() {
+
 cd $name-core-$version
+
 ./configure --prefix=/usr \
---disable-static \
---docdir=/usr/share/doc/xapian-core-$version
+            --disable-static \
+            --docdir=/usr/share/doc/xapian-core-$version
+
 make
 make DESTDIR=$PKG install
 
+# Obsolet libs
 rm $PKG/usr/lib/libxapian.la
 }
