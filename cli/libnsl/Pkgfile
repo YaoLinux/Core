@@ -16,7 +16,7 @@ build() {
 
 cd $name-$version
 
-./autogen.sh
+autoreconf -fiv
 
 ./configure --prefix=/usr \
             --sysconfdir=/etc \
