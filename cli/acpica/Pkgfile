@@ -12,7 +12,7 @@ version=20190816
 source=(https://github.com/acpica/acpica/archive/R08_16_19.tar.gz)
 
 build(){
-  cd $name-R02_15_19
+  cd $name-R08_16_19
   make
 }
 
