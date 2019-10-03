@@ -10,7 +10,7 @@ version=1.36
 source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2
         gawk5.diff)
 
-prpare() {
+prepare() {
 cd $name-$version
 
 patch -Np1 -i ../gawk5.diff
