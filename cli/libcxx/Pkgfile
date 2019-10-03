@@ -13,9 +13,9 @@ run=(python)
 name=libcxx
 version=8.0.1
 
-source=(https://releases.llvm.org/$version/llvm-$version.src.tar.xz
-        https://releases.llvm.org/$version/libcxx-$version.src.tar.xz
-        https://releases.llvm.org/$version/libcxxabi-$version.src.tar.xz)
+source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
+        https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/libcxx-$version.src.tar.xz
+        https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/libcxxabi-$version.src.tar.xz)
 
 prepare() {
   [[ -d llvm ]] || mkdir llvm
