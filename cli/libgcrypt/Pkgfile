@@ -14,9 +14,6 @@ source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2 )
 build=autotools
 
 package() {
-install -v -dm755 $PKG/usr/share/doc/libgcrypt-$version
-install -v -m644 README doc/{README.apichanges,fips*,libgcrypt*} \
-                 $PKG/usr/share/doc/libgcrypt-$version
 
 # Obsolet lib
 rm $PKG/usr/lib/libgcrypt.la
