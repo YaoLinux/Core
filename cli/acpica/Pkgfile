@@ -17,6 +17,6 @@ build(){
 }
 
 package() {
-  cd $name-R02_15_19
+  cd $name-R08_16_19
   make DESTDIR=${PKG} install
 }
