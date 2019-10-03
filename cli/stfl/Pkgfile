@@ -1,7 +1,7 @@
 description="Library which implements a curses-based widget set for text terminals"
 url="http://www.clifford.at/stfl"
 
-maintainer="rems
+maintainer="rems"
 packager="Yaolinux Team"
 makedepends=(ncurses)
 
