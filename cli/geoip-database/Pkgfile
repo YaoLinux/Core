@@ -5,13 +5,13 @@ description="GeoLite2 IP geolocation databases compiled by MaxMind"
 url="http://www.maxmind.com/app/c"
 
 name=geoip-database
-version=20190212
+version=20191001
 
 source=(https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz)
 
 build() {
 
-  cd GeoLite2-City_20190212
+  cd GeoLite2-City_${version}
 
   install -d "$PKG/usr/share/GeoIP"
   install -m644 -t "$PKG/usr/share/GeoIP" GeoLite2-City.mmdb
