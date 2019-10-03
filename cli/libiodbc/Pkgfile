@@ -13,7 +13,7 @@ source=(https://codeload.github.com/openlink/iODBC/tar.gz/v$version)
 
 build() {
 
-cd IODBC-$version
+cd iODBC-$version
 ./configure --prefix=/usr \
             --disable-static \
             --includedir=/usr/include/libiodbc \
