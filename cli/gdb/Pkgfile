@@ -1,3 +1,5 @@
+makedepends=(python)
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,7 +15,8 @@ build() {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-	            --with-system-readline
+	            --with-system-readline \
+		    --with-python=(which python3)
 	
 	make
 }
