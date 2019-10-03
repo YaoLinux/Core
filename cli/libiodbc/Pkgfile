@@ -9,7 +9,7 @@ version=3.52.13
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://codeload.github.com/openlink/iODBC/tar.gz/v$version/iODBC-$version.tar.gz)
+source=(https://github.com/openlink/iODBC/archive/v$version.tar.gz)
 
 build() {
 
