@@ -13,11 +13,10 @@ source=(https://github.com/lsof-org/lsof/archive/${version}/${name}-${version}.t
 
 build () {
 
-	cd $name\_$version
-
-	tar -xf lsof_4.91_src.tar
+	cd $name-$version
 	
-	cd lsof_4.91_src           
+        sed -i 's|/\* #define\tHASSECURITY\t1 \*/|#define\tHASSECURITY\t1|' dialects/linux/machine.h
+        sed -i "s|.so ./version|.ds VN ${pkgver}|" -i Lsof.8
 	
 	./Configure -n linux       
 	
