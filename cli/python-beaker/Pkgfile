@@ -7,6 +7,8 @@ maintainer="rems"
 name=python-beaker
 version=1.11.0
 
+_name=Beaker
+
 source=(https://files.pythonhosted.org/packages/source/B/Beaker/Beaker-$version.tar.gz)
 
 build=python3
