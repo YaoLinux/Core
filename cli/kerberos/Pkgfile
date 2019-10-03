@@ -44,6 +44,6 @@ package()  {
     cp -vfr ../doc/*  $PKG/usr/share/doc/krb5-$version
 
 # Service
-    cd ../yaolinux-${yaolinux_version}
+    cd ../../yaolinux-${yaolinux_version}
     make DESTDIR=$PKG install-krb5
 }
