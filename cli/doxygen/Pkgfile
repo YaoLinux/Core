@@ -1,4 +1,4 @@
-makdedepends=(python2 cmake xapian)
+makedepends=(python2 cmake xapian)
 
 packager="Yaolinux Team"
 maintainer="sipo"
