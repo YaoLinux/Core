@@ -1,4 +1,4 @@
-makedpends=(apr apr-util neon expat sqlite db cyrus-sasl serf lz4)
+makedepends=(apr apr-util neon expat sqlite db cyrus-sasl serf lz4)
 
 description="Version control System (Replacement of cvs)"
 url="http://subversion.tigris.org"
