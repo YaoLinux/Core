@@ -2,7 +2,7 @@ description="Caching & sessions WSGI middleware for use with web apps and stand-
 url="https://pypi.org/project/Beaker/"
 
 packager="Yaolinux Team"
-maintainer="rems
+maintainer="rems"
 
 name=python-beaker
 version=1.11.0
