@@ -13,8 +13,7 @@ build() {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-	            --with-system-readline \
-		    --with-python=$(which python3.7)
+	            --with-system-readline
 	
 	make
 }
