@@ -4,7 +4,7 @@ description="Backport of the concurrent.futures package from Python 3.2"
 url="https://github.com/agronholm/pythonfutures"
 
 packager="Yaolinux Team"
-maintainer="rems
+maintainer="rems"
 
 name=python2-futures
 version=3.3.0
