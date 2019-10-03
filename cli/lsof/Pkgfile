@@ -9,7 +9,7 @@ maintainer="rems"
 name=lsof
 version=4.93.2
 
-source=(http://ftp.u-strasbg.fr/securite/lsof/lsof_$version.tar.gz)
+source=(https://github.com/lsof-org/lsof/archive/${version}/${name}-${version}.tar.gz)
 
 build () {
 
