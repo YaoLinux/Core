@@ -14,6 +14,9 @@ source=(https://github.com/openlink/iODBC/archive/v$version.tar.gz)
 build() {
 
 cd iODBC-$version
+
+./autogen.sh
+
 ./configure --prefix=/usr \
             --disable-static \
             --includedir=/usr/include/libiodbc \
