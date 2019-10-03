@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=live
-version=2019.05.12
+version=2019.09.30
 
 source=(http://www.live555.com/liveMedia/public/${name}.$version.tar.gz)
 
