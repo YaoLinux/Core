@@ -7,7 +7,7 @@ maintainer="rems"
 name=libdmtx
 version=0.7.5
 
-source=(https://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
+source=(https://github.com/dmtx/libdmtx/archive/v$version/$name-$version.tar.gz)
 
 package() {
 
