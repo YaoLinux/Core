@@ -1,4 +1,4 @@
-makdepends=(git cmake python2-setuptools)
+makedepends=(git cmake python2-setuptools)
 
 packager="Yaolinux Team"
 maintainer="sipo"
