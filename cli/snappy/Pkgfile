@@ -1,3 +1,5 @@
+makedepends=(cmake)
+
 description="A fast compressor/decompressor library"
 url="http://code.google.com/p/snappy/"
 
@@ -12,15 +14,16 @@ version=1.1.7
 source=(https://github.com/google/snappy/archive/$version.tar.gz)
 
 build () {
-cd $name-$version
-
-autoreconf -fiv
-
-touch ./README
+mkdir -pv build && cd build
 
 CXXFLAGS+=\ -DNDEBUG
 
-./configure --prefix=/usr
+cmake \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+    -DBUILD_SHARED_LIBS=yes \
+    ../$name-$version
+
 make
 make DESTDIR=$PKG install
 
