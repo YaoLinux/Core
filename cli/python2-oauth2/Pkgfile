@@ -4,7 +4,7 @@ url="https://github.com/simplegeo/python-oauth2"
 maintainer="rems"
 packager="Yaolinux Team"
 
-mkedepends=(python2-httplib2 python2-setuptools)
+makedepends=(python2-httplib2 python2-setuptools)
 
 name=python2-oauth2
 version=1.9.0
