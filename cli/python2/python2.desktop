@@ -1,0 +1,9 @@
+[Desktop Entry]
+Categories=Development;Documentation
+Exec=xdg-open file:///usr/share/doc/$name-$version/index.html
+Icon=$name
+StartupNotify=false
+Terminal=false
+Type=Application
+Name=Python 2 Documentation
+Name[fr]=Documentation Python
