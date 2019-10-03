@@ -8,7 +8,7 @@ maintainer="rems"
 name=xa
 version=2.3.9
 
-source=(http://www.floodgap.com/retrotech/xa/dists/xa-2.3.8.tar.gz)
+source=(http://www.floodgap.com/retrotech/xa/dists/xa-$version.tar.gz)
 
 build(){
 	cd ${name}-${version}
