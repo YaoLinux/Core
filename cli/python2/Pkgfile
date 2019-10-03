@@ -49,16 +49,9 @@ build() {
 
     mkdir -p $PKG/usr/share/applications
     
-    echo "[Desktop Entry]
-Categories=Development;Documentation
-Exec=xdg-open file:///usr/share/doc/$name-$version/index.html
-Icon=$name
-StartupNotify=false
-Terminal=false
-Type=Application
-Name=Python 2 Documentation
-Name[fr]=Documentation Python" > $PKG/usr/share/applications/$name.desktop
-    install -Dm644 $SRC/$name.png \
+    mv -v $name.desktop $PKG/usr/share/applications/$name.desktop
+    
+    install -Dm644 $name.png \
         $PKG/usr/share/icons/hicolor/48x48/apps/$name.png
 }
 
