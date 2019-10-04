@@ -11,6 +11,6 @@ version=2.7
 
 _name=cryptography
 
-source=(http://ftp.dlitz.net/pub/dlitz/crypto/pycrypto/pycrypto-$version.tar.gz)
+source=(https://pypi.io/packages/source/c/cryptography/cryptography-$version.tar.gz)
 
 build=python2
