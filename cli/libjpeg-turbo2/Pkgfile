@@ -33,5 +33,5 @@ make DESTDIR=$PKG \
 exampledir="/usr/share/doc/${name}-$version" \
                   install
 
-install -m 644 jpegint.h "${PKG}/usr/include" # required by other software
+install -m 644 libjpeg-turbo/jpegint.h "${PKG}/usr/include" # required by other software
 }
