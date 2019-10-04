@@ -9,7 +9,7 @@ maintainer="rems"
 name=python2-xdg
 version=0.26
 
-source=(http://people.freedesktop.org/~takluyver/pyxdg-$version.tar.gz)
+source=(https://files.pythonhosted.org/packages/source/p/pyxdg/pyxdg-${version}.tar.gz)
 
 build() {
 	cd pyxdg-$version
