@@ -17,13 +17,13 @@ source=(http://search.cpan.org/CPAN/authors/id/P/PE/PETDANCE/$name-v$version.tar
 
 
 build(){
-  cd "$name-$version"
+  cd "$name-v$version"
   PERL_MM_USE_DEFAULT=1 perl Makefile.PL INSTALLDIRS=vendor
   make
 }
 
 
 package() {
-  cd "$name-$version"
+  cd "$name-v$version"
   make DESTDIR="$PKG" install
 }
