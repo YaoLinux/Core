@@ -9,11 +9,9 @@ url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
 name=js60
 version=60.9.0
 
-source=(http://ftp.acc.umu.se/pub/gnome/teams/releng/tarballs-needing-help/mozjs/mozjs-$version.tar.bz2)
+source=(https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz)
 
 prepare(){
-
-    cd mozjs-$version
 
     mkdir mozjs-build
     cd    mozjs-build
@@ -21,8 +19,8 @@ prepare(){
 
 build() {
 
-   cd mozjs-$version/mozjs-build
-   ../js/src/configure --prefix=/usr       \
+   cd mozjs-build
+   ../firefox-$version/js/src/configure --prefix=/usr       \
                        --with-intl-api     \
                        --with-system-zlib  \
                        --with-system-nspr  \
@@ -37,10 +35,11 @@ build() {
 
 package() {
 
-   cd mozjs-$version/mozjs-build
+   cd mozjs-build
    make DESTDIR=$PKG install
 
-  # Already present on js38
+  find "$PKG"/usr/{lib/pkgconfig,include} -type f -exec chmod -c a-x {} +
+  # Already present on js52
   rm $PKG/usr/lib/libjs_static.ajs
 
 }
