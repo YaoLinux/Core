@@ -16,6 +16,6 @@ source=(https://files.pythonhosted.org/packages/ad/99/5b2e99737edeb28c71bcbec5b5
 
 build() {
 
-cd dateutil-$version
+cd python-dateutil-$version
 python2 setup.py build install --root=$PKG --optimize=1
 }
