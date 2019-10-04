@@ -9,7 +9,9 @@ packager="Yaolinux Team"
 name=python2-httplib2
 version=0.13.1
 
-source=(https://files.pythonhosted.org/packages/ce/ed/803905d670b52fa0edfdd135337e545b4496c2ab3a222f1449b7256eb99f/httplib2-$version.tar.gz)
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/httplib2/httplib2/archive/v$version.tar.gz)
 
 build() {
 
