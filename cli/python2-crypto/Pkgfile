@@ -4,7 +4,7 @@ url="http://www.dlitz.net/software/pycrypto/"
 maintainer="rems"
 packager="Yaolinux Team"
 
-makedepends=(python2)
+makedepends=(python2-setuptools)
 
 name=python2-crypto
 version=2.7
