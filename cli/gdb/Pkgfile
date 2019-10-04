@@ -27,6 +27,6 @@ package() {
 	cd $name-$version
 	make -C gdb DESTDIR=$PKG install
 
-	for file in diagnostics.h ansidecl.h bfd.h bfd_stdint.h bfdlink.h dis-asm.h plugin-api.h symcat.h; do
+	for file in ansidecl.h bfd.h bfd_stdint.h bfdlink.h dis-asm.h plugin-api.h symcat.h; do
 	rm -v $PKG/usr/include/$file; done
 }
