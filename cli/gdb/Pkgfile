@@ -8,6 +8,7 @@ url="http://www.sourceware.org/gdb/"
 
 name=gdb
 version=8.3.1
+release=2
 
 source=(https://ftp.gnu.org/gnu/gdb/$name-$version.tar.xz)
 
@@ -28,5 +29,7 @@ package() {
 
 # Most of the locale are allready present from binutils, beter get rid of all of them
 	rm -r $PKG/usr/share/locale
-	rm $PKG/usr/include/diagnostics.h
+	
+	for file in diagnostics.h ansidecl.h bfd.h bfd_stdint.h bfdlink.h dis-asm.h plugin-api.h symcat.h
+	rm -v $PKG/usr/include/$file
 }
