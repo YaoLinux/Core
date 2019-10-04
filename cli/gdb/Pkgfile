@@ -30,6 +30,6 @@ package() {
 # Most of the locale are allready present from binutils, beter get rid of all of them
 	rm -r $PKG/usr/share/locale
 	
-	for file in diagnostics.h ansidecl.h bfd.h bfd_stdint.h bfdlink.h dis-asm.h plugin-api.h symcat.h
-	rm -v $PKG/usr/include/$file
+	for file in diagnostics.h ansidecl.h bfd.h bfd_stdint.h bfdlink.h dis-asm.h plugin-api.h symcat.h; do
+	rm -v $PKG/usr/include/$file; done
 }
