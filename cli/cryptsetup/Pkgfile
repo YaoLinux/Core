@@ -9,7 +9,7 @@ url="https://gitlab.com/cryptsetup/cryptsetup/"
 name=cryptsetup
 version=2.2.1
 
-source=(https://www.kernel.org/pub/linux/utils/cryptsetup/v2.1/$name-${version}.tar.xz)
+source=(https://www.kernel.org/pub/linux/utils/cryptsetup/v2.2/$name-${version}.tar.xz)
 
 build(){
 
