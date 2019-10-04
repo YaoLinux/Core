@@ -9,7 +9,7 @@ maintainer="rems"
 name=python2-pathlib
 version=1.0.1
 
-source=(http://pypi.python.org/packages/source/p/pathlib/pathlib-${version}.tar.gz)
+source=(https://pypi.python.org/packages/source/p/pathlib/pathlib-${version}.tar.gz)
 
 build() {
 cd pathlib-$version
