@@ -17,7 +17,7 @@ build() {
 	./configure --prefix=/usr \
 	            --disable-static \
 		    --disable-fd-passing \
-                    --disable-gpgsm-test
+                    --disable-gpg-test
 	make
 }
 
