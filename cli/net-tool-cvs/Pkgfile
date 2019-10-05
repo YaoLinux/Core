@@ -33,9 +33,4 @@ make update DESTDIR=$PKG/usr install
   # hostname is provided by inetutils
   rm $PKG/usr/bin/{hostname,dnsdomainname,domainname}
   rm -rf $PKG/usr/share/man/man1
-
-ls $PKG
-
-mv $PKG/bin $PKG/usr
-mv $PKG/sbin $PKG/usr
 }
