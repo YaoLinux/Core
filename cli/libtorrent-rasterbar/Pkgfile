@@ -15,7 +15,7 @@ source=(https://github.com/arvidn/libtorrent/releases/download/libtorrent-${_ver
 build() {
 
 mkdir -v py2 py3
-  cd libtorrent-libtorrent_"${_version}"
+  cd $name-$version
 
 sed -i 's/-msse4.2//' configure.ac
 
@@ -30,12 +30,12 @@ _boost="boost_python"
 
 CXXFLAGS="$CXXFLAGS -std=c++11" \
   PYTHON=/usr/bin/python2 \
-  ../libtorrent-libtorrent_${_version}/configure --prefix=/usr \
-                                                 --enable-python-binding \
-                                                 --enable-examples \
-                                                 --disable-static \
-                                                 --with-libiconv \
-                                                 --with-boost-python=$_boost
+  ../$name-$version/configure --prefix=/usr \
+                              --enable-python-binding \
+                              --enable-examples \
+                              --disable-static \
+                              --with-libiconv \
+                              --with-boost-python=$_boost
 
 make
 make DESTDIR=$PKG install
@@ -48,7 +48,7 @@ _boost="boost_python3"
 
 CXXFLAGS="$CXXFLAGS -std=c++11" \
   PYTHON=/usr/bin/python3 \
-  ../libtorrent-libtorrent_${_version}/configure --prefix=/usr \
+  ../$name-$version/configure --prefix=/usr \
                                                  --enable-python-binding \
                                                  --enable-examples \
                                                  --disable-static \
