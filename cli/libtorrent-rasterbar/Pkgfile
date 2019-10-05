@@ -19,7 +19,7 @@ mkdir -v py2 py3
 
 sed -i 's/-msse4.2//' configure.ac
 
-./autotool.sh
+autoreconf -iv
 
 cp -a * ../py2
 cp -a * ../py3
