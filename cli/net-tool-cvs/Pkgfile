@@ -14,7 +14,7 @@ source=()
 unset MAKEFLAGS
 
 prepare() {
-git clone git clone http://git.code.sf.net/p/net-tools/code.git $name
+git clone http://git.code.sf.net/p/net-tools/code.git $name
 cd $name
 git checkout 0eebece8c9
 }
