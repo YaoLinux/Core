@@ -9,9 +9,9 @@ packager="Yaolinux Team"
 name=llvm
 version=8.0.1
 
-source=(${url}releases/$version/$name-$version.src.tar.xz
-	${url}releases/$version/cfe-$version.src.tar.xz
-	${url}releases/$version/compiler-rt-$version.src.tar.xz)
+source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-$version.src.tar.xz
+	https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/cfe-$version.src.tar.xz
+	https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/compiler-rt-$version.src.tar.xz)
 
 build() {
 
