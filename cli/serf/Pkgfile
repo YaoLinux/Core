@@ -22,7 +22,10 @@ sed -i "/Alias/s:install_static,::"  SConstruct
 
 patch -p1 -i ../scons-python3.patch
 
-scons PREFIX=/usr
+scons CFLAGS="${CFLAGS}" \
+      LINKFLAGS="${LDFLAGS}" \
+      PREFIX=/usr \
+      GSSAPI=/usr/bin/krb5-config
 	
 scons PREFIX=$PKG/usr install
 }
