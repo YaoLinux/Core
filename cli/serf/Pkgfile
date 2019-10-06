@@ -16,10 +16,6 @@ build() {
 
 cd $name-$version
 	
-sed -i "/Append/s:RPATH=libdir,::"   SConstruct 
-sed -i "/Default/s:lib_static,::"    SConstruct 
-sed -i "/Alias/s:install_static,::"  SConstruct 
-
 patch -p1 -i ../scons-python3.patch
 
 scons CFLAGS="${CFLAGS}" \
