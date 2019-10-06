@@ -6,11 +6,14 @@ maintainer="rems"
 
 name=scons
 version=3.1.1
+release=2
 
 source=(https://freefr.dl.sourceforge.net/project/scons/scons/$version/scons-$version.tar.gz)
 
 build () { 
 cd $name-$version
+
+sed -i 's/env python/&3/' script/scons*
 
 python3 setup.py install --standard-lib --prefix=/usr --install-data=/usr/share --root=$PKG --optimize=1;
 
