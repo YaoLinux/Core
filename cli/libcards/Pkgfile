@@ -7,7 +7,7 @@ maintainer="Tnut, Gianni"
 packager="Yaolinux Team"
 
 name=libcards
-version=2.4.99.1
+version=2.4.101
 
 source=(http://downloads.tuxfamily.org/nutyx/files/cards-$version.tar.gz)
 
@@ -17,7 +17,7 @@ cd cards-$version
 make libs
 make DESTDIR=$PKG install-libs
 
-make -C documentaion DESTDIR=$PKG html install
+make -C documentation DESTDIR=$PKG html install
 }
 
 doc() {
