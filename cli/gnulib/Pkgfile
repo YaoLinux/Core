@@ -8,6 +8,7 @@ url="http://www.gnu.org/software/gnulib"
 
 name=gnulib
 version=0.1.2033.gf402ce6e1
+release=2
 
 source=()
 
@@ -38,8 +39,8 @@ cd $name
   cp -r doc tests $PKG/usr/share/$name/
 
   install -dm755 $PKG/usr/bin
-  ln -s /usr/share/gnulib-git/gnulib-tool $PKG/usr/bin/
-  ln -s /usr/share/gnulib-git/check-module $PKG/usr/bin/
+  ln -s /usr/share/gnulib/gnulib-tool $PKG/usr/bin/
+  ln -s /usr/share/gnulib/check-module $PKG/usr/bin/
 
   install -Dm644 doc/gnulib.info $PKG/usr/share/info/gnulib.info
   install -Dm644 COPYING $PKG/usr/share/licenses/${pkgname}/COPYING
