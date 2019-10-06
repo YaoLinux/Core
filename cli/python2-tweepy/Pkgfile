@@ -9,7 +9,7 @@ packager="Yaolinux Team"
 name=python2-tweepy
 version=3.8.0
 
-source=(https://files.pythonhosted.org/packages/9c/dc/ac8f5648ea96b7a48e9a17f55a8f77eba470cbba439d7e2aa92d9b6ff811/tweepy-$version.tar.gz)
+source=(https://github.com/tweepy/tweepy/archive/v${version}/tweepy-${version}.tar.gz)
 
 build() {
 
