@@ -17,6 +17,7 @@ build(){
   cd $name-$version
  
  ./build-aux/autogen.sh -r
+ ./build-aux/autogen.sh
  
   ./configure --prefix=/usr
   make
