@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=ruby
 version=2.6.5
+release=2
 
 source=(http://cache.ruby-lang.org/pub/ruby/2.6/ruby-$version.tar.xz)
 
@@ -20,4 +21,8 @@ cd ruby-$version
 
 make
 make DESTDIR=$PKG install
+
+# Presents in ruby-bundler
+rm -v /$PKG/usr/bin/bundle{,r}
+
 }
