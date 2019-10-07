@@ -29,5 +29,5 @@ make DESTDIR=$PKG install
 
 # Documentation
 mkdir -p $PKG/usr/share/doc/$name-$version
-cp -vr ../libmusicbrainz-$version/docs/ $PKG/usr/share/doc/$name-$version
+cp -vr docs/ $PKG/usr/share/doc/$name-$version
 }
