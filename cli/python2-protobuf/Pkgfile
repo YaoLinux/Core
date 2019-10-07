@@ -42,12 +42,12 @@ build() {
   ./configure
   make
 
-  cd "../$_name-$version/gmock"
+  cd "../gmock"
   autoreconf -fiv
   ./configure
   make
 
-  cd "../$_name-$version"
+  cd ..
   ./configure --prefix=/usr
   make
 
