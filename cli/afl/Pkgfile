@@ -12,13 +12,13 @@ version=2.56b
 source=(https://github.com/google/AFL/archive/v${version}/${name}-${version}.tar.gz)
 
 build(){
-  cd ${name}-${version}
+  cd AFL-${version}
   make PREFIX=/usr
   make -C llvm_mode PREFIX=/usr
 }
 
 package() {
-  cd ${name}-${version}
+  cd AFL-${version}
   make PREFIX=/usr DESTDIR="${PKG}" install
   install -Dm 644 llvm_mode/README.llvm -t "${PKG}/usr/share/doc/${name}"
 }
