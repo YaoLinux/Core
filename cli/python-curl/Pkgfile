@@ -10,6 +10,17 @@ name=python-curl
 version=7.43.0.3
 _name=pycurl
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/pycurl/pycurl/archive/REL_${version//./_}.tar.gz)
 
 build=python3
+
+prepare() {
+mv pycurl-REL_${version//./_} pycurl-$version
+
+cd pycurl-$version
+find . -name '*.py' -exec sed -i -e "s|#! /usr/bin/env python|#!/usr/bin/env python3|" {} +
+    sed -i 's/"share", "doc", PACKAGE/"share", "doc", "python-pycurl"/' setup.py
+  sed -e "s/nosetests/nosetests3/" -e "s/python/python3/" -i tests/run.sh
+}
