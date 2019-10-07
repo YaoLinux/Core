@@ -10,6 +10,6 @@ name=python-curl
 version=7.43.0.3
 _name=pycurl
 
-source=(https://dl.bintray.com/pycurl/pycurl/pycurl-$version.tar.gz)
+source=(https://github.com/pycurl/pycurl/archive/REL_${version//./_}.tar.gz)
 
 build=python3
