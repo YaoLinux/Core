@@ -1,4 +1,4 @@
-makedepends=(lapack python2-setuptools cython)
+makedepends=(lapack cython)
 
 description="Scientific tools for Python"
 url="http://numpy.scipy.org/"
