@@ -15,7 +15,7 @@ source=(https://github.com/eqrion/cbindgen/archive/v$version.tar.gz)
 
 build(){
   cd $name-$version
-  cargo build --release --frozen
+  cargo build --release
 }
 
 package() {
