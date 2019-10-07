@@ -9,11 +9,11 @@ url="http://www.ece.uvic.ca/~frodo/jasper/"
 name=jasper
 version=2.0.16
 
-source=(http://www.ece.uvic.ca/~frodo/jasper/software/$name-$version.tar.gz
+source=(https://github.com/mdadams/jasper/archive/version-${version}.tar.gz
         jasper-1.900.1-fix-filename-buffer-overflow.patch)
 
 prepare() {
-cd $name-$version
+cd $name-version-$version
 patch -p1 < ../jasper-1.900.1-fix-filename-buffer-overflow.patch
 sed -r 's|(CMAKE_SKIP_BUILD_RPATH) FALSE|\1 TRUE|g' -i CMakeLists.txt
 }
@@ -30,7 +30,7 @@ build() {
               -DCMAKE_SKIP_INSTALL_RPATH=YES \
               -DCMAKE_INSTALL_DOCDIR=/usr/share/doc/jasper-$version \
 	      -DCMAKE_SKIP_RPATH=ON \
-              ../$name-$version
+              ../$name-version-$version
 	make
 
 }
