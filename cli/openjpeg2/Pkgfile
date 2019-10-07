@@ -20,14 +20,13 @@ mkdir -pv build && cd build
 
 cmake -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_INSTALL_PREFIX=/usr \
-      -DBUILD_STATIC_LIBS=OFF ../openjpeg-$version
+      -DBUILD_DOC=on \
+      -DBUILD_STATIC_LIBS=OFF \
+      -DBUILD_SHARED_LIBS=ON \
+      ../openjpeg-$version
 
 make
 make DESTDIR=$PKG install
 
-        pushd ../doc
-	for man in man/man?/* ; do
-		install -v -D -m 644 $man $PKG/usr/share/$man
-	done
-	popd
+rmdir "${PKG}"/usr/share/doc/openjpeg-*
 }
