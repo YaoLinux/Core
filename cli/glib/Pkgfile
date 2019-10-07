@@ -19,7 +19,7 @@ prepare() {
 
 build() {
 	cd build-glib
-	meson --prefix=/usr -Dman=true -Dselinux=false ../$name-$version
+	meson --prefix=/usr -Dman=true -Dselinux=disable ../$name-$version
 	ninja
 }
 
