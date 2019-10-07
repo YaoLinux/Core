@@ -14,12 +14,12 @@ PKGMK_KEEP_SOURCES="no"
 source=(https://github.com/eqrion/cbindgen/archive/v$version.tar.gz)
 
 build(){
-  cd $name
+  cd $name-$version
   cargo build --release --frozen
 }
 
 package() {
-  cd $name
+  cd $name-$version
   install -Dt "$PKG/usr/bin" target/release/cbindgen
   install -Dt "$PKG/usr/share/doc/$name" -m644 README.md
 }
