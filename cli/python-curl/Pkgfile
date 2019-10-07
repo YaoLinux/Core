@@ -18,4 +18,7 @@ build=python3
 
 prepare() {
 mv pycurl-REL_${version//./_} pycurl-$version
+
+cd pycurl-$version
+make
 }
