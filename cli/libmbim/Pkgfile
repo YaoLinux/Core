@@ -1,4 +1,4 @@
-makedepends=(libgudev gtk-doc glib python help2man gtk-doc systemd)
+makedepends=(libgudev gtk-doc glib python help2man gtk-doc python-pygments systemd)
 
 description="MBIM modem protocol helper library"
 url="http://www.freedesktop.org/wiki/Software/libmbim/"
