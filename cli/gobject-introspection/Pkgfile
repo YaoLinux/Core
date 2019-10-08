@@ -11,19 +11,4 @@ version=1.62.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
-build() {
-
-	cd $name-$version
-	./configure --prefix=/usr \
-                    --disable-static
-	make
-}
-
-package() {
-
-	cd $name-$version
-	make DESTDIR=$PKG install
-
-# Obsolets libs
-	find $PKG/usr/lib -name "*.la"
-}
+build=meson
