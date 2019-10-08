@@ -1,4 +1,4 @@
-makedepends=(gtk-doc libxml2 cmake gobject-introspection icu doxygen glib)
+makedepends=(libxml2 cmake gobject-introspection icu doxygen glib)
 
 description="Implementation of the iCalendar protocols and data formats."
 url="http://sourceforge.net/projects/freeassociation/"
@@ -19,6 +19,9 @@ cmake -G Ninja \
 -DCMAKE_INSTALL_PREFIX=/usr \
 -DCMAKE_INSTALL_LIBDIR=/usr/lib \
 -DCMAKE_BUILD_TYPE=Release  \
+-DGOBJECT_INTROSPECTION=true \
+-DICAL_BUILD_DOCS=false      \
+-DICAL_GLIB_VAPI=true \
 -DSHARED_ONLY=yes \
 ../$name-$version
 
