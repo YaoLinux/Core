@@ -16,7 +16,9 @@ PKGMK_KEEP_SOURCES="no"
 source=(https://github.com/swh/LRDF/archive/v$version.tar.gz)
 
 prepare() {
-  cd $_name-$version
+mv ${_name}-$version $name-version
+
+  cd $name-$version
   autoreconf -vfi
 }
 
