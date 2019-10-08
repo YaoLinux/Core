@@ -8,7 +8,7 @@ packager="Yaolinux Team"
  
 name=ovmf
 version=edk2-stable201905
-_openssl_ver=1.1.1d
+_openssl_ver=1.1.1b
 _toolchain_opt=GCC5
 
 source=(https://www.openssl.org/source/openssl-${_openssl_ver}.tar.gz)
