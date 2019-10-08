@@ -1,4 +1,4 @@
-makedepends=(glib pcre2 gtk-doc)
+makedepends=(glib pcre2 gtk-doc python-pygments)
 
 description="Library facilitates the common operations with sizes in bytes."
 url="https://github.com/storaged-project/libblockdev"
