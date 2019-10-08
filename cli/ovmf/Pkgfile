@@ -24,7 +24,7 @@ git checkout $version
 build() {
 
   rm -rv $name/CryptoPkg/Library/OpensslLib/openssl
-  ln -sv openssl-$_openssl_ver $name/CryptoPkg/Library/OpensslLib/openssl
+  ln -sv $SRC/openssl-$_openssl_ver $name/CryptoPkg/Library/OpensslLib/openssl
 
   if [ "$(uname -m)" != "x86_64" ]; then
       echo "This package must be built under the x86_64 architecture."
