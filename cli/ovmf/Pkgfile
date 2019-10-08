@@ -22,18 +22,14 @@ git checkout $version
 }
 
 build() {
-mkdir -pv bin
 
-  ln -sf /usr/bin/python2 bin/python
-  rm -rf $name/CryptoPkg/Library/OpensslLib/openssl
-  ln -sf openssl-$_openssl_ver $name/CryptoPkg/Library/OpensslLib/openssl
+  rm -rv $name/CryptoPkg/Library/OpensslLib/openssl
+  ln -sv openssl-$_openssl_ver $name/CryptoPkg/Library/OpensslLib/openssl
 
   if [ "$(uname -m)" != "x86_64" ]; then
       echo "This package must be built under the x86_64 architecture."
       false
   fi
-  
-  export PATH="${SRC}/bin:$PATH"
   
   cd $name
   
