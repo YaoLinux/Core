@@ -4,7 +4,7 @@ url="http://www.breakfastquay.com/rubberband/"
 packager="Yaolinux Team"
 maintainer="rems"
 
-makedepends=(ladspa libsamplerate fftw vamp-plugin-sdk)
+makedepends=(ladspa libsamplerate fftw vamp-plugin-sdk openjdk)
 
 name=rubberband
 version=1.8.2
@@ -20,6 +20,8 @@ autoreconf -fiv
 build() {
 
 cd $name-$version
+
+export JAVA_HOME="/opt/openjdk"
 
 ./configure --prefix=/usr
 
