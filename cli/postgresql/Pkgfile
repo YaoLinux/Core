@@ -10,7 +10,7 @@ PKGMK_GROUPS=(lib doc man devel service)
 
 name=postgresql
 version=11.5
-yaolinux_version=1.0RC1
+yaolinux_version=1.0-RC1
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
 	http://ftp.postgresql.org/pub/source/v$version/$name-$version.tar.bz2)
