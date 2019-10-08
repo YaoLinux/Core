@@ -21,7 +21,6 @@ cmake -G Ninja \
 -DCMAKE_BUILD_TYPE=Release  \
 -DGOBJECT_INTROSPECTION=true \
 -DICAL_BUILD_DOCS=false      \
--DICAL_GLIB_VAPI=true \
 -DSHARED_ONLY=yes \
 ../$name-$version
 
