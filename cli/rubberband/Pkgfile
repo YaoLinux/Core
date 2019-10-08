@@ -16,3 +16,15 @@ prepare() {
 cd $name-$version
 autoreconf -fiv
 }
+
+build() {
+
+cd $name-$version
+
+./configure --prefix=/usr
+
+make
+make jni
+
+make DESTDIR=$PKG install
+}
