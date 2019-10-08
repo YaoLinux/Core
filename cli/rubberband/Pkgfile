@@ -21,7 +21,7 @@ build() {
 
 cd $name-$version
 
-export JAVA_HOME="/opt/openjdk"
+export JAVA_HOME="/opt/jdk"
 
 ./configure --prefix=/usr
 
