@@ -20,6 +20,4 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libtelepathy-logger.la
 }
