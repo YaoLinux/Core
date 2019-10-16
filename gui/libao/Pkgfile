@@ -31,10 +31,5 @@ default_driver=alsa
 dev=default
 EOF
 
-# Obsolets libs
-rm $PKG/usr/lib/ao/plugins-4/libalsa.la
-rm $PKG/usr/lib/ao/plugins-4/liboss.la
-rm $PKG/usr/lib/ao/plugins-4/libpulse.la
-rm $PKG/usr/lib/libao.la
 
 }
