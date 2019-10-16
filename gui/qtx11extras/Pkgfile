@@ -22,5 +22,4 @@ make INSTALL_ROOT=$PKG install
   find "$PKG/usr/lib" -type f -name '*.prl' \
        -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 # Remove obsolet libs
-rm $PKG/usr/lib/libQt5X11Extras.la
 }
