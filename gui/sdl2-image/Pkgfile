@@ -23,6 +23,4 @@ package() {
 cd SDL2_image-$version
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libSDL2_image.la
 }
