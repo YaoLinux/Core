@@ -17,10 +17,4 @@ cd ${name}1-$version
 
 make
 make DESTDIR=$PKG install
-# Obsolet libs
-rm $PKG/usr/lib/libxmlsec1-gcrypt.la
-rm $PKG/usr/lib/libxmlsec1-gnutls.la
-rm $PKG/usr/lib/libxmlsec1-nss.la
-rm $PKG/usr/lib/libxmlsec1.la
-rm $PKG/usr/lib/libxmlsec1-openssl.la
 }
