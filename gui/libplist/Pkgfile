@@ -47,9 +47,4 @@ make DESTDIR=$PKG install
 popd
 install -D -m644 $name-$version/cython/plist.pxd $PKG/usr/include/plist/cython/plist.pxd
 
-# Obsolets libs
-rm $PKG/usr/lib/libplist++.la
-rm $PKG/usr/lib/libplist.la
-rm $PKG/usr/lib/python2.7/site-packages/plist.la
-rm $PKG/usr/lib/python3.7/site-packages/plist.la
 }
