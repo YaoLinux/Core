@@ -27,11 +27,6 @@ ln -s gconf.xml.defaults $PKG/etc/gconf/gconf.xml.system
 cd ..
 install -m755 gconf-merge-schema $PKG/usr/bin/
 
-# Obsolets libs
-rm $PKG/usr/lib/GConf/2/libgconfbackend-oldxml.la
-rm $PKG/usr/lib/GConf/2/libgconfbackend-xml.la
-rm $PKG/usr/lib/gio/modules/libgsettingsgconfbackend.la
-rm $PKG/usr/lib/libgconf-2.la
 
 }
 uptodate(){
