@@ -17,7 +17,6 @@ sed -e '/^libdocdir =/ s/$(book_name)/cairomm-1.12.2/' \
 }
 
 package() {
-rm $PKG/usr/lib/libcairomm-1.0.la
 }
 uptodate() {
 local url ext
