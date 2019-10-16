@@ -17,12 +17,6 @@ cd pygobject-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libpyglib-2.0-python.la
-rm $PKG/usr/lib/python2.7/site-packages/glib/_glib.la
-rm $PKG/usr/lib/python2.7/site-packages/gobject/_gobject.la
-rm $PKG/usr/lib/python2.7/site-packages/gtk-2.0/gio/_gio.la
-rm $PKG/usr/lib/python2.7/site-packages/gtk-2.0/gio/unix.la
 }
 uptodate(){
 local latest lastversion url
