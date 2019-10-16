@@ -18,8 +18,6 @@ cd $name-$version
 	    --disable-gl
 make
 make DESTDIR=$PKG install
-rm $PKG/usr/lib/*.la
-rm $PKG/usr/lib/cairo/*.la
 } 
 uptodate() {
 local url ext
