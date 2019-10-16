@@ -29,7 +29,5 @@ install -d -v -m755 $PKG/usr/share/gtk-doc/html/gegl/images
 install -v -m644 docs/images/*.{png,ico,svg} \
 $PKG/usr/share/gtk-doc/html/gegl/images
 
-# Obsolets libs
-find $PKG/usr/lib/ -name "*.la" | xargs rm -v
 
 }
