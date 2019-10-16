@@ -2,11 +2,12 @@ makedepends=(alsa-lib ffmpeg pulseaudio libsamplerate speex )
 
 description="Extra alsa plugins"
 url="http://www.alsa-project.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=alsa-plugins
-version=1.1.8
+version=1.1.9
 
 source=(ftp://ftp.alsa-project.org/pub/plugins/$name-$version.tar.bz2
 	$name.conf)
