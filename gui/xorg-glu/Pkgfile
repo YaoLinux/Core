@@ -19,6 +19,5 @@ cd ${_name}-$version
 
 make DESTDIR=$PKG install
 
-rm $PKG/usr/lib/libGLU.la
 
 }
