@@ -17,6 +17,5 @@ cd $name-$version
 
 make
 make DESTDIR=$PKG install
-# Obsolet libs
 
 }
