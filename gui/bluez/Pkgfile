@@ -67,6 +67,4 @@ install -m644 profiles/network/network.conf \
 install -v -dm755 $PKG/usr/share/doc/$name-$version
 install -v -m644 doc/*.txt $PKG/usr/share/doc/$name-$version
 
-# Obsolet lib
-rm $PKG/usr/lib/libbluetooth.la
 }
