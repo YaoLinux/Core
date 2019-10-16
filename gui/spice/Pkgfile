@@ -22,7 +22,5 @@ PYTHON=python2 ./configure --prefix=/usr \
                            --disable-celt051
 make
 make DESTDIR=$PKG install
-# Obsolet lib
 
-rm $PKG/usr/lib/libspice-server.la
 }
