@@ -49,6 +49,4 @@ build() {
   gconf-merge-schema $PKG/usr/share/gconf/schemas/$name.schemas --domain libgksu $PKG/etc/gconf/schemas/*.schemas
   rm -f $PKG/etc/gconf/schemas/*.schemas
 
-# Obsolet libs
-rm $PKG/usr/lib/libgksu2.la
 }
