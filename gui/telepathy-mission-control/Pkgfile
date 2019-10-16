@@ -22,6 +22,4 @@ cd $name-$version
             --disable-schemas-compile
 make
 make DESTDIR=$PKG install
-# Obsolet lib
-rm $PKG/usr/lib/libmission-control-plugins.la
 }
