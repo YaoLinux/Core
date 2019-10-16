@@ -28,6 +28,4 @@ cd ${_name}-$version
 	make
 	make DESTDIR=$PKG install
 
-# Obsolet libs
-rm $PKG/usr/lib/libxfconf-0.la
 }
