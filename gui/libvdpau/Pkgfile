@@ -16,7 +16,4 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libvdpau.la
-rm $PKG/usr/lib/vdpau/libvdpau_trace.la
 }
