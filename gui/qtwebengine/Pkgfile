@@ -20,9 +20,5 @@ build() {
   make
   make INSTALL_ROOT=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libQt5WebEngine.la
-rm $PKG/usr/lib/libQt5WebEngineCore.la
-rm $PKG/usr/lib/libQt5WebEngineWidgets.la
 
 }
