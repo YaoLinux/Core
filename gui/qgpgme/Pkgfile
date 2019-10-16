@@ -19,6 +19,4 @@ build() {
  cd lang/qt
  make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libqgpgme.la
 }
