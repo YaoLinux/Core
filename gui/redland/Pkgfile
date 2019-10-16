@@ -23,9 +23,5 @@ make
 
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/librdf.la
-rm $PKG/usr/lib/redland/librdf_storage_sqlite.la
-rm $PKG/usr/lib/redland/librdf_storage_virtuoso.la
  
 }
