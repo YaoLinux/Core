@@ -25,6 +25,4 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libclutter-1.0.la
 }
