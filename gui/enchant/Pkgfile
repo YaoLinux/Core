@@ -27,8 +27,5 @@ build() {
 	ln -sfv libenchant-2.so $PKG/usr/lib/libenchant.so
 	ln -sfv enchant-2.pc $PKG/usr/lib/pkgconfig/enchant.pc
 
-# Obsolets libs
-rm $PKG/usr/lib/enchant-2/enchant_aspell.la
-rm $PKG/usr/lib/libenchant-2.la
 
 }
