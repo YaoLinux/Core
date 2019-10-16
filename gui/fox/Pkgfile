@@ -18,8 +18,5 @@ build() {
 	--with-opengl=yes
 	make
 	make DESTDIR=$PKG install
-# Obsolets libs
-rm $PKG/usr/lib/libCHART-1.6.la
-rm $PKG/usr/lib/libFOX-1.6.la
 
 }
