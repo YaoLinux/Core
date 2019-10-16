@@ -21,5 +21,4 @@ cmake ../$name-$version \
 make 
 make DESTDIR=$PKG install
 
-# Obsolet lib
 }
