@@ -2,20 +2,26 @@ makedepends=(intltool gtk-update-icon-cache hicolor-icon-theme icon-naming-utils
 
 description="Adwaita icon theme."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
+maintainer="rems"
 
 run=(librsvg hicolor-icon-theme gtk-update-icon-cache)
 
 name=adwaita-icon-theme
-version=3.30.1
+version=3.34.0
+
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr
+
 make
 make DESTDIR=$PKG install
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
