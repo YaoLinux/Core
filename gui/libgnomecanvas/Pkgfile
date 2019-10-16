@@ -20,8 +20,5 @@ cd $SRC/${name}-${version}
 make
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libglade/2.0/libcanvas.la
-rm $PKG/usr/lib/libgnomecanvas-2.la
 
 }
