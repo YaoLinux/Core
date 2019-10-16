@@ -81,5 +81,4 @@ done
   sed -i "s|$SRC/${_name}-$version|/usr|" \
     $PKG/usr/lib/qt/mkspecs/modules/qt_lib_bootstrap_private.pri
 
-rm $PKG/usr/lib/*.la
 }
