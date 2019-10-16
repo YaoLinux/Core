@@ -15,7 +15,6 @@ source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 build=xorg
 
 package() {
-rm $PKG/usr/lib/${_name}.la
 }
 
 uptodate() {
