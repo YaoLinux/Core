@@ -37,11 +37,4 @@ for size in 16 22 32 48 64 128; do
 done
 rm -f $PKG/etc/dbus-1/system.d/pulseaudio-system.conf
 
-# Obsolets libs
-rm $PKG/usr/lib/libpulse-mainloop-glib.la
-rm $PKG/usr/lib/libpulse-simple.la
-rm $PKG/usr/lib/libpulse.la
-rm $PKG/usr/lib/pulseaudio/libpulsecommon-$version.la
-rm $PKG/usr/lib/pulseaudio/libpulsecore-$version.la
-rm $PKG/usr/lib/pulseaudio/libpulsedsp.la
 }
