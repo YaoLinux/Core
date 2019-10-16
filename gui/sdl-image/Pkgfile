@@ -21,6 +21,4 @@ cd SDL_image-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libSDL_image.la
 }
