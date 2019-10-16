@@ -21,8 +21,5 @@ make INSTALL_ROOT=$PKG install
 # Drop QMAKE_PRL_BUILD_DIR because reference the build dir
   find "$PKG/usr/lib" -type f -name '*.prl' \
        -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
-# Obsolet libs
-rm $PKG/usr/lib/libQt5QuickControls2.la
-rm $PKG/usr/lib/libQt5QuickTemplates2.la
 
 }
