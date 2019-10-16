@@ -17,6 +17,4 @@ cd $name-$version*
         make
         make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libgiblib.la
 }
