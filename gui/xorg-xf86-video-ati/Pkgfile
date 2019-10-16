@@ -12,9 +12,6 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 build=xorg
 
 package() {
-# Obsolets libs
-rm $PKG/usr/lib/xorg/modules/drivers/ati_drv.la
-rm $PKG/usr/lib/xorg/modules/drivers/radeon_drv.la
 }
 
 uptodate() {
