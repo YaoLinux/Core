@@ -12,5 +12,4 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 build=xorg
 
 package() {
-rm $PKG/usr/lib/xorg/modules/drivers/amdgpu_drv.la
 }
