@@ -18,7 +18,4 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libxkbcommon.la
-rm $PKG/usr/lib/libxkbcommon-x11.la
 }
