@@ -19,5 +19,4 @@ cd ${_name}-$version
 ./configure --prefix=/usr --disable-static
 make
 make DESTDIR=$PKG install
-rm $PKG/usr/lib/libpixman-1.la
 }
