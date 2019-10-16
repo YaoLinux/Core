@@ -18,7 +18,6 @@ build=xorg
 
 package() {
 
-rm $PKG/usr/lib/libXfont2.la
 }
 uptodate() {
 local ext url name LINX
