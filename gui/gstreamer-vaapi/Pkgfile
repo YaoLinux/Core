@@ -16,7 +16,6 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-rm $PKG/usr/lib/gstreamer-1.0/libgstvaapi.la
 }
 uptodate() {
 local url ext
