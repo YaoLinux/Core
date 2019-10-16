@@ -17,7 +17,4 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libchamplain-0.12.la
-rm $PKG/usr/lib/libchamplain-gtk-0.12.la
 }
