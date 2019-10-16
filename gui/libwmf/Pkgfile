@@ -23,7 +23,4 @@ build(){
     # rm fonts already in gsfonts packages
     rm -rf $PKG/usr/share/fonts
 
-# Obsolets libs
-rm $PKG/usr/lib/libwmf.la
-rm $PKG/usr/lib/libwmflite.la
 }
