@@ -17,9 +17,6 @@ cd $name-$version
 ./configure --prefix=/usr --disable-static
 make
 make DESTDIR=$PKG install
-# Obsolets libs
-rm $PKG/usr/lib/libyelp.la
-rm $PKG/usr/lib/yelp/web-extensions/libyelpwebextension.la
 }
 uptodate(){
 local latest lastversion url
