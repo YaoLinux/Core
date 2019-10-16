@@ -21,9 +21,5 @@ make INSTALL_ROOT=$PKG install
   find "$PKG/usr/lib" -type f -name '*.prl' \
        -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 
-# Obsolet libs
-rm $PKG/usr/lib/libQt5Location.la
-rm $PKG/usr/lib/libQt5Positioning.la
-rm $PKG/usr/lib/libQt5PositioningQuick.la
 
 }
