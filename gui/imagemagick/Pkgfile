@@ -34,7 +34,5 @@ build () {
     make DESTDIR=$PKG install
     find  $PKG -name perllocal.pod -exec rm {} \;
 
-# Obsolets libs
-rm -v $PKG/usr/lib/*.la
 	
 }
