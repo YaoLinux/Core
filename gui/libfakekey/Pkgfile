@@ -21,6 +21,4 @@ cd $name-$version
 make AM_LDFLAGS=-lX11
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libfakekey.la
 }
