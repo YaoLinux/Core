@@ -22,8 +22,5 @@ cd $name-$version
 	make
 	make DESTDIR=$PKG install
 	
-# Obsolets libs
-rm $PKG/usr/lib/libexo-1.la
-rm $PKG/usr/lib/libexo-2.la
 
 }
