@@ -18,8 +18,6 @@ cd libIDL-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libIDL-2.la
 }
 
 uptodate(){
