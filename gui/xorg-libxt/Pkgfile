@@ -22,7 +22,6 @@ make DESTDIR=$PKG install
 }
 
 package() {
-rm $PKG/usr/lib/${_name}.la
 }
 
 uptodate() {
