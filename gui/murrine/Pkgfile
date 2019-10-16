@@ -21,8 +21,6 @@ cd murrine-$version
 
 make
 make DESTDIR=$PKG install
-# Obsolet lib
-rm $PKG/usr/lib/gtk-2.0/2.10.0/engines/libmurrine.la
 }
 uptodate(){
 local latest lastversion url
