@@ -17,8 +17,6 @@ cd $name-$version
 --enable-systemd --disable-static
 make
 make DESTDIR=$PKG install
-# Obsolets libs
-find $PKG ! -type d -name "*.la" -delete
 
 }
 uptodate() {
