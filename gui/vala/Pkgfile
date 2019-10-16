@@ -16,14 +16,7 @@ cd $name-$version
 ./configure --prefix=/usr
 make
 make DESTDIR=$PKG install
-rm $PKG/usr/lib/libvala-0.42.la
-rm $PKG/usr/lib/vala-0.42/libvalaccodegen.la
 
-# Obsolets libs
-rm $PKG/usr/lib/libvaladoc-0.42.la
-rm $PKG/usr/lib/valadoc/doclets/devhelp/libdoclet.la
-rm $PKG/usr/lib/valadoc/doclets/gtkdoc/libdoclet.la
-rm $PKG/usr/lib/valadoc/doclets/html/libdoclet.la
 }
 
 uptodate(){
