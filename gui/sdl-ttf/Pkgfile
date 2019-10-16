@@ -22,6 +22,4 @@ build() {
 	make 
 	make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libSDL_ttf.la
 }
