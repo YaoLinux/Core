@@ -19,6 +19,4 @@ cd $name-*
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libxcb-cursor.la
 }
