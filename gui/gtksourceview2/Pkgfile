@@ -19,6 +19,4 @@ sed -i 's#python#python2#' gtksourceview/language-specs/convert.py
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libgtksourceview-2.0.la
 }
