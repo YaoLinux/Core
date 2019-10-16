@@ -17,7 +17,4 @@ sed -i '/_XData32/s:register long:register _Xconst long:' src/video/x11/SDL_x11s
 make
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libSDL.la
-rm $PKG/usr/lib/libSDLmain.la
 }
