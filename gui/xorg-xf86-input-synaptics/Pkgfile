@@ -12,8 +12,6 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 build=xorg
 
 package() {
-# Obsolet lib
-rm $PKG/usr/lib/xorg/modules/input/synaptics_drv.la
 }
 uptodate() {
 local ext url name LINX
