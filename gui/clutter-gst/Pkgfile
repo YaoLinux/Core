@@ -17,8 +17,5 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolet libs
-rm $PKG/usr/lib/gstreamer-1.0/libcluttergst3.la
-rm $PKG/usr/lib/libclutter-gst-3.0.la
 
 }
