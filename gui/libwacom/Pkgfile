@@ -19,6 +19,4 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolet libs
-rm $PKG/usr/lib/libwacom.la
 }
