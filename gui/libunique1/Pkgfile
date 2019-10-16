@@ -23,6 +23,4 @@ autoreconf -fi
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libunique-1.0.la
 }
