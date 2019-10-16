@@ -37,8 +37,6 @@ echo 'gtk-fallback-icon-theme = "Tango"' > $PKG/etc/gtk-2.0/gtkrc
 rm -f $PKG/usr/bin/gtk-update-icon-cache
 rm -f $PKG/usr/share/man/man1/gtk-update-icon-cache.1
 
-# Suppression des fichiers la
-find $PKG -name '*.la' -delete
 }
 doc () {
 # Chaque fonction produisant un groupe doit suivre les règles suivantes
