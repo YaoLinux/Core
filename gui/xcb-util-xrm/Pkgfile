@@ -11,6 +11,4 @@ release=2
 source=(https://github.com/Airblader/xcb-util-xrm/releases/download/v${version}/xcb-util-xrm-${version}.tar.gz)
 
 package() {
-# Obsolets libs
-rm $PKG/usr/lib/libxcb-xrm.la
 }
