@@ -27,6 +27,4 @@ cd ${_name}-$version
     
 make
 make DESTDIR=$PKG install
-# Obsolet lib
-rm $PKG/usr/lib/libxfce4util.la
 }
