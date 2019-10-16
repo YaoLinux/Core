@@ -17,8 +17,6 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libnotify.la
 }
 uptodate(){
 local latest lastversion url
