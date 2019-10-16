@@ -41,5 +41,4 @@ install -v -dm755 $PKG/usr/share/doc/mesa-$version
 
 cp -rfv docs/* $PKG/usr/share/doc/mesa-$version
 
-rm $PKG/usr/lib/{libEGL,libGL,libGLESv1_CM,libGLESv2,libOSMesa,libgbm,libglapi,libxatracker,libvulkan_radeon,libvulkan_intel}.la
 }
