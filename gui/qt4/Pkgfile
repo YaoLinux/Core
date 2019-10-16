@@ -173,8 +173,6 @@ if [ "x\$QT4BINDIR" != "x/usr/bin" ]; then pathprepend $QT4BINDIR; fi
 echo \$PATH
 EOF
 
-# Obsolets libs
-find $PKG/usr/lib/ -name "*.la" | xargs rm -v
 
 
 }
