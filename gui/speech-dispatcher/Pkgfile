@@ -22,9 +22,4 @@ make
 make DESTDIR="$PKG" install
 sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
 
-# Obsolets libs
-rm $PKG/usr/lib/libspeechd.la
-rm $PKG/usr/lib/speech-dispatcher/spd_alsa.la
-rm $PKG/usr/lib/speech-dispatcher/spd_oss.la
-rm $PKG/usr/lib/speech-dispatcher/spd_pulse.la
 }
