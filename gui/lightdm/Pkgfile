@@ -46,6 +46,4 @@ install -v -dm770 -o lightdm -g lightdm $PKG/var/log/lightdm
 cd $SRC/nutyx-${nutyx_version}
 make DESTDIR=$PKG install-lightdm
 
-# Obsolets libs
-rm $PKG/usr/lib/liblightdm-gobject-1.la
 }
