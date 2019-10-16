@@ -13,8 +13,6 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 build=xorg
 
 package() {
-# Obsolet lib
-rm $PKG/usr/lib/xorg/modules/drivers/nouveau_drv.la
 }
 
 uptodate() {
