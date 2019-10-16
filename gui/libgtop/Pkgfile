@@ -20,6 +20,4 @@ make DESTDIR=$PKG install
 install -v -m755 -d $PKG/usr/lib/libgtop/examples
 install -v -m755 examples/.libs/* $PKG/usr/lib/libgtop/examples
 
-# Obsolet lib
-rm $PKG/usr/lib/libgtop-2.0.la
 }
