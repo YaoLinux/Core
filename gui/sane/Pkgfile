@@ -40,7 +40,4 @@ build() {
 	chmod 775 $PKG/var/lock/sane
 	chgrp scanner $PKG/var/lock/sane
 
-	# Obsolet libs
-	rm $PKG/usr/lib/libsane.la
-	rm $PKG/usr/lib/sane/libsane-*.la
 }
