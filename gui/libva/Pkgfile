@@ -18,8 +18,4 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libva-drm.la
-rm $PKG/usr/lib/libva-x11.la
-rm $PKG/usr/lib/libva.la
 }
