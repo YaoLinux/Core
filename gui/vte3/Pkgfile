@@ -25,8 +25,6 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libvte-2.91.la	
 }
 uptodate(){
 local latest lastversion url
