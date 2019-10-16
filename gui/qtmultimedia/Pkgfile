@@ -22,11 +22,6 @@ make INSTALL_ROOT=$PKG install
   find "$PKG/usr/lib" -type f -name '*.prl' \
        -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
 
-# Obsolets libs
-rm $PKG/usr/lib/libQt5Multimedia.la
-rm $PKG/usr/lib/libQt5MultimediaGstTools.la
-rm $PKG/usr/lib/libQt5MultimediaQuick.la
-rm $PKG/usr/lib/libQt5MultimediaWidgets.la
 
 
 }
