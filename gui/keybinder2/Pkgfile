@@ -17,7 +17,4 @@ cd $_name-$version
 make 
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libkeybinder.la
-rm $PKG/usr/lib/python2.7/site-packages/keybinder/_keybinder.la
 }
