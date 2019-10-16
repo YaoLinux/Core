@@ -21,15 +21,6 @@ cd gst-plugins*
 make
 make DESTDIR=$PKG install
 
-# Obsolet libs
-rm $PKG/usr/lib/gstreamer-1.0/libgsta52dec.la
-rm $PKG/usr/lib/gstreamer-1.0/libgstasf.la
-rm $PKG/usr/lib/gstreamer-1.0/libgstdvdlpcmdec.la
-rm $PKG/usr/lib/gstreamer-1.0/libgstdvdread.la
-rm $PKG/usr/lib/gstreamer-1.0/libgstdvdsub.la
-rm $PKG/usr/lib/gstreamer-1.0/libgstmpeg2dec.la
-rm $PKG/usr/lib/gstreamer-1.0/libgstrealmedia.la
-rm $PKG/usr/lib/gstreamer-1.0/libgstxingmux.la
 }
 uptodate() {
 local url ext
