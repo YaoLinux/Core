@@ -13,10 +13,6 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 build=xorg
 
 package() {
-# Obsolets libs
-rm $PKG/usr/lib/libchromeXvMC.la
-rm $PKG/usr/lib/libchromeXvMCPro.la
-rm $PKG/usr/lib/xorg/modules/drivers/openchrome_drv.la
 }
 uptodate() {
 local ext url name LINX
