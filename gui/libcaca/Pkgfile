@@ -21,7 +21,4 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libcaca++.la
-rm $PKG/usr/lib/libcaca.la
 }
