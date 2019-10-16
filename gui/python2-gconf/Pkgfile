@@ -23,6 +23,4 @@ build() {
 	make DESTDIR=$PKG install
 	rm -rf $PKG/usr/lib/pkgconfig
 
-# Obsolets libs
-rm $PKG/usr/lib/python2.7/site-packages/gtk-2.0/gconf.la
 }
