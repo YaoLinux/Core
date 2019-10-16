@@ -20,6 +20,4 @@ sed -i -e '/AM_PATH_AALIB,/s/AM_PATH_AALIB/[&]/' aalib.m4
 --infodir=/usr/share/info --disable-static
 make
 make  DESTDIR=$PKG install
-# Obsolet lib
-rm $PKG/usr/lib/libaa.la
 }
