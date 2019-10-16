@@ -17,8 +17,5 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libcheese-gtk.la
-rm $PKG/usr/lib/libcheese.la
 
 }
