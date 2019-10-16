@@ -26,6 +26,4 @@ build(){
             $PKG/usr/share/icons/hicolor/${i}x${i}/mimetypes/image-vnd.djvu.mime.png
     done
 
-# Obsolet lib
-rm $PKG/usr/lib/libdjvulibre.la
 }
