@@ -14,7 +14,6 @@ source=(http://ftp.x.org/pub/individual//lib/libFS-$version.tar.bz2)
 
 build=xorg
 package() {
-rm $PKG/usr/lib/libFS.la
 }
 uptodate() {
 local ext url name LINX
