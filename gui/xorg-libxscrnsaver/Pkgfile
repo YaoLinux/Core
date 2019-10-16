@@ -14,7 +14,6 @@ source=(http://ftp.x.org/pub/individual//lib/libXScrnSaver-$version.tar.bz2)
 build=xorg
 
 package() {
-rm $PKG/usr/lib/libXss.la
 }
 uptodate() {
 local ext url name LINX
