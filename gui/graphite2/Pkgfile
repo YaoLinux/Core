@@ -18,5 +18,4 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 make
 make DESTDIR=$PKG install
 
-rm $PKG/usr/lib/libgraphite2.la
 }
