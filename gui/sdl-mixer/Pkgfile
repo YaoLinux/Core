@@ -18,6 +18,4 @@ build() {
 	make 
 	make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/libSDL_mixer.la
 }
