@@ -18,7 +18,4 @@ cd $name-$version
             --disable-werror
 make
 make DESTDIR=$PKG install
-# Obsolet libs
-rm $PKG/usr/lib/libcmis-0.5.la
-rm $PKG/usr/lib/libcmis-c-0.5.la
 }
