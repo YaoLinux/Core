@@ -13,5 +13,4 @@ source=(https://www.freedesktop.org/software/virgl/$name-$version.tar.bz2)
 package() {
 
 # Remove obsolet libs
-rm $PKG/usr/lib/libvirglrenderer.la
 }
