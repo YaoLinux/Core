@@ -21,6 +21,4 @@ build() {
   make
   make DESTDIR=$pkgdir install
 
-# Obsolet lib
-rm $PKG/usr/lib/libalut.la
 }
