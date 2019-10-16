@@ -21,8 +21,6 @@ cd gst-*
 make
 make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/gstreamer-1.0/libgstlibav.la
 }
 uptodate() {
 local url ext
