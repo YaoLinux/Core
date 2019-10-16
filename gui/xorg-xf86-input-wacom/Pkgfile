@@ -18,6 +18,4 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/xorg/modules/input/wacom_drv.la
 }
