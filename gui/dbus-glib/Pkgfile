@@ -16,7 +16,6 @@ cd $name-$version
 --sysconfdir=/etc
 make
 make DESTDIR=$PKG install
-rm $PKG/usr/lib/libdbus-glib-1.la
 }
 uptodate() {
 local url ext
