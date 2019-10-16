@@ -24,6 +24,5 @@ sed -e "s/pthread-stubs//" -i configure
             --enable-xkb
 make
 make DESTDIR=$PKG install
-rm $PKG/usr/lib/*.la
 }
 
