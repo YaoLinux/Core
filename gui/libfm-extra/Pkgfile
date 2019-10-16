@@ -20,5 +20,4 @@ cd ${_name}-$version
             --disable-static
 make 
 make DESTDIR=$PKG install
-rm $PKG/usr/lib/$name.la
 }
