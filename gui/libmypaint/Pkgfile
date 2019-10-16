@@ -12,6 +12,4 @@ release=2
 source=(https://github.com/mypaint/$name/releases/download/v$version/$name-$version.tar.xz)
 
 package() {
-# Obsolet lib
-rm $PKG/usr/lib/libmypaint.la
 }
