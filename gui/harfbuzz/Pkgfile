@@ -24,7 +24,5 @@ cd $name-$version
 make
 make DESTDIR=$PKG install
 
-#Obsolets libs
-rm $PKG/usr/lib/libharfbuzz{,-{icu,gobject,subset}}.la
 
 }
