@@ -19,8 +19,4 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/libgvnc-1.0.la
-rm $PKG/usr/lib/libgvncpulse-1.0.la
-rm $PKG/usr/lib/libgtk-vnc-2.0.la
 }
