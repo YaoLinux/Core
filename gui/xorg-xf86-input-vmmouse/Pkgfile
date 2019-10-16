@@ -21,8 +21,6 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-	# Obsolet lib
-	rm $PKG/usr/lib/xorg/modules/input/vmmouse_drv.la
 }
 uptodate() {
 local ext url name LINX
