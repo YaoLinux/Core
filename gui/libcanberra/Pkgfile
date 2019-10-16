@@ -22,15 +22,4 @@ cd $name-$version
 make
 make -j1 DESTDIR=$PKG install
 
-# Obsolets libs
-rm $PKG/usr/lib/gtk-2.0/modules/libcanberra-gtk-module.la
-rm $PKG/usr/lib/gtk-3.0/modules/libcanberra-gtk3-module.la
-rm $PKG/usr/lib/libcanberra-0.30/libcanberra-alsa.la
-rm $PKG/usr/lib/libcanberra-0.30/libcanberra-gstreamer.la
-rm $PKG/usr/lib/libcanberra-0.30/libcanberra-multi.la
-rm $PKG/usr/lib/libcanberra-0.30/libcanberra-null.la
-rm $PKG/usr/lib/libcanberra-0.30/libcanberra-pulse.la
-rm $PKG/usr/lib/libcanberra-gtk.la
-rm $PKG/usr/lib/libcanberra-gtk3.la
-rm $PKG/usr/lib/libcanberra.la
 }
