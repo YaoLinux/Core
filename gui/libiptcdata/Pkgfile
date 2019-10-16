@@ -21,6 +21,4 @@ package() {
 cd "$SRC/$name-$version"
 make DESTDIR=$PKG install
 
-# Obsolet libs
-rm $PKG/usr/lib/libiptcdata.la
 }
