@@ -20,6 +20,4 @@ build() {
   
   make DESTDIR=$PKG install
   
-# Obsolet lib
-rm $PKG/usr/lib/libkeybinder-3.0.la
 }
