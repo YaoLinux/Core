@@ -14,7 +14,6 @@ source=(http://ftp.x.org/pub/individual/lib/libdmx-$version.tar.bz2)
 
 build=xorg
 package() {
-rm $PKG/usr/lib/libdmx.la
 }
 uptodate() {
 local ext url name LINX
