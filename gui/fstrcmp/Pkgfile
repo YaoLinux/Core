@@ -20,5 +20,4 @@ make
 mkdir -pv $PKG/usr/bin
 make DESTDIR=$PKG install
 
-# Obsolets libs
 }
