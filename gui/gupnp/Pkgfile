@@ -18,8 +18,6 @@ sed -i '1s|^#!.*python$|&2|' tools/gupnp-binding-tool
               --disable-static --with-context-manager=linux
 make
 make DESTDIR=$PKG install
-# Obsolet lib
-rm $PKG/usr/lib/libgupnp-1.0.la
 }
 uptodate(){
 local latest lastversion url
