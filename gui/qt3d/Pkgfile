@@ -21,18 +21,5 @@ make INSTALL_ROOT=$PKG install
 # Drop QMAKE_PRL_BUILD_DIR because reference the build dir
   find "$PKG/usr/lib" -type f -name '*.prl' \
        -exec sed -i -e '/^QMAKE_PRL_BUILD_DIR/d' {} \;
-# Obsolet libs
-rm $PKG/usr/lib/libQt53DAnimation.la
-rm $PKG/usr/lib/libQt53DCore.la
-rm $PKG/usr/lib/libQt53DExtras.la
-rm $PKG/usr/lib/libQt53DInput.la
-rm $PKG/usr/lib/libQt53DLogic.la
-rm $PKG/usr/lib/libQt53DQuick.la
-rm $PKG/usr/lib/libQt53DQuickAnimation.la
-rm $PKG/usr/lib/libQt53DQuickExtras.la
-rm $PKG/usr/lib/libQt53DQuickInput.la
-rm $PKG/usr/lib/libQt53DQuickRender.la
-rm $PKG/usr/lib/libQt53DQuickScene2D.la
-rm $PKG/usr/lib/libQt53DRender.la
 
 }
