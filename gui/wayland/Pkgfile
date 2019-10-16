@@ -18,7 +18,6 @@ build() {
   make
   make DESTDIR=$PKG install
 
-  rm $PKG/usr/lib/libwayland-{client,cursor,server,egl}.la
 }
 uptodate() {
 local url ext
