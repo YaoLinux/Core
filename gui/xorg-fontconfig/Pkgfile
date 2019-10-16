@@ -35,5 +35,4 @@ install -v -m644 doc/fontconfig-devel/* \
 install -v -m644 doc/*.{pdf,sgml,txt,html} \
  $PKG/usr/share/doc/${_name}-$version
 
-rm $PKG/usr/lib/libfontconfig.la 
 }
