@@ -28,8 +28,5 @@ build()
    rm $PKG/usr/share/xsessions/openbox-{gnome,kde}.desktop
    rm -r $PKG/usr/share/gnome-session
 
-   # Obsolets libs
-   rm $PKG/usr/lib/libobrender.la
-   rm $PKG/usr/lib/libobt.la
 
 } 
