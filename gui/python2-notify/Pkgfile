@@ -20,6 +20,4 @@ build() {
 	make
 	make DESTDIR=$PKG install
 
-# Obsolet lib
-rm $PKG/usr/lib/python2.7/site-packages/gtk-2.0/pynotify/_pynotify.la
 }
