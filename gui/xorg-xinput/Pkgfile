@@ -1,17 +1,17 @@
 makedepends=(xorg-libx11 xorg-libxext xorg-libxi xorgproto xorg-libxrandr xorg-libxinerama xorg-xrandr)
 
 description="Small commandline tool to configure devices."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 run=(xorg-xrandr)
 
 name=xorg-xinput
-version=1.6.2
-release=3
+version=1.6.3
 
 _name=${name/xorg-/}
 
