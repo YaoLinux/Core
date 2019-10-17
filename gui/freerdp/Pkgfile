@@ -2,6 +2,7 @@ makedepends=(openssl xorg-libxcursor cups alsa-lib xorg-libxext xorg-libxdamage 
 
 description="Free RDP client"
 url="http://freerdp.sourceforge.net"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -9,10 +10,13 @@ name=freerdp
 version=2.0.0-rc4
 
 PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/FreeRDP/FreeRDP/archive/$version.tar.gz)
 
 build() {
-  cd FreeRDP-$version
+
+  mkdir build && cd build
+
   cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
 	-DCMAKE_INSTALL_LIBDIR=lib \
@@ -22,7 +26,8 @@ build() {
 	-DWITH_CLIENT_CHANNELS=ON \
 	-DWITH_SERVER_CHANNELS=ON \
 	-DWITH_WAYLAND=ON \
-	.
+	../FreeRDP-$version
+
   make
   make DESTDIR=$PKG install
 }
