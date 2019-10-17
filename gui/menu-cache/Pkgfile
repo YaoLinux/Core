@@ -2,6 +2,7 @@ makedepends=(libfm-extra)
 
 url="http://lxde.org/"
 packager="Yaolinux Team"
+
 maintainer="rems"
 description="For creating and utilizing caches to speed up the manipulation for freedesktop.org defined application menus."
 
@@ -10,10 +11,4 @@ version=1.1.0
 
 source=(http://downloads.sourceforge.net/lxde/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr  --disable-static
-make
-make DESTDIR=$PKG install
-
-}
+build=autotools
