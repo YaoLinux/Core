@@ -2,6 +2,7 @@ makedepends=(systemd xorgproto xorg-libxkbfile xorg-font-util xcb-util-keysyms l
 
 description="The Xorg Server is the core of the X Window system."
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -27,7 +28,6 @@ cd $name-$version
             --enable-config-udev-kms
 
 make
-
 make DESTDIR=$PKG install
 
 rm -rf $PKG/var
