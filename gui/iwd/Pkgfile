@@ -2,11 +2,12 @@ makedepends=(dbus glibc)
 
 description="Internet Wireless Daemon" 
 url="https://git.kernel.org/cgit/network/wireless/iwd.git/"
+
 packager="Yaolinux Team"
+maintainer="Dania"
 
 name=iwd
-version=0.19
-release=2
+version=0.22
 
 source=(https://www.kernel.org/pub/linux/network/wireless/iwd-${version}.tar.xz
         iwd.tmpfiles)
@@ -15,17 +16,17 @@ build() {
   cd $name-$version
 
       ./configure --prefix=/usr \
-	--sysconfdir=/etc/iwd \
-	--libexecdir=/usr/lib/iwd \
-        --enable-wired \
-	--localstatedir=/var
+                  --sysconfdir=/etc/iwd \
+                  --libexecdir=/usr/lib/iwd \
+                  --enable-wired \
+                  --localstatedir=/var
+
   make
 }
 
 package() {
+
    cd $name-$version
    make install DESTDIR=$PKG
-   install -Dm644 $SRC/iwd.tmpfiles $PKG/usr/lib/tmpfiles.d/iwd.conf
-
+   install -Dm644 ../iwd.tmpfiles $PKG/usr/lib/tmpfiles.d/iwd.conf
 }
-
