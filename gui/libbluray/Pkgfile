@@ -2,12 +2,12 @@ makedepends=(libxml2 freetype xorg-fontconfig apache-ant)
 
 description="Blu-Ray access library."
 url="http://www.videolan.org/developers/libbluray.html"
+
 packager="Yaolinux Team"
 
 
 name=libbluray
-version=1.0.1
-release=2
+version=1.1.2
 
 source=(ftp://ftp.videolan.org/pub/videolan/libbluray/$version/libbluray-$version.tar.bz2)
 
@@ -18,9 +18,8 @@ build() {
 	./configure \
 		--prefix=/usr \
 		--mandir=/usr/man \
-                --disable-bdjava-jar
+        --disable-bdjava-jar
 
 	make
 	make DESTDIR=$PKG install
-
 }
