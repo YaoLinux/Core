@@ -2,6 +2,7 @@ makedepends=(dbus expat glib)
 
 description="The D-Bus GLib package contains GLib interfaces to the D-Bus API."
 url="http://www.freedesktop.org/wiki/Software/DBusBindings"
+
 packager="Yaolinux Team"
 
 name=dbus-glib
@@ -11,12 +12,15 @@ source=(http://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---disable-static \
---sysconfdir=/etc
+            --disable-static \
+            --sysconfdir=/etc
+
 make
 make DESTDIR=$PKG install
 }
+
 uptodate() {
 local url ext
 ext=".tar.gz"
