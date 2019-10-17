@@ -2,21 +2,18 @@ makedepends=(xorgproto xorg-libx11 xorg-libxext xorg-libxfixes)
 
 description="libXi, library X Input client"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxi
 alias=(libXi)
-version=1.7.9
-release=3
+version=1.7.10
 _name=libXi
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
