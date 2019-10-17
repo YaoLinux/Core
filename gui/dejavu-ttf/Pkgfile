@@ -2,6 +2,7 @@ makedepends=(xorg-libx11,xorg-fontconfig)
 
 description="Vera font family derivate with additional characters"
 url="http://dejavu.sourceforge.net/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
