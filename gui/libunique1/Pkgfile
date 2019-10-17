@@ -2,6 +2,7 @@ makedepends=(gtk2)
 
 description="The libunique package contains a library for writing single instance applications."
 url="http://live.gnome.org/LibUnique"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -12,15 +13,20 @@ version=1.1.6
 release=3
 
 source=(http://ftp.gnome.org/pub/gnome/sources/${_name}/${version%.*}/${_name}-$version.tar.bz2
-	http://www.linuxfromscratch.org/patches/blfs/svn/libunique-$version-upstream_fixes-1.patch)
+        http://www.linuxfromscratch.org/patches/blfs/svn/libunique-$version-upstream_fixes-1.patch)
 
 build() {
+
 cd ${_name}-$version
+
 patch -Np1 -i ../libunique-$version-upstream_fixes-1.patch
+
 autoreconf -fi
-./configure --prefix=/usr --disable-static \
---disable-dbus
+
+./configure --prefix=/usr \
+            --disable-static \
+            --disable-dbus
+
 make
 make DESTDIR=$PKG install
-
 }
