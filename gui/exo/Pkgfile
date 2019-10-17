@@ -2,11 +2,12 @@ makedepends=(perl-uri xfce4-libui xfce4-libutil gtk-doc)
 
 description="Extensions to Xfce by os-cillation"
 url="http://www.xfce.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=exo
-version=0.12.3
+version=0.12.8
 
 source=(http://archive.xfce.org/src/xfce/$name/${version%.*}/$name-$version.tar.bz2)
 
@@ -15,12 +16,10 @@ build() {
 cd $name-$version
 
 	./configure --prefix=/usr \
-	--sysconfdir=/etc \
-	--enable-gtk-doc \
-	--disable-debug
-	
+                --sysconfdir=/etc \
+                --enable-gtk-doc \
+                --disable-debug
+
 	make
 	make DESTDIR=$PKG install
-	
-
 }
