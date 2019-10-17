@@ -2,25 +2,18 @@ makedepends=(sdl2 libpng libtiff libjpeg-turbo2 libwebp cmake)
 
 description="A simple library to load images of various formats as SDL surfaces (Version 2)"
 url="http://crawl.develz.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
+
 name=sdl2-image
-version=2.0.4
-release=1
+version=2.0.5
+
 source=(https://www.libsdl.org/projects/SDL_image/release/SDL2_image-$version.tar.gz)
 
-build() {
+build=autotools
 
-cd SDL2_image-$version
+prepare() {
 
-./configure --disable-static --prefix=/usr
-
-make 
-}
-
-package() {
-
-cd SDL2_image-$version
-make DESTDIR=$PKG install
-
+mv SDL2_image-$version $name-$version
 }
