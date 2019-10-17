@@ -1,6 +1,7 @@
 makedepends=(xorgproto xorg-libx11 xorg-libxau xorg-libxext xorg-libxmu)
 
 description="Xorg authorization setting program."
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -8,8 +9,7 @@ PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
 
 name=xorg-xauth
-version=1.0.10
-release=2
+version=1.1
 
 _name=${name/xorg-/}
 
