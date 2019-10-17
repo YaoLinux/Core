@@ -2,6 +2,7 @@ makedepends=(mesa python xorg-util-macros)
 
 description="Library for handling OpenGL function pointer management"
 url="https://github.com/anholt/libepoxy"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,13 +12,12 @@ version=1.5.3
 source=(https://github.com/anholt/${name}/releases/download/$version/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
 
-mkdir build
-cd build
+mkdir build && cd build
 
---prefix=/usr
+meson ../$name-$version --prefix=/usr
+
 ninja
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 
 }
