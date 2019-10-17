@@ -2,6 +2,7 @@ makedepends=(systemd libusb avahi python gnutls xdg-utils gtk-update-icon-cache)
 
 description="The Common Unix Printing System (CUPS) is a print spooler and associated utilities"
 url="http://www.cups.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -10,34 +11,44 @@ run=(xdg-utils gtk-update-icon-cache)
 PKGMK_GROUPS=(devel man)
 
 name=cups
-version=2.2.10
-#nutyx_version=10.4
+version=2.3.0
+
 run=(xdg-utils gtk-update-icon-cache)
 
 source=(https://github.com/apple/cups/releases/download/v${version}/cups-${version}-source.tar.gz \
-	99-printer.rules)
+        99-printer.rules)
 
 build() {
 	cd $name-$version
+
 	sed -i '/kerberized/,$ d' conf/cupsd.conf.in
+
 	sed -i 's:555:755:g;s:444:644:g' Makedefs.in
+
 	sed -i '/MAN.*.EXT/s:.gz::g' \
+
 	configure config-scripts/cups-manpages.m4
+
 	sed -i '/LIBGCRYPTCONFIG/d' config-scripts/cups-ssl.m4
+
 	aclocal -I config-scripts
+
 	autoconf -I config-scripts
+
 	CC=gcc \
 	./configure --libdir=/usr/lib \
-		--enable-systemd \
-		--with-rcdir=/tmp/cupsinit \
-		--with-system-groups=lpadmin \
-		--with-docdir=/usr/share/cups/doc-$version \
-		--disable-libusb
+                --enable-systemd \
+                --with-rcdir=/tmp/cupsinit \
+                --with-system-groups=lpadmin \
+                --with-docdir=/usr/share/cups/doc-$version \
+                --disable-libusb
 	make
 	make BUILDROOT=$PKG install
 
 	rm -rf $PKG/tmp/cupsinit
+
 	mkdir -p $PKG/usr/share/doc
+
 	ln -svnf ../cups/doc-$version $PKG/usr/share/doc/cups-$version
 	
 	# Lanceur
@@ -46,14 +57,12 @@ build() {
 		install -m644 desktop/cups.desktop \
 		$PKG/usr/share/applications/cups.desktop
 	fi
-	# Service
-	#cd ../nutyx-${nutyx_version}
-	#make DESTDIR=$PKG install-$name
 
-	# Supprimer les filtres faisant parti de cups-filters
+	# Remove filters that comes with cups-filters
 	rm -rf $PKG/usr/share/cups/banners
 	rm -rf $PKG/usr/share/cups/data/testprint
-	# Mechant bug
+
+	# Bad bug
 	rm -r $PKG/tmp
 	
 	chmod 755 $PKG/etc
@@ -68,6 +77,7 @@ session include system-session
 
 # End /etc/pam.d/cups
 EOF
+
 	mkdir -p $PKG/etc/udev/rules.d
 	install -m644 ../99-printer.rules  $PKG/etc/udev/rules.d/99-printer.rules
 }
