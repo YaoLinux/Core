@@ -2,6 +2,7 @@ makedepends=(rasqal db sqlite libiodbc)
 
 description="Library that provides a high-level interface to RDF data"
 url="http://download.librdf.org/source/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -16,12 +17,10 @@ build() {
 cd $name-$version
 	
 ./configure --prefix=/usr \
-	--disable-static
+            --disable-static
  
 patch -Np0 -i ../rpath.diff
+
 make
-
 make DESTDIR=$PKG install
-
- 
 }
