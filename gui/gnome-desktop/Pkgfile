@@ -2,25 +2,26 @@ makedepends=(freefont-ttf iso-codes itstool gtk3 docbook-xml libseccomp gnome-do
 
 description="Library with common API for various GNOME modules"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 run=(gsettings-desktop-schemas freefont-ttf)
 
 name=gnome-desktop
-version=3.30.2
-release=2
+version=3.34.1
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---localstatedir=/var \
---sysconfdir=/etc \
---libexecdir=/usr/lib/$name \
---with-gnome-distributor="NuTyX"
+            --localstatedir=/var \
+            --sysconfdir=/etc \
+            --libexecdir=/usr/lib/$name \
+            --with-gnome-distributor="NuTyX"
+
 make
 make DESTDIR=$PKG install
-
 }
