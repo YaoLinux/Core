@@ -2,22 +2,17 @@ makedepends=(gobject-introspection gdk-pixbuf gtk3)
 
 description="Desktop notification library"
 url="http://www.galago-project.org/news/index.php"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=libnotify
-version=0.7.7
-release=2
+version=0.7.8
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr --disable-static
-make
-make DESTDIR=$PKG install
+build=autotools
 
-}
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
