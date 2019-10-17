@@ -2,16 +2,17 @@ makedepends=(python2-enum34 dbus-python python2-sip-qt5 sip qtbase qtmultimedia 
 
 description="connector python for qt"
 url="http://www.riverbankcomputing.co.uk/software/pyqt/intro"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python2-qt
-version=5.12
-release=2
+version=5.13.1
 
 run=(python2-enum34 python2-sip-qt5)
 
 source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/PyQt5_gpl-${version}.tar.gz)
+
 build() {
 cd PyQt5_gpl-$version
 
