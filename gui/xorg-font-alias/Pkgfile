@@ -1,13 +1,13 @@
 
 description="Utilities for the polices print of X"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-font-alias
 _name=${name/xorg-/}
 version=1.0.3
-release=1
 
 source=(http://ftp.x.org/pub/individual//font/${_name}-$version.tar.bz2)
 
@@ -15,11 +15,14 @@ build() {
 
 	cd ${_name}-$version
 
-	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+	./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --localstatedir=/var
 
 	make
 	make DESTDIR=$PKG install
 }
+
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
