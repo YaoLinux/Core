@@ -2,6 +2,7 @@ makedepends=(sdl)
 
 description="A cross-platform networking library for SDL."
 url="http://www.libsdl.org/projects/SDL_net"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,10 +12,7 @@ release=2
 
 source=(http://www.libsdl.org/projects/SDL_net/release/SDL_net-$version.tar.gz)
 
-build() {
-	cd SDL_net-$version
-	./configure --prefix=/usr
-	make
-	make DESTDIR=$PKG install
+prepare() {
 
+	mv SDL_net-$version $name-$version
 }
