@@ -2,23 +2,25 @@ makedepends=(python-cairo gobject-introspection xorg-libxxf86vm libffi ninja)
 
 description="provides the links of Python 3 for the class GObject of GLib."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-gobject
-version=3.30.4
+version=3.34.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pygobject/${version%.*}/pygobject-$version.tar.xz)
 
 build() {
-cd pygobject-$version
-mkdir build
-cd    build
 
---prefix=/usr \
--D python=/usr/bin/python3
+mkdir build && cd build
+
+meson --prefix=/usr \
+      -D python=/usr/bin/python3 \
+      ../pygobject-$version
+
 ninja
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 }
 uptodate(){
 local latest lastversion url
