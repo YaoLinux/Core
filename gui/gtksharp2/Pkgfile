@@ -2,6 +2,7 @@ makedepends=(mono gtk2 libglade)
 
 description="Gtk2 bindings for C Sharp"
 url="http://www.mono-project.com/docs/gui/gtksharp/"
+
 maintainer="rems"
 packager="Yaolinux Team"
  
@@ -13,8 +14,13 @@ source=(https://download.mono-project.com/sources/gtk-sharp212/gtk-sharp-$versio
 
 build() {
 cd gtk-sharp-$version
-./configure --prefix=/usr --sysconfdir=/etc --disable-static
+
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --disable-static
+
 sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
 make
 make DESTDIR=$PKG install
 
