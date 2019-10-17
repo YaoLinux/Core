@@ -2,6 +2,7 @@ makedepends=(iso-codes libxml2 xorg-libx11 glib gobject-introspection xorg-libxk
 
 description="libxklavier, library for the keyboard under X"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -12,15 +13,9 @@ release=4
 
 source=(http://pkgs.fedoraproject.org/repo/pkgs/libxklavier/${_name}-$version.tar.bz2/13af74dcb6011ecedf1e3ed122bd31fa/${_name}-$version.tar.bz2)
 
+build=autotools
 
-build() {
+prepare() {
 
-cd ${_name}-$version
-./configure --prefix=/usr \
---disable-static
-
-make
-make DESTDIR=$PKG install
-}
-package() {
+mv ${_name}-$version $name-$version
 }
