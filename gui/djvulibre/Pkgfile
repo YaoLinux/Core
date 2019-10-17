@@ -2,22 +2,24 @@ makedepends=(librsvg libtiff libjpeg-turbo2 hicolor-icon-theme )
 
 description="Suite to create, manipulate and view DjVu ('déjà vu') documents"
 url="http://djvu.sourceforge.net"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=( librsvg hicolor-icon-theme )
+run=(librsvg hicolor-icon-theme)
 
 name=djvulibre
 version=3.5.27
 release=2
 
-source=(
-http://downloads.sourceforge.net/djvu/$name-$version.tar.gz)
+source=(http://downloads.sourceforge.net/djvu/$name-$version.tar.gz)
 
 build(){
     cd $name-$version
+
     ./configure --prefix=/usr \
                 --disable-desktopfiles
+
     make
     make DESTDIR=$PKG install
 
@@ -25,5 +27,4 @@ build(){
         install -Dm644 desktopfiles/prebuilt-hi${i}-djvu.png \
             $PKG/usr/share/icons/hicolor/${i}x${i}/mimetypes/image-vnd.djvu.mime.png
     done
-
 }
