@@ -1,11 +1,12 @@
 makedepends=(gtk2,gobject-introspection, python2-gtk)
 
+url="https://github.com/engla/keybinder"
+description="Library for registering global keyboard shortcut"
+
 name=keybinder2
 _name=keybinder
 version=0.3.1
 
-url="https://github.com/engla/keybinder"
-description="Library for registering global keyboard shortcuta"
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,7 +14,9 @@ source=(https://github.com/kupferlauncher/$_name/releases/download/v$version/$_n
 
 build() {
 cd $_name-$version
+
 ./configure --prefix=/usr --disable-lua
+
 make 
 make DESTDIR=$PKG install
 
