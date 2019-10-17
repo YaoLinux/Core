@@ -1,14 +1,15 @@
 makedepends=(xorg-libx11 xorg-libxcursor libpng)
 
 description="The Xorg applications provide the applications available in X Window implementations."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xcursorgen
-version=1.0.6
+version=1.0.7
 _name=${name/xorg-/}
 
 source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
