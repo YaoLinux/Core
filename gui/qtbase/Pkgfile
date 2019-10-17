@@ -2,6 +2,7 @@ makedepends=(git xorgproto xorg-libxkbfile xorg-xtrans xorg-libx11 xorg-libxext 
 
 description="A cross-platform application and UI framework"
 url="http://qt-project.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,7 +12,6 @@ version=5.13.1
 _name="${name}-everywhere-src"
 
 source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/submodules/${_name}-${version}.tar.xz)
-
 
 build() {
 
@@ -51,7 +51,8 @@ cd ${_name}-${version}
             -system-harfbuzz    \
             -system-sqlite      \
             -system-freetype    \
-	    -no-rpath
+            -no-rpath
+
 make
 make INSTALL_ROOT=$PKG install
 
