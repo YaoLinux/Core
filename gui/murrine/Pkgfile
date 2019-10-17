@@ -1,7 +1,8 @@
-makedepends=(gtk2 perl-xml-parser)
+makedepends=(gtk2 intltool)
 
 description="Cairo based GTK engine."
 url="http://www.cimitan.com/murrine/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,14 +15,14 @@ source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$versio
 build() {
 cd murrine-$version
 
-./configure \
---prefix=/usr \
---enable-animation \
---enable-animationrtl
+./configure --prefix=/usr \
+            --enable-animation \
+            --enable-animationrtl
 
 make
 make DESTDIR=$PKG install
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/${name}"
