@@ -2,6 +2,7 @@ makedepends=(xorg-fontconfig xorg-encodings xorg-font-util)
 
 description="A typeface designed for source code"
 url="http://sourcefoundry.org/hack/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,5 +12,5 @@ version=3.003
 source=(https://github.com/source-foundry/Hack/releases/download/v${version}/Hack-v${version}-ttf.tar.xz)
 
 build() {
-  install -Dm644 -t $PKG/usr/share/fonts/TTF $SRC/Hack-*.ttf
+  install -Dm644 -t $PKG/usr/share/fonts/TTF Hack-*.ttf
 }
