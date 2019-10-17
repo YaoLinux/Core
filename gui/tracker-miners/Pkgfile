@@ -2,12 +2,14 @@ makedepends=(exempi libgrss flac libexif libgsf libseccomp libvorbis poppler-gli
 
 description="Collection of data extractors for Tracker/Nepomuk"
 url="http://www.gnome.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
+
 run=(desktop-file-utils gtk-update-icon-cache)
 
 name=tracker-miners
-version=2.2.1
+version=2.3.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:3}/$name-$version.tar.xz)
 
