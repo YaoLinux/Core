@@ -2,25 +2,29 @@ makedepends=(gsfonts libjpeg-turbo2 xorg-libx11 gdk-pixbuf gtk2 xorg-libxt)
 
 description="A library for reading vector images in Microsoft's native Windows Metafile Format (WMF)"
 url="http://wvware.sourceforge.net/libwmf.html"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=libwmf
-version=0.2.10
+version=0.2.12
 
 PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/caolanm/libwmf/archive/v$version.tar.gz)
 
 build(){
+
     cd $name-$version
+
     ./configure --prefix=/usr \
                 --with-gsfontdir=/usr/share/fonts/Type1 \
                 --with-fontdir=/usr/share/fonts/Type1 \
                 --with-gsfontmap=/usr/share/ghostscript/9.14/Resource/Init/Fontmap.GS
+
     make
     make -j1 DESTDIR=$PKG install
+
     # rm fonts already in gsfonts packages
     rm -rf $PKG/usr/share/fonts
-
 }
