@@ -2,19 +2,22 @@ makedepends=(enchant cmake gstreamer-plugins-base gstreamer-plugins-bad xorg-lib
 
 description="engine of made Web free for the browsers web version 3"
 url="http://webkitgtk.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=webkitgtk
-version=2.22.5
+version=2.26.1
 
 source=(http://webkitgtk.org/releases/webkitgtk-$version.tar.xz)
 
 build() {
 cd webkitgtk-$version
+
 sed -i '1s/python$/&2/' Tools/gtk/generate-gtkdoc
-mkdir -vp build
-cd        build
+
+mkdir -vp build && cd build
+
 CFLAGS=-Wno-expansion-to-defined \
 CXXFLAGS=-Wno-expansion-to-defined \
 cmake -G Ninja \
@@ -28,13 +31,15 @@ cmake -G Ninja \
       -DENABLE_MINIBROWSER=ON     \
       -DUSE_WOFF2=OFF             \
       -Wno-dev ..
-|| ninja -j1
-DESTDIR=$PKG install || DESTDIR=$PKG ninja -j1 install
+
+ninja || ninja -j1
+DESTDIR=$PKG ninja install || DESTDIR=$PKG ninja -j1 install
 
 install -vdm755 $PKG/usr/share/gtk-doc/html/webkit{2,dom}gtk-4.0
+
 install -vm644  ../Documentation/webkit2gtk-4.0/html/* \
 $PKG/usr/share/gtk-doc/html/webkit2gtk-4.0
+
 install -vm644  ../Documentation/webkitdomgtk-4.0/html/* \
 $PKG/usr/share/gtk-doc/html/webkit2gtk-4.0
-
 }
