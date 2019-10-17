@@ -1,6 +1,8 @@
 makedepends=(glibc)
+
 description="Library for manipulating the IPTC metadata" 
 url="http://libiptcdata.sourceforge.net/" 
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -9,16 +11,3 @@ version=1.0.4
 release=2
 
 source=(http://downloads.sourceforge.net/sourceforge/libiptcdata/$name-$version.tar.gz )
-
-build() { 
-cd "$SRC/$name-$version"
-
-  ./configure --prefix=/usr
-  make
-}
- 
-package() { 
-cd "$SRC/$name-$version"
-make DESTDIR=$PKG install
-
-}
