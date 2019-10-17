@@ -1,14 +1,14 @@
 description="Xorg Header files which allow to build against the installed X Window system."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorgproto
-version=2018.4
+version=2019.2
 _name=$name
-
 
 source=(http://ftp.x.org/pub/individual/proto/$name-$version.tar.bz2)
 
