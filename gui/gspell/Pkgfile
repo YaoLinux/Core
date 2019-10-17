@@ -2,12 +2,10 @@ makedepends=(glib iso-codes gtk3 enchant)
 
 description="Spell library"
 url="http://gnome.org"
+
 packager="Yaolinux Team"
 
 name=gspell
-version=1.8.1
-release=2
-source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
+version=1.8.2
 
-package() {
-}
+source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
