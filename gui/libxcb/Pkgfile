@@ -2,6 +2,7 @@ makedepends=(xcb-proto xorg-libxdmcp xorg-libxau libxslt)
 
 description="Interface to the X Window System protocol, which replaces the current Xlib interface."
 url="http://xcb.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -16,12 +17,13 @@ cd $name-$version
 sed -e "s/pthread-stubs//" -i configure
 
 ./configure --prefix=/usr \
-	    --sysconfdir=/etc \
-	    --localstatedir=/var \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
             --disable-static \
-	    --docdir='${datadir}'/doc/libxcb-$version \
-	    --enable-xinput \
+            --docdir='${datadir}'/doc/libxcb-$version \
+            --enable-xinput \
             --enable-xkb
+
 make
 make DESTDIR=$PKG install
 }
