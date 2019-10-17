@@ -2,22 +2,23 @@ makedepends=(mesa)
 
 description="library graphic 3D table OpenGL"
 url="http://www.xorg-mesa3d.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-glu
+
 _name=glu
-version=9.0.0
+version=9.0.1
 release=3
+
+alias=(glu)
 
 source=(ftp://ftp.freedesktop.org/pub/mesa/${_name}/${_name}-$version.tar.bz2)
 
-build() {
+build=autotools
 
-cd ${_name}-$version
-./configure --prefix=/usr --disable-static
+prepare() {
 
-make DESTDIR=$PKG install
-
-
+mv ${_name}-$version $name-$version
 }
