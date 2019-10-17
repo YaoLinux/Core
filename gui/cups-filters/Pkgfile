@@ -2,22 +2,27 @@ makedepends=(glib cups lcms2 poppler mupdf qpdf libjpeg-turbo2 libpng libtiff gh
 
 description="OpenPrinting CUPS Filters"
 url="http://www.cups.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=cups-filters
-version=1.21.6
+version=1.25.11
 
 source=( http://www.openprinting.org/download/$name/$name-$version.tar.xz)
 build() {
+
 unset MAKEFLAGS
+
 cd $name-$version
+
 ./configure --prefix=/usr                   \
             --sysconfdir=/etc               \
             --localstatedir=/var            \
             --without-rcdir                 \
             --disable-static                \
             --docdir=/usr/share/doc/$name-$version
+
 make
 make DESTDIR=$PKG install
 }
