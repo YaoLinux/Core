@@ -7,27 +7,26 @@ maintainer="rems"
 
 name=lightdm
 version=1.28.0
-nutyx_version=10.92.3
+yaolinux_version=10.92.3
 release=3
 
 source=(https://github.com/CanonicalLtd/$name/releases/download/$version/$name-$version.tar.xz
-        http://downloads.tuxfamily.org/nutyx/files/nutyx-${nutyx_version}.tar.xz)
+        http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
 
  build() {
  
  cd $name-$version 
  
- ./configure \
-     --prefix=/usr \
-     --libexecdir=/usr/lib/lightdm \
-     --localstatedir=/var \
-     --sbindir=/usr/bin \
-     --sysconfdir=/etc \
-     --disable-static \
-     --disable-tests \
-     --with-greeter-user=$name \
-     --with-greeter-session=lightdm-gtk-greeter \
-     --docdir=/usr/share/doc/$name-$version
+ ./configure --prefix=/usr \
+             --libexecdir=/usr/lib/lightdm \
+             --localstatedir=/var \
+             --sbindir=/usr/bin \
+             --sysconfdir=/etc \
+             --disable-static \
+             --disable-tests \
+             --with-greeter-user=$name \
+             --with-greeter-session=lightdm-gtk-greeter \
+             --docdir=/usr/share/doc/$name-$version
 
 make
 make DESTDIR=$PKG install
@@ -43,7 +42,6 @@ install -v -dm755 -o lightdm -g lightdm $PKG/var/cache/lightdm
 install -v -dm770 -o lightdm -g lightdm $PKG/var/log/lightdm
 
 #Service
-cd $SRC/nutyx-${nutyx_version}
+cd ../yaolinux-${yaolinux_version}
 make DESTDIR=$PKG install-lightdm
-
 }
