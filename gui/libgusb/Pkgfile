@@ -2,6 +2,7 @@ makedepends=(libusb gperf glib gobject-introspection libgudev vala)
 
 description="The libgusb package contains the GObject wrappers for libusb-1.0"
 url="https://gitorious.org/gusb/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
