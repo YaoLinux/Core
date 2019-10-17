@@ -2,6 +2,7 @@ makedepends=(lightdm exo gobject-introspection)
 
 description="Gtk greeter for lightdm"
 url="https://en.wikipedia.org/wiki/LightDM"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,22 +15,23 @@ source=(https://launchpad.net/lightdm-gtk-greeter/"${version:0:3}"/$version/+dow
 build() {
 
 cd $name-$version
+
 CFLAGS+=" -Wno-declaration-after-statement \
 -Wno-error=deprecated-declarations"
-./configure \
---prefix=/usr \
---libexecdir=/usr/lib/lightdm \
---sbindir=/usr/bin \
---sysconfdir=/etc \
---with-libxklavier \
---enable-kill-on-sigterm \
---disable-libido \
---disable-libindicator \
---disable-static \
---docdir=/usr/share/doc/lightdm-gtk-greeter-$version
+./configure --prefix=/usr \
+            --libexecdir=/usr/lib/lightdm \
+            --sbindir=/usr/bin \
+            --sysconfdir=/etc \
+            --with-libxklavier \
+            --enable-kill-on-sigterm \
+            --disable-libido \
+            --disable-libindicator \
+            --disable-static \
+            --docdir=/usr/share/doc/lightdm-gtk-greeter-$version
 
 make
 make DESTDIR=$PKG install
+
 sed -i "s@#background=@background=/usr/share/backgrounds/yaolinux/wallpaper1.jpg@" \
 $PKG/etc/lightdm/lightdm-gtk-greeter.conf
 }
