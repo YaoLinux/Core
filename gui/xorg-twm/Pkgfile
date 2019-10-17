@@ -1,8 +1,8 @@
 makedepends=(xorg-libxt xorg-libxmu xorg-libice xorg-libsm xorg-server )
 
-
 description="The twm package contains a very minimal window manager."
 url="http://xorg.freedesktop.org" 
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -16,9 +16,14 @@ source=(system-twm-01.patch
 build() {
 
 	cd ${_name}-$version
+
 	patch -Np1 -i ../system-twm-01.patch
+
 	sed -i -e '/^rcdir =/s,^\(rcdir = \).*,\1/etc/X11/app-defaults,' src/Makefile.in
-	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+
+	./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --localstatedir=/var
 	
 	make
 	make DESTDIR=$PKG install
