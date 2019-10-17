@@ -2,11 +2,12 @@ makedepends=(doxygen graphviz libevdev mtdev libwacom gtk3 check libunwind valgr
 
 description="Library for display servers and other applications that need to deal with input devices"
 url="http://www.freedesktop.org/wiki/Software/libinput/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=libinput
-version=1.12.4
+version=1.14.1
 
 source=(http://freedesktop.org/software/$name/$name-$version.tar.xz)
 
@@ -14,10 +15,16 @@ build() {
 cd $name-$version
 mkdir build
 cd build
---prefix=/usr -Dtests=false -Ddebug-gui=false -Ddocumentation=false
+meson ../$name-$version \
+      --prefix=/usr \
+      -Dtests=false \
+      -Ddebug-gui=false \
+      -Ddocumentation=false
+
 ninja
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 }
+
 uptodate() {
 local url ext
 
