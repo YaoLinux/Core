@@ -2,19 +2,14 @@ makedepends=(gtk-doc gsettings-desktop-schemas desktop-file-utils gtk-update-ico
 
 description="Framework for automatic archive extraction, compression and management."
 url="http://www.gnome.org"
+
 packager="Yaolinux Team"
+
 run=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache)
 
 name=gnome-autoar
-version=0.2.3
-release=2
+version=0.2.4
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:3}/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
-	./configure --prefix=/usr --disable-static
-	make
-	make DESTDIR=$PKG install
-
-}
+build=autotools
