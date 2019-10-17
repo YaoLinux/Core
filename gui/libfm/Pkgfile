@@ -2,9 +2,9 @@ makedepends=(shared-mime-info gtk3 libexif menu-cache gtk-doc)
 
 description="Library used to develop file managers providing some file management utilities"
 url="http://pcmanfm.sourceforge.net/"
+
 maintainer="rems"
 packager="Yaolinux Team"
-
 
 name=libfm
 version=1.3.1
@@ -25,9 +25,9 @@ build() {
     autoreconf -fi
 
     ./configure --prefix=/usr \
-    --sysconfdir=/etc \
-    --with-gnu-ld \
-    --with-gtk=3
+                --sysconfdir=/etc \
+                --with-gnu-ld \
+                --with-gtk=3
 
     make
     make DESTDIR=$PKG install
@@ -37,6 +37,4 @@ build() {
     rm $PKG/usr/lib/pkgconfig/libfm-extra.pc
     rm $PKG/usr/include/libfm
     rm $PKG/usr/include/libfm-1.0/{fm-xml-file.h,fm-extra.h,fm-version.h}
-	
-
 }
