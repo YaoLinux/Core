@@ -2,6 +2,7 @@ makedepends=(glib atk pango cairo icu gdk-pixbuf xorg-fontconfig xorg-libsm xorg
 
 description="Qt is a cross-platform framework that is widely used for developing GUI applications"
 url="http://www.qt.io/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -12,7 +13,7 @@ release=3
 _name=qt-everywhere-opensource-src-${version}
 
 source=($name-$version-conglo-1.patch
-	http://download.qt-project.org/archive/qt/${version%.*}/$version/${_name}.tar.gz)
+        http://download.qt-project.org/archive/qt/${version%.*}/$version/${_name}.tar.gz)
 
 build() {
 
