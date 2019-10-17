@@ -1,4 +1,4 @@
-#Depends on : freetype python2-pip python2-pillow mercurial python python-pillow
+makedepends=(freetype python2-pip python2-pillow mercurial python-pillow)
 
 description="A proven industry-strength PDF generating solution"
 url="https://bitbucket.org/rptlab/reportlab"
@@ -6,14 +6,13 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-reportlab
-version=3.5.13
+version=3.5.23
 
 source=(https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-${version}.tar.gz)
 
 prepare() {
 
-cp -rf reportlab-${version} reportlab-${version}-py2
-
+cp -a reportlab-${version} reportlab-${version}-py2
 }
 
 build() {
