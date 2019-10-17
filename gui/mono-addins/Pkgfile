@@ -2,6 +2,7 @@ makedepends=(gtksharp2 mono)
 
 description="Generic framework for creating extensible applications"
 url="http://www.mono-project.com/Mono.Addins"
+
 maintainer="rems"
 packager="Yaolinux Team"
  
@@ -15,12 +16,16 @@ build() {
 
 local msbuild="$SRC/msbuild/MSBuild.exe"
   cd $name-$name-$version
+
   ./autogen.sh --prefix=/usr --enable-gui
+
   make
+
   mono "${msbuild}" Mono.Addins/Mono.Addins.csproj /p:WarningLevel=0;Configuration=Release
   mono "${msbuild}" Mono.Addins.CecilReflector/Mono.Addins.CecilReflector.csproj /p:WarningLevel=0;Configuration=Release
   mono "${msbuild}" Mono.Addins.Gui/Mono.Addins.Gui.csproj /p:WarningLevel=0;Configuration=Release
   mono "${msbuild}" Mono.Addins.MSBuild/Mono.Addins.MSBuild.csproj /p:WarningLevel=0;Configuration=Release
   mono "${msbuild}" Mono.Addins.Setup/Mono.Addins.Setup.csproj /p:WarningLevel=0;Configuration=Release
+
   make DESTDIR=$PKG install
 }
