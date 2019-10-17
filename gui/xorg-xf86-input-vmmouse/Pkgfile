@@ -1,7 +1,9 @@
 makedepends=(xorg-server)
 
 description="Xorg VMWare mouse input driver."
+
 packager="Yaolinux Team"
+
 name=xorg-xf86-input-vmmouse
 version=13.1.0
 _name=${name/xorg-/}
@@ -11,17 +13,18 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 
 build() {
 	cd ${_name}-$version
+
 	./configure --prefix=/usr \
-	--sysconfdir=/etc \
-	--localstatedir=/var \
-        --with-udev-rules-dir=/lib/udev/rules.d \
-        --without-hal-callouts-dir \
-        --without-hal-fdi-dir
+                --sysconfdir=/etc \
+                --localstatedir=/var \
+                --with-udev-rules-dir=/lib/udev/rules.d \
+                --without-hal-callouts-dir \
+                --without-hal-fdi-dir
 
 	make
 	make DESTDIR=$PKG install
-
 }
+
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
