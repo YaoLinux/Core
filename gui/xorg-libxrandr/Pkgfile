@@ -2,21 +2,19 @@ makedepends=(xorgproto xorg-libx11 xorg-libxext xorg-libxrender)
 
 description="Library libXrandr, resize and rotate extension client library"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxrandr
 alias=(libXrandr)
-version=1.5.1
-release=3
+version=1.5.2
 _name=libXrandr
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
 
-package() {
-}
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
