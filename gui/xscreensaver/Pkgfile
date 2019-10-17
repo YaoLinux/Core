@@ -2,12 +2,12 @@ makedepends=(bc libglade xorg-libxmu xorg-libxt xorg-libxpm)
 
 description="Screen saver and locker for the X Window System"
 url="http://www.jwz.org/xscreensaver/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xscreensaver
-version=5.40
-release=1
+version=5.43
 
 source=(http://www.jwz.org/xscreensaver/$name-$version.tar.gz)
 
@@ -15,12 +15,14 @@ build() {
 
 cd $name-$version
 ./configure --prefix=/usr \
---libexecdir=/usr/lib \
---without-gnome
-make
+            --libexecdir=/usr/lib \
+            --without-gnome
 
+make
 make install_prefix=$PKG install
+
 chmod 755 $PKG/usr/bin/xscreensaver
+
 mkdir -p $PKG/etc/pam.d
 cat > $PKG/etc/pam.d/xscreensaver << "EOF"
 # Begin /etc/pam.d/xscreensaver
@@ -30,5 +32,4 @@ account	include	system-account
 
 # End /etc/pam.d/xscreensaver
 EOF
-
 }
