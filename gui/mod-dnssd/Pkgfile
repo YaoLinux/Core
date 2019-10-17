@@ -2,6 +2,7 @@ makedepends=(avahi apache)
 
 description="Zeroconf module for Apache"
 url="http://0pointer.de/lennart/projects/mod_dnssd"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -15,9 +16,14 @@ source=(http://0pointer.de/lennart/projects/${_name}/${_name}-${version}.tar.gz
         
 build() {
   cd ${_name}-$version
-  patch -p1 < ${SRC}/fix_undefined_reference.patch
-  ./configure --prefix=/usr --disable-lynx
+
+  patch -p1 < ../fix_undefined_reference.patch
+
+  ./configure --prefix=/usr \
+              --disable-lynx
+
   make
+
   install -D -m755 src/.libs/mod_dnssd.so ${PKG}/usr/lib/httpd/modules/mod_dnssd.so
 }
   
