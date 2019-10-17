@@ -2,20 +2,24 @@ makedepends=(alsa-lib expat pulseaudio at-spi2-core python-gobject python2-gobje
 
 description="contains the bindings Python2 for the components of heart GNOME Accessibility"
 url="http://www.cairographics.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-atspi
-version=2.30.0
+version=2.34.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pyatspi/${version%.*}/pyatspi-$version.tar.xz)
 
 build() {
 cd pyatspi-$version
+
 ./configure --prefix=/usr
+
 make
 make DESTDIR=$PKG install
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/pyatspi"
