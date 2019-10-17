@@ -2,15 +2,11 @@ makedepends=(mesa libepoxy)
 
 description="A virtual 3D GPU library, allows guest operating system to use the host GPU to accelerate 3D rendering"
 url="https://virgil3d.github.io/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=virglrenderer
-version=0.7.0
+version=0.8.0
 
 source=(https://www.freedesktop.org/software/virgl/$name-$version.tar.bz2)
-
-package() {
-
-# Remove obsolet libs
-}
