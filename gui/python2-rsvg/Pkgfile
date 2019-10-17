@@ -2,6 +2,7 @@ makedepends=(python2-gtk librsvg )
 
 description="Connector python for the library librsvg"
 url="http://www.gnome.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -12,14 +13,19 @@ version=2.32.0
 release=2
 
 source=(http://ftp.gnome.org/pub/gnome/sources/${_name}/${version%.*}/${_name}-$version.tar.bz2)
+
 build() {
+
 cd ${_name}-$version
+
 ./configure --prefix=/usr
+
 make -C rsvg install DESTDIR=$PKG
+
 install -m755 -d $PKG/usr/share/pygtk/2.0/defs
 install -m644 rsvg/rsvg.defs $PKG/usr/share/pygtk/2.0/defs/
-
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/${_name}"
