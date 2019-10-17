@@ -1,11 +1,12 @@
 makedepends=(xorgproto xorg-libxaw xorg-libxt xorg-libx11)
 
 description="XKB utility demos."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xkbutils
 version=1.0.4
