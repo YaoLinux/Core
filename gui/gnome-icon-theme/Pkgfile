@@ -2,22 +2,21 @@ makedepends=(hicolor-icon-theme, gtk-update-icon-cache, icon-naming-utils, intlt
 
 description="GNOME Icons Set"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 
 run=(hicolor-icon-theme gtk-update-icon-cache icon-naming-utils)
 
 name=gnome-icon-theme
 version=3.12.0
-release=1
+
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr
-make
-make DESTDIR=$PKG install
+package() {
+
 gtk-update-icon-cache -q -t -f $PKG/usr/share/icons/gnome
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
