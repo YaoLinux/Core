@@ -2,7 +2,9 @@ makedepends=(systemd expat xorg-libx11 xorg-libsm xorg-libice)
 
 description="Bus message system"
 url="http://dbus.freedesktop.org/releases/dbus"
+
 packager="Yaolinux Team"
+maintainer="rems"
 
 name=dbus-x11
 _name=dbus
@@ -13,6 +15,7 @@ source=(http://dbus.freedesktop.org/releases/dbus/dbus-$version.tar.gz)
 
 build () {
 cd $_name-$version
+
 ./configure --prefix=/usr \
             --sysconfdir=/etc    \
             --localstatedir=/var   \
@@ -30,9 +33,10 @@ cd $_name-$version
 
 make
 make DESTDIR=$PKG install
-mkdir $SRC/tmp
-mv $PKG/usr/bin/dbus-launch $SRC/tmp
+
+mkdir ../tmp
+mv $PKG/usr/bin/dbus-launch ../tmp
 rm -r $PKG/*
 mkdir -pv $PKG/usr/bin
-mv $SRC/tmp/dbus-launch $PKG/usr/bin
+mv ../tmp/dbus-launch $PKG/usr/bin
 }
