@@ -2,20 +2,13 @@ makedepends=(gtk3 intltool xorg-libxkbfile xorg-libxklavier gobject-introspectio
 
 description="Gnome keyboard library"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=libgnomekbd
-version=3.26.0
-release=2
+version=3.26.1
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
-package() {
-}
-build() {
-cd $name-$version
-./configure --prefix=/usr --disable-static
-make 
-make DESTDIR=$PKG install
-}
+build=autotools
