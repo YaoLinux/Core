@@ -2,6 +2,7 @@ makedepends=(boost cppunit doxygen)
 
 description="library for REVerses ENGineered formats filters"
 url="http://sf.net/p/libwpd/librevenge/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -12,9 +13,11 @@ source=(http://sourceforge.net/projects/libwpd/files/librevenge/$name-$version/$
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
             --disable-static \
             --disable-werror
+
 make
 make DESTDIR=$PKG install
 }
