@@ -2,25 +2,29 @@ makedepends=(glib atk libpng libjpeg-turbo2 libtiff jasper lcms2 gnutls cups )
 
 description="An interpreter for the PostScript language"
 url="http://www.ghostscript.com/awki"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=ghostscript
-version=9.26
+version=9.50
 
 source=( https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${version/./}/$name-$version.tar.gz
          http://downloads.sourceforge.net/gs-fonts/ghostscript-fonts-std-8.11.tar.gz
-	 http://downloads.sourceforge.net/gs-fonts/gnu-gs-fonts-other-6.0.tar.gz)         
+         http://downloads.sourceforge.net/gs-fonts/gnu-gs-fonts-other-6.0.tar.gz)         
 
 unset MAKEFLAGS
 
 build() {
 cd $name-$version
+
 rm -rf freetype lcms2 jpeg libpng zlib
+
 ./configure --prefix=/usr \
-	--enable-dynamic \
-	--disable-compile-inits \
-	--with-system-libtiff
+            --enable-dynamic \
+            --disable-compile-inits \
+            --with-system-libtiff
+
 make
 make so
 make DESTDIR=$PKG install soinstall
