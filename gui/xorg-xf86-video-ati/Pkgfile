@@ -1,18 +1,16 @@
 makedepends=(mesa xorg-server)
 
 description="Xorg ati video driver."
+
 packager="Yaolinux Team"
+
 name=xorg-xf86-video-ati
-version=18.1.0
+version=19.1.0
 _name=${name/xorg-/}
-release=2
 
 source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
