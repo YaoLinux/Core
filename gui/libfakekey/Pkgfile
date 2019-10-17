@@ -1,10 +1,10 @@
-makedepends=(xorg-libxtst )
+makedepends=(xorg-libxtst)
 
 description="X virtual keyboard library."
 url="https://www.yoctoproject.org/tools-resources/projects/matchbox"
+
 packager="Yaolinux Team"
 maintainer="rems"
-
 
 name=libfakekey
 version=0.3
@@ -13,12 +13,14 @@ source=(http://git.yoctoproject.org/cgit/cgit.cgi/$name/snapshot/$name-$version.
 
 build() {
 cd $name-$version
+
 ./autogen.sh
+
 ./configure --prefix=/usr        \
             --sysconfdir=/etc    \
             --localstatedir=/var \
             --disable-static
+
 make AM_LDFLAGS=-lX11
 make DESTDIR=$PKG install
-
 }
