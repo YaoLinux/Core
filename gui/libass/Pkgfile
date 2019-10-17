@@ -2,6 +2,7 @@ makedepends=(freetype fribidi xorg-fontconfig harfbuzz)
 
 description="Portable subtitle renderer for Advanced Substation Alpha/Substation Alpha subtitle format"
 url="https://github.com/libass"
+
 packager="Yaolinux Team"
 
 name=libass
@@ -10,10 +11,4 @@ release=3
 
 source=(${url}/$name/releases/download/$version/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr --disable-static
-make
-make DESTDIR=$PKG install
-
-}
+build=autotools
