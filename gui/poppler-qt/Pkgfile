@@ -2,29 +2,28 @@ makedepends=(poppler xorg-libxxf86vm libpng xorg-fontconfig libjpeg-turbo2 cairo
 
 description="PDF rendering library based on xpdf 3.0"
 url="http://poppler.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=poppler-qt
-version=0.72.0
+version=0.81.0
 
 source=(http://poppler.freedesktop.org/poppler-$version.tar.xz)
 
 build() {
-    cd poppler-$version
 
-    mkdir build
-    cd    build
+    mkdir build && cd build
 
 cmake   -DCMAKE_BUILD_TYPE=Release   \
         -DCMAKE_INSTALL_PREFIX=/usr  \
         -DTESTDATADIR=$PWD/testfiles \
         -DENABLE_XPDF_HEADERS=OFF    \
-	-DENABLE_QT=ON               \
-	-DENABLE_QT4=OFF             \
-	-DENABLE_GLIB=OFF            \
-	-DENABLE_GTK_DOC=OFF         \
-        ..
+        -DENABLE_QT=ON               \
+        -DENABLE_QT4=OFF             \
+        -DENABLE_GLIB=OFF            \
+        -DENABLE_GTK_DOC=OFF         \
+        ../poppler-$version
 
     make
     make -C qt5 DESTDIR=$PKG install
