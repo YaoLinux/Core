@@ -2,34 +2,36 @@ makedepends=(doxygen alsa-lib bzip2 fribidi gmp gsm jack ladspa lame libavc1394 
 
 description="Complete and free Internet live audio and video broadcasting solution"
 url="http://ffmpeg.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=ffmpeg
-version=4.1
-release=3
+version=4.2.1
 
 source=(${url}releases/ffmpeg-$version.tar.xz)
 
 build() {
 cd ffmpeg-$version
+
 sed -i 's/-lflite"/-lflite -lasound"/' configure
+
 ./configure --prefix=/usr        \
-	    --enable-libpulse    \
+            --enable-libpulse    \
             --enable-gpl         \
             --enable-version3    \
             --enable-nonfree     \
             --disable-static     \
             --enable-shared      \
             --disable-debug      \
-	    --enable-avisynth    \
-	    --enable-avresample  \
-	    --enable-fontconfig  \
-	    --enable-gmp         \
-	    --enable-openssl     \
-	    --enable-ladspa      \
-	    --enable-libass      \
-	    --enable-libbluray   \
+            --enable-avisynth    \
+            --enable-avresample  \
+            --enable-fontconfig  \
+            --enable-gmp         \
+            --enable-openssl     \
+            --enable-ladspa      \
+            --enable-libass      \
+            --enable-libbluray   \
             --enable-libfdk-aac  \
             --enable-libfreetype \
             --enable-libfribidi  \
@@ -40,24 +42,27 @@ sed -i 's/-lflite"/-lflite -lasound"/' configure
             --enable-libopencore_amrnb \
             --enable-libopencore_amrwb \
             --enable-libopenjpeg \
-	    --enable-libopus     \
-	    --enable-libspeex    \
-	    --enable-libssh      \
+            --enable-libopus     \
+            --enable-libspeex    \
+            --enable-libssh      \
             --enable-libtheora   \
             --enable-libv4l2     \
             --enable-libvorbis   \
             --enable-libvpx      \
             --enable-libwebp     \
             --enable-libx264     \
-	    --enable-libx265     \
-	    --enable-libxcb      \
-	    --enable-libxml2     \
-	    --enable-libxvid     \
+            --enable-libx265     \
+            --enable-libxcb      \
+            --enable-libxml2     \
+            --enable-libxvid     \
             --enable-sdl2        \
             --docdir=/usr/share/doc/$name-$version
+
 make
 gcc tools/qt-faststart.c -o tools/qt-faststart
+
 make DESTDIR=$PKG install
+
 install -v -m755 tools/qt-faststart \
 $PKG/usr/bin
 
