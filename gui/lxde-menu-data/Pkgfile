@@ -2,15 +2,19 @@ makedepends=(intltool perl-xml-parser)
 
 description="Provides files required to build freedesktop.org menu spec-compliant desktop menus for LXDE"
 url="http://lxde.org/"
+
 packager="Yaolinux Team"
 
 name=lxde-menu-data
 version=0.1.5
-release=1
+
 _name=lxmenu-data
+
 source=(http://downloads.sourceforge.net/lxde/${_name}-$version.tar.xz)
+
 build() {
 cd $_name-$version
+
 ./configure --prefix=/usr --sysconfdir=/etc
 make
 make DESTDIR=$PKG install
