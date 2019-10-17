@@ -1,7 +1,8 @@
-makedepends=(gtk3 gobject-introspection )
+makedepends=(gtk3 gobject-introspection)
 
 description="Library for writing single instance applications for GTK3"
 url="http://live.gnome.org/LibUnique"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -10,9 +11,6 @@ version=3.0.2
 release=2
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.bz2)
-
-package() {
-}
 
 uptodate(){
 local latest lastversion url
