@@ -2,6 +2,7 @@ makedepends=(python )
 
 description="XCB X protocol descriptions"
 url="http://xcb.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
