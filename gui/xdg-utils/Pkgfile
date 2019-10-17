@@ -2,6 +2,7 @@ makedepends=(lynx xmlto xorg-xset)
 
 description="Set of command line tools that assist applications with a variety of desktop integration tasks." 
 url="https://www.freedesktop.org/wiki/Software/xdg-utils/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -17,10 +18,8 @@ build() {
    cd $name-$version
 
    ./configure --prefix=/usr \
-   --mandir=/usr/share/man 
+               --mandir=/usr/share/man 
 
    make -j1
-
    make DESTDIR=$PKG install
-   
 }
