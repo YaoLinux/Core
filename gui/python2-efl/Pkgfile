@@ -2,18 +2,18 @@ makedepends=(efl dbus-python)
 
 description="python2 bindings for the Enlightenment Foundation Libraries"
 url="http://www.enlightenment.org"
+
 packager="Yaolinux Team"
 
 name=python2-efl
 version=1.21.0
-_pkgname=python-efl
+_name=python-efl
 
 source=(http://download.enlightenment.org/rel/bindings/python/$_pkgname-$version.tar.xz)
 
 build() {
-  cd $_pkgname-$version
+  cd ${_name}-$version
 
    python2 setup.py install --root=$PKG --optimize=1
-
 }
 
