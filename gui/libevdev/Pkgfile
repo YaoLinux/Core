@@ -2,6 +2,7 @@ makedepends=(python)
 
 description="The Libevdev package contains common functions for Xorg input drivers."
 url="http://www.freedesktop.org/wiki/Software/libevdev/"
+
 packager="Yaolinux Team"
 
 name=libevdev
@@ -17,7 +18,5 @@ cd $name-$version
                --localstatedir=/var
 
    make
-
    make DESTDIR=$PKG install
-
 }
