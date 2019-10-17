@@ -1,20 +1,18 @@
 
 description="library libpciaccess for access generic PCI"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
  
 name=xorg-libpciaccess
 _name=libpciaccess
-version=0.14
-release=2
+version=0.16
 
 source=(http://ftp.x.org/pub/individual//lib/${_name}-$version.tar.bz2)
 
 build=xorg
 
-package() {
-}
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
