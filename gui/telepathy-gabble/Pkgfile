@@ -2,6 +2,7 @@ makedepends=(telepathy-glib libsoup libnice sqlite libxslt)
 
 description="A Jabber/XMPP connection manager for Telepathy"
 url="http://telepathy.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,9 +15,11 @@ source=(https://telepathy.freedesktop.org/releases/telepathy-gabble/telepathy-ga
 build() {
 
   cd $name-$version
+
   ./configure --prefix=/usr             \
               --without-ca-certificates \
               --libexecdir=/usr/lib/telepathy
+
   make
   make DESTDIR=$PKG install
 
