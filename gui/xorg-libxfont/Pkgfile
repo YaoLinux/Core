@@ -2,22 +2,19 @@ makedepends=(freetype xorgproto xorg-xtrans xorg-libfontenc)
 
 description="libXfont, library Xorg"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxfont
 alias=(libXfont)
-version=1.5.4
-release=3
+version=2.0.4
 
 _name=libXfont
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
