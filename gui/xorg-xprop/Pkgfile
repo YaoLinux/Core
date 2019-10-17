@@ -1,6 +1,7 @@
 makedepends=(xorg-libx11)
 
 description="Property displayer for X."
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -8,7 +9,7 @@ PKGMK_GROUPS=(doc man)
 url="http://xorg.freedesktop.org"
 
 name=xorg-xprop
-version=1.2.3
+version=1.2.4
 _name=${name/xorg-/}
 
 source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
