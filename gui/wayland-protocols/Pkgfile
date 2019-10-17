@@ -2,23 +2,15 @@ makedepends=(wayland)
 
 description="Additional Wayland protocols"
 url=" https://wayland.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=wayland-protocols
-version=1.17
+version=1.18
 
 source=(https://wayland.freedesktop.org/releases/wayland-protocols-$version.tar.xz)
 
-build() {
-
-  cd $name-$version
-  ./configure --prefix=/usr
-  
-  make
-  make DESTDIR=$PKG install
-  
-}
 uptodate() {
 local url ext
 
