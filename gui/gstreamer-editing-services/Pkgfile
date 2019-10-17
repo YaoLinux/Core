@@ -2,21 +2,23 @@ makedepends=(bash-completion gobject-introspection gtk-doc python-gobject gstrea
 
 description="GStreamer library for creating audio/video editors"
 url="https://gstreamer.freedesktop.org/modules/gst-editing-services.html"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=gstreamer-editing-services
-version=1.14.4
-release=3
+version=1.16.1
 
 source=(https://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
-./configure --prefix=/usr --enable-gtk-doc \
-            --with-package-name="GStreamer (NuTyX)" \
-            --with-package-origin="http://www.nutyx.org/"
+
+./configure --prefix=/usr \
+            --enable-gtk-doc \
+            --with-package-name="GStreamer (YaoLinuX)" \
+            --with-package-origin="http://downloads.yaolinux.org/"
+
 make
 make DESTDIR=$PKG install
-
 }
