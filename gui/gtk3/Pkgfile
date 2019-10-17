@@ -2,12 +2,14 @@ makedepends=(gtk-doc adwaita-icon-theme libepoxy xorg-libxinerama xorg-libxrandr
 
 description="Libraries used for creating graphical user interfaces for applications."
 url="http://www.gtk.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
+
 run=(adwaita-icon-theme)
 
 name=gtk3
-version=3.24.5
+version=3.24.12
 
 source=(http://ftp.gnome.org/pub/gnome/sources/gtk+/${version%.*}/gtk+-$version.tar.xz)
 
@@ -15,17 +17,15 @@ build() {
 cd gtk+-$version
 
 ./configure --prefix=/usr \
---sysconfdir=/etc         \
---mandir=/usr/share/man   \
---infodir=/usr/share/info \
---enable-broadway-backend \
---enable-x11-backend      \
---enable-wayland-backend
+            --sysconfdir=/etc         \
+            --mandir=/usr/share/man   \
+            --infodir=/usr/share/info \
+            --enable-broadway-backend \
+            --enable-x11-backend      \
+            --enable-wayland-backend
 
 make || make -j1
 make DESTDIR=$PKG install
-
-
 
 cat > $PKG/etc/gtk-3.0/settings.ini << "EOF"
 [Settings]
@@ -40,9 +40,11 @@ gtk-xft-hintstyle = hintslight
 gtk-xft-rgba = rgb
 gtk-cursor-theme-name = Adwaita
 EOF
-# Empaqueté ds gtk-update-icon-cache
+
+# Already in gtk-update-icon-cache
 rm $PKG/{usr/bin/gtk-update-icon-cache,usr/share/man/man1/gtk-update-icon-cache.1}
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/gtk+"
