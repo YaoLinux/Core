@@ -2,13 +2,11 @@ makedepends=(eigen3 gtest sdl2 fftw libepoxy)
 
 description="The modern video toolkit"
 url="http://movit.sesse.net/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=movit
-version=1.6.2
+version=1.6.3
 
 source=(https://movit.sesse.net/$name-$version.tar.gz)
-
-package() {
-}
