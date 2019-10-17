@@ -2,20 +2,22 @@ makedepends=(avahi libsoup json-glib modemmanager libnotify geoip python2 gobjec
 
 description="Modular geoinformation service built on the D-Bus messaging system."
 url="http://freedesktop.org/software/geoclue/docs/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=geoclue2
-version=2.5.2
+version=2.5.5
 
 source=(https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/$version/geoclue-$version.tar.bz2)
 
 build() {
-  cd geoclue-$version
 
-mkdir -pv build
-cd build
---prefix=/usr
+mkdir -pv build && cd build
+
+meson --prefix=/usr \
+      ../geoclue-$version
+
 ninja
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 }
