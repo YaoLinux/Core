@@ -2,6 +2,7 @@ makedepends=(imlib2)
 
 description="Color ASCII Art Library"
 url="http://libcaca.zoy.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,12 +14,13 @@ source=(http://libcaca.zoy.org/files/libcaca/libcaca-$version.tar.gz)
 
 build() {
 	cd $name-$version
+
 	./configure --prefix=/usr \
-		--mandir=/usr/share/man \
-		--infodir=/usr/share/info \
+                --mandir=/usr/share/man \
+                --infodir=/usr/share/info \
                 --disable-doc  \
                 --localstatedir=/var
+
 	make
 	make DESTDIR=$PKG install
-
 }
