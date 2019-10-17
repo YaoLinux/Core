@@ -1,10 +1,10 @@
-makedepends=(xorg-server )
+makedepends=(xorg-server)
 
 description="Set of free outline fonts covering the Unicode character set"
 url="http://www.nongnu.org/freefont/"
+
 packager="Yaolinux Team"
 maintainer="rems"
-
 
 name=freefont-ttf
 version=20120503
@@ -14,10 +14,12 @@ source=(http://ftp.gnu.org/gnu/freefont/$name-$version.zip)
 
 build() {
         cd freefont-$version
+
         install -v -d -m755 $PKG/usr/share/fonts/freefont
         install -v -m644 *.ttf $PKG/usr/share/fonts/freefont/
 
 }
+
 uptodate() {
 local url ext
 url="http://ftp.gnu.org/gnu/freefont/"
