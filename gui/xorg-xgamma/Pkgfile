@@ -1,6 +1,7 @@
 makedepends=(xorgproto xorg-libx11 xorg-libxxf86vm)
 
 description="Alter a monitor's gamma correction."
+
 packager="Yaolinux Team"
 maintainer="rems"
 
