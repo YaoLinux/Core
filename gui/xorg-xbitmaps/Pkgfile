@@ -1,5 +1,6 @@
 description="Bitmaps for X"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
