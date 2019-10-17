@@ -2,6 +2,7 @@ makedepends=(alsa-lib pulseaudio git)
 
 description="Cross-platform audio output library and plugins"
 url="http://xiph.org/ao/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,15 +12,17 @@ version=1.2.2-git
 source=()
 
 prepare() {
+
 git clone https://git.xiph.org/libao.git $name
 }
 
 build() {
   cd $name
 
-./autogen.sh
+  ./autogen.sh
+
   ./configure --prefix=/usr      \
-	      --enable-alsa-mmap 
+              --enable-alsa-mmap 
 
   make
   make DESTDIR=$PKG install
@@ -30,6 +33,4 @@ cat > $PKG/etc/libao.conf << "EOF"
 default_driver=alsa
 dev=default
 EOF
-
-
 }
