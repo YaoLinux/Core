@@ -2,23 +2,17 @@ makedepends=(intltool libxslt docbook-xsl glib gobject-introspection libgcrypt v
 
 description="The libsecret package contains a GObject based library for accessing the Secret Service API."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
-
 name=libsecret
-version=0.18.6
-release=2
+version=0.19.1
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr --disable-static
-make
-make DESTDIR=$PKG install
+build=autotools
 
-}
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
