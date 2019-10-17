@@ -2,25 +2,27 @@ makedepends=(glib libjpeg-turbo22 cyrus-sasl lz4 opus xorg-pixman git libcacard 
 
 description="A spice server"
 url="https://www.spice-space.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=spice
-version=0.14.1
-release=5
+version=0.14.2
 
 source=(https://www.spice-space.org/download/releases/$name-server/$name-$version.tar.bz2)
 
 build() {
 
 cd $name-$version
-PYTHON=python2 ./configure --prefix=/usr \
-                           --disable-static \
-                           --enable-smartcard \
-                           --enable-client \
-                           --disable-werror \
-                           --disable-celt051
+
+PYTHON=python2 \
+./configure --prefix=/usr \
+            --disable-static \
+            --enable-smartcard \
+            --enable-client \
+            --disable-werror \
+            --disable-celt051
+
 make
 make DESTDIR=$PKG install
-
 }
