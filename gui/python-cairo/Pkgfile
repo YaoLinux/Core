@@ -2,16 +2,14 @@ makedepends=(python cairo )
 
 description="connector Python (3) for the library cairo"
 url="http://www.cairographics.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-cairo
-version=1.18.0
+version=1.18.1
+_name=pycairo
 
 source=(https://github.com/pygobject/pycairo/releases/download/v$version/pycairo-$version.tar.gz)
 
-build() {
-	cd pycairo-$version
-	python3 setup.py build
-	python3 setup.py install --optimize=1 --root=$PKG
-}  
+build=python3
