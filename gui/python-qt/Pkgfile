@@ -2,11 +2,12 @@ makedepends=(sip dbus-python python-sip qtbase qtconnectivity qtmultimedia qttoo
 
 description="connector python for qt"
 url="http://www.riverbankcomputing.co.uk/software/pyqt/intro"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-qt
-version=5.12
+version=5.13.1
 
 source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/PyQt5_gpl-${version}.tar.gz)
 build() {
@@ -14,9 +15,10 @@ build() {
 cd PyQt5_gpl-$version
 
 python3 configure.py   \
-     --no-sip-files \
-     --confirm-license \
-     --qsci-api
+        --no-sip-files \
+        --confirm-license \
+        --qsci-api
+
 make
 make DESTDIR=$PKG INSTALL_ROOT=$PKG install -j1
 
