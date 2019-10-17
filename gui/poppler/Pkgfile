@@ -6,23 +6,22 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 dataversion=0.4.9
-name=poppler
-version=0.72.0
 
-source=(
-http://poppler.freedesktop.org/$name-$version.tar.xz
+name=poppler
+version=0.81.0
+
+source=(http://poppler.freedesktop.org/$name-$version.tar.xz
 http://poppler.freedesktop.org/poppler-data-$dataversion.tar.gz)
 
 build() {
-cd poppler-$version
-mkdir build
-cd    build
+
+mkdir build && cd build
 
 cmake   -DCMAKE_BUILD_TYPE=Release   \
-	-DCMAKE_INSTALL_PREFIX=/usr  \
-	-DTESTDATADIR=$PWD/testfiles \
-	-DENABLE_XPDF_HEADERS=ON      \
-	..
+        -DCMAKE_INSTALL_PREFIX=/usr  \
+        -DTESTDATADIR=$PWD/testfiles \
+        -DENABLE_XPDF_HEADERS=ON      \
+        ../poppler-$version
 
 make
 make DESTDIR=$PKG install
@@ -42,5 +41,4 @@ rm -rf $PKG/usr/include/poppler/qt4/
 
 rm -f $PKG/usr/bin/poppler-qt-demo
 rm -rf $PKG/usr/include/poppler/qt/
-
 }
