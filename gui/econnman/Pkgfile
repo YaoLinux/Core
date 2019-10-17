@@ -2,7 +2,9 @@ makedepends=(python2-efl connman )
 
 description="Enlightenment ConnMan user interface"
 url="https://phab.enlightenment.org/w/projects/econnman/"
+
 packager="Yaolinux Team"
+maintainer="Dania"
 
 name=econnman
 version=1.1
