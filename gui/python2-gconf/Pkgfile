@@ -2,6 +2,7 @@ makedepends=(python2-gtk gconf)
 
 description="Bindings Python2 for GConf"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -15,12 +16,14 @@ source=(http://download.gnome.org/sources/$_name/${version%.*}/$_name-$version.t
 
 build() {
 	cd $_name-$version
+
 	PYTHON=python2 ./configure --prefix=/usr \
 		--disable-gtk-doc \
 		--disable-allbindings \
 		--enable-gconf
+
 	make
 	make DESTDIR=$PKG install
-	rm -rf $PKG/usr/lib/pkgconfig
 
+	rm -rf $PKG/usr/lib/pkgconfig
 }
