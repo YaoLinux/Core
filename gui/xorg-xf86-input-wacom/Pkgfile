@@ -1,9 +1,11 @@
 makedepends=(xorg-libxi xorg-libxinerama xorg-libxrandr xorg-server)
 
 description="Xorg Wacom tablet driver."
+
 packager="Yaolinux Team"
+
 name=xorg-xf86-input-wacom
-version=0.36.1
+version=0.37.0
 _name=${name/xorg-/}
 
 source=(https://github.com/linuxwacom/xf86-input-wacom/releases/download/$_name-$version/$_name-$version.tar.bz2)
@@ -11,9 +13,9 @@ source=(https://github.com/linuxwacom/xf86-input-wacom/releases/download/$_name-
 build() {
 	cd ${_name}-$version
 	./configure --prefix=/usr \
-	--sysconfdir=/etc \
-	--localstatedir=/var \
-	--with-systemd-unit-dir=/lib/systemd/system
+                --sysconfdir=/etc \
+                --localstatedir=/var \
+                --with-systemd-unit-dir=/lib/systemd/system
 
 	make
 	make DESTDIR=$PKG install
