@@ -2,20 +2,17 @@ makedepends=(xorg-libxrender freetype xorg-fontconfig )
 
 description="libXft, library X are rendering client"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxft
-version=2.3.2
-release=2
+version=2.3.3
 _name=libXft
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
