@@ -2,6 +2,7 @@ makedepends=(popt sdl xorg-libxv )
 
 description="The Quasar DV codec (libdv) is a software codec for DV video"
 url="http://downloads.sourceforge.net/libdv"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,10 +12,13 @@ release=2
 
 source=(http://downloads.sourceforge.net/libdv/libdv-1.0.0.tar.gz)
 build() {
+
 cd $name-$version
-./configure --prefix=/usr --disable-xv \
---disable-static
+
+./configure --prefix=/usr \
+            --disable-xv \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
-
 }
