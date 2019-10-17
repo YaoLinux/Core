@@ -2,23 +2,26 @@ makedepends=(itstool gtk3 libnotify yelp-tools )
 
 description="Display graphical dialog boxes from shell scripts."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=zenity
-version=3.30.0
+version=3.32.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
 build() {
 
 cd $name-$version
-./configure --prefix=/usr --sysconfdir=/etc \
-      --localstatedir=/var
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var
+
 make
 make DESTDIR=$PKG install
-
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/${name}"
