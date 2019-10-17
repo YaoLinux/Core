@@ -2,6 +2,7 @@ makedepends=(extra-cmake-modules qtbase qtx11extras)
 
 description="Monitoring user activity "
 url="https://www.kde.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
