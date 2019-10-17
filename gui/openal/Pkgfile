@@ -2,12 +2,12 @@ makedepends=(alsa-lib cmake)
 
 description="Cross-platform 3D audio."
 url="http://connect.creativelabs.com/openal"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=openal
 version=1.19.1
-release=1
 
 source=(http://kcat.strangesoft.net/openal-releases/openal-soft-$version.tar.bz2 )
 
