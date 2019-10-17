@@ -1,11 +1,12 @@
 makedepends=(xorg-libxt xorg-libxkbfile)
 
 description="X Window System image dumping utility."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xwd
 version=1.0.7
