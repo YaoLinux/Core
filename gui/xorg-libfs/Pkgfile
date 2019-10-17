@@ -2,6 +2,7 @@ makedepends=(xorgproto xorg-xtrans)
 
 description="libFS, library X Font Service client"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
  
@@ -13,8 +14,7 @@ _name=libFS
 source=(http://ftp.x.org/pub/individual//lib/libFS-$version.tar.bz2)
 
 build=xorg
-package() {
-}
+
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
