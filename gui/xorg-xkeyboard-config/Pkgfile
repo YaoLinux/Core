@@ -2,6 +2,7 @@ makedepends=(intltool xorgproto xorg-libx11)
 
 description="X keyboard configuration database"
 url="http://www.freedesktop.org/wiki/Software_2fXKeyboardConfig"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -16,9 +17,11 @@ source=( http://xorg.freedesktop.org/archive/individual/data/${_name}/${_name}-$
 build() {
 
 cd ${_name}-$version
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var --with-xkb-rules-symlink=xorg
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --with-xkb-rules-symlink=xorg
 
 make
 make DESTDIR=$PKG install
-
 }
