@@ -2,12 +2,12 @@ makedepends=(xorgproto m4 shared-mime-info freetype libxml2 cairo gtk2 pango des
 
 description="Outline and bitmap font editor"
 url="http://fontforge.sourceforge.net"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=fontforge
-version=20170731
-release=4
+version=20190801
 
 run=(shared-mime-info)
 
@@ -15,12 +15,12 @@ source=(https://github.com/$name/$name/releases/download/$version/$name-dist-$ve
 
 build() {
     cd $name*
+
     ./configure --prefix=/usr \
-            --enable-gtk2-use \
-            --disable-static  \
-            --docdir=/usr/share/doc/$name-$version
+                --enable-gtk2-use \
+                --disable-static  \
+                --docdir=/usr/share/doc/$name-$version
+
     make
     make DESTDIR=$PKG install
-
-
 }
