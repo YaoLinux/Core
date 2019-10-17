@@ -2,11 +2,12 @@ makedepends=(xorg-libxrandr gdk-pixbuf mesa xorg-glu pango xorg-libdrm gobject-i
 
 description="An object oriented GL/GLES Abstraction/Utility Layer"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
+
 name=cogl
-version=1.22.2
-release=3
+version=1.22.4
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
@@ -18,12 +19,14 @@ cd $name-$version
 sed -i 's/^#if COGL/#ifdef COGL/' cogl/winsys/cogl-winsys-egl.c
 
 ./configure --prefix=/usr \
---enable-gles{1,2} \
---enable-{kms,wayland,xlib}-egl-platform \
---enable-wayland-egl-server
+            --enable-gles{1,2} \
+            --enable-{kms,wayland,xlib}-egl-platform \
+            --enable-wayland-egl-server
+
 make
 make DESTDIR=$PKG install
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
