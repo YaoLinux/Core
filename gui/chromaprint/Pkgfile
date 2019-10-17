@@ -10,12 +10,14 @@ version=1.4.3
 
 source=(https://github.com/acoustid/${name}/releases/download/v$version/${name}-${version}.tar.gz)
 build() {
-cd $name-v$version
-cmake \
-		-DCMAKE_INSTALL_PREFIX=/usr \
-		-DCMAKE_BUILD_TYPE=Release \
-		-DBUILD_EXAMPLES=ON \
-		.
+
+mkdir build && cd build
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DBUILD_EXAMPLES=ON \
+      ../$name-v$version
+
 make
 make DESTDIR=$PKG install
 }
