@@ -2,6 +2,7 @@ makedepends=(cmake)
 
 description="A Library for reading and editing the meta-data of several popular audio formats"
 url="http://developer.kde.org/~wheeler/taglib.html"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,13 +14,13 @@ source=( https://taglib.github.io/releases/$name-$version.tar.gz)
 
 build() {
 
-        cd $name-$version
-        mkdir build
-        cd build
+        mkdir build && cd build
+
         cmake -DCMAKE_INSTALL_PREFIX=/usr \
               -DCMAKE_BUILD_TYPE=Release  \
               -DBUILD_SHARED_LIBS=ON      \
-              ..
+              ../$name-$version
+
         make
         make DESTDIR=$PKG install
 }
