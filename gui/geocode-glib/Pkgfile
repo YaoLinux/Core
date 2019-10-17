@@ -2,11 +2,12 @@ makedepends=(json-glib libsoup gobject-introspection gtk-doc meson)
 
 description="A convenience library for the geocoding and reverse geocoding"
 url="https://en.wikipedia.org/wiki/Geocoding"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=geocode-glib
-version=3.26.0
+version=3.26.1
 
 source=(http://ftp.gnome.org/pub/GNOME/sources/$name/${version%.*}/$name-$version.tar.xz)
 
