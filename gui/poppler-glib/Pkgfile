@@ -2,31 +2,31 @@ makedepends=(nss poppler xorg-libxxf86vm libpng xorg-fontconfig libjpeg-turbo2 c
 
 description="PDF rendering library based on xpdf 3.0"
 url="URL: http://poppler.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=poppler-glib
-version=0.72.0
+version=0.81.0
 
 source=(http://poppler.freedesktop.org/poppler-$version.tar.xz)
 
 build() {
-cd poppler-$version
 
-mkdir build
-cd    build
+mkdir build && cd build
 
 cmake   -DCMAKE_BUILD_TYPE=Release   \
-	-DCMAKE_INSTALL_PREFIX=/usr  \
-	-DTESTDATADIR=$PWD/testfiles \
-	-DENABLE_XPDF_HEADERS=OFF    \
-	-DENABLE_POPPLER_QT4=OFF     \
+        -DCMAKE_INSTALL_PREFIX=/usr  \
+        -DTESTDATADIR=$PWD/testfiles \
+        -DENABLE_XPDF_HEADERS=OFF    \
+        -DENABLE_POPPLER_QT4=OFF     \
         -DENABLE_POPPLER_GLIB=ON     \
-	-DENABLE_GTK_DOC=OFF         \
-	..
+        -DENABLE_GTK_DOC=OFF         \
+        ../poppler-$version
 
 make
 make -C glib DESTDIR=$PKG install
+
 install -m755 -d $PKG/usr/lib/pkgconfig
 install -m644 poppler-glib.pc $PKG/usr/lib/pkgconfig/
 
