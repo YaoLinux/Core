@@ -2,22 +2,25 @@ makedepends=(boost lua qtbase)
 
 description="Fast and flexible source code highlighter (CLI version)"
 url="http://www.andre-simon.de/doku/highlight/highlight.html"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=highlight
-version=3.48
-release=1
+version=3.53
 
 source=(http://www.andre-simon.de/zip/$name-$version.tar.bz2)
 
 build(){
     cd $name-$version
-    make 
+
+    make
     make gui
 }
+
 package(){
     cd $name-$version
+
     make DESTDIR=$PKG install
     make DESTDIR=$PKG install-gui
 }
