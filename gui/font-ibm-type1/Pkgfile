@@ -1,11 +1,12 @@
 makedepends=(xorg-mkfontdir xorg-fontconfig xorg-font-util xorg-font-alias xorg-encodings)
 
 description="Xorg IBM Type1 fonts."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=font-ibm-type1
 version=1.0.3
@@ -14,8 +15,12 @@ source=(http://ftp.x.org/pub/individual/font/$name-$version.tar.bz2)
 
 build() {
 	cd $name-$version	
-	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-	--with-fontrootdir=/usr/share/fonts
+
+	./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --localstatedir=/var \
+                --with-fontrootdir=/usr/share/fonts
+
 	make
 	make DESTDIR=$PKG install
 }
