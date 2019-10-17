@@ -2,6 +2,7 @@ makedepends=(ghostscript )
 
 description="library for the made of documents postscript"
 url="http://libspectre.freedesktop.org/wiki/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,11 +12,4 @@ release=2
 
 source=(http://libspectre.freedesktop.org/releases/$name-$version.tar.gz)
 
-build() {
-cd $name-$version
-	./configure --prefix=/usr \
-	--disable-static
-	make
-	make DESTDIR=$PKG install
-
-}
+build=autotools
