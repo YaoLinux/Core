@@ -2,6 +2,7 @@ makedepends=(xorg-libx11 xcb-util )
 
 description="Monitor and display application startup"
 url="http://freedesktop.org/wiki/Software/startup-notification"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,9 +12,4 @@ release=3
 
 source=(http://www.freedesktop.org/software/$name/releases/$name-$version.tar.gz)
 
-build() {
-cd $name-$version
-./configure --prefix=/usr --disable-static
-make
-make DESTDIR=$PKG install
-}
+build=autotools
