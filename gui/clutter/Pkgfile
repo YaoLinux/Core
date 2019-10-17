@@ -2,6 +2,7 @@ makedepends=(atk cogl json-glib gobject-introspection gtk3 gtk-doc libgudev libi
 
 description="A GObject based library for creating fast, visually rich graphical user interfaces"
 url="https://blogs.gnome.org/clutter"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,15 +15,15 @@ source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$versio
 build() {
 cd $name-$version
 ./configure --prefix=/usr \
-    --enable-introspection \
-    --enable-egl-backend \
-    --enable-gdk-backend \
-    --enable-wayland-backend \
-    --enable-x11-backend \
-    --enable-evdev-input \
-    --enable-wayland-compositor \
-    --enable-gtk-doc
+            --enable-introspection \
+            --enable-egl-backend \
+            --enable-gdk-backend \
+            --enable-wayland-backend \
+            --enable-x11-backend \
+            --enable-evdev-input \
+            --enable-wayland-compositor \
+            --enable-gtk-doc
+
 make
 make DESTDIR=$PKG install
-
 }
