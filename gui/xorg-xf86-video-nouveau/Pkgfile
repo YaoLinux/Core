@@ -3,17 +3,13 @@ makedepends=(mesa xorg-server)
 description="Open Source 2D acceleration driver for nVidia cards."
 packager="Yaolinux Team"
 name=xorg-xf86-video-nouveau
-version=1.0.15
-release=3
+version=1.0.16
 
 _name=${name/xorg-/}
 
 source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
