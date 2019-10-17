@@ -2,6 +2,7 @@ makedepends=(libjpeg-turbo22 libpng gnutls libgcrypt sdl)
 
 description="A cross-platform C libraries that allow you to easily implement VNC server"
 url="https://libvnc.github.io/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,13 +12,12 @@ version=0.9.12
 source=(https://github.com/LibVNC/libvncserver/archive/LibVNCServer-${version}.tar.gz)
 
 build () {
-cd $name-LibVNCServer-$version
 
-mkdir -pv build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+mkdir -pv build && cd build
+
+make -DCMAKE_INSTALL_PREFIX=/usr \
+      ../$name-LibVNCServer-$version
 
 make
 make DESTDIR=$PKG install
-
 }
