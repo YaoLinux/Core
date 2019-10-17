@@ -2,17 +2,16 @@ makedepends=(cups python python-requests)
 
 description="Python CUPS Bindings"
 url="http://cyberelk.net/tim/software/pycups/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-cups
-version=1.9.73
-release=3
+version=1.9.74
 
 run=(python-requests)
 
-source=(
-http://cyberelk.net/tim/data/pycups/pycups-$version.tar.bz2)
+source=(http://cyberelk.net/tim/data/pycups/pycups-$version.tar.bz2)
 
 build() {
     cd pycups-$version
