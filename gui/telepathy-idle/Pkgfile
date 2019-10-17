@@ -2,6 +2,7 @@ makedepends=(telepathy-glib )
 
 description="An IRC connection manager for Telepathy"
 url="http://telepathy.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,9 +15,10 @@ source=(http://${name%-*}.freedesktop.org/releases/$name/$name-$version.tar.gz)
 build() {
 
   cd $name-$version
+
   ./configure --prefix=/usr \
               --libexecdir=/usr/lib/telepathy
+
   make
   make DESTDIR=$PKG install
-  
 }
