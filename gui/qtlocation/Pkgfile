@@ -2,6 +2,7 @@ makedepends=(icu qtbase qtdeclarative qttools)
 
 description="A cross-platform application and UI framework, QtLocation files"
 url="http://qt-project.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,7 +14,9 @@ source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/subm
 
 build() {
 cd ${_name}-${version}
+
 qmake
+
 make
 make INSTALL_ROOT=$PKG install
 
