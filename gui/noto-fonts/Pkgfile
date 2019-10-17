@@ -1,15 +1,16 @@
-# Depends on : xorg-fontconfig
+makedepends=(xorg-fontconfig)
 
 description="Google Noto TTF fonts"
 url="https://www.google.com/get/noto/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=noto-fonts
-version=20171113
+version=20190926
 
 source=(https://download.tuxfamily.org/nutyx/files/$name-$version.tar.xz
-	66-noto-mono.conf 66-noto-sans.conf 66-noto-serif.conf)
+        66-noto-mono.conf 66-noto-sans.conf 66-noto-serif.conf)
 
 build() {
   cd $name-$version
@@ -22,5 +23,5 @@ build() {
   done
 
   # fontconfig files
-  install -Dm644 $SRC/*.conf -t $PKG/etc/fonts/conf.avail/
+  install -Dm644 ../*.conf -t $PKG/etc/fonts/conf.avail/
 }
