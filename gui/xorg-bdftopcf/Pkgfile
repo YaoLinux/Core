@@ -1,11 +1,12 @@
 makedepends=(xorgproto xorg-libxfont)
 
 description="Convert X font from Bitmap Distribution Format to Portable Compiled Format."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-bdftopcf
 version=1.1
