@@ -1,7 +1,9 @@
 makedepends=(mesa xorg-server)
 
 description="Xorg vmware video driver."
+
 packager="Yaolinux Team"
+
 name=xorg-xf86-video-vmware
 version=13.3.0
 release=2
@@ -12,8 +14,6 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 
 build=xorg
 
-package() {
-}
 uptodate() {
 local ext url LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
