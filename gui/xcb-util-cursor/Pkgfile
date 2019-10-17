@@ -2,6 +2,7 @@ makedepends=(libxcb  xcb-util-renderutil xcb-util-image)
 
 description="XCB cursor library"
 url="http://cgit.freedesktop.org/xcb/util-cursor"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,9 +15,9 @@ source=(http://xcb.freedesktop.org/dist/xcb-util-cursor-$version.tar.bz2)
 build() {
 
 cd $name-*
+
 ./configure --prefix=/usr
 
 make
 make DESTDIR=$PKG install
-
 }
