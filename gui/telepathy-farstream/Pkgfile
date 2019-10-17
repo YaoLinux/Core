@@ -2,6 +2,7 @@ makedepends=(farstream telepathy-glib dbus-glib gobject-introspection )
 
 description="A telepathy-backend to use stream engine."
 url="http://telepathy.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,9 +15,11 @@ source=(http://${name%-*}.freedesktop.org/releases/$name/$name-$version.tar.gz)
 build() {
 
   cd $name-$version
+
   ./configure --prefix=/usr                   \
               --libexecdir=/usr/lib/telepathy \
               --disable-static
+
   make
   make DESTDIR=$PKG install
 
