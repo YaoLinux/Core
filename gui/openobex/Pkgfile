@@ -2,22 +2,23 @@ makedepends=(bluez libusb docbook-xsl)
 
 description="Implements Object Exchange Protocol used for binary file transfers between devices."
 url="http://dev.zuckschwerdt.org/openobex/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=openobex
 version=1.7.2
-release=1
 
 source=( http://downloads.sourceforge.net/$name/$name-$version-Source.tar.gz)
+
 build() {
-cd $name-$version-Source
-mkdir build
-cd build
+mkdir build && cd build
+
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_INSTALL_LIBDIR=lib  \
       -DCMAKE_BUILD_TYPE=Release  \
-      ..
+      ../$name-$version-Source
+
 make
 make DESTDIR=$PKG install
 
