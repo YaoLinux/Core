@@ -1,4 +1,5 @@
 packager="Yaolinux Team"
+
 description="A library for registering global keyboard shortcuts"
 url="https://github.com/engla/keybinder/tree/keybinder-3.0"
 
@@ -9,15 +10,15 @@ alias=(libkeybinder3)
 version=0.3.2
 release=3
 
-
 source=(https://github.com/kupferlauncher/keybinder/releases/download/keybinder-3.0-v$version/keybinder-3.0-$version.tar.gz)
 
 build() {
 
   cd keybinder-3.0-$version
-  ./configure --prefix=/usr --enable-gtk-doc
+
+  ./configure --prefix=/usr \
+              --enable-gtk-doc
+
   make
-  
   make DESTDIR=$PKG install
-  
 }
