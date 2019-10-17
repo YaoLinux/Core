@@ -2,24 +2,26 @@ makedepends=(glib libxml2 gsl gobject-introspection)
 
 description="GStreamer Multimedia Framework"
 url="http://gstreamer.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=gstreamer
-version=1.14.4
-release=2
+version=1.16.1
 
 source=(https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-$version.tar.xz)
 
 build() {
 cd gstreamer-$version
+
 ./configure --prefix=/usr \
---with-package-name="GStreamer $version NuTyX" \
---with-package-origin="http://downloads.nutyx.org/"
+            --with-package-name="GStreamer $version YaoLinuX" \
+            --with-package-origin="http://downloads.yaolinux.org/"
+
 make
 make DESTDIR=$PKG install
-
 }
+
 uptodate() {
 local url ext
 
