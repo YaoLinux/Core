@@ -2,6 +2,7 @@ makedepends=(libglade xorg-libdrm xorg-libxfixes)
 
 description="Video Acceleration (VA) API for Linux"
 url="https://01.org/linuxmedia/vaapi"
+
 packager="Yaolinux Team"
 
 name=libva
@@ -11,11 +12,12 @@ source=(https://github.com/01org/libva/releases/download/$version/$name-$version
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---sysconfdir=/etc \
---localstatedir=/var \
---disable-static
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
-
 }
