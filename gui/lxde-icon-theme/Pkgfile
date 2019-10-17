@@ -2,11 +2,11 @@ makedepends=(gtk-update-icon-cache)
 
 description="The LXDE Icon Theme package contains nuoveXT 2.2 Icon Theme for LXDE."
 url="http://lxde.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 run=(gtk-update-icon-cache)
-
 
 name=lxde-icon-theme
 version=0.5.1
@@ -14,12 +14,7 @@ release=2
 
 source=(http://downloads.sourceforge.net/lxde/$name-$version.tar.xz)
 
-
-build() {
-cd $name-$version
-./configure --prefix=/usr 
-make
-make DESTDIR=$PKG install
+package() {
 # Update cache
 gtk-update-icon-cache $PKG/usr/share/icons/nuoveXT2
 }
