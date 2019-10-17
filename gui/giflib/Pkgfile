@@ -2,18 +2,15 @@ makedepends=(xmlto )
 
 description="A garbage collector for C and C++"
 url="http://downloads.sourceforge.net/giflib/"
+
 packager="Yaolinux Team"
 
-PKGMK_IGNORE_UNPACK="yes"
-
 name=giflib
-version=5.1.6
+version=5.2.1
 
 source=(https://sourceforge.net/projects/giflib/files/giflib-$version.tar.gz)
 
 build() {
-
-tar xf giflib-$version.tar.gz
 
 cd $name-$version
 
@@ -21,6 +18,7 @@ make
 make DESTDIR=$PKG install
 
 install -v -dm755 $PKG/usr/share/doc/giflib-$version/html
+
 install -v -m644 doc/*.html \
 $PKG/usr/share/doc/giflib-$version/html
 }
