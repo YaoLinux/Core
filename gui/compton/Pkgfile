@@ -2,12 +2,12 @@ makedepends=(dbus libconfig libev pcre mesa xorg-libxcomposite xorg-libxinerama 
 
 description="A compositor for X, and a fork of xcompmgr-dana."
 url="http://github.com/chjj/compton"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=compton
-version=4.0
-release=1
+version=7.4
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -18,13 +18,14 @@ run=(libconfig)
 
 build() {
 
-	cd compton-${version:0:1}
+mkdir -pv build && cd build
 
-mkdir -pv build
-cd build
---prefix=/usr
+meson --prefix=/usr ../compton-${version:0:1}
+
 ninja
-DESTDIR=$PKG install
+
+DESTDIR=$PKG ninja install
+
 install -Dm644 $SRC/compton.conf $PKG/etc/xdg/compton.conf
 	
 }
