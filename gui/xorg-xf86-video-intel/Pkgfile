@@ -1,11 +1,12 @@
 makedepends=(xcb-util xorg-libxscrnsaver xorg-libxtst xorg-libxrandr xorg-libxinerama xorg-libxcursor xorg-libx11 xorg-libxtst xorg-libxvmc mesa xorg-server)
 
 description="Xorg intel video driver."
+
 packager="Yaolinux Team"
+
 name=xorg-xf86-video-intel
-version=20180223
+version=20190723
 _name=${name/xorg-/}
-release=4
 
 source=(http://anduin.linuxfromscratch.org/BLFS/${_name}/${_name}-$version.tar.xz)
 
@@ -13,17 +14,16 @@ build() {
 cd ${_name}-$version
 
 ./autogen.sh --prefix=/usr \
---sysconfdir=/etc \
---localstatedir=/var \
---enable-kms-only \
---enable-uxa      \
---mandir=/usr/share/man
+             --sysconfdir=/etc \
+             --localstatedir=/var \
+             --enable-kms-only \
+             --enable-uxa      \
+             --mandir=/usr/share/man
 
 make
-
 make DESTDIR=$PKG install
-
 }
+
 uptodate() {
 local ext url LYNX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
