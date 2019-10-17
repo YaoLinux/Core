@@ -2,16 +2,19 @@ makedepends=(libcards xorgproto fltk xorg-libx11 xorg-libxext xorg-libxfixes xor
 
 description="Graphical version of the NuTyX cards package manager"
 url="https://git.tuxfamily.org/nutyx/cards.git"
+
 packager="Yaolinux Team"
+maintainer="Tnut"
 
 name=flcards
-version=2.4.94
+version=2.4.101
 
 source=(https://downloads.tuxfamily.org/nutyx/files/cards-$version.tar.gz)
 
 build() {
 
 cd cards-$version
+
 make flcards
 cd fltk
 make DESTDIR=$PKG install
