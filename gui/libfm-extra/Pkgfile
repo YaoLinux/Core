@@ -1,7 +1,8 @@
-makedepends=(glib,intltool,perl-xml-parser)
+makedepends=(glib intltool)
 
 description="contains a library and other files required by menu-cache-gen libexec of menu-cache"
 url="http://pcmanfm.sourceforge.net/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,11 +14,13 @@ source=(http://downloads.sourceforge.net/pcmanfm/${_name}-$version.tar.xz)
 
 build() {
 cd ${_name}-$version
+
 ./configure --prefix=/usr     \
             --sysconfdir=/etc \
             --with-extra-only \
             --with-gtk=no     \
             --disable-static
+
 make 
 make DESTDIR=$PKG install
 }
