@@ -2,6 +2,7 @@ makedepends=(gtk3, enchant)
 
 description="Provides word-processor-style highlighting and replacement of misspelled words in a GtkTextView widget"
 url="http://gtkspell.sourceforge.net/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -12,10 +13,9 @@ release=2
 
 source=(https://downloads.sourceforge.net/sourceforge/$name/${_name}-$version.tar.xz)
 
-build() {
-	cd ${_name}-$version
-	./configure --prefix=/usr --disable-static
-	make
-	make DESTDIR=$PKG install
+build=autotools
 
+prepare() {
+
+	mv ${_name}-$version $name-$version
 }
