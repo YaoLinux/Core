@@ -2,6 +2,7 @@ makedepends=(xorgproto xorg-libx11 xorg-libxext xorg-libxt xorg-libxmu xorg-libx
 
 description="libXaw, X Athena Widgets toolkit"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
  
@@ -13,9 +14,6 @@ _name=libXaw
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
