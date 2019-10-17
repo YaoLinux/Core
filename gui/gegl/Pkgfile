@@ -2,21 +2,22 @@ makedepends=(asciidoc babl gtk2 librsvg ruby lua ffmpeg librsvg openexr exiv2 gr
 
 description="Generic Graphics Library"
 url="http://gegl.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=gegl
-version=0.4.12
+version=0.4.16
 
 source=(http://ftp.gimp.org/pub/$name/${version:0:3}/$name-$version.tar.bz2)
 
 build() {
 cd $name-$version
 
-./configure --prefix=/usr --disable-docs
+./configure --prefix=/usr \
+            --disable-docs
 
 make
-
 make DESTDIR=$PKG install
 
 # Available documentation
@@ -28,6 +29,4 @@ install -d -v -m755 $PKG/usr/share/gtk-doc/html/gegl/images
 
 install -v -m644 docs/images/*.{png,ico,svg} \
 $PKG/usr/share/gtk-doc/html/gegl/images
-
-
 }
