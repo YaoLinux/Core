@@ -1,15 +1,15 @@
 makedepends=(xorgproto xorg-libx11 xorg-libxmu xorg-libxrender)
 
 description="Simple X server perfomance benchmarker."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-x11perf
-version=1.6.0
-release=2
+version=1.6.1
 
 _name=${name/xorg-/}
 
