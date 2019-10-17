@@ -2,6 +2,7 @@ makedepends=(qtdeclarative qttools extra-cmake-modules udisks2 upower media-play
 
 description="Hardware integration and detection "
 url="https://www.kde.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
