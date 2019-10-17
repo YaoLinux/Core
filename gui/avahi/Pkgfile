@@ -2,6 +2,7 @@ makedepends=(intltool glib dbus-python gobject-introspection libdaemon )
 
 description="Multicast/unicast DNS-SD framework"
 url="http://www.avahi.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,20 +14,20 @@ source=( https://github.com/lathiat/avahi/releases/download/v$version/avahi-$ver
 
 build() {
 cd $name-$version
-./configure \
---prefix=/usr \
---sysconfdir=/etc \
---localstatedir=/var \
---disable-python \
---disable-qt3 \
---disable-qt4 \
---disable-monodoc \
---disable-gtk \
---disable-gtk3 \
---disable-mono \
---enable-core-docs \
---with-distro=none \
---with-systemdsystemunitdir=/lib/systemd/system
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --disable-python \
+            --disable-qt3 \
+            --disable-qt4 \
+            --disable-monodoc \
+            --disable-gtk \
+            --disable-gtk3 \
+            --disable-mono \
+            --enable-core-docs \
+            --with-distro=none \
+            --with-systemdsystemunitdir=/lib/systemd/system
+
 make
 make DESTDIR=$PKG install
 
