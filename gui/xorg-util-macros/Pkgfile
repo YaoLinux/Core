@@ -1,6 +1,6 @@
-
 description="util-macros, contains the macros m4 used by the packages xorg"
 url="http://www.x.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -15,10 +15,11 @@ source=(https://www.x.org/archive//individual/util/$_name-$version.tar.gz)
 build() {
 
 cd ${_name}-$version
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var
 
 make
 make DESTDIR=$PKG install
-
 }
 
