@@ -2,6 +2,7 @@ makedepends=(intltool sqlite telepathy-glib gobject-introspection )
 
 description="Telepathy framework logging daemon"
 url="http://telepathy.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,13 +12,4 @@ release=2
 
 source=(http://${name%-*}.freedesktop.org/releases/$name/$name-$version.tar.bz2)
 
-build() {
-
-cd $name-$version
-./configure --prefix=/usr \
---disable-static
-
-make
-make DESTDIR=$PKG install
-
-}
+build=autotools
