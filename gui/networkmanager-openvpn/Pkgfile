@@ -2,21 +2,29 @@ makedepends=(network-manager-applet libsecret openvpn intltool python)
 
 description="NetworkManager VPN plugin for OpenVPN"
 url="https://wiki.gnome.org/Projects/NetworkManager"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=networkmanager-openvpn
-version=1.8.8
-release=2
+version=1.8.10
+
 source=(https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/archive/$version/NetworkManager-openvpn-$version.tar.gz)
 
 build() {
+
 cd NetworkManager-openvpn-$version
+
 NOCONFIGURE=1 ./autogen.sh
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
-            --libexecdir=/usr/lib --disable-static
+
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --libexecdir=/usr/lib \
+            --disable-static
+
 sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
 make
 make DESTDIR="$PKG" install
-
 }
