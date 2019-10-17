@@ -2,12 +2,13 @@ makedepends=(bluez dbus-glib dhcpcd dnsmasq gobject-introspection gtk-doc iptabl
 
 description="Tools which simplify and make the network more directly manageable."
 url="http://projects.gnome.org/NetworkManager/"
+
 packager="Yaolinux Team"
 
 alias=(NetworkManager)
 
 name=networkmanager
-version=1.20.0
+version=1.20.4
 _name=NetworkManager
 
 run=(wpa-supplicant)
@@ -26,7 +27,7 @@ mkdir build
 cd    build
 
 CXXFLAGS+="-O2 -fPIC"            \
---prefix /usr              \
+meson --prefix /usr              \
       --sysconfdir /etc          \
       --localstatedir /var       \
       -Djson_validation=false    \
@@ -47,7 +48,7 @@ CXXFLAGS+="-O2 -fPIC"            \
       
 ninja
 
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
  
 mv -v $PKG/usr/share/doc/NetworkManager{,-$version}
 
