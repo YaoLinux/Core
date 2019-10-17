@@ -2,6 +2,7 @@ makedepends=(xfce4-libutil dbus-glib perl-glib gtk-doc)
 
 description="A simple client-server configuration storage and query system"
 url="http://www.xfce.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -16,16 +17,14 @@ build() {
 
 cd ${_name}-$version
 
-./configure \
-	--prefix=/usr \
-    --sysconfdir=/etc \
-    --libexecdir=/usr/lib/xfce4 \
-    --localstatedir=/var \
-    --disable-static \
-    --enable-gtk-doc \
-    --disable-debug
-    
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --libexecdir=/usr/lib/xfce4 \
+            --localstatedir=/var \
+            --disable-static \
+            --enable-gtk-doc \
+            --disable-debug
+
 	make
 	make DESTDIR=$PKG install
-
 }
