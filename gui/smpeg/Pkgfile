@@ -2,12 +2,14 @@ makedepends=(sdl xorg-libx11)
 
 description="A SDL MPEG player library."
 url="http://www.lokigames.com/development/smpeg.php3"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=smpeg
 version=0.4.5
 release=5
+
 source=(http://crux.ster.zone/downloads/$name/$name-$version.tar.xz
         020_libx11.diff)
 
@@ -15,13 +17,17 @@ unset MAKEFLAGS
 
 build() {
 cd $name-$version
+
 patch -Np1 -i ../020_libx11.diff
+
 ./autogen.sh
+
 export CFLAGS+=" -Wno-error=narrowing"
-    ./configure \
-		--prefix=/usr \
-		--mandir=/usr/share/man \
-		--disable-static
+
+./configure --prefix=/usr \
+            --mandir=/usr/share/man \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
 }
