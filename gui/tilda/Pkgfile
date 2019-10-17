@@ -2,6 +2,7 @@ makedepends=(confuse vte3 libglade)
 
 description="A quake-style popup terminal."
 url="https://github.com/lanoxx/tilda"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,10 +12,10 @@ version=1.4.1
 source=(https://github.com/lanoxx/tilda/archive/$name-$version.tar.gz)
 
 
-build() {
-  cd $name-$name-$version
+prepare() {
+  mv $name-$name-$version $name-$version
+
+  cd $name-$version
+
   ./autogen.sh
-  ./configure --prefix=/usr
-  make
-  make DESTDIR=$PKG install
 }
