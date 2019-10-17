@@ -2,11 +2,11 @@ makedepends=(pulseaudio libcanberra intltool lynx git gtkmm libsigc++)
 
 description="PulseAudio Volume Control"
 url="http://freedesktop.org/software/pulseaudio/pavucontrol/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=pavucontrol
-version=3.0
-release=1
+version=4.0
 
 source=(http://freedesktop.org/software/pulseaudio/pavucontrol/pavucontrol-$version.tar.xz)
