@@ -2,11 +2,12 @@ makedepends=(cups ghostscript)
 
 description="A virtual printer for cups to produce PDF files."
 url="http://www.ciups-pdf.de/"
+
 packager="Yaolinux Team"
+maintainer="Graknu"
 
 name=cups-pdf
 version=3.0.1
-release=1
 
 source=(http://www.cups-pdf.de/src/cups-pdf_$version.tar.gz)
 
