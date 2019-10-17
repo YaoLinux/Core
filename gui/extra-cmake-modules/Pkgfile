@@ -2,6 +2,7 @@ makedepends=(cmake qtbase qttools )
 
 description="Extra CMake modules used by all KDE Frameworks 5 packages"
 url="https://www.kde.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
