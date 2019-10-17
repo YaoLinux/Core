@@ -2,24 +2,30 @@ makedepends=(intltool dotconf pulseaudio)
 
 description="High-level device independent layer for speech synthesis interface"
 url="https://devel.freebsoft.org/speechd"
+
 packager="Yaolinux Team"
 
 name=speech-dispatcher
-version=0.8.8
+version=0.9.1
 
 source=(http://www.freebsoft.org/pub/projects/speechd/$name-$version.tar.gz)
+
 build() {
+
 cd $name-$version
+
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
 
-autoreconf -i
+autoreconf -iv
+
 ./configure --prefix=/usr \
---enable-shared \
---sysconfdir=/etc \
---without-flite
+            --enable-shared \
+            --sysconfdir=/etc \
+            --without-flite
+
 make
 make DESTDIR="$PKG" install
-sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
 
+sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
 }
