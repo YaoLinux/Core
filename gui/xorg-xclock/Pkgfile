@@ -2,14 +2,14 @@ makedepends=(xorg-libxft xorg-server xorg-libxaw xorg-libxmu)
 
 description="clock analog for X mainly pout tester all X"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 _name=xclock
 name=xorg-xclock
 alias=(xclock)
-version=1.0.7
-release=1
+version=1.0.9
 
 source=(http://ftp.x.org/pub/individual//app/${_name}-$version.tar.bz2)
 
@@ -20,5 +20,4 @@ build() {
 	
 	make
 	make DESTDIR=$PKG install
-	
 }
