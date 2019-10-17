@@ -2,6 +2,7 @@ makedepends=(gtk2 libxml2)
 
 description="Libraries used for extending the GTK+ 2 text functions to include syntax highlighting."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,10 +14,14 @@ source=(http://ftp.gnome.org/pub/gnome/sources/gtksourceview/2.10/gtksourceview-
 
 build() {
 cd gtksourceview-$version
+
 sed -i 's#python#python2#' gtksourceview/language-specs/convert.py
-  ./configure --prefix=/usr --sysconfdir=/etc \
-      --localstatedir=/var --disable-static
+
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
-
 }
