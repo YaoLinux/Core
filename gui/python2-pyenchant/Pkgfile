@@ -2,28 +2,15 @@ makedepends=(python2-setuptools enchant python2)
 
 description="PyEnchant is a spellchecking library for Python2 based on the Enchant library"
 url="https://pypi.python.org/pypi/pyenchant"
+
 packager="Yaolinux Team"
 
 name=python2-pyenchant
 version=2.0.0
-release=1
+_name=pyenchant
 
 run=(python2-setuptools python2)
 
 source=(https://github.com/rfk/pyenchant/archive/v$version.tar.gz)
 
-build() {
-
-	cd pyenchant-${version}
-	python2 setup.py build
-
-}
-
-
-package() {
-
-	cd pyenchant-${version} 
-	python2 setup.py install --root=$PKG --optimize=1
-	
-}
-
+build=python2
