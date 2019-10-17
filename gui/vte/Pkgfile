@@ -2,6 +2,7 @@ makedepends=(gtk2 intltool gobject-introspection )
 
 description="Vte is a library (libvte) implementing a terminal emulator widget for GTK+ 2"
 url="http://developer.gnome.org/arch/gnome/widgets/vte.html"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,13 +14,12 @@ source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$versio
 
 build() {
 
-# build package		
 cd $name-$version
+
 ./configure --prefix=/usr \
---libexecdir=/usr/libexec/vte \
---disable-static
+            --libexecdir=/usr/libexec/vte \
+            --disable-static
 
 make
 make DESTDIR=$PKG install
-
 }
