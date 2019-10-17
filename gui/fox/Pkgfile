@@ -2,21 +2,24 @@ makedepends=(xorg-libxcursor xorg-libxft xorg-libxrandr xorg-libxxf86vm mesa cup
 
 description="C++ based class library for building Graphical User Interfaces"
 url="http://www.fox-toolkit.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=fox
 version=1.6.57
 release=2
+
 source=(ftp://ftp.fox-toolkit.org/pub/$name-$version.tar.gz)
 
 build() {
 	cd $name-$version
+
 	./configure --prefix=/usr \
-	--mandir=/usr/share/man \
-	--with-xft=yes \
-	--with-opengl=yes
+                --mandir=/usr/share/man \
+                --with-xft=yes \
+                --with-opengl=yes
+
 	make
 	make DESTDIR=$PKG install
-
 }
