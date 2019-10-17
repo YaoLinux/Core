@@ -2,19 +2,22 @@ makedepends=(libffi doxygen xmlto docbook-xml libxslt)
 
 description="A computer display server protocol"
 url="http://wayland.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=wayland
-version=1.16.0
+version=1.17.0
 
-source=( http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
+source=(http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
 
 build() {
   cd $name-$version
+
   ./configure --prefix=/usr    \
               --disable-static \
               --disable-documentation
+
   make
   make DESTDIR=$PKG install
 
