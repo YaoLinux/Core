@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=breeze-icons
-version=5.62.0
+version=5.63.0
 
 run=(gtk-update-icon-cache)
 
