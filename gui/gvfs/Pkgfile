@@ -2,25 +2,20 @@ makedepends=(systemd libcdio-paranoia avahi dbus-glib libgdata libgudev libblura
 
 description="Userspace virtual filesystem implemented as a pluggable module for gio"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=gvfs
-version=1.40.2
-release=1
+version=1.42.1
 
-source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz
-       handle-inactive-vfs.patch)
+source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
 
-patch -Np1 -i ../handle-inactive-vfs.patch
+mkdir build && cd build
 
-mkdir build &&
-cd    build &&
-
---prefix=/usr     \
+meson --prefix=/usr     \
       --sysconfdir=/etc \
       -Dgphoto2=true    \
       -Dafc=false       \
@@ -28,10 +23,11 @@ cd    build &&
       -Ddnssd=false     \
       -Dgoa=false       \
       -Dgoogle=false    \
-      -Dsystemduserunitdir=/usr/lib/systemd/user ..
-ninja
+      -Dsystemduserunitdir=/usr/lib/systemd/user \
+      ../$name-$version
 
-DESTDIR=$PKG install
+ninja
+DESTDIR=$PKG ninja install
 }
 
 uptodate(){
