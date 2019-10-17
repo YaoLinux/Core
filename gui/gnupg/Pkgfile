@@ -2,11 +2,12 @@ makedepends=(npth libgpg-error libgcrypt libassuan libksba pinentry openldap lib
 
 description="Complete and free implementation of the OpenPGP standard"
 url="http://www.gnupg.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=gnupg
-version=2.2.12
+version=2.2.17
 
 source=(ftp://ftp.gnupg.org/gcrypt/gnupg/gnupg-$version.tar.bz2)
 
@@ -14,8 +15,9 @@ build() {
 cd gnupg-$version
 
 ./configure --prefix=/usr \
---enable-symcryptrun      \
---docdir=/usr/share/doc/gnupg-$version
+            --enable-symcryptrun      \
+            --docdir=/usr/share/doc/gnupg-$version
+
 make
 
 makeinfo --html --no-split -o doc/gnupg_nochunks.html doc/gnupg.texi
@@ -29,9 +31,11 @@ if [ -f doc/gnupg_nochunks.html ];then
 	install -v -m644 doc/gnupg_nochunks.html \
 	$PKG/usr/share/doc/gnupg-$version/gnupg.html
 fi
+
 install -v -m644 doc/*.texi doc/gnupg.txt \
 $PKG/usr/share/doc/gnupg-$version
 }
+
 uptodate() {
 local url ext
 
