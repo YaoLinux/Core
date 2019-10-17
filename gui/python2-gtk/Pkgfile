@@ -2,6 +2,7 @@ makedepends=(python2-gobject2 python2-cairo libglade )
 
 description="provides the links of Python 2 for the class GObject of GLib."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,13 +14,11 @@ release=2
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pygtk/${version%.*}/pygtk-$version.tar.bz2)
 	
-build() {
-cd pygtk-$version
-./configure --prefix=/usr
-make
-make DESTDIR=$PKG install
+prepare() {
 
+mv pygtk-$version $name-$version
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/pygtk"
