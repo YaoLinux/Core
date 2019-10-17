@@ -2,6 +2,7 @@ makedepends=(boost curl libxml2 docbook2x cppunit)
 
 description="a C/C++ client library for the CMIS protocol"
 url="https://github.com/tdf/libcmis"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -12,10 +13,12 @@ source=(https://github.com/tdf/libcmis/releases/download/v$version/$name-$versio
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
             DOCBOOK2MAN='docbook2man' \
             --disable-static \
             --disable-werror
+
 make
 make DESTDIR=$PKG install
 }
