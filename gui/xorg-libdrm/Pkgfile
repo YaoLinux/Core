@@ -2,13 +2,14 @@ makedepends=(docbook-xsl libxslt xorg-util-macros xorg-libpciaccess ninja)
 
 description="Provides a userspace library for accessing the DRM, direct rendering manager"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 
 name=xorg-libdrm
 _name=libdrm
-version=2.4.96
+version=2.4.100
 
 alias=(libdrm)
 
@@ -16,19 +17,18 @@ source=(http://dri.freedesktop.org/${_name}/${_name}-$version.tar.bz2)
 
 build() {
 
-cd ${_name}-$version
-mkdir build
-cd    build
+mkdir build && cd build
  
---prefix=/usr \
---sysconfdir=/etc \
---localstatedir=/var \
--Dudev=true
+meson --prefix=/usr \
+      --sysconfdir=/etc \
+      --localstatedir=/var \
+      -Dudev=true \
+      ../${_name}-$version
 
 ninja
-
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 }
+
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
