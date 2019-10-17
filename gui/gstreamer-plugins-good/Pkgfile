@@ -2,22 +2,20 @@ makedepends=(aalib jack lame libcaca libdv libgudev mpg123 speex wavpack v4l-uti
 
 description="GStreamer Multimedia Framework good Plugins"
 url="http://gstreamer.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 _name=gst-plugins-good
 
 name=gstreamer-plugins-good
-version=1.14.4
-release=4
+version=1.16.1
 
-source=(http://gstreamer.freedesktop.org/src/${_name}/${_name}-$version.tar.xz
-        gst-plugins-good-1.14.4-vpx_1.8-1.patch)
+source=(http://gstreamer.freedesktop.org/src/${_name}/${_name}-$version.tar.xz)
 
 build() {
 cd ${_name}-$version
 
-patch -Np1 -i ../gst-plugins-good-$version-vpx_1.8-1.patch
 autoreconf -fiv
 
 ./configure --prefix=/usr \
@@ -27,8 +25,8 @@ autoreconf -fiv
 
 make
 make DESTDIR=$PKG install
-
 }
+
 uptodate() {
 local url ext
 name=${_name}
