@@ -1,6 +1,7 @@
 makedepends=(xorg-libx11)
 
 description="Device Color Characterization utility for X Color Management System."
+
 packager="Yaolinux Team"
 maintainer="rems"
 
