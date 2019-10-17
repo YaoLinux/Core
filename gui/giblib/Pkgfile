@@ -1,7 +1,8 @@
-makedepends=(imlib2 freetype )
+makedepends=(imlib2 freetype)
 
 description="A library that feh uses as a wrapper to imlib2"
 url="http://www.linuxbrit.co.uk/giblib"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,8 +14,9 @@ source=(https://mirrors.kernel.org/debian/pool/main/g/giblib/${name}_${version}.
 
 build() {
 cd $name-$version*
+
         ./configure --prefix=/usr
+
         make
         make DESTDIR=$PKG install
-
 }
