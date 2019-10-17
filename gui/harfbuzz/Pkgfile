@@ -2,11 +2,12 @@ makedepends=(cairo glib icu freetype gobject-introspection git gtk-doc)
 
 description="OpenType text shaping engine"
 url="http://www.freedesktop.org/software/harfbuzz"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=harfbuzz
-version=2.2.0
+version=2.6.2
 
 source=(https://www.freedesktop.org/software/$name/release/$name-$version.tar.bz2)
 
@@ -23,6 +24,4 @@ cd $name-$version
 
 make
 make DESTDIR=$PKG install
-
-
 }
