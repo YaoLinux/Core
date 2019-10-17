@@ -2,6 +2,7 @@ makedepends=(iso-codes librsvg xorg-libxinerama xorg-libxrandr xorg-libxcursor x
 
 description="Lightweight X11 Display Manager based on Gtk"
 url="http://wiki.lxde.org/en/LXDM"
+
 packager="Yaolinux Team"
 
 PKGMK_GROUPS=()
@@ -10,15 +11,18 @@ run=(librsvg xorg-xinit)
 name=lxdm
 version=0.5.3
 release=18
+
 source=(lxdm-$version-nutyx-1.patch 
-	login.png
-	screen.jpg
-	http://downloads.sourceforge.net/$name/$name-$version.tar.xz)
+        login.png
+        screen.jpg
+        http://downloads.sourceforge.net/$name/$name-$version.tar.xz)
 
 build() {
 
 cd $name-$version
+
 patch -Np1 -i ../lxdm-$version-nutyx-1.patch
+
 cat > pam/lxdm << "EOF"
 # Begin /etc/pam.d/lxdm
 
@@ -37,21 +41,18 @@ session  include        system-session
 EOF
 
 ./configure --sysconfdir=/etc \
-	--prefix=/usr \
-	--with-pam \
-	--with-systemdsystemunitdir=/lib/systemd/system
+            --prefix=/usr \
+            --with-pam \
+            --with-systemdsystemunitdir=/lib/systemd/system
 
 make
-  
 make DESTDIR=$PKG install
-for i in login.png
-do
-   cp ../$i \
+
+cp ../login.png \
    $PKG/usr/share/lxdm/themes/Industrial/$i
-done
 
 cp ../screen.jpg \
-$PKG/usr/share/lxdm/themes/Industrial/screen.jpg
+   $PKG/usr/share/lxdm/themes/Industrial/screen.jpg
 
 # lxdm.conf created in post if needed
 # Let keep it as an example
