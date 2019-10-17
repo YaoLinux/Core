@@ -2,25 +2,33 @@ makedepends=(ladspa frei0r-plugins libdv sdl-image libsamplerate sox ffmpeg vid-
 
 description="An open source multimedia framework"
 url="http://www.mltframework.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
-name=mlt
-version=6.12.0
 
+name=mlt
+version=6.16.0
 
 source=(https://github.com/mltframework/mlt/releases/download/v$version/mlt-$version.tar.gz)
 
 build() {
   cd $name-$version
-  ./configure --prefix=/usr --avformat-swscale \
-  --enable-gpl --enable-gpl3 --enable-opengl \
-  --qt-libdir=/usr/lib --qt-includedir=/usr/include/qt
+
+  ./configure --prefix=/usr \
+              --avformat-swscale \
+              --enable-gpl \
+              --enable-gpl3 \
+              --enable-opengl \
+              --qt-libdir=/usr/lib \
+              --qt-includedir=/usr/include/qt
+
   make
   make DESTDIR=$PKG install
 
   # mlt python bindings
   cd src/swig/python
   ./build
+
   mkdir -p $PKG/usr/lib/python2.7/
   install -m755 mlt.py $PKG/usr/lib/python2.7/
   install -m755 _mlt.so $PKG/usr/lib/python2.7/
