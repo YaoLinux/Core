@@ -2,21 +2,21 @@ makedepends=(cmake gtk2 dbus-glib cairo)
 
 description="oxygen-gtk2, theme Oxygen for applications in gtk2"
 url="https://projects.kde.org/projects/playground/artwork/oxygen-gtk/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=oxygen-gtk2
 version=1.4.6
-release=1
 
 source=(http://download.kde.org/stable/oxygen-gtk2/$version/src/$name-$version.tar.bz2)
 
 build() {
-  	cd $name-$version
-        mkdir build
-        cd build
+        mkdir build && cd build
+
 	cmake -DCMAKE_INSTALL_PREFIX=/usr \
-                ..
+          ../$name-$version
+
 	make
 	make DESTDIR=$PKG install
 }
