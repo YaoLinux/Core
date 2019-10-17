@@ -1,6 +1,7 @@
 makedepends=(xorgproto xorg-libice)
 
 description="ICE authority file utility."
+
 packager="Yaolinux Team"
 maintainer="rems"
 
