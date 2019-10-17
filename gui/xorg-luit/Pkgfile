@@ -1,11 +1,12 @@
 makedepends=(xorg-libfontenc)
 
 description="Filter that can be run between an arbitrary application and UTF8 emulator."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-luit
 version=1.1.1
@@ -14,7 +15,9 @@ _name=${name/xorg-/}
 source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
 
 build=xorg
+
 prepare() {
+
 	cd ${_name}-$version
 	line1="#ifdef _XOPEN_SOURCE"
 	line2="#  undef _XOPEN_SOURCE"
