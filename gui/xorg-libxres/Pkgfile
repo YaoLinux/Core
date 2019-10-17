@@ -2,6 +2,7 @@ makedepends=(xorgproto xorg-libx11 xorg-libxext )
 
 description="libXres, resource extension client library"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -15,11 +16,7 @@ source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
 
-package() {
-}
-
-
-ptodate() {
+uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
 ext=".tar.bz2"
