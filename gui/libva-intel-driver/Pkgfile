@@ -1,8 +1,9 @@
 makedepends=(xorg-libdrm libva wayland wayland-protocols)
 
 description="VA-API implementation for Intel G45 and HD Graphics family"
-packager="Yaolinux Team"
 url="https://01.org/linuxmedia/vaapi"
+
+packager="Yaolinux Team"
 
 name=libva-intel-driver
 version=2.3.0
@@ -11,7 +12,9 @@ source=(https://github.com/intel/intel-vaapi-driver/releases/download/$version/i
         427.patch)
 
 prepare() {
+
   cd intel-vaapi-driver-$version
+
 # https://github.com/intel/intel-vaapi-driver/issues/419
 patch -Np1 -i ../427.patch
   
@@ -25,7 +28,9 @@ build () {
 
 cd intel-vaapi-driver-$version
 
-./configure --prefix=/usr --enable-wayland
+./configure --prefix=/usr \
+            --enable-wayland
+
 make
 }
 
@@ -33,5 +38,4 @@ package() {
 
 cd intel-vaapi-driver-$version
 make DESTDIR="${PKG}" install
-
 }
