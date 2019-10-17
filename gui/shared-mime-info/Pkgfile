@@ -2,19 +2,26 @@ makedepends=(libxml2 intltool glib)
 
 description="The Shared Mime Info package contains a MIME database."
 url="http://freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=shared-mime-info
-version=1.10
+version=1.14
 
 source=( http://freedesktop.org/~hadess/$name-$version.tar.xz)
 
 build() {
+
 unset MAKEFLAGS
+
 cd $name-$version
+
 export ac_cv_func_fdatasync=no
-./configure --prefix=/usr --disable-update-mimedb
+
+./configure --prefix=/usr \
+            --disable-update-mimedb
+
 make -j1
 make DESTDIR=$PKG install
 } 
