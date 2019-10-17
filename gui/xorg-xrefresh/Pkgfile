@@ -1,11 +1,12 @@
 makedepends=(xorg-libx11)
 
 description="Refresh all or part of an X screen."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xrefresh
 version=1.0.6
