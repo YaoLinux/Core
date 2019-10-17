@@ -2,26 +2,28 @@ makedepends=(gstreamer alsa-lib gobject-introspection iso-codes libtheora libvor
 
 description="GStreamer Multimedia Framework Base Plugins"
 url="http://gstreamer.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 _name=gst-plugins-base 
 
 name=gstreamer-plugins-base
-version=1.14.4
-release=2
+version=1.16.1
 
 source=(http://gstreamer.freedesktop.org/src/${_name}/${_name}-$version.tar.xz)
 
 build() {
 cd ${_name}-$version
+
 ./configure --prefix=/usr \
---with-package-name="GStreamer Base Plugins $version NuTyX" \
---with-package-origin="http://downloads.nutyx.org/"
+            --with-package-name="GStreamer Base Plugins $version YaoLinuX" \
+            --with-package-origin="http://downloads.yaolinux.org/"
+
 make
 make DESTDIR=$PKG install
-
 } 
+
 uptodate() {
 local url ext
 name=${_name}
