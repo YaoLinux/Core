@@ -2,22 +2,22 @@ makedepends=(colord gtk3 gobject-introspection vala)
 
 description="GTK integration for libcolord"
 url="http://www.freedesktop.org/software/colord/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=colord-gtk
-version=0.1.26
-release=2
+version=0.2.0
 
 source=(http://www.freedesktop.org/software/${name%-*}/releases/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---enable-vala \
---disable-static
+            --enable-vala \
+            --disable-static
+
 make
 make DESTDIR=$PKG install
-
-
 }
