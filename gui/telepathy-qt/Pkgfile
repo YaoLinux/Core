@@ -2,6 +2,7 @@ makedepends=(telepathy-farstream libxslt  cmake doxygen qtbase qttools)
 
 description="A library for Qt5-based Telepathy clients"
 url="http://telepathy.freedesktop.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,8 +15,7 @@ source=(http://telepathy.freedesktop.org/releases/telepathy-qt/telepathy-qt-$ver
 
 build() {
 
-  mkdir build
-  cd build
+  mkdir build && cd build
   cmake ../telepathy-qt-$version \
     -DCMAKE_BUILD_TYPE=Release   \
     -DCMAKE_INSTALL_PREFIX=/usr  \
@@ -23,7 +23,7 @@ build() {
     -DDESIRED_QT_VERSION=5  \
     -DENABLE_EXAMPLES=OFF   \
     -DENABLE_TESTS=OFF
+
   make
   make DESTDIR=$PKG install
-  
 }
