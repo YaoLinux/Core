@@ -2,6 +2,7 @@ makedepends=(doxygen mesa xorg-libxvmc libxcb faad2 speex libmng libvorbis flac 
 
 description="contains the library xine"
 url="http://xine-project.org/home"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -21,9 +22,10 @@ sed -e 's/\(xcb-shape >= 1.0\)/xcb \1/' \
     -i m4/video_out.m4
 
 ./configure  --prefix=/usr \
---disable-vcd \
---with-external-dvdnav \
---docdir=/usr/share/doc/$name-$version
+             --disable-vcd \
+             --with-external-dvdnav \
+             --docdir=/usr/share/doc/$name-$version
+
 make
 
 doxygen doc/Doxyfile
@@ -33,5 +35,4 @@ make DESTDIR=$PKG install
 install -v -m755 -d $PKG/usr/share/doc/$name-$version/api
 install -v -m644    doc/api/* \
   $PKG/usr/share/doc/$name-$version/api
-
 }
