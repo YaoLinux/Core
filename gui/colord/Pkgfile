@@ -2,32 +2,34 @@ makedepends=(libgudev sqlite polkit lcms2 gobject-introspection libusb dbus vala
 
 description="System daemon for managing color devices"
 url="http://www.freedesktop.org/software/colord/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=colord
-version=1.4.3
+version=1.4.4
 
 source=(http://www.freedesktop.org/software/$name/releases/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
-mkdir build
-cd    build
---prefix=/usr              \
-	--sysconfdir=/etc        \
-	--localstatedir=/var     \
-	-Ddaemon_user=colord     \
-        -Dvapi=true              \
-	-Dsystemd=true          \
-	-Dlibcolordcompat=true   \
-	-Dargyllcms_sensor=false \
-	-Dbash_completion=false  \
-	-Ddocs=false             \
-	-Dman=false ..
+mkdir build && cd build
+
+meson --prefix=/usr              \ 
+      --sysconfdir=/etc        \
+      --localstatedir=/var     \
+      -Ddaemon_user=colord     \
+      -Dvapi=true              \
+      -Dsystemd=true          \
+      -Dlibcolordcompat=true   \
+      -Dargyllcms_sensor=false \
+      -Dbash_completion=false  \
+      -Ddocs=false             \
+      -Dman=false ../$name-$version
+
 ninja
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 }
+
 uptodate() {
 local url ext
 ext=".tar.xz"
