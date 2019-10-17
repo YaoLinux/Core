@@ -2,6 +2,7 @@ makedepends=(qtbase qtdeclarative qttools pciutils xorg-libxtst xorg-libxcursor 
 
 description="A cross-platform application and UI framework, QtDoc files"
 url="http://qt-project.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,8 +15,11 @@ source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/subm
 
 build() {
 export PATH="$SCR/bin:$PATH"
+
 cd ${_name}-${version}
+
 qmake
+
 make docs
 make INSTALL_ROOT=$PKG install_docs
 }
