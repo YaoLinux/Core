@@ -2,6 +2,7 @@ makedepends=(taglib cmake)
 
 description="Additional taglib plugins for KDE"
 url="http://developer.kde.org/~wheeler/taglib.html"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -15,13 +16,15 @@ source=(https://download.kde.org/stable/$name/$version/src/$name-$version.tar.gz
 build() {
 
   cd $name-$version
+
   patch -p1 -i ../taglib-1.10.patch
+
   cmake -DCMAKE_INSTALL_PREFIX=/usr \
         -DCMAKE_SKIP_RPATH=ON       \
         -DCMAKE_BUILD_TYPE=Release
+
   make 
   make DESTDIR=$PKG install
-
 }
 
   
