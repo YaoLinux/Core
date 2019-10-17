@@ -2,6 +2,7 @@ makedepends=(gstreamer-plugins-base libnice gobject-introspection )
 
 description="Farstream (formerly Farsight) - Audio/Video Communications Framework"
 url="http://freedesktop.org/software/farstream"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -10,6 +11,3 @@ version=0.2.8
 release=3
 
 source=( http://freedesktop.org/software/farstream/releases/farstream/farstream-$version.tar.gz)
-
-package() {
-}
