@@ -2,13 +2,13 @@ makedepends=(freetype xorgproto xorg-xtrans xorg-libfontenc)
 
 description="libXfont2, library Xorg"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxfont2
 alias=(libXfont2)
-version=2.0.3
-release=3
+version=2.0.4
 
 _name=libXfont2
 
@@ -16,9 +16,6 @@ source=(http://ftp.x.org/pub/individual//lib/libXfont2-$version.tar.bz2)
 
 build=xorg
 
-package() {
-
-}
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
