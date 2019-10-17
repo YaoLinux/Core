@@ -1,15 +1,15 @@
 makedepends=(xorgproto xorg-libx11 xorg-libxmu)
 
 description="Server access control program for X."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xhost
-version=1.0.7
-release=2
+version=1.0.8
 
 _name=${name/xorg-/}
 
