@@ -2,6 +2,7 @@ makedepends=(libsoup gobject-introspection vala gtk-doc)
 
 description="The uhttpmock package contains a library for mocking web service APIs which use HTTP or HTTPS"
 url="https://github.com/Distrotech/uhttpmock"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,14 +12,8 @@ release=4
 
 source=(http://tecnocode.co.uk/downloads/$name/$name-$version.tar.xz)
 
-build() {
-	cd ${name}-$version
-	./configure --prefix=/usr     \
-            --disable-static
-	make
-	make DESTDIR=$PKG install
+build=autotools
 
-}
 uptodate() {
 local url ext
 ext=".tar.xz"
