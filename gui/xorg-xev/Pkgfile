@@ -1,15 +1,15 @@
 makedepends=(xorgproto xorg-libxrandr xorg-libx11)
 
 description="Print contents of X events."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xev
-version=1.2.2
-release=2
+version=1.2.3
 
 _name=${name/xorg-/}
 
