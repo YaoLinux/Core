@@ -1,22 +1,24 @@
-makedepends=(bluez libical )
+makedepends=(bluez libical)
 
 description="contains of services D-Bus bidder a function of client and of server OBEX."
 url="http://www.bluez.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
-
 name=obexd
 version=0.48
-release=1
 
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
 build() {
 cd $name-$version
+
 sed -i 's/#include <string.h>/&\n#include <stdio.h>/' plugins/mas.c
+
 ./configure --prefix=/usr \
---sysconfdir=/etc \
---libexecdir=/usr/lib/obexd
+            --sysconfdir=/etc \
+            --libexecdir=/usr/lib/obexd
+
 make
 make DESTDIR=$PKG install
 }
