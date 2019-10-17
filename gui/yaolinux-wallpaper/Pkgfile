@@ -1,7 +1,8 @@
 description="Wallpaper of YaoLinuX"
-maintainer="rems"
-packager="Yaolinux Team"
 url="http://yaolinux.org"
+
+maintainer="Graknu"
+packager="Yaolinux Team"
 
 name=yaolinux-wallpaper
 version=1.0.0
@@ -11,8 +12,7 @@ source=(http://download.yaolinux.org/wallpaper/wall1.jpg
 	http://download.yaolinux.org/wallpaper/wall2.jpg
 	http://download.yaolinux.org/wallpaper/wall3.jpg
 	http://download.yaolinux.org/wallpaper/wall4.jpg
-	http://download.yaolinux.org/wallpaper/wall5.jpg
-	)
+	http://download.yaolinux.org/wallpaper/wall5.jpg)
 
 build(){
    for i in {1,2,3,4,5}
@@ -20,7 +20,5 @@ build(){
    	install -D -m644 wall$i.jpg \
    	$PKG/usr/share/backgrounds/yaolinux/wallpaper$i.jpg
    done
-
-
 }
 
