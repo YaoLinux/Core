@@ -2,19 +2,18 @@ makedepends=(xorgproto xorg-xtrans)
 
 description="libICE, library Xorg"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
  
 name=xorg-libice
-version=1.0.9
-release=4
+version=1.0.10
 _name=libICE
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
-package() {
-}
+
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
