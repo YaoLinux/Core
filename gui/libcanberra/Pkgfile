@@ -2,6 +2,7 @@ makedepends=(gtk2 libvorbis alsa-lib gconf gstreamer gtk3 pulseaudio)
 
 description="A small and lightweight implementation of the XDG Sound Theme Specification"
 url="http://0pointer.de/lennart/projects/libcanberra"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,13 +14,14 @@ source=(http://0pointer.de/lennart/projects/libcanberra/libcanberra-$version.tar
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
---sysconfdir=/etc \
---enable-alsa \
---enable-gstreamer \
---enable-pulse \
---disable-oss
+            --sysconfdir=/etc \
+            --enable-alsa \
+            --enable-gstreamer \
+            --enable-pulse \
+            --disable-oss
+
 make
 make -j1 DESTDIR=$PKG install
-
 }
