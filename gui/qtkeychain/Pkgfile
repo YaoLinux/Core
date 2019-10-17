@@ -2,6 +2,7 @@ makedepends=(qtbase cmake qttools)
 
 description="Provides support for secure credentials storage"
 url="https://github.com/frankosterfeld/qtkeychain"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -19,8 +20,9 @@ mkdir -p build
 build() {
 cd build
 cmake ../$name-$version \
--DCMAKE_BUILD_TYPE=Release \
--DCMAKE_INSTALL_PREFIX=/usr
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr
+
 make
 make DESTDIR=$PKG install
 }
