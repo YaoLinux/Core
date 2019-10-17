@@ -2,13 +2,14 @@ makedepends=(intltool glib gobject-introspection perl-xml-parser)
 
 description="Shared GSettings schemas for the desktop"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=( glib )
+run=(glib)
+
 name=gsettings-desktop-schemas
-version=3.28.1
-release=2
+version=3.34.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
@@ -20,10 +21,13 @@ sed -i "s@gnome/adwaita-timed.xml@yaolinux/wallpaper1.jpg@" \
 schemas/org.gnome.desktop.background.gschema.xml.in
 
 sed -i -r 's:"(/system):"/org/gnome\1:' schemas/*.in
+
 ./configure --prefix=/usr
+
 make
 make DESTDIR=$PKG install
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
