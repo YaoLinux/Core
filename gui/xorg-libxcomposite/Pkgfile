@@ -2,20 +2,17 @@ makedepends=(xorgproto xorg-libx11 xorg-libxfixes xorg-libxext )
 
 description="libXcomposite, library Composite extension client"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxcomposite
-version=0.4.4
-release=3
+version=0.4.5
 
 _name=libXcomposite
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
