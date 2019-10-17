@@ -1,6 +1,7 @@
 makedepends=(xorg-libsm xorg-libice xorg-libxt xorg-libxmu)
 
 description="Allow X applications that do not support X11R6 session to participate in a X11R6 session."
+
 packager="Yaolinux Team"
 maintainer="rems"
 
