@@ -2,24 +2,29 @@ makedepends=(python2-cairo gobject-introspection xorg-libxxf86vm ninja)
 
 description="provides the links of Python 2 for the class GObject of GLib."
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python2-gobject
-version=3.30.4
+version=3.34.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pygobject/${version%.*}/pygobject-$version.tar.xz)
 	
 build() {
-cd pygobject-$version
-mkdir build
-cd    build
 
---prefix=/usr -D python=/usr/bin/python
+mkdir build && cd    build
+
+meson --prefix=/usr \
+      -D python=/usr/bin/python \
+      ../pygobject-$version
+
 ninja
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
+
 rm -r $PKG/usr/{lib/pkgconfig,include}
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/pygobject"
