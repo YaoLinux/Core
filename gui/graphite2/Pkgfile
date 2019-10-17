@@ -2,20 +2,22 @@ makedepends=(cmake freetype python harfbuzz)
 
 description="Graphite2 is a rendering engine for graphite fonts"
 url="http://projects.palaso.org/projects/graphitedev"
+
 packager="Yaolinux Team"
 maintainer="rems"
-name=graphite2
 
+name=graphite2
 version=1.3.13
 
 source=(http://downloads.sourceforge.net/silgraphite/graphite2-$version.tgz)
 
 build() {
-cd graphite2-$version
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=/usr ..
+
+mkdir build && cd build
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+      ../graphite2-$version
+
 make
 make DESTDIR=$PKG install
-
 }
