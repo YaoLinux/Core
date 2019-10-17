@@ -2,6 +2,7 @@ makedepends=(extra-cmake-modules qtx11extras)
 
 description="Addons to QtGui "
 url="https://www.kde.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
