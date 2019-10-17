@@ -1,11 +1,12 @@
 makedepends=(xorg-libx11)
 
 description="X Window System image undumping utility."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xwud
 version=1.0.5
