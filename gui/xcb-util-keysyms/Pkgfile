@@ -2,6 +2,7 @@ makedepends=(libxcb )
 
 description="Library for handling standard X key constants and conversion to/from keycodes."
 url="http://xcb.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -14,7 +15,11 @@ source=(http://xcb.freedesktop.org/dist/$name-$version.tar.bz2)
 
 build() {
         cd $name-$version
-        ./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+
+        ./configure --prefix=/usr \
+                    --sysconfdir=/etc \
+                    --localstatedir=/var
+
         make
         make DESTDIR=$PKG install
 
