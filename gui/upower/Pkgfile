@@ -2,6 +2,7 @@ makedepends=(dbus-glib libusb intltool perl-xml-parser polkit gobject-introspect
 
 description="To enumerating power devices, listening to device events, querying history and statistics"
 url="http://upower.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -13,13 +14,13 @@ source=(http://deb.debian.org/debian/pool/main/u/upower/"$name"_"$version".orig.
 build() {
 
 cd $name-$version
+
 ./configure --prefix=/usr \
---sysconfdir=/etc \
---enable-deprecated \
---localstatedir=/var \
---disable-static
+            --sysconfdir=/etc \
+            --enable-deprecated \
+            --localstatedir=/var \
+            --disable-static
 
 make
 make DESTDIR=$PKG install
-
 }
