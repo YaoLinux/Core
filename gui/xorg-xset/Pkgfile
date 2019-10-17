@@ -1,11 +1,12 @@
 makedepends=(xorg-libxmu)
 
 description="Users preferences utility for X."
+url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 PKGMK_GROUPS=(doc man)
-url="http://xorg.freedesktop.org"
 
 name=xorg-xset
 version=1.2.4
