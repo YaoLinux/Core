@@ -2,10 +2,11 @@ makedepends=(lcms2 harfbuzz libjpeg-turbo22 openjpeg2 freeglut xorg-libx11 xorg-
 
 description="Lightweight PDF and XPS viewer"
 url="http://www.mupdf.com"
+
 packager="Yaolinux Team"
 
 name=mupdf
-version=1.14.0
+version=1.16.1
 
 source=(http://www.linuxfromscratch.org/patches/blfs/svn/mupdf-$version-shared_libs-1.patch
 	http://www.mupdf.com/downloads/archive/$name-$version-source.tar.gz)
@@ -15,10 +16,13 @@ unset MAKEFLAGS
 cd $name-$version-source
 
 sed -i '/SYS_CURL_LIBS/s|$| -lpthread|' Makethird
+
 rm -rf thirdparty/{curl,freeglut,harfbuzz,libjpeg,openjpeg,zlib}
 
 patch -Np1 -i ../$name-$version-shared_libs-1.patch
+
 export USE_SYSTEM_LIBS=yes
+
 CFLAGS+=' -fPIC' CXXFLAGS+=' -fPIC' make build=release libs apps extra
 
 make prefix=$PKG/usr build=release \
