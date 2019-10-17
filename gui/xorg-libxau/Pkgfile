@@ -2,20 +2,17 @@ makedepends=(xorgproto )
 
 description="libxi, X Authorization routines"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxau
-version=1.0.8
-release=3
+version=1.0.9
 _name=libXau
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-}
 
 uptodate() {
 local ext url name LINX
