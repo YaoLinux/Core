@@ -2,30 +2,30 @@ makedepends=(xorg-libxext xorg-libxrender xorg-libx11 xorg-libxcursor alsa-lib m
 
 description="A library for portable low-level access to a video framebuffer, audio output, mouse, and keyboard"
 url="http://www.libsdl.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=sdl2
-version=2.0.9
+version=2.0.10
 
 source=(${url}/release/SDL2-$version.tar.gz)
 
 build() {
-  mkdir build
-  cd build
+  mkdir build && cd build
   ../SDL2-$version/configure --prefix=/usr     \
     --enable-sdl-dlopen                        \
     --disable-arts --disable-esd --disable-nas \
     --enable-alsa --enable-pulseaudio-shared   \
     --disable-video-wayland                    \
     --disable-rpath
+
   make
 }
+
 package() {
-  cd build
-  make DESTDIR=$PKG install
-  install -Dm644 ../SDL2-$version/COPYING.txt $PKG/usr/share/licenses/$name/LICENSE
 
+  make -C build DESTDIR=$PKG install
 
-
+  install -Dm644 SDL2-$version/COPYING.txt $PKG/usr/share/licenses/$name/LICENSE
 }
