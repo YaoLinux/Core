@@ -2,13 +2,13 @@ makedepends=(gtk2 freetype xorg-fontconfig gdk-pixbuf libjpeg-turbo2 libpng pang
 
 description="Graphviz is open source graph visualization software"
 url="http://www.graphviz.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 
 name=graphviz
-version=2.40.1
-release=3
+version=2.42.2
 
 source=(http://$name.gitlab.io/pub/$name/stable/SOURCES/$name.tar.gz)
 
@@ -21,7 +21,10 @@ build () {
   sed -i '/LIBPOSTFIX="64"/s/64//' configure.ac
 
   autoreconf
-  ./configure --prefix=/usr --disable-php
+
+  ./configure --prefix=/usr \
+              --disable-php
+
   make	
   make DESTDIR=$PKG install
 	
