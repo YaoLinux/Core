@@ -2,27 +2,27 @@ makedepends=(cairo libthai freetype xorg-libxft gobject-introspection harfbuzz x
 
 description="Library for layout and rendering of text"
 url="http://www.pango.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=pango
-version=1.42.4
-release=2
+version=1.44.6
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
+mkdir build && cd build
 
-mkdir build
-cd    build
-
---prefix=/usr --sysconfdir=/etc ..
+meson --prefix=/usr \
+      --sysconfdir=/etc \
+      ../$name-$version
 
 ninja
 
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
