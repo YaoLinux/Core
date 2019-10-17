@@ -2,6 +2,7 @@ makedepends=(libxcb )
 
 description="XCB utilities library"
 url="http://xcb.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -15,9 +16,10 @@ build() {
 
 	cd $name-$version
 
-	./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var
+	./configure --prefix=/usr \
+                --sysconfdir=/etc \
+                --localstatedir=/var
 
 	make
 	make DESTDIR=$PKG install
-
 }
