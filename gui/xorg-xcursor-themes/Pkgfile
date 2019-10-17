@@ -2,13 +2,14 @@ makedepends=(xorg-xcursorgen)
 
 description="game of themes for the curseurs X"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 _name=xcursor-themes
 name=xorg-xcursor-themes
 alias=(xcursor-themes)
-version=1.0.5
+version=1.0.6
 
 source=(http://ftp.x.org/pub/individual//data/${_name}-$version.tar.bz2)
 
