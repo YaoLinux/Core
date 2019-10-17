@@ -2,6 +2,7 @@ makedepends=(gavl doxygen)
 
 description="A  minimalistic plugin API for video sources and filters"
 url="http://www.piksel.org/frei0r"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
