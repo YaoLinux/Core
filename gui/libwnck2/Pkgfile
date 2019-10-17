@@ -2,6 +2,7 @@ makedepends=(xorg-libxres gtk2 intltool gobject-introspection startup-notificati
 
 description="contains a kit of contruction of navigator of windows"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,12 +12,17 @@ release=3
 
 source=(http://ftp.gnome.org/pub/gnome/sources/libwnck/${version%.*}/libwnck-$version.tar.xz)
 build() {
+
 	cd libwnck-$version
-	./configure --prefix=/usr --program-suffix=-1
+
+	./configure --prefix=/usr \
+                --program-suffix=-1
+
 	make GETTEXT_PACKAGE=libwnck-1
 	make DESTDIR=$PKG GETTEXT_PACKAGE=libwnck-1 install
 
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/libwnck"
