@@ -4,9 +4,10 @@ description="Application matching framework"
 url="https://launchpad.net/bamf"
 
 packager="Yaolinux Team"
+maintainer="rems"
 
 name=bamf
-version=0.5.3
+version=0.5.4
 
 source=(https://launchpad.net/bamf/${version%.*}/$version/+download/$name-$version.tar.gz)
 
@@ -15,9 +16,12 @@ cd $name-$version
 
 export CFLAGS+=" -Wno-deprecated-declarations"
 
- ./configure --prefix=/usr --libexecdir=/usr/lib \
- --localstatedir=/var --sysconfdir=/etc \
- --disable-static --disable-webapps
+ ./configure --prefix=/usr \
+             --libexecdir=/usr/lib \
+             --localstatedir=/var \
+             --sysconfdir=/etc \
+             --disable-static \
+             --disable-webapps
 
  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
