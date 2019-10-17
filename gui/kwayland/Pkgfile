@@ -2,6 +2,7 @@ makedepends=(extra-cmake-modules qtbase wayland)
 
 description="Qt-style Client and Server library wrapper for the Wayland libraries"
 url="https://www.kde.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
