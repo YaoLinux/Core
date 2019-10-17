@@ -2,20 +2,22 @@ makedepends=(xorg-xkeyboard-config libxcb doxygen xorg-util-macros)
 
 description="Keymap compiler and support library by the XKB specification"
 url="http://xkbcommon.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=libxkbcommon
-version=0.8.2
+version=0.8.4
 
 source=(http://xkbcommon.org/download/libxkbcommon-$version.tar.xz)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
             --disable-static \
-	 --docdir=/usr/share/doc/libxkbcommon-$version
+            --docdir=/usr/share/doc/libxkbcommon-$version
+
 make
 make DESTDIR=$PKG install
-
 }
