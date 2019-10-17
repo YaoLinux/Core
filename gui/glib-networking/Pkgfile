@@ -1,11 +1,12 @@
-makedepends=(glib dbus gnutls libgcrypt gsettings-desktop-schemas p11-kit )
+makedepends=(glib dbus gnutls libgcrypt gsettings-desktop-schemas p11-kit)
 
 description="Network-related giomodules for glib"
 url="http://www.gnome.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=( gsettings-desktop-schemas )
+run=(gsettings-desktop-schemas)
 
 name=glib-networking
 version=2.58.0
@@ -14,16 +15,17 @@ source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$versio
 
 build () {
 
-cd $name-$version
-mkdir build
-cd    build
+mkdir build && cd build
 
---prefix=/usr            \
+meson --prefix=/usr            \
       -Dlibproxy_support=false \
-      -Dca_certificates_path=/etc/ssl/ca-bundle.crt
+      -Dca_certificates_path=/etc/ssl/ca-bundle.crt \
+      ../$name-$version
+
 ninja
-DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 }
+
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
