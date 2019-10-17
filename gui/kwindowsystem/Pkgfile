@@ -2,6 +2,7 @@ makedepends=(extra-cmake-modules qttools qtx11extras)
 
 description="Access to the windowing system "
 url="https://www.kde.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
