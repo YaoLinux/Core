@@ -2,6 +2,7 @@ makedepends=(libpng)
 
 description="library for the manipulation of pixels"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -9,14 +10,13 @@ maintainer="rems"
 name=xorg-pixman
 _name=pixman
 alias=(pixman)
-version=0.36.0
+version=0.38.4
 
 source=(http://ftp.x.org/pub/individual//lib/${_name}-$version.tar.bz2)
 
-build() {
+build=autotools
 
-cd ${_name}-$version
-./configure --prefix=/usr --disable-static
-make
-make DESTDIR=$PKG install
+prepare() {
+
+mv ${_name}-$version $name-$version
 }
