@@ -2,6 +2,7 @@ makedepends=(libvorbis sdl libmikmod flac)
 
 description="A sample multi-channel audio mixer library."
 url="http://www.libsdl.org/projects/SDL_mixer"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
@@ -11,11 +12,10 @@ release=3
 
 source=(http://www.libsdl.org/projects/SDL_mixer/release/SDL_mixer-$version.tar.gz)
 
-build() {
-	cd SDL_mixer-$version
-	sed -i -e 's|/usr/local/lib/timidity|/usr/share/timidity|g' timidity/config.h
-	./configure --prefix=/usr
-	make 
-	make DESTDIR=$PKG install
+prepare() {
+	mv SDL_mixer-$version $name-$version
 
+    cd $name-$version
+
+	sed -i -e 's|/usr/local/lib/timidity|/usr/share/timidity|g' timidity/config.h
 }
