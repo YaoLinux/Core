@@ -2,22 +2,19 @@ makedepends=(xorgproto xorg-libxrender xorg-libxfixes xorg-libx11 )
 
 description="libXcursor, library Xorg"
 url="http://xorg.freedesktop.org"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=xorg-libxcursor
 alias=(libXcursor libxcursor)
 _name=libXcursor
-
-version=1.1.15
-release=3
+version=1.2.0
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
 build=xorg
 
-package() {
-}
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
