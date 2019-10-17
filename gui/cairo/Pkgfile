@@ -2,22 +2,26 @@ makedepends=(lzo libpng glib xorg-pixman xorg-fontconfig xcb-util xorg-libxrende
 
 description="Cairo is a 2D graphics library with support for multiple output devices."
 url="http://www.cairographics.org/"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=cairo
-version=1.16.0
+version=1.17.2
 
-source=( http://cairographics.org/releases/$name-$version.tar.xz)
+source=(http://cairographics.org/releases/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
+
 ./configure --prefix=/usr \
             --disable-static \
-	    --enable-tee \
-	    --disable-gl
+            --enable-tee \
+            --disable-gl
+
 make
 make DESTDIR=$PKG install
+
 } 
 uptodate() {
 local url ext
