@@ -2,16 +2,14 @@ makedepends=(gtk3 libxml2)
 
 description="Syntax highlighting for the GtkTextView widget"
 url="http://mail.gnome.org/mailman/listinfo/gnome-devtools"
+
 packager="Yaolinux Team"
 
 name=gtksourceview
-version=3.24.8
-release=2
+version=3.24.11
 
 source=(http://download.gnome.org/sources/gtksourceview/${version:0:4}/${name}-$version.tar.xz)
 
-package() {
-}
 uptodate(){
 local latest lastversion url
 url="http://ftp.gnome.org/pub/gnome/sources/$name"
