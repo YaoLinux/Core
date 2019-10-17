@@ -2,16 +2,17 @@ makedepends=(openssh python gnupg subversion bzr python-docutils ca-certificates
 
 description="A scalable distributed SCM tool"
 url="http://mercurial.selenic.com"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 run=(openssh) 
 
 name=mercurial
-version=4.9
+version=5.1.2
 
 source=(https://www.mercurial-scm.org/release/mercurial-$version.tar.gz
-	mercurial.profile)
+        mercurial.profile)
  
 build() {
   cd $name-$version
