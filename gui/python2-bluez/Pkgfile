@@ -2,12 +2,12 @@ makedepends=(python2-setuptools bluez)
 
 description="Python wrapper for the BlueZ Bluetooth stack"
 url="http://karulis.github.io/pybluez/"
+
 maintainer="rems"
 packager="Yaolinux Team"
  
 name=python2-bluez
 version=0.22
-release=1
 
 run=(python2-setuptools)
 
@@ -18,11 +18,6 @@ source=(https://github.com/karulis/pybluez/archive/$version.tar.gz)
 build() {
 
 cd pybluez-$version
-	echo "Nothing to build"
-}
 
-package() {
-
-cd pybluez-$version
 python setup.py install --root=$PKG
 }
