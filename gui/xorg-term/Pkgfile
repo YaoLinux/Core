@@ -2,12 +2,13 @@ makedepends=(xorg-fontconfig xorg-libxft xorg-libxaw xorg-luit xorg-libxkbfile l
 
 description="xterm is a terminal emulator for the X Window System."
 url="http://invisible-mirror.net/archives/xterm"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 alias=(xterm)
 name=xorg-term
-version=342
+version=349
 
 run=(xorg-luit)
 
@@ -23,8 +24,9 @@ printf '\tkbs=\\177,\n' >> terminfo
 
 build() {
 cd ${_name}-$version
-#patch -Np1 -i ../$name-$version-color-1.patch
-./configure --prefix=/usr --sysconfdir=/etc --localstatedir=/var \
+./configure --prefix=/usr \
+            --sysconfdir=/etc \
+            --localstatedir=/var \
             --mandir=/usr/share/man \
             --with-x \
             --disable-full-tgetent \
