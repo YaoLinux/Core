@@ -9,7 +9,7 @@ maintainer="rems"
 name=openal
 version=1.19.1
 
-source=(http://kcat.strangesoft.net/openal-releases/openal-soft-$version.tar.bz2 )
+source=(https://github.com/kcat/openal-soft/archive/openal-soft-$version.tar.gz)
 
 build() {
 cd openal-soft-$version/build
