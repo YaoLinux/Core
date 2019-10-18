@@ -1,3 +1,5 @@
+makedepends=(git)
+
 description="Python Build Reasonableness"
 url="https://pypi.python.org/pypi/pbr"
 
