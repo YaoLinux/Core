@@ -1,3 +1,4 @@
+makedepends=(git)
 
 description="Standard Ghostscript Type1 fonts from URW"
 url="http://sourceforge.net/projects/ghostscript"
@@ -8,9 +9,17 @@ maintainer="rems"
 name=gsfonts
 version=20180524
 
-source=(http://downloads.sourceforge.net/ghostscript/ghostscript-fonts-std-$version.tar.gz)
+source=()
+
+prepare() {
+
+git clone https://github.com/ArtifexSoftware/urw-base35-fonts.git $name-$version
+}
 
 build() {
+
+cd $name-$version
+
 	mkdir -p $PKG/usr/share/fonts/Type1
 
 	install -v -m644 fonts/*.{pfb,pfm,afm} \
