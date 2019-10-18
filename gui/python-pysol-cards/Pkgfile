@@ -1,3 +1,4 @@
+makedepends=(python-pbr)
 
 description="Deal PySol FC Cards"
 url="https://pypi.org/project/pysol-cards/"
@@ -8,6 +9,7 @@ maintainer="rems"
 name=python-pysol-cards
 _name="pysol_cards"
 version=0.8.6
+release=2
 
 source=(https://pypi.io/packages/source/p/${_name}/${_name}-$version.tar.gz)
 
