@@ -1,4 +1,4 @@
-makedepends=(python-random2 python-six cmake gperf perl-path-tiny perl-template-toolkit)
+makedepends=(python-random2 python-six cmake gperf perl-path-tiny perl-template-toolkit python-pysol-cards)
 
 description="A program that automatically solves layouts of Freecell or variants"
 url="https://fc-solve.shlomifish.org"
