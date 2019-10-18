@@ -1,4 +1,4 @@
-makedepends=(dbus glibc)
+makedepends=(dbus python-docutils)
 
 description="Internet Wireless Daemon" 
 url="https://git.kernel.org/cgit/network/wireless/iwd.git/"
