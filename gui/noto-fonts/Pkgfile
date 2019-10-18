@@ -1,4 +1,4 @@
-makedepends=(xorg-fontconfig)
+makedepends=(xorg-fontconfig git)
 
 description="Google Noto TTF fonts"
 url="https://www.google.com/get/noto/"
@@ -9,8 +9,14 @@ maintainer="rems"
 name=noto-fonts
 version=20190926
 
-source=(https://download.tuxfamily.org/nutyx/files/$name-$version.tar.xz
-        66-noto-mono.conf 66-noto-sans.conf 66-noto-serif.conf)
+source=(66-noto-mono.conf 66-noto-sans.conf 66-noto-serif.conf)
+
+prepare() {
+
+git clone https://github.com/googlefonts/noto-fonts.git $name-$version
+cd $name-$version
+git checkout 0fa1dfabd6e3746bb7463399e2813f60d3f1b256
+}
 
 build() {
   cd $name-$version
