@@ -22,6 +22,6 @@ cd $name-$version
 
 	mkdir -p $PKG/usr/share/fonts/Type1
 
-	install -v -m644 fonts/*.{pfb,pfm,afm} \
+	install -v -m644 fonts/*.afm \
                 $PKG/usr/share/fonts/Type1/
 }
