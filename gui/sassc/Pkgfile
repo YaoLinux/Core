@@ -9,7 +9,9 @@ maintainer="rems"
 name=sassc
 version=3.6.1
 
-source=(http://rsync.nutyx.org/sources/$name-$version.tar.bz2)
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/sass/$name/archive/$version.tar.gz)
 
 prepare() {
 cd $name-$version
