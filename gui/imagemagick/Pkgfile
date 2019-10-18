@@ -1,4 +1,4 @@
-makedepends=(freetype ghostscript lcms libgsf giflib libxml2 openexr libwmf libpng librsvg libwebp djvulibre)
+makedepends=(freetype ghostscript lcms2 libgsf giflib libxml2 openexr libwmf libpng librsvg libwebp djvulibre)
 
 description="An image viewing/manipulation program"
 url="http://www.imagemagick.org/"
