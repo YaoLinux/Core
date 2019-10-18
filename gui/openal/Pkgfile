@@ -12,7 +12,7 @@ version=1.19.1
 source=(https://github.com/kcat/openal-soft/archive/openal-soft-$version.tar.gz)
 
 build() {
-cd openal-soft-$version/build
+cd openal-soft-openal-soft-$version/build
 
 cmake ../ \
 	-DCMAKE_INSTALL_PREFIX=/usr \
