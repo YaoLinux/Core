@@ -1,4 +1,4 @@
-makedepends=(libjpeg-turbo22 libpng gnutls libgcrypt sdl)
+makedepends=(libjpeg-turbo2 libpng gnutls libgcrypt sdl)
 
 description="A cross-platform C libraries that allow you to easily implement VNC server"
 url="https://libvnc.github.io/"
