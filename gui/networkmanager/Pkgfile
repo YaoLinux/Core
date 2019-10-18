@@ -1,4 +1,4 @@
-makedepends=(bluez dbus-glib dhcpcd dnsmasq gobject-introspection gtk-doc iptables iwd libndp newt nss polkit python-gobject systemd vala wpa-supplicant wireless-tools upower)
+makedepends=(bluez dbus-glib dhcpcd gobject-introspection gtk-doc iptables iwd libndp newt nss polkit python-gobject systemd vala wpa-supplicant wireless-tools upower)
 
 description="Tools which simplify and make the network more directly manageable."
 url="http://projects.gnome.org/NetworkManager/"
