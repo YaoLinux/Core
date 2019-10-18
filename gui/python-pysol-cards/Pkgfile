@@ -1,0 +1,19 @@
+
+description="Deal PySol FC Cards"
+url="https://pypi.org/project/pysol-cards/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+ 
+name=python-pysol-cards
+_name="pysol_cards"
+version=0.8.6
+
+source=(https://pypi.io/packages/source/p/${_name}/${_name}-$version.tar.gz)
+
+build() {
+
+cd ${_name}-$version
+
+python3 setup.py install --root "$PKG" --optimize=1
+}
