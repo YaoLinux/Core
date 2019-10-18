@@ -1,4 +1,4 @@
-makedepends=(nss poppler xorg-libxxf86vm libpng xorg-fontconfig libjpeg-turbo2 cairo libxml2 openjpeg2 lcms lcms2 glib gobject-introspection gtk3)
+makedepends=(nss poppler xorg-libxxf86vm libpng xorg-fontconfig libjpeg-turbo2 cairo libxml2 openjpeg2 lcms2 glib gobject-introspection gtk3)
 
 description="PDF rendering library based on xpdf 3.0"
 url="URL: http://poppler.freedesktop.org/"
