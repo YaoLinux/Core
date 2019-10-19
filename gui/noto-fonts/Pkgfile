@@ -21,7 +21,8 @@ git checkout 0fa1dfabd6e3746bb7463399e2813f60d3f1b256
 build() {
   cd $name-$version
   mkdir -p $PKG/usr/share/fonts/noto
-  install -m644 hinted/Noto*.ttf $PKG/usr/share/fonts/noto
+  install -Dm644 unhinted/Noto*/*.tt[fc] -t "$PKG"/usr/share/fonts/noto
+  install -m644 hinted/Noto*/*.tt[fc] -t $PKG/usr/share/fonts/noto
 
   mkdir -p $PKG/usr/share/fonts/TTF
   for font in Arimo Cousine Tinos; do
@@ -30,4 +31,9 @@ build() {
 
   # fontconfig files
   install -Dm644 ../*.conf -t $PKG/etc/fonts/conf.avail/
+  install -d "$PKG"/etc/fonts/conf.d
+  ln -rs "$PKG"/etc/fonts/conf.avail/* "$PKG"/etc/fonts/conf.d
+
+  # Remove font that breaks emoji in Qt
+  rm "$PKG"/usr/share/fonts/noto/NotoKufiArabic*
 }
