@@ -10,17 +10,12 @@ PKGMK_GROUPS=(doc man)
 
 name=xorg-mkfontscale
 version=1.2.1
-release=2
+release=3
 _name=${name/xorg-/}
 
 source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-
-rm -v $PKG/usr/share/man/man1/mkfontdir.1
-}
 
 uptodate() {
 local ext url name LINX
