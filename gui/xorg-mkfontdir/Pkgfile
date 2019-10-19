@@ -9,7 +9,7 @@ url="http://xorg.freedesktop.org"
 
 name=xorg-mkfontdir
 version=1.0.7
-release=2
+release=3
 _name=${name/xorg-/}
 
 source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
