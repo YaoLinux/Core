@@ -9,16 +9,12 @@ url="http://xorg.freedesktop.org"
 
 name=xorg-mkfontdir
 version=1.0.7
-release=3
+release=4
 _name=${name/xorg-/}
 
 source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
 
 build=xorg
-
-package() {
-cards query "usr/share/man/man1/mkfontdir.1.gz"
-}
 
 uptodate() {
 local ext url name LINX
