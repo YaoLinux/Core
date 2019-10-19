@@ -1,4 +1,4 @@
-makedepends=(xorgproto xorg-libxfont)
+makedepends=(xorgproto xorg-util-macros)
 
 description="Convert X font from Bitmap Distribution Format to Portable Compiled Format."
 url="http://xorg.freedesktop.org"
