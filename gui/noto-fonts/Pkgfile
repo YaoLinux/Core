@@ -26,7 +26,7 @@ build() {
 
   mkdir -p $PKG/usr/share/fonts/TTF
   for font in Arimo Cousine Tinos; do
-    install -m644 hinted/$font*.ttf $PKG/usr/share/fonts/TTF
+    install -m644 hinted/$font/*.ttf $PKG/usr/share/fonts/TTF
   done
 
   # fontconfig files
