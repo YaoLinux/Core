@@ -9,7 +9,7 @@ maintainer="rems"
 name=shared-mime-info
 version=1.14
 
-source=( http://freedesktop.org/~hadess/$name-$version.tar.xz)
+source=(https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/aee9ae9646cbef724bbb1bd2ba146556/$name-$version.tar.xz)
 
 build() {
 
@@ -22,6 +22,6 @@ export ac_cv_func_fdatasync=no
 ./configure --prefix=/usr \
             --disable-update-mimedb
 
-make -j1
+make
 make DESTDIR=$PKG install
 } 
