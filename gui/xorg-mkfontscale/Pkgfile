@@ -19,7 +19,7 @@ build=xorg
 
 package() {
 
-rm -v $PKG/usr/share/man/man1/mkfontdir.1.gz
+rm -v $PKG/usr/share/man/man1/mkfontdir.1
 }
 
 uptodate() {
