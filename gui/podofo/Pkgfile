@@ -16,7 +16,7 @@ build() {
 
     mkdir -p "test/TokenizerTest/objects"
 
-    mkdir build 
+    cd .. && mkdir build 
 }
 
 build() {
