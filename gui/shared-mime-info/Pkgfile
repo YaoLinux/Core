@@ -1,4 +1,4 @@
-makedepends=(libxml2 intltool glib)
+makedepends=(libxml2 intltool itstool glib)
 
 description="The Shared Mime Info package contains a MIME database."
 url="http://freedesktop.org/"
