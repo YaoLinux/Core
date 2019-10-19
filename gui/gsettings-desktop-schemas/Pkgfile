@@ -13,7 +13,9 @@ version=3.34.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 
-build() {
+buid=meson
+
+prepare() {
 cd $name-$version
 
 # NuTyX Background
@@ -21,11 +23,6 @@ sed -i "s@gnome/adwaita-timed.xml@yaolinux/wallpaper1.jpg@" \
 schemas/org.gnome.desktop.background.gschema.xml.in
 
 sed -i -r 's:"(/system):"/org/gnome\1:' schemas/*.in
-
-./configure --prefix=/usr
-
-make
-make DESTDIR=$PKG install
 }
 
 uptodate(){
