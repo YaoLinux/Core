@@ -16,6 +16,10 @@ source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
 
 build=xorg
 
+package() {
+cards query "usr/share/man/man1/mkfontdir.1.gz"
+}
+
 uptodate() {
 local ext url name LINX
 LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
