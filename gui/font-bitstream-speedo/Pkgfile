@@ -1,4 +1,4 @@
-makedepends=(xorg-mkfontdir xorg-fontconfig xorg-font-util xorg-font-alias xorg-encodings)
+makedepends=(xorg-mkfontscale xorg-fontconfig xorg-font-util xorg-font-alias xorg-encodings)
 
 description="Xorg Bitstream speedo fonts."
 url="http://xorg.freedesktop.org"
