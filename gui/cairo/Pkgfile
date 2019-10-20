@@ -9,13 +9,10 @@ maintainer="rems"
 name=cairo
 version=1.17.2
 
-source=(https://gitlab.freedesktop.org/cairo/cairo/-/archive/$version/cairo-$version.tar.bz2
-        0001-image-compositor-Remove-the-right-glyph-from-pixman-.patch)
+source=(https://gitlab.freedesktop.org/cairo/cairo/-/archive/$version/cairo-$version.tar.bz2)
 
 build() {
 cd $name-$version
-
-patch -Np1 -i ../0001-image-compositor-Remove-the-right-glyph-from-pixman-.patch
 
 # Fix typo
   sed -i 's/have_png/use_png/g' configure.ac
