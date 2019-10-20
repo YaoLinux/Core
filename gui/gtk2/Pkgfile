@@ -14,7 +14,7 @@ run=(gtk-update-icon-cache shared-mime-info desktop-file-utils)
 
 name=gtk2
 version=2.24.32
-release=3
+release=4
 
 source=(http://ftp.gnome.org/pub/gnome/sources/gtk+/${version%.*}/gtk+-$version.tar.xz)
 
