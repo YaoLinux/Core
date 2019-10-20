@@ -11,13 +11,23 @@ run=( python2-gobject2 python2-cairo )
 name=python2-gtk
 version=2.24.0
 release=2
+_name=pygtk
 
-source=(http://ftp.gnome.org/pub/gnome/sources/pygtk/${version%.*}/pygtk-$version.tar.bz2)
-	
+source=(http://ftp.gnome.org/pub/gnome/sources/pygtk/${version%.*}/pygtk-$version.tar.bz2
+        python27.patch
+        fix-leaks-of-pango-objects.patch)
+
 prepare() {
 
-mv pygtk-$version $name-$version
+cd $_name-$version
+
+  # https://bugzilla.gnome.org/show_bug.cgi?id=623965
+  patch -Np1 -i "../python27.patch"
+
+  # https://bugzilla.gnome.org/show_bug.cgi?id=660216
+  patch -Np1 -i "../fix-leaks-of-pango-objects.patch"
 }
+
 
 uptodate(){
 local latest lastversion url
