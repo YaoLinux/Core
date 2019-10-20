@@ -14,15 +14,11 @@ release=2
 _name=pygtk
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pygtk/${version%.*}/pygtk-$version.tar.bz2
-        python27.patch
         fix-leaks-of-pango-objects.patch)
 
 prepare() {
 
 cd $_name-$version
-
-  # https://bugzilla.gnome.org/show_bug.cgi?id=623965
-  patch -Np1 -i "../python27.patch"
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=660216
   patch -Np1 -i "../fix-leaks-of-pango-objects.patch"
