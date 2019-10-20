@@ -19,6 +19,8 @@ build() {
 
   patch -Np1 -i ../0001-Re-add-pango_x_get_shaper_map-it-is-still-used-in-th.patch
 
+  NOCONFIGURE=1 ./autogen.sh
+
   ./configure --prefix=/usr \
               --sysconfdir=/etc \
               --localstatedir=/var \
