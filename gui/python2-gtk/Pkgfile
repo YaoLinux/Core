@@ -23,6 +23,12 @@ cd $_name-$version
   # https://bugzilla.gnome.org/show_bug.cgi?id=660216
   patch -Np1 -i "../fix-leaks-of-pango-objects.patch"
 
+# Python 2
+  sed -i -e 's#env python$#env python2#' examples/pygtk-demo/{,demos/}*.py
+
+# No docs
+  sed -i '/^SUBDIRS =/s/docs//' Makefile.in
+
 PYTHON=/usr/bin/python2 \
 ./configure --prefix=/usr \
             --disable-docs
