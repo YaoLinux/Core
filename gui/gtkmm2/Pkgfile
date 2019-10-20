@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=gtkmm2
 version=2.24.5
-release=2
+release=3
 
 source=(https://ftp.gnome.org/pub/GNOME/sources/gtkmm/${version:0:4}/gtkmm-$version.tar.xz)
 
