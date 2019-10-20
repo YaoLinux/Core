@@ -1,0 +1,26 @@
+description="Large, sparse array mapping each unicode code point to the annotation data for it"
+url="https://github.com/fontforge/libuninameslist"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name=libuninameslist
+version=20190701
+
+source=(https://github.com/fontforge/${name}/releases/download/${version}/${name}-dist-${version}.tar.gz)
+
+prepare() {
+
+cd $name-$version
+
+autoreconf -iv
+automake --foreign -Wall
+}
+
+uptodate() {
+local ext url name LINX
+LYNX="lynx -read_timeout=20 -dump -listonly -nonumbers "
+ext=".tar.bz2"
+url="https://ftp.x.org/archive//individual//app"
+$LYNX $url/?C=M\;O=D|grep "$ext$"|grep "$url/${_name}-"|sed "s@$ext\$@@"|sed "s@$url/${_name}-@@"|head -1
+}
