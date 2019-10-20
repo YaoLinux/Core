@@ -17,7 +17,7 @@ source=(https://github.com/OpenShot/libopenshot-audio/archive/v$version.tar.gz
 prepare() {
 
 cd $name-$version
-patch -p1 -i ../$name-pr-39.patch
+patch -p1 -i ../39.patch
 
 cd .. && mkdir -v build
 }
