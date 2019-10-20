@@ -16,12 +16,23 @@ _name=pygtk
 source=(http://ftp.gnome.org/pub/gnome/sources/pygtk/${version%.*}/pygtk-$version.tar.bz2
         fix-leaks-of-pango-objects.patch)
 
-prepare() {
+build() {
 
 cd $_name-$version
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=660216
   patch -Np1 -i "../fix-leaks-of-pango-objects.patch"
+
+PYTHON=/usr/bin/python2 \
+./configure --prefix=/usr \
+            --disable-docs
+
+  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
+make
+make DESTDIR=$PKG install
+
+install -m644 gtk/gtk-extrafuncs.defs "${PKG}/usr/share/pygtk/2.0/defs/"
 }
 
 
