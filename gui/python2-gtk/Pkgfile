@@ -1,4 +1,4 @@
-makedepends=(python2-gobject2 python2-cairo libglade )
+makedepends=(python2-gobject2 python2-cairo python2-numpy libglade )
 
 description="provides the links of Python 2 for the class GObject of GLib."
 url="http://www.gnome.org/"
@@ -24,7 +24,15 @@ cd $_name-$version
   patch -Np1 -i "../04_Fix_leaks_of_Pango_objects.patch"
 
 # Python 2
-  sed -i -e 's#env python$#env python2#' examples/pygtk-demo/{,demos/}*.py
+for file in $(find . -name '*.py' -type f)
+do
+  sed -i.orig \
+      -e 's~#!/usr/bin/python~#!%{__python2}~' \
+      -e 's~#!/usr/bin/env python~#!%{__python2}~' \
+      $file
+      touch -r ${file}.orig ${file}
+      rm -f ${file}.orig
+done
 
 # No docs
   sed -i '/^SUBDIRS =/s/docs//' Makefile.in
@@ -32,6 +40,7 @@ cd $_name-$version
 PYTHON=/usr/bin/python2 \
 ./configure --prefix=/usr \
             --enable-thread \
+            --enable-numpy \
             --disable-docs
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
