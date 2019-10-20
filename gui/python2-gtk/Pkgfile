@@ -31,6 +31,7 @@ cd $_name-$version
 
 PYTHON=/usr/bin/python2 \
 ./configure --prefix=/usr \
+            --enable-thread \
             --disable-docs
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
