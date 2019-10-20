@@ -11,7 +11,9 @@ version=1.9.74
 
 run=(python-requests)
 
-source=(http://cyberelk.net/tim/data/pycups/pycups-$version.tar.bz2)
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/zdohnal/pycups/archive/${version}.tar.gz)
 
 build() {
     cd pycups-$version
