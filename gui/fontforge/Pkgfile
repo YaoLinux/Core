@@ -11,7 +11,7 @@ version=20190801
 
 run=(shared-mime-info)
 
-source=(https://github.com/$name/$name/releases/download/$version/$name-dist-$version.tar.xz)
+source=(https://github.com/${name}/${name}/releases/download/${version}/${name}-${version}.tar.gz)
 
 build() {
     cd $name*
