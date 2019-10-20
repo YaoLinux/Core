@@ -14,9 +14,9 @@ source=()
 
 prepare() {
 
-git clone https://gitlab.gnome.org/Archive/pangox-compat $name-$version
+git clone https://gitlab.gnome.org/Archive/pangox-compat $name-$_version
 
-cd $name-$version
+cd $name-$_version
 git checkout edb9e0904d04d1da02bba7b78601a2aba05aaa47
 }
 
