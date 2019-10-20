@@ -8,9 +8,17 @@ maintainer="rems"
 
 name=python2-cairo
 version=1.18.1
-release=2
+release=3
 _name=pycairo
 
 source=(https://github.com/pygobject/pycairo/releases/download/v$version/pycairo-$version.tar.gz)
 
-build=python2
+build() {
+
+cd $_name-$version
+
+python2 setup.py build
+python2 setup.py --root=$PKG install --optimize=1
+python2 setup.py --root=$PKG install_pycairo_header
+python2 setup.py --root=$PKG install_pkgconfig
+}
