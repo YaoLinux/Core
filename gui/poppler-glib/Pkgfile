@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=poppler-glib
 version=0.81.0
+release=2
 
 source=(http://poppler.freedesktop.org/poppler-$version.tar.xz)
 
