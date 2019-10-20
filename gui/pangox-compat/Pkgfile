@@ -10,14 +10,11 @@ version=0.0.2+2+gedb9e09
 _version=0.0.2
 release=2
 
-source=(http://download.gnome.org/sources/$name/${_version:0:3}/$name-$_version.tar.xz
-        0001-Re-add-pango_x_get_shaper_map-it-is-still-used-in-th.patch)
+source=(http://download.gnome.org/sources/$name/${_version:0:3}/$name-$_version.tar.xz)
 
 
 build() {
   cd $name-$_version
-
-  patch -Np1 -i ../0001-Re-add-pango_x_get_shaper_map-it-is-still-used-in-th.patch
 
   NOCONFIGURE=1 ./autogen.sh
 
@@ -25,9 +22,6 @@ build() {
               --sysconfdir=/etc \
               --localstatedir=/var \
               --disable-static
-
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
   make
 }
 
