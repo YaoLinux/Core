@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=python-cairo
 version=1.18.1
+release=2
 _name=pycairo
 
 source=(https://github.com/pygobject/pycairo/releases/download/v$version/pycairo-$version.tar.gz)
