@@ -38,14 +38,11 @@ done
   sed -i '/^SUBDIRS =/s/docs//' Makefile.in
 
 PYTHON=/usr/bin/python2 \
-./configure --prefix=/usr \
-            --enable-thread \
-            --enable-numpy \
-            --disable-docs
+./configure --prefix=/usr
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
-make -j1
+make
 make DESTDIR=$PKG install
 
 install -m644 gtk/gtk-extrafuncs.defs "${PKG}/usr/share/pygtk/2.0/defs/"
