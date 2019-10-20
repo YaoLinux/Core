@@ -9,20 +9,31 @@ maintainer="rems"
 name=cairo
 version=1.17.2
 
-source=(http://cairographics.org/releases/$name-$version.tar.xz)
+source=(https://gitlab.freedesktop.org/cairo/cairo/-/archive/$version/cairo-$version.tar.bz2
+        0001-image-compositor-Remove-the-right-glyph-from-pixman-.patch)
 
 build() {
 cd $name-$version
+
+patch -Np1 -i ../0001-image-compositor-Remove-the-right-glyph-from-pixman-.patch
+
+# Fix typo
+  sed -i 's/have_png/use_png/g' configure.ac
+
+NOCONFIGURE=1 ./autogen.sh
 
 ./configure --prefix=/usr \
             --disable-static \
             --enable-tee \
             --disable-gl
 
+sed -i 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
+
 make
 make DESTDIR=$PKG install
 
 } 
+
 uptodate() {
 local url ext
 
