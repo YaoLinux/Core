@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=oxygen-gtk2
 version=1.4.6
+release=2
 
 source=(http://download.kde.org/stable/oxygen-gtk2/$version/src/$name-$version.tar.bz2)
 
