@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=python2-gobject
 version=3.34.0
+release=2
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pygobject/${version%.*}/pygobject-$version.tar.xz)
 	
