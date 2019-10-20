@@ -12,7 +12,7 @@ name=xorg-xrandr
 version=1.5.1
 _name=${name/xorg-/}
 
-source=(http://ftp.x.org/pub/individual/app/${_name}-$version.tar.bz2)
+source=(https://xorg.freedesktop.org/archive/individual/app/xrandr-${version}.tar.xz)
 
 build=xorg
 
