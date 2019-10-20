@@ -45,7 +45,7 @@ PYTHON=/usr/bin/python2 \
 
   sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
-make
+make -j1
 make DESTDIR=$PKG install
 
 install -m644 gtk/gtk-extrafuncs.defs "${PKG}/usr/share/pygtk/2.0/defs/"
