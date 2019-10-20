@@ -14,14 +14,14 @@ release=2
 _name=pygtk
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pygtk/${version%.*}/pygtk-$version.tar.bz2
-        fix-leaks-of-pango-objects.patch)
+        https://sources.debian.org/data/main/p/pygtk/2.24.0-6/debian/patches/04_Fix_leaks_of_Pango_objects.patch)
 
 build() {
 
 cd $_name-$version
 
   # https://bugzilla.gnome.org/show_bug.cgi?id=660216
-  patch -Np1 -i "../fix-leaks-of-pango-objects.patch"
+  patch -Np1 -i "../04_Fix_leaks_of_Pango_objects.patch"
 
 # Python 2
   sed -i -e 's#env python$#env python2#' examples/pygtk-demo/{,demos/}*.py
