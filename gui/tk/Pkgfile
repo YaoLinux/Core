@@ -15,7 +15,7 @@ build(){
     
     [ "`uname -m`" == "x86_64" ] && X64="--enable-64bit"
     
-    cd $name$version/unix
+    cd $name${version%.*}/unix
 
     ./configure --prefix=/usr \
                 --mandir=/usr/share/man \
