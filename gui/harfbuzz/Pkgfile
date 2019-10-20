@@ -9,7 +9,7 @@ maintainer="rems"
 name=harfbuzz
 version=2.6.2
 
-source=(https://www.freedesktop.org/software/$name/release/$name-$version.tar.bz2)
+source=(https://www.freedesktop.org/software/$name/release/$name-$version.tar.xz)
 
 build() {
 cd $name-$version
