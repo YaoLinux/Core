@@ -10,7 +10,7 @@ name=sane
 version=1.0.28
 
 source=(network.patch
-        http://fossies.org/linux/misc//sane-backends-$version.tar.gz)
+        https://gitlab.com/sane-project/backends/uploads/9e718daff347826f4cfe21126c8d5091/sane-backends-$version.tar.gz)
 
 build() {
 	cd $name-backends-$version
