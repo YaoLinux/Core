@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python2-gtksourceview2
-version=2.10.5
+version=2.10.1
 release=2
 
 source=(http://ftp.gnome.org/pub/gnome/sources/pygtksourceview/2.10/pygtksourceview-${version}.tar.bz2)
