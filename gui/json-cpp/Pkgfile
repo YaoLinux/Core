@@ -17,18 +17,17 @@ cd jsoncpp-$version
 
 mkdir -pv build
 
+echo "${version}" > version
+
+  sed -E "s|(version : )'1.9.0'|\1'${version}'|" -i meson.build
+
+meson --prefix=/usr --default-library shared build
+
 python3 doxybuild.py \
         --doxygen="$(which doxygen)" \
         --with-dot
 
-meson --default-library shared build
-
 ninja -C build
-ninja -C build test
-
-cd test
-  python2 runjsontests.py ../build/jsontestrunner
-  python2 rununittests.py ../build/jsoncpp_test  
 }
 
 package() {
