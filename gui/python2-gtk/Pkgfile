@@ -13,45 +13,13 @@ version=2.24.0
 release=2
 _name=pygtk
 
-source=(http://ftp.gnome.org/pub/gnome/sources/pygtk/${version%.*}/pygtk-$version.tar.bz2
-        https://sources.debian.org/data/main/p/pygtk/2.24.0-6/debian/patches/04_Fix_leaks_of_Pango_objects.patch
-        https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-python/pygtk/files/pygtk-2.14.1-libdir-pc.patch
-        https://gitweb.gentoo.org/repo/gentoo.git/plain/dev-python/pygtk/files/pygtk-2.13.0-fix-codegen-location.patch)
+source=(http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk.devel1567017773any.cards.tar.xz
+        http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk.doc1567017773any.cards.tar.xz
+        http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk1567017773x86_64.cards.tar.xz)
 
 build() {
 
-cd $_name-$version
-
-  # https://bugzilla.gnome.org/show_bug.cgi?id=660216
-  patch -Np1 -i "../04_Fix_leaks_of_Pango_objects.patch"
-
-  # Fix declaration of codegen in .pc
-  patch -Np1 -i "../pygtk-2.13.0-fix-codegen-location.patch"
-  patch -Np1 -i "../pygtk-2.14.1-libdir-pc.patch"
-
-# Python 2
-for file in $(find . -name '*.py' -type f)
-do
-  sed -i.orig \
-      -e 's~#!/usr/bin/python~#!%{__python2}~' \
-      -e 's~#!/usr/bin/env python~#!%{__python2}~' \
-      $file
-      touch -r ${file}.orig ${file}
-      rm -f ${file}.orig
-done
-
-# No docs
-  sed -i '/^SUBDIRS =/s/docs//' Makefile.in
-
-PYTHON=/usr/bin/python2 \
-./configure --prefix=/usr
-
-  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
-
-make
-make DESTDIR=$PKG install
-
-install -m644 gtk/gtk-extrafuncs.defs "${PKG}/usr/share/pygtk/2.0/defs/"
+mv usr $PKG/
 }
 
 
