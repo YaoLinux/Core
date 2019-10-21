@@ -37,7 +37,7 @@ meson --prefix=/usr                  \
       -Dplatforms="drm,x11,wayland"  \
       -Ddri-drivers="i915,i965,nouveau,r200" \
       -Dgallium-drivers="nouveau,virgl,r300,r600,radeonsi,svga,swrast" \
-      -Dvulkan-drivers="intel,radeon" \
+      -Dvulkan-drivers="intel,amd" \
       ../$name-$version
 
 ninja 
