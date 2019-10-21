@@ -8,9 +8,9 @@ maintainer="rems"
 
 
 name=graphviz
-version=2.42.2
+version=2.42.3
 
-source=(http://$name.gitlab.io/pub/$name/stable/SOURCES/$name.tar.gz)
+source=(https://www2.graphviz.org/Packages/stable/portable_source/graphviz-$version.tar.gz)
 
 PKGMK_KEEP_SOURCES="no"
 
