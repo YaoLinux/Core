@@ -17,7 +17,7 @@ build() {
 mkdir build && cd build
 
 meson --prefix=/usr \
-      -Dvapi=true \
+      -Dvapi=enabled \
       ../$name-$version
 
 ninja
