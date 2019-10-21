@@ -1,4 +1,4 @@
-makedepends=(libsoup)
+makedepends=(libsoup gtk3)
 
 description="A GObject-based API for handling resource discovery and announcement over SSDP"
 url="http://gupnp.org/"
