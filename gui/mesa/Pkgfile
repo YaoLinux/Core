@@ -16,9 +16,16 @@ version=19.2.1
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz
 	http://www.linuxfromscratch.org/patches/downloads/mesa/mesa-$version-add_xdemos-1.patch)
 
-build() {
+prepare() {
 cd mesa-$version
 patch -Np1 -i ../mesa-$version-add_xdemos-1.patch
+
+cd .. && mkdir -v build
+}
+
+build() {
+
+cd build
 
 meson --prefix=/usr                  \
       --sysconfdir=/etc              \
@@ -30,17 +37,12 @@ meson --prefix=/usr                  \
       -Dplatforms="drm,x11,wayland"  \
       -Ddri-drivers="i915,i965,nouveau,r200" \
       -Dgallium-drivers="nouveau,virgl,r300,r600,radeonsi,svga,swrast" \
-      -Dvulkan-drivers="intel,radeon"
+      -Dvulkan-drivers="intel,radeon" \
+      ../$name-$version
 
-make
-make -C xdemos DEMOS_PREFIX=/usr
-
-make DESTDIR=$PKG install
-
-make -C xdemos DEMOS_PREFIX=/usr DESTDIR=$PKG install
+ninja 
+DESTDIR=$PKG ninja install
 
 install -v -dm755 $PKG/usr/share/doc/mesa-$version
-
 cp -rfv docs/* $PKG/usr/share/doc/mesa-$version
-
 }
