@@ -44,5 +44,5 @@ ninja
 DESTDIR=$PKG ninja install
 
 install -v -dm755 $PKG/usr/share/doc/mesa-$version
-cp -rfv docs/* $PKG/usr/share/doc/mesa-$version
+cp -rfv ../$name-$version/docs/* $PKG/usr/share/doc/mesa-$version
 }
