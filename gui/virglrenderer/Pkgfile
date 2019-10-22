@@ -9,4 +9,6 @@ maintainer="rems"
 name=virglrenderer
 version=0.8.0
 
-source=(https://github.com/freedesktop/virglrenderer/archive/virglrenderer-$version.tar.gz)
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/freedesktop/virglrenderer/archive/$version.tar.gz)
