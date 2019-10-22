@@ -14,12 +14,15 @@ source=(http://launchpad.net/libindicator/${version%.*}/$version/+download/libin
 
 build() {
 
-  sed 's/LIBINDICATOR_LIBS+="$LIBM"/LIBINDICATOR_LIBS+=" $LIBM"/g' -i libindicator-$version/configure
-  sed 's/LIBM="-lmw"/LIBM=" -lmw"/g' -i libindicator-$version/configure
-  sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i libindicator-$version/configure
-  sed 's/LIBS="-lm  $LIBS"/LIBS=" -lm  $LIBS"/g' -i libindicator-$version/configure
-  sed 's/LIBS="-lmw  $LIBS"/LIBS=" -lmw  $LIBS"/g' -i libindicator-$version/configure
-  sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i libindicator-$version/m4/libtool.m4
+cd libindicator-$version
+
+  sed '/-Werror/s/$/ -Wno-deprecated-declarations/' -i Makefile.{am,in}
+  sed 's/LIBINDICATOR_LIBS+="$LIBM"/LIBINDICATOR_LIBS+=" $LIBM"/g' -i configure
+  sed 's/LIBM="-lmw"/LIBM=" -lmw"/g' -i configure
+  sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i configure
+  sed 's/LIBS="-lm  $LIBS"/LIBS=" -lm  $LIBS"/g' -i configure
+  sed 's/LIBS="-lmw  $LIBS"/LIBS=" -lmw  $LIBS"/g' -i configure
+  sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i m4/libtool.m4
 
   cd libindicator-$version
 
