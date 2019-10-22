@@ -1,4 +1,4 @@
-makedepends=(gtk3 fribidi)
+makedepends=(gtk3)
 
 description="A set of symbols and convience functions for Ayatana indicators."
 url="https://launchpad.net/libindicator"
@@ -14,7 +14,6 @@ source=(http://launchpad.net/libindicator/${version%.*}/$version/+download/libin
 
 build() {
 
-  sed '/-Werror/s/$/ -Wno-deprecated-declarations/' -i libindicator-$version/libindicator/Makefile.{am,in}
   sed 's/LIBINDICATOR_LIBS+="$LIBM"/LIBINDICATOR_LIBS+=" $LIBM"/g' -i libindicator-$version/configure
   sed 's/LIBM="-lmw"/LIBM=" -lmw"/g' -i libindicator-$version/configure
   sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i libindicator-$version/configure
@@ -24,7 +23,6 @@ build() {
 
   cd libindicator-$version
 
-PKG_CONFIG_PATH=/usr/lib/pkgconfig \
  ./configure --prefix=/usr                \
               --sysconfdir=/etc            \
               --localstatedir=/var         \
