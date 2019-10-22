@@ -9,4 +9,4 @@ maintainer="rems"
 name=virglrenderer
 version=0.8.0
 
-source=(https://www.freedesktop.org/software/virgl/$name-$version.tar.bz2)
+source=(https://github.com/freedesktop/virglrenderer/archive/virglrenderer-$version.tar.gz)
