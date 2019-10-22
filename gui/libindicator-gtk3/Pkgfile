@@ -24,7 +24,8 @@ build() {
 
   cd libindicator-$version
 
-  ./configure --prefix=/usr                \
+PKG_CONFIG_PATH=/usr/lib/pkgconfig \
+ ./configure --prefix=/usr                \
               --sysconfdir=/etc            \
               --localstatedir=/var         \
               --libexecdir=/usr/lib/$name  \
