@@ -16,7 +16,7 @@ build() {
 
 cd libindicator-$version
 
-  sed '/-Werror/s/$/ -Wno-deprecated-declarations/' -i Makefile.{am,in}
+  sed '/-Werror/s/$/ -Wno-deprecated-declarations/' -i libindicator/Makefile.{am,in}
   sed 's/LIBINDICATOR_LIBS+="$LIBM"/LIBINDICATOR_LIBS+=" $LIBM"/g' -i configure
   sed 's/LIBM="-lmw"/LIBM=" -lmw"/g' -i configure
   sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i configure
@@ -24,7 +24,7 @@ cd libindicator-$version
   sed 's/LIBS="-lmw  $LIBS"/LIBS=" -lmw  $LIBS"/g' -i configure
   sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i m4/libtool.m4
 
- autoreconf -fiv
+  export CFLAGS="$CFLAGS -Wno-error=deprecated-declarations"
 
  ./configure --prefix=/usr                \
               --sysconfdir=/etc            \
