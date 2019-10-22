@@ -15,7 +15,7 @@ source=(https://github.com/$name/$name/releases/download/v$version/$name-$versio
 build() {
 
 	mkdir -v build && cd build
-	meson --prefix=/usr
+	meson --prefix=/usr \
           -D docs=false \
           ../$name-$version
 	ninja
