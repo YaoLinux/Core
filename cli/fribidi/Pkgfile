@@ -8,13 +8,16 @@ url="http://fribidi.freedesktop.org/wiki/"
 
 name=fribidi
 version=1.0.5
+release=2
 
 source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.bz2)
 
 build() {
 
 	mkdir -v build && cd build
-	meson -D docs=false ../$name-$version
+	meson --prefix=/usr
+          -D docs=false \
+          ../$name-$version
 	ninja
 
 }
