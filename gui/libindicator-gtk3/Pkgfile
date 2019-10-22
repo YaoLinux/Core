@@ -1,4 +1,4 @@
-makedepends=(gtk3)
+makedepends=(gtk3 fribidi)
 
 description="A set of symbols and convience functions for Ayatana indicators."
 url="https://launchpad.net/libindicator"
