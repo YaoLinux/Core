@@ -8,22 +8,15 @@ packager="Yaolinux Team"
 run=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache)
 
 name=gnome-autoar
-version=0.2.4
+version=0.2.3
 
 source=(https://gitlab.gnome.org/GNOME/gnome-autoar/-/archive/$version/gnome-autoar-$version.tar.gz)
-
-build=autotools
 
 build() {
 
 cd $name-$version
 
-NOCONFIGURE=1 ./autogen.sh 
-
 ./configure --prefix=/usr \
-            --enable-gtk-doc \
-            --disable-maintainer-mode \
-            --enable-debug=no \
             --disable-static
 
 make
