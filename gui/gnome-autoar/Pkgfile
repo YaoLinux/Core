@@ -19,7 +19,7 @@ build() {
 cd $name-$version
 
 ./autogen.sh --prefix=/usr \
-             --disable-maintainer \
+             --disable-debug \
              --disable-static
 
 make
