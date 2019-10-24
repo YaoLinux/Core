@@ -21,7 +21,7 @@ cd $name-$version
 ./autogen.sh
 
 ./configure --prefix=/usr \
-            --disable-debug \
+            --disable-maintainer \
             --disable-static
 
 make
