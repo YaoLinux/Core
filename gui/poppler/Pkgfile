@@ -27,7 +27,7 @@ cmake   -DCMAKE_BUILD_TYPE=Release   \
 make
 make DESTDIR=$PKG install
 
-cd ../../poppler-data-$dataversion
+cd ../poppler-data-$dataversion
 make prefix=/usr DESTDIR=$PKG install
 
 rm -f $PKG/usr/lib/pkgconfig/poppler-{glib,qt4,qt}.pc
