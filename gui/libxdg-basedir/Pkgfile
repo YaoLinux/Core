@@ -7,12 +7,10 @@ maintainer="rems"
 name=libxdg-basedir
 version=1.2.0
 
-source=(https://github.com/devnev/$name/archive/$name-$version.tar.gz
-        xdgGetRelativeHome-overflow.patch)
+source=(https://github.com/devnev/$name/archive/$name-$version.tar.gz)
 build() {
   
   cd $name-$name-$version
-  patch -Np0 -i "../xdgGetRelativeHome-overflow.patch"
 
   ./autogen.sh --prefix=/usr
 
