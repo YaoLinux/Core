@@ -20,7 +20,9 @@ cd $name-$version
 
 NOCONFIGURE=1 ./autogen.sh 
 
-./configure --help
+./configure --prefix=/usr \
+            --disable-maintainer-mode \
+            --disable-static
 
 make
 make DESTDIR="$pkgdir" install
