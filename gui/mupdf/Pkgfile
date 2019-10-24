@@ -9,7 +9,7 @@ name=mupdf
 version=1.16.1
 
 source=(http://www.linuxfromscratch.org/patches/blfs/svn/mupdf-$version-shared_libs-1.patch
-	http://www.mupdf.com/downloads/archive/$name-$version-source.tar.gz)
+        http://www.mupdf.com/downloads/archive/$name-$version-source.tar.gz)
 
 build() {
 unset MAKEFLAGS
@@ -17,17 +17,18 @@ cd $name-$version-source
 
 sed -i '/SYS_CURL_LIBS/s|$| -lpthread|' Makethird
 
-rm -rf thirdparty/{curl,freeglut,harfbuzz,libjpeg,openjpeg,zlib}
+rm -rf thirdparty/{freetype,freeglut,harfbuzz,libjpeg,openjpeg,zlib}
 
 patch -Np1 -i ../$name-$version-shared_libs-1.patch
 
 export USE_SYSTEM_LIBS=yes
 
-CFLAGS+=' -fPIC' CXXFLAGS+=' -fPIC' make build=release libs apps extra
+CFLAGS+=' -fPIC' CXXFLAGS+=' -fPIC' \
+USE_SYSTEM_LIBS=yes make build=release libs apps
 
 make prefix=$PKG/usr build=release \
 docdir=$PKG/usr/share/doc/$name-$version \
 install
 
-ln -svf mupdf-x11-curl $PKG/usr/bin/mupdf
+ln -svf mupdf-x11 $PKG/usr/bin/mupdf
 }
