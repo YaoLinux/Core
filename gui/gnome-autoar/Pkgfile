@@ -21,6 +21,7 @@ cd $name-$version
 NOCONFIGURE=1 ./autogen.sh 
 
 ./configure --prefix=/usr \
+            --enable-gtk-doc \
             --disable-maintainer-mode \
             --disable-static
 
