@@ -18,9 +18,10 @@ build() {
 
 cd $name-$version
 
-./autogen.sh --prefix=/usr \
-             --disable-debug \
-             --disable-static
+NOCONFIGURE=1 ./autogen.sh 
+
+./configure --prefix=/usr \
+            --disable-static
 
 make
 make DESTDIR="$pkgdir" install
