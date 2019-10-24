@@ -10,18 +10,6 @@ run=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache)
 name=gnome-autoar
 version=0.2.3
 
-source=(https://gitlab.gnome.org/GNOME/gnome-autoar/-/archive/$version/gnome-autoar-$version.tar.gz)
+source=(http://ftp.acc.umu.se/pub/gnome/sources/gnome-autoar/${version:0:3}/gnome-autoar-$version.tar.xz)
 
-build() {
-
-cd $name-$version
-
-NOCONFIGURE=1 ./autogen.sh
-
-./configure --prefix=/usr \
-            --disable-static
-
-make
-make DESTDIR="$pkgdir" install
-}
-
+build=autotools
