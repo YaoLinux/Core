@@ -14,9 +14,17 @@ source=(https://gitlab.gnome.org/GNOME/gnome-autoar/-/archive/$version/gnome-aut
 
 build=autotools
 
-prepare() {
+build() {
 
 cd $name-$version
 
 ./autogen.sh
+
+./configure --prefix=/usr \
+            --disable-debug \
+            --disable-static
+
+make
+make DESTDIR="$pkgdir" install
 }
+
