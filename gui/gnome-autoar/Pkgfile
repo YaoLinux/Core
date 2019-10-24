@@ -13,3 +13,10 @@ version=0.2.4
 source=(https://gitlab.gnome.org/GNOME/gnome-autoar/-/archive/$version/gnome-autoar-$version.tar.gz)
 
 build=autotools
+
+prepare() {
+
+cd $name-$version
+
+./autogen.sh
+}
