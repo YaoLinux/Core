@@ -23,6 +23,7 @@ NOCONFIGURE=1 ./autogen.sh
 ./configure --prefix=/usr \
             --enable-gtk-doc \
             --disable-maintainer-mode \
+            --enable-debug=no \
             --disable-static
 
 make
