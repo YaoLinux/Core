@@ -11,7 +11,7 @@ version=7.4
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/yshui/compton/archive/v4.tar.gz
+source=(https://github.com/yshui/compton/archive/v$version.tar.gz
 		compton.conf)
 
 run=(libconfig)
@@ -20,12 +20,10 @@ build() {
 
 mkdir -pv build && cd build
 
-meson --prefix=/usr ../compton-${version:0:1}
+meson --prefix=/usr ../picom-$version
 
 ninja
-
 DESTDIR=$PKG ninja install
 
 install -Dm644 $SRC/compton.conf $PKG/etc/xdg/compton.conf
-	
 }
