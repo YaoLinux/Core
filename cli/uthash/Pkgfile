@@ -1,0 +1,22 @@
+description="Open Source H265/HEVC video encoder."
+url="https://bitbucket.org/multicoreware/x265/wiki/Home"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name=uthash
+version=2.1.0
+
+source=(https://bitbucket.org/multicoreware/x265/downloads/${name}_${version}.tar.gz)
+
+build() {
+  
+  cd ${name}-${version}/src
+
+install -dm755 "${PKG}"/usr/include/
+
+# install header files in /usr/include
+  for h in *.h; do
+      install -m 644 ${h} "$PKG"/usr/include/
+  done
+}
