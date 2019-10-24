@@ -1,4 +1,4 @@
-makedepends=(dbus libconfig libev pcre mesa xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage freeglut xcb-util-renderutil xcb-util-image)
+makedepends=(dbus libconfig libev pcre mesa xorg-libxcomposite xorg-libxinerama xorg-libxrandr xorg-libxdamage freeglut xcb-util-renderutil xcb-util-image uthash)
 
 description="A compositor for X, and a fork of xcompmgr-dana."
 url="http://github.com/chjj/compton"
