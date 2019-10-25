@@ -14,7 +14,8 @@ source=(https://launchpad.net/bamf/${version%.*}/$version/+download/$name-$versi
 build() {
 cd $name-$version
 
-export CFLAGS+=" -Wno-deprecated-declarations"
+export PYTHON='/usr/bin/python2'
+export CFLAGS+=" -Wno-deprecated-declarations -Wno-error"
 
  ./configure --prefix=/usr \
              --libexecdir=/usr/lib \
@@ -26,6 +27,5 @@ export CFLAGS+=" -Wno-deprecated-declarations"
  sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
  make
-
  make DESTDIR=$PKG install
 }
