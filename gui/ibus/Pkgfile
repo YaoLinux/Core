@@ -65,8 +65,8 @@ cd $name-$version
              --enable-python-library \
              --with-python=python3   
 
-rm -r "$PKG"/usr/lib/python2.7/site-packages/gi # compiled pyc/pyo files were not cleaned
-
 make
 make DESTDIR=$PKG install
+
+rm -r "$PKG"/usr/lib/python2.7/site-packages/gi # compiled pyc/pyo files were not clean
 }
