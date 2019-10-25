@@ -24,21 +24,21 @@ prepare() {
 tar -xf $name-$version.tar.gz
 
 for file in data sequences test variation-sequences zwj-sequences; do
-    install -Dm644 emoji-$file-11.0.txt "$PKG/usr/share/unicode/emoji/emoji-$file.txt"
+    install -Dm644 emoji-$file.txt "$PKG/usr/share/unicode/emoji/emoji-$file.txt"
   done
 
 for file in data sequences test variation-sequences zwj-sequences; do
-    install -Dm644 emoji-$file-11.0.txt "/usr/share/unicode/emoji/emoji-$file.txt"
+    install -Dm644 emoji-$file.txt "/usr/share/unicode/emoji/emoji-$file.txt"
   done
 
 for file in UCD Unihan; do
-    install -Dm644 $file-12.1.0.zip "$PKG/usr/share/unicode/$file.zip"
-    bsdtar -C "$PKG/usr/share/unicode" -x --no-same-owner --no-same-permissions -f $file-12.1.0.zip
+    install -Dm644 $file.zip "$PKG/usr/share/unicode/$file.zip"
+    bsdtar -C "$PKG/usr/share/unicode" -x --no-same-owner --no-same-permissions -f $file.zip
   done
 
 for file in UCD Unihan; do
-    install -Dm644 $file-12.1.0.zip "/usr/share/unicode/$file.zip"
-    bsdtar -C "/usr/share/unicode" -x --no-same-owner --no-same-permissions -f $file-12.1.0.zip
+    install -Dm644 $file.zip "/usr/share/unicode/$file.zip"
+    bsdtar -C "/usr/share/unicode" -x --no-same-owner --no-same-permissions -f $file.zip
   done
 
 # FS#49938: A bunch of compatibility symlinks
