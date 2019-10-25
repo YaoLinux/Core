@@ -14,20 +14,14 @@ source=(http://ftp.gnome.org/pub/gnome/sources/${_name}/${version%.*}/${_name}-$
 
 build() {
 
-	cd ${_name}-$version
+    mkdir -v build && cd build
 
-	sed -i '/Werror/d' configure.ac
+    meson --prefix=/sur \
+          -Ddocs=true \
+          ../${_name}-$version
 
-	autoreconf
-
-	./configure --prefix=/usr\
-                --libexecdir=/usr/lib/$name \
-                --enable-introspection \
-                --with-xft2 \
-                --with-pangox
-		
-	make
-	make DESTDIR=$PKG install
+    ninja
+    DESTDIR=$PKG ninja install
 }
 
 uptodate(){
