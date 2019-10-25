@@ -1,9 +1,10 @@
 packager="Yaolinux Team"
+maintainer="rems"
 
 description="A library for registering global keyboard shortcuts"
 url="https://github.com/engla/keybinder/tree/keybinder-3.0"
 
-makedepends=(gtk3 )
+makedepends=(gtk3)
 
 name=keybinder3
 alias=(libkeybinder3)
@@ -16,8 +17,7 @@ build() {
 
   cd keybinder-3.0-$version
 
-  ./configure --prefix=/usr \
-              --enable-gtk-doc
+  ./configure --prefix=/usr
 
   make
   make DESTDIR=$PKG install
