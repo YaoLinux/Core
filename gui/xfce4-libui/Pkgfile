@@ -1,4 +1,4 @@
-makedepends=(gtk2 gtk3 startup-notification xfce4-conf)
+makedepends=(gtk2 gtk3 startup-notification xfce4-conf xfce4-libutil intltool gobject-introspection vala hicolor-icon-theme)
 
 description="Commonly used Xfce widgets among Xfce applications"
 url="http://www.xfce.org/"
@@ -18,10 +18,11 @@ cd ${_name}-$version
 
 	./configure	--prefix=/usr         \
                 --sysconfdir=/etc     \
-                --libexecdir=/usr/lib \
+                --libexecdir=/usr/lib/$name \
                 --localstatedir=/var  \
                 --disable-static      \
-                --disable-debug
+                --disable-debug \
+                --with-vendor-info='YaoLinuX'
     	
 	make
 	make DESTDIR=$PKG install
