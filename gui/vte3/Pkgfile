@@ -17,7 +17,8 @@ build() {
     mkdir -v build && cd build
 
     meson --prefix=/usr \
-          -Ddocs=true \
+          --sysconfdir=/etc \
+          -Ddocs=false \
           ../${_name}-$version
 
     ninja
