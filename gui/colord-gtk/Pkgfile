@@ -12,12 +12,16 @@ version=0.2.0
 source=(http://www.freedesktop.org/software/${name%-*}/releases/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
 
-./configure --prefix=/usr \
-            --enable-vala \
-            --disable-static
+mkdir build && cd build
 
-make
-make DESTDIR=$PKG install
+ meson ../$name-$version \
+       --prefix=/usr \
+       -Dgtk2=true    \
+       -Dvapi=true    \
+       -Ddocs=false   \
+       -Dman=false
+
+ninja
+DESTDIR=$PKG ninja install
 }
