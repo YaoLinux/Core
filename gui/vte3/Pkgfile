@@ -1,4 +1,4 @@
-makedepends=(pcre2 gtk3 perl-xml-parser python2-gtk gobject-introspection)
+makedepends=(pcre2 gtk3 libxml2 gtk-doc gnutls vala fribidi gobject-introspection)
 
 description="Vte is a library (libvte) implementing a terminal emulator widget for GTK+ 3"
 url="http://developer.gnome.org/arch/gnome/widgets/vte.html"
@@ -16,7 +16,7 @@ build() {
 
     mkdir -v build && cd build
 
-    meson --prefix=/sur \
+    meson --prefix=/usr \
           -Ddocs=true \
           ../${_name}-$version
 
