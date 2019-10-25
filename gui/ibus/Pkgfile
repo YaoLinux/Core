@@ -13,16 +13,16 @@ source=(https://github.com/ibus/ibus/releases/download/$version/$name-$version.t
 build() {
 cd $name-$version
 
-sed -i 's@/desktop/ibus@/org/freedesktop/ibus@g' \
-    data/ibus.schemas.in \
-    data/dconf/org.freedesktop.ibus.gschema.xml.in
+  sed -i 's|$(libibus) $(libibus_emoji_dialog)|$(libibus_emoji_dialog) $(libibus)|' ui/gtk3/Makefile.am
 
-./configure --prefix=/usr           \
-            --sysconfdir=/etc       \
-            --enable-gtk-doc        \
-            --disable-emoji-dict
+./autogen.sh --prefix=/usr           \
+             --sysconfdir=/etc       \
+             --enable-wayland        \
+             --enable-ui             \
+             --enable-python-library \
+             --with-python=python3   
 
-rm -f tools/main.c
+rm -r "$PKG"/usr/lib/python2.7/site-packages/gi # compiled pyc/pyo files were not cleaned
 
 make
 make DESTDIR=$PKG install
