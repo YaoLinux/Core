@@ -6,9 +6,8 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=lightdm
-version=1.28.0
-yaolinux_version=10.92.3
-release=3
+version=1.30.0
+yaolinux_version=1.0-RC1
 
 source=(https://github.com/CanonicalLtd/$name/releases/download/$version/$name-$version.tar.xz
         http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
@@ -36,6 +35,7 @@ cp tests/src/lightdm-session $PKG/usr/bin
 sed -i '1 s/sh/bash --login/' $PKG/usr/bin/lightdm-session
 
 rm -rf $PKG/etc/init
+
 install -v -dm755 -o lightdm -g lightdm $PKG/var/lib/lightdm
 install -v -dm755 -o lightdm -g lightdm $PKG/var/lib/lightdm-data
 install -v -dm755 -o lightdm -g lightdm $PKG/var/cache/lightdm
