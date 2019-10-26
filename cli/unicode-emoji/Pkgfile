@@ -1,0 +1,20 @@
+description="Unicode Emoji Data Files"
+url="http://www.unicode.org/emoji/"
+
+packager="Yaolinux Team"
+
+name=unicode-emoji
+version=11.0
+
+source=(http://www.unicode.org/Public/emoji/11.0/emoji-data.txt
+        http://www.unicode.org/Public/emoji/11.0/emoji-sequences.txt
+        http://www.unicode.org/Public/emoji/11.0/emoji-test.txt
+        http://www.unicode.org/Public/emoji/11.0/emoji-variation-sequences.txt
+        http://www.unicode.org/Public/emoji/11.0/emoji-zwj-sequences.txt)
+
+build() {
+
+for file in data sequences test variation-sequences zwj-sequences; do
+    install -Dm644 emoji-$file.txt "$PKG/usr/share/unicode/emoji/emoji-$file.txt"
+  done
+}
