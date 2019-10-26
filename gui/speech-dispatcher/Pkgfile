@@ -8,7 +8,7 @@ packager="Yaolinux Team"
 name=speech-dispatcher
 version=0.9.1
 
-source=(https://github.com/brailcom/speechd/releases/download/${pkgver}/speech-dispatcher-${version}.tar.gz)
+source=(https://github.com/brailcom/speechd/releases/download/${version}/speech-dispatcher-${version}.tar.gz)
 
 build() {
 
