@@ -7,8 +7,9 @@ packager="Yaolinux Team"
 
 name=ibus
 version=1.5.21
+release=2
 
-source=(https://github.com/ibus/ibus/releases/download/$version/$name-$version.tar.gz
+source=(https://github.com/ibus/ibus/releases/download/$version/$name-$version.tar.gz)
 
 build() {
 cd $name-$version
@@ -20,7 +21,7 @@ cd $name-$version
              --enable-wayland        \
              --enable-ui             \
              --enable-python-library \
-             --with-python=python3   
+             --with-python=python3
 
 make
 make DESTDIR=$PKG install
