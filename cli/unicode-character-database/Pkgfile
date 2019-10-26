@@ -1,0 +1,26 @@
+description="Unicode Character Database"
+url="https://www.unicode.org/"
+
+packager="Yaolinux Team"
+
+name=unicode-character-database
+version=12.1.0
+
+PKGMK_IGNORE_UNPACK="yes"
+
+source=(https://www.unicode.org/Public/zipped/$version/UCD.zip
+        https://www.unicode.org/Public/zipped/$version/Unihan.zip)
+
+build() {
+
+for file in UCD Unihan; do
+    install -Dm644 $file.zip "$PKG/usr/share/unicode/$file.zip"
+    bsdtar -C "$PKG/usr/share/unicode" -x --no-same-owner --no-same-permissions -f $file.zip
+  done
+
+# FS#49938: A bunch of compatibility symlinks
+  ln -s . "$PKG/usr/share/unicode/ucd"
+  for file in $name unicode-data unidata; do
+    ln -s unicode "$PKG/usr/share/$file"
+  done
+}
