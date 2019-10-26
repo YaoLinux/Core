@@ -17,8 +17,6 @@ cd $name-$version
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
 
-autoreconf -iv
-
 ./configure --prefix=/usr \
             --enable-shared \
             --sysconfdir=/etc \
