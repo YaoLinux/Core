@@ -19,6 +19,7 @@ sed -i "s/sd_cicero//g" src/modules/Makefile.am
 
 autoreconf -fiv
 
+PYTHON="/usr/bin/python3" \
 ./configure --prefix=/usr \
             --libexecdir=/usr/lib/$name \
             --disable-static \
