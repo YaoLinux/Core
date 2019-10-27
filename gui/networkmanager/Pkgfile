@@ -9,24 +9,30 @@ alias=(NetworkManager)
 
 name=networkmanager
 version=1.20.4
+release=2
 _name=NetworkManager
 
 run=(wpa-supplicant)
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$_name/${version%.*}/$_name-$version.tar.xz)
 
-build() {
+prepare() {
 
-cd ${_name}-$version
+mv ${_name}-$version $name-$version
+
+cd $name-$version
 
 sed '/initrd/d' -i src/meson.build
 
 grep -rl '^#!.*python$' | xargs sed -i '1s/python/&3/'
 
-mkdir build 
-cd    build
+mkdir -v build 
+}
 
-CXXFLAGS+="-O2 -fPIC"            \
+build() {
+cd build
+
+CXXFLAGS+=" -fPIC"            \
 meson --prefix /usr              \
       --sysconfdir /etc          \
       --localstatedir /var       \
@@ -34,20 +40,22 @@ meson --prefix /usr              \
       -Dlibaudit=no              \
       -Dlibnm_glib=true          \
       -Dlibpsl=false             \
+      -Dsuspend_resume=systemd   \
       -Dnmtui=true               \
       -Diwd=true                 \
       -Dbluez5_dun=true          \
       -Dovs=false                \
       -Dppp=false                \
       -Dselinux=false            \
+      -Dpolkit_agent=true        \
       -Dqt=false                 \
       -Dudev_dir=/lib/udev       \
       -Dsession_tracking=systemd \
       -Dmodem_manager=false      \
-      -Dsystemdsystemunitdir=/lib/systemd/system 
+      -Dsystemdsystemunitdir=/lib/systemd/system \
+      ../$name-$version
       
 ninja
-
 DESTDIR=$PKG ninja install
  
 mv -v $PKG/usr/share/doc/NetworkManager{,-$version}
