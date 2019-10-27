@@ -1,4 +1,4 @@
-makedepends=(cmake xorg-libxkbcommon mesa)
+makedepends=(cmake libxkbcommon mesa)
 
 description="General-purpose library for WPE WebKit"
 url="https://wpewebkit.org/"
