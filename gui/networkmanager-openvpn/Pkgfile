@@ -9,15 +9,11 @@ maintainer="rems"
 name=networkmanager-openvpn
 version=1.8.10
 
-source=(https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/archive/$version/NetworkManager-openvpn-$version.tar.gz
-        0001-build-disable-libnm-glib-support-by-default.patch)
+source=(https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/archive/$version/NetworkManager-openvpn-$version.tar.gz)
 
 build() {
 
 cd NetworkManager-openvpn-$version
-
-# Don't build against libnm-glib/gtk
-  patch -Np1 -i ../0001-build-disable-libnm-glib-support-by-default.patch
 
 NOCONFIGURE=1 ./autogen.sh
 
@@ -25,6 +21,7 @@ NOCONFIGURE=1 ./autogen.sh
             --sysconfdir=/etc \
             --localstatedir=/var \
             --libexecdir=/usr/lib \
+            --without-libnm-glib \
             --disable-static
 
 sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
