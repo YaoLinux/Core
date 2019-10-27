@@ -1,0 +1,25 @@
+makedepends=(wayland glib)
+
+description="freedesktop.org backend for WPE WebKit"
+url="https://wpewebkit.org/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name=wpebackend-fdo
+version=1.4.0
+
+source=(https://wpewebkit.org/releases/$name-$version.tar.xz)
+
+build() {
+  
+  mkdir build && cd build
+
+   cmake  -DCMAKE_INSTALL_PREFIX=/usr \
+          -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+          -DCMAKE_BUILD_TYPE=None \
+          ../${name}-${version}
+
+   cmake --build .
+   DESTDIR=$PKG cmake --build . --target install
+}
