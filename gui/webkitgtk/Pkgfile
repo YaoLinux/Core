@@ -12,34 +12,16 @@ version=2.26.1
 source=(http://webkitgtk.org/releases/webkitgtk-$version.tar.xz)
 
 build() {
-cd webkitgtk-$version
 
-sed -i '1s/python$/&2/' Tools/gtk/generate-gtkdoc
-
-mkdir -vp build && cd build
-
-CFLAGS=-Wno-expansion-to-defined \
-CXXFLAGS=-Wno-expansion-to-defined \
-cmake -G Ninja \
-      -DPORT=GTK \
-	  -DCMAKE_BUILD_TYPE=Release  \
+cmake -DCMAKE_BUILD_TYPE=Release  \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_SKIP_RPATH=ON       \
+      -DENABLE_GTKDOC=ON \
       -DPORT=GTK                  \
       -DLIB_INSTALL_DIR=/usr/lib  \
-      -DUSE_LIBHYPHEN=OFF         \
-      -DENABLE_MINIBROWSER=ON     \
-      -DUSE_WOFF2=OFF             \
-      -Wno-dev ..
+      -Hwebkitgtk-$version \
+      -Bbuild
 
-ninja || ninja -j1
-DESTDIR=$PKG ninja install || DESTDIR=$PKG ninja -j1 install
-
-install -vdm755 $PKG/usr/share/gtk-doc/html/webkit{2,dom}gtk-4.0
-
-install -vm644  ../Documentation/webkit2gtk-4.0/html/* \
-$PKG/usr/share/gtk-doc/html/webkit2gtk-4.0
-
-install -vm644  ../Documentation/webkitdomgtk-4.0/html/* \
-$PKG/usr/share/gtk-doc/html/webkit2gtk-4.0
+cmake --build build
+DESTDIR=$PKG cmake --build build --target install
 }
