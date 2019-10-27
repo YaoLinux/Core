@@ -26,7 +26,7 @@ sed '/initrd/d' -i src/meson.build
 
 grep -rl '^#!.*python$' | xargs sed -i '1s/python/&3/'
 
-mkdir -v build 
+mkdir -v ../build 
 }
 
 build() {
