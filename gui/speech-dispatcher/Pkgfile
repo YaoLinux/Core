@@ -20,7 +20,7 @@ sed -i "s/sd_cicero//g" src/modules/Makefile.am
 autoreconf -fiv
 
 ./configure --prefix=/usr \
-            --libexecdir=/usr/lib/$name
+            --libexecdir=/usr/lib/$name \
             --disable-static \
             --sysconfdir=/etc \
             --with-systemdsystemunitdir=/lib/systemd/system \
