@@ -15,7 +15,7 @@ source=(http://www.libsdl.org/release/SDL-$version.tar.gz)
 build=autotools
 
 prepare() {
-mv SDL-$version $name-version
+mv SDL-$version $name-$version
 
 cd $name-$version
 
