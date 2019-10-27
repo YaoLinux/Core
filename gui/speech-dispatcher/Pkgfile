@@ -1,4 +1,4 @@
-makedepends=(intltool dotconf pulseaudio libao python-xdg)
+makedepends=(intltool dotconf pulseaudio libao)
 
 description="High-level device independent layer for speech synthesis interface"
 url="https://devel.freebsoft.org/speechd"
