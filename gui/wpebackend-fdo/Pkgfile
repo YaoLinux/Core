@@ -1,4 +1,4 @@
-makedepends=(wayland glib)
+makedepends=(wayland glib libwpe)
 
 description="freedesktop.org backend for WPE WebKit"
 url="https://wpewebkit.org/"
