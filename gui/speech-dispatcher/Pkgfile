@@ -23,10 +23,11 @@ autoreconf -fiv
             --libexecdir=/usr/lib/$name \
             --disable-static \
             --sysconfdir=/etc \
+            --disable-python \
             --with-systemdsystemunitdir=/lib/systemd/system \
             --without-flite
 
-make all
+make
 make DESTDIR="$PKG" install
 
 sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
