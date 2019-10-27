@@ -1,4 +1,4 @@
-makedepends=(enchant cmake gstreamer-plugins-base gstreamer-plugins-bad xorg-libxt gtk2 gtk3 gtk-doc hunspell hyphen icu libgudev libsecret libsoup libwebp mesa ruby sqlite enchant geoclue2 gobject-introspection hicolor-icon-theme llvm harfbuzz gtk-doc libnotify wayland woff2 libwpe)
+makedepends=(enchant cmake gstreamer-plugins-base gstreamer-plugins-bad xorg-libxt gtk2 gtk3 gtk-doc hunspell hyphen icu libgudev libsecret libsoup libwebp mesa ruby sqlite enchant geoclue2 gobject-introspection hicolor-icon-theme llvm harfbuzz gtk-doc libnotify wayland woff2 wpebackend-fdo)
 
 description="engine of made Web free for the browsers web version 3"
 url="http://webkitgtk.org/"
