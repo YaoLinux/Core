@@ -15,10 +15,11 @@ build() {
 
 cmake -DCMAKE_BUILD_TYPE=Release  \
       -DCMAKE_INSTALL_PREFIX=/usr \
-      -DCMAKE_SKIP_RPATH=ON       \
-      -DENABLE_GTKDOC=ON \
-      -DPORT=GTK                  \
       -DLIB_INSTALL_DIR=/usr/lib  \
+      -DCMAKE_SKIP_RPATH=ON       \
+      -DENABLE_GTKDOC=ON          \
+      -DPORT=GTK                  \
+      -DENABLE_BUBBLEWRAP_SANDBOX=OFF \
       -Hwebkitgtk-$version \
       -Bbuild
 
