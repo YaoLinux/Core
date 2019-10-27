@@ -26,6 +26,8 @@ export CFLAGS+=" -Wno-deprecated-declarations"
   sed 's/LIBS="-lmw  $LIBS"/LIBS=" -lmw  $LIBS"/g' -i configure
   sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i m4/libtool.m4
 
+autoreconf -fiv
+
  ./configure --prefix=/usr                \
               --sysconfdir=/etc            \
               --localstatedir=/var         \
