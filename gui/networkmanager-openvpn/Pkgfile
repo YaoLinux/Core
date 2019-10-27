@@ -15,14 +15,12 @@ build() {
 
 cd NetworkManager-openvpn-$version
 
-NOCONFIGURE=1 ./autogen.sh
-
-./configure --prefix=/usr \
-            --sysconfdir=/etc \
-            --localstatedir=/var \
-            --libexecdir=/usr/lib \
-            --without-libnm-glib \
-            --disable-static
+./autogen.sh --prefix=/usr \
+             --sysconfdir=/etc \
+             --localstatedir=/var \
+             --libexecdir=/usr/lib \
+             --with-libnm-glib=no \
+             --disable-static
 
 sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
