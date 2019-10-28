@@ -21,7 +21,7 @@ build() {
 # Solve conflict by renaming and make a symbolic link without .py
 
 for file in $PKG/usr/bin/*.py
-    do mv -v "$PKG/usr/bin/$file" "${file%.py}2.py"
+    do mv -v "$file" "${file%.py}2.py"
 done
 
 for file in $PKG/usr/bin/*.py
