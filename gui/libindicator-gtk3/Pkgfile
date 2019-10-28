@@ -18,6 +18,11 @@ cd libindicator-$version
 
 export CFLAGS+=" -Wno-error=narrowing"
 
+for i in $(find . -name "configure" -print)
+    do
+    sed -i 's/ -Werror//' $i
+done
+
   sed 's/LIBINDICATOR_LIBS+="$LIBM"/LIBINDICATOR_LIBS+=" $LIBM"/g' -i configure
   sed 's/LIBM="-lmw"/LIBM=" -lmw"/g' -i configure
   sed 's/LIBM="-lm"/LIBM=" -lm"/g' -i configure
