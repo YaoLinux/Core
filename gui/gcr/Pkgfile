@@ -1,4 +1,4 @@
-makedepends=(shared-mime-info icu gtk3 intltool libgcrypt libtasn1 p11-kit gobject-introspection desktop-file-utils gnupg libxslt vala)
+makedepends=(shared-mime-info icu gtk3 intltool libgcrypt libtasn1 p11-kit gobject-introspection desktop-file-utils gnupg libxslt vala gcr)
 
 description="A library for bits of crypto UI and parsing"
 url="http://www.gnome.org/"
