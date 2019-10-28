@@ -16,7 +16,7 @@ build() {
 
 cd libindicator-$version
 
-export CFLAGS+=" -Wno-error=narrowing"
+export CFLAGS+=" -Wno-error=deprecated-declarations"
 
 for i in $(find . -name "configure" -print)
     do
