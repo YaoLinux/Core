@@ -9,7 +9,7 @@ maintainer="Dania"
 name=econnman
 version=1.1
 
-run=(python2-efl dbus-python)
+run=(python-efl dbus-python)
 
 source=(http://download.enlightenment.org/rel/apps/$name/$name-$version.tar.xz)
 
