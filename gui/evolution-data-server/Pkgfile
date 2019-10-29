@@ -13,7 +13,7 @@ source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$versio
 
 build() {
 
-mkdir && cd build
+mkdir build && cd build
 
 cmake ../$name-$version -G Ninja \
       -DCMAKE_INSTALL_PREFIX=/usr   \
