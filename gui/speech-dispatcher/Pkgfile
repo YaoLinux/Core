@@ -7,6 +7,7 @@ packager="Yaolinux Team"
 
 name=speech-dispatcher
 version=0.9.1
+release=2
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -32,6 +33,8 @@ autoreconf -fiv
 
 make
 make DESTDIR="$PKG" install
+
+rm $PKG/usr/lib/libspeechd.la
 
 sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
 }
