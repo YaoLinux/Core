@@ -1,4 +1,4 @@
-makedepends=(qtbase speech-dispatcher )
+makedepends=(qtbase speech-dispatcher)
 
 description="A cross-platform application and UI framework, QtSpeech files"
 url="http://qt-project.org/"
