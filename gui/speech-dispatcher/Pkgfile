@@ -6,15 +6,16 @@ url="https://devel.freebsoft.org/speechd"
 packager="Yaolinux Team"
 
 name=speech-dispatcher
-version=0.9.1-git
-release=2
+version=0.8.8
 
-source=(https://github.com/brailcom/speechd/archive/master.zip
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/brailcom/speechd/archive/$version.tar.gz
         speech-dispatcher.patch)
 
 build() {
 
-cd speechd-master
+cd speechd-$version
 
 patch -Np2 -i ../speech-dispatcher.patch
 
@@ -27,7 +28,6 @@ autoreconf -fiv
             --libexecdir=/usr/lib/$name \
             --disable-static \
             --sysconfdir=/etc \
-            --with-systemdsystemunitdir=/lib/systemd/system \
             --without-flite
 
 make
