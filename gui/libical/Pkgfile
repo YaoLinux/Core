@@ -1,4 +1,4 @@
-makedepends=(libxml2 cmake gobject-introspection icu doxygen glib)
+makedepends=(libxml2 cmake gobject-introspection icu doxygen glib vala)
 
 description="Implementation of the iCalendar protocols and data formats."
 url="http://sourceforge.net/projects/freeassociation/"
