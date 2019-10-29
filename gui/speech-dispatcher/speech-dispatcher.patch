@@ -1,13 +1,13 @@
-diff -Naur a/speechd-master/src/api/python/speechd_config/Makefile.am b/speechd-master/src/api/python/speechd_config/Makefile.am
---- a/speechd-master/src/api/python/speechd_config/Makefile.am	2019-09-07 18:30:25.000000000 +0200
-+++ b/speechd-master/src/api/python/speechd_config/Makefile.am	2019-10-29 21:53:53.386020215 +0100
+diff -Naur a/src/api/python/speechd_config/Makefile.am b/src/api/python/speechd_config/Makefile.am
+--- a/src/api/python/speechd_config/Makefile.am	2019-05-10 10:40:53.000000000 +0200
++++ b/src/api/python/speechd_config/Makefile.am	2019-10-29 23:53:54.314471175 +0100
 @@ -64,14 +64,6 @@
  
  EXTRA_DIST = paths.py.in speechd.desktop.in config.py.in
  
 -if HAVE_HELP2MAN
 -spd-conf.1: config.py paths.py $(abs_builddir)/__init__.py
--	LC_ALL=C PYTHONPATH=$(builddir)/.. PYTHONDONTWRITEBYTECODE=1 help2man -N -n "configure Speech Dispatcher and diagnose problems" --output=$@ $(srcdir)/spd-conf
+-	LC_ALL=C PYTHONPATH=$(builddir)/.. PYTHONDONTWRITEBYTECODE=1 help2man -N --output=$@ $(srcdir)/spd-conf
 -
 -dist_man1_MANS = \
 -	spd-conf.1
