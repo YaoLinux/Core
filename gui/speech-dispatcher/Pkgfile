@@ -9,29 +9,29 @@ name=speech-dispatcher
 version=0.9.1-git
 release=2
 
-source=(https://github.com/brailcom/speechd/archive/master.zip)
+source=(https://github.com/brailcom/speechd/archive/master.zip
+        speech-dispatcher.patch)
 
 build() {
 
 cd speechd-master
 
+patch -Np1 -i ../speech-dispatcher.patch
+
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
 
-./build.sh
+autoreconfi -fiv
 
 ./configure --prefix=/usr \
             --libexecdir=/usr/lib/$name \
             --disable-static \
             --sysconfdir=/etc \
-            --disable-python \
             --with-systemdsystemunitdir=/lib/systemd/system \
             --without-flite
 
 make
 make DESTDIR="$PKG" install
 
-make -C src/api/python
-make -C src/api/python DESTDIR=PKG install
 sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
 }
