@@ -8,21 +8,23 @@ maintainer="rems"
 
 name=libical
 version=3.0.6
+release=2
 
 source=(https://github.com/libical/libical/releases/download/v$version/$name-$version.tar.gz)
 
 build() {
 
-mkdir -pv build
-cd build
+mkdir -pv build && cd build
+
 cmake -G Ninja \
--DCMAKE_INSTALL_PREFIX=/usr \
--DCMAKE_INSTALL_LIBDIR=/usr/lib \
--DCMAKE_BUILD_TYPE=Release  \
--DGOBJECT_INTROSPECTION=true \
--DICAL_BUILD_DOCS=false      \
--DSHARED_ONLY=yes \
-../$name-$version
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+      -DCMAKE_BUILD_TYPE=Release  \
+      -DGOBJECT_INTROSPECTION=true \
+      -DICAL_BUILD_DOCS=false      \
+      -DSHARED_ONLY=yes \
+      -DICAL_GLIB_VAPI=true        \
+      ../$name-$version
 
 ninja
 DESTDIR=$PKG ninja install
