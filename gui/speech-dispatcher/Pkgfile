@@ -7,6 +7,7 @@ packager="Yaolinux Team"
 
 name=speech-dispatcher
 version=0.9.1-git
+release=2
 
 source=(https://github.com/brailcom/speechd/archive/master.zip)
 
@@ -30,5 +31,7 @@ autoreconf -fiv
 make
 make DESTDIR="$PKG" install
 
+make -C src/api/python
+make -C src/api/python DESTDIR=PKG install
 sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
 }
