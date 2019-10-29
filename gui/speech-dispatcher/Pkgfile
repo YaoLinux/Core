@@ -11,13 +11,13 @@ version=0.9.1
 PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/brailcom/speechd/archive/$version.tar.gz
-        speech-dispatcher)
+        speech-dispatcher.patch)
 
 build() {
 
 cd speechd-$version
 
-patch -Np2 -i ../speech-dispatcher
+patch -Np2 -i ../speech-dispatcher.patch
 
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
