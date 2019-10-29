@@ -18,7 +18,7 @@ cd speechd-master
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
 
-autoreconf -fiv
+./build.sh
 
 ./configure --prefix=/usr \
             --libexecdir=/usr/lib/$name \
