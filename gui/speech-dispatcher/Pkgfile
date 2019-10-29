@@ -21,7 +21,7 @@ patch -Np2 -i ../speech-dispatcher.patch
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
 
-autoreconfi -fiv
+autoreconf -fiv
 
 ./configure --prefix=/usr \
             --libexecdir=/usr/lib/$name \
