@@ -10,7 +10,7 @@ name=polkit-qt
 version=0.113.0
 
 
-source=(http://download.kde.org/stable/apps/KDE4.x/admin/${name}-1-$version.tar.bz2)
+source=(http://download.kde.org/stable/${name}-1/${name}-1-$version.tar.xz)
 
 build() {
 
