@@ -11,11 +11,14 @@ version=5.13.1
 
 _name="${name}-everywhere-src"
 
-source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/submodules/${_name}-${version}.tar.xz)
+source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/submodules/${_name}-${version}.tar.xz
+        https://src.fedoraproject.org/rpms/qt5-qtspeech/raw/master/f/qtspeech-speech-dispatcher_includes.patch)
 
 build() {
 
 mkdir build && cd build
+
+patch -p1 -b ../qtspeech-speech-dispatcher_includes.patch
 
 qmake ../${_name}-${version}
 
