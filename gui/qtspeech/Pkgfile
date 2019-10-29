@@ -18,7 +18,7 @@ build() {
 
 mkdir build && cd build
 
-patch -p1 -b ../qtspeech-speech-dispatcher_includes.patch
+patch -Np1 -i ../qtspeech-speech-dispatcher_includes.patch
 
 qmake ../${_name}-${version}
 
