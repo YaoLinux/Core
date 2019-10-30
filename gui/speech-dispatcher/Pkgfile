@@ -11,15 +11,7 @@ release=4
 
 PKGMK_KEEP_SOURCES="no"
 
-source=()
-
-prepare() {
-
-git clone https://github.com/brailcom/speechd.git speechd-$version
-
-cd speechd-$version
-git checkout $version
-}
+source=(https://github.com/brailcom/speechd/releases/download/0.9.1/speech-dispatcher-$version.tar.gz)
 
 build() {
 
@@ -27,8 +19,6 @@ cd speechd-$version
 
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
-
-autoreconf -fiv
 
 ./configure --prefix=/usr \
             --libexecdir=/usr/lib/$name \
