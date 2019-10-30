@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 
 name=speech-dispatcher
 version=0.9.1
-release=3
+release=4
 
 PKGMK_KEEP_SOURCES="no"
 
