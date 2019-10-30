@@ -11,14 +11,19 @@ release=3
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/brailcom/speechd/archive/$version.tar.gz
-        speech-dispatcher.patch)
+source=()
+
+prepare() {
+
+git clone https://github.com/brailcom/speechd.git speechd-$version
+
+cd speechd-$version
+git checkout $version
+}
 
 build() {
 
 cd speechd-$version
-
-patch -Np1 -i ../speech-dispatcher.patch
 
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
@@ -33,11 +38,6 @@ autoreconf -fiv
 
 make
 make DESTDIR="$PKG" install
-
-rm $PKG/usr/lib/libspeechd.la
-rm $PKG/usr/lib/speech-dispatcher/spd_alsa.la
-rm $PKG/usr/lib/speech-dispatcher/spd_oss.la
-rm $PKG/usr/lib/speech-dispatcher/spd_pulse.la
 
 sed -i 's|includedir=.*|includedir=${prefix}/include/speech-dispatcher|g' "$PKG/usr/lib/pkgconfig/speech-dispatcher.pc"
 }
