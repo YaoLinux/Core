@@ -15,7 +15,7 @@ source=(https://github.com/brailcom/speechd/releases/download/0.9.1/speech-dispa
 
 build() {
 
-cd speechd-$version
+cd speech-dispatcher-$version
 
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
