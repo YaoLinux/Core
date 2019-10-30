@@ -29,6 +29,8 @@ cd build
 
 qmake ../${_name}-${version}
 
+export LIBSPEECHD_MAJOR_VERSION=1
+
 make
 make INSTALL_ROOT=$PKG install
 
