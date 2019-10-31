@@ -9,7 +9,7 @@ maintainer="rems"
 name=qtwebkit
 version=5.212.0alpha3
 
-source=(https://github.com/annulen/webkit/releases/download/qtwebkit-5.212.0-alpha2/qtwebkit-5.212.0-alpha2.tar.xz)
+source=(https://github.com/annulen/webkit/releases/download/qtwebkit-5.212.0-alpha2/qtwebkit-5.212.0-alpha3.tar.xz)
 
 build() {
 
