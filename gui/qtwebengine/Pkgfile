@@ -1,4 +1,4 @@
-makedepends=(qtbase qtwebchannel qtlocation xorg-libxcomposite xorg-libxrandr pciutils libvpx libevent snappy nss protobuf libxslt ffmpeg git gperf icu zlib libwebp xorg-libxscrnsaver)
+makedepends=(qtbase qtwebchannel qtlocation qttools poppler xorg-libxcomposite xorg-libxrandr pciutils libvpx libevent snappy nss protobuf libxslt ffmpeg git gperf json-cpp icu zlib libwebp xorg-libxscrnsaver)
 
 description="Provides support for web applications using the Chromium browser project"
 url="http://qt-project.org/"
@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=qtwebengine
-version=5.13.1
+version=5.13.2
 
 _name="${name}-everywhere-src"
 
@@ -17,8 +17,11 @@ build() {
 
   mkdir build && cd build 
 
-  qmake WEBENGINE_CONFIG+="use_proprietary_codecs" \
-        ../${_name}-${version}
+  qmake ../${_name}-${version} -- \
+        -proprietary-codecs \
+        -system-ffmpeg \
+        -webp \
+        -webengine-icu
 
   make
   make INSTALL_ROOT=$PKG install
