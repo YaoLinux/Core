@@ -10,15 +10,27 @@ version=0.2.3
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/OpenShot/$name/archive/v$version.tar.gz)
+source=(https://github.com/OpenShot/$name/archive/v$version.tar.gz
+        https://github.com/OpenShot/libopenshot/pull/209.patch)
+
+prepare() {
+
+cd $name -$version
+
+patch -p1 -i "../209.patch"
+
+mkdir ../build
+}
 
 build() {
 
-mkdir build && cd build
+cd build
+
 cmake -DCMAKE_INSTALL_PREFIX:PATH=/usr \
       -DMAGICKCORE_QUANTUM_DEPTH=16    \
+      -DMAGICKCORE_HDRI_ENABLE=1       \
       -DUSE_SYSTEM_JSONCPP=ON          \
-      -DENABLE_RUBY=OFF \
+      -DENABLE_RUBY=OFF                \
       ../$name-$version
 
 make
