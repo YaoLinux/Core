@@ -15,7 +15,7 @@ source=(https://github.com/OpenShot/$name/archive/v$version.tar.gz
 
 prepare() {
 
-cd $name -$version
+cd $name-$version
 
 patch -p1 -i "../209.patch"
 
