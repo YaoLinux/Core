@@ -1,0 +1,16 @@
+description="Python library for accessing FreeDesktop standards"
+url="http://freedesktop.org/wiki/Software/pyxdg"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name=python-xdg
+version=0.26
+
+source=(https://files.pythonhosted.org/packages/source/p/pyxdg/pyxdg-${version}.tar.gz)
+
+build() {
+	cd pyxdg-$version
+
+	python3 setup.py install --prefix=/usr --root=$PKG
+}
