@@ -1,0 +1,32 @@
+makedepends=(gtk3 gobject-introspection vala gtk-doc itstool)
+
+description="Syntax highlighting for the GtkTextView 4 widget"
+url="http://mail.gnome.org/mailman/listinfo/gnome-devtools"
+
+packager="Yaolinux Team"
+
+name=gtksourceview4
+version=4.4.0
+
+source=(http://download.gnome.org/sources/gtksourceview/${version%.*}/gtksourceview-$version.tar.xz)
+
+build() {
+
+mkdir build && cd build
+
+meson --prefix=/usr \
+      ../gtksourceview-$version
+
+ninja
+DESTDIR=$PKG ninja install
+}
+
+uptodate(){
+local latest lastversion url
+url="http://ftp.gnome.org/pub/gnome/sources/$name"
+latest="`lynx -read_timeout=20 -dump -listonly -nonumbers \
+$url/?C=N\;O=D|grep [0-9]/$|head -1`"
+lastversion="`lynx -read_timeout=20 -dump -listonly -nonumbers \
+$latest/?C=N\;O=D|grep LATEST|grep [0-9]$|cut -d "-" -f3`"
+echo "$lastversion"
+}
