@@ -6,7 +6,7 @@ url="http://mypaint.intilinux.com/"
 packager="Yaolinux Team"
 maintainer="rems"
 
-name=mypaint-brushes
+name=mypaint-brushes1
 version=1.3.0
 
 source=(https://github.com/mypaint/mypaint-brushes/archive/v${version}/${name}-${version}.tar.gz)
