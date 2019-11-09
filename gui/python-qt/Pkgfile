@@ -7,9 +7,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-qt
-version=5.13.1
+version=5.13.2
 
-source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/$version/PyQt5_gpl-${version}.tar.gz)
+source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/$version/PyQt5-$version.tar.gz)
 build() {
 
 cd PyQt5_gpl-$version
