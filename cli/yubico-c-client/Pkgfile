@@ -1,0 +1,30 @@
+description="Yubico YubiKey client C library"
+url="http://www.yubico.com/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+makedepends=(help2man yubico-c)
+
+name=yubico-c-client
+version=2.15
+
+source=(https://developers.yubico.com/${name}/Releases/ykclient-$version.tar.gz)
+
+build () {
+
+	cd ykclient-$version
+
+	./configure --prefix=/usr
+
+	make
+}
+
+package() {
+
+	cd ykclient-$version
+
+	make DESTDIR=$PKG install
+
+        install -D -m0644 README "${PKG}/usr/share/doc/yubico-c-client-$version/README"
+}
