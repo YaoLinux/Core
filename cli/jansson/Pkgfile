@@ -6,13 +6,13 @@ url="http://www.digip.org/jansson/"
 
 name=jansson
 version=2.12
-release=2
+release=3
 
 source=(http://www.digip.org/$name/releases/$name-$version.tar.bz2)
 
 package() {
 
-  cd $name-$version"
+  cd "$name-$version"
   install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
 
 # Obsolet lib
