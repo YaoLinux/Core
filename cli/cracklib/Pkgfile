@@ -7,7 +7,7 @@ url="https://github.com/cracklib/cracklib"
 name=cracklib
 version=2.9.7
 
-source=(https://github.com/cracklib/cracklib/releases/download/v$version/cracklib-$version.tar.bz2)
+source=(https://github.com/cracklib/cracklib/releases/download/v$version/$name-$version.tar.gz)
 
 build(){
 
