@@ -14,7 +14,7 @@ run=(python2-enum34 python2-sip-qt5)
 source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/$version/PyQt5-$version.tar.gz)
 
 build() {
-cd PyQt5_gpl-$version
+cd PyQt5-$version
 
 python2 configure.py   \
      -v /usr/share/sip \
