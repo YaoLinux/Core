@@ -12,7 +12,7 @@ version=5.13.2
 source=(https://www.riverbankcomputing.com/static/Downloads/PyQt5/$version/PyQt5-$version.tar.gz)
 build() {
 
-cd PyQt5_gpl-$version
+cd PyQt5-$version
 
 python3 configure.py   \
         --no-sip-files \
