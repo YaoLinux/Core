@@ -1,0 +1,27 @@
+description="Implementation of the FreeDesktop specifications to be used in C++ projects"
+url="https://github.com/azubieta/xdg-utils-cxx"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="xdg-utils-cxx"
+version="1.0.1"
+
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/azubieta/xdg-utils-cxx/archive/v$version.tar.gz)
+
+makedepends=(cmake)
+
+build() {
+
+mkdir build && cd build
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DCMAKE_CXX_FLAGS="${CXXFLAGS} -fPIC" \
+      ../$name-$version
+
+make
+make DESTDIR=$PKG install
+}
