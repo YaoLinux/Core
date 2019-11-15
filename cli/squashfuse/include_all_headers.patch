@@ -1,0 +1,41 @@
+Description: Include all headers in build.
+ Patch to include all headers in build.
+ .
+ squashfuse (0.1.103-1) unstable; urgency=medium
+ .
+   * Initial packaging. (Closes: #854901)
+Author: Scarlett Moore (Lappy2.0 Debian Packaging) <sgclark@kde.org>
+Bug-Debian: https://bugs.debian.org/854901
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: https://github.com/TheAssassin
+Last-Update: 2018-11-06
+
+--- squashfuse-0.1.103.orig/Makefile.am
++++ squashfuse-0.1.103/Makefile.am
+@@ -16,6 +16,12 @@ noinst_PROGRAMS =
+ lib_LTLIBRARIES = libsquashfuse.la libfuseprivate.la
+ include_HEADERS = squashfuse.h squashfs_fs.h
+ 
++nobase_pkginclude_HEADERS = config.h util.h traverse.h hash.h dir.h \
++        common.h table.h fs.h autogen.sh \
++        stack.h fuseprivate.h nonstd.h file.h ll.h xattr.h swap.h \
++        decompress.h squashfs_fs.h cache.h gen_swap.sh squashfuse.h \
++        nonstd-internal.h
++
+ pkgconfigdir = @pkgconfigdir@
+ pkgconfig_DATA 	= squashfuse.pc
+ 
+--- squashfuse-0.1.103.orig/squashfuse.pc.in
++++ squashfuse-0.1.103/squashfuse.pc.in
+@@ -9,4 +9,4 @@ Version: @VERSION@
+ 
+ Requires:
+ Libs: -L${libdir} -lsquashfuse
+-Cflags: -I${includedir}
++Cflags: -I${includedir} -I${includedir}/squashfuse
+

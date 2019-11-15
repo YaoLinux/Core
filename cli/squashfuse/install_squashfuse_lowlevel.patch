@@ -1,0 +1,80 @@
+Description: Install lowlevel binary by default.
+ Install the faster lowlevel binary by default.
+ .
+ squashfuse (0.1.103-1) unstable; urgency=medium
+ .
+   * Initial packaging. (Closes: #854901)
+Author: Scarlett Moore (Lappy2.0 Debian Packaging) <sgclark@kde.org>
+Bug-Debian: https://bugs.debian.org/854901
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: https://github.com/TheAssassin
+Last-Update: 2018-11-06
+
+Index: squashfuse-0.1.103/Makefile.am
+===================================================================
+--- squashfuse-0.1.103.orig/Makefile.am
++++ squashfuse-0.1.103/Makefile.am
+@@ -55,12 +55,12 @@ endif
+ 
+ # Low-level squashfuse_ll, if supported
+ if SQ_WANT_LOWLEVEL
+-bin_PROGRAMS += squashfuse_ll
+-squashfuse_ll_SOURCES = ll.c ll_inode.c nonstd-daemon.c ll.h
+-squashfuse_ll_CPPFLAGS = $(FUSE_CPPFLAGS)
+-squashfuse_ll_LDADD = libsquashfuse.la libfuseprivate.la $(COMPRESSION_LIBS) \
++libsquashfuse_ll_la_SOURCES = ll.c ll_inode.c nonstd-daemon.c ll.h
++libsquashfuse_ll_la_CPPFLAGS = $(FUSE_CPPFLAGS)
++libsquashfuse_ll_la_LIBADD = libsquashfuse.la libfuseprivate.la $(COMPRESSION_LIBS) \
+   $(FUSE_LIBS)
+ 
++lib_LTLIBRARIES += libsquashfuse_ll.la
+ endif
+ 
+ if SQ_WANT_DEMO
+Index: squashfuse-0.1.103/squashfuse.pc.in
+===================================================================
+--- squashfuse-0.1.103.orig/squashfuse.pc.in
++++ squashfuse-0.1.103/squashfuse.pc.in
+@@ -8,5 +8,5 @@ Description: squashfuse library to mount
+ Version: @VERSION@
+ 
+ Requires:
+-Libs: -L${libdir} -lsquashfuse
++Libs: -L${libdir} -lsquashfuse -lsquashfuse_ll
+ Cflags: -I${includedir} -I${includedir}/squashfuse
+Index: squashfuse-0.1.103/ll.c
+===================================================================
+--- squashfuse-0.1.103.orig/ll.c
++++ squashfuse-0.1.103/ll.c
+@@ -469,7 +469,7 @@ static sqfs_ll *sqfs_ll_open(const char
+ 	return NULL;
+ }
+ 
+-int main(int argc, char *argv[]) {
++int fusefs_main(int argc, char *argv[], void (*mounted) (void)) {
+ 	struct fuse_args args;
+ 	sqfs_opts opts;
+ 	
+@@ -534,6 +534,8 @@ int main(int argc, char *argv[]) {
+ 							setup_idle_timeout(se, opts.idle_timeout_secs);
+ 						}
+ 						fuse_session_add_chan(se, ch.ch);
++				if (mounted)
++				  mounted ();
+ 						/* FIXME: multithreading */
+ 						err = fuse_session_loop(se);
+ 						teardown_idle_timeout();
+@@ -550,6 +552,8 @@ int main(int argc, char *argv[]) {
+ 		}
+ 	}
+ 	fuse_opt_free_args(&args);
++	if (mounted)
++	  rmdir (mountpoint);
+ 	free(ll);
+ 	free(mountpoint);
+ 	

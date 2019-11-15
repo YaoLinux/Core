@@ -1,0 +1,28 @@
+description="FUSE filesystem to mount squashfs archives"
+url="https://github.com/vasi/squashfuse"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="squashfuse"
+version="0.1.103"
+release=3
+
+source=(https://github.com/vasi/squashfuse/releases/download/$version/$name-$version.tar.gz
+        add_libraries_to_LIBADD.patch
+        include_all_headers.patch
+        install_squashfuse_lowlevel.patch)
+
+makedepends=(zstd fuse2)
+
+build=autotools
+
+prepare() {
+
+cd $name-$version
+patch -Np1 -i ../add_libraries_to_LIBADD.patch
+patch -Np1 -i ../include_all_headers.patch
+patch -Np1 -i ../install_squashfuse_lowlevel.patch
+
+autoreconf -fiv
+}
