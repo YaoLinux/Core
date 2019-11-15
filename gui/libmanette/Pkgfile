@@ -1,0 +1,14 @@
+description="Simple GObject game controller library"
+url="https://wiki.gnome.org/Apps/Games"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="libmanette"
+version="0.2.3"
+
+source=(https://download.gnome.org/sources/$name/${version%.*}/$name-$version.tar.xz)
+
+makedepends=(libgudev libevdev gobject-introspection vala)
+
+build=meson
