@@ -8,12 +8,15 @@ packager="Yaolinux Team"
 
 name=python2-numpy
 version=1.16.4
+release=2
 
 _name=numpy
 
 PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/numpy/numpy/archive/v$version.tar.gz)
+
+build=python2
 
 prepare() {
 
@@ -25,4 +28,7 @@ prepare() {
       -i $(find . -name '*.py')
 }
 
-build=python2
+package() {
+
+mv -v "$PKG"/usr/bin/f2py{,2}
+}
