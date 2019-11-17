@@ -1,4 +1,4 @@
-makedepends=(asciidoc babl gtk2 librsvg ruby lua ffmpeg librsvg openexr exiv2 graphviz libjpeg-turbo2 libwebp python2 sdl gobject-introspection vala json-glib gtk-doc)
+makedepends=(asciidoc babl gtk2 librsvg ruby lua ffmpeg librsvg openexr exiv2 graphviz libjpeg-turbo2 libwebp python2 sdl2 gobject-introspection vala json-glib gtk-doc)
 
 description="Generic Graphics Library"
 url="http://gegl.org/"
@@ -7,26 +7,19 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=gegl
-version=0.4.16
+version=0.4.18
 
-source=(http://ftp.gimp.org/pub/$name/${version:0:3}/$name-$version.tar.bz2)
+source=(https://download.gimp.org/pub/gegl/${version%.*}/gegl-$version.tar.xz)
 
 build() {
-cd $name-$version
 
-./configure --prefix=/usr \
-            --disable-docs
+mkdir build && cd build
 
-make
-make DESTDIR=$PKG install
+meson --prefix=/usr \
+      -Ddocs=true \
+      -Dmrg=disabled \
+      ../$name-$version
 
-# Available documentation
-install -d -v -m755 $PKG/usr/share/gtk-doc/html/gegl/
-install -v -m644 docs/*.{css,html} \
-$PKG/usr/share/gtk-doc/html/gegl
-
-install -d -v -m755 $PKG/usr/share/gtk-doc/html/gegl/images
-
-install -v -m644 docs/images/*.{png,ico,svg} \
-$PKG/usr/share/gtk-doc/html/gegl/images
+ninja
+DESTDIR=$PKG ninja install
 }
