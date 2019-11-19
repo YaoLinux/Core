@@ -7,8 +7,7 @@ description="A schema-less, ldap like, API and database"
 url="http://ldb.samba.org/"
 
 name=ldb
-version=1.5.5
-release=2
+version=2.0.7
 
 source=(http://samba.org/ftp/${name}/${name}-${version}.tar.gz)
 
