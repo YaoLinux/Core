@@ -7,8 +7,8 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=samba
-version=4.10.8
-yao_version=1.0-RC1
+version=4.11.0
+yao_version=1.0-RC2
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yao_version}.tar.xz
 	https://download.samba.org/pub/samba/stable/$name-$version.tar.gz)
@@ -36,8 +36,8 @@ make DESTDIR=$PKG install
 
 install -d $PKG/lib
 mv -v $PKG/usr/lib/libnss_win{s,bind}.so*   $PKG/lib
-ln -v -sf /lib/libnss_winbind.so.2 $PKG/usr/lib/libnss_winbind.so
-ln -v -sf /lib/libnss_wins.so.2    $PKG/usr/lib/libnss_wins.so
+ln -v -sf ../../lib/libnss_winbind.so.2 $PKG/usr/lib/libnss_winbind.so
+ln -v -sf ../../lib/libnss_wins.so.2    $PKG/usr/lib/libnss_wins.so
 
 install -v -m644 examples/smb.conf.default $PKG/etc/samba/smb.conf.default
 
@@ -55,15 +55,12 @@ $PKG/etc/openldap/schema
 #  cups
 cd $PKG/usr/lib/
 install -d cups/backend
-ln -v -sf $PKG/usr/bin/smbspool $PKG/usr/lib/cups/backend/smb
+ln -v -sf $PKG/usr/bin/smbspool /usr/lib/cups/backend/smb
 
 # service
 cd $SRC/yaolinux-${yao_version}
 make DESTDIR=$PKG install-samba
 make DESTDIR=$PKG install-winbindd
-
-#  Conflict with another package
-rm -rv $PKG/usr/lib/share/perl5/vendor/Parse/Yapp
 }
 
 uptodate() {
