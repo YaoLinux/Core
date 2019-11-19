@@ -9,11 +9,11 @@ url="http://www.apache.org/dist/httpd"
 
 name=apache
 version=2.4.41
-nutyx_version=1.0-RC1
+yaolinux_version=1.0-RC2
 release=3
 
 
-source=(http://download.pausex.fr/files/yaolinux-1.0-RC1.tar.xz
+source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-"${yaolinux_version}".tar.xz
 	http://archive.apache.org/dist/httpd/httpd-$version.tar.bz2
 	http://www.linuxfromscratch.org/patches/blfs/svn/httpd-$version-blfs_layout-1.patch
 )
@@ -62,7 +62,7 @@ package() {
 	chown -v -R apache:apache $PKG/srv/www
 
 	# Service
-	cd $SRC/yaolinux-${nutyx_version}
+	cd ../yaolinux-"${yaolinux_version}"
 	make DESTDIR=$PKG install-httpd
 
 }
