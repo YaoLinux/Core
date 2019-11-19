@@ -9,6 +9,7 @@ maintainer="rems"
 name=samba
 version=4.11.0
 yao_version=1.0-RC2
+release=2
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yao_version}.tar.xz
 	https://download.samba.org/pub/samba/stable/$name-$version.tar.gz)
@@ -55,7 +56,7 @@ $PKG/etc/openldap/schema
 #  cups
 cd $PKG/usr/lib/
 install -d cups/backend
-ln -v -sf $PKG/usr/bin/smbspool /usr/lib/cups/backend/smb
+ln -v -sf /usr/bin/smbspool $PKG/usr/lib/cups/backend/smb
 
 # service
 cd $SRC/yaolinux-${yao_version}
