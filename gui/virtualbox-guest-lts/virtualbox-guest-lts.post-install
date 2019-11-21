@@ -1,0 +1,10 @@
+. lib/lsb/init-functions
+
+echo -e "${WARNING}Post-install in progress${NORMAL}"
+echo -e "${INFO}Running Depmod${NORMAL}"
+depmod -a $(basename /lib/modules/4.19.*)
+
+echo -e "${INFO} Create vboxsf group for auto-mounted Shared Folders${NORMAL}"
+getent group vboxsf > /dev/null || groupadd -r -f vboxsf
+
+log_warning_msg "${WARNING}All users which want to access the auto-mounted Shared Folders have to add to the 'vboxsf' group ${NORMAL}"
