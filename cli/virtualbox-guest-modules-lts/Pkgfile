@@ -1,0 +1,46 @@
+description="Host modules for virtualbox"
+url="https://virtualbox.org/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="virtualbox-guest-modules-lts"
+version="6.0.14"
+release=2
+
+_release=133895
+
+PKGMK_IGNORE_UNPACK="yes"
+
+source=(https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-${_release}-Linux_amd64.run)
+
+makedepends=(kernel-lts p7zip)
+
+run=(kernel-lts)
+
+build() {
+
+kernel_version=$(basename /lib/modules/4.19.*)
+
+sh VirtualBox-$version-${_release}-Linux_amd64.run --noexec --keep --nox11
+
+cd install
+
+tar xaf VirtualBox.tar.bz2
+
+cd additions
+
+7z x VBoxGuestAdditions.iso
+
+sh VBoxLinuxAdditions.run --keep --noexec --nox11
+
+cd install
+
+tar xaf VBoxGuestAdditions-amd64.tar.bz2
+
+cd src/vboxguest-$version/
+
+make KERN_VER=${kernel_version}
+install -vdm 00755 $PKG/lib/modules/${kernel_version}/extra
+install -vm 00644 vboxguest.ko vboxsf.ko $PKG/lib/modules/${kernel_version}/extra
+}
