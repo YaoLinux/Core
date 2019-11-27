@@ -1,0 +1,24 @@
+makedepends=(doxygen ffmpeg glib graphviz gstreamer gstreamer-plugins-base sbc valgrind libva sdl2)
+
+description="Server and user space API to deal with multimedia pipelines"
+url="https://pipewire.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name=pipewire
+version=0.2.7
+release=2
+
+source=(https://github.com/PipeWire/pipewire/archive/$version/pipewire-$version.tar.gz)
+
+build() {
+  mkdir -v build && cd build
+
+  meson --prefix=/usr  \
+        --sysconfdir=/etc \
+        ../$name-$version
+
+  ninja
+  DESTDIR=$PKG ninja install
+}
