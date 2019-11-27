@@ -1,0 +1,43 @@
+makedepends=(cmake glibc wayland xorg-xkbcomp libxkbcommon libinput libunwind xorg-pixman xorg-libdrm pam systemd cairo libpng libjpeg-turbo2 libwebp mesa gegl glib pango lcms2 mtdev xorg-libx11 util-linux libxcb dbus libva xorg-libxcursor colord pipewire wayland-protocols meson ninja freerdp)
+
+description="Reference implementation of a Wayland compositor"
+url="https://wayland.freedesktop.org/"
+
+packager="Yaolinux Team"
+maintainer="Dania"                                                                                                     
+
+name=weston
+version=7.0.0
+
+source=(https://wayland.freedesktop.org/releases/$name-$version.tar.xz)
+
+prepare() {
+  cd $name-$version
+  # apply patch from the source array (should be a cards feature)
+  local src
+  for src in "${source[@]}"; do
+    src="${src%%::*}"
+    src="${src##*/}"
+    [[ $src = *.patch ]] || continue
+    msg2 "Applying patch $src..."
+    patch -Np1 < "../$src"
+  done
+}
+
+build() {
+  meson $name-$version \
+        build \
+        --prefix=/usr \
+        --libexec=lib/weston \
+        -Dsimple-dmabuf-drm=auto
+
+  ninja -C build
+}
+
+package() {
+
+  DESTDIR=$PKG ninja -C build install
+
+  # license
+  install -Dm644 $name-$version/COPYING $PKG/usr/share/licenses/$name/COPYING
+}
