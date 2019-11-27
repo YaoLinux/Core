@@ -8,6 +8,7 @@ maintainer="Dania"
 
 name=sddm
 version=0.18.1
+release=2
 
 run=(dejavu-ttf xorg-server xorg-xinit)
 
@@ -40,4 +41,11 @@ build() {
   sed -r 's|DefaultPath=.*|DefaultPath=/usr/local/sbin:/usr/local/bin:/usr/bin|g' -i $PKG/usr/lib/sddm/sddm.conf.d/default.conf
 # Unset InputMethod https://github.com/sddm/sddm/issues/952
   sed -e "/^InputMethod/s/qtvirtualkeyboard//" -i $PKG/usr/lib/sddm/sddm.conf.d/default.conf
+
+#Missing directory
+  install -vdm755 $PKG/var/lib/sddm
+
+#Symbolic link on pam
+mkdir -pv $PKG/etc/pam.d
+ln -svf login $PKG/etc/pam.d/system-login
 }
