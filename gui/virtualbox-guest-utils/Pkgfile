@@ -1,0 +1,82 @@
+description="Host modules for virtualbox"
+url="https://virtualbox.org/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="virtualbox-guest-utils"
+version="6.0.14"
+release=2
+
+_release=133895
+
+PKGMK_IGNORE_UNPACK="yes"
+
+source=(https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-${_release}-Linux_amd64.run
+        vboxservice.service
+        60-vboxguest.rules
+        virtualbox-guest-utils.sysusers)
+
+makedepends=(virtualbox-guest-modules-lts p7zip)
+
+run=(virtualbox-guest-modules-lts)
+
+build() {
+
+kernel_version=$(basename /lib/modules/4.19.*)
+
+sh VirtualBox-$version-${_release}-Linux_amd64.run --noexec --keep --nox11
+
+cd install
+
+tar xaf VirtualBox.tar.bz2
+
+cd additions
+
+7z x VBoxGuestAdditions.iso
+
+sh VBoxLinuxAdditions.run --keep --noexec --nox11
+
+cd install
+
+tar xaf VBoxGuestAdditions-amd64.tar.bz2
+
+# lib
+install -vdm755 $PKG/usr/lib
+cp -av lib/* $PKG/usr/lib
+
+# bin
+install -vdm755 $PKG/usr/bin
+cp -av bin/* $PKG/usr/bin
+
+# sbin
+install -vdm755 $PKG/usr/sbin
+cp -av sbin/* $PKG/usr/sbin
+
+# xorg
+install -vdm755 $PKG/usr/lib/xorg/modules/drivers
+
+mv other/98vboxadd-xclient $PKG/usr/bin/VBoxClient-all
+chmod +x -v $PKG/usr/bin/VBoxClient-all
+
+install -vdm755 $PKG/usr/share/xdg/autostart/
+mv other/vboxclient.desktop $PKG/usr/share/xdg/autostart/vboxclient.desktop
+
+install -vdm755 $PKG/etc/xdg/autostart/
+ln -svf /usr/share/xdg/autostart/vboxclient.desktop $PKG/etc/xdg/autostart/vboxclient.desktop
+
+install -vdm755 $PKG/lib/security
+mv other/pam_vbox.so $PKG/lib/security
+
+cp -av other/* $PKG/usr/lib/xorg/modules/drivers
+
+# sbin
+install -vdm755 $PKG/sbin
+mv $PKG/usr/lib/xorg/modules/drivers/mount.vboxsf \
+$PKG/sbin
+
+# SystemD stuff
+install -Dm0644 $SRC/vboxservice.service "$PKG/lib/systemd/system/vboxservice.service"
+install -Dm0644 $SRC/60-vboxguest.rules "$PKG/lib/udev/rules.d/60-vboxguest.rules"
+install -Dm0644 $SRC/virtualbox-guest-utils.sysusers "$PKG/usr/lib/sysusers.d/virtualbox-guest-utils.conf"
+}
