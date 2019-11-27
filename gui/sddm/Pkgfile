@@ -1,0 +1,43 @@
+makedepends=(extra-cmake-modules python-docutils dejavu-ttf qtdeclarative qttools xorg-xauth xorg-server xorg-xinit)
+
+description="QML based X11 and Wayland display manager"
+url="https://github.com/sddm/sddm"
+
+packager="Yaolinux Team"
+maintainer="Dania"
+
+name=sddm
+version=0.18.1
+
+run=(dejavu-ttf xorg-server xorg-xinit)
+
+source=(https://github.com/$name/$name/archive/v$version.tar.gz
+        sddm.sysusers sddm.tmpfiles)
+
+
+prepare() {
+  mkdir -p build
+}
+
+build() {
+  cd build
+  cmake ../$name-$version \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBEXECDIR=/usr/lib/sddm \
+        -DDBUS_CONFIG_DIR=/usr/share/dbus-1/system.d \
+        -DDBUS_CONFIG_FILENAME=sddm_org.freedesktop.DisplayManager.conf \
+        -DBUILD_MAN_PAGES=ON
+  make
+  make DESTDIR=$PKG install
+
+  install -Dm644 $SRC/sddm.sysusers $PKG/usr/lib/sysusers.d/sddm.conf
+  install -Dm644 $SRC/sddm.tmpfiles $PKG/usr/lib/tmpfiles.d/sddm.conf
+
+  install -d $PKG/usr/lib/sddm/sddm.conf.d
+
+  $PKG/usr/bin/sddm --example-config > $PKG/usr/lib/sddm/sddm.conf.d/default.conf
+# Don't set PATH in sddm.conf
+  sed -r 's|DefaultPath=.*|DefaultPath=/usr/local/sbin:/usr/local/bin:/usr/bin|g' -i $PKG/usr/lib/sddm/sddm.conf.d/default.conf
+# Unset InputMethod https://github.com/sddm/sddm/issues/952
+  sed -e "/^InputMethod/s/qtvirtualkeyboard//" -i $PKG/usr/lib/sddm/sddm.conf.d/default.conf
+}
