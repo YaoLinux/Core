@@ -1,4 +1,4 @@
-makedepends=(asciidoc babl gtk2 librsvg ruby lua ffmpeg librsvg openexr exiv2 graphviz libjpeg-turbo2 libwebp python2 sdl2 gobject-introspection vala json-glib gtk-doc)
+makedepends=(asciidoc babl gtk2 librsvg ruby lua ffmpeg librsvg openexr exiv2 graphviz libjpeg-turbo2 libwebp libraw python-gobject sdl2 gobject-introspection vala json-glib gtk-doc)
 
 description="Generic Graphics Library"
 url="http://gegl.org/"
@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=gegl
 version=0.4.18
+release=2
 
 source=(https://download.gimp.org/pub/gegl/${version%.*}/gegl-$version.tar.xz)
 
