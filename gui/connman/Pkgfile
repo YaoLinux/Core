@@ -8,7 +8,7 @@ maintainer="Dania"
 
 name=connman
 version=1.37
-release=2
+release=3
 
 source=(https://www.kernel.org/pub/linux/network/$name/$name-$version.tar.xz
         allow_group_network.diff)
