@@ -6,8 +6,11 @@ url="https://phab.enlightenment.org/w/projects/econnman/"
 packager="Yaolinux Team"
 maintainer="Dania"
 
+set=(elementary)
+
 name=econnman
 version=1.1
+release=4
 
 run=(python-efl dbus-python)
 
