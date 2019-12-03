@@ -1,4 +1,4 @@
-makedepends=(python2 python dbus-glib)
+makedepends=(python2 dbus-glib)
 
 description="Python bindings for DBUS"
 url="http://dbus.freedesktop.org/"
@@ -6,33 +6,33 @@ url="http://dbus.freedesktop.org/"
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=( python python2 )
+run=(python python2)
 
 name=dbus-python
-version=1.2.8
-release=3
+version=1.2.14
 
 source=(http://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz)
 
 build() {
-	cd $name-$version
-	mkdir python2 && pushd python2
+	cp -a $name-$version{,-py2}
+
+	cd $name-$version-py2
+
 	PYTHON=/usr/bin/python2 \
-	../configure --prefix=/usr \
-                 --docdir=/usr/share/doc/dbus-python-$version
+	./configure --prefix=/usr \
+                    --docdir=/usr/share/doc/dbus-python-$version
 
 	make
-	popd
+	make DESTDIR=$PKG install
 
-	mkdir python3 && pushd python3
+	cd ../$name-$version
 
 	PYTHON=/usr/bin/python3 \
-	../configure --prefix=/usr \
-                 --docdir=/usr/share/doc/dbus-python-$version
-	popd
-
-	make DESTDIR=$PKG -C python2 install
-	make DESTDIR=$PKG -C python3 install
+	./configure --prefix=/usr \
+                    --docdir=/usr/share/doc/dbus-python-$version
+	
+	make
+	make DESTDIR=$PKG install
 }
 
 uptodate() {
