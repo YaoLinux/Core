@@ -7,9 +7,17 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=webkitgtk
-version=2.26.1
+version=2.26.2
 
-source=(http://webkitgtk.org/releases/webkitgtk-$version.tar.xz)
+source=(http://webkitgtk.org/releases/webkitgtk-$version.tar.xz
+        icu65.patch)
+
+prepare() {
+
+cd webkitgtk-$version
+
+patch -Np1 -i ../icu65.patch # from PLD Linux
+}
 
 build() {
 
