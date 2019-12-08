@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=poppler-qt
-version=0.81.0
+version=0.83.0
 release=2
 
 source=(http://poppler.freedesktop.org/poppler-$version.tar.xz)
