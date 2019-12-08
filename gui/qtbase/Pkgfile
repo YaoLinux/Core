@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=qtbase
 version=5.13.2
+release=2
 
 _name="${name}-everywhere-src"
 
