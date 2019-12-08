@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=libxml2
 version=2.9.9
+release=2
 
 source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz)
 
