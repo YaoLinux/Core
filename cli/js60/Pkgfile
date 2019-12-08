@@ -8,6 +8,7 @@ url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
 
 name=js60
 version=60.9.0
+release=2
 
 source=(https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz)
 
