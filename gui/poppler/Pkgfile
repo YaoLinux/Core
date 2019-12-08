@@ -8,7 +8,7 @@ maintainer="rems"
 dataversion=0.4.9
 
 name=poppler
-version=0.81.0
+version=0.83.0
 release=2
 
 source=(http://poppler.freedesktop.org/$name-$version.tar.xz
@@ -21,7 +21,7 @@ mkdir build && cd build
 cmake   -DCMAKE_BUILD_TYPE=Release   \
         -DCMAKE_INSTALL_PREFIX=/usr  \
         -DTESTDATADIR=$PWD/testfiles \
-        -DENABLE_XPDF_HEADERS=ON      \
+        -DENABLE_UNSTABLE_API_ABI_HEADERS=ON \
         ../poppler-$version
 
 make
