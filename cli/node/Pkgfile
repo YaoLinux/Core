@@ -9,7 +9,7 @@ maintainer="rems"
 name=node
 alias=(nodejs node-js)
 
-version=12.11.1
+version=12.13.1
 source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz)
 
 build() {
