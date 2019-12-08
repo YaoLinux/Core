@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 amintainer="rems"
 
 name=rustc
-version=1.38.0
+version=1.39.0
 
 source="http://static.rust-lang.org/dist/$name-$version-src.tar.gz"
 
