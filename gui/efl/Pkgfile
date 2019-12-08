@@ -8,6 +8,7 @@ maintainer="Dania"
 
 name=efl
 version=1.23.3
+release=2
 
 run=(shared-mime-info)
 
