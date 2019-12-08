@@ -5,7 +5,7 @@ description="International Components for Unicode library"
 url="http://www.icu-project.org/"
 
 name=icu
-version=64.2
+version=65.1
 
 source=(https://github.com/unicode-org/icu/releases/download/release-${version//./-}/icu4c-${version//./_}-src.tgz)
 
