@@ -8,8 +8,8 @@ packager="Yaolinux Team"
 alias=(NetworkManager)
 
 name=networkmanager
-version=1.20.4
-release=4
+version=1.20.8
+
 _name=NetworkManager
 
 run=(wpa-supplicant)
@@ -41,6 +41,7 @@ meson --prefix /usr              \
       -Dlibnm_glib=true          \
       -Dlibpsl=false             \
       -Dsuspend_resume=systemd   \
+      -Dmodify_system=true       \
       -Dnmtui=true               \
       -Diwd=true                 \
       -Dbluez5_dun=true          \
@@ -68,11 +69,6 @@ EOF
 cat > $PKG/etc/NetworkManager/conf.d/dhcp.conf << "EOF"
 [main]
 dhcp=dhclient
-EOF
-
-cat > $PKG/etc/NetworkManager/conf.d/no-dns-update.conf << "EOF"
-[main]
-dns=none
 EOF
 
 mkdir -p $PKG/usr/share/polkit-1/rules.d
