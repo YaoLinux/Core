@@ -1,0 +1,26 @@
+description="A library for import of Aldus/Macromedia/Adobe FreeHand documents"
+url="https://wiki.documentfoundation.org/DLP/Libraries/libfreehand"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="libfreehand"
+version="0.1.2"
+
+source=(https://dev-www.libreoffice.org/src/libfreehand/$name-$version.tar.xz
+        libfreehand-0.1.2-icu-65.patch)
+
+makedepends=(librevenge lcms2 boost cppunit gperf doxygen)
+
+build() {
+
+cd $name-$version
+
+patch -Np1 -i ../libfreehand-0.1.2-icu-65.patch
+
+./configure --prefix=/usr \
+            --disable-werror
+
+make
+make DESTDIR=$PKG install
+}
