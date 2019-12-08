@@ -9,7 +9,7 @@ maintainer="rems"
 PKGMK_GROUPS=(lib doc man devel service)
 
 name=postgresql
-version=11.5
+version=12.1
 yaolinux_version=1.0-RC1
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
