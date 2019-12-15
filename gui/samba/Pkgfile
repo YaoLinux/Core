@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=samba
-version=4.11.0
+version=4.11.3
 yao_version=1.0-RC2
 release=2
 
