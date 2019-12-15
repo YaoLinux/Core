@@ -1,4 +1,4 @@
-makedepends=(xorgproto pkg-config libtool xorg-xrandr wayland wayland-protocols xorg-libx11 xorg-libdrm xorg-libxext xorg-libxdamage expat llvm elfutils xorg-libxshmfence libva libvdpau python python-mako python-beaker python-markupsafe)
+makedepends=(xorgproto pkg-config libtool xorg-libxrandr wayland wayland-protocols xorg-libx11 xorg-libdrm xorg-libxext xorg-libxdamage expat llvm elfutils xorg-libxshmfence libva libvdpau python python-mako python-beaker python-markupsafe lm-sensors)
 
 description="Mesa is an OpenGL compatible 3D graphics library."
 url="http://www.xorg-mesa3d.org"
@@ -11,7 +11,7 @@ alias=(xorg-mesa Mesa mesa3d Mesa3D mesa3)
 run=(python python-mako python-beaker python-markupsafe)
 
 name=mesa
-version=19.2.1
+version=19.2.7
 
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz
 	http://www.linuxfromscratch.org/patches/downloads/mesa/mesa-$version-add_xdemos-1.patch)
@@ -38,6 +38,8 @@ meson --prefix=/usr                  \
       -Ddri-drivers="i915,i965,nouveau,r200" \
       -Dgallium-drivers="nouveau,virgl,r300,r600,radeonsi,svga,swrast" \
       -Dvulkan-drivers="intel,amd" \
+      -Dlmsensors=true \
+      -Dgallium-vdpau=true \
       ../$name-$version
 
 ninja 
