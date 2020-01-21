@@ -4,7 +4,7 @@
          <allow own="net.connman"/>
          <allow send_interface="net.connman.Agent"/>
      </policy>
-+    <policy group="network">
++    <policy group="netdev">
 +       <allow send_interface="net.connman.Agent"/>
 +    </policy>
      <policy context="default">
