@@ -1,0 +1,18 @@
+﻿description="Library for importing WordPerfect (tm) documents"
+url="https://libwpd.sourceforge.net/"
+packager="Yaolinux Team"
+maintainer="Dania"
+
+name=libwpd
+version=0.10.3
+
+makedepends=(boost doxygen libgsf librevenge)
+
+source=(https://downloads.sourceforge.net/sourceforge/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr --disable-static
+  make
+  make DESTDIR=$PKG install
+}
