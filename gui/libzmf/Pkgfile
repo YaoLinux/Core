@@ -1,0 +1,19 @@
+﻿description="a library for import of Zoner drawing and bitmap files"
+url="https://wiki.documentfoundation.org/DLP/Libraries/libzmf"
+packager="Yaolinux-Team"
+maintainer="Dania"
+
+name=libzmf
+version=0.0.2
+
+makedepends=(boost cppunit doxygen libpng librevenge)
+
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr --disable-werror
+  make
+  make DESTDIR=$PKG install
+  install -Dm644 COPYING $PKG/usr/share/licenses/$name/COPYING
+}
