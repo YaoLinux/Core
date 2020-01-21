@@ -1,0 +1,18 @@
+﻿desciption="CorelDraw file format importer library for LibreOffice"
+url="https://wiki.documentfoundation.org/DLP/Libraries/libcdr"
+packager="Yaolinux Team"
+maintainer="Dania"
+
+name=libcdr
+version=0.1.5
+
+makedepends=(boost cppunit doxygen icu lcms2 librevenge)
+
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+
+build() {
+  cd $name-$version
+  ./configure --prefix=/usr
+  make
+  make DESTDIR=$PKG install
+}
