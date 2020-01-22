@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=gstreamer-editing-services
-version=1.16.1
+version=1.16.2
 
 source=(https://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
 
