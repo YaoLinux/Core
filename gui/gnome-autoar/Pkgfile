@@ -8,7 +8,7 @@ packager="Yaolinux Team"
 run=(gsettings-desktop-schemas desktop-file-utils gtk-update-icon-cache)
 
 name=gnome-autoar
-version=0.2.3
+version=0.2.4
 
 source=(http://ftp.acc.umu.se/pub/gnome/sources/gnome-autoar/${version:0:3}/gnome-autoar-$version.tar.xz)
 
