@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=gstreamer-plugins-bad
-version=1.16.1
+version=1.16.2
 
 source=(https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-$version.tar.xz )
 
