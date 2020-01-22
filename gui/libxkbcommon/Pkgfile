@@ -1,4 +1,4 @@
-makedepends=(xorg-xkeyboard-config libxcb doxygen xorg-util-macros)
+makedepends=(xorg-xkeyboard-config libxcb doxygen wayland-protocols)
 
 description="Keymap compiler and support library by the XKB specification"
 url="http://xkbcommon.org/"
@@ -7,17 +7,19 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libxkbcommon
-version=0.8.4
+version=0.10.0
 
 source=(http://xkbcommon.org/download/libxkbcommon-$version.tar.xz)
 
 build() {
-cd $name-$version
 
-./configure --prefix=/usr \
-            --disable-static \
-            --docdir=/usr/share/doc/libxkbcommon-$version
+mkdir build && cd build
 
-make
-make DESTDIR=$PKG install
+meson --prefix=/usr \
+      ../$name-$version
+
+ninja
+DESTDIR=$PKG ninja install
+
+mv -v $PKG/usr/share/doc/libxkbcommon{,-0.10.0}
 }
