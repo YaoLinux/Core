@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libgusb
-version=0.3.0
+version=0.3.2
 
 source=(http://people.freedesktop.org/~hughsient/releases/$name-$version.tar.xz)
 
