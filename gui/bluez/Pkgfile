@@ -7,7 +7,8 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=bluez
-version=5.51
+version=5.52
+release=2
 
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
 build() {
@@ -39,7 +40,7 @@ install -v -dm755 $PKG/{etc/bluetooth,usr/sbin}
 
 ln -svf ../libexec/bluetooth/bluetoothd $PKG/usr/sbin
 ln -sv bluetooth.service  $PKG/lib/systemd/system/dbus-org.bluez.service
-ln -sv /usr/lib/systemd/user/obex.service $PKG/usr/lib/systemd/user/dbus-org.bluez.obex.service
+ln -sv obex.service $PKG/usr/lib/systemd/user/dbus-org.bluez.obex.service
 
 cat > $PKG/etc/bluetooth/rfcomm.conf << "EOF"
 # rfcomm.conf
