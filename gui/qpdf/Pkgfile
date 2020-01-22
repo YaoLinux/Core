@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=qpdf
-version=9.0.2
+version=9.1.0
 
 source=(https://github.com/qpdf/qpdf/releases/download/release-$name-$version/$name-$version.tar.gz)
 
