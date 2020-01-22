@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-cairo
-version=1.18.1
+version=1.18.2
 release=2
 _name=pycairo
 
