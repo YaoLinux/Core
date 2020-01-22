@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="Rémy"
 
 name=libfilezilla
-version=0.18.2
+version=0.19.3
 
 source=(https://download.filezilla-project.org/libfilezilla/libfilezilla-$version.tar.bz2)
 
