@@ -1,0 +1,25 @@
+makedepends=()
+
+description=""
+packager="YaoLinux Teams"
+maintainer="Graknu"
+url=""
+
+name=minicom
+version=2.7.1
+release=1
+
+source=(http://ftp.debian.org/debian/pool/main/m/minicom/minicom_$version.orig.tar.gz)
+
+build () {
+  cd $name-$version
+  ./configure --prefix=/usr \
+              --sysconfdir=/etc
+  make
+}
+
+package() {
+  cd $name-$version
+  make DESTDIR=$PKG install
+  install -Dm644 doc/minirc.dfl $PKG/etc/minirc.dfl
+}
