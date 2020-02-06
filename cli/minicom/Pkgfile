@@ -1,6 +1,6 @@
 makedepends=()
 
-description=""
+description="A serial communication program"
 packager="YaoLinux Teams"
 maintainer="Graknu"
 url=""
