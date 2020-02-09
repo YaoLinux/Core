@@ -1,0 +1,36 @@
+makedepends=(git)
+
+description="The Net-tools package is a collection of programs for controlling the network subsystem of the Linux kernel"
+url="http://net-tools.sourceforge.net/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name=net-tool
+version=1.60.20181103
+
+source=()
+
+unset MAKEFLAGS
+
+prepare() {
+git clone http://git.code.sf.net/p/net-tools/code.git $name
+cd $name
+git checkout 0eebece8c9
+}
+
+build() {
+cd $name
+sed -i "s#/usr##" man/Makefile
+
+yes "" | make
+make update DESTDIR=$PKG/usr install
+
+ # the following is provided by yp-tools
+  rm $PKG/usr/bin/{nis,yp}domainname
+  rm $PKG/usr/share/man/man1/{nis,yp}domainname.1
+
+  # hostname is provided by inetutils
+  rm $PKG/usr/bin/{hostname,dnsdomainname,domainname}
+  rm -rf $PKG/usr/share/man/man1
+}
