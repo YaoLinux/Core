@@ -1,5 +1,6 @@
-﻿description="Library for importing WordPerfect (tm) documents"
+description="Library for importing WordPerfect (tm) documents"
 url="https://libwpd.sourceforge.net/"
+
 packager="Yaolinux Team"
 maintainer="Dania"
 
