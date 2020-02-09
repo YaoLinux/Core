@@ -1,0 +1,21 @@
+description="Linux OS platform information API"
+url="https://github.com/nir0s/distro"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="python-distro"
+version="1.4.0"
+release=2
+
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/nir0s/distro/archive/v${version}.tar.gz)
+
+build() {
+
+cd distro-$version
+
+python3 setup.py build
+python3 setup.py install -O1 --root="${PKG}" --skip-build
+}
