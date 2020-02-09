@@ -12,26 +12,18 @@ release=2
 
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)
 build() {
+
 cd $name-$version
 
 ./configure --prefix=/usr \
-    --sysconfdir=/etc \
-    --localstatedir=/var \
-    --enable-gstreamer \
-    --enable-alsa \
-    --enable-usb \
-    --enable-tools \
-    --enable-bccmd \
-    --enable-dfutool \
-    --enable-hid2hci \
-    --enable-hidd \
-    --enable-pand \
-    --enable-dund \
-    --enable-cups \
-    --disable-test \
-    --enable-library \
-    --with-systemdsystemunitdir=/lib/systemd/system \
-    --with-systemduserunitdir=/usr/lib/systemd/user
+            --sysconfdir=/etc \
+            --localstatedir=/var \
+            --enable-tools \
+            --enable-cups \
+            --disable-test \
+            --enable-library \
+            --with-systemdsystemunitdir=/lib/systemd/system \
+            --with-systemduserunitdir=/usr/lib/systemd/user
 
 make
 make DESTDIR=$PKG install
