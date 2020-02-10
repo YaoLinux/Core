@@ -1,0 +1,28 @@
+makedepends=(git kernel-lts)
+
+description="rtl8821CE driver with firmware"
+packager="YaoLinux Teams"
+maintainer="Graknu"
+url="https://github.com/tomaspinho/rtl8821ce"
+
+name=rtl8821ce-lts
+version=1.0.0.r11.g932e820
+release=2
+
+kernel_version=$(basename /lib/modules/4.19.*)
+
+source=()
+
+
+build () {
+ git clone https://github.com/tomaspinho/rtl8821ce.git
+ cd $SRC/rtl8821ce
+ make all
+}
+
+package() {
+ cd $SRC/rtl8821ce
+ mkdir -pv $PKG/lib/modules/$kernel_version/kernel/drivers/net/wireless/
+ install -p -m 644 8821ce.ko  $PKG/lib/modules/$kernel_version/kernel/drivers/net/wireless/
+ /sbin/depmod -a $kernel_version
+}
