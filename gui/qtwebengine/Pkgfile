@@ -7,23 +7,12 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=qtwebengine
-version=5.13.2
+version=5.14.1
 release=2
 
 _name="${name}-everywhere-src"
 
-source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/submodules/${_name}-${version}.tar.xz
-        https://code.qt.io/cgit/qt/qtwebengine-chromium.git/patch/?id=d6e5fc10
-        icu65.patch)
-
-prepare() {
-
-mv ?id=d6e5fc10 CVE-2019-13720.patch
-
-cd ${_name}-$version/src/3rdparty
-patch -p1 -i ../../../CVE-2019-13720.patch
-patch -p1 -d chromium -i ../../../../icu65.patch
-}
+source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/submodules/${_name}-${version}.tar.xz)
 
 build() {
 
