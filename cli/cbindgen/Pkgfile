@@ -1,13 +1,13 @@
 makedepends=(rustc)
 
 packager="Yaolinux Team"
-maintainer="sipo"
+maintainer="rems"
 
 description="A tool for generating C bindings to Rust code"
 url="https://github.com/eqrion/cbindgen"
 
 name=cbindgen
-version=0.9.1
+version=0.13.1
 
 PKGMK_KEEP_SOURCES="no"
 
