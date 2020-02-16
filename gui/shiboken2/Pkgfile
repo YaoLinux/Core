@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=shiboken2
-version=5.13.2
+version=5.14.1
 
 _qtver=$version
 _pkgfqn=pyside-setup-opensource-src-${_qtver}
