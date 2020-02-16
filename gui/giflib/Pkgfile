@@ -1,4 +1,4 @@
-makedepends=(xmlto )
+makedepends=(xmlto)
 
 description="A garbage collector for C and C++"
 url="http://downloads.sourceforge.net/giflib/"
@@ -7,6 +7,7 @@ packager="Yaolinux Team"
 
 name=giflib
 version=5.2.1
+release=2
 
 source=(https://sourceforge.net/projects/giflib/files/giflib-$version.tar.gz)
 
@@ -15,7 +16,7 @@ build() {
 cd $name-$version
 
 make
-make DESTDIR=$PKG install
+make PREFIX=/usr DESTDIR=$PKG install
 
 install -v -dm755 $PKG/usr/share/doc/giflib-$version/html
 
