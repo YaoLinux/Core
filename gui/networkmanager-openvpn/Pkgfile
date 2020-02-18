@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=networkmanager-openvpn
 version=1.8.10
+release=2
 
 source=(https://gitlab.gnome.org/GNOME/NetworkManager-openvpn/-/archive/$version/NetworkManager-openvpn-$version.tar.gz)
 
