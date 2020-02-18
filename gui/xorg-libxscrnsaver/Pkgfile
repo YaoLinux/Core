@@ -8,6 +8,8 @@ maintainer="rems"
 
 name=xorg-libxscrnsaver
 version=1.2.3
+release=2
+
 _name=libXScrnSaver
 
 source=(http://ftp.x.org/pub/individual//lib/libXScrnSaver-$version.tar.bz2)
