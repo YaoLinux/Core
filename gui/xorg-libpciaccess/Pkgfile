@@ -8,6 +8,7 @@ maintainer="rems"
 name=xorg-libpciaccess
 _name=libpciaccess
 version=0.16
+release=2
 
 source=(http://ftp.x.org/pub/individual//lib/${_name}-$version.tar.bz2)
 
