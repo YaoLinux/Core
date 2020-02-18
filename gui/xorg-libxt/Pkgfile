@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=xorg-libxt
 version=1.2.0
+release=3
 _name=libXt
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
