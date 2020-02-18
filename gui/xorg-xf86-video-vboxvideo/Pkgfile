@@ -4,7 +4,7 @@ description="Xorg VirtualBox video driver."
 packager="Yaolinux Team"
 name=xorg-xf86-video-vboxvideo
 version=1.0.0
-release=3
+release=4
 
 _name=${name/xorg-/}
 
