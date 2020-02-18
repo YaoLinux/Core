@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=fstrcmp
 version=0.7.D001
+release=2
 
 source=(http://fstrcmp.sourceforge.net/$name-$version.tar.gz)
 
