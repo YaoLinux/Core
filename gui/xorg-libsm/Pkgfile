@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=xorg-libsm
 version=1.2.3
+release=2
 _name=libSM
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
