@@ -6,6 +6,7 @@ maintainer="rems"
 
 name=libuninameslist
 version=20190701
+release=2
 
 source=(https://github.com/fontforge/${name}/releases/download/${version}/${name}-dist-${version}.tar.gz)
 
