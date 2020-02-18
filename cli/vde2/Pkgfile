@@ -6,6 +6,7 @@ packager="Yaolinux Team"
 
 name=vde2
 version=2.3.2
+release=2
 
 source=(https://downloads.sourceforge.net/vde/$name-$version.tar.bz2
         vde_cryptcab-compile-against-openssl-1.1.0.patch)
