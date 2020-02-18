@@ -6,6 +6,7 @@ description="Json processor in cli"
 
 name=jq
 version=1.6
+release=2
 
 source=(https://github.com/stedolan/jq/releases/download/jq-1.6/jq-1.6.tar.gz)
 
