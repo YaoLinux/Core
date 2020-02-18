@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=libwacom
 version=1.1
+release=2
 
 source=(https://github.com/linuxwacom/libwacom/releases/download/${name}-${version}/${name}-${version}.tar.bz2)
 
