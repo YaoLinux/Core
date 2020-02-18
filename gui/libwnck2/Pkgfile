@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=libwnck2
 version=2.31.0
-release=3
+release=4
 
 source=(http://ftp.gnome.org/pub/gnome/sources/libwnck/${version%.*}/libwnck-$version.tar.xz)
 build() {
