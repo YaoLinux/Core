@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 
 name=xorg-xf86-video-qxl
 version=0.1.5
-release=2
+release=3
 
 source=(https://xorg.freedesktop.org/releases/individual/driver/xf86-video-qxl-$version.tar.bz2)
 
