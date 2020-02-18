@@ -7,7 +7,8 @@ maintainer="rems"
 
 name=lightdm
 version=1.30.0
-yaolinux_version=1.0-RC1
+yaolinux_version=1.0-RC2
+release=2
 
 source=(https://github.com/CanonicalLtd/$name/releases/download/$version/$name-$version.tar.xz
         http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
