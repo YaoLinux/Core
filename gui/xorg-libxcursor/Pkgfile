@@ -10,6 +10,7 @@ name=xorg-libxcursor
 alias=(libXcursor libxcursor)
 _name=libXcursor
 version=1.2.0
+release=3
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
