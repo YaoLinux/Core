@@ -6,6 +6,7 @@ maintainer="rems"
 
 name=libxdg-basedir
 version=1.2.0
+release=2
 
 source=(https://github.com/devnev/$name/archive/$name-$version.tar.gz)
 build() {
