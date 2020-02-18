@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 name=xorg-xf86-input-synaptics
 version=1.9.1
 _name=${name/xorg-/}
-release=2
+release=3
 
 source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 
