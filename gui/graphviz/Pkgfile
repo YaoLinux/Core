@@ -6,9 +6,9 @@ url="http://www.graphviz.org"
 packager="Yaolinux Team"
 maintainer="rems"
 
-
 name=graphviz
 version=2.42.3
+release=2
 
 source=(https://www2.graphviz.org/Packages/stable/portable_source/graphviz-$version.tar.gz)
 
