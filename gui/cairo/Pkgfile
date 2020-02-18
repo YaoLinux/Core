@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=cairo
 version=1.16.0
+release=2
 
 source=(https://gitlab.freedesktop.org/cairo/cairo/-/archive/$version/cairo-$version.tar.bz2)
 
