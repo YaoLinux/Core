@@ -9,6 +9,7 @@ maintainer="rems"
 name=xorg-libxvmc
 alias=(libXvMC)
 version=1.0.12
+release=2
 _name=libXvMC
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
