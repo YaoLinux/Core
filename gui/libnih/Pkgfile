@@ -8,6 +8,6 @@ maintainer="rems"
 
 name=libnih
 version=1.0.3
-release=2
+release=3
 
 source=(http://launchpad.net/libnih/1.0/$version/+download/$name-$version.tar.gz)
