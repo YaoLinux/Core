@@ -9,6 +9,7 @@ maintainer="rems"
 name=xorg-libx11
 alias=(libX11)
 version=1.6.9
+release=2
 _name=libX11
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
 
