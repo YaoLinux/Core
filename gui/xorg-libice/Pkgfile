@@ -8,6 +8,7 @@ maintainer="rems"
  
 name=xorg-libice
 version=1.0.10
+release=2
 _name=libICE
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
