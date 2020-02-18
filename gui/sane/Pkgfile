@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=sane
 version=1.0.28
+release=2
 
 source=(network.patch
         https://gitlab.com/sane-project/backends/uploads/9e718daff347826f4cfe21126c8d5091/sane-backends-$version.tar.gz)
