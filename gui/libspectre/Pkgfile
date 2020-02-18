@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=libspectre
 version=0.2.8
-release=2
+release=3
 
 source=(http://libspectre.freedesktop.org/releases/$name-$version.tar.gz)
 
