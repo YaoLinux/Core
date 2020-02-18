@@ -8,6 +8,7 @@ makedepends=(json-c yubico-c-client systemd)
 
 name=yubikey-personalization
 version=1.20.0
+release=2
 
 source=(https://developers.yubico.com/${name}/Releases/ykpers-$version.tar.gz)
 
