@@ -9,6 +9,7 @@ maintainer="rems"
 name=xorg-libxfont2
 alias=(libXfont2)
 version=2.0.4
+release=2
 
 _name=libXfont2
 
