@@ -8,6 +8,7 @@ makedepends=(help2man yubico-c)
 
 name=yubico-c-client
 version=2.15
+release=2
 
 source=(https://developers.yubico.com/${name}/Releases/ykclient-$version.tar.gz)
 
