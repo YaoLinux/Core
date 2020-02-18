@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=xcb-util-image
 version=0.4.0
-release=2
+release=3
 
 source=(http://xcb.freedesktop.org/dist/$name-$version.tar.bz2)
 
