@@ -8,5 +8,6 @@ maintainer="rems"
 
 name=movit
 version=1.6.3
+release=2
 
 source=(https://movit.sesse.net/$name-$version.tar.gz)
