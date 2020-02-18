@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=redland
 version=1.0.17
-release=4
+release=5
 
 source=(rpath.diff
 	http://download.librdf.org/source/$name-$version.tar.gz)
