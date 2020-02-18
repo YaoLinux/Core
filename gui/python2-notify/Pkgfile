@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=python2-notify
 version=0.1.1
-release=3
+release=4
 
 source=(http://www.galago-project.org/files/releases/source/notify-python/notify-python-$version.tar.gz
         python-notify-0.1.1-fix-gtk-symbols-1.patch
