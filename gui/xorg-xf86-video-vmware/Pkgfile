@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 
 name=xorg-xf86-video-vmware
 version=13.3.0
-release=2
+release=3
 
 _name=${name/xorg-/}
 
