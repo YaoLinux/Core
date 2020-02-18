@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=upower
 version=0.99.11
+release=2
 
 source=(https://gitlab.freedesktop.org/upower/upower/uploads/93cfe7c8d66ed486001c4f3f55399b7a/upower-$version.tar.xz)
 
