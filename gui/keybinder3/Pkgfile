@@ -9,7 +9,7 @@ makedepends=(gtk3)
 name=keybinder3
 alias=(libkeybinder3)
 version=0.3.2
-release=3
+release=4
 
 source=(https://github.com/kupferlauncher/keybinder/releases/download/keybinder-3.0-v$version/keybinder-3.0-$version.tar.gz)
 
