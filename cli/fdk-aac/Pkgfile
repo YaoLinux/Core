@@ -8,6 +8,7 @@ url="http://sourceforge.net/projects/opencore-amr/"
 
 name=fdk-aac
 version=2.0.0-git
+release=2
 
 source=()
 
