@@ -9,7 +9,7 @@ maintainer="rems"
 name=gtkspell
 _name=gtkspell3
 version=3.0.10
-release=2
+release=3
 
 source=(https://downloads.sourceforge.net/sourceforge/$name/${_name}-$version.tar.xz)
 
