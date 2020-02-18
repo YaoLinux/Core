@@ -6,6 +6,7 @@ packager="Yaolinux Team"
 
 name=xorg-xf86-video-intel
 version=20190723
+release=2
 _name=${name/xorg-/}
 
 source=(http://anduin.linuxfromscratch.org/BLFS/${_name}/${_name}-$version.tar.xz)
