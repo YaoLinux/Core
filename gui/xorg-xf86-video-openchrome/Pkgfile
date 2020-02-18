@@ -4,7 +4,7 @@ description="Xorg drivers"
 packager="Yaolinux Team"
 name=xorg-xf86-video-openchrome
 version=0.6.0
-release=3
+release=4
 
 _name=${name/xorg-/}
 
