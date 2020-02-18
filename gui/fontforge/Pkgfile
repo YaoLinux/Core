@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=fontforge
 version=20190801
-release=3
+release=4
 
 run=(shared-mime-info)
 
