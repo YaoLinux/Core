@@ -8,6 +8,7 @@ url="http://0pointer.de/blog/projects/being-smart.html"
 
 name=libatasmart
 version=0.19
+release=2
 
 source=(http://0pointer.de/public/$name-$version.tar.xz 
         0001-Dont-test-undefined-bits.patch 
