@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=telepathy-farstream
 version=0.6.2
-release=3
+release=4
 
 source=(http://${name%-*}.freedesktop.org/releases/$name/$name-$version.tar.gz)
 
