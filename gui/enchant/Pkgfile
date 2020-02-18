@@ -7,6 +7,7 @@ packager="Yaolinux Team"
 
 name=enchant
 version=2.2.7
+release=2
 
 source=(https://github.com/AbiWord/$name/releases/download/v$version/$name-$version.tar.gz)
 
