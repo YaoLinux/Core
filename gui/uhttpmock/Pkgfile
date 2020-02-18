@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=uhttpmock
 version=0.5.1
-release=4
+release=5
 
 source=(http://tecnocode.co.uk/downloads/$name/$name-$version.tar.xz)
 
