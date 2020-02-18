@@ -10,7 +10,7 @@ name=xorg-glu
 
 _name=glu
 version=9.0.1
-release=3
+release=4
 
 alias=(glu)
 
