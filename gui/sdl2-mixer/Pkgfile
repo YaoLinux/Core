@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=sdl2-mixer
 version=2.0.4
+release=2
 
 source=(https://www.libsdl.org/projects/SDL_mixer/release/SDL2_mixer-$version.tar.gz)
 
