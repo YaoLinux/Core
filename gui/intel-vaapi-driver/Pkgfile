@@ -8,9 +8,10 @@ maintainer="rems"
 
 name=intel-vaapi-driver
 version=2.3.0
+release=2
 
 source=(https://github.com/01org/$name/releases/download/$version/$name-$version.tar.bz2
-        http://rems.techozor.fr/sources/427.patch)
+        http://rems.6admin.net/sources/427.patch)
 
 build() {
 
