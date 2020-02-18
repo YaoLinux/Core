@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=xorg-libxp
 version=1.0.3
-release=3
+release=4
 _name=libXp
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
