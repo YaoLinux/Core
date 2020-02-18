@@ -6,7 +6,7 @@ maintainer="rems"
 
 name="squashfuse"
 version="0.1.103"
-release=3
+release=4
 
 source=(https://github.com/vasi/squashfuse/releases/download/$version/$name-$version.tar.gz
         add_libraries_to_LIBADD.patch
