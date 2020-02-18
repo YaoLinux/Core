@@ -9,6 +9,7 @@ maintainer="rems"
 name=xorg-fontconfig
 _name=fontconfig
 version=2.13.91
+release=2
 
 source=( https://www.freedesktop.org/software/$_name/release/$_name-$version.tar.gz)
 
