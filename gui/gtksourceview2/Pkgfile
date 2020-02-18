@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=gtksourceview2
 version=2.10.5
-release=3
+release=4
 
 source=(http://ftp.gnome.org/pub/gnome/sources/gtksourceview/2.10/gtksourceview-${version}.tar.bz2)
 
