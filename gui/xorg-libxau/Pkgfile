@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=xorg-libxau
 version=1.0.9
+release=2
 _name=libXau
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
