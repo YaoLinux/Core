@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=xorg-libxcomposite
 version=0.4.5
+release=3
 
 _name=libXcomposite
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
