@@ -11,6 +11,7 @@ name=xorg-pixman
 _name=pixman
 alias=(pixman)
 version=0.38.4
+release=2
 
 source=(http://ftp.x.org/pub/individual//lib/${_name}-$version.tar.bz2)
 
