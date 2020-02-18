@@ -8,10 +8,12 @@ maintainer="rems"
 
 name=libfakekey
 version=0.3
+release=2
 
 source=(http://git.yoctoproject.org/cgit/cgit.cgi/$name/snapshot/$name-$version.tar.gz)
 
 build() {
+
 cd $name-$version
 
 ./autogen.sh
