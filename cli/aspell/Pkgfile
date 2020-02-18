@@ -9,6 +9,7 @@ url="http://aspell.net/"
 name=aspell
 version=0.60.7
 _pkgmajorver=0.60
+release=2
 
 source=(https://github.com/GNUAspell/aspell/archive/rel-$version.tar.gz)
 
