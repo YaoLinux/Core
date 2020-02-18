@@ -9,6 +9,7 @@ maintainer="rems"
 name=xorg-libxrandr
 alias=(libXrandr)
 version=1.5.2
+release=2
 _name=libXrandr
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
