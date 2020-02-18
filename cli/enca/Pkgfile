@@ -6,7 +6,7 @@ url="http://cihar.com/software/enca/"
 
 name=enca
 version=1.19
-release=3
+release=4
 
 source=(http://dl.cihar.com/${name}/${name}-${version}.tar.xz 
 		enca-bad-file-descriptor.patch)
