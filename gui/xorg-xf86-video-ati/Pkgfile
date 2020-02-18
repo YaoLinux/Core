@@ -6,6 +6,7 @@ packager="Yaolinux Team"
 
 name=xorg-xf86-video-ati
 version=19.1.0
+release=2
 _name=${name/xorg-/}
 
 source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
