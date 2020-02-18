@@ -9,6 +9,7 @@ maintainer="rems"
 name=xorg-libxi
 alias=(libXi)
 version=1.7.10
+release=2
 _name=libXi
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
