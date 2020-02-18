@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=sdl-net
 version=1.2.8
-release=2
+release=3
 
 source=(http://www.libsdl.org/projects/SDL_net/release/SDL_net-$version.tar.gz)
 
