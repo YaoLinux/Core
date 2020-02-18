@@ -9,7 +9,7 @@ maintainer="rems"
 name=xorg-libxrender
 alias=(libXrender)
 version=0.9.10
-release=3
+release=4
 
 _name=libXrender
 
