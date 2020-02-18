@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=xorg-libxaw3d
 version=1.6.3
+release=2
 _name=libXaw3d
 
 source=(http://xorg.freedesktop.org/archive/individual/lib/${_name}-$version.tar.bz2)
