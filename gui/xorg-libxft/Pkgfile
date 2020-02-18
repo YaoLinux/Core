@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=xorg-libxft
 version=2.3.3
+release=2
 _name=libXft
 
 source=(http://ftp.x.org/pub/individual/lib/${_name}-$version.tar.bz2)
