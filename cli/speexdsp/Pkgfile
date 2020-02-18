@@ -6,6 +6,7 @@ maintainer="rems"
 
 name=speexdsp
 version=1.2.0
+release=2
 
 source=(https://downloads.us.xiph.org/releases/speex/$name-$version.tar.gz)
 
