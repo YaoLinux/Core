@@ -5,6 +5,7 @@ packager="Yaolinux Team"
 
 name=libcap-ng
 version=0.7.9
+release=2
 
 source=(http://people.redhat.com/sgrubb/$name/$name-$version.tar.gz)
 
