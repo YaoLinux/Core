@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=libcaca
 version=0.99.beta19
-release=2
+release=3
 
 source=(http://libcaca.zoy.org/files/libcaca/libcaca-$version.tar.gz)
 
