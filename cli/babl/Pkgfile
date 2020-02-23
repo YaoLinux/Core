@@ -7,7 +7,7 @@ url="http://gegl.org/babl"
 makedepends=(lcms2 cmake gobject-introspection)
 
 name=babl
-version=0.1.72
+version=0.1.74
 
 source=(https://download.gimp.org/pub/babl/${version%.*}/$name-$version.tar.xz)
 
