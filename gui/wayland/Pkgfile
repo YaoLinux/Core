@@ -7,8 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=wayland
-version=1.17.0
-release=2
+version=1.18.0
 
 source=(http://wayland.freedesktop.org/releases/$name-$version.tar.xz)
 
