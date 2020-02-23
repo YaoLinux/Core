@@ -1,4 +1,4 @@
-makedepends=(cairo libthai freetype xorg-libxft gobject-introspection harfbuzz xorg-libxxf86vm gtk-doc fribidi)
+makedepends=(cairo libthai freetype xorg-libxft gobject-introspection harfbuzz xorg-libxxf86vm gtk-doc fribidi xorg-libx11 xorg-libxrender)
 
 description="Library for layout and rendering of text"
 url="http://www.pango.org/"
@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=pango
 version=1.44.6
-release=2
+release=3
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
