@@ -6,7 +6,7 @@ maintainer="rems"
 
 name="virtualbox-guest-modules-lts"
 version="6.0.14"
-release=5
+release=6
 
 _release=133895
 
