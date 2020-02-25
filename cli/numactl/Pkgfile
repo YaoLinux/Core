@@ -1,0 +1,29 @@
+description="Simple NUMA policy support"
+url="http://oss.sgi.com/projects/libnuma/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="numactl"
+version="2.0.13"
+
+source=(https://github.com/numactl/numactl/releases/download/v${version}/${name}-${version}.tar.gz)
+
+makedepends=(perl)
+
+build() {
+
+cd $name-$version
+
+autoreconf -fiv
+
+./configure --prefix=/usr
+
+make
+make DESTDIR=$PKG install
+
+# move_pages(2) is provided by man-pages and is more up-to-date there anyway
+rm -rf "$PKG/usr/share/man/man2"
+
+install -vDm 644 README.md -t "${PKG}/usr/share/doc/${pkgname}-${version}"
+}
