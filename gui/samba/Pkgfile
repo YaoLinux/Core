@@ -7,9 +7,8 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=samba
-version=4.11.3
+version=4.11.6
 yao_version=1.0-RC2
-release=2
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yao_version}.tar.xz
 	https://download.samba.org/pub/samba/stable/$name-$version.tar.gz)
