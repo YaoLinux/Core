@@ -1,0 +1,43 @@
+description="Library for synchronization between TeX files and resulting file"
+url="https://tug.org/texlive/"
+
+maintainer="tnut <tnut@nutyx.org>"
+packager="Yaolinux Team"
+
+makedepends=(cairo icu xorg-pixman xorg-libxaw)
+
+name=libsynctex
+version=20190410
+
+source=(ftp://tug.org/texlive/historic/2019/texlive-$version-source.tar.xz
+        texlive-20190410-source-upstream_fixes-1.patch)
+
+build() {
+
+cd texlive-$version-source
+
+patch -Np1 -i ../texlive-20190410-source-upstream_fixes-1.patch
+
+mkdir ../build && cd ../build
+
+../texlive-$version-source/configure \
+             --prefix=/usr \
+             --mandir=/usr/share/man \
+             --infodir=/usr/share/info \
+             --with-system-zlib \
+             --with-system-pixman \
+             --with-system-cairo \
+             --with-system-icu \
+             --with-system-gmp \
+             --with-system-mpfr \
+             --disable-native-texlive-build \
+             --disable-static \
+             --enable-shared \
+             --disable-dvisvgm
+
+make
+make -C texk/web2c
+
+make -C texk/web2c DESTDIR=$PKG \
+install-data-am install-libLTLIBRARIES
+}
