@@ -1,0 +1,34 @@
+description="FFmpeg version of headers required to interface with Nvidias codec APIs"
+url="https://git.videolan.org/?p=ffmpeg/nv-codec-headers"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="ffnvcodec-headers"
+version="9.1.23.1"
+
+source=()
+
+makedepends=(git)
+
+prepare() {
+
+git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git $name-$version
+
+cd $name-$version
+
+git checkout 4a0bbfd58724d6d19851cd8a6f7a9098dde9ab77
+}
+
+build() {
+
+cd $name-$version
+
+make PREFIX=/usr
+
+sed -n '4,25p' include/ffnvcodec/nvEncodeAPI.h > LICENSE # Extract license
+sed -i '1,22s/^.\{,3\}//' LICENSE # Delete C comments
+
+make PREFIX=/usr DESTDIR="${PKG}" install
+install -Dm 644 LICENSE -t "${PKG}"/usr/share/licenses/$name-$version/
+}
