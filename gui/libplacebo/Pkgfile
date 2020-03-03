@@ -1,0 +1,30 @@
+description="Reusable library for GPU-accelerated video/image rendering primitives"
+url="https://github.com/haasn/libplacebo"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="libplacebo"
+version="1.29.1"
+
+source=(https://code.videolan.org/videolan/libplacebo/-/archive/v${version}/libplacebo-v${version}.tar.gz)
+
+makedepends=(vulkan-icd-loader shaderc lcms2)
+
+build() {
+
+mkdir build && cd build
+
+CXXFLAGS+=" -I/usr/include/glslang"
+
+meson -D tests=true \
+      -D vulkan=enabled \
+      -D glslang=enabled \
+      -D shaderc=enabled \
+      -D lcms=enabled \
+      ../$name-v$version
+
+ninja
+DESTDIR=$PKG ninja install
+
+}
