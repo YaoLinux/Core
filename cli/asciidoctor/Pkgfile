@@ -1,0 +1,31 @@
+description="An implementation of AsciiDoc in Ruby"
+url="https://asciidoctor.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="asciidoctor"
+version="2.0.10"
+
+PKGMK_IGNORE_UNPACK='yes'
+
+source=(https://rubygems.org/downloads/${name}-${version}.gem)
+
+makedepends=(ruby)
+
+build() {
+
+local _gemdir="$(ruby -e 'puts Gem.default_dir')"
+
+gem install --ignore-dependencies --no-user-install --verbose \
+        -i "$PKG/$_gemdir" -n "$PKG/usr/bin" \
+        "${name}-${version}.gem"
+
+install -Dm644 "$PKG/$_gemdir/gems/${name}-${version}/LICENSE" \
+                   "$PKG/usr/share/licenses/$pkgname/LICENSE"
+install -Dm644 "$PKG/$_gemdir/gems/${name}-${version}/man/asciidoctor.1" \
+                   "$PKG/usr/share/man/man1/asciidoctor.1"
+
+rm "$PKG/$_gemdir/cache/${name}-${version}.gem"
+rm -rf "$PKG/$_gemdir/gems/${name}-${version}/man"
+}
