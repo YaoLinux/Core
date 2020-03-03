@@ -1,0 +1,51 @@
+description="OpenGL and OpenGL ES shader front end and validator"
+url="https://github.com/KhronosGroup/glslang"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="glslang"
+version="8.13.3559"
+release=2
+
+source=(https://github.com/KhronosGroup/glslang/archive/8.13.3559.tar.gz)
+
+makedepends=(spirv-tools)
+
+build() {
+
+mkdir -pv build-{shared,static}
+
+pushd build-shared
+
+cmake -GNinja \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DBUILD_SHARED_LIBS=ON \
+      ../$name-$version
+
+ninja
+
+popd
+
+pushd build-static
+
+cmake -GNinja \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DBUILD_SHARED_LIBS=OFF \
+      ../$name-$version
+
+ninja
+
+popd
+
+DESTDIR="${PKG}" ninja -C build-shared install
+DESTDIR="${PKG}" ninja -C build-static install
+
+cd "${PKG}"/usr/lib
+
+for lib in *.so; do
+    ln -sf "${lib}" "${lib}.0"
+done
+}
