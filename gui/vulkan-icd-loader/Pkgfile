@@ -1,0 +1,38 @@
+description="Vulkan Installable Client Driver (ICD) Loader"
+url="https://www.khronos.org/vulkan/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="vulkan-icd-loader"
+version="1.2.132"
+
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/KhronosGroup/Vulkan-Loader/archive/v${version}.tar.gz)
+
+makedepends=(cmake python-lxml xorg-libx11 xorg-libxrandr wayland vulkan-headers)
+
+build() {
+
+mkdir build && cd build
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+      -DVULKAN_HEADERS_INSTALL_DIR=/usr \
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DCMAKE_INSTALL_SYSCONFDIR=/etc \
+      -DCMAKE_INSTALL_DATADIR=/share \
+      -DCMAKE_SKIP_RPATH=True \
+      -DBUILD_TESTS=Off \
+      -DBUILD_WSI_XCB_SUPPORT=On \
+      -DBUILD_WSI_XLIB_SUPPORT=On \
+      -DBUILD_WSI_WAYLAND_SUPPORT=On \
+      -DCMAKE_BUILD_TYPE=Release \
+      ../Vulkan-Loader*
+
+make
+make DESTDIR="${PKG}" install
+
+install -dm755 ${PKG}/usr/share/licenses/${name}-${version}
+install -m644 ../Vulkan-Loader*/LICENSE.txt "${PKG}"/usr/share/licenses/${name}-${version}/
+}
