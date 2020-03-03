@@ -1,0 +1,43 @@
+description="API and commands for processing SPIR-V modules"
+url="https://www.khronos.org/vulkan/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="spirv-tools"
+version="2019.5"
+
+PKGMK_KEEP_SOURCES="no"
+
+source=()
+
+makedepends=(cmake git)
+
+prepare() {
+
+git clone https://github.com/KhronosGroup/SPIRV-Headers.git
+git clone https://github.com/KhronosGroup/SPIRV-Tools.git $name-$version
+
+cd $name-$version
+git checkout c413b982c316b14e784f50d941814fc737b55b4a
+}
+
+build() {
+
+mkdir -pv build && cd build
+
+cmake -GNinja \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_INSTALL_LIBDIR=lib \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DSPIRV_WERROR=Off \
+      -DBUILD_SHARED_LIBS=ON \
+      -DSPIRV-Headers_SOURCE_DIR="$SRC/SPIRV-Headers" \
+      ../$name-$version
+
+ninja
+DESTDIR="${PKG}" ninja install
+
+install -dm755 "${PKG}/usr/share/licenses/${name}-$version"
+install -m644 ../$name-$version/LICENSE "${PKG}/usr/share/licenses/${name}-$version/"
+}
