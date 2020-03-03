@@ -1,4 +1,4 @@
-makedepends=(doxygen alsa-lib bzip2 fribidi gmp gsm jack ladspa lame libavc1394 libiec61883 libmodplug libraw1394 libssh libtheora libwebp libxcb libxml2 opencore-amr openjpeg openjpeg2 v4l-utils xz xorg-fontconfig xorg-libx11 yasm opus fdk-aac pulseaudio x264 x265 libmpeg2 liba52 libass freetype sdl libbluray sdl2 speex libvorbis libogg xvid faac faad2 libvpx xorg-libxext xorg-libxfixes zlib libva libvdpau)
+makedepends=(doxygen alsa-lib bzip2 fribidi gmp gsm jack ladspa lame libavc1394 libiec61883 libmodplug libraw1394 libssh libtheora libwebp libxcb libxml2 opencore-amr openjpeg openjpeg2 v4l-utils xz xorg-fontconfig xorg-libx11 yasm opus fdk-aac pulseaudio x264 x265 libmpeg2 liba52 libass freetype sdl libbluray sdl2 speex libvorbis libogg xvid faac faad2 libvpx xorg-libxext xorg-libxfixes zlib libva libvdpau ffnvcodec-headers)
 
 description="Complete and free Internet live audio and video broadcasting solution"
 url="http://ffmpeg.org/"
@@ -8,15 +8,23 @@ maintainer="rems"
 
 name=ffmpeg
 version=4.2.2
+release=4
 
 source=(${url}releases/ffmpeg-$version.tar.xz)
 
-build() {
+prepare() {
 cd ffmpeg-$version
 
 sed -i 's/-lflite"/-lflite -lasound"/' configure
 
-./configure --prefix=/usr        \
+mkdir ../build
+}
+
+build() {
+
+cd build
+
+../ffmpeg-$version/configure --prefix=/usr \
             --enable-libpulse    \
             --enable-gpl         \
             --enable-version3    \
@@ -28,7 +36,7 @@ sed -i 's/-lflite"/-lflite -lasound"/' configure
             --enable-avresample  \
             --enable-fontconfig  \
             --enable-gmp         \
-            --enable-openssl     \
+            --enable-gnutls      \
             --enable-ladspa      \
             --enable-libass      \
             --enable-libbluray   \
@@ -56,14 +64,16 @@ sed -i 's/-lflite"/-lflite -lasound"/' configure
             --enable-libxml2     \
             --enable-libxvid     \
             --enable-sdl2        \
+            --enable-nvdec       \
+            --enable-nvenc       \
             --docdir=/usr/share/doc/$name-$version
 
 make
-gcc tools/qt-faststart.c -o tools/qt-faststart
+gcc ../ffmpeg-$version/tools/qt-faststart.c -o ../ffmpeg-$version/tools/qt-faststart
 
 make DESTDIR=$PKG install
 
-install -v -m755 tools/qt-faststart \
+install -v -m755 ../ffmpeg-$version/tools/qt-faststart \
 $PKG/usr/bin
 
 install -v -m755 -d $PKG/usr/share/doc/$name-$version
