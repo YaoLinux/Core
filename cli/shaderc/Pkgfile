@@ -1,0 +1,54 @@
+description="Collection of tools, libraries and tests for shader compilation"
+url="https://github.com/google/shaderc"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="shaderc"
+version="2019.0"
+
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/google/shaderc/archive/v${version}.tar.gz
+        shaderc-$version-fix-build-against-new-glslang.patch
+        fix-glslang-link-order.patch)
+
+makedepends=(glslang asciidoctor)
+
+build() {
+
+cd $name-$version
+
+patch -Np1 < ../fix-glslang-link-order.patch
+patch -Np1 < ../shaderc-$version-fix-build-against-new-glslang.patch
+
+# de-vendor libs and disable git versioning
+  sed '/examples/d;/third_party/d' -i CMakeLists.txt
+  sed '/build-version/d' -i glslc/CMakeLists.txt
+
+  cat <<- EOF > glslc/src/build-version.inc
+"${version}\\n"
+"$(cards info spirv-tools | grep ^Version | cut -d ":" -f2 | cut -d " " -f2)\\n"
+"$(cards info glslang | grep ^Version | cut -d ":" -f2 | cut -d " " -f2)\\n"
+EOF
+
+  mkdir -p ../build && cd ../build
+
+  export CXXFLAGS+=" -I/usr/include/glslang"
+
+  cmake ../$name-$version \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr \
+    -DCMAKE_INSTALL_LIBDIR=lib \
+    -DSHADERC_SKIP_TESTS=ON \
+    -GNinja \
+    -DSHADERC_ENABLE_NV_EXTENSIONS=OFF # Currently requires glslang-git
+
+  ninja
+  DESTDIR="${PKG}" ninja install
+
+  cd ../$name-$version/glslc
+
+  asciidoctor -b manpage README.asciidoc -o glslc.1
+  install -Dm 644 glslc.1 -t "${PKG}/usr/share/man/man1"
+}
