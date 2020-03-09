@@ -5,11 +5,13 @@ description="The BIND package includes the client side programs nslookup, dig an
 url="http://www.isc.org/downloads/bind/"
 
 name=bind
-version=9.14.5
-yaolinux_version=1.0-RC1
+version=9.16.0
+yaolinux_version=1.0-RC2
 
-source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
-	https://ftp.isc.org/isc/bind/${version}/${name}-${version}.tar.gz)
+makedepends=(libuv)
+
+source=(https://ftp.isc.org/isc/bind9/${version}/bind-${version}.tar.xz
+        http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
 
 makedepends=(kerberos libxml2 openssl python libcap python-ply)
 run=(python-ply)
