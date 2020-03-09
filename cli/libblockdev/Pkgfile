@@ -9,7 +9,7 @@ url="https://github.com/rhinstaller/libblockdev"
 run=(gptfdisk)
 
 name=libblockdev
-version=2.22
+version=2.23
 
 source=(https://github.com/storaged-project/$name/archive/$version-1.tar.gz)
 
