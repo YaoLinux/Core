@@ -7,10 +7,10 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=ruby
-version=2.6.5
+version=2.7.0
 release=2
 
-source=(http://cache.ruby-lang.org/pub/ruby/2.6/ruby-$version.tar.xz)
+source=(https://cache.ruby-lang.org/pub/ruby/${version:0:3}/ruby-${version}.tar.xz)
 
 build() {
 cd ruby-$version
