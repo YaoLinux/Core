@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=modemmanager
-version=1.10.6
+version=1.12.6
 
 source=(http://www.freedesktop.org/software/ModemManager/ModemManager-$version.tar.xz)
 build() {
