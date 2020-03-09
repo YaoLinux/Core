@@ -7,7 +7,7 @@ description="CIFS filesystem user-space tools"
 url="http://wiki.samba.org/index.php/LinuxCIFS_utils"
 
 name=cifs-utils
-version=6.8
+version=6.10
 release=2
 
 source=(http://ftp.samba.org/pub/linux-cifs/$name/$name-$version.tar.bz2)
