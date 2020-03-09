@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=ranger
-version=1.9.2
+version=1.9.3
 
 source=(https://ranger.github.io/$name-$version.tar.gz)
 
