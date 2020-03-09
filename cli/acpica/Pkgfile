@@ -7,16 +7,18 @@ description="ACPI tools, including Intel ACPI Source Language compiler"
 url="https://acpica.org"
 
 name=acpica
-version=20190816
+version=20200214
 
-source=(https://github.com/acpica/acpica/archive/R08_16_19.tar.gz)
+unset MAKEFLAGS
+
+source=(https://acpica.org/sites/acpica/files/acpica-unix-${version}.tar.gz)
 
 build(){
-  cd $name-R08_16_19
-  make
+
+  make -C acpica-unix-${version}
 }
 
 package() {
-  cd $name-R08_16_19
-  make DESTDIR=${PKG} install
+
+  make DESTDIR=${PKG} -C acpica-unix-${version} install
 }
