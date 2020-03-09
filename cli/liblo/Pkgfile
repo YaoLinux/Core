@@ -7,18 +7,28 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=liblo
-version=0.30
+version=0.31
 
-source=(https://github.com/radarsat1/$name/releases/download/$version/$name-$version.tar.gz)
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/radarsat1/${name}/archive/${version}.tar.gz)
+
+prepare() {
+
+cd $name-$version
+
+ln -svf README.md README
+
+autoreconf -fiv
+}
 
 package() {
   cd $name-$version
+
   mkdir -p $PKG/usr/share/{man/man3,doc/$name/{html,latex},$name/examples}
+
   install -Dm 644 doc/html/* $PKG/usr/share/doc/$name/html
   install -Dm 644 doc/latex/* $PKG/usr/share/doc/$name/latex
   install -Dm 644 doc/man/man3/*.3 $PKG/usr/share/man/man3
   install -Dm 644 examples/*.{cpp,c} $PKG/usr/share/$name/examples
-
-# Obsolet lib
-rm $PKG/usr/lib/liblo.la
 }
