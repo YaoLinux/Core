@@ -1,27 +1,17 @@
 packager="Yaolinux Team"
-maintainer="sipo"
+maintainer="rems"
 
 description="Contains a library that defines common error values for all GnuPG components"
 url="http://www.gnupg.org"
 
 name=libgpg-error
-version=1.36
+version=1.37
 
-source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2
-        gawk5.diff)
+source=(ftp://ftp.gnupg.org/gcrypt/$name/$name-$version.tar.bz2)
 
 prepare() {
+
 cd $name-$version
 
-patch -Np1 -i ../gawk5.diff
-  autoreconf -vfi
-}
-
-package() {
-
-    install -v -m644 -D $name-$version/README \
-                        $PKG/usr/share/doc/$name-$version/README
-
-# Obsolet lib
-rm -f $PKG/usr/lib/$name.la
+autoreconf -vfi
 }
