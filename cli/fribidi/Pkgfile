@@ -7,23 +7,22 @@ description="A Free Implementation of the Unicode Bidirectional Algorithm"
 url="http://fribidi.freedesktop.org/wiki/"
 
 name=fribidi
-version=1.0.5
+version=1.0.9
 release=2
 
-source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.bz2)
+source=(https://github.com/$name/$name/releases/download/v$version/$name-$version.tar.xz)
 
 build() {
 
 	mkdir -v build && cd build
-	meson --prefix=/usr \
-          -D docs=false \
-          ../$name-$version
-	ninja
 
+	meson --prefix=/usr \
+              -D docs=false \
+              ../$name-$version
+
+	ninja
 }
 
 package() {
-
-	cd build
-	DESTDIR=$PKG ninja install
+	DESTDIR=$PKG ninja -C build install
 }
