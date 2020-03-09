@@ -6,19 +6,19 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=vamp-plugin-sdk
-version=2.8.0
-release=2
+version=2.9.0
 
-source=(https://code.soundsoftware.ac.uk/attachments/download/2450/$name-$version.tar.gz)
+_dir=2588
+
+source=(https://code.soundsoftware.ac.uk/attachments/download/${_dir}/${name}-${version}.tar.gz)
 
 build() {
-cd $SRC/$name-$version
+cd $name-$version
+
 ./configure --prefix=/usr
+
 make
 make DESTDIR=$PKG install
 
 install -Dm644 COPYING $PKG/usr/share/licenses/$pkgname/COPYING
-
-# Obsolets libs
-rm $PKG/usr/lib/libvamp-{,host}sdk.la
 }
