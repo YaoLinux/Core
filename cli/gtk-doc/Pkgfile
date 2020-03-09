@@ -7,7 +7,7 @@ description="Documentation tool for public library API"
 url="https://www.gtk.org/gtk-doc/"
 
 name=gtk-doc
-version=1.31
+version=1.32
 release=2
 
 run=(python-six python-pygments)
