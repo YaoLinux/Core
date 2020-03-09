@@ -7,7 +7,7 @@ description="Designed for internationalized string handling based on the Stringp
 url="http://www.gnu.org/software/libidn/"
 
 name=libidn2
-version=2.2.0
+version=2.3.0
 
 source=(https://ftp.gnu.org/gnu/libidn/$name-$version.tar.gz)
 
