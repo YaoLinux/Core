@@ -9,8 +9,7 @@ maintainer="rems"
 name=openvas-libraries
 version=9.0.1
 
-source=(http://wald.intevation.org/frs/download.php/2420/$name-${version}.tar.gz
-        http://wald.intevation.org/frs/download.php/2434/$name-${version}.tar.gz)
+source=(http://wald.intevation.org/frs/download.php/latestfile/35/openvas-libraries-$version.tar.gz)
 
 build() {
 
