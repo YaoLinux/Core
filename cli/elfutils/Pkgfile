@@ -7,7 +7,7 @@ description="Utilities to handle ELF object files and DWARF debugging informatio
 url="https://sourceware.org/elfutils/"
 
 name=elfutils
-version=0.176
+version=0.177
 release=2
 
 source=(https://sourceware.org/elfutils/ftp/$version/elfutils-$version.tar.bz2)
