@@ -10,7 +10,7 @@ run=(gawk)
 PKGMK_GROUPS=(man)
 
 name=alsa-utils
-version=1.1.9
+version=1.2.2
 
 source=(ftp://ftp.alsa-project.org/pub/utils/$name-$version.tar.bz2)
 
