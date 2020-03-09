@@ -7,23 +7,23 @@ description="The GNU Project debugger, allows you to see what is going on “ins
 url="http://www.sourceware.org/gdb/"
 
 name=gdb
-version=8.3.1
+version=9.1
 release=2
 
 source=(https://ftp.gnu.org/gnu/gdb/$name-$version.tar.xz)
 
 build() {
 
-	cd $name-$version
-	./configure --prefix=/usr \
-	            --with-system-readline \
-		    --with-python=$(which python3)
+mkdir build && cd build
+
+../$name-$version/configure --prefix=/usr \
+                            --with-system-readline \
+                            --with-python=$(which python3)
 	
 	make
 }
 
 package() {
 
-	cd $name-$version
-	make -C gdb DESTDIR=$PKG install
+	make -C build/gdb DESTDIR=$PKG install
 }
