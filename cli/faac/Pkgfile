@@ -5,13 +5,18 @@ description="An AAC audio encoder"
 url="http://www.audiocoding.com/"
 
 name=faac
-version=1.29.9.2
+version=1.30
 
-source=(https://sourceforge.net/projects/faac/files/faac-src/$name-1.29/$name-$version.tar.gz)
+source=(https://github.com/knik0/${name}/archive/${version/./_}.tar.gz)
 
 build(){
 
+mv -v "${name}-${version/./_}" "${name}-${version}"
+
   cd ${name}-${version}
+
+  autoreconf -fiv
+
   ./configure --prefix=/usr
   make
 
