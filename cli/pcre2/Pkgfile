@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=pcre2
-version=10.33
+version=10.34
 
 source=(https://ftp.pcre.org/pub/pcre/$name-$version.tar.bz2)
 
