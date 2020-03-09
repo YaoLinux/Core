@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libisoburn
-version=1.5.0
+version=1.5.2
 
 source=(http://files.libburnia-project.org/releases/libisoburn-$version.tar.gz)
 
