@@ -7,10 +7,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libusb-compat
-version=0.1.5
-release=2
+version=0.1.7
 
-source=( http://sourceforge.net/projects/libusb/files/libusb-compat-0.1/libusb-compat-$version/$name-$version.tar.bz2)
+source=(https://github.com/libusb/libusb-compat-0.1/releases/download/v$version/$name-$version.tar.gz)
 
 build() {
 cd $name-$version
@@ -21,7 +20,4 @@ cd $name-$version
 
 make
 make DESTDIR=$PKG install
-
-# Obsolet lib
-rm $PKG/usr/lib/libusb.la
 }
