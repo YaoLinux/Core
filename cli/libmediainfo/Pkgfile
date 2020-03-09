@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 makedepends=(libmms libzen curl)
 
 name=libmediainfo
-version=19.07
+version=19.09
 
 source=(https://mediaarea.net/download/source/$name/$version/"${name}"_$version.tar.xz)
 
