@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=xa
-version=2.3.9
+version=2.3.10
 
 source=(http://www.floodgap.com/retrotech/xa/dists/xa-$version.tar.gz)
 
