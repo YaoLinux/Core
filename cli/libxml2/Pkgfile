@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libxml2
-version=2.9.9
+version=2.9.10
 release=2
 
 source=(ftp://xmlsoft.org/libxml2/$name-$version.tar.gz)
