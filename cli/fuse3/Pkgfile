@@ -7,7 +7,7 @@ description="Library that makes it possible to implement a filesystem in a users
 url="http://fuse.sourceforge.net/"
 
 name=fuse3
-version=3.6.2
+version=3.9.0
 
 source=(https://github.com/libfuse/libfuse/releases/download/fuse-$version/fuse-$version.tar.xz)
 
