@@ -5,7 +5,7 @@ description="An alternative implementation of Linux sound support"
 url="http://www.alsa-project.org"
 
 name=alsa-lib
-version=1.1.9
+version=1.2.2
 
 source=(ftp://ftp.alsa-project.org/pub/lib/$name-$version.tar.bz2)
 
