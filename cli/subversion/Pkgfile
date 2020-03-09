@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=subversion
-version=1.12.2
+version=1.13.0
 
 source=(http://archive.apache.org/dist/$name/$name-$version.tar.bz2)
 
