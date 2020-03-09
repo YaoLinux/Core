@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=mbedtls
-version=2.16.0
+version=2.16.3
 
 source=(https://tls.mbed.org/download/mbedtls-$version-gpl.tgz)
 
