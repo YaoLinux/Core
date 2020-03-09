@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=links
-version=2.20.1
+version=2.20.2
 
 source=(${url}download/links-$version.tar.bz2)
 
