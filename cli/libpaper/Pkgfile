@@ -5,15 +5,18 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=libpaper
-version=1.1.24
+version=1.1.28
 release=2
 
-source=(http://ftp.debian.org/debian/pool/main/libp/libpaper/$name\_$version+nmu4.tar.gz
-		run-parts)
+source=(http://ftp.de.debian.org/debian/pool/main/libp/$name/${name}_$version.tar.gz
+        run-parts)
 
 build () {
 
-  cd $name-$version+nmu4  
+  cd $name-$version
+
+  autoreconf -fiv
+  
   ./configure --prefix=/usr  \
               --sysconfdir=/etc \
               --disable-static                 
@@ -29,6 +32,10 @@ build () {
   cp -v ../run-parts $PKG/usr/bin/
   chmod -v 755 $PKG/usr/bin/run-parts
 
-  # Obsolet libs
-  rm $PKG/usr/lib/libpaper.la   
+  # add systemwide default papersize read by many office applications
+  install -dm 755 "$PKG"/etc
+  echo '# Simply write the paper name. See papersize(5) for possible values' > "$PKG"/etc/papersize
+
+  # add libpaper.d directory other packages can use to store files
+  install -dm 755 "$PKG"/etc/libpaper.d
 }
