@@ -7,10 +7,9 @@ packager="Yaolinux Team"
 maintainer="Dania"
 
 name=iwd
-version=1.2
+version=1.5
 
-source=(https://www.kernel.org/pub/linux/network/wireless/$name-$version.tar.xz
-        iwd.tmpfiles)
+source=(https://www.kernel.org/pub/linux/network/wireless/$name-$version.tar.xz)
 
 build() {
   cd $name-$version
@@ -29,5 +28,6 @@ build() {
   make
   make install DESTDIR=$PKG
 
-  install -Dm644 ../iwd.tmpfiles $PKG/usr/lib/tmpfiles.d/iwd.conf
+  install -dm700 $PKG/var/lib/ead/
+  install -dm700 $PKG/var/lib/iwd/
 }
