@@ -4,11 +4,12 @@ description="Tools which simplify and make the network more directly manageable.
 url="http://projects.gnome.org/NetworkManager/"
 
 packager="Yaolinux Team"
+maintainer="rems"
 
 alias=(NetworkManager)
 
 name=networkmanager
-version=1.20.8
+version=1.22.8
 
 _name=NetworkManager
 
