@@ -4,10 +4,10 @@ description="python 3 bindings for the Enlightenment Foundation Libraries"
 url="http://www.enlightenment.org"
 
 packager="Yaolinux Team"
+maintainer="Dania"
 
 name=python-efl
-version=1.22.0
-release=3
+version=1.23.0
 
 source=(http://download.enlightenment.org/rel/bindings/python/$name-$version.tar.xz)
 
@@ -15,6 +15,6 @@ build() {
   cd ${name}-$version
 
    python3 setup.py build
-   python3 setup.py install --root=$PKG --optimize=1
+   python3 setup.py install --root=$PKG --optimize=1 --skip-build
 }
 
