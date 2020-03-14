@@ -8,6 +8,7 @@ maintainer="Dania"
 
 name=python-efl
 version=1.23.0
+release=2
 
 source=(http://download.enlightenment.org/rel/bindings/python/$name-$version.tar.xz)
 
