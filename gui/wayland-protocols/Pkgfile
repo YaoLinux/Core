@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=wayland-protocols
-version=1.18
+version=1.20
 release=2
 
 source=(https://wayland.freedesktop.org/releases/wayland-protocols-$version.tar.xz)
