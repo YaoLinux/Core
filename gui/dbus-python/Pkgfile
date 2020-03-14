@@ -9,7 +9,7 @@ maintainer="rems"
 run=(python python2)
 
 name=dbus-python
-version=1.2.14
+version=1.2.16
 
 source=(http://dbus.freedesktop.org/releases/$name/$name-$version.tar.gz)
 
