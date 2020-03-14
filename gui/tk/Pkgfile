@@ -7,15 +7,15 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=tk
-version=8.6.9.1
+version=8.6.10
 
 source=(http://downloads.sourceforge.net/sourceforge/tcl/tk${version}-src.tar.gz)
 
 build(){
     
-    [ "`uname -m`" == "x86_64" ] && X64="--enable-64bit"
+    [ "$(uname -m)" == "x86_64" ] && X64="--enable-64bit"
     
-    cd $name${version%.*}/unix
+    cd $name${version}/unix
 
     ./configure --prefix=/usr \
                 --mandir=/usr/share/man \
