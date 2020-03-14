@@ -1,0 +1,25 @@
+description="Library full of GTK+ widgets for mobile phones"
+url="https://source.puri.sm/Librem5/libhandy"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="libhandy"
+version="0.0.13"
+
+source=(https://source.puri.sm/Librem5/libhandy/-/archive/v$version/libhandy-v$version.tar.bz2)
+
+makedepends=(libglade gobject-introspection vala gtk3)
+
+build() {
+
+mkdir build && cd build
+
+meson --prefix=/usr \
+      -Dgtk_doc=true \
+      -Dexamples=false \
+      ../$name-v$version
+
+ninja
+DESTDIR=$PKG ninja install
+}
