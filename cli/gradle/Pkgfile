@@ -1,0 +1,24 @@
+makedepends=(openjdk11 git)
+
+description="Powerful build system for the JVM"
+
+packager="Yaolinux Team"
+maintainer="graknu"
+
+name=gradle
+version=6.4.1
+release=3
+
+source=(https://downloads.gradle-dn.com/distributions/gradle-${version}-bin.zip
+gradle.sh)
+
+build() {
+cd $name-$version
+
+install -Dm 755 $SRC/gradle.sh $PKG/etc/profile.d/gradle.sh
+
+mkdir -pv $PKG/opt/gradle
+
+mv * $PKG/opt/gradle
+}
+
