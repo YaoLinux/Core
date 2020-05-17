@@ -1,0 +1,52 @@
+description="A set of programs called a Java Development Kit (JDK)."
+url="http://openjdk.java.net/"
+
+packager="Yaolinux Team"
+maintainer="graknu"
+
+name=openjdk11
+version=11.0.2
+release=1
+_version=11.0.2
+
+source=(https://download.java.net/java/GA/jdk11/9/GPL/openjdk-${version}_linux-x64_bin.tar.gz)
+	
+build() {
+cd jdk-${version}
+install -vdm755 $PKG/opt/OpenJDK-$version-bin
+mv -v * $PKG/opt/OpenJDK-$version-bin 
+chown -R root:root $PKG/opt/OpenJDK-$version-bin
+
+mkdir -pv $PKG/etc/profile.d
+cat > $PKG/etc/profile.d/openjdk.sh << "EOF"
+# Begin /etc/profile.d/openjdk.sh
+
+# Set JAVA_HOME directory
+JAVA_HOME=/opt/jdk
+
+# Adjust PATH
+pathappend $JAVA_HOME/bin
+
+# Auto Java CLASSPATH
+# Copy jar files to, or create symlinks in this directory
+
+AUTO_CLASSPATH_DIR=/usr/share/java
+
+pathprepend . CLASSPATH
+
+for dir in `find ${AUTO_CLASSPATH_DIR} -type d 2>/dev/null`; do
+    pathappend $dir CLASSPATH
+done
+
+for jar in `find ${AUTO_CLASSPATH_DIR} -name "*.jar" 2>/dev/null`; do
+    pathappend $jar CLASSPATH
+done
+
+export JAVA_HOME
+unset AUTO_CLASSPATH_DIR dir jar
+
+# End /etc/profile.d/openjdk.sh
+EOF
+
+ln -sfnv OpenJDK-$version-bin $PKG/opt/jdk
+}
