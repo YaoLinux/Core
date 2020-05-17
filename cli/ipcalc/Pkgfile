@@ -1,0 +1,19 @@
+makedepends=()
+
+description="IP Calculator in terminal"
+packager="YaoLinux Teams"
+maintainer="Graknu"
+url=""
+
+name=ipcalc
+version=0.41
+release=1
+
+source=(http://jodies.de/ipcalc-archive/ipcalc-0.41.tar.gz)
+
+build () {
+  cd $name-$version
+  mkdir -pv $PKG/usr/bin
+  install -D -m755 ipcalc $PKG/usr/bin/ipcalc
+}
+
