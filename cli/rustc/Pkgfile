@@ -8,6 +8,7 @@ amintainer="rems"
 
 name=rustc
 version=1.42.0
+release=2
 
 source="http://static.rust-lang.org/dist/$name-$version-src.tar.gz"
 
@@ -18,13 +19,10 @@ cat <<EOF > config.toml
 # see src/bootstrap/config.toml.example for more possible options
 [llvm]
 
-# use ninja
-ninja = true
-
 targets = "X86"
-# When compiling LLVM, the experimental targets (WebAssembly
-# and RISCV) are built by default - omit them
-experimental-targets = ""
+
+# When using system llvm prefer shared libraries
+link-shared = true
 
 [build]
 # omit HTML docs to save time and space (comment this to build them)
@@ -45,8 +43,15 @@ rpath = false
 # so disable codegen tests
 codegen-tests = false
 
-# get a trace if there is an Internal Compiler Exception
-backtrace-on-ice = true
+[target.x86_64-unknown-linux-gnu]
+# NB the output of llvm-config (i.e. help options) may be
+# dumped to the screen when config.toml is parsed.
+llvm-config = "/usr/bin/llvm-config"
+
+[target.i686-unknown-linux-gnu]
+# NB the output of llvm-config (i.e. help options) may be
+# dumped to the screen when config.toml is parsed.
+llvm-config = "/usr/bin/llvm-config"
 
 EOF
 }
@@ -56,7 +61,7 @@ build() {
 
   export RUSTFLAGS="$RUSTFLAGS -C link-args=-lffi"
 
-  python3 ./x.py build
+  python3 ./x.py build --exclude src/tools/miri
 
   export LIBSSH2_SYS_USE_PKG_CONFIG=1 
   DESTDIR=$PWD/install python3 ./x.py install
