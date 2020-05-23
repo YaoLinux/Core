@@ -8,7 +8,8 @@ maintainer="rems"
 
 name=mariadb
 version=10.4.12
-yaolinux_version=1.0-RC1
+release=2
+yaolinux_version=1.0-RC2
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
 	ftp://ftp.osuosl.org/pub/mariadb/$name-$version/source/$name-$version.tar.gz)
@@ -51,6 +52,8 @@ make DESTDIR=$PKG install
 ln -sfv $PKG/usr/include/mysql/{mariadb,mysql}_version.h
 
 install -v -dm 755 $PKG/etc/mysql
+
+mkdir -pv /srv/mysql
 
 cat > $PKG/etc/mysql/my.cnf.example << "EOF"
 # Begin /etc/mysql/my.cnf
