@@ -1,4 +1,4 @@
-makedepends=(openssl xorg-libxcursor cups alsa-lib xorg-libxext xorg-libxdamage ffmpeg xorg-libxkbfile xorg-libxinerama xorg-libxv pulseaudio xorg-libxkbfile xorg-libxrender xorg-libxfixes gstreamer-plugins-base kerberos cmake xorg-libxdamage xorg-libxfixes xorg-libxrender xmlto docbook-xsl)
+makedepends=(openssl xorg-libxcursor cups alsa-lib xorg-libxext xorg-libxdamage ffmpeg libjpeg-turbo2 pcsclite xorg-libxkbfile xorg-libxinerama xorg-libxv pulseaudio xorg-libxkbfile xorg-libxrender xorg-libxfixes gstreamer-plugins-base kerberos cmake xorg-libxdamage xorg-libxfixes xorg-libxrender xmlto docbook-xsl)
 
 description="Free RDP client"
 url="http://freerdp.sourceforge.net"
@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=freerdp
-version=2.0.0-rc4
+version=2.1.1
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -17,9 +17,13 @@ build() {
 
   mkdir build && cd build
 
-  cmake \
-	-DCMAKE_INSTALL_PREFIX=/usr \
+  cmake -DCMAKE_INSTALL_PREFIX=/usr \
 	-DCMAKE_INSTALL_LIBDIR=lib \
+        -DWITH_FFMPEG=ON \
+        -DWITH_JPEG=ON \
+        -DWITH_PCSC=ON \
+        -DWITH_SERVER=ON \
+        -DWITH_SWSCALE=ON \
 	-DWITH_PULSE=ON \
 	-DWITH_CUPS=ON \
 	-DWITH_CHANNELS=ON \
