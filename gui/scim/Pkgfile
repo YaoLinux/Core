@@ -1,0 +1,28 @@
+description="Input method user interface and development platform"
+url="https://github.com/scim-im/scim"
+
+packager="Yaolinux Team"
+maintainer="Dania"
+
+name=scim
+version=1.4.18
+
+makedepends=(gtk2 gtk3 intltool libtool)
+
+source=(https://github.com/scim-im/scim/archive/$version.tar.gz)
+
+prepare() {
+	cd $name-$version
+	./bootstrap
+}
+
+build() {
+	cd $name-$version
+	./configure \
+	        --prefix=/usr \
+	        --sysconfdir=/etc \
+	        --with-gtk-version=2 # no gtk3 support in scim-anthy
+
+	make
+	make DESTDIR=$PKG install
+}
