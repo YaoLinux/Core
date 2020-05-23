@@ -1,4 +1,4 @@
-makedepends=(glib libjpeg-turbo2 cyrus-sasl lz4 opus xorg-pixman git libcacard python2-pyparsing python2-six spice-protocol gdk-pixbuf)
+makedepends=(glib libjpeg-turbo2 cyrus-sasl lz4 opus xorg-pixman git libcacard spice-protocol gdk-pixbuf python-six python-pyparsing)
 
 description="A spice server"
 url="https://www.spice-space.org/"
@@ -7,23 +7,17 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=spice
-version=0.14.2
-release=2
+version=0.14.3
 
 source=(https://www.spice-space.org/download/releases/$name-server/$name-$version.tar.bz2)
 
 build() {
 
-cd $name-$version
+mkdir build && cd build
 
-PYTHON=python2 \
-./configure --prefix=/usr \
-            --disable-static \
-            --enable-smartcard \
-            --enable-client \
-            --disable-werror \
-            --disable-celt051
+meson -Dgstreamer=no \
+      ../$name-$version
 
-make
-make DESTDIR=$PKG install
+ninja
+DESTDIR=$PKG ninja install
 }
