@@ -1,10 +1,12 @@
 ﻿description="Microsoft Publisher file format parser library (latest snapshot)"
 url="https://wiki.documentfoundation.org/DLP/Libraries/libmspub"
+
 packager="Yaolinux Team"
 maintainer="Dania"
 
 name=libmspub
 version=0.1.4
+release=2
 
 makedepends=(boost doxygen icu librevenge)
 
