@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=qttools
-version=5.14.1
+version=5.15.1
 
 _name="${name}-everywhere-src"
 
