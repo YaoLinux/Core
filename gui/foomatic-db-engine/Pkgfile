@@ -10,7 +10,7 @@ maintainer="rems"
 
 name=foomatic-db-engine
 version=4.0
-release="`date +%Y%m%d`"
+release=20200912
 
 source=(http://www.openprinting.org/download/foomatic/$name-$version-$release.tar.gz)
 
