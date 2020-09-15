@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=modemmanager
-version=1.12.6
+version=1.14.2
 
 source=(http://www.freedesktop.org/software/ModemManager/ModemManager-$version.tar.xz)
 build() {
@@ -23,11 +23,8 @@ cd ModemManager-$version
 
 make
 make DESTDIR=$PKG install
-
-# Obsolet libs
-rm $PKG/usr/lib/ModemManager/*.la
-rm $PKG/usr/lib/libmm-glib.la
 }
+
 uptodate() {
 local url ext name
 name=ModemManager
