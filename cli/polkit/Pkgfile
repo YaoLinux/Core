@@ -1,4 +1,4 @@
-makedepends=(glib js60 gobject-introspection intltool perl-xml-parser 
+makedepends=(glib js68 gobject-introspection intltool perl-xml-parser 
              libxslt docbook-xsl systemd)
 
 description="Application development toolkit for controlling system-wide privileges"
@@ -8,8 +8,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=polkit
-version=0.116
-release=2
+version=0.117
 
 source=(http://www.freedesktop.org/software/polkit/releases/$name-$version.tar.gz)
 
