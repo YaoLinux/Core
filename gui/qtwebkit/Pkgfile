@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=qtwebkit
 version=5.212.0alpha3
-release=2
+release=3
 
 source=(https://github.com/annulen/webkit/releases/download/qtwebkit-5.212.0-alpha3/qtwebkit-5.212.0-alpha3.tar.xz
         icu65.patch)
