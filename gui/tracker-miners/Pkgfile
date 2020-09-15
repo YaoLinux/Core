@@ -10,7 +10,7 @@ run=(desktop-file-utils gtk-update-icon-cache)
 
 name=tracker-miners
 version=2.3.0
-release=2
+release=3
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:3}/$name-$version.tar.xz)
 
