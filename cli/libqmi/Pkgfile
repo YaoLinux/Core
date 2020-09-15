@@ -1,4 +1,4 @@
-makedepends=(python2 glib libgudev libmbim)
+makedepends=(glib libgudev libmbim)
 
 description="GLib-based library for talking to WWAN modems and devices (QMI) protocol."
 url="http://www.freedesktop.org/software/libqmi/"
@@ -7,8 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libqmi
-version=1.24.6
-release=2
+version=1.26.4
 
 source=(http://www.freedesktop.org/software/libqmi/libqmi-$version.tar.xz)
 
@@ -20,10 +19,8 @@ cd libqmi-$version
 
 make
 make DESTDIR=$PKG install
-
-# Obsolet lib
-rm $PKG/usr/lib/libqmi-glib.la
 }
+
 uptodate() {
 local url ext
 ext=".tar.xz"
