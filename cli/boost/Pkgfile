@@ -8,7 +8,7 @@ url="http://boost.sourceforge.net/"
 
 name=boost
 version=1.71.0
-release=2
+release=3
 
 source=(https://dl.bintray.com/boostorg/release/$version/source/${name}_${version//./_}.tar.bz2)
 
