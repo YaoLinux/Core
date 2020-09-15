@@ -7,8 +7,8 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=qtwebengine
-version=5.14.1
-release=2
+version=5.15.1
+release=3
 
 _name="${name}-everywhere-src"
 
