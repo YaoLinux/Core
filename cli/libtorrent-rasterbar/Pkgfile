@@ -8,6 +8,7 @@ packager="Yaolinux Team"
 
 name=libtorrent-rasterbar
 version=1.2.4
+release=2
 _version=${version//./_}
 
 source=(https://github.com/arvidn/libtorrent/releases/download/libtorrent-${_version}/$name-$version.tar.gz)
