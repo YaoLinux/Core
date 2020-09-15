@@ -1,10 +1,11 @@
-﻿description="a library that parses the file format of QuarkXPress documents"
+description="a library that parses the file format of QuarkXPress documents"
 url="https://wiki.documentfoundation.org/DLP/Libraries/libqxp"
 packager="Yaolinux-Team"
 maintainer="Dania"
 
 name=libqxp
 version=0.0.2
+release=2
 
 makedepends=(boost cppunit doxygen icu librevenge)
 
