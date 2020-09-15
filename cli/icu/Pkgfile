@@ -1,29 +1,27 @@
 packager="Yaolinux Team"
-maintainer="sipo"
+maintainer="rems"
 
 description="International Components for Unicode library"
 url="http://www.icu-project.org/"
 
 name=icu
-version=65.1
+version=67.1
 
 source=(https://github.com/unicode-org/icu/releases/download/release-${version//./-}/icu4c-${version//./_}-src.tgz)
 
 build() {
 
   cd icu/source
-  ./configure --prefix=/usr \
-              --sysconfdir=/etc \
-              --mandir=/usr/share/man \
-	      --sbindir=/usr/bin
+  ./configure --prefix=/usr
+
   make
 }
 
 package() {
 
   cd icu/source
-  make -j1 DESTDIR=${PKG} install
+  make DESTDIR=${PKG} install
 
   # Install license
-  install -Dm644 ${SRC}/icu/LICENSE ${PKG}/usr/share/licenses/icu/LICENSE
+install -Dm644 ../LICENSE ${PKG}/usr/share/licenses/icu/LICENSE
 }
