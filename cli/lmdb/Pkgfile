@@ -5,14 +5,14 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=lmdb
-version=0.9.24
+version=0.9.26
 
-source=(https://github.com/LMDB/lmdb/archive/LMDB_${version}.tar.gz
+source=(https://git.openldap.org/openldap/openldap/-/archive/LMDB_$version/openldap-LMDB_$version.tar.gz
         lmdb.pc)
 
 build() {
 
-cd  lmdb-LMDB_${version}/libraries/liblmdb
+cd openldap-LMDB_$version/libraries/liblmdb
 
 make prefix=/usr
 
