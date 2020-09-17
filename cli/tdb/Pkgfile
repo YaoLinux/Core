@@ -1,4 +1,4 @@
-makedepends=(python,libxslt,docbook-xsl)
+makedepends=(libxslt docbook-xsl)
 
 description="A Trivial Database similar to GDBM but allows simultaneous commits"
 url="http://tdb.samba.org/"
@@ -7,16 +7,18 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=tdb
-version=1.4.2
+version=1.4.3
 
 source=(http://samba.org/ftp/${name}/${name}-${version}.tar.gz)
 
 build() {
 
 	cd $name-$version
+
 	./configure --prefix=/usr \
-               --localstatedir=/var \
-               --sysconfdir=/etc/samba
+                    --localstatedir=/var \
+                    --sysconfdir=/etc/samba
+
 	make
 	make DESTDIR=$PKG install
 }
