@@ -1,4 +1,4 @@
-makedepends=(talloc tevent tdb popt lmdb python cmocka docbook-xsl)
+makedepends=(talloc tevent tdb popt lmdb cmocka docbook-xsl)
 
 packager="Yaolinux Team"
 maintainer="rems"
@@ -7,7 +7,8 @@ description="A schema-less, ldap like, API and database"
 url="http://ldb.samba.org/"
 
 name=ldb
-version=2.0.8
+version=2.0.12
+release=2
 
 source=(http://samba.org/ftp/${name}/${name}-${version}.tar.gz)
 
