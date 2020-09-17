@@ -1,14 +1,13 @@
 makedepends=(pcre apr-util sqlite expat)
 
 packager="Yaolinux Team"
-maintainer="sipo"
-
+maintainer="rems"
 
 description="A high performance Unix-based HTTP server"
 url="http://www.apache.org/dist/httpd"
 
 name=apache
-version=2.4.43
+version=2.4.46
 yaolinux_version=1.0-RC2
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-"${yaolinux_version}".tar.xz
