@@ -1,0 +1,12 @@
+description="D-Bus proxy"
+url="https://github.com/flatpak/xdg-dbus-proxy"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="xdg-dbus-proxy"
+version="0.1.2"
+
+source=($url/releases/download/$version/${name}-${version}.tar.xz)
+
+makedepends=(glib)
