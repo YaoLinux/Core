@@ -1,21 +1,24 @@
 makdepends=(zlib bzip2 xz libelf)
 
 packager="Yaolinux Team"
-maintainer="sipo"
+maintainer="rems"
 
 description="Utilities to handle ELF object files and DWARF debugging information"
 url="https://sourceware.org/elfutils/"
 
 name=elfutils
-version=0.177
-release=2
+version=0.181
 
 source=(https://sourceware.org/elfutils/ftp/$version/elfutils-$version.tar.bz2)
 
 build(){
 
   cd ${name}-${version}
-  ./configure --prefix=/usr --program-prefix="eu-" --enable-deterministic-archives
+  ./configure --prefix=/usr \
+              --program-prefix="eu-" \
+              --disable-debuginfod         \
+              --enable-libdebuginfod=dummy \
+              --enable-deterministic-archives
   make
 }
 
