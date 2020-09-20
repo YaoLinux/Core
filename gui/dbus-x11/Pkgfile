@@ -8,8 +8,7 @@ maintainer="rems"
 
 name=dbus-x11
 _name=dbus
-version=1.12.16
-release=3
+version=1.12.20
 
 source=(http://dbus.freedesktop.org/releases/dbus/dbus-$version.tar.gz)
 
