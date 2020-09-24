@@ -1,0 +1,23 @@
+description="Wayland server components built on KDE Frameworks"
+url="https://kde.org/plasma-desktop"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="kwayland-server"
+version="5.19.5"
+
+source=(https://download.kde.org/stable/plasma/$version/$name-$version.tar.xz)
+
+makedepends=(extra-cmake-modules plasma-wayland-protocols wayland-protocols kwayland doxygen qttools)
+
+build() {
+
+cmake -B build \
+      -DBUILD_TESTING=OFF \
+      -DBUILD_QCH=ON \
+      $name-$version
+
+cmake --build build
+DESTDIR="$PKG" cmake --install build
+}
