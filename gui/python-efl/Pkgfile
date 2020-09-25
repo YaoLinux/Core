@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="Dania"
 
 name=python-efl
-version=1.24.0
+version=1.25.0
 
 source=(http://download.enlightenment.org/rel/bindings/python/$name-$version.tar.xz)
 
