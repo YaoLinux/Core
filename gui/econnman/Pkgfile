@@ -1,4 +1,4 @@
-makedepends=(python-efl connman )
+makedepends=(python-efl connman)
 
 description="Enlightenment ConnMan user interface"
 url="https://phab.enlightenment.org/w/projects/econnman/"
@@ -10,7 +10,7 @@ set=(elementary)
 
 name=econnman
 version=1.1
-release=7
+release=8
 
 run=(python-efl dbus-python)
 
