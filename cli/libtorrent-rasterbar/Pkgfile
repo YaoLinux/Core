@@ -7,17 +7,22 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=libtorrent-rasterbar
-version=1.2.4
-release=2
-_version=${version//./_}
+version=1.2.10
 
-source=(https://github.com/arvidn/libtorrent/releases/download/libtorrent-${_version}/$name-$version.tar.gz)
+source=(https://github.com/arvidn/libtorrent/releases/download/libtorrent-${version}/$name-$version.tar.gz
+        https://github.com/arvidn/libtorrent/pull/5026.patch)
 
 build() {
+
+mv -v 5026.patch cxx14-fix.patch
 
 mkdir -v py2 py3
   cd $name-$version
 
+# https://bugs.archlinux.org/task/67754
+patch -p1 -i ../cxx14-fix.patch
+
+# Avoid depending on newer processors
 sed -i 's/-msse4.2//' configure.ac
 
 autoreconf -iv
@@ -29,7 +34,6 @@ cd ../py2
 
 _boost="boost_python"
 
-CXXFLAGS="$CXXFLAGS -std=c++11" \
   PYTHON=/usr/bin/python2 \
   ../$name-$version/configure --prefix=/usr \
                               --enable-python-binding \
@@ -47,7 +51,6 @@ cd ../py3
 
 _boost="boost_python3"
 
-CXXFLAGS="$CXXFLAGS -std=c++11" \
   PYTHON=/usr/bin/python3 \
   ../$name-$version/configure --prefix=/usr \
                                                  --enable-python-binding \
@@ -55,11 +58,9 @@ CXXFLAGS="$CXXFLAGS -std=c++11" \
                                                  --disable-static \
                                                  --with-libiconv \
                                                  --with-boost-python=$_boost
+
 make
 make DESTDIR="$PKG" install
 
 rm "$PKG"/usr/bin/{*_test,*_tester,simple_client,stats_counters}
-
-# Obsolet lib
-rm $PKG/usr/lib/libtorrent-rasterbar.la
 }
