@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-mako
-version=1.0.14
+version=1.1.3
 
 source=(https://files.pythonhosted.org/packages/source/M/Mako/Mako-$version.tar.gz)
 
