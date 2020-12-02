@@ -5,7 +5,7 @@ description="C-library for parsing configuration files"
 url="https://github.com/martinh/libconfuse"
 
 name=confuse
-version=3.2.2
+version=3.3
 release=2
 
 source=(https://github.com/martinh/libconfuse/releases/download/v$version/$name-$version.tar.gz)
