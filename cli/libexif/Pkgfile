@@ -5,13 +5,14 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libexif
-version=0.6.21
-release=2
+version=0.6.22
 
-source=( http://downloads.sourceforge.net/$name/$name-$version.tar.bz2)
+source=(https://github.com/libexif/libexif/archive/${name}-${version//./_}-release.tar.gz)
 
 build() {
-cd $name-$version
+cd ${name}-${name}-${version//./_}-release
+
+autoreconf -fiv
 
 ./configure --prefix=/usr \
             --mandir=/usr/share/man \
@@ -20,7 +21,4 @@ cd $name-$version
 
 make
 make DESTDIR=$PKG install
-
-# Obsolet lib
-rm $PKG/usr/lib/$name.la
 }
