@@ -7,7 +7,7 @@ description="A generic USB Chip/Smart Card Interface Devices driver"
 url="https://ccid.apdu.fr/"
 
 name=ccid
-version=1.4.31
+version=1.4.33
 
 source=(https://ccid.apdu.fr/files/ccid-$version.tar.bz2)
 
