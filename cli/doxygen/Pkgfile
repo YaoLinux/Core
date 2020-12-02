@@ -7,7 +7,7 @@ description="A documentation system for C++, C, Java, IDL and PHP languages"
 url="http://www.doxygen.org/"
 
 name=doxygen
-version=1.8.17
+version=1.8.20
 
 source=(https://github.com/doxygen/doxygen/archive/Release_${version//./_}.tar.gz)
 
