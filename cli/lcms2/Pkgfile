@@ -7,14 +7,10 @@ description="Small-footprint color management engine, version 2"
 url="http://www.littlecms.com/"
 
 name=lcms2
-version=2.9
-release=2
+version=2.11
 
-source=(https://downloads.sourceforge.net/sourceforge/lcms/lcms2-2.9.tar.gz)
+source=(https://downloads.sourceforge.net/sourceforge/lcms/lcms2-$version.tar.gz)
 
 package() {
   cd ${name}-${version}
-  
-  # Obsolet lib
-rm $PKG/usr/lib/liblcms2.la
 }
