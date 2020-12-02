@@ -5,9 +5,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=pm-quirks
-version=20100619
+version=0.20100619
 
-source=(http://pm-utils.freedesktop.org/releases/pm-quirks-${version}.tar.gz)
+source=(http://pm-utils.freedesktop.org/releases/${name}-20100619.tar.gz)
 
 build() {
 
