@@ -1,3 +1,5 @@
+makedepends=(cmake)
+
 description="Portable cryptographic and SSL/TLS library, aka polarssl"
 url="https://tls.mbed.org"
 
@@ -5,19 +7,35 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=mbedtls
-version=2.16.3
+version=2.16.7
 
-source=(https://tls.mbed.org/download/mbedtls-$version-gpl.tgz)
+source=(https://github.com/ARMmbed/mbedtls/archive/${name}-${version}.tar.gz)
 
 build() {
 
-cd $name-$version
+sed -i 's|//\(#define MBEDTLS_THREADING_C\)|\1|' $name-$name-$version/include/mbedtls/config.h
+sed -i 's|//\(#define MBEDTLS_THREADING_PTHREAD\)|\1|' $name-$name-$version/include/mbedtls/config.h
 
-sed -i 's|//\(#define MBEDTLS_THREADING_C\)|\1|' include/mbedtls/config.h
-sed -i 's|//\(#define MBEDTLS_THREADING_PTHREAD\)|\1|' include/mbedtls/config.h
-sed -i 's|<time.h>|"platform.h"|' include/mbedtls/ssl.h
+cmake $name-$name-$version \
+      -B build \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_VERBOSE_MAKEFILE=ON \
+      -DUSE_SHARED_MBEDTLS_LIBRARY=ON \
+      -DCMAKE_INSTALL_RPATH=
 
-LDFLAGS+=" -I../include " make SHARED=1 no_test
+make -C build
 
-make DESTDIR=$PKG/usr install
+make -C build DESTDIR="$PKG" install
+
+# rename generic utils
+  local _prog _baseprog
+  for _prog in "$PKG"/usr/bin/*; do
+	_baseprog=$(basename "$_prog")
+        mv -v "$_prog" "${_prog//$_baseprog/mbedtls_$_baseprog}"
+  done
+
+# fixup static lib permissions
+  chmod 644 "$PKG"/usr/lib/*.a
+
 }
