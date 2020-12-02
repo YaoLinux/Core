@@ -7,7 +7,7 @@ description="Security-oriented fuzzer using compile-time instrumentation and gen
 url="http://lcamtuf.coredump.cx/afl/"
 
 name=afl
-version=2.56b
+version=2.57b
 
 source=(https://github.com/google/AFL/archive/v${version}/${name}-${version}.tar.gz)
 
