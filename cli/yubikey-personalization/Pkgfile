@@ -10,12 +10,16 @@ name=yubikey-personalization
 version=1.20.0
 release=2
 
-source=(https://developers.yubico.com/${name}/Releases/ykpers-$version.tar.gz)
-
+source=(https://developers.yubico.com/${name}/Releases/ykpers-$version.tar.gz
+	09ea16d9e2030e4da6ad00c1e5147e962aa7ff84.patch
+        0001-fix-boolean-value-with-json-c-0.14.patch)
 	
 build () {
 
 	cd ykpers-$version
+
+	patch -Np1 -i ../09ea16d9e2030e4da6ad00c1e5147e962aa7ff84.patch # From Debian
+	patch -Np1 -i ../0001-fix-boolean-value-with-json-c-0.14.patch
 
 	./configure --prefix=/usr \
                     --with-udevrulesdir=/lib/udev/rules.d/
