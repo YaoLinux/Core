@@ -7,12 +7,12 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=x264
-version=20190815-2245
+version=20200819
 
-source=(http://ftp.videolan.org/pub/videolan/x264/snapshots/x264-snapshot-$version-stable.tar.bz2)
+source=(http://anduin.linuxfromscratch.org/BLFS/x264/$name-$version.tar.xz)
 
 build() {
-cd x264-snapshot-${version/./-}-stable
+cd $name-$version
 
 ./configure --prefix=/usr \
             --disable-cli \
