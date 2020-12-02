@@ -7,13 +7,15 @@ packager="Yaolinux Team"
 mainbtainer="rems"
 
 name=libraw
-version=0.19.5
+version=0.20.2
 
 source=(http://www.libraw.org/data/LibRaw-$version.tar.gz)
 
 build () {
 
 cd LibRaw-$version
+
+autoreconf -fiv
 
 ./configure --prefix=/usr \
             --enable-jpeg \
@@ -24,7 +26,4 @@ cd LibRaw-$version
 
 make
 make DESTDIR=$PKG install
-
-#Obsolet libs
-rm $PKG/usr/lib/libraw{,_r}.la
 }
