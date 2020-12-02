@@ -7,33 +7,27 @@ description="A library written in C that allows you to create and run audio and 
 url="https://github.com/BelledonneCommunications/bctoolbox"
 
 name=bctoolbox
-version=0.6.0
-release=2
+version=4.4.13
 
-source=(https://github.com/BelledonneCommunications/bctoolbox/archive/$version.tar.gz
-        https://sources.debian.org/data/main/b/bctoolbox/0.6.0-2/debian/patches/fix-ftbfs-with-mbedtls-2.7.patch
-        https://sources.debian.org/data/main/b/bctoolbox/0.6.0-2/debian/patches/deprecated_mbedtls_header)
+PKGMK_KEEP_SOURCES="no"
 
-prepare(){
+source=(https://github.com/BelledonneCommunications/bctoolbox/archive/$version.tar.gz)
 
-  cd ${name}-$version
-  patch -Np1 -i ../fix-ftbfs-with-mbedtls-2.7.patch
-  patch -Np1 -i ../deprecated_mbedtls_header
-  mkdir -pv build
+build() {
 
-}
+  mkdir build && cd build
 
-build(){
+  cmake -DCMAKE_SKIP_RPATH=ON \
+        -DENABLE_TESTS_COMPONENT=OFF \
+        -DENABLE_SHARED=ON \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        ../$name-$version
 
-  cd ${name}-$version/build
-  cmake -DCMAKE_SKIP_RPATH=ON -DENABLE_TESTS_COMPONENT=OFF \
-        -DENABLE_SHARED=ON -DCMAKE_INSTALL_PREFIX=/usr ..
   make
 }
 
 package() {
 
-  cd ${name}-$version/build
-  make DESTDIR="${PKG}" install
+  make -C build DESTDIR="${PKG}" install
 
 }
