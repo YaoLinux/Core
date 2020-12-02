@@ -9,7 +9,7 @@ url="http://www.gnome.org/~veillard/gamin"
 name=gamin
 version=0.1.10
 
-source=(http://www.gnome.org/~veillard/gamin/sources/gamin-0.1.10.tar.gz
+source=(https://download.gnome.org/sources/gamin/${version:0:3}/gamin-$version.tar.gz
 		remove_deprecated_G_CONST_RETURN.patch)
 
 prepare(){
@@ -35,5 +35,4 @@ package() {
 
   cd $name-$version
   make DESTDIR="$PKG" install
-  find $PKG/usr/lib -name "*.la" -print -delete
 }
