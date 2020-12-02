@@ -9,7 +9,7 @@ maintainer="rems"
 run=(python2-setuptools)
 
 name=python2-pillow
-version=6.1.0
+version=6.2.1
 
 _name=Pillow
 
