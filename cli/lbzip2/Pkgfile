@@ -10,22 +10,21 @@ name=lbzip2
 version=2.5
 release=2
 
-source=(http://rems.techozor.fr/sources.RC1/lbzip2-$version.tar.bz2)
+source=(https://deb.debian.org/debian/pool/main/l/lbzip2/lbzip2_${version}.orig.tar.bz2
+        lbzip2-gnulib-build-fix.patch)
 
 build(){
 
   cd $name-$version
- 
- ./build-aux/autogen.sh -r
- ./build-aux/autogen.sh
- 
+
+  patch -Np1 -i ../lbzip2-gnulib-build-fix.patch
+
   ./configure --prefix=/usr
+
   make
 }
 
 package() {
 
-  cd $name-$version
- 
-  make DESTDIR="${PKG}" install
+  make -C $name-$version DESTDIR="${PKG}" install
 }
