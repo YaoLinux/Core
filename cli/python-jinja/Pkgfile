@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-jinja
-version=2.10.1
+version=2.11.2
 
 source=(https://pypi.org/packages/source/J/Jinja2/Jinja2-$version.tar.gz)
 
