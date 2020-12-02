@@ -4,10 +4,10 @@ url="https://github.com/warner/python-ecdsa"
 maintainer="rems"
 packager="Yaolinux Team"
 
-makedepends=(python2)
+makedepends=(python2-setuptools)
 
 name=python2-ecdsa
-version=0.13.2
+version=0.16.1
 
 source=(https://files.pythonhosted.org/packages/source/e/ecdsa/ecdsa-$version.tar.gz)
 
