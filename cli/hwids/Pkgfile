@@ -7,7 +7,7 @@ description="hardware identification databases"
 url="https://github.com/gentoo/hwids"
 
 name=hwids
-version=20200204
+version=20200813.1
 
 prepare() {
 
