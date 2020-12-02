@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-xlib
-version=0.25
+version=0.28
 
 _name=$name
 
