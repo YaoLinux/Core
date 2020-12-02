@@ -5,10 +5,10 @@ description="Shared libraries for GSM 06.10 lossy speech compression"
 url="http://www.quut.com/gsm/"
 
 name=gsm
-version=1.0.18
+version=1.0.19
 release=2
 
-source=(http://www.quut.com/gsm/gsm-1.0.18.tar.gz 
+source=(http://www.quut.com/gsm/gsm-$version.tar.gz 
 		gsm.patch)
 
 prepare(){
