@@ -1,21 +1,35 @@
-makedepends=(brotli git cmake ninja)
+makedepends=(brotli git cmake)
+
 description="Web Open Font Format 2 reference implementation"
 url="https://github.com/google/woff2"
+
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=woff2
 version=1.0.2
-release=2
 
 source=()
 
+prepare() {
+
+GIT_SSL_NO_VERIFY=true git clone https://github.com/google/woff2.git woff2-$version
+
+cd $name-$version
+git checkout 1bccf208bca986e53a647dfe4811322adb06ecf8 # tags/v1.0.2
+}
 
 build() {
-  git clone https://github.com/google/woff2.git woff2
-  cd $name
-  sed -i 's/NOT BUILD_SHARED_LIBS/TRUE/' CMakeLists.txt
-  cmake -G Ninja -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_INSTALL_LIBDIR=/usr/lib .
+
+  sed -i 's/NOT BUILD_SHARED_LIBS/TRUE/' $name-$version/CMakeLists.txt
+
+  mkdir build && cd build
+
+  cmake -G Ninja \
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=/usr/lib \
+        ../$name-$version
+
   ninja 
   DESTDIR=$PKG ninja install
 }
