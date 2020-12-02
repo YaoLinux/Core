@@ -5,7 +5,7 @@ description='Utility for easily changing settings in configuration files'
 url='http://setconf.roboticoverlords.org/'
 
 name=setconf
-version=0.7.6
+version=0.7.7
 
 run=(python)
 
