@@ -6,19 +6,18 @@ packager="Yaolinux Team"
 maintainer="rems"="Chris Farrell"
 
 name=x265
-version=3.2
+version=3.4
 
-source=(https://bitbucket.org/multicoreware/x265/downloads/${name}_${version}.tar.gz)
+source=(http://anduin.linuxfromscratch.org/BLFS/x265/x265_"$version".tar.gz)
 build() {
   
-  cd ${name}_${version}/build
+   mkdir build && cd build
 
    cmake  -DCMAKE_INSTALL_PREFIX=/usr \
           -DENABLE_STATIC=OFF  \
-          ../source
+          ../${name}_${version}/source
 
    make
 
    make DESTDIR=$PKG install
-# rm $PKG/usr/lib/libx265.a
 }
