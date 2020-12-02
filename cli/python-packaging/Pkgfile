@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-packaging
-version=19.2
+version=20.4
 
 source=(https://pypi.io/packages/source/p/packaging/packaging-$version.tar.gz)
 
