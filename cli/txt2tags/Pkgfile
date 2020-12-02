@@ -5,12 +5,12 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=txt2tags
-version=3.3
+version=3.7
 
 _name=$name
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/jendrikseipp/$name/archive/$version.tar.gz)
+source=(https://files.pythonhosted.org/packages/0e/80/dc4215b549ddbe1d1251bc4cd47ad6f4a65e1f9803815997817ff297d22e/$name-$version.tar.gz)
 
 build=python3
