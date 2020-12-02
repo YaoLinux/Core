@@ -9,17 +9,24 @@ url="http://www.gtk.org/"
 PKGMK_GROUPS=(man devel doc)
 
 name=glib
-version=2.62.3
+version=2.66.3
 
-source=(http://ftp.gnome.org/pub/gnome/sources/glib/${version%.*}/$name-$version.tar.xz)
+source=(http://ftp.gnome.org/pub/gnome/sources/glib/${version%.*}/$name-$version.tar.xz
+        http://www.linuxfromscratch.org/patches/blfs/svn/$name-$version-skip_warnings-1.patch)
+
 
 prepare() {
-	mkdir -v build
+	mkdir -p build 
+	cd $name-$version
+
+patch -Np1 -i ../$name-$version-skip_warnings-1.patch
+
+if [[ -e $PKG/usr/include/glib-2.0 ]]; then mv -vf $PKG/usr/include/glib-2.0{,.old}; fi
 }
 
 build() {
-	cd build
 
+	cd build
 	meson --prefix=/usr \
               -Dman=true \
               -Dselinux=disabled \
