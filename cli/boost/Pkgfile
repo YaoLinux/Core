@@ -1,4 +1,4 @@
-makedepends=(icu python2)
+makedepends=(icu python-numpy python2-numpy)
 
 packager="Yaolinux Team"
 maintainer="sipo"
@@ -7,30 +7,44 @@ description="Boost provides a set of free peer-reviewed portable C++ source libr
 url="http://boost.sourceforge.net/"
 
 name=boost
-version=1.71.0
-release=3
+version=1.74.0
 
-source=(https://dl.bintray.com/boostorg/release/$version/source/${name}_${version//./_}.tar.bz2)
+source=(https://dl.bintray.com/boostorg/release/$version/source/${name}_${version//./_}.tar.bz2
+        fix-ftbfs-python-3.3.patch
+        fix-mpi-python37.patch
+        fix_linux_detection.patch)
 
 build() {
 
 cd ${name}_${version//./_}
 
-./bootstrap.sh --prefix=/usr --with-python=/usr/bin/python2
-./b2 stage --stagedir=$PKG/usr threading=multi link=shared
-./b2 install --prefix=$PKG/usr threading=multi link=shared --build-dir=py2build
+patch -Np1 -i ../fix-ftbfs-python-3.3.patch # From debian
+patch -Np1 -i ../fix-mpi-python37.patch # From debian
+patch -Np1 -i ../fix_linux_detection.patch # From debian
 
-sed -e '/using python/ s@;@: /usr/include/python${PYTHON_VERSION/3*/${PYTHON_VERSION}m} ;@' \
-      -i bootstrap.sh
-./bootstrap.sh --prefix=$PKG/usr --with-python=/usr/bin/python3 --with-libraries=python
+#sed -e '/using python/ s@;@: /usr/include/python${PYTHON_VERSION/3*/${PYTHON_VERSION}m} ;@' \
+#      -i bootstrap.sh
 
+./bootstrap.sh --prefix=$PKG/usr \
+               --with-python=/usr/bin/python3
+
+./b2 stage --stagedir=$PKG/usr threading=multi link=shared python=3.8 variant=release
+
+./b2 install link=shared \
+             python=3.8 \
+             variant=release \
+             debug-symbols=off \
+             threading=multi \
+             --build-dir=py3build \
+             --with-python \
+             --layout=system
+
+./bootstrap.sh --prefix=/usr --with-python=/usr/bin/python2 --with-libraries=python
+
+#./b2 stage --stagedir=$PKG/usr threading=multi link=shared
 ./b2 clean
-./b2 install \
-link=shared \
-python=3.7 \
---build-dir=py3build \
---with-python
+
+./b2 install --prefix=$PKG/usr threading=multi link=shared --build-dir=py2build --layout=system
 
 ln -svf detail/sha1.hpp $PKG/usr/include/boost/uuid/sha1.hpp
-
 }

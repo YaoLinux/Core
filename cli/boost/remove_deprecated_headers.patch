@@ -1,0 +1,261 @@
+From f364ee7be2bb1a44a2724d92f67490deaf19dc5e Mon Sep 17 00:00:00 2001
+From: Andrey Semashev <andrey.semashev@gmail.com>
+Date: Mon, 11 May 2020 19:59:23 +0300
+Subject: [PATCH 1/2] Removed usage of deprecated header
+ boost/detail/iterator.hpp.
+
+The header was deprecated in favor of <iterator>. It generates compiler
+warnings and will be removed in a future release.
+---
+ include/boost/detail/algorithm.hpp             | 2 +-
+ include/boost/graph/adjacency_iterator.hpp     | 6 +++---
+ include/boost/graph/detail/adjacency_list.hpp  | 5 +++--
+ include/boost/graph/incremental_components.hpp | 6 +++---
+ 4 files changed, 10 insertions(+), 9 deletions(-)
+
+Index: boost1.74-1.74.0/libs/graph/include/boost/detail/algorithm.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/detail/algorithm.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/detail/algorithm.hpp
+@@ -30,7 +30,7 @@
+ 
+ #ifndef BOOST_ALGORITHM_HPP
+ #define BOOST_ALGORITHM_HPP
+-#include <boost/detail/iterator.hpp>
++
+ // Algorithms on sequences
+ //
+ // The functions in this file have not yet gone through formal
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/adjacency_iterator.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/adjacency_iterator.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/adjacency_iterator.hpp
+@@ -10,7 +10,7 @@
+ #ifndef BOOST_ADJACENCY_ITERATOR_HPP
+ #define BOOST_ADJACENCY_ITERATOR_HPP
+ 
+-#include <boost/detail/iterator.hpp>
++#include <iterator>
+ #include <boost/iterator/iterator_adaptor.hpp>
+ #include <boost/graph/graph_traits.hpp>
+ 
+@@ -45,7 +45,7 @@ template < class Graph,
+ class adjacency_iterator_generator
+ {
+     typedef
+-        typename boost::detail::iterator_traits< OutEdgeIter >::difference_type
++        typename std::iterator_traits< OutEdgeIter >::difference_type
+             difference_type;
+ 
+ public:
+@@ -81,7 +81,7 @@ template < class Graph,
+ class inv_adjacency_iterator_generator
+ {
+     typedef
+-        typename boost::detail::iterator_traits< InEdgeIter >::difference_type
++        typename std::iterator_traits< InEdgeIter >::difference_type
+             difference_type;
+ 
+ public:
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/detail/adjacency_list.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/detail/adjacency_list.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/detail/adjacency_list.hpp
+@@ -21,6 +21,7 @@
+ #include <boost/range/irange.hpp>
+ #include <boost/graph/graph_traits.hpp>
+ #include <memory>
++#include <iterator>
+ #include <algorithm>
+ #include <boost/limits.hpp>
+ 
+@@ -2370,7 +2371,7 @@ namespace detail
+             typedef typename OutEdgeList::size_type degree_size_type;
+             typedef typename OutEdgeList::iterator OutEdgeIter;
+ 
+-            typedef boost::detail::iterator_traits< OutEdgeIter >
++            typedef std::iterator_traits< OutEdgeIter >
+                 OutEdgeIterTraits;
+             typedef
+                 typename OutEdgeIterTraits::iterator_category OutEdgeIterCat;
+@@ -2398,7 +2399,7 @@ namespace detail
+ 
+             // Edge Iterator
+ 
+-            typedef boost::detail::iterator_traits< EdgeIter > EdgeIterTraits;
++            typedef std::iterator_traits< EdgeIter > EdgeIterTraits;
+             typedef typename EdgeIterTraits::iterator_category EdgeIterCat;
+             typedef typename EdgeIterTraits::difference_type EdgeIterDiff;
+ 
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/incremental_components.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/incremental_components.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/incremental_components.hpp
+@@ -13,10 +13,10 @@
+ #ifndef BOOST_INCREMENTAL_COMPONENTS_HPP
+ #define BOOST_INCREMENTAL_COMPONENTS_HPP
+ 
+-#include <boost/detail/iterator.hpp>
++#include <boost/tuple/tuple.hpp>
+ #include <boost/graph/detail/incremental_components.hpp>
+ #include <boost/iterator/counting_iterator.hpp>
+-#include <boost/make_shared.hpp>
++#include <boost/smart_ptr/make_shared.hpp>
+ #include <boost/pending/disjoint_sets.hpp>
+ #include <iterator>
+ 
+@@ -69,7 +69,7 @@ void compress_components(ParentIterator
+ }
+ 
+ template < class ParentIterator >
+-typename boost::detail::iterator_traits< ParentIterator >::difference_type
++typename std::iterator_traits< ParentIterator >::difference_type
+ component_count(ParentIterator first, ParentIterator last)
+ {
+     std::ptrdiff_t count = 0;
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/bipartite.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/bipartite.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/bipartite.hpp
+@@ -20,7 +20,6 @@
+ #include <boost/graph/adjacency_list.hpp>
+ #include <boost/graph/depth_first_search.hpp>
+ #include <boost/graph/one_bit_color_map.hpp>
+-#include <boost/bind.hpp>
+ 
+ namespace boost
+ {
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/detail/sparse_ordering.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/detail/sparse_ordering.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/detail/sparse_ordering.hpp
+@@ -21,7 +21,6 @@
+ #include <boost/graph/properties.hpp>
+ #include <boost/pending/indirect_cmp.hpp>
+ #include <boost/property_map/property_map.hpp>
+-#include <boost/bind.hpp>
+ #include <boost/graph/iteration_macros.hpp>
+ #include <boost/graph/depth_first_search.hpp>
+ 
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/grid_graph.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/grid_graph.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/grid_graph.hpp
+@@ -15,7 +15,6 @@
+ #include <numeric>
+ 
+ #include <boost/array.hpp>
+-#include <boost/bind.hpp>
+ #include <boost/limits.hpp>
+ #include <boost/graph/graph_traits.hpp>
+ #include <boost/graph/properties.hpp>
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/howard_cycle_ratio.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/howard_cycle_ratio.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/howard_cycle_ratio.hpp
+@@ -10,9 +10,11 @@
+ #include <vector>
+ #include <list>
+ #include <algorithm>
++#include <functional>
+ #include <limits>
+ 
+-#include <boost/bind.hpp>
++#include <boost/bind/bind.hpp>
++#include <boost/tuple/tuple.hpp>
+ #include <boost/type_traits/is_same.hpp>
+ #include <boost/type_traits/remove_const.hpp>
+ #include <boost/concept_check.hpp>
+@@ -238,6 +240,8 @@ namespace detail
+             typename graph_traits< Graph >::out_edge_iterator oei, oeie;
+             for (boost::tie(vi, vie) = vertices(m_g); vi != vie; ++vi)
+             {
++                using namespace boost::placeholders;
++
+                 boost::tie(oei, oeie) = out_edges(*vi, m_g);
+                 typename graph_traits< Graph >::out_edge_iterator mei
+                     = std::max_element(oei, oeie,
+@@ -351,6 +355,8 @@ namespace detail
+          */
+         float_t policy_mcr()
+         {
++            using namespace boost::placeholders;
++
+             std::fill(m_col_bfs.begin(), m_col_bfs.end(), my_white);
+             color_map_t vcm_ = color_map_t(m_col_bfs.begin(), m_vim);
+             typename graph_traits< Graph >::vertex_iterator uv_itr, vie;
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/king_ordering.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/king_ordering.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/king_ordering.hpp
+@@ -11,7 +11,12 @@
+ #ifndef BOOST_GRAPH_KING_HPP
+ #define BOOST_GRAPH_KING_HPP
+ 
++#include <deque>
++#include <vector>
++#include <algorithm>
+ #include <boost/config.hpp>
++#include <boost/bind/bind.hpp>
++#include <boost/tuple/tuple.hpp>
+ #include <boost/graph/detail/sparse_ordering.hpp>
+ #include <boost/graph/graph_utility.hpp>
+ 
+@@ -44,6 +49,8 @@ namespace detail
+         template < typename Vertex, typename Graph >
+         void finish_vertex(Vertex, Graph& g)
+         {
++            using namespace boost::placeholders;
++
+             typename graph_traits< Graph >::out_edge_iterator ei, ei_end;
+             Vertex v, w;
+ 
+Index: boost1.74-1.74.0/libs/graph/include/boost/graph/transitive_closure.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/include/boost/graph/transitive_closure.hpp
++++ boost1.74-1.74.0/libs/graph/include/boost/graph/transitive_closure.hpp
+@@ -13,7 +13,7 @@
+ #include <algorithm> // for std::min and std::max
+ #include <functional>
+ #include <boost/config.hpp>
+-#include <boost/bind.hpp>
++#include <boost/bind/bind.hpp>
+ #include <boost/graph/strong_components.hpp>
+ #include <boost/graph/topological_sort.hpp>
+ #include <boost/graph/graph_concepts.hpp>
+@@ -131,6 +131,8 @@ void transitive_closure(const Graph& g,
+     std::vector< std::vector< cg_vertex > > CG_vec(num_vertices(CG));
+     for (size_type i = 0; i < num_vertices(CG); ++i)
+     {
++        using namespace boost::placeholders;
++
+         typedef typename boost::graph_traits< CG_t >::adjacency_iterator
+             cg_adj_iter;
+         std::pair< cg_adj_iter, cg_adj_iter > pr = adjacent_vertices(i, CG);
+Index: boost1.74-1.74.0/libs/graph/src/read_graphviz_new.cpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/graph/src/read_graphviz_new.cpp
++++ boost1.74-1.74.0/libs/graph/src/read_graphviz_new.cpp
+@@ -45,7 +45,6 @@
+ #include <boost/throw_exception.hpp>
+ #include <boost/regex.hpp>
+ #include <boost/function.hpp>
+-#include <boost/bind.hpp>
+ #include <boost/graph/dll_import_export.hpp>
+ #include <boost/graph/graphviz.hpp>
+ 
+Index: boost1.74-1.74.0/libs/range/include/boost/range/metafunctions.hpp
+===================================================================
+--- boost1.74-1.74.0.orig/libs/range/include/boost/range/metafunctions.hpp
++++ boost1.74-1.74.0/libs/range/include/boost/range/metafunctions.hpp
+@@ -17,10 +17,7 @@
+ 
+ #include <boost/range/iterator.hpp>
+ #include <boost/range/has_range_iterator.hpp>
+-#include <boost/range/result_iterator.hpp>
+ #include <boost/range/reverse_iterator.hpp>
+-#include <boost/range/const_reverse_iterator.hpp>
+-#include <boost/range/reverse_result_iterator.hpp>
+ #include <boost/range/value_type.hpp>
+ #include <boost/range/size_type.hpp>
+ #include <boost/range/difference_type.hpp>
