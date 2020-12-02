@@ -7,7 +7,7 @@ maintainer="Graknu"
 packager="Yaolinux Team"
 
 name=libcurl-gnutls
-version=7.69.0
+version=7.73.0
 
 source=(http://curl.haxx.se/download/curl-$version.tar.xz)
 
@@ -34,9 +34,9 @@ cd curl-$version
 
   make -C lib DESTDIR=$PKG install
 
-  mv $PKG/usr/lib/libcurl{,-gnutls}.so.4.6.0
+  mv $PKG/usr/lib/libcurl{,-gnutls}.so.4.7.0
   rm $PKG/usr/lib/libcurl.{a,so}*
-  for vers in 3 4 4.0.0 4.1.0 4.2.0 4.3.0 4.4.0 4.5.0; do
-    ln -s libcurl-gnutls.so.4.6.0 $PKG/usr/lib/libcurl-gnutls.so.$vers
+  for vers in 3 4 4.0.0 4.1.0 4.2.0 4.3.0 4.4.0 4.5.0 4.6.0; do
+    ln -s libcurl-gnutls.so.4.7.0 $PKG/usr/lib/libcurl-gnutls.so.$vers
   done
 }
