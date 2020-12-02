@@ -7,21 +7,15 @@ description="Interactive process viewer"
 url="https://hisham.hm/htop/"
 
 name=htop
-version=2.2.0
-release=2
+version=3.0.2
 
-source=(https://hisham.hm/htop/releases/$version/$name-$version.tar.gz
-		0001-fix-option-string.patch)
-
-prepare(){
-
-  cd "$name-$version"
-  patch -Np1 < ../0001-fix-option-string.patch
-}
+source=(https://github.com/htop-dev/htop/archive/${version}/${name}-${version}.tar.gz)
 
 build() {
 
   cd "$name-$version"
+
+  autoreconf -fiv
 
   ./configure --prefix=/usr \
               --sysconfdir=/etc \
