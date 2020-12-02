@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-curl
-version=7.43.0.3
+version=7.43.0.6
 _name=pycurl
 
 PKGMK_KEEP_SOURCES="no"
