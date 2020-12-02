@@ -7,11 +7,11 @@ packager="Yaolinux Team"
 makedepends=(python2-setuptools)
 
 name=python2-urwid
-version=2.0.1
+version=2.1.1
 
-source=(https://files.pythonhosted.org/packages/c7/90/415728875c230fafd13d118512bde3184d810d7bf798a631abc05fac09d0/urwid-$version.tar.gz)
+source=(https://github.com/urwid/urwid/archive/release-${version}/${name}-${version}.tar.gz)
 
 build() {
-    cd urwid-$version
+    cd urwid-release-$version
     python2 setup.py install --prefix=/usr --root=$PKG
 }
