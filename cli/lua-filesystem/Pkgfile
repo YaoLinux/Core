@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=lua-filesystem
-version=1.7.0.2
+version=1.8.0
 _version=${version//./_}
 release=2
 
