@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="sipo"
 
 name=aspell-dict
-version=0.60.7
+version=0.60.8
 
 fr_ver=0.50-3
 de_ver=0.50-2
