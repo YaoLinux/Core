@@ -7,32 +7,21 @@ description="Fraunhofer FDK AAC codec library"
 url="http://sourceforge.net/projects/opencore-amr/"
 
 name=fdk-aac
-version=2.0.0-git
-release=2
+version=2.0.1
 
-source=()
+source=(https://downloads.sourceforge.net/opencore-amr/$name-$version.tar.gz)
 
-prepare(){
 
-  git clone https://github.com/mstorsjo/fdk-aac.git $name
-  cd $name
-  ./autogen.sh
-
-}
 
 build() {
 
-  cd $name
+  cd $name-$version
 
   ./configure --prefix='/usr' \
               --disable-static
 
-make
-}
+  make
 
-package () {
-
-  cd $name
 
   make DESTDIR="${PKG}" install
   install -Dm 644 NOTICE -t "${PKG}"/usr/share/licenses/fdk-aac/
