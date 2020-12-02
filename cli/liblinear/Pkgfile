@@ -5,18 +5,34 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=liblinear
-version=230
+version=2.42
 
-source=(https://github.com/cjlin1/$name/archive/v$version/$name-$version.tar.gz)
+source=(https://www.csie.ntu.edu.tw/~cjlin/liblinear/liblinear-$version.tar.gz)
 
 build() {
 
 cd $name-$version
 
-make lib
+make lib all
+
+local _sover
+
+_sover="$(find . -maxdepth 1 -type f -regextype posix-basic -regex '.*liblinear.so.[0-9]$' | awk -F'.' '{ print $NF }')"
 
 mkdir -p $PKG/usr/{lib,include}
-install -vm644 linear.h $PKG/usr/include
-install -vm755 liblinear.so.3 $PKG/usr/lib
-ln -sfv liblinear.so.3 $PKG/usr/lib/liblinear.so
+
+# binaries
+install -D -m755 predict $pkgdir/usr/bin/liblinear-predict
+install -D -m755 train $pkgdir/usr/bin/liblinear-train
+
+# library
+install -vm755 liblinear.so.${_sover} $PKG/usr/lib
+
+pushd "${PKG}/usr/lib"
+    ln -s "liblinear.so.${_sover}" liblinear.so
+popd
+
+# header
+install -D -m644 linear.h -t "${PKG}/usr/include/liblinear"
+
 }
