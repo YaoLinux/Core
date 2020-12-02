@@ -4,7 +4,7 @@ url="https://www.unicode.org/"
 packager="Yaolinux Team"
 
 name=unicode-character-database
-version=12.1.0
+version=13.0.0
 
 PKGMK_IGNORE_UNPACK="yes"
 
