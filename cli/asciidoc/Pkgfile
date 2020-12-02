@@ -7,35 +7,27 @@ description="Text document format for short documents, articles, books and UNIX 
 url="http://www.methods.co.nz/asciidoc/"
 
 name=asciidoc
-version=8.6.10
-release=2
+version=9.0.4
 
-source=(https://github.com/$name/$name/archive/$version.tar.gz)
-
-prepare(){
-  cd ${name}-${version}
-
-  sed -i -e 's#python a2x.py#python2 a2x.py#' Makefile.in
-}
+source=(https://github.com/asciidoc/asciidoc-py3/archive/${version}/${name}-${version}.tar.gz)
 
 build() {
-  cd ${name}-${version}
+
+  cd ${name}-py3-${version}
 
   autoconf
   ./configure --prefix=/usr \
               --sysconfdir=/etc
+
+  make manpages
 }
 
 package() {
-  cd ${name}-${version}
+  cd ${name}-py3-${version}
 
   make install DESTDIR=${PKG}
   make docs DESTDIR=${PKG}
 
   install -Dm644 asciidocapi.py \
-    ${PKG}/usr/lib/python2.7/site-packages/asciidocapi.py
-
-  # fix FS#21579 - [asciidoc] 8.6.2-2 "asciidoc" table style doesn't work (mismatched python version) 
-  #sed -i 's/python/python2/' \
-    #${PKG}/etc/asciidoc/asciidoc.conf
+   "${PKG}/$(python3 -c 'import sysconfig; print(sysconfig.get_paths()["platlib"])')"/asciidocapi.py
 }
