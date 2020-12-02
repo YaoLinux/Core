@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-pytz
-version=2019.2
+version=2020.4
 
 run=(python2 python)
 
