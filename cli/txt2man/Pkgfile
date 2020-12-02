@@ -8,7 +8,7 @@ run=()
 
 
 name=txt2man
-version=1.6.0
+version=1.7.1
 release=1
 
 source=(https://github.com/mvertes/txt2man/archive/txt2man-$version.tar.gz
