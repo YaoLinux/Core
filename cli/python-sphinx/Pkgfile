@@ -1,17 +1,26 @@
 makedepends=(python-docutils python-jinja python-six python-imagesize python-snowballstemmer)
  
-description="python 2&3 documentation generator"
+description="python 3 documentation generator"
 url="http://www.sphinx-doc.org/"
 
 packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-sphinx
-version=2.2.0
+version=3.3.1
 
-source=(https://pypi.org/packages/source/S/Sphinx/Sphinx-$version.tar.gz)
+source=()
 
 run=(python python-docutils python-jinja python-six python-imagesize python-snowballstemmer)
+
+prepare() {
+if [[ ! -f /sources/Sphinx-$version.tar.gz ]]; then
+	wget https://pypi.org/packages/source/S/Sphinx/Sphinx-$version.tar.gz
+else
+	cp /sources/Sphinx-$version.tar.gz .
+fi
+tar xf Sphinx-$version.tar.gz
+}
 
 build() {
 
