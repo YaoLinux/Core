@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=ruby
-version=2.7.0
+version=2.7.2
 release=2
 
 source=(https://cache.ruby-lang.org/pub/ruby/${version:0:3}/ruby-${version}.tar.xz)
