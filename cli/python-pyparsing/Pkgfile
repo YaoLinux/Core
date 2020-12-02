@@ -5,7 +5,7 @@ maintainer="rems"
 packager="Yaolinux Team"
  
 name=python-pyparsing
-version=2.4.2
+version=2.4.7
 
 run=(python)
 
