@@ -1,1 +1,2 @@
+sbin/depmod -a
 modprobe -a 8821ce
