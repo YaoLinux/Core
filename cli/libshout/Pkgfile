@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libshout
-version=2.4.3
+version=2.4.4
 
 source=(http://downloads.xiph.org/releases/$name/$name-$version.tar.gz)
 
