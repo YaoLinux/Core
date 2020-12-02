@@ -7,7 +7,7 @@ description="Interface definitions of accessibility infrastructure"
 url="https://gitlab.gnome.org/GNOME/atk"
 
 name=atk
-version=2.34.1
+version=2.36.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version%.*}/$name-$version.tar.xz)
 
