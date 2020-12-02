@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-psutil
-version=5.6.3
+version=5.7.3
 
 source=(https://github.com/giampaolo/psutil/archive/release-$version.tar.gz)
 
