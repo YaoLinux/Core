@@ -7,10 +7,10 @@ description="Cross-platform C++ library for ASynchronous network I/O"
 url="https://think-async.com/Asio/"
 
 name=asio
-version=1.12.2
+version=1.18.0
 release=2
 
-source=(https://sourceforge.net/projects/asio/files/asio/1.12.2%20%28Stable%29/$name-$version.tar.bz2)
+source=(https://freefr.dl.sourceforge.net/project/asio/asio/1.18.0%20%28Stable%29/asio-1.18.0.tar.bz2)
 
 prepare(){
   cd ${name}-${version}/
