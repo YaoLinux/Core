@@ -7,7 +7,7 @@ description="ACPI tools, including Intel ACPI Source Language compiler"
 url="https://acpica.org"
 
 name=acpica
-version=20200214
+version=20200925
 
 unset MAKEFLAGS
 
