@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=python2-numpy
-version=1.16.4
+version=1.16.6
 release=2
 
 _name=numpy
