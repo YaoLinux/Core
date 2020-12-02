@@ -5,7 +5,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=soundtouch
-version=2.1.2
+version=2.2
 release=2
 
 source=(https://gitlab.com/$name/$name/-/archive/$version/$name-$version.tar.gz)
