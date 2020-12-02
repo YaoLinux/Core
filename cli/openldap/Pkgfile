@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=openldap
-version=2.4.49
+version=2.4.55
 
 source=(ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/$name-$version.tgz
 	 http://www.linuxfromscratch.org/patches/downloads/openldap/openldap-$version-consolidated-1.patch)
