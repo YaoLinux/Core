@@ -12,8 +12,13 @@ release=2
 
 source=(http://download.savannah.gnu.org/releases/$name/$name-$version.tar.gz)
 
-package() {
+build() {
+  cd $name-$version
 
-# Obsolet libs
-find $PKG/usr/lib -name "*.la" -print -delete
+  CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+
+  ./configure --prefix=/usr
+
+  make
+  make DESTDIR=$PKG install
 }
