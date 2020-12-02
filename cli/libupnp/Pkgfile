@@ -5,7 +5,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=libupnp
-version=1.6.25
+version=1.14.0
 
 source=(http://downloads.sourceforge.net/sourceforge/pupnp//$name-$version.tar.bz2)
 
@@ -22,7 +22,4 @@ package() {
 
 	cd $name-$version
 	make DESTDIR=$PKG install
-
-# Obsolets libs
-	rm $PKG/usr/lib/lib{ixml,threadutil,upnp}.la
 }
