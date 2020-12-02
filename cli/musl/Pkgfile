@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=musl
-version=1.2.0
+version=1.2.1
 release=3
 
 linux_version=4.19
