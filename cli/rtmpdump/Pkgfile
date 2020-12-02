@@ -7,13 +7,19 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=rtmpdump
-version=2.4
+version=2.4.r96.fa8646d
 
 source=()
 
+prepare() {
+GIT_SSL_NO_VERIFY=true git clone https://git.ffmpeg.org/rtmpdump.git $name-$version
+
+cd $name-$version
+git checkout fa8646d
+}
+
 build() {
-	git clone https://git.ffmpeg.org/rtmpdump.git $name
-	cd $name
+	cd $name-$version
 	
 	sed -e 's/^CRYPTO=OPENSSL/#CRYPTO=OPENSSL/' -e 's/#CRYPTO=GNUTLS/CRYPTO=GNUTLS/' -i Makefile -i librtmp/Makefile
 
