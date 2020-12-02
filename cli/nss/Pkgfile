@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=nss
-version=3.56
+version=3.59
 
 source=(http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${version//./_}_RTM/src/nss-$version.tar.gz \
 	  http://www.linuxfromscratch.org/patches/blfs/svn/nss-$version-standalone-1.patch)
@@ -22,6 +22,7 @@ build () {
                 NSPR_INCLUDE_DIR=/usr/include/nspr           \
                 USE_SYSTEM_ZLIB=1                            \
                 ZLIB_LIBS=-lz                                \
+                NSS_ENABLE_WERROR=0                          \
                 $([ $(uname -m) = x86_64 ] && echo USE_64=1) \
                 $([ -f /usr/include/sqlite3.h ] && echo NSS_USE_SYSTEM_SQLITE=1)
 
