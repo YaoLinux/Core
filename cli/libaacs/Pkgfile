@@ -7,7 +7,7 @@ description="Advanced Access Content System"
 url="http://www.videolan.org/developers/libaacs.html"
 
 name=libaacs
-version=0.9.0
+version=0.11.0
 release=3
 
 source=(ftp://ftp.videolan.org/pub/videolan/$name/$version/$name-$version.tar.bz2)
@@ -29,9 +29,6 @@ package() {
 
     cd $name-$version
     make DESTDIR=$PKG install
-    install -Dm644 KEYDB.cfg "$PKG/usr/share/doc/$name"/KEYDB.cfg
-    install -Dm644 README.txt "$PKG/usr/share/doc/$name"/README.txt
-
-# Obsolet lib
-    rm $PKG/usr/lib/libaacs.la
+    install -Dm644 KEYDB.cfg "$PKG/usr/share/doc/$name-$version"/KEYDB.cfg
+    install -Dm644 README.md "$PKG/usr/share/doc/$name-$version"/README.md
 }
