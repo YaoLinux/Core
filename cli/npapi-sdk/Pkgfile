@@ -7,4 +7,4 @@ maintainer="rems"
 name=npapi-sdk
 version=0.27.2
 
-source=(https://bitbucket.org/mgorny/npapi-sdk/downloads/npapi-sdk-$version.tar.bz2)
+source=(https://github.com/mgorny/${name}/releases/download/${name}-${version}/${name}-${version}.tar.bz2)
