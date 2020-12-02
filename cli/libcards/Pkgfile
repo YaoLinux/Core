@@ -7,9 +7,9 @@ maintainer="Tnut, Gianni"
 packager="Yaolinux Team"
 
 name=libcards
-version=2.4.101
+version=2.4.114
 
-source=(http://downloads.tuxfamily.org/nutyx/files/cards-$version.tar.gz)
+source=(http://download.yaolinux.org/sources/cards-$version.tar.gz)
 
 build () {
 cd cards-$version
