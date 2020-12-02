@@ -7,30 +7,38 @@ description="Lightweight C++ template library for vector and matrix math, a.k.a.
 url="http://eigen.tuxfamily.org"
 
 name=eigen3
-version=3.3.7
+_name=eigen
+version=3.3.8
 
-source=(http://bitbucket.org/eigen/eigen/get/$version.tar.bz2)
+source=(https://gitlab.com/libeigen/eigen/-/archive/$version/${_name}-$version.tar.gz
+        https://gitlab.com/libeigen/eigen/-/commit/ef3cc72c.patch
+        https://gitlab.com/libeigen/eigen/-/commit/bfdd4a99.patch)
 
-prepare(){
+prepare() {
 
-  mkdir -p build
+mv ef3cc72c.patch eigen-bug2011.patch
+mv bfdd4a99.patch eigen-paradiso.patch
+
+patch -d ${_name}-$version -p1 -i ../eigen-bug2011.patch # https://gitlab.com/libeigen/eigen/-/issues/2011
+patch -d ${_name}-$version -p1 -i ../eigen-paradiso.patch # Fix Paradiso
+
 }
 
 build() {
 
-	cd build
-	cmake ../eigen-eigen-* \
+	mkdir -p build && cd build
+
+	cmake ../${_name}-$version \
 		-DCMAKE_INSTALL_PREFIX=/usr \
                 -DCMAKE_INSTALL_LIBDIR=lib
 }
 
 package() {
 
-	cd build
-	make DESTDIR="$PKG" install
+	make -C build DESTDIR="$PKG" install
 
-	# install custom licenses
-	install -Dm644 ../eigen-eigen-*/COPYING.MPL2 "$PKG/usr/share/licenses/$name/LICENSE"
-    install -Dm644 ../eigen-eigen-*/COPYING.BSD "$PKG/usr/share/licenses/$name/LICENSE"
-    install -Dm644 ../eigen-eigen-*/COPYING.MINPACK "$PKG/usr/share/licenses/$name/LICENSE"
+# install custom licenses
+    install -Dm644 ${_name}-$version/COPYING.MPL2 "$PKG/usr/share/licenses/$name-$version/LICENSE"
+    install -Dm644 ${_name}-$version/COPYING.BSD "$PKG/usr/share/licenses/$name-$version/LICENSE"
+    install -Dm644 ${_name}-$version/COPYING.MINPACK "$PKG/usr/share/licenses/$name-$version/LICENSE"
 }
