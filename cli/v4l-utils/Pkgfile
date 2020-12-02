@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=v4l-utils
-version=1.18.0
+version=1.20.0
 
 source=(http://linuxtv.org/downloads/v4l-utils/$name-$version.tar.bz2)
 
