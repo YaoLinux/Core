@@ -50,9 +50,4 @@ cd ..
 
 make -C build-py2 DESTDIR=$PKG install
 make -C build-py3/python DESTDIR=$PKG install
-
-# Obsolet libs
-rm $PKG/usr/lib/$name.la
-rm $PKG/usr/lib/python3.7/site-packages/libxml2mod.la
-rm $PKG/usr/lib/python2.7/site-packages/libxml2mod.la
 }
