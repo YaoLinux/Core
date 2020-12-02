@@ -1,4 +1,4 @@
-makedepends=(openssl python2 c-ares icu zlib libuv)
+makedepends=(openssl python2 icu zlib libuv)
 
 description="Evented I/O for V8 JavaScript"
 url="http://nodejs.org/"
@@ -9,7 +9,7 @@ maintainer="rems"
 name=node
 alias=(nodejs node-js)
 
-version=12.18.3
+version=15.3.0
 
 source=(https://nodejs.org/dist/v$version/node-v$version.tar.xz)
 
@@ -21,7 +21,6 @@ build() {
                     --with-intl=system-icu \
                     --shared-openssl \
                     --shared-libuv \
-                    --shared-cares \
                     --shared-zlib
 
 	make
