@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="sipo"
 
 name=libftdi
-version=1.4
+version=1.5
 
 source=(http://www.intra2net.com/en/developer/libftdi/download/${name}1-$version.tar.bz2)
 
@@ -16,8 +16,8 @@ cd ${name}1-$version
   sed -i 's|LIB_SUFFIX 64|LIB_SUFFIX ""|' CMakeLists.txt
   sed -i "s|MODE=\"0664\", GROUP=\"plugdev\"|TAG+=\"uaccess\"|g" packages/99-libftdi.rules
 
-  mkdir -pv ../build
-  cd ../build
+  mkdir -pv ../build && cd ../build
+
   cmake ../${name}1-$version -DCMAKE_INSTALL_PREFIX=/usr \
                              -DFTDI_EEPROM=ON \
                              -DDOCUMENTATION=OFF \
@@ -26,6 +26,11 @@ cd ${name}1-$version
   make
   make DESTDIR=$PKG install
   
-  install -Dm644 ../${name}1-$version/packages/99-libftdi.rules $PKG/etc/udev/rules.d/69-libftdi.rules
-  cp -r ../${name}1-$version/examples/* $PKG/usr/share/libftdi/examples
+  install -Dm644 ../${name}1-$version/packages/99-libftdi.rules \
+                 $PKG/etc/udev/rules.d/69-libftdi.rules
+
+  install -vdm755 $PKG/usr/share/libftdi/examples
+
+  cp -r ../${name}1-$version/examples/* \
+        $PKG/usr/share/libftdi/examples
 }
