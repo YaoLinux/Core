@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=xapian
-version=1.4.12
+version=1.4.17
 
 source=( http://oligarchy.co.uk/xapian/$version/xapian-core-$version.tar.xz)
 build() {
@@ -18,7 +18,4 @@ cd $name-core-$version
 
 make
 make DESTDIR=$PKG install
-
-# Obsolet libs
-rm $PKG/usr/lib/libxapian.la
 }
