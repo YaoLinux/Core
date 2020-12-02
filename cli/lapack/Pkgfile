@@ -7,15 +7,16 @@ description="Linear Algebra PACKage"
 url="http://www.netlib.org/lapack"
 
 name=lapack
-version=3.8.0
-release=2
+version=3.9.0
 
-source=(http://www.netlib.org/lapack/lapack-3.8.0.tar.gz 
+source=(https://github.com/Reference-LAPACK/lapack/archive/v$version.tar.gz
         LICENSE.blas)
 
+PKGMK_KEEP_SOURCES="no"
+
 build(){
-  install -d build
-  cd build
+  install -d build && cd build
+
   cmake ../${name}-${version} \
     -DCMAKE_BUILD_TYPE=Release \
     -DCMAKE_SKIP_RPATH=ON \
@@ -44,16 +45,16 @@ package() {
   rm -r "$PKG"/usr/lib/cmake/{cblas*,lapacke*}
   rm -r "$PKG"/usr/include
 
-  cd $SRC/build/BLAS
+  cd BLAS
   make DESTDIR="$PKG" install
   
   install -m755 -d "${PKG}/usr/share/licenses/blas"
   install -m644 "${SRC}/LICENSE.blas" \
     "${PKG}/usr/share/licenses/blas/"
 
-  cd $SRC/build/CBLAS
+  cd ../CBLAS
   make DESTDIR="$PKG" install
 
-  cd $SRC/build/LAPACKE
+  cd ../LAPACKE
   make DESTDIR="$PKG" install
 }
