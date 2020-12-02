@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python2-eyed3
-version=0.8
+version=0.9.5
 
 source=(http://eyed3.nicfit.net/releases/eyeD3-$version.tar.gz)
 
