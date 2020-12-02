@@ -4,8 +4,8 @@ url="https://asciidoctor.org"
 packager="Yaolinux Team"
 maintainer="rems"
 
-name="asciidoctor"
-version="2.0.10"
+name=asciidoctor
+version=2.0.11
 
 PKGMK_IGNORE_UNPACK='yes'
 
