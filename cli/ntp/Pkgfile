@@ -9,8 +9,8 @@ maintainer="rems"
 run=(wget)
 
 name=ntp
-version=4.2.8p13
-yaolinux_version=1.0-RC1
+version=4.2.8p15
+yaolinux_version=1.0-RC2
 
 source=(http://downloads.yaolinux.org/files/yaolinux-${yaolinux_version}.tar.xz
 	https://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/$name-4.2/$name-$version.tar.gz)
