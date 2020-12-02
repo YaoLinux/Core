@@ -7,15 +7,8 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=yaml
-version=0.2.2
+version=0.2.5
 
 source=(http://pyyaml.org/download/libyaml/yaml-$version.tar.gz)
 
 build=autotools
-
-package() {
-cd yaml-$version
-
-# Obsolet libs
-rm $PKG/usr/lib/libyaml.la
-} 
