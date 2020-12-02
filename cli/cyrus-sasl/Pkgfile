@@ -8,11 +8,11 @@ url="http://cyrusimap.org/"
 
 name=cyrus-sasl
 version=2.1.27
-yaolinux_version=1.0-RC1
+yaolinux_version=1.0-RC2
 
 
-source=(https://www.cyrusimap.org/releases/cyrus-sasl-${version}.tar.gz
-        http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
+source=(https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-${version}/cyrus-sasl-${version}.tar.gz
+        http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
 
 
 build() {
@@ -33,16 +33,6 @@ package() {
 	
 	make DESTDIR=$PKG install
 	install -v -m700 -d $PKG/var/lib/sasl $PKG/var/run/saslauthd
-
-# Obsolets libs
-rm $PKG/usr/lib/libsasl2.la
-rm $PKG/usr/lib/sasl2/libanonymous.la
-rm $PKG/usr/lib/sasl2/libcrammd5.la
-rm $PKG/usr/lib/sasl2/libdigestmd5.la
-rm $PKG/usr/lib/sasl2/libotp.la
-rm $PKG/usr/lib/sasl2/libplain.la
-rm $PKG/usr/lib/sasl2/libsasldb.la
-rm $PKG/usr/lib/sasl2/libscram.la
 
 # Service
 cd $SRC/yaolinux-${yaolinux_version}
