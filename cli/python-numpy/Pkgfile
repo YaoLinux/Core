@@ -7,7 +7,7 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=python-numpy
-version=1.17.2
+version=1.19.4
 
 _name=numpy
 
