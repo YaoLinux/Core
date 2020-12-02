@@ -7,7 +7,7 @@ description="JS is Mozilla's JavaScript engine written in C."
 url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
 
 name=js68
-version=68.5.0
+version=68.12.0
 
 source=(https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz)
 
