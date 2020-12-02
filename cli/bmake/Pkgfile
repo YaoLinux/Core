@@ -5,7 +5,7 @@ description="Portable version of the NetBSD make build tool"
 url="http://www.crufty.net/help/sjg/bmake.html"
 
 name=bmake
-version=20181221
+version=20200902
 release=2
 
 source=(http://www.crufty.net/ftp/pub/sjg/bmake-$version.tar.gz)
