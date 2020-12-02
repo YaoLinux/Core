@@ -14,7 +14,7 @@ PKGMK_KEEP_SOURCES="no"
 source=(0001-fix-for-a-bug-in-gcc-that-won-t-let-rapidxml-compile.patch)
 
 prepare () {
-git clone https://github.com/hydranix/RapidXml.git $name-$version
+GIT_SSL_NO_VERIFY=true git clone https://github.com/hydranix/RapidXml.git $name-$version
 }
 
 build() {
