@@ -4,11 +4,11 @@ url="https://github.com/KhronosGroup/glslang"
 packager="Yaolinux Team"
 maintainer="rems"
 
-name="glslang"
-version="8.13.3559"
-release=2
+name=glslang
+version=11.0.0
+_version=10-$version
 
-source=(https://github.com/KhronosGroup/glslang/archive/8.13.3559.tar.gz)
+source=(https://github.com/KhronosGroup/glslang/archive/${_version}.tar.gz)
 
 makedepends=(spirv-tools)
 
@@ -22,7 +22,7 @@ cmake -GNinja \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_SHARED_LIBS=ON \
-      ../$name-$version
+      ../$name-${_version}
 
 ninja
 
@@ -34,7 +34,7 @@ cmake -GNinja \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_BUILD_TYPE=Release \
       -DBUILD_SHARED_LIBS=OFF \
-      ../$name-$version
+      ../$name-${_version}
 
 ninja
 
@@ -42,6 +42,8 @@ popd
 
 DESTDIR="${PKG}" ninja -C build-shared install
 DESTDIR="${PKG}" ninja -C build-static install
+
+install -Dm644 $name-${_version}/LICENSE.txt "${PKG}"/usr/share/licenses/${name}-$version/LICENSE
 
 cd "${PKG}"/usr/lib
 
