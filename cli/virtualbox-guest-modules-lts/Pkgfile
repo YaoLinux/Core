@@ -1,3 +1,5 @@
+makedepends=(lbzip2 p7zip)
+
 description="Host modules for virtualbox"
 url="https://virtualbox.org/"
 
@@ -5,10 +7,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="virtualbox-guest-modules-lts"
-version="6.1.4"
-release=2
+version="6.1.16"
 
-_release=136177
+_release=140961
 
 PKGMK_IGNORE_UNPACK="yes"
 
@@ -26,7 +27,7 @@ sh VirtualBox-$version-${_release}-Linux_amd64.run --noexec --keep --nox11
 
 cd install
 
-tar xaf VirtualBox.tar.bz2
+tar xf VirtualBox.tar.bz2
 
 cd additions
 
@@ -36,7 +37,7 @@ sh VBoxLinuxAdditions.run --keep --noexec --nox11
 
 cd install
 
-tar xaf VBoxGuestAdditions-amd64.tar.bz2
+tar xf VBoxGuestAdditions-amd64.tar.bz2
 
 cd src/vboxguest-$version/
 
