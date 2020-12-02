@@ -7,6 +7,6 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=yelp-tools
-version=3.32.2
+version=3.38.0
 
 source=(http://download.gnome.org/sources/$name/${version:0:4}/$name-$version.tar.xz)
