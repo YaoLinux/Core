@@ -6,13 +6,18 @@ packager="Yaolinux Team"
 name=sharutils
 version=4.15.2
 
-source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
+source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz
+        01-fix-heap-buffer-overflow-cve-2018-1000097.patch
+        02-fix-ftbfs-with-glibc-2.28.patch
+        03-fix-ftbfs-with-gcc-10.patch)
 
 prepare() {
 cd $name-$version
 
-sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
-echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
+for i in ../*.patch
+	do
+		patch -Np1 -i $i
+done
 }
 
 uptodate() {
