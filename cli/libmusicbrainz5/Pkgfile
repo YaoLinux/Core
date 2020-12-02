@@ -9,17 +9,23 @@ maintainer="rems"
 name=libmusicbrainz5
 version=5.1.0
 
-source=(https://github.com/metabrainz/libmusicbrainz/releases/download/release-$version/libmusicbrainz-$version.tar.gz)
+source=(https://github.com/metabrainz/libmusicbrainz/releases/download/release-$version/libmusicbrainz-$version.tar.gz
+        16.patch)
+
+prepare() {
+cd libmusicbrainz-$version
+
+# https://github.com/metabrainz/libmusicbrainz/pull/16
+patch -Np1 -i ../16.patch
+}
 
 build() {
 
-mkdir -pv build
-cd build
+mkdir -pv build && cd build
 
 cmake ../libmusicbrainz-$version \
       -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-      -DBUILD_SHARED_LIBS:BOOL=ON \
-      -DBUILD_STATIC_LIBS:BOOL=OFF
+      -DBUILD_SHARED_LIBS:BOOL=ON
 
 make
 
