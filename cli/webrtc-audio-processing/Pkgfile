@@ -10,20 +10,20 @@ version=0.3.1
 source=()
 
 prepare () {
-git clone https://anongit.freedesktop.org/git/pulseaudio/webrtc-audio-processing $name
-cd $name
-git checkout e882a5442ac22c93648e12837248d651d18b9247
+GIT_SSL_NO_VERIFY=true git clone https://anongit.freedesktop.org/git/pulseaudio/webrtc-audio-processing $name-$version
+
+cd $name-$version
+git checkout e882a5442ac22c93648e12837248d651d18b9247 # tags/v0.3.1^0
 }
 
 build() {
-  cd $name
+  cd $name-$version
+
 NOCONFIGURE=1 ./autogen.sh
 
-./configure --prefix=/usr --disable-static
+./configure --prefix=/usr \
+            --disable-static
 
   make
   make DESTDIR=$PKG install
- 
-# Obsolet lib
-rm $PKG/usr/lib/libwebrtc_audio_processing.la
 }
