@@ -4,7 +4,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=wavpack
-version=5.2.0
+version=5.3.0
 release=2
 
 source=(http://www.wavpack.com/$name-$version.tar.bz2)
