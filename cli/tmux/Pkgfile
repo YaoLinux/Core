@@ -4,15 +4,11 @@ description="A terminal multiplexer"
 url="https://tmux.github.io"
 packager="Yaolinux Team"
 name=tmux
-version=2.9a
+version=3.1_c
 
-source=(https://github.com/tmux/tmux/releases/download/$version/$name-$version.tar.gz
-        0001-fix-sizing.patch
-        0002-xterm-348.patch)
+source=(https://github.com/tmux/tmux/releases/download/${version/_/}/tmux-${version/_/}.tar.gz)
 
 prepare() {
-cd $name-$version
 
-patch -Np1 < ../0001-fix-sizing.patch
-patch -Np1 < ../0002-xterm-348.patch
+mv tmux-${version/_/} tmux-${version}
 }
