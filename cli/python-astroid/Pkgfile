@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-astroid
-version=2.2.5
+version=2.4.2
 
 source=(https://pypi.python.org/packages/source/a/astroid/astroid-${version}.tar.gz)
 
