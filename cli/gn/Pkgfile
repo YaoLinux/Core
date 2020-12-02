@@ -7,7 +7,7 @@ description="Meta-build system that generates build files for Ninja"
 url="https://gn.googlesource.com/gn/+/master/README.md"
 
 name=gn
-version=0.1576.81
+version=0.1819.e327ffdc
 
 source=()
 
