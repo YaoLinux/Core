@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python2-pip
-version=19.2.3
+version=20.2
 
 run=(python2 python2-setuptools)
 
