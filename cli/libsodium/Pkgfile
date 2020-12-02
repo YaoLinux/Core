@@ -7,10 +7,12 @@ maintainer="rems"
 name=libsodium
 version=1.0.18
 
-source=(https://download.libsodium.org/libsodium/releases/libsodium-$version.tar.gz)
+source=()
 
-package() {
-rm $PKG/usr/lib/libsodium.la
+prepare() {
+wget --secure-protocol=TLSv1_2 https://download.libsodium.org/libsodium/releases/libsodium-$version.tar.gz
+
+tar xf libsodium-$version.tar.gz
 }
 
 uptodate() {
