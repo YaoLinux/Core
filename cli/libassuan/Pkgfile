@@ -7,7 +7,7 @@ description="IPC library used by some GnuPG related software"
 url="https://www.gnupg.org/related_software/libassuan/"
 
 name=libassuan
-version=2.5.3
+version=2.5.4
 
 source=(https://gnupg.org/ftp/gcrypt/libassuan/$name-$version.tar.bz2)
 
