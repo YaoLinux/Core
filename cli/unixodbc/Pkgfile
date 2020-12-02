@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=unixodbc
-version=2.3.7
+version=2.3.9
 
 source=(ftp://ftp.unixodbc.org/pub/unixODBC/unixODBC-$version.tar.gz)
 
