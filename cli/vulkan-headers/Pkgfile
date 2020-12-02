@@ -5,7 +5,7 @@ url="https://www.khronos.org/vulkan/"
 packager="Yaolinux Team"
 
 name=vulkan-headers
-version=1.2.133
+version=1.2.159
 
 PKGMK_KEEP_SOURCES="no"
 
