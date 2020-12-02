@@ -7,17 +7,22 @@ description="A low-latency audio server"
 url="http://jackaudio.org/"
 
 name=jack
-_longname=jack-audio-connection-kit
+_longname=jackd1
 version=0.125.0
 release=2
 
-source=(http://jackaudio.org/downloads/${_longname}-$version.tar.gz
-        jack-99-audio.conf
+PKGMK_KEEP_SOURCES="no"
+
+source=(http://deb.debian.org/debian/pool/main/j/jack-audio-connection-kit/jack-audio-connection-kit_"$version".orig.tar.xz
+	jack-99-audio.conf
         jack-40-hpet-permissions.rules)
 
 build() {
 
 	cd ${_longname}-$version
+
+	autoreconf -fiv
+
         ./configure --prefix=/usr \
 	            --libdir=/usr/lib
 		    
@@ -34,7 +39,4 @@ package() {
 
 	install -Dm644 $SRC/jack-40-hpet-permissions.rules \
 	$PKG/etc/udev/rules.d/40-hpet-permissions.rules
-
-# Obsolet libs
-	find $PKG/usr/lib -name "*.la" -print -delete
 }
