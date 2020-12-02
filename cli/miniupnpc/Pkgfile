@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=miniupnpc
-version=2.1
+version=2.1.20191224
 
 source=(http://miniupnp.free.fr/files/$name-$version.tar.gz)
 
