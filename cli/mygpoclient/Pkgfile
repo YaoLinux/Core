@@ -1,5 +1,3 @@
-makedepends=(python2)
-
 description="Podcast subscription sync tool"
 url="http://thp.io/2010/mygpoclient"
 
@@ -10,11 +8,11 @@ PKGMK_KEEP_SOURCES="no"
 
 name=mygpoclient
 version=1.8
-release=2
+release=5
 
 source=(https://github.com/gpodder/$name/archive/$version.tar.gz)
 
 build() {
   cd $name-$version
-  python2 setup.py install --root=$PKG
+  python3 setup.py install --root=$PKG --optimize=1 
 }
