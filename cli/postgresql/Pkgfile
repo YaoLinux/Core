@@ -9,10 +9,10 @@ maintainer="rems"
 PKGMK_GROUPS=(lib doc man devel service)
 
 name=postgresql
-version=12.2
-yaolinux_version=1.0-RC1
+version=12.4
+yaolinux_version=1.0-RC2
 
-source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
+source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
 	http://ftp.postgresql.org/pub/source/v$version/$name-$version.tar.bz2)
 
 build() {
@@ -37,6 +37,6 @@ make DESTDIR=$PKG install
 make DESTDIR=$PKG install-docs
 
 # service
-cd $SRC/yaolinux-${yaolinux_version}
+cd ../yaolinux-${yaolinux_version}
 make DESTDIR=$PKG install-postgresql
 }
