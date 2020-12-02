@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="Greg"
 
 name=c-ares
-version=1.15.0
+version=1.16.1
 
 source=(https://c-ares.haxx.se/download/$name-$version.tar.gz)
 
