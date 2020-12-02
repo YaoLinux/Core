@@ -9,10 +9,17 @@ name=minicom
 version=2.7.1
 release=1
 
-source=(http://ftp.debian.org/debian/pool/main/m/minicom/minicom_$version.orig.tar.gz)
+source=(http://ftp.debian.org/debian/pool/main/m/minicom/minicom_$version.orig.tar.gz
+        minicom-2.7.1-gcc-10.patch)
 
 build () {
   cd $name-$version
+
+for i in ../*.patch
+	do
+		patch -Np1 -i $i
+done
+
   ./configure --prefix=/usr \
               --sysconfdir=/etc
   make
