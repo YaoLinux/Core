@@ -5,9 +5,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=live
-version=2019.09.30
+version=2019.11.06
 
-source=(http://www.live555.com/liveMedia/public/${name}.$version.tar.gz)
+source=(https://download.videolan.org/contrib/live555/live.${version}.tar.gz)
 
 build() {
 cd live
