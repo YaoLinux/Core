@@ -7,7 +7,7 @@ description="A garbage collector for C and C++"
 url="http://www.hboehm.info/gc/"
 
 name=gc
-version=7.6.8
+version=8.0.4
 release=2
 
 source=(https://github.com/ivmai/bdwgc/releases/download/v$version/$name-$version.tar.gz)
