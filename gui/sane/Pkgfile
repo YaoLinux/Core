@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=sane
-version=1.0.28
+version=1.0.31
 release=2
 
 source=(network.patch

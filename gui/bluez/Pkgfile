@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=bluez
-version=5.52
+version=5.55
 release=2
 
 source=(http://www.kernel.org/pub/linux/bluetooth/$name-$version.tar.xz)

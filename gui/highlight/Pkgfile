@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=highlight
-version=3.54
+version=3.59
 
 source=(http://www.andre-simon.de/zip/$name-$version.tar.bz2)
 

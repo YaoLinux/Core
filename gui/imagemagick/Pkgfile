@@ -6,8 +6,8 @@ url="http://www.imagemagick.org/"
 packager="Yaolinux Team"
 
 name=imagemagick
-version=7.0.8.68
-_version=7.0.8-68
+version=7.0.10.45
+_version=7.0.10.45
 release=2
 
 source=(ftp://ftp.imagemagick.org/pub/ImageMagick/releases/ImageMagick-${_version}.tar.xz)

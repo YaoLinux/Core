@@ -6,7 +6,7 @@ url="https://01.org/linuxmedia/vaapi"
 packager="Yaolinux Team"
 
 name=libvdpau
-version=1.3
+version=1.4
 
 source=(https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/$version/libvdpau-$version.tar.bz2)
 

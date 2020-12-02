@@ -9,7 +9,7 @@ maintainer="rems"
 run=(librsvg hicolor-icon-theme gtk-update-icon-cache)
 
 name=adwaita-icon-theme
-version=3.36.0
+version=3.38.0
 
 source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:4}/$name-$version.tar.xz)
 

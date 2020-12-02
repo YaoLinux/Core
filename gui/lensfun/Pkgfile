@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=lensfun
-version=0.3.2
+version=0.3.95
 
 source=(http://sourceforge.net/projects/$name/files/$version/$name-$version.tar.gz)
 

@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libvncserver
-version=0.9.12
+version=0.9.13
 
 source=(https://github.com/LibVNC/libvncserver/archive/LibVNCServer-${version}.tar.gz)
 

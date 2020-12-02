@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="Dania"
 
 name=libcdr
-version=0.1.5
+version=0.1.6
 release=2
 
 makedepends=(boost cppunit doxygen icu lcms2 librevenge)

@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=telepathy-idle
-version=0.2.0
+version=0.2.2
 release=2
 
 source=(http://${name%-*}.freedesktop.org/releases/$name/$name-$version.tar.gz)

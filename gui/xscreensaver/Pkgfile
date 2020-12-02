@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=xscreensaver
-version=5.43
+version=5.44
 
 source=(http://www.jwz.org/xscreensaver/$name-$version.tar.gz)
 

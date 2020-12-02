@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
  
 name=python-pbr
-version=5.4.4
+version=5.5.1
 _name=pbr
 
 PKGMK_KEEP_SOURCES="no"

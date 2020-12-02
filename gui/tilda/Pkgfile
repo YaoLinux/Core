@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=tilda
-version=1.4.1
+version=1.5.2
 
 source=(https://github.com/lanoxx/tilda/archive/$name-$version.tar.gz)
 

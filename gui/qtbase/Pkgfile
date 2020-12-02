@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=qtbase
-version=5.15.1
+version=5.15.2
 release=3
 
 _name="${name}-everywhere-src"

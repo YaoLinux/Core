@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=xorg-twm
 _name=twm
-version=1.0.10
+version=1.0.11
 
 source=(system-twm-01.patch
 	http://ftp.x.org/pub/individual//app/${_name}-$version.tar.bz2)

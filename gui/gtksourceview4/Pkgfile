@@ -6,7 +6,7 @@ url="http://mail.gnome.org/mailman/listinfo/gnome-devtools"
 packager="Yaolinux Team"
 
 name=gtksourceview4
-version=4.4.0
+version=4.8.0
 
 source=(http://download.gnome.org/sources/gtksourceview/${version%.*}/gtksourceview-$version.tar.xz)
 

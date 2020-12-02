@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=farstream
-version=0.2.8
+version=0.2.9
 release=4
 
 source=( http://freedesktop.org/software/farstream/releases/farstream/farstream-$version.tar.gz)

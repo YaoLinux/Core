@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="Dania"
 
 name=sddm
-version=0.18.1
+version=0.19.0
 release=3
 
 run=(dejavu-ttf xorg-server xorg-xinit)

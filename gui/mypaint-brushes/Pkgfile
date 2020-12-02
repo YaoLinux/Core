@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=mypaint-brushes
-version=2.0.1
+version=2.0.2
 
 source=(https://github.com/mypaint/mypaint-brushes/archive/v${version}/${name}-${version}.tar.gz)
 

@@ -9,7 +9,7 @@ maintainer="rems"
 alias=(NetworkManager)
 
 name=networkmanager
-version=1.22.8
+version=1.26.4
 
 _name=NetworkManager
 

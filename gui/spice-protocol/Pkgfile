@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=spice-protocol
-version=0.14.1
+version=0.14.2
 
 source=(https://www.spice-space.org/download/releases/$name-$version.tar.bz2)
 

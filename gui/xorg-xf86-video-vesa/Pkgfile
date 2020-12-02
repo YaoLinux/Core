@@ -5,7 +5,7 @@ description="Xorg vesa video driver."
 packager="Yaolinux Team"
 
 name=xorg-xf86-video-vesa
-version=2.4.0
+version=2.5.0
 release=3
 
 _name=${name/xorg-/}

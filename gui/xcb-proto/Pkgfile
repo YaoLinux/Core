@@ -9,7 +9,7 @@ maintainer="rems"
 PKGMK_GROUPS=()
 
 name=xcb-proto
-version=1.13
+version=1.14.1
 _name=$name
 
 source=(http://xcb.freedesktop.org/dist/xcb-proto-$version.tar.bz2)

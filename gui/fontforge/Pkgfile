@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=fontforge
-version=20190801
+version=20200314
 release=4
 
 run=(shared-mime-info)

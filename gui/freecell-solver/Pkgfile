@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=freecell-solver
-version=5.14.0
+version=6.2.0
 
 source=(https://fc-solve.shlomifish.org/downloads/fc-solve/$name-$version.tar.xz)
 

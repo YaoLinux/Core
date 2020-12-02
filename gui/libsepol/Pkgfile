@@ -4,7 +4,7 @@ url="http://userspace.selinuxproject.org"
 packager="Yaolinux Team"
 
 name=libsepol
-version=2.9
+version=3.1
 
 source=(https://github.com/SELinuxProject/selinux/releases/download/20190315/$name-$version.tar.gz)
 

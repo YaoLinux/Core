@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=uhttpmock
-version=0.5.1
+version=0.5.3
 release=5
 
 source=(http://tecnocode.co.uk/downloads/$name/$name-$version.tar.xz)

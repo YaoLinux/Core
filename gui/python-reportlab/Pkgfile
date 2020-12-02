@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-reportlab
-version=3.5.32
+version=3.5.56
 
 source=(https://files.pythonhosted.org/packages/source/r/reportlab/reportlab-${version}.tar.gz)
 

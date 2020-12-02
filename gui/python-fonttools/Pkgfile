@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-fonttools
-version=4.0.2
+version=4.16.1
 _name=fonttools
 
 PKGMK_KEEP_SOURCES="no"

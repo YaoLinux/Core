@@ -9,7 +9,7 @@ maintainer="rems"
 
 name=xorg-libdrm
 _name=libdrm
-version=2.4.100
+version=2.4.103
 
 alias=(libdrm)
 

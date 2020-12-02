@@ -6,7 +6,7 @@ url="http://www.mono-project.com/"
 packager="Yaolinux Team"
  
 name=mono
-version=6.0.0.334
+version=6.10.0.104
 release=2
 
 source=(https://download.mono-project.com/sources/mono/mono-$version.tar.xz

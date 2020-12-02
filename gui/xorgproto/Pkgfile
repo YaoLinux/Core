@@ -7,7 +7,7 @@ maintainer="rems"
 PKGMK_GROUPS=(doc man)
 
 name=xorgproto
-version=2019.2
+version=2020.1
 _name=$name
 
 source=(http://ftp.x.org/pub/individual/proto/$name-$version.tar.bz2)

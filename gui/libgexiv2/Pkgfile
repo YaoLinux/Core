@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libgexiv2
-version=0.12.0
+version=0.12.1
 
 source=(http://ftp.gnome.org/pub/gnome/sources/${name/lib/}/${version%.*}/${name/lib/}-$version.tar.xz)
 
