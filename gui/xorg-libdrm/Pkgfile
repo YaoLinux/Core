@@ -13,7 +13,7 @@ version=2.4.103
 
 alias=(libdrm)
 
-source=(http://dri.freedesktop.org/${_name}/${_name}-$version.tar.bz2)
+source=(https://dri.freedesktop.org/${_name}/${_name}-$version.tar.xz)
 
 build() {
 
