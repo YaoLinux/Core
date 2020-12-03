@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="libappimage"
-version="1.0.2"
+version=1.0.3
 
 PKGMK_KEEP_SOURCES="no"
 
