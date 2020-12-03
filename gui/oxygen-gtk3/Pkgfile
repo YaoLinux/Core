@@ -7,8 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=oxygen-gtk3
-version=1.4.1
-release=2
+version=1.4.6
 
 source=(http://download.kde.org/stable/$name/$version/src/$name-$version.tar.bz2)
 
