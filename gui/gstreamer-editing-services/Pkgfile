@@ -9,7 +9,7 @@ maintainer="rems"
 name=gstreamer-editing-services
 version=1.18.1
 
-source=(https://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
+source=(https://gstreamer.freedesktop.org/src/$name/gst-editing-services-$version.tar.xz)
 
 build() {
 cd $name-$version
