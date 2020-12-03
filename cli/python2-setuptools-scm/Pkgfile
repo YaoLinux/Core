@@ -1,0 +1,30 @@
+makedepends=(python2-setuptools)
+
+description="Handles managing your python package versions in scm metadata."
+url="https://github.com/pypa/setuptools_scm"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+run=(python2-setuptools)
+
+name=python2-setuptools-scm
+version=4.1.2
+
+PKGMK_KEEP_SOURCES=no
+
+source=(https://pypi.io/packages/source/s/setuptools_scm/setuptools_scm-$version.tar.gz)
+        
+build() {
+
+    sed -i '/jaraco.windows/d' setuptools_scm-$version/{setup.cfg,src/setuptools_scm.egg-info/requires.txt}
+
+    cd setuptools_scm-$version
+
+    python2 setup.py build
+    python2 setup.py egg_info
+
+    python2 setup.py install --root=$PKG
+
+    install -Dm644 LICENSE "$PKG"/usr/share/licenses/$name-$version/LICENSE
+}
