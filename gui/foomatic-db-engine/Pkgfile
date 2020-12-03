@@ -10,9 +10,10 @@ maintainer="rems"
 
 name=foomatic-db-engine
 version=4.0
-release=20200912
 
-source=(http://www.openprinting.org/download/foomatic/$name-$version-$release.tar.gz)
+_release=current
+
+source=(http://www.openprinting.org/download/foomatic/$name-$version-${_release}.tar.gz)
 
 build() {
     cd $name-*
