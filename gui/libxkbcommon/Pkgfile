@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libxkbcommon
-version=0.10.0
+version=1.0.3
 
 source=(http://xkbcommon.org/download/libxkbcommon-$version.tar.xz)
 
