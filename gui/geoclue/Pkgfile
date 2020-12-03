@@ -7,27 +7,21 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=geoclue
-version=0.12.0
-release=4
+version=2.5.6
 
-source=(https://launchpad.net/geoclue/trunk/0.12/+download/geoclue-0.12.0.tar.gz)
+source=(https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/$version/geoclue-$version.tar.bz2)
 
 build() {
-cd $name-$version
 
-sed -i "s@ -Werror@@" configure
+mkdir build && cd build
 
-sed -i "s@libnm_glib@libnm-glib@g" configure
-sed -i "s@geoclue/libgeoclue.la@& -lgthread-2.0@g" \
-providers/skyhook/Makefile.in
+meson --prefix=/usr \
+      -Dgtk-doc=false \
+      ../$name-$version
 
-./configure --prefix=/usr \
-            --mandir=/usr/share/man \
-            --infodir=/usr/share/info \
-            --libexecdir=/usr/lib/geoclue
+ninja
 
-make
-make DESTDIR=$PKG install
+DESTDIR=$PKG ninja install
 
 # In conflicts
 rm $PKG/usr/share/gtk-doc/html/geoclue/home.png                                                                              
