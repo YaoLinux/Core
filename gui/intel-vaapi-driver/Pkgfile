@@ -7,18 +7,13 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=intel-vaapi-driver
-version=2.3.0
-release=2
+version=2.4.1
 
-source=(https://github.com/01org/$name/releases/download/$version/$name-$version.tar.bz2
-        http://rems.6admin.net/sources/427.patch)
+source=(https://github.com/01org/$name/releases/download/$version/$name-$version.tar.bz2)
 
 build() {
 
 cd $name-$version
-
-# https://github.com/intel/intel-vaapi-driver/issues/419
-  patch -Np1 -i ../427.patch
 
 ./configure --prefix=/usr \
             --sysconfdir=/etc \
