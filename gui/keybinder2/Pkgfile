@@ -20,5 +20,4 @@ cd $_name-$version
 
 make 
 make DESTDIR=$PKG install
-
 }
