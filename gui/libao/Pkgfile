@@ -7,18 +7,12 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libao
-version=1.2.2-git
-release=2
+version=1.2.2
 
-source=()
-
-prepare() {
-
-git clone https://git.xiph.org/libao.git $name
-}
+source=(https://gitlab.xiph.org/xiph/libao/-/archive/${version}/${name}-${version}.tar.gz)
 
 build() {
-  cd $name
+  cd $name-$version
 
   ./autogen.sh
 
