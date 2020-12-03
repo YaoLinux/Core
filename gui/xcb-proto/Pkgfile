@@ -1,5 +1,3 @@
-makedepends=(python )
-
 description="XCB X protocol descriptions"
 url="http://xcb.freedesktop.org"
 
@@ -10,8 +8,7 @@ PKGMK_GROUPS=()
 
 name=xcb-proto
 version=1.14.1
-_name=$name
 
-source=(http://xcb.freedesktop.org/dist/xcb-proto-$version.tar.bz2)
+source=(https://xorg.freedesktop.org/archive/individual/proto/$name-$version.tar.xz)
 
 build=xorg
