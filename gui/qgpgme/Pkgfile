@@ -7,8 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=qgpgme
-version=1.13.1
-release=2
+version=1.15.0
 
 source=(ftp://ftp.gnupg.org/gcrypt/gpgme/gpgme-$version.tar.bz2)
 
