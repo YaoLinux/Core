@@ -8,9 +8,10 @@ description="Filter scripts used by the printer spoolers to convert the incoming
 
 name=foomatic-filters
 version=4.0
-release=20160212
 
-source=(http://www.openprinting.org/download/foomatic/$name-${version}-${release}.tar.gz)
+_release=current
+
+source=(http://www.openprinting.org/download/foomatic/$name-${version}-${_release}.tar.gz)
 
 build() {
 cd $name-*
