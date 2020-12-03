@@ -10,9 +10,9 @@ maintainer="rems"
 
 name=foomatic-db-nonfree
 version=4.0
-release=20200912
+_release=current
 
-source=(http://www.openprinting.org/download/foomatic/$name-$release.tar.gz)
+source=(http://www.openprinting.org/download/foomatic/$name-${_release}.tar.gz)
 
 build() {
     cd $name-*
