@@ -8,9 +8,8 @@ maintainer="rems"
 
 name=harfbuzz
 version=2.7.2
-release=4
 
-source=(https://www.freedesktop.org/software/$name/release/$name-$version.tar.xz)
+source=(https://github.com/harfbuzz/harfbuzz/releases/download/$version/harfbuzz-$version.tar.xz)
 
 build() {
 cd $name-$version
