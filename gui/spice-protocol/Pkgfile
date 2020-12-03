@@ -7,6 +7,6 @@ maintainer="rems"
 name=spice-protocol
 version=0.14.2
 
-source=(https://www.spice-space.org/download/releases/$name-$version.tar.bz2)
+source=(https://gitlab.freedesktop.org/spice/spice-protocol/-/archive/v$version/spice-protocol-v$version.tar.gz)
 
 build=meson
