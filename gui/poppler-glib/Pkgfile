@@ -7,10 +7,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=poppler-glib
-version=0.83.0
-release=2
+version=20.12.0
 
-source=(http://poppler.freedesktop.org/poppler-$version.tar.xz)
+source=(https://poppler.freedesktop.org/poppler-$version.tar.xz)
 
 build() {
 
