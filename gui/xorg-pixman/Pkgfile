@@ -6,12 +6,10 @@ url="http://xorg.freedesktop.org"
 packager="Yaolinux Team"
 maintainer="rems"
 
-
 name=xorg-pixman
 _name=pixman
 alias=(pixman)
-version=0.38.4
-release=2
+version=0.40.0
 
 source=(http://ftp.x.org/pub/individual//lib/${_name}-$version.tar.bz2)
 
