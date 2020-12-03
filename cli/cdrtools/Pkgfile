@@ -12,6 +12,8 @@ release=2
 
 source=(https://downloads.sourceforge.net/cdrtools/$name-$version.tar.bz2)
 
+unset MAKEFLAGS
+
 build(){
   cd cdrtools-${version%%a*}
   sed -i 's|/opt/schily|/usr|g' DEFAULTS/Defaults.linux
