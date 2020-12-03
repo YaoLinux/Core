@@ -6,7 +6,7 @@ url="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/"
 packager="Yaolinux Team"
 
 name=ssh-askpass
-version=8.0p1
+version=8.3p1
 
 source=($url/openssh-$version.tar.gz)
 
