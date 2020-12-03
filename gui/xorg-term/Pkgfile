@@ -8,7 +8,7 @@ maintainer="rems"
 
 alias=(xterm)
 name=xorg-term
-version=349
+version=362
 
 run=(xorg-luit)
 
