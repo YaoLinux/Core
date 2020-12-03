@@ -7,14 +7,15 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=graphite2
-version=1.3.13
-release=2
+version=1.3.14
 
 source=(http://downloads.sourceforge.net/silgraphite/graphite2-$version.tgz)
 
 build() {
 
 mkdir build && cd build
+
+sed -i '/cmptest/d' ../graphite2-$version/tests/CMakeLists.txt
 
 cmake -DCMAKE_INSTALL_PREFIX=/usr \
       ../graphite2-$version
