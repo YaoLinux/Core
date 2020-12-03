@@ -1,0 +1,45 @@
+makedepends=(autoconf2-13 icu libffi nspr python2 zip llvm rustc)
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+description="JS is Mozilla's JavaScript engine written in C."
+url="https://developer.mozilla.org/en-US/docs/Mozilla/Projects/SpiderMonkey"
+
+name=js78
+version=78.5.0
+
+source=(https://archive.mozilla.org/pub/firefox/releases/${version}esr/source/firefox-${version}esr.source.tar.xz)
+
+prepare(){
+
+    mkdir build
+}
+
+build() {
+
+export AR=llvm-ar
+export NM=llvm-nm
+export RANLIB=llvm-ranlib
+
+cd build
+
+../firefox-$version/js/src/configure --prefix=/usr       \
+                       --with-intl-api     \
+                       --with-system-zlib  \
+                       --with-system-icu \
+                       --disable-jemalloc  \
+                       --disable-debug-symbols \
+                       --enable-readline
+
+  make
+}
+
+
+package() {
+
+   make -C build DESTDIR=$PKG install
+
+rm -v $PKG/usr/lib/libjs_static.ajs
+sed -i '/@NSPR_CFLAGS@/d' $PKG/usr/bin/js78-config
+}
