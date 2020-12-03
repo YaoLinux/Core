@@ -1,4 +1,4 @@
-makedepends=(python2-gobject2 python2-cairo python2-numpy libglade )
+makedepends=(python2-gobject2 python2-cairo python2-numpy libglade)
 
 description="provides the links of Python 2 for the class GObject of GLib."
 url="http://www.gnome.org/"
@@ -6,16 +6,16 @@ url="http://www.gnome.org/"
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=( python2-gobject2 python2-cairo )
+run=(python2-gobject2 python2-cairo)
 
 name=python2-gtk
 version=2.24.0
 release=2
 _name=pygtk
 
-source=(http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk.devel1567017773any.cards.tar.xz
-        http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk.doc1567017773any.cards.tar.xz
-        http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk1567017773x86_64.cards.tar.xz)
+source=(http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk.devel1581144242any.cards.tar.xz
+        http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk.doc1581144242any.cards.tar.xz
+        http://downloads.nutyx.org/x86_64/rolling/gui/python2-gtk/python2-gtk1581144242x86_64.cards.tar.xz)
 
 build() {
 
