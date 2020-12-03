@@ -25,6 +25,7 @@ meson --prefix=/usr \
 
 ninja
 DESTDIR=$PKG ninja install
+}
 
 uptodate(){
 local lastversion
