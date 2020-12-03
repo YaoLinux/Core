@@ -11,7 +11,7 @@ release=5
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/brailcom/speechd/releases/download/0.9.1/speech-dispatcher-$version.tar.gz
+source=(https://github.com/brailcom/speechd/releases/download/${version}/speech-dispatcher-${version}.tar.gz
         speech-dispatcher.patch)
 
 build() {
