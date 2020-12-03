@@ -5,10 +5,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="virtualbox-guest-utils"
-version="6.0.14"
-release=2
+version=6.1.16
 
-_release=133895
+_release=140961
 
 PKGMK_IGNORE_UNPACK="yes"
 
