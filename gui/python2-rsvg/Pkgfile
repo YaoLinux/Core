@@ -12,7 +12,7 @@ name=python2-rsvg
 version=2.32.0
 release=3
 
-source=(http://ftp.gnome.org/pub/gnome/sources/${_name}/${version%.*}/${_name}-$version.tar.bz2)
+source=(https://download.gnome.org/sources/${_name}/${version%.*}/${_name}-$version.tar.bz2)
 
 build() {
 
@@ -28,7 +28,7 @@ install -m644 rsvg/rsvg.defs $PKG/usr/share/pygtk/2.0/defs/
 
 uptodate(){
 local latest lastversion url
-url="http://ftp.gnome.org/pub/gnome/sources/${_name}"
+url="https://download.gnome.org/sources/${_name}"
 latest="`lynx -read_timeout=20 -dump -listonly -nonumbers \
 $url/?C=N\;O=D|grep [0-9]/$|head -1`"
 lastversion="`lynx -read_timeout=20 -dump -listonly -nonumbers \
