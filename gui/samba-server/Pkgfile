@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=samba-server
-version=4.11.11
+version=4.13.2
 yao_version=1.0-RC2
 
 source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yao_version}.tar.xz)
