@@ -19,9 +19,9 @@ build() {
 	cd $name-$version	
 
 	./configure --prefix=/usr \
-                --sysconfdir=/etc \
-                --localstatedir=/var \
-                --with-fontrootdir=/usr/share/fonts
+                    --sysconfdir=/etc \
+                    --localstatedir=/var \
+                    --with-fontrootdir=/usr/share/fonts
 
 	make
 	make DESTDIR=$PKG install
