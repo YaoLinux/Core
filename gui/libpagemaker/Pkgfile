@@ -1,5 +1,6 @@
-﻿description="a library that parses the file format of Aldus/Adobe PageMaker documents"
+description="a library that parses the file format of Aldus/Adobe PageMaker documents"
 url="https://wiki.documentfoundation.org/DLP/Libraries/libpagemaker"
+
 packager="Yaolinux-Team"
 maintainer="Dania"
 
@@ -12,8 +13,12 @@ source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
 
 build() {
   cd $name-$version
-  ./configure --prefix=/usr --disable-werror
+
+  ./configure --prefix=/usr \
+              --disable-werror
+
   make
   make DESTDIR=$PKG install
-  install -Dm644 COPYING $PKG/usr/share/licenses/$name/COPYING
+
+  install -Dm644 COPYING $PKG/usr/share/licenses/$name-$version/COPYING
 }
