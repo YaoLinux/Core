@@ -8,27 +8,46 @@ packager="Yaolinux Team"
 name=mupdf
 version=1.18.0
 
-source=(http://www.linuxfromscratch.org/patches/blfs/svn/mupdf-$version-shared_libs-1.patch
-        http://www.mupdf.com/downloads/archive/$name-$version-source.tar.gz)
+source=(http://www.mupdf.com/downloads/archive/$name-$version-source.tar.gz)
 
 build() {
 unset MAKEFLAGS
 cd $name-$version-source
 
-sed -i '/SYS_CURL_LIBS/s|$| -lpthread|' Makethird
+# link properly with the shared library
+sed -i '/MU.*_EXE. :/{
+        s/\(.(MUPDF_LIB)\)\(.*\)$/\2 | \1/
+        N
+        s/$/ -lmupdf -L$(OUT)/
+        }' Makefile
 
-rm -rf thirdparty/{freetype,freeglut,harfbuzz,libjpeg,openjpeg,zlib}
+cat > user.make << EOF &&
+USE_SYSTEM_FREETYPE := yes
+USE_SYSTEM_HARFBUZZ := yes
+USE_SYSTEM_JBIG2DEC := no
+USE_SYSTEM_JPEGXR := no # not used without HAVE_JPEGXR
+USE_SYSTEM_LCMS2 := no # need lcms2-art fork
+USE_SYSTEM_LIBJPEG := yes
+USE_SYSTEM_MUJS := no # build needs source anyways
+USE_SYSTEM_OPENJPEG := yes
+USE_SYSTEM_ZLIB := yes
+USE_SYSTEM_GLUT := no # need freeglut2-art fork
+USE_SYSTEM_CURL := yes
+USE_SYSTEM_GUMBO := no
+EOF
 
-patch -Np1 -i ../$name-$version-shared_libs-1.patch
+export XCFLAGS=-fPIC
 
-export USE_SYSTEM_LIBS=yes
+make build=release shared=yes
 
-CFLAGS+=' -fPIC' CXXFLAGS+=' -fPIC' \
-USE_SYSTEM_LIBS=yes make build=release libs apps
+unset XCFLAGS
 
-make prefix=$PKG/usr build=release \
-docdir=$PKG/usr/share/doc/$name-$version \
-install
+make prefix=$PKG/usr \
+     build=release \
+     shared=yes
+     docdir=$PKG/usr/share/doc/$name-$version \
+     install
 
-ln -svf mupdf-x11 $PKG/usr/bin/mupdf
+chmod 755 $PKG/usr/lib/libmupdf.so
+ln -sfv mupdf-x11 $PKG/usr/bin/mupdf
 }
