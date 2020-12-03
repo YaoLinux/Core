@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 
 name=imagemagick
 version=7.0.10.45
-_version=7.0.10.45
+_version=7.0.10-45
 
 source=(https://imagemagick.org/download/ImageMagick-${_version}.tar.xz)
 
