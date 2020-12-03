@@ -7,9 +7,10 @@ packager="Yaolinux Team"
 
 name=libva
 version=2.9.1
-release=2
 
-source=(https://github.com/01org/libva/releases/download/$version/$name-$version.tar.bz2)
+PKGMK_KEEP_SOURCES="no"
+
+source=(https://github.com/intel/libva/archive/$version.tar.gz)
 
 build() {
 cd $name-$version
