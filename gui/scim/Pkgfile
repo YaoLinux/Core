@@ -9,6 +9,8 @@ version=1.4.18
 
 makedepends=(gtk2 gtk3 intltool libtool)
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/scim-im/scim/archive/$version.tar.gz)
 
 prepare() {
