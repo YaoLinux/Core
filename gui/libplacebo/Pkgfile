@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="libplacebo"
-version="1.29.1"
+version=2.72.2
 
 source=(https://code.videolan.org/videolan/libplacebo/-/archive/v${version}/libplacebo-v${version}.tar.gz)
 
