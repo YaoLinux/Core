@@ -8,9 +8,8 @@ maintainer="rems"
 
 name=lightdm-gtk-greeter
 version=2.0.8
-release=3
 
-source=(https://launchpad.net/lightdm-gtk-greeter/"${version:0:3}"/$version/+download/$name-$version.tar.gz)
+source=(https://github.com/Xubuntu/lightdm-gtk-greeter/releases/download/lightdm-gtk-greeter-$version/lightdm-gtk-greeter-$version.tar.gz)
 
 build() {
 
