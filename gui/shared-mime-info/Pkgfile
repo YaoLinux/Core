@@ -9,7 +9,9 @@ maintainer="rems"
 name=shared-mime-info
 version=2.0
 
-source=(https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/aee9ae9646cbef724bbb1bd2ba146556/$name-$version.tar.xz)
+_commit=0440063a2e6823a4b1a6fb2f2af8350f
+
+source=(https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/${_commit}/shared-mime-info-$version.tar.xz)
 
 build() {
 
