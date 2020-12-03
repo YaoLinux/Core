@@ -6,9 +6,9 @@ maintainer="rems"
 
 name=cldr-emoji-annotation
 version=37.0.13.0.0.2
-_tag=${version%.*}_${version##*.}
+_tag=37.0_13.0_0_2
 
-source=(https://github.com/fujiwarat/cldr-emoji-annotation/archive/${_tag}.tar.gz)
+source=(https://github.com/fujiwarat/cldr-emoji-annotation/releases/download/${_tag}/cldr-emoji-annotation-${_tag}.tar.gz)
 
 build() {
   
