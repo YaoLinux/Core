@@ -1,5 +1,6 @@
-﻿description="Library for importing and converting Corel WordPerfect(tm) Graphics images."
+description="Library for importing and converting Corel WordPerfect(tm) Graphics images."
 url="https://libwpg.sourceforge.net/"
+
 packager="Yaolinux Team"
 maintainer="Dania"
 
@@ -12,7 +13,9 @@ source=(https://downloads.sourceforge.net/libwpg/$name-$version.tar.xz)
 
 build() {
   cd $name-$version
+
   ./configure --prefix=/usr
+
   make
   make DESTDIR=$PKG install
 }
