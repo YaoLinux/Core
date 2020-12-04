@@ -1,4 +1,4 @@
-makedepends=(gtk2 gtk3 gstreamer-plugins-base libnotify xorg-libsm xorg-libxxf86vm xorg-glu gconf webkitgtk)
+makedepends=(gtk2 gtk3 gstreamer-plugins-base libnotify xorg-libsm xorg-libxxf86vm xorg-glu webkitgtk)
 
 description="GTK+ implementation of wxWidgets API for GUI"
 url="http://wxwidgets.org"
