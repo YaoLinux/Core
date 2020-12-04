@@ -12,7 +12,7 @@ name=libgrss
 version=0.7.0
 release=2
 
-source=(http://ftp.gnome.org/pub/gnome/sources/$name/${version:0:3}/$name-$version.tar.xz)
+source=(https://download.gnome.org/sources/$name/${version:0:3}/$name-$version.tar.xz)
 
 build() {
 
