@@ -1,4 +1,4 @@
-makedepends=(fftw intltool json-c libsndfile alsa-lib dbus glib libcap openssl speex speexdsp libsamplerate bluez sbc gconf webrtc-audio-processing jack)
+makedepends=(fftw intltool json-c libsndfile alsa-lib dbus glib libcap openssl speex speexdsp libsamplerate bluez sbc webrtc-audio-processing jack)
 
 description="A featureful, general-purpose sound server"
 url="http://www.pulseaudio.org"
@@ -10,7 +10,6 @@ run=(bluez sbc)
 
 name=pulseaudio
 version=14.0
-release=2
 
 source=(https://freedesktop.org/software/pulseaudio/releases/pulseaudio-$version.tar.xz)
 
