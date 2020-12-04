@@ -1,5 +1,4 @@
-makedepends=(glib js78 gobject-introspection intltool perl-xml-parser 
-             libxslt docbook-xsl systemd)
+makedepends=(glib js78 gobject-introspection intltool perl-xml-parser libxslt docbook-xsl systemd)
 
 description="Application development toolkit for controlling system-wide privileges"
 url="http://hal.freedesktop.org/docs/polkit"
