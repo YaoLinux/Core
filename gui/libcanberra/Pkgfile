@@ -1,4 +1,4 @@
-makedepends=(gtk2 libvorbis alsa-lib gconf gstreamer gtk3 pulseaudio)
+makedepends=(gtk2 gtk3 libvorbis alsa-lib gstreamer pulseaudio tdb)
 
 description="A small and lightweight implementation of the XDG Sound Theme Specification"
 url="http://0pointer.de/lennart/projects/libcanberra"
