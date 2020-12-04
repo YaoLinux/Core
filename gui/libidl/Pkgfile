@@ -10,7 +10,7 @@ name=libidl
 version=0.8.14
 release=3
 
-source=(http://ftp.gnome.org/pub/gnome/sources/libIDL/0.8/libIDL-$version.tar.bz2)
+source=(https://download.gnome.org/sources/libIDL/0.8/libIDL-$version.tar.bz2)
 
 build() {
 
@@ -26,7 +26,7 @@ make DESTDIR=$PKG install
 
 uptodate(){
 local latest lastversion url
-url="http://ftp.gnome.org/pub/gnome/sources/libIDL"
+url="https://download.gnome.org/sources/libIDL"
 latest="`lynx -read_timeout=20 -dump -listonly -nonumbers \
 $url/?C=N\;O=D|grep [0-9]/$|head -1`"
 lastversion="`lynx -read_timeout=20 -dump -listonly -nonumbers \
