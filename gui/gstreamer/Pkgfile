@@ -12,14 +12,19 @@ version=1.18.1
 source=(https://gstreamer.freedesktop.org/src/gstreamer/gstreamer-$version.tar.xz)
 
 build() {
-cd gstreamer-$version
+mkdir build && cd build
 
-./configure --prefix=/usr \
-            --with-package-name="GStreamer $version YaoLinuX" \
-            --with-package-origin="http://downloads.yaolinux.org/"
+meson --prefix=/usr \
+      -D doc=disabled \
+      -D ptp-helper-permissions=capabilities \
+      -D dbghelp=disabled \
+      -D gobject-cast-checks=disabled \
+      -D package-name="GStreamer $version YaoLinuX" \
+      -D package-origin="http://downloads.yaolinux.org/" \
+      ../gstreamer-$version
 
-make
-make DESTDIR=$PKG install
+ninja
+DESTDIR=$PKG ninja install
 }
 
 uptodate() {
