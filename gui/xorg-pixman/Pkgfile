@@ -11,7 +11,7 @@ _name=pixman
 alias=(pixman)
 version=0.40.0
 
-source=(http://ftp.x.org/pub/individual//lib/${_name}-$version.tar.bz2)
+source=(https://xorg.freedesktop.org/releases/individual/lib/${_name}-${version}.tar.xz)
 
 build=autotools
 
