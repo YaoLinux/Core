@@ -1,4 +1,4 @@
-makedepends=(libxml2 intltool itstool glib)
+makedepends=(intltool itstool glib xmlto)
 
 description="The Shared Mime Info package contains a MIME database."
 url="http://freedesktop.org/"
@@ -9,21 +9,19 @@ maintainer="rems"
 name=shared-mime-info
 version=2.0
 
-_commit=0440063a2e6823a4b1a6fb2f2af8350f
-
-source=(https://gitlab.freedesktop.org/xdg/shared-mime-info/uploads/${_commit}/shared-mime-info-$version.tar.xz)
+source=(https://gitlab.freedesktop.org/xdg/shared-mime-info/-/archive/$version/shared-mime-info-$version.tar.gz)
 
 build() {
 
 unset MAKEFLAGS
 
-cd $name-$version
+mkdir build && cd build
 
-export ac_cv_func_fdatasync=no
+meson --prefix=/usr \
+      -D update-mimedb=false \
+      -D xdgmime-path=${srcdir}/xdgmime \
+      ../$name-$version
 
-./configure --prefix=/usr \
-            --disable-update-mimedb
-
-make
-make DESTDIR=$PKG install
+ninja
+DESTDIR=$PKG ninja install
 } 
