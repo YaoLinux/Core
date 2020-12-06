@@ -17,8 +17,8 @@ source=(http://download.yaolinux.org/wallpaper/wall1.jpg
 build(){
    for i in {1,2,3,4,5}
    do
-   	install -D -m644 wall$i.jpg \
-   	$PKG/usr/share/backgrounds/yaolinux/wallpaper$i.jpg
+	install -D -m644 wall$i.jpg \
+	$PKG/usr/share/backgrounds/yaolinux/wallpaper$i.jpg
    done
 }
 
