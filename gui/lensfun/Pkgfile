@@ -1,4 +1,4 @@
-makedepends=(cmake glib libpng doxygen )
+makedepends=(cmake glib libpng doxygen)
 
 description="database of photographic lenses and a library that allows advanced access to the database"
 url="http://lensfun.berlios.de"
