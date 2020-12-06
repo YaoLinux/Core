@@ -10,3 +10,8 @@ version=0.14.2
 source=(https://gitlab.freedesktop.org/spice/spice-protocol/-/archive/v$version/spice-protocol-v$version.tar.gz)
 
 build=meson
+
+prepare() {
+
+mv spice-protocol-v$version spice-protocol-$version
+}
