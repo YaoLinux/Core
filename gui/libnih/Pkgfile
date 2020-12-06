@@ -10,4 +10,10 @@ name=libnih
 version=1.0.3
 release=3
 
-source=(http://launchpad.net/libnih/1.0/$version/+download/$name-$version.tar.gz)
+source=(http://launchpad.net/libnih/1.0/$version/+download/$name-$version.tar.gz
+	fix_gcc-10.patch)
+
+prepare() {
+cd $name-$version
+patch -Np1 -i ../fix_gcc-10.patch
+}

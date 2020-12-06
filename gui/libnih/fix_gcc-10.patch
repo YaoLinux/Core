@@ -1,0 +1,19 @@
+Description: ftbfs with GCC-10
+
+Author: Sudip Mukherjee <sudipm.mukherjee@gmail.com>
+Bug-Debian: https://bugs.debian.org/957454
+Forwarded: no
+
+---
+
+--- libnih-1.0.3.orig/nih-dbus-tool/output.h
++++ libnih-1.0.3/nih-dbus-tool/output.h
+@@ -27,7 +27,7 @@
+ 
+ NIH_BEGIN_EXTERN
+ 
+-char *output_package;
++extern char *output_package;
+ 
+ int   output          (const char *source_path, int source_fd,
+ 		       const char *header_path, int header_fd,
