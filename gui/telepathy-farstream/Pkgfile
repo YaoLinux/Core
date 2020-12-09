@@ -1,4 +1,4 @@
-makedepends=(farstream telepathy-glib dbus-glib gobject-introspection )
+makedepends=(farstream telepathy-glib dbus-glib gobject-introspection)
 
 description="A telepathy-backend to use stream engine."
 url="http://telepathy.freedesktop.org/"
