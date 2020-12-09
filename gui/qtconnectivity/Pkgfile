@@ -1,4 +1,4 @@
-makedepends=(qtbase qtdeclarative bluez )
+makedepends=(qtbase qtdeclarative bluez)
 
 description="A cross-platform application and UI framework, QtConnectivity files"
 url="http://qt-project.org/"
