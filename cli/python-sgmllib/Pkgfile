@@ -8,6 +8,7 @@ name=python-sgmllib
 version=5.2.1
 release=3
 
+
 PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/kurtmckee/feedparser/archive/$version.tar.gz)
@@ -16,11 +17,16 @@ build() {
 
 cd feedparser-$version
 
-python3 /usr/lib/python3.8/compileall.py feedparser/sgmllib3.py
+_pythonlib=($(whereis python3))
+_pythonver=${_pythonlib[6]//./}
+_pythonver=${_pythonver##*/}
+_pythonver=${_pythonver//python/}
+
+python3 ${_pythonlib[6]}/compileall.py feedparser/sgmllib3.py
 
 install -Dm644 feedparser/sgmllib3.py \
-    "$PKG/usr/lib/python3.8/site-packages/sgmllib.py"
+    "$PKG/${_pythonlib[6]}/site-packages/sgmllib.py"
 
-install -Dm644 feedparser/__pycache__/sgmllib3.cpython-38.pyc \
-    "$PKG/usr/lib/python3.8/site-packages/__pycache__/sgmllib.cpython-38.pyc" 
+install -Dm644 feedparser/__pycache__/sgmllib3.cpython-${_pythonver}.pyc \
+    "$PKG/${_pythonlib[6]}/site-packages/__pycache__/sgmllib.cpython-${_pythonver}.pyc" 
 }
