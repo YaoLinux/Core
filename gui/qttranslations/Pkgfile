@@ -1,4 +1,4 @@
-makedepends=(qtbase qtdeclarative qttools libtiff libmng )
+makedepends=(qtbase qtdeclarative qttools libtiff libmng)
 
 description="A cross-platform application and UI framework, QtTranslations files"
 url="http://qt-project.org/"
