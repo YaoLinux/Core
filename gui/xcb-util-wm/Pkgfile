@@ -1,4 +1,4 @@
-makedepends=(libxcb xcb-util)
+makedepends=(xcb-util)
 
 description="XCB utilities library"
 url="http://xcb.freedesktop.org"
