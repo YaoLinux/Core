@@ -1,4 +1,4 @@
-makedepends=(libglade xorg-libdrm xorg-libxfixes)
+makedepends=(wayland xorg-libdrm xorg-libxfixes)
 
 description="Video Acceleration (VA) API for Linux"
 url="https://01.org/linuxmedia/vaapi"
@@ -6,20 +6,10 @@ url="https://01.org/linuxmedia/vaapi"
 packager="Yaolinux Team"
 
 name=libva
-version=2.9.1
+version=2.10.0
 
 PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/intel/libva/archive/$version.tar.gz)
 
-build() {
-cd $name-$version
-
-./configure --prefix=/usr \
-            --sysconfdir=/etc \
-            --localstatedir=/var \
-            --disable-static
-
-make
-make DESTDIR=$PKG install
-}
+build=meson
