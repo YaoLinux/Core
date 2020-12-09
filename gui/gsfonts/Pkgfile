@@ -1,4 +1,4 @@
-makedepends=(git)
+makedepends=(git intltool glib gobject-introspection)
 
 description="Standard Ghostscript Type1 fonts from URW"
 url="http://sourceforge.net/projects/ghostscript"
