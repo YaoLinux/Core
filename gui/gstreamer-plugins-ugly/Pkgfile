@@ -1,4 +1,4 @@
-makedepends=(gstreamer-plugins-base lame libdvdread liba52 libmad libmpeg2 )
+makedepends=(gstreamer-plugins-base lame libdvdread liba52 libmad libmpeg2)
 
 description="GStreamer Multimedia Framework ugly Plugins"
 url="http://gstreamer.freedesktop.org/modules/gst-plugins-ugly.html"
