@@ -1,4 +1,4 @@
-makedepends=(xorg-libx11 xcb-util )
+makedepends=(xorg-libx11 xcb-util)
 
 description="Monitor and display application startup"
 url="http://freedesktop.org/wiki/Software/startup-notification"
