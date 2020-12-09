@@ -1,4 +1,4 @@
-makedepends=(cairo dbus-glib gobject-introspection js68 xorg-libxxf86vm)
+makedepends=(cairo dbus-glib gobject-introspection js78 xorg-libxxf86vm)
 
 description="Set of Javascript Bindings for GNOME"
 url="http://www.gnome.org/"
