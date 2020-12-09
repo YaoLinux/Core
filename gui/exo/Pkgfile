@@ -1,4 +1,4 @@
-makedepends=(perl-uri xfce4-libui xfce4-libutil gtk-doc)
+makedepends=(gtk3 perl-uri xfce4-libui xfce4-libutil gtk-doc)
 
 description="Extensions to Xfce by os-cillation"
 url="http://www.xfce.org/"
