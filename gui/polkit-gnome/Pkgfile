@@ -1,4 +1,4 @@
-makedepends=(polkit gtk3 )
+makedepends=(polkit gtk3)
 
 description="Legacy polkit authentication agent for GNOME"
 url="http://hal.freedesktop.org/docs/polkit-gnome"
