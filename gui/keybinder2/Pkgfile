@@ -1,4 +1,4 @@
-makedepends=(gtk2,gobject-introspection, python2-gtk)
+makedepends=(gtk2 gobject-introspection python2-gtk)
 
 url="https://github.com/engla/keybinder"
 description="Library for registering global keyboard shortcut"
