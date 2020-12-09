@@ -1,4 +1,4 @@
-makedepends=(gstreamer-plugins-base libnice gobject-introspection )
+makedepends=(gstreamer-plugins-base libnice gobject-introspection)
 
 description="Farstream (formerly Farsight) - Audio/Video Communications Framework"
 url="http://freedesktop.org/software/farstream"
