@@ -1,4 +1,4 @@
-makedepends=(xorgproto m4 shared-mime-info freetype libxml2 cairo gtk2 pango desktop-file-utils shared-mime-info giflib libjpeg-turbo2 libpng libtiff libuninameslist)
+makedepends=(cmake xorgproto m4 shared-mime-info freetype libxml2 cairo gtk3 pango giflib libjpeg-turbo2 libpng libtiff)
 
 description="Outline and bitmap font editor"
 url="http://fontforge.sourceforge.net"
