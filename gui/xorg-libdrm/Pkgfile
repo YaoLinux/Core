@@ -1,4 +1,4 @@
-makedepends=(docbook-xsl libxslt xorg-util-macros xorg-libpciaccess ninja)
+makedepends=(docbook-xsl libxslt xorg-util-macros xorg-libpciaccess)
 
 description="Provides a userspace library for accessing the DRM, direct rendering manager"
 url="http://xorg.freedesktop.org"
