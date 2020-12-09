@@ -1,4 +1,4 @@
-makedepends=(gtk2 intltool gobject-introspection )
+makedepends=(gtk2 intltool gobject-introspection)
 
 description="Vte is a library (libvte) implementing a terminal emulator widget for GTK+ 2"
 url="http://developer.gnome.org/arch/gnome/widgets/vte.html"
