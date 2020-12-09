@@ -1,4 +1,4 @@
-makedepends=(intltool libxslt docbook-xsl glib gobject-introspection libgcrypt vala )
+makedepends=(intltool libxslt docbook-xsl glib gobject-introspection libgcrypt vala)
 
 description="The libsecret package contains a GObject based library for accessing the Secret Service API."
 url="http://www.gnome.org/"
