@@ -41,8 +41,8 @@ cd install
 tar xaf VBoxGuestAdditions-amd64.tar.bz2
 
 # lib
-install -vdm755 $PKG/usr/lib
-cp -av lib/* $PKG/usr/lib
+# install -vdm755 $PKG/usr/lib
+# cp -av lib/* $PKG/usr/lib
 
 # bin
 install -vdm755 $PKG/usr/bin
