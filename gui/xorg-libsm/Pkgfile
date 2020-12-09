@@ -1,4 +1,4 @@
-makedepends=(xorgproto xorg-libice xorg-xtrans )
+makedepends=(xorgproto xorg-libice xorg-xtrans)
 
 description="libSM, library X Session Management client"
 url="http://xorg.freedesktop.org"
