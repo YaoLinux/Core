@@ -1,4 +1,4 @@
-makedepends=(gssdp util-linux)
+makedepends=(gssdp gobject-introspection gtk-doc)
 
 description="An object-oriented UPNP framework"
 url="http://gupnp.org/"
