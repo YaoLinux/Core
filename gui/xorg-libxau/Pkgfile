@@ -1,4 +1,4 @@
-makedepends=(xorgproto )
+makedepends=(xorgproto)
 
 description="libxi, X Authorization routines"
 url="http://xorg.freedesktop.org"
