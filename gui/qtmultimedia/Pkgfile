@@ -1,4 +1,4 @@
-makedepends=(qtbase qtdeclarative gstreamer-plugins-base gstreamer-plugins-bad pulseaudio openal )
+makedepends=(qtbase qtdeclarative gstreamer-plugins-base gstreamer-plugins-bad pulseaudio openal)
 
 description="A cross-platform application and UI framework, QtSerialPort files"
 url="http://qt-project.org/"
