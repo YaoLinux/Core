@@ -9,34 +9,19 @@ name=libva-intel-driver
 version=2.4.1
 release=2
 
-source=(https://github.com/intel/intel-vaapi-driver/releases/download/$version/intel-vaapi-driver-$version.tar.bz2
-        427.patch)
+source=(https://github.com/intel/intel-vaapi-driver/releases/download/$version/intel-vaapi-driver-$version.tar.bz2)
+
+build=meson
 
 prepare() {
 
-  cd intel-vaapi-driver-$version
+mv intel-vaapi-driver-$version libva-intel-driver-$version
 
-# https://github.com/intel/intel-vaapi-driver/issues/419
-patch -Np1 -i ../427.patch
+  cd libva-intel-driver-$version
   
 # Only relevant if intel-gpu-tools is installed,
 # since then the shaders will be recompiled
 sed -i '1s/python$/&2/' src/shaders/gpp.py
 
-}
-
-build () {
-
-cd intel-vaapi-driver-$version
-
-./configure --prefix=/usr \
-            --enable-wayland
-
-make
-}
-
-package() {
-
-cd intel-vaapi-driver-$version
-make DESTDIR="${PKG}" install
+CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
 }
