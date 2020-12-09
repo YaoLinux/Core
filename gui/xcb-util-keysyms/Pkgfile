@@ -1,4 +1,4 @@
-makedepends=(libxcb )
+makedepends=(libxcb)
 
 description="Library for handling standard X key constants and conversion to/from keycodes."
 url="http://xcb.freedesktop.org"
