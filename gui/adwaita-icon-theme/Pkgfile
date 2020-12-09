@@ -1,4 +1,4 @@
-makedepends=(intltool gtk-update-icon-cache hicolor-icon-theme icon-naming-utils librsvg)
+makedepends=(intltool)
 
 description="Adwaita icon theme."
 url="http://www.gnome.org/"
