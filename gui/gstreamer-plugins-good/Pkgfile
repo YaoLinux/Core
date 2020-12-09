@@ -1,4 +1,4 @@
-makedepends=(aalib jack lame libcaca libdv libgudev mpg123 speex wavpack v4l-utils taglib libshout libraw1394 libavc1394 libiec61883 gstreamer-plugins-base flac gdk-pixbuf libjpeg-turbo2 libpng libsoup libvpx pulseaudio)
+makedepends=(aalib jack lame libcaca libdv libgudev mpg123 speex wavpack v4l-utils taglib libshout libraw1394 gstreamer-plugins-base flac gdk-pixbuf libjpeg-turbo2 libpng libsoup libvpx pulseaudio)
 
 description="GStreamer Multimedia Framework good Plugins"
 url="http://gstreamer.freedesktop.org/"
