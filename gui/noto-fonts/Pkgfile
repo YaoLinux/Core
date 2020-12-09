@@ -7,26 +7,21 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=noto-fonts
-version=20190926
+version=20201206
+_commit=20bc5918912503bc1537a407a694738c33c048aa
 
-source=(66-noto-mono.conf 66-noto-sans.conf 66-noto-serif.conf)
-
-prepare() {
-
-git clone https://github.com/googlefonts/noto-fonts.git $name-$version
-cd $name-$version
-git checkout 0fa1dfabd6e3746bb7463399e2813f60d3f1b256
-}
+source=(https://github.com/googlei18n/noto-fonts/archive/${_commit}.tar.gz
+	66-noto-mono.conf 66-noto-sans.conf 66-noto-serif.conf)
 
 build() {
-  cd $name-$version
+  cd $name-*
   mkdir -p $PKG/usr/share/fonts/noto
-  install -Dm644 unhinted/Noto*/*.tt[fc] -t "$PKG"/usr/share/fonts/noto
-  install -m644 hinted/Noto*/*.tt[fc] -t $PKG/usr/share/fonts/noto
+  install -Dm644 unhinted/ttf/Noto*/*.tt[fc] -t "$PKG"/usr/share/fonts/noto
+  install -m644 hinted/ttf/Noto*/*.tt[fc] -t $PKG/usr/share/fonts/noto
 
-  mkdir -p $PKG/usr/share/fonts/TTF
+  mkdir -p $PKG/usr/share/fonts/noto
   for font in Arimo Cousine Tinos; do
-    install -m644 hinted/$font/*.ttf $PKG/usr/share/fonts/TTF
+    install -m644 hinted/ttf/$font/*.ttf $PKG/usr/share/fonts/noto
   done
 
   # fontconfig files
