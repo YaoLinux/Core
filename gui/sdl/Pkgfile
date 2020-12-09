@@ -1,4 +1,4 @@
-makedepends=(alsa-lib nasm libusb pulseaudio xorg-libx11 xorg-libxext )
+makedepends=(alsa-lib nasm libusb pulseaudio xorg-libx11 xorg-libxext)
 
 description="Simple Directmedia Layer, a library multiplatforme"
 url="http://www.libsdl.org"
