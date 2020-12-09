@@ -1,4 +1,4 @@
-makedepends=(xorg-libxt xorg-libxmu xorg-libice xorg-libsm xorg-server )
+makedepends=(xorg-libxt xorg-libxmu xorg-libice xorg-libsm xorg-server)
 
 description="The twm package contains a very minimal window manager."
 url="http://xorg.freedesktop.org" 
