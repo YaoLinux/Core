@@ -1,4 +1,4 @@
-makedepends=(dbus expat glib)
+makedepends=(dbus glib)
 
 description="The D-Bus GLib package contains GLib interfaces to the D-Bus API."
 url="http://www.freedesktop.org/wiki/Software/DBusBindings"
