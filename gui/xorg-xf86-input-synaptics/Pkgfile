@@ -1,4 +1,4 @@
-makedepends=(libevdev xorg-libxtst xorg-libx11 xorg-libxi xorg-server )
+makedepends=(libevdev xorg-libxtst xorg-libx11 xorg-libxi xorg-server)
 
 description="Xorg Synaptics drivers for notebook touchpads."
 
