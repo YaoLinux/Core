@@ -10,11 +10,11 @@ release=2
 
 makedepends=(boost doxygen icu librevenge)
 
-source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz
+        libmspub-buildfix.diff)
 
-build() {
-    cd $name-$version
-    ./configure --prefix=/usr
-    make
-    make DESTDIR=$PKG install
+prepare() {
+
+cd $name-$version
+patch -Np1 -i ../libmspub-buildfix.diff
 }
