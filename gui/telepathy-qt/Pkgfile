@@ -1,4 +1,4 @@
-makedepends=(telepathy-farstream libxslt  cmake doxygen qtbase qttools)
+makedepends=(telepathy-farstream libxslt cmake doxygen qtbase qttools)
 
 description="A library for Qt5-based Telepathy clients"
 url="http://telepathy.freedesktop.org/"
