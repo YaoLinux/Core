@@ -1,4 +1,4 @@
-makedepends=(libsoup gtk3)
+makedepends=(libsoup gtk3 gobject-introspection gtk-doc vala)
 
 description="A GObject-based API for handling resource discovery and announcement over SSDP"
 url="http://gupnp.org/"
