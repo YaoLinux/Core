@@ -1,4 +1,4 @@
-makedepends=(python cairo )
+makedepends=(cairo)
 
 description="connector Python (3) for the library cairo"
 url="http://www.cairographics.org/"
