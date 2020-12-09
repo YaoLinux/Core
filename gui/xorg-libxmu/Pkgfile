@@ -1,4 +1,4 @@
-makedepends=(xorgproto xorg-libxt xorg-libxext xorg-libx11 )
+makedepends=(xorgproto xorg-libxt xorg-libxext xorg-libx11)
 
 description="libXmu, library Xorg"
 url="http://xorg.freedesktop.org"
