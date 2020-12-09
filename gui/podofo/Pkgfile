@@ -1,4 +1,4 @@
-makedepends=(cmake xorg-fontconfig freetype libidn libpng libtiff lua51 )
+makedepends=(cmake xorg-fontconfig freetype libidn libpng libtiff lua51)
 
 description="C++ library to work with the PDF file format"
 url="http://podofo.sourceforge.net"
