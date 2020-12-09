@@ -1,4 +1,4 @@
-makedepends=(gdk-pixbuf glib atk pango cairo libffi libpng pcre colord)
+makedepends=(gdk-pixbuf glib atk pango cairo libffi libpng pcre)
 
 description="The GTK+ update icon cache tool"
 url="http://www.gtk.org/"
