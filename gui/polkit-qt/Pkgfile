@@ -1,4 +1,4 @@
-makedepends=(polkit qtbase )
+makedepends=(polkit qtbase)
 
 description="A library that allows developers to access PolicyKit API with a nice Qt-style API"
 url="https://www.kde.org/"
