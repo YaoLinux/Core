@@ -1,4 +1,4 @@
-makedepends=(intltool glib gobject-introspection perl-xml-parser)
+makedepends=(intltool glib gobject-introspection)
 
 description="Shared GSettings schemas for the desktop"
 url="http://www.gnome.org/"
