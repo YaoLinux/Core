@@ -1,4 +1,4 @@
-makedepends=(cairo glib icu freetype gobject-introspection git gtk-doc)
+makedepends=(cairo glib icu freetype gobject-introspection gtk-doc python-pygments)
 
 description="OpenType text shaping engine"
 url="http://www.freedesktop.org/software/harfbuzz"
