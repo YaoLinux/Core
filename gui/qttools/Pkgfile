@@ -1,4 +1,4 @@
-makedepends=(qtbase qtdeclarative desktop-file-utils hicolor-icon-theme xdg-utils vulkan-headers )
+makedepends=(qtbase qtdeclarative desktop-file-utils hicolor-icon-theme xdg-utils vulkan-headers)
 
 description="A cross-platform application and UI framework, QtTools files"
 url="http://qt-project.org/"
