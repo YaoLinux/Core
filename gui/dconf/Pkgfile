@@ -1,4 +1,4 @@
-makedepends=(dbus gtk3 libxml2 vala bash-completion )
+makedepends=(dbus gtk3 libxml2 vala bash-completion)
 
 description="A low-level configuration system."
 url="http://www.gnome.org/"
