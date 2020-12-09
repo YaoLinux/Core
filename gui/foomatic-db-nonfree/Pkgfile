@@ -1,4 +1,4 @@
-makedepends=(cups perl libxml2 )
+makedepends=(cups perl libxml2)
 
 PKGMK_KEEP_SOURCES="no"
 
