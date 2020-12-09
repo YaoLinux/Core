@@ -1,4 +1,4 @@
-makedepends=(xorgproto pkg-config libtool xorg-libxrandr wayland wayland-protocols xorg-libx11 xorg-libdrm xorg-libxext xorg-libxdamage expat llvm elfutils xorg-libxshmfence libva libvdpau python-mako python-beaker python-markupsafe lm-sensors)
+makedepends=(xorg-libxrandr wayland-protocols xorg-libdrm xorg-libxdamage llvm elfutils xorg-libxshmfence libva libvdpau python-mako python-beaker python-markupsafe lm-sensors)
 
 description="Mesa is an OpenGL compatible 3D graphics library."
 url="http://www.xorg-mesa3d.org"
@@ -8,7 +8,7 @@ maintainer="rems"
 
 alias=(xorg-mesa Mesa mesa3d Mesa3D mesa3)
 
-run=(python python-mako python-beaker python-markupsafe)
+run=(python-mako python-beaker python-markupsafe)
 
 name=mesa
 version=20.2.3
