@@ -1,4 +1,4 @@
-makedepends=(liboauth libsoup json-glib gnome-online-accounts gcr uhttpmock gtk-doc)
+makedepends=(liboauth libsoup json-glib gnome-online-accounts gcr uhttpmock gtk-doc gobject-introspection)
 
 description="GLib-based library for accessing online service APIs using the GData protocol"
 url="http://live.gnome.org/libgdata"
