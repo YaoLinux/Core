@@ -1,4 +1,4 @@
-makedepends=(qtbase qtdeclarative xorg-libxcomposite wayland )
+makedepends=(qtbase qtdeclarative xorg-libxcomposite wayland)
 
 description="A cross-platform application and UI framework, QtWayland files"
 url="http://qt-project.org/"
