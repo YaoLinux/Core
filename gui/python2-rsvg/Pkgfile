@@ -1,4 +1,4 @@
-makedepends=(python2-gtk librsvg )
+makedepends=(python2-gtk librsvg)
 
 description="Connector python for the library librsvg"
 url="http://www.gnome.org"
