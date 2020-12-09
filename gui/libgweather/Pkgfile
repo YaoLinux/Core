@@ -1,4 +1,4 @@
-makedepends=(geocode-glib gtk3 gobject-introspection gtk-update-icon-cache gtk-doc libsoup vala)
+makedepends=(geocode-glib gtk3 gobject-introspection gtk-doc libsoup vala)
 
 description="Provides access to weather information from the net"
 url="https://wiki.gnome.org/action/show/Projects/LibGWeather"
