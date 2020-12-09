@@ -1,4 +1,4 @@
-makedepends=(intltool gtk3 libcanberra )
+makedepends=(intltool gtk3 libcanberra)
 
 description="Notification daemon for the desktop notifications framework"
 url="http://www.gnome.org/"
