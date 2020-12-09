@@ -1,4 +1,4 @@
-makedepends=(python dbus glib intltool libgcrypt gobject-introspection vala )
+makedepends=(python dbus glib intltool libgcrypt gobject-introspection vala)
 
 description="GNOME keyring client library"
 url="http://www.gnome.org/"
