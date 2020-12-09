@@ -1,4 +1,4 @@
-makedepends=(cmake qtbase )
+makedepends=(cmake qtbase)
 
 description="A cross-platform application and UI framework, QtDatavis3d files"
 url="http://qt-project.org/"
