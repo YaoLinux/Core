@@ -1,4 +1,4 @@
-makedepends=(iso-codes libxml2 xorg-libx11 glib gobject-introspection xorg-libxkbfile )
+makedepends=(iso-codes libxml2 xorg-libx11 glib gobject-introspection xorg-libxkbfile)
 
 description="libxklavier, library for the keyboard under X"
 url="http://xorg.freedesktop.org"
