@@ -1,4 +1,4 @@
-makedepends=(dbus-glib libxslt gobject-introspection vala )
+makedepends=(dbus-glib libxslt gobject-introspection vala)
 
 description="GLib bindings for the Telepathy D-Bus protocol"
 url="http://telepathy.freedesktop.org/"
