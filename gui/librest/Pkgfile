@@ -1,4 +1,4 @@
-makedepends=(libsoup gobject-introspection )
+makedepends=(libsoup gobject-introspection)
 
 description="Gives more easily access to internet services which says be 'RESTful'."
 url="http://www.gnome.org/"
