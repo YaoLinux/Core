@@ -1,4 +1,4 @@
-makedepends=(systemd expat xorg-libx11 xorg-libsm xorg-libice)
+makedepends=(systemd xorg-libx11)
 
 description="Bus message system"
 url="http://dbus.freedesktop.org/releases/dbus"
