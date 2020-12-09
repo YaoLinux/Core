@@ -4,7 +4,7 @@ maintainer="rems"
 description="A library for registering global keyboard shortcuts"
 url="https://github.com/engla/keybinder/tree/keybinder-3.0"
 
-makedepends=(gtk3)
+makedepends=(gtk3 gtk-doc gobject-introspection)
 
 name=keybinder3
 alias=(libkeybinder3)
