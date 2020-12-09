@@ -1,4 +1,4 @@
-makedepends=(ghostscript )
+makedepends=(ghostscript)
 
 description="library for the made of documents postscript"
 url="http://libspectre.freedesktop.org/wiki/"
