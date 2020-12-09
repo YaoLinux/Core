@@ -1,4 +1,4 @@
-makedepends=(xcb-util xorg-libxscrnsaver xorg-libxtst xorg-libxrandr xorg-libxinerama xorg-libxcursor xorg-libx11 xorg-libxtst xorg-libxvmc mesa xorg-server)
+makedepends=(xcb-util xorg-libxscrnsaver xorg-libxtst xorg-libxrandr xorg-libxinerama xorg-libxcursor xorg-libx11 xorg-libxtst xorg-libxvmc xorg-server)
 
 description="Xorg intel video driver."
 
