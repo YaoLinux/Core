@@ -1,4 +1,4 @@
-makedepends=(gstreamer-plugins-base gstreamer-plugins-good libdvdread libdvdnav faac faad2 libexif libmpeg2 mpg123 libwebp librsvg openjpeg2 openexr fdk-aac ladspa)
+makedepends=(gstreamer-plugins-base libdvdread libdvdnav faac faad2 libexif libmpeg2 mpg123 libwebp librsvg openjpeg2 openexr fdk-aac ladspa)
 
 description="GStreamer Multimedia Framework Bad Plugins"
 url="http://gstreamer.freedesktop.org/modules/gst-plugins-base.html"
