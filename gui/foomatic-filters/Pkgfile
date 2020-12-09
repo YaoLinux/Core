@@ -1,4 +1,4 @@
-makedepends=(libxml2 cups cups-filters )
+makedepends=(libxml2 cups cups-filters)
 
 packager="Yaolinux Team"
 maintainer="rems"
