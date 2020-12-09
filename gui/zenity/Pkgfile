@@ -1,4 +1,4 @@
-makedepends=(itstool gtk3 libnotify yelp-tools )
+makedepends=(itstool gtk3 libnotify yelp-tools)
 
 description="Display graphical dialog boxes from shell scripts."
 url="http://www.gnome.org/"
