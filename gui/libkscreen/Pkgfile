@@ -1,4 +1,4 @@
-makedepends=(cmake extra-cmake-modules qtbase qtx11extras kwayland )
+makedepends=(cmake extra-cmake-modules qtbase qtx11extras kwayland)
 
 description="KDE screen management software "
 url="https://www.kde.org/"
