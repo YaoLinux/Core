@@ -1,4 +1,4 @@
-makedepends=(glib dbus gnutls libgcrypt gsettings-desktop-schemas p11-kit)
+makedepends=(glib dbus gnutls libgcrypt p11-kit)
 
 description="Network-related giomodules for glib"
 url="http://www.gnome.org/"
