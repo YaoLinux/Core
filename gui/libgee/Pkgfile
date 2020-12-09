@@ -1,4 +1,4 @@
-makedepends=(glib gobject-introspection vala )
+makedepends=(glib gobject-introspection vala)
 
 description="GObject collection library (legacy)"
 url="http://www.gnome.org/"
