@@ -1,4 +1,4 @@
-makedepends=(popt sdl xorg-libxv )
+makedepends=(popt sdl xorg-libxv)
 
 description="The Quasar DV codec (libdv) is a software codec for DV video"
 url="http://downloads.sourceforge.net/libdv"
