@@ -43,5 +43,5 @@ cd $name
   ln -s /usr/share/gnulib/check-module $PKG/usr/bin/
 
   install -Dm644 doc/gnulib.info $PKG/usr/share/info/gnulib.info
-  install -Dm644 COPYING $PKG/usr/share/licenses/${pkgname}/COPYING
+  install -Dm644 COPYING $PKG/usr/share/licenses/${name}-$version/COPYING
 }
