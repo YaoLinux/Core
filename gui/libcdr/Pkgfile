@@ -10,11 +10,10 @@ release=2
 
 makedepends=(boost cppunit doxygen icu lcms2 librevenge)
 
-source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz)
+source=(https://dev-www.libreoffice.org/src/$name/$name-$version.tar.xz
+	no-icu-boolean.diff)
 
-build() {
-  cd $name-$version
-  ./configure --prefix=/usr
-  make
-  make DESTDIR=$PKG install
+prepare() {
+cd $name-$version
+patch -Np1 -i ../no-icu-boolean.diff
 }
