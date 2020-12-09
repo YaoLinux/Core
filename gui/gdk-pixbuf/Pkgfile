@@ -1,4 +1,4 @@
-makedepends=(gobject-introspection jasper xorg-libxcomposite libtiff libpng libjpeg-turbo2 shared-mime-info)
+makedepends=(gobject-introspection jasper xorg-libxcomposite libtiff libpng libjpeg-turbo2)
 
 description="Toolkit for image loading and pixel buffer manipulation."
 url="http://www.gtk.org/"
