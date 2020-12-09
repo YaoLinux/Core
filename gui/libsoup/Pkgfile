@@ -1,4 +1,4 @@
-makedepends=(glib-networking libxml2 gobject-introspection vala sqlite libpsl kerberos)
+makedepends=(libxml2 gobject-introspection vala sqlite libpsl kerberos)
 
 description="HTTP client/server library for GNOME"
 url="https://wiki,gnome.org/Projects/libsoup"
@@ -6,7 +6,6 @@ url="https://wiki,gnome.org/Projects/libsoup"
 packager="Yaolinux Team"
 maintainer="rems"
 
-run=( glib-networking )
 name=libsoup
 version=2.72.0
 
