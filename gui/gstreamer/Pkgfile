@@ -1,4 +1,4 @@
-makedepends=(glib libxml2 gsl gobject-introspection)
+makedepends=(libcap glib libxml2 gsl gobject-introspection)
 
 description="GStreamer Multimedia Framework"
 url="http://gstreamer.freedesktop.org/"
