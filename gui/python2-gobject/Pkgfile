@@ -1,4 +1,4 @@
-makedepends=(python2-cairo gobject-introspection xorg-libxxf86vm ninja)
+makedepends=(python2-cairo gobject-introspection xorg-libxxf86vm)
 
 description="provides the links of Python 2 for the class GObject of GLib."
 url="http://www.gnome.org/"
