@@ -1,4 +1,4 @@
-makedepends=(xorg-libx11 xorgproto xorg-libxfixes )
+makedepends=(xorg-libx11 xorgproto xorg-libxfixes)
 
 description="libXdamage, library X Damage extension client"
 url="http://xorg.freedesktop.org"
