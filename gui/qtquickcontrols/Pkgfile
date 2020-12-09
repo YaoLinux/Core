@@ -1,4 +1,4 @@
-makedepends=(qtbase qtdeclarative )
+makedepends=(qtbase qtdeclarative)
 
 description="Reusable Qt Quick based UI controls to create classic desktop-style user interfaces"
 url="http://qt-project.org/"
