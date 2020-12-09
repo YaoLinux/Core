@@ -1,4 +1,4 @@
-makedepends=(geoclue2 geocode-glib libgweather librsvg networkmanager nss intltool cups colord gnome-desktop libcanberra libnotify libgnomekbd libwacom pulseaudio upower gsettings-desktop-schemas gtk-update-icon-cache gcr)
+makedepends=(geoclue2 geocode-glib libgweather librsvg networkmanager nss intltool cups colord gnome-desktop libcanberra libnotify libgnomekbd libwacom pulseaudio upower gcr)
 
 description="The GNOME Settings daemon"
 url="http://www.gnome.org/"
