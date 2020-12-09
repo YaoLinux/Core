@@ -1,4 +1,4 @@
-makedepends=(intltool sqlite telepathy-glib gobject-introspection )
+makedepends=(intltool sqlite telepathy-glib gobject-introspection)
 
 description="Telepathy framework logging daemon"
 url="http://telepathy.freedesktop.org/"
