@@ -1,4 +1,4 @@
-makedepends=(cmake gtk3 dbus-glib cairo )
+makedepends=(cmake gtk3 dbus-glib cairo)
 
 description="oxygen-gtk3, theme Oxygen for applications in gtk3"
 url="https://projects.kde.org/projects/playground/artwork/oxygen-gtk/"
