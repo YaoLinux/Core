@@ -22,16 +22,20 @@ patch -Np1 -i ../fix-ftbfs-python-3.3.patch # From debian
 patch -Np1 -i ../fix-mpi-python37.patch # From debian
 patch -Np1 -i ../fix_linux_detection.patch # From debian
 
+_pythonver=$(python3 -V)
+_pythonver=${_pythonver//Python /}
+_pythonver=${_pythonver:0:3}
+
 #sed -e '/using python/ s@;@: /usr/include/python${PYTHON_VERSION/3*/${PYTHON_VERSION}m} ;@' \
 #      -i bootstrap.sh
 
 ./bootstrap.sh --prefix=$PKG/usr \
                --with-python=/usr/bin/python3
 
-./b2 stage --stagedir=$PKG/usr threading=multi link=shared python=3.8 variant=release
+./b2 stage --stagedir=$PKG/usr threading=multi link=shared python=${_pythonver} variant=release
 
 ./b2 install link=shared \
-             python=3.8 \
+             python=${_pythonver} \
              variant=release \
              debug-symbols=off \
              threading=multi \
