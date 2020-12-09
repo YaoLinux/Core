@@ -1,4 +1,4 @@
-makedepends=(dconf iso-codes gobject-introspection gtk2 libnotify vala python python-gobject gnome-common libxkbcommon dbus-python python2-xdg cldr-emoji-annotation unicode-emoji unicode-character-database)
+makedepends=(dconf iso-codes gobject-introspection gtk2 libnotify vala python python-gobject libxkbcommon dbus-python python2-xdg cldr-emoji-annotation unicode-emoji unicode-character-database)
 
 description="IBus is an Intelligent Input Bus."
 url="http://ibus.googlecode.com"
