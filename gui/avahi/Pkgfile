@@ -1,4 +1,4 @@
-makedepends=(intltool glib dbus-python gobject-introspection libdaemon)
+makedepends=(intltool glib dbus-python gobject-introspection libdaemon libevent)
 
 description="Multicast/unicast DNS-SD framework"
 url="http://www.avahi.org/"
@@ -20,6 +20,7 @@ cd $name-$version
             --disable-python \
             --disable-qt3 \
             --disable-qt4 \
+            --disable-qt5 \
             --disable-monodoc \
             --disable-gtk \
             --disable-gtk3 \
