@@ -16,6 +16,8 @@ build() {
 
 cd texlive-$version-source
 
+CFLAGS+=" -fcommon"
+
 patch -Np1 -i ../texlive-20190410-source-upstream_fixes-1.patch
 
 mkdir ../build && cd ../build
