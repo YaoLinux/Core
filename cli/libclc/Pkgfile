@@ -1,0 +1,27 @@
+makedepends=(cmake llvm)
+
+description="Library requirements of the OpenCL C programming language"
+url="https://libclc.llvm.org/"
+
+packager="Yaolinux team"
+maintainer="rems"
+
+name=libclc
+version=11.0.0
+
+source=(https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/$name-$version.src.tar.xz)
+
+build() {
+
+mkdir -pv build && cd build
+
+cmake ../$name-$version.src \
+      -G Ninja \
+      -DCMAKE_BUILD_TYPE=Release \
+      -DCMAKE_INSTALL_PREFIX=/usr
+
+ninja
+DESTDIR=$PKG ninja install
+
+install -Dm644 ../$name-$version.src/LICENSE.TXT "$$PKG/usr/share/licenses/$name-$version/LICENSE"
+}
