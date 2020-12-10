@@ -1,4 +1,4 @@
-makedepends=(systemd jansson rpcsvc-proto libtirpc docbook-xsl talloc tevent avahi gnutls libgpg-error popt python2 cups kerberos libcap openldap tdb ldb)
+makedepends=(systemd jansson rpcsvc-proto libtirpc docbook-xsl talloc tevent avahi gnutls libgpg-error popt python2 cups kerberos libcap openldap tdb ldb perl-parse-yapp)
 
 description="SMB Fileserver and AD Domain server"
 url="http://www.samba.org"
