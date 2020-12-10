@@ -6,7 +6,7 @@ maintainer="rems"
 
 name=openjdk
 version=12.0.2u10
-release=2
+release=3
 _version=12.0.2+10
 
 source=(http://anduin.linuxfromscratch.org/BLFS/OpenJDK/OpenJDK-${_version:0:6}/OpenJDK-${_version}-`uname -m`-bin.tar.xz)
