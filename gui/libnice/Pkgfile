@@ -12,13 +12,4 @@ release=2
 
 source=(http://nice.freedesktop.org/releases/$name-$version.tar.gz)
 
-build() {
-cd $name-$version
-
-./configure --prefix=/usr \
-            --without-gstreamer-0.10 \
-            --disable-static
-
-make
-make DESTDIR=$PKG install
-}
+build=meson
