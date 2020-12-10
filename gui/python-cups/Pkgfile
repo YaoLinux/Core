@@ -1,4 +1,4 @@
-makedepends=(cups python python-requests)
+makedepends=(cups python-requests)
 
 description="Python CUPS Bindings"
 url="http://cyberelk.net/tim/software/pycups/"
@@ -7,12 +7,13 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=python-cups
+_name=pycups
 version=2.0.1
 
 run=(python-requests)
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/OpenPrinting/pycups/archive/v${pkgver}.tar.gz)
+source=(https://github.com/OpenPrinting/pycups/archive/v${version}.tar.gz)
 
 build=python3
