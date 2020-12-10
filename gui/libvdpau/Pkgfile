@@ -1,4 +1,4 @@
-makedepends=(xorg-libxfixes doxygen graphviz)
+makedepends=(xorg-libxext)
 
 description="Video Acceleration vdpau for Linux"
 url="https://01.org/linuxmedia/vaapi"
