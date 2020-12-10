@@ -1,4 +1,4 @@
-makedepends=(glib atk libpng libjpeg-turbo2 libtiff jasper lcms2 gnutls cups)
+makedepends=(glib atk libpng libjpeg-turbo2 openjpeg2 libtiff jasper lcms2 gnutls cups)
 
 description="An interpreter for the PostScript language"
 url="http://www.ghostscript.com/awki"
@@ -10,15 +10,18 @@ name=ghostscript
 version=9.53.3
 
 source=(https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${version//./}/ghostpdl-${version}.tar.gz
-         http://downloads.sourceforge.net/gs-fonts/ghostscript-fonts-std-8.11.tar.gz
-         http://downloads.sourceforge.net/gs-fonts/gnu-gs-fonts-other-6.0.tar.gz)         
+        http://downloads.sourceforge.net/gs-fonts/ghostscript-fonts-std-8.11.tar.gz
+        http://downloads.sourceforge.net/gs-fonts/gnu-gs-fonts-other-6.0.tar.gz
+	ghostscript-$version-freetype_fix-1.patch)
 
 unset MAKEFLAGS
 
 build() {
-cd $name-$version
+cd ghostpdl-$version
 
-rm -rf freetype lcms2 jpeg libpng zlib
+patch -Np1 -i ../ghostscript-$version-freetype_fix-1.patch
+
+rm -rf freetype lcms2 jpeg libpng zlib openjpeg
 
 ./configure --prefix=/usr \
             --enable-dynamic \
