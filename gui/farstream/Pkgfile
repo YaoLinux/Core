@@ -10,4 +10,12 @@ name=farstream
 version=0.2.9
 release=4
 
-source=( http://freedesktop.org/software/farstream/releases/farstream/farstream-$version.tar.gz)
+source=(http://freedesktop.org/software/farstream/releases/farstream/farstream-$version.tar.gz
+        farstream-make-4.3.patch)
+
+prepare() {
+cd $name-$version
+
+patch -p1 -i ../farstream-make-4.3.patch # Fix build with make 4.3
+./autogen.sh
+}
