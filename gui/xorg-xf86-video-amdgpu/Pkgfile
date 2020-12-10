@@ -13,3 +13,7 @@ _name=${name/xorg-/}
 source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 
 build=xorg
+
+prepare=() {
+CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+}
