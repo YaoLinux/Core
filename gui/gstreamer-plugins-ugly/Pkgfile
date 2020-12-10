@@ -14,14 +14,17 @@ release=2
 source=(http://gstreamer.freedesktop.org/src/${_name}/gst-plugins-ugly-$version.tar.xz )
 
 build() {
-cd gst-plugins*
+mkdir build && cd build
 
-./configure --prefix=/usr \
-            --with-package-name="GStreamer Ugly Plugins $version YaoLinuX" \
-            --with-package-origin="http://downloads.yaolinux.org/"
+meson --prefix=/usr \
+      -Dbuildtype=release \
+      -Dpackage-name="GStreamer Ugly Plugins $version YaoLinux" \
+      -Dpackage-origin="http://downloads.yaolinux.org/" \
+      ../gst-plugins*
 
-make
-make DESTDIR=$PKG install
+ninja
+
+DESTDIR=$PKG ninja install
 }
 
 uptodate() {
