@@ -17,12 +17,30 @@ unset MAKEFLAGS
 
 cd $name-$version
 
-sed -i 's/^#if COGL/#ifdef COGL/' cogl/winsys/cogl-winsys-egl.c
+# Do not build examples
+sed -e "s/^\(SUBDIRS +=.*\)examples\(.*\)$/\1\2/" \
+	-i Makefile.am Makefile.in
+
+#if ! use test ; then
+# For some reason the configure switch will not completely disable
+# tests being built
+sed -e "s/^\(SUBDIRS =.*\)test-fixtures\(.*\)$/\1\2/" \
+	-e "s/^\(SUBDIRS +=.*\)tests\(.*\)$/\1\2/" \
+	-e "s/^\(.*am__append.* \)tests\(.*\)$/\1\2/" \
+	-i Makefile.am Makefile.in
+#fi
 
 ./configure --prefix=/usr \
+            --disable-examples-install \
+            --disable-maintainer-flags \
             --enable-gles{1,2} \
             --enable-{kms,wayland,xlib}-egl-platform \
-            --enable-wayland-egl-server
+            --enable-wayland-egl-server \
+            --disable-unit-tests \
+            --disable-profile
+
+# https://bugzilla.gnome.org/show_bug.cgi?id=655517
+sed -i -e 's/ -shared / -Wl,-O1,--as-needed\0/g' libtool
 
 make
 make DESTDIR=$PKG install
