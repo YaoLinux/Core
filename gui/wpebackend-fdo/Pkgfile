@@ -1,4 +1,4 @@
-makedepends=(wayland glib libwpe)
+makedepends=(wayland glib libwpe libepoxy)
 
 description="freedesktop.org backend for WPE WebKit"
 url="https://wpewebkit.org/"
