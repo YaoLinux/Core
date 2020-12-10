@@ -1,4 +1,4 @@
-makedepends=(xorg-libxrandr wayland-protocols xorg-libdrm xorg-libxdamage llvm elfutils xorg-libxshmfence libva libvdpau python-mako python-beaker python-markupsafe lm-sensors)
+makedepends=(xorg-libxrandr wayland-protocols xorg-libdrm xorg-libxdamage libclc elfutils xorg-libxshmfence xorg-libxxf86vm libva libvdpau vulkan-icd-loader python-mako python-beaker python-markupsafe lm-sensors)
 
 description="Mesa is an OpenGL compatible 3D graphics library."
 url="http://www.xorg-mesa3d.org"
@@ -11,14 +11,14 @@ alias=(xorg-mesa Mesa mesa3d Mesa3D mesa3)
 run=(python-mako python-beaker python-markupsafe)
 
 name=mesa
-version=20.2.3
+version=20.3.0
 
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz
-	http://www.linuxfromscratch.org/patches/downloads/mesa/mesa-$version-add_xdemos-1.patch)
+	http://www.linuxfromscratch.org/patches/downloads/mesa/mesa-20.2.3-add_xdemos-1.patch)
 
 prepare() {
 cd mesa-$version
-patch -Np1 -i ../mesa-$version-add_xdemos-1.patch
+patch -Np1 -i ../mesa-20.2.3-add_xdemos-1.patch
 
 sed '1s@python@&3@' -i bin/symbols-check.py
 
@@ -33,15 +33,17 @@ meson --prefix=/usr                  \
       --sysconfdir=/etc              \
       -Dllvm=true                    \
       -Dosmesa=gallium               \
-      -Dgallium-xa=true              \
+      -Dgallium-xa=enabled           \
       -Dglx=dri                      \
       -Dgles2=true                   \
-      -Dplatforms="drm,x11,wayland"  \
+      -Dplatforms="x11,wayland"  \
       -Ddri-drivers="i915,i965,nouveau,r200" \
-      -Dgallium-drivers="nouveau,virgl,r300,r600,radeonsi,svga,swrast" \
-      -Dvulkan-drivers="intel,amd" \
+      -Dgallium-drivers="nouveau,virgl,r300,r600,radeonsi,svga,swrast,swr,iris,zink" \
+      -Dvulkan-drivers="intel,amd,swrast" \
       -Dlmsensors=true \
+      -Dgallium-opencl=icd \
       -Dgallium-vdpau=true \
+      -Dgallium-va=enabled \
       ../$name-$version
 
 ninja 
