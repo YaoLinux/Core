@@ -9,9 +9,18 @@ version=19.1.0
 release=2
 _name=${name/xorg-/}
 
-source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
+source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2
+        xf86-video-ati-19.1.0-Fix-link-failure-with-gcc-10.patch)
+
+# patch from gentoo
 
 build=xorg
+
+prepare() {
+cd ${_name}-$version
+
+patch -Np1 -i ../xf86-video-ati-19.1.0-Fix-link-failure-with-gcc-10.patch
+}
 
 uptodate() {
 local ext url name LINX
