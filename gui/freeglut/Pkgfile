@@ -13,6 +13,8 @@ source=(http://downloads.sourceforge.net/$name/$name-$version.tar.gz)
 
 build() {
 
+CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+
 mkdir build && cd build 
 
 cmake -DCMAKE_INSTALL_PREFIX=/usr      \
