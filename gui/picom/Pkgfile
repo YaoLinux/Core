@@ -1,4 +1,4 @@
-makedepends=(dbus-x11 libconfig libev pcre mesa xorg-pixman xcb-util-renderutil xcb-util-image uthash hicolor-icon-theme)
+makedepends=(dbus libconfig libev pcre mesa xorg-pixman xcb-util-renderutil xcb-util-image uthash hicolor-icon-theme)
 
 description="A compositor for X, and a fork of xcompmgr-dana."
 url="http://github.com/chjj/compton"
