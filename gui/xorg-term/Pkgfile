@@ -14,7 +14,7 @@ run=(xorg-luit)
 
 _name=xterm
 
-source=(ftp://ftp.invisible-island.net/${_name}/${_name}-$version.tgz)
+source=(http://invisible-mirror.net/archives/${_name}/${_name}-$version.tgz)
 
 prepare() {
 cd ${_name}-$version
