@@ -21,7 +21,7 @@ sed -i '/MU.*_EXE. :/{
         s/$/ -lmupdf -L$(OUT)/
         }' Makefile
 
-cat > user.make << EOF &&
+cat > user.make << EOF
 USE_SYSTEM_FREETYPE := yes
 USE_SYSTEM_HARFBUZZ := yes
 USE_SYSTEM_JBIG2DEC := no
@@ -44,7 +44,7 @@ unset XCFLAGS
 
 make prefix=$PKG/usr \
      build=release \
-     shared=yes
+     shared=yes \
      docdir=$PKG/usr/share/doc/$name-$version \
      install
 
