@@ -15,12 +15,15 @@ run=(shared-mime-info)
 source=(https://github.com/${name}/${name}/releases/download/${version}/${name}-${version}.tar.xz)
 
 build() {
-    cd $name*
 
-    ./configure --prefix=/usr \
-                --enable-gtk2-use \
-                --disable-static  \
-                --docdir=/usr/share/doc/$name-$version
+    mkdir -p build && cd build
+
+    cmake -DCMAKE_INSTALL_PREFIX=/usr  \
+          -DCMAKE_BUILD_TYPE=Release   \
+          -DENABLE_LIBSPIRO=OFF        \
+          -DENABLE_LIBUNINAMESLIST=OFF \
+          -DENABLE_DOCS=OFF            \
+          -Wno-dev ../$name-$version
 
     make
     make DESTDIR=$PKG install
