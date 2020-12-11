@@ -12,13 +12,14 @@ version=1.18.1
 source=(https://gstreamer.freedesktop.org/src/$name/gst-editing-services-$version.tar.xz)
 
 build() {
-cd $name-$version
+mkdir -p build && cd build
 
-./configure --prefix=/usr \
-            --enable-gtk-doc \
-            --with-package-name="GStreamer (YaoLinuX)" \
-            --with-package-origin="http://downloads.yaolinux.org/"
+meson --prefix=/usr \
+      -Dbuildtype=release \
+      -Dpackage-name="GStreamer Editing Services $version YaoLinux" \
+      -Dpackage-origin="http://downloads.yaolinux.org/" \
+      ../gst-editing-services-$version
 
-make
-make DESTDIR=$PKG install
+ninja
+DESTDIR=$PKG ninja install
 }
