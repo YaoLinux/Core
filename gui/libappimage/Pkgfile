@@ -9,9 +9,16 @@ version=1.0.3
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/AppImage/libappimage/archive/v$version.tar.gz)
+source=(https://github.com/AppImage/libappimage/archive/v$version.tar.gz
+        libappimage-gcc10.patch)
 
 makedepends=(libarchive squashfuse librsvg cmake wget vim desktop-file-utils boost xdg-utils-cxx)
+
+prepare() {
+cd $name-$version
+
+patch -Np1 -i ../libappimage-gcc10.patch
+}
 
 build() {
 
@@ -22,7 +29,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr \
       -DUSE_SYSTEM_XZ=ON \
       -DUSE_SYSTEM_SQUASHFUSE=ON \
       -DUSE_SYSTEM_LIBARCHIVE=ON \
-      -DUSE_SYSTEM_BOOST=ON \
+      -DUSE_SYSTEM_BOOST=OFF \
       -DUSE_SYSTEM_XDGUTILS=ON \
       -DBUILD_TESTING=OFF \
       ../$name-$version
