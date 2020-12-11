@@ -1,0 +1,27 @@
+diff -up sane-backends-1.0.28/ltmain.sh.soname sane-backends-1.0.28/ltmain.sh
+--- sane-backends-1.0.28/ltmain.sh.soname	2019-09-12 09:57:10.979802716 +0200
++++ sane-backends-1.0.28/ltmain.sh	2019-09-12 10:27:21.719895206 +0200
+@@ -9615,23 +9615,6 @@ EOF
+ 	  dlname=$soname
+ 	fi
+ 
+-	# If -module or -export-dynamic was specified, set the dlname
+-	if test "$module" = yes || test "$export_dynamic" = yes; then
+-	  # On all known operating systems, these are identical.
+-	  dlname="$soname"
+-	fi
+-
+-	# On sane-backends the internal name for every lib is "libsane"
+-	# not "libsane-backendname" so that linking to each backend is possible.
+-	case $host in
+-	  *mingw*)
+-	    ;;
+-	  *aix*)
+-	    ;;
+-	  *)
+-	    soname=`echo $soname | sed -e "s/libsane-[A-Za-z_0-9]*/libsane/g"`
+-	esac
+-
+ 	lib=$output_objdir/$realname
+ 	linknames=
+ 	for link
