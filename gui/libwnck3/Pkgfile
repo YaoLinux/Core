@@ -12,3 +12,8 @@ version=3.36.0
 source=(https://gitlab.gnome.org/GNOME/libwnck/-/archive/$version/libwnck-$version.tar.gz)
 
 build=meson
+
+prepare() {
+
+mv libwnck-$version $name-$version
+}
