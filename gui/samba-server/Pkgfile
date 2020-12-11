@@ -10,7 +10,7 @@ name=samba-server
 version=4.13.2
 yao_version=1.0-RC2
 
-source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yao_version}.tar.xz)
+source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yao_version}.tar.xz)
 
 build() {
 
