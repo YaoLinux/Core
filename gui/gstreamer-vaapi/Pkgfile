@@ -12,12 +12,17 @@ version=1.18.1
 source=(http://gstreamer.freedesktop.org/src/$name/$name-$version.tar.xz)
 
 build() {
-cd $name-$version
 
-./configure --prefix=/usr
+mkdir -p build && cd build
 
-make
-make DESTDIR=$PKG install
+meson --prefix=/usr \
+      -Dbuildtype=release \
+      -Dpackage-name="GStreamer $version YaoLinux" \
+      -Dpackage-origin="http://downloads.yaolinux.org/" \
+      ../$name-$version
+
+ninja
+DESTDIR=$PKG ninja install
 }
 
 uptodate() {
