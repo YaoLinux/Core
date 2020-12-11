@@ -10,22 +10,26 @@ name=libical
 version=3.0.8
 release=4
 
-source=(https://github.com/libical/libical/releases/download/v$version/$name-$version.tar.gz)
+source=(https://github.com/libical/libical/releases/download/v$version/$name-$version.tar.gz
+        libical-3.0.8-icu-68.patch)
+
+prepare() {
+cd $name-$version
+
+patch -Np1 -i ../libical-3.0.8-icu-68.patch
+}
 
 build() {
 
 mkdir -pv build && cd build
 
-cmake -G Ninja \
-      -DCMAKE_INSTALL_PREFIX=/usr \
-      -DCMAKE_INSTALL_LIBDIR=/usr/lib \
-      -DCMAKE_BUILD_TYPE=Release  \
+cmake -DCMAKE_INSTALL_PREFIX=/usr \
+      -DCMAKE_BUILD_TYPE=None  \
       -DGOBJECT_INTROSPECTION=true \
-      -DICAL_BUILD_DOCS=false      \
       -DSHARED_ONLY=yes \
       -DICAL_GLIB_VAPI=true        \
       ../$name-$version
 
-ninja
-DESTDIR=$PKG ninja install
+cmake --build .
+DESTDIR=$PKG cmake --build . --target install
 }
