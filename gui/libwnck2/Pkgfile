@@ -1,4 +1,4 @@
-makedepends=(xorg-libxres gtk2 intltool gobject-introspection startup-notification gtk-doc)
+makedepends=(xorg-libxres gtk2 xorg-libxdamage intltool gobject-introspection startup-notification gtk-doc)
 
 description="contains a kit of contruction of navigator of windows"
 url="http://www.gnome.org/"
