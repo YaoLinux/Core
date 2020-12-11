@@ -1,4 +1,4 @@
-makedepends=(libxml2 gobject-introspection vala sqlite libpsl kerberos)
+makedepends=(libxml2 gobject-introspection vala sqlite libpsl kerberos glib-networking)
 
 description="HTTP client/server library for GNOME"
 url="https://wiki,gnome.org/Projects/libsoup"
