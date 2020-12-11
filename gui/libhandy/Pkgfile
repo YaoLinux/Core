@@ -7,7 +7,7 @@ maintainer="rems"
 name="libhandy"
 version=1.0.2
 
-source=(https://source.puri.sm/Librem5/libhandy/-/archive/v$version/libhandy-v$version.tar.bz2)
+source=(https://download.gnome.org/sources/libhandy/${version:0:3}/libhandy-$version.tar.xz)
 
 makedepends=(libglade gobject-introspection vala gtk3)
 
@@ -16,9 +16,8 @@ build() {
 mkdir build && cd build
 
 meson --prefix=/usr \
-      -Dgtk_doc=true \
       -Dexamples=false \
-      ../$name-v$version
+      ../$name-$version
 
 ninja
 DESTDIR=$PKG ninja install
