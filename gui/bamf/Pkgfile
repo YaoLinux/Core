@@ -1,4 +1,4 @@
-makedepends=(gnome-common gobject-introspection python2-lxml vala)
+makedepends=(libwnck3 gobject-introspection python2-lxml vala)
 
 description="Application matching framework"
 url="https://launchpad.net/bamf"
