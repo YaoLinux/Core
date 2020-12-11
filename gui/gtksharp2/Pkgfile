@@ -10,10 +10,13 @@ name=gtksharp2
 version=2.12.45
 release=3
 
-source=(https://download.mono-project.com/sources/gtk-sharp212/gtk-sharp-$version.tar.gz)
+source=(https://download.mono-project.com/sources/gtk-sharp212/gtk-sharp-$version.tar.gz
+        gtk-sharp2-2.12.12-gtkrange.patch)
 
 build() {
 cd gtk-sharp-$version
+
+patch -Np1 -i ../gtk-sharp2-2.12.12-gtkrange.patch
 
 ./configure --prefix=/usr \
             --sysconfdir=/etc \
