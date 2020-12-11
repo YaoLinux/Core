@@ -25,7 +25,6 @@ cd pulseaudio-$version
             --disable-bluez4      \
             --disable-rpath       \
             --enable-gsettings \
-            --enable-gconf \
             --enable-jack \
             --enable-webrtc-aec \
             --with-systemduserunitdir=/usr/lib/systemd/user \
