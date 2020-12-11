@@ -1,4 +1,4 @@
-makedepends=(gtk2 libxml2)
+makedepends=(gtk2 libxml2 xorg-libxdamage)
 
 description="Libraries used for extending the GTK+ 2 text functions to include syntax highlighting."
 url="http://www.gnome.org/"
@@ -10,10 +10,13 @@ name=gtksourceview2
 version=2.10.5
 release=4
 
-source=(https://download.gnome.org/sources/gtksourceview/2.10/gtksourceview-${version}.tar.bz2)
+source=(https://download.gnome.org/sources/gtksourceview/${version:0:4}/gtksourceview-${version}.tar.bz2
+        gtksourceview-2.10.5-G_CONST_RETURN.patch)
 
 build() {
 cd gtksourceview-$version
+
+patch -Np1 -i ../gtksourceview-2.10.5-G_CONST_RETURN.patch
 
 sed -i 's#python#python2#' gtksourceview/language-specs/convert.py
 
