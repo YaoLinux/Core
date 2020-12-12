@@ -1,4 +1,4 @@
-makedepends=(libusb-compat libjpeg-turbo2 libtiff gtk2 libexif cups net-snmp avahi poppler)
+makedepends=(libusb-compat libjpeg-turbo2 libtiff gtk2 libexif cups net-snmp avahi poppler-glib)
 
 description="Scanner Access Now Easy"
 url="http://www.sane-project.org/"
