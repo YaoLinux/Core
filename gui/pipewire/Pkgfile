@@ -17,6 +17,8 @@ build() {
 
   meson --prefix=/usr  \
         --sysconfdir=/etc \
+        -Dpipewire-jack=false \
+        -Djack=false \
         ../$name-$version
 
   ninja
