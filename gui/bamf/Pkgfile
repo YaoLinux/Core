@@ -1,4 +1,4 @@
-makedepends=(libwnck3 gobject-introspection python2-lxml vala)
+makedepends=(gnome-common libwnck3 libgtop gobject-introspection vala)
 
 description="Application matching framework"
 url="https://launchpad.net/bamf"
@@ -10,15 +10,17 @@ name=bamf
 version=0.5.4
 release=2
 
-source=(https://launchpad.net/bamf/${version%.*}/$version/+download/$name-$version.tar.gz)
+source=(https://launchpad.net/bamf/${version%.*}/$version/+download/$name-$version.tar.gz
+        bamf-no-gtester2xunit.patch)
 
 build() {
-cd $name-$version
+ cd $name-$version
 
-export PYTHON='/usr/bin/python2'
-export CFLAGS+=" -Wno-deprecated-declarations"
+ patch -Np1 -i ../bamf-no-gtester2xunit.patch
 
-sed -i 's/ -Werror//' configure*
+ sed -i 's/ -Werror//' configure*
+
+ NOCONFIGURE=1 ./autogen.sh
 
  ./configure --prefix=/usr \
              --libexecdir=/usr/lib \
