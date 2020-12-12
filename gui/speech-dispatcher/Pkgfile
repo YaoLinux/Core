@@ -11,20 +11,20 @@ release=5
 
 PKGMK_KEEP_SOURCES="no"
 
-source=(https://github.com/brailcom/speechd/releases/download/${version}/speech-dispatcher-${version}.tar.gz
-        speech-dispatcher.patch)
+source=(https://github.com/brailcom/speechd/releases/download/${version}/speech-dispatcher-${version}.tar.gz)
 
 build() {
 
 cd speech-dispatcher-$version
 
-patch -Np1 -i ../speech-dispatcher.patch
-
 sed -i "s/cicero //g" configure.ac
 sed -i "s/sd_cicero//g" src/modules/Makefile.am
 
+CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
+
 ./configure --prefix=/usr \
             --libexecdir=/usr/lib/$name \
+            --disable-python \
             --disable-static \
             --sysconfdir=/etc \
             --without-flite
