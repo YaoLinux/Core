@@ -14,17 +14,17 @@ version=1.18.1
 source=(http://gstreamer.freedesktop.org/src/${_name}/${_name}-$version.tar.xz)
 
 build() {
-cd ${_name}-$version
 
-autoreconf -fiv
+mkdir build && cd build
 
-./configure --prefix=/usr \
-            --disable-static \
-            --with-package-name="GStreamer Good Plugins $version YaoLinuX" \
-            --with-package-origin="http://downloads.yaolinux.org/"
+meson --prefix=/usr \
+      -Dbuildtype=release \
+      -Dpackage-name="GStreamer Good Plugins $version YaoLinux" \
+      -Dpackage-origin="http://downloads.yaolinux.org/" \
+      ../${_name}-$version
 
-make
-make DESTDIR=$PKG install
+ninja
+DESTDIR=$PKG ninja install
 }
 
 uptodate() {
