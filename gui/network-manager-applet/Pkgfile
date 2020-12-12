@@ -22,6 +22,7 @@ meson --prefix=/usr     \
       -Dselinux=false   \
       -Dteam=true       \
       -Dmobile_broadband_provider_info=false \
+      -Dappindicator=no \
       ../$name-$version
 
 ninja
