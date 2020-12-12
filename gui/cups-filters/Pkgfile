@@ -1,4 +1,4 @@
-makedepends=(glib cups lcms2 poppler mupdf qpdf libjpeg-turbo2 libpng libtiff ghostscript avahi ijs harfbuzz)
+makedepends=(glib cups lcms2 poppler mupdf qpdf libjpeg-turbo2 libpng libtiff ghostscript avahi ijs harfbuzz dejavu-ttf)
 
 description="OpenPrinting CUPS Filters"
 url="http://www.cups.org"
