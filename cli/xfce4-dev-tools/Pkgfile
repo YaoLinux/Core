@@ -1,0 +1,24 @@
+makedepends=(glib gtk-doc intltool)
+
+description="Xfce developer tools"
+url="https://www.xfce.org/"
+
+maintainer="rems"
+packager="Yaolinux Team"
+
+name="xfce4-dev-tools"
+version=4.14.0
+
+source=(https://archive.xfce.org/src/xfce/xfce4-dev-tools/${version%.*}/$name-$version.tar.bz2)
+
+build() {
+mkdir build && cd build
+
+../$name-$version/configure --prefix=/usr \
+                            --sysconfdir=/etc \
+                            --libexecdir=/usr/lib \
+                            --localstatedir=/var
+
+make
+make DESTDIR=$PKG install
+}
