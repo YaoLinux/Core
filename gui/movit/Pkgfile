@@ -1,4 +1,4 @@
-makedepends=(eigen3 gtest sdl2 fftw libepoxy)
+makedepends=(eigen3 gtest sdl2-image fftw libepoxy)
 
 description="The modern video toolkit"
 url="http://movit.sesse.net/"
@@ -10,4 +10,13 @@ name=movit
 version=1.6.3
 release=2
 
-source=(https://movit.sesse.net/$name-$version.tar.gz)
+unset MAKEFLAGS
+
+source=(https://movit.sesse.net/$name-$version.tar.gz
+        workaround-glsizeiptr-abi-change.diff)
+
+prepare() {
+cd $name-$version
+
+patch -Np1 -i ../workaround-glsizeiptr-abi-change.diff
+}
