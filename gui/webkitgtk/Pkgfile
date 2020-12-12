@@ -7,10 +7,16 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=webkitgtk
-version=2.4.11
-release=2
+version=2.30.3
 
-source=(http://webkitgtk.org/releases/webkitgtk-$version.tar.xz)
+source=(http://webkitgtk.org/releases/webkitgtk-$version.tar.xz
+        webkitgtk-2.30.3-icu68.patch)
+
+prepare() {
+
+cd $name-$version
+patch -Np1 -i ../webkitgtk-2.30.3-icu68.patch
+}
 
 build() {
 
