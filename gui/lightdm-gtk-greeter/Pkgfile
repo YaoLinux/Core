@@ -1,4 +1,4 @@
-makedepends=(lightdm exo gobject-introspection)
+makedepends=(lightdm exo gobject-introspection xfce4-dev-tools)
 
 description="Gtk greeter for lightdm"
 url="https://en.wikipedia.org/wiki/LightDM"
