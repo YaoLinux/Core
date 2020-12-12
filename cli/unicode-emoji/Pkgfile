@@ -5,6 +5,7 @@ packager="Yaolinux Team"
 
 name=unicode-emoji
 version=13.0
+release=2
 
 source=(http://www.unicode.org/Public/emoji/11.0/emoji-data.txt
         http://www.unicode.org/Public/emoji/11.0/emoji-sequences.txt
@@ -14,7 +15,7 @@ source=(http://www.unicode.org/Public/emoji/11.0/emoji-data.txt
 
 build() {
 
-for file in data sequences test variation-sequences zwj-sequences; do
+for file in sequences test zwj-sequences; do
     install -Dm644 emoji-$file.txt "$PKG/usr/share/unicode/emoji/emoji-$file.txt"
   done
 }
