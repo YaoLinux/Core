@@ -1,4 +1,4 @@
-makedepends=(dconf iso-codes gobject-introspection gtk2 libnotify vala python python-gobject libxkbcommon dbus-python python2-xdg cldr-emoji-annotation unicode-emoji unicode-character-database)
+makedepends=(dconf iso-codes gobject-introspection gtk2 libnotify vala python python-gobject libxkbcommon dbus-python python-xdg cldr-emoji-annotation unicode-emoji unicode-character-database)
 
 description="IBus is an Intelligent Input Bus."
 url="http://ibus.googlecode.com"
@@ -9,20 +9,25 @@ name=ibus
 version=1.5.23
 release=3
 
-source=(https://github.com/ibus/ibus/releases/download/$version/$name-$version.tar.gz)
+source=(https://github.com/ibus/ibus/releases/download/$version/ibus-$version.tar.gz)
 
 build() {
 cd $name-$version
 
-  sed -i 's|$(libibus) $(libibus_emoji_dialog)|$(libibus_emoji_dialog) $(libibus)|' ui/gtk3/Makefile.am
+sed -i 's@/desktop/ibus@/org/freedesktop/ibus@g' \
+    data/dconf/org.freedesktop.ibus.gschema.xml
 
-./autogen.sh --prefix=/usr           \
+./configure  --prefix=/usr           \
              --sysconfdir=/etc       \
              --enable-wayland        \
              --enable-ui             \
              --enable-python-library \
              --with-python=python3
 
+rm -f tools/main.c
+
 make
 make DESTDIR=$PKG install
+
+gzip -dfv $PKG/usr/share/man/man{{1,5}/ibus*.gz,5/00-upstream-settings.5.gz}
 }
