@@ -10,21 +10,23 @@ name=qtwebkit
 version=5.212.0alpha4
 release=3
 
-source=(https://github.com/annulen/webkit/releases/download/qtwebkit-5.212.0-alpha3/qtwebkit-5.212.0-alpha3.tar.xz
-        icu65.patch)
+source=(https://github.com/annulen/webkit/releases/download/qtwebkit-5.212.0-alpha4/qtwebkit-5.212.0-alpha4.tar.xz
+        qtwebkit-5.212.0-alpha4-bison-3.7.patch
+	qtwebkit-5.212.0-alpha4-icu-68.patch)
 
 prepare() {
 
-cd qtwebkit-5.212.0-alpha3
+cd qtwebkit-5.212.0-alpha4
 
-patch -Np1 -i ../icu65.patch
+patch -Np1 -i ../qtwebkit-5.212.0-alpha4-bison-3.7.patch
+patch -Np1 -i ../qtwebkit-5.212.0-alpha4-icu-68.patch
 }
 
 build() {
 
 mkdir build && cd build
 
-cmake ../qtwebkit-5.212.0-alpha3 \
+cmake ../qtwebkit-5.212.0-alpha4 \
       -DCMAKE_INSTALL_PREFIX=/usr \
       -DCMAKE_BUILD_TYPE=Release \
       -DPORT=Qt \
