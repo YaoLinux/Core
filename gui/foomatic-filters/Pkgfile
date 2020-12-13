@@ -16,6 +16,8 @@ source=(http://www.openprinting.org/download/foomatic/$name-${version}-${_releas
 build() {
 cd $name-*
 
+CFLAGS+=' -fcommon'
+
 autoreconf
 
 ./configure --prefix=/usr \
