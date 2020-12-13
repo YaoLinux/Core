@@ -1,4 +1,4 @@
-makedepends=(qtbase qtwebchannel qtlocation qttools poppler xorg-libxcomposite xorg-libxrandr pciutils libvpx libevent snappy nss protobuf libxslt ffmpeg git gperf json-cpp icu zlib libwebp xorg-libxscrnsaver)
+makedepends=(qtbase qtwebchannel qtlocation qttools poppler xorg-libxcomposite xorg-libxrandr pciutils libvpx protobuf libevent snappy nss libxslt ffmpeg git gperf json-cpp icu zlib libwebp xorg-libxscrnsaver node kerberos re2)
 
 description="Provides support for web applications using the Chromium browser project"
 url="http://qt-project.org/"
@@ -12,7 +12,25 @@ release=3
 
 _name="${name}-everywhere-src"
 
-source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/submodules/${_name}-${version}.tar.xz)
+source=(https://download.qt.io/official_releases/qt/${version:0:4}/$version/submodules/${_name}-${version}.tar.xz
+	qtwebengine-everywhere-src-5.15.2-ICU68-2.patch)
+
+prepare() {
+cd ${_name}-${version}
+
+patch -Np1 -i ../qtwebengine-everywhere-src-5.15.2-ICU68-2.patch
+
+# Disable jumbo build https://bugreports.qt.io/browse/QTBUG-88657
+  sed -i 's|use_jumbo_build=true|use_jumbo_build=false|' -i src/buildtools/config/common.pri
+
+find -type f -name "*.pr[io]" |
+  xargs sed -i -e 's|INCLUDEPATH += |&$$QTWEBENGINE_ROOT/include |'
+
+sed -e '/link_pulseaudio/s/false/true/' \
+    -i src/3rdparty/chromium/media/media_options.gni
+
+sed -i 's/NINJAJOBS/NINJA_JOBS/' src/core/gn_run.pro
+}
 
 build() {
 
