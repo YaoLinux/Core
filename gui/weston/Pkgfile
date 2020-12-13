@@ -29,7 +29,8 @@ build() {
         build \
         --prefix=/usr \
         --libexec=lib/weston \
-        -Dsimple-dmabuf-drm=auto
+        -Dsimple-dmabuf-drm=auto \
+	-Dpipewire=false
 
   ninja -C build
 }
