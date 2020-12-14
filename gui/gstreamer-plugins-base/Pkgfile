@@ -1,4 +1,4 @@
-makedepends=(gstreamer alsa-lib gobject-introspection iso-codes libtheora libvorbis pango mesa)
+makedepends=(gstreamer alsa-lib gobject-introspection iso-codes libtheora libvorbis pango mesa graphene)
 
 description="GStreamer Multimedia Framework Base Plugins"
 url="http://gstreamer.freedesktop.org/"
@@ -10,6 +10,7 @@ _name=gst-plugins-base
 
 name=gstreamer-plugins-base
 version=1.18.1
+release=2
 
 source=(http://gstreamer.freedesktop.org/src/${_name}/${_name}-$version.tar.xz)
 
