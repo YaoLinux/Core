@@ -1,0 +1,25 @@
+makedepends=(glib gobject-introspection gtk-doc)
+
+description="A thin layer of graphic data types"
+url="https://ebassi.github.io/graphene/"
+
+maintainer="rems"
+packager="Yaolinux team"
+
+name="graphene"
+version=1.10.2
+
+source=(https://github.com/ebassi/graphene/releases/download/$version/graphene-$version.tar.xz)
+
+build() {
+
+mkdir build && cd build
+
+meson --prefix=/usr \
+      -Dgtk_doc=true \
+      -Dinstalled_tests=false \
+      ../$name-$version
+
+ninja
+DESTDIR=$PKG ninja install
+}
