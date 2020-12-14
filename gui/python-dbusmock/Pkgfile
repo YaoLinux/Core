@@ -1,0 +1,18 @@
+makedepends=(dbus-python python-gobject)
+
+run=(dbus-python)
+
+description="Mock D-Bus objects for tests"
+url="https://github.com/martinpitt/python-dbusmock"
+
+maintainer="rems"
+packager="Yaolinux team"
+
+name="python-dbusmock"
+version=0.19
+
+_name=$name
+
+source=(https://github.com/martinpitt/python-dbusmock/releases/download/$version/python-dbusmock-$version.tar.gz)
+
+build=python3
