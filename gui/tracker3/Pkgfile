@@ -1,0 +1,31 @@
+makedepends=(json-glib icu networkmanager python2 sqlite upower libsoup vala desktop-file-utils gtk-update-icon-cache libseccomp)
+
+description="Semantic data storage"
+url="http://www.gnome.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+run=(desktop-file-utils gtk-update-icon-cache)
+
+name=tracker3
+version=3.0.2
+
+source=(https://download.gnome.org/sources/tracker/${version%.*}/tracker-$version.tar.xz)
+
+prepare() {
+mv tracker-$version $name-$version
+}
+
+build() {
+
+mkdir build && cd build
+
+meson --prefix=/usr \
+      -Ddocs=false \
+      -Dman=false \
+      ../$name-$version
+
+ninja
+DESTDIR=$PKG ninja install
+}
