@@ -1,0 +1,21 @@
+makedepends=(exempi libgrss flac libexif libgsf libseccomp libvorbis poppler-glib tracker3 upower asciidoc)
+
+description="Collection of data extractors for Tracker/Nepomuk"
+url="http://www.gnome.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+run=(desktop-file-utils gtk-update-icon-cache)
+
+name=tracker-miners3
+version=3.0.3
+
+source=(https://download.gnome.org/sources/tracker-miners/${version:0:3}/tracker-miners-$version.tar.xz)
+
+build=meson
+
+prepare() {
+
+mv tracker-miners-$version $name-$version
+}
