@@ -1,4 +1,4 @@
-makedepends=(gnome-common libwnck3 libgtop gobject-introspection vala)
+makedepends=(gnome-common libwnck libgtop gobject-introspection vala)
 
 description="Application matching framework"
 url="https://launchpad.net/bamf"
@@ -8,7 +8,7 @@ maintainer="rems"
 
 name=bamf
 version=0.5.4
-release=2
+release=3
 
 source=(https://launchpad.net/bamf/${version%.*}/$version/+download/$name-$version.tar.gz
         bamf-no-gtester2xunit.patch)
