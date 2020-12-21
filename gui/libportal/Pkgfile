@@ -1,0 +1,14 @@
+makedepends=(glib gtk-doc)
+
+description="GIO-style async APIs for most Flatpak portals"
+url="https://github.com/flatpak/libportal"
+
+packager="Yaolinux team"
+maintainer="rems"
+
+name=libportal
+version=0.3
+
+source=(https://github.com/flatpak/libportal/releases/download/$version/libportal-$version.tar.xz)
+
+build=meson
