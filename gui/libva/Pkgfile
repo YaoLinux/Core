@@ -1,4 +1,4 @@
-makedepends=(wayland xorg-libdrm xorg-libxfixes)
+makedepends=(wayland xorg-libx11 xorg-libxext xorg-libdrm xorg-libxfixes)
 
 description="Video Acceleration (VA) API for Linux"
 url="https://01.org/linuxmedia/vaapi"
@@ -7,6 +7,7 @@ packager="Yaolinux Team"
 
 name=libva
 version=2.10.0
+release=2
 
 PKGMK_KEEP_SOURCES="no"
 
