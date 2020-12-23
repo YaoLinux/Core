@@ -1,0 +1,14 @@
+description="interface library to access/deal with tags for identifying languages"
+url="https://bitbucket.org/tagoh/liblangtag/wiki/Home"
+
+packager="Yaolinux Team"
+maintainer="Dania"
+
+makedepends=(glib gobject-introspection libxml2)
+
+name=liblangtag
+version=0.6.3
+
+source=(https://bitbucket.org/tagoh/liblangtag/downloads/$name-$version.tar.bz2)
+
+
