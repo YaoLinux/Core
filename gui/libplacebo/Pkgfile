@@ -4,12 +4,12 @@ url="https://github.com/haasn/libplacebo"
 packager="Yaolinux Team"
 maintainer="rems"
 
-name="libplacebo"
+name=libplacebo
 version=2.72.2
 
 source=(https://code.videolan.org/videolan/libplacebo/-/archive/v${version}/libplacebo-v${version}.tar.gz)
 
-makedepends=(vulkan-icd-loader shaderc lcms2)
+makedepends=(vulkan-icd-loader shaderc lcms2 python-mako)
 
 build() {
 
