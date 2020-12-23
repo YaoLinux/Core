@@ -1,4 +1,4 @@
-makedepends=(gtk2 gtk3 startup-notification xfce4-conf xfce4-libutil intltool gobject-introspection vala hicolor-icon-theme)
+makedepends=(libgtop libepoxy gtk3 startup-notification xfce4-conf xfce4-libutil intltool gobject-introspection vala hicolor-icon-theme)
 
 description="Commonly used Xfce widgets among Xfce applications"
 url="http://www.xfce.org/"
@@ -8,8 +8,7 @@ maintainer="rems"
 
 name=xfce4-libui
 _name=libxfce4ui
-version=4.14.1
-release=2
+version=4.16.0
 
 source=(http://archive.xfce.org/src/xfce/${_name}/${version%.*}/${_name}-$version.tar.bz2)
 
