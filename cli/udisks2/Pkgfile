@@ -8,12 +8,14 @@ maintainer="rems"
 
 name=udisks2
 version=2.9.1
-release=2
+release=3
 
-source=(https://github.com/storaged-project/udisks/releases/download/udisks-$version/udisks-$version.tar.bz2)
+source=(https://github.com/storaged-project/udisks/archive/udisks-$version.tar.gz)
 
 build() {
-cd udisks-$version
+cd udisks-udisks-$version
+
+NOCONFIGURE=1 ./autogen.sh
 
 ./configure --prefix=/usr \
             --sysconfdir=/etc \
@@ -25,7 +27,4 @@ make
 sed -i -r 's/^ +\././' doc/man/*.[158]
 
 make DESTDIR=$PKG install
-
-# Obsolet lib
-rm $PKG/usr/lib/libudisks2.la
 }
