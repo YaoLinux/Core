@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="Tnut"
 
 name=flcards
-version=2.4.114
+version=2.4.123
 
 source=(https://downloads.tuxfamily.org/nutyx/files/cards-$version.tar.gz)
 
