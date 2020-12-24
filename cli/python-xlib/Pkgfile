@@ -11,6 +11,8 @@ version=0.28
 
 _name=$name
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/python-xlib/python-xlib/archive/$version.tar.gz)
 
 build=python3
