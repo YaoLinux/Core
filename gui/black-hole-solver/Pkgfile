@@ -1,0 +1,24 @@
+makedepends=(rinutils perl-path-tiny)
+
+description="Solvers and statistics for 'Golf' solitaire, 'Black Hole' solitaire, 'All in a Row' solitaire"
+url="https://www.shlomifish.org/open-source/projects/black-hole-solitaire-solver"
+
+maintainer="rems"
+packager="Yaolinux team"
+
+name=black-hole-solver
+version=1.10.1
+
+source=(https://fc-solve.shlomifish.org/downloads/fc-solve/black-hole-solver-$version.tar.xz)
+
+build() {
+
+mkdir build && cd build
+
+cmake ../$name-$version \
+      -DCMAKE_INSTALL_PREFIX=/usr \
+      -DBUILD_STATIC_LIBRARY=OFF
+
+cmake --build .
+DESTDIR="$PKG" cmake --install .
+}
