@@ -8,6 +8,8 @@ name=glslang
 version=11.0.0
 _version=10-$version
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/KhronosGroup/glslang/archive/${_version}.tar.gz)
 
 makedepends=(spirv-tools)

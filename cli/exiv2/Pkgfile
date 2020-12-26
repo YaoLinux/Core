@@ -9,6 +9,8 @@ url="http://exiv2.org"
 name=exiv2
 version=0.27.3
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/Exiv2/exiv2/archive/v$version.tar.gz)
 
 build() {

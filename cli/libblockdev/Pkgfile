@@ -11,6 +11,8 @@ run=(gptfdisk)
 name=libblockdev
 version=2.24
 
+PKGMK_KEEP_SOURCES="no"
+
 source=(https://github.com/storaged-project/$name/archive/$version-1.tar.gz)
 
 build(){
