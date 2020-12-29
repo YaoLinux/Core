@@ -7,7 +7,8 @@ description="A C wrapper library for GnuPG"
 url="http://www.gnupg.org/related_software/gpgme/"
 
 name=gpgme
-version=1.14.0
+version=1.15.0
+release=2
 
 source=(https://www.gnupg.org/ftp/gcrypt/$name/$name-$version.tar.bz2)
 
@@ -25,6 +26,4 @@ package() {
 
 	cd $name-$version
 	make DESTDIR=$PKG install
-	rm $PKG/usr/lib/libgpgme{,pp}.la
-
 }
