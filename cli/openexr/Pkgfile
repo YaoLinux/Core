@@ -8,23 +8,11 @@ maintainer="rems"
 
 name=openexr
 version=2.5.3
-release=2
+release=4
 
 PKGMK_KEEP_SOURCES="no"
 
 source=(https://github.com/openexr/openexr/archive/v$version.tar.gz)
-
-prepare() {
-
-cd $name-$version
-
-# Take DESTDIR into account when creating symlinks
-  sed -e 's|chdir ${CMAKE_INSTALL_FULL_LIBDIR}|chdir \\$ENV\\{DESTDIR\\}${CMAKE_INSTALL_FULL_LIBDIR}|' \
-    -i OpenEXR/config/LibraryDefine.cmake -i IlmBase/config/LibraryDefine.cmake
-
-# Fix linking python modules to boost_python
-  sed -e 's|${libname} ${extraDeps}|${libname} ${extraDeps} Boost::${PYILMBASE_BOOST_PY3_COMPONENT}|' -i PyIlmBase/config/ModuleDefine.cmake
-}
 
 build() {
 
@@ -36,12 +24,8 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr \
 make
 make DESTDIR=$PKG install
 
-# Fix pc include path
-  sed -e 's|=include|=${prefix}/include|g' -e 's|=lib|=${prefix}/lib|g' \
-    -i "$PKG"/usr/lib/pkgconfig/OpenEXR.pc -i "$PKG"/usr/lib/pkgconfig/IlmBase.pc
-
 # Install python modules
-  _pythonpath=`python -c "from sysconfig import get_path; print(get_path('platlib'))"`
+  _pythonpath=`python3 -c "from sysconfig import get_path; print(get_path('platlib'))"`
   install -Dm755 python3*/*.so -t "$PKG"/$_pythonpath 
   chrpath -d "$PKG"/$_pythonpath/*.so # Remove insecure RPATH
 }
