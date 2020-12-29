@@ -8,6 +8,7 @@ url="https://github.com/jstedfast/gmime"
 
 name=gmime3
 version=3.2.7
+release=2
 
 source=()
 
