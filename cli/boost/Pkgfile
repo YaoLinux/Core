@@ -8,7 +8,7 @@ url="http://boost.sourceforge.net/"
 
 name=boost
 version=1.74.0
-release=2
+release=3
 
 source=(https://dl.bintray.com/boostorg/release/$version/source/${name}_${version//./_}.tar.bz2
         fix-ftbfs-python-3.3.patch
@@ -33,7 +33,7 @@ _pythonver=${_pythonver:0:3}
 ./bootstrap.sh --prefix=$PKG/usr \
                --with-python=/usr/bin/python3
 
-./b2 stage --stagedir=$PKG/usr threading=multi link=shared python=${_pythonver} variant=release
+./b2 stage threading=multi link=shared python=${_pythonver} variant=release
 
 ./b2 install link=shared \
              python=${_pythonver} \
@@ -42,14 +42,17 @@ _pythonver=${_pythonver:0:3}
              threading=multi \
              --build-dir=py3build \
              --with-python \
+             --prefix=$PKG/usr \
              --layout=system
 
-./bootstrap.sh --prefix=/usr --with-python=/usr/bin/python2 --with-libraries=python
+./bootstrap.sh --prefix=$PKG/usr --with-python=/usr/bin/python2 --with-libraries=python
 
 #./b2 stage --stagedir=$PKG/usr threading=multi link=shared
 ./b2 clean
 
 ./b2 install --prefix=$PKG/usr threading=multi link=shared --build-dir=py2build --layout=system
+
+cp -a $SRC/${name}_${version//./_}/stage/lib $PKG/usr
 
 ln -svf detail/sha1.hpp $PKG/usr/include/boost/uuid/sha1.hpp
 }
