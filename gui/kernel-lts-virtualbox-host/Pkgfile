@@ -1,0 +1,35 @@
+description="Host modules for virtualbox"
+url="https://virtualbox.org/"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name="kernel-lts-virtualbox-host"
+version="6.1.14"
+
+_release=140239
+
+PKGMK_IGNORE_UNPACK="yes"
+
+source=(https://download.virtualbox.org/virtualbox/$version/VirtualBox-$version-${_release}-Linux_amd64.run)
+
+makedepends=(kernel-lts)
+
+run=(kernel-lts)
+
+build() {
+
+kernel_version=$(basename /lib/modules/4.19.*)
+
+sh VirtualBox-$version-${_release}-Linux_amd64.run --noexec --keep --nox11
+
+cd install
+
+tar -xaf VirtualBox.tar.bz2
+
+cd src/vboxhost
+
+make KERN_VER=${kernel_version}
+install -vdm 00755 $PKG/lib/modules/${kernel_version}/extra
+install -m 00644 *.ko $PKG/lib/modules/${kernel_version}/extra
+}
