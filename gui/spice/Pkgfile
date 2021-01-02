@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=spice
 version=0.14.3
+release=2
 
 source=(https://www.spice-space.org/download/releases/$name-server/$name-$version.tar.bz2)
 
