@@ -11,14 +11,14 @@ alias=(xorg-mesa Mesa mesa3d Mesa3D mesa3)
 run=(python-mako python-beaker python-markupsafe)
 
 name=mesa
-version=20.3.0
+version=20.3.2
 
 source=(https://mesa.freedesktop.org/archive/mesa-$version.tar.xz
-	http://www.linuxfromscratch.org/patches/downloads/mesa/mesa-20.2.3-add_xdemos-1.patch)
+	http://www.linuxfromscratch.org/patches/downloads/mesa/mesa-20.3.1-add_xdemos-1.patch)
 
 prepare() {
 cd mesa-$version
-patch -Np1 -i ../mesa-20.2.3-add_xdemos-1.patch
+patch -Np1 -i ../mesa-20.3.1-add_xdemos-1.patch
 
 sed '1s@python@&3@' -i bin/symbols-check.py
 
@@ -35,6 +35,7 @@ meson --prefix=/usr                  \
       -Dosmesa=gallium               \
       -Dgallium-xa=enabled           \
       -Dglx=dri                      \
+      -Dgles1=true                   \
       -Dgles2=true                   \
       -Dplatforms="x11,wayland"  \
       -Ddri-drivers="i915,i965,nouveau,r200" \
