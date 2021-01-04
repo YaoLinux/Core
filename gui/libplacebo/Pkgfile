@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libplacebo
-version=2.72.2
+version=3.104.0
 
 source=(https://code.videolan.org/videolan/libplacebo/-/archive/v${version}/libplacebo-v${version}.tar.gz)
 
@@ -26,5 +26,4 @@ meson -D tests=true \
 
 ninja
 DESTDIR=$PKG ninja install
-
 }
