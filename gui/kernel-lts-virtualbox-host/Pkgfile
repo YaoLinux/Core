@@ -5,9 +5,10 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name="kernel-lts-virtualbox-host"
-version="6.1.14"
+version="6.1.16"
+release=2
 
-_release=140239
+_release=140961
 
 PKGMK_IGNORE_UNPACK="yes"
 
