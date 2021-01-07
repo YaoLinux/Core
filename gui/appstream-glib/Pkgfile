@@ -1,0 +1,26 @@
+makedepends=(gdk-pixbuf json-glib libarchive libsoup pango gcab gobject-introspection gtk3 yaml)
+
+description="Library to read and write AppStream metadata"
+url="http://people.freedesktop.org/~hughsient/appstream-glib/"
+ 
+packager="Yaolinux team"
+maintainer="rems"
+contributors="Tnut"
+
+name=appstream-glib
+version=0.7.18
+
+source=(https://github.com/hughsie/appstream-glib/archive/${name//-/_}_${version//./_}.tar.gz)
+
+build() {
+mkdir build && cd build
+
+meson --prefix=/usr \
+      -Dgtk-doc=false \
+      -Drpm=false \
+      -Dstemmer=false \
+      ../$name-${name//-/_}_${version//./_}
+
+ninja
+DESTDIR=$PKG ninja install
+}
