@@ -7,9 +7,9 @@ maintainer="rems"
 packager="Yaolinux Team"
 
 name=libtorrent-rasterbar
-version=1.2.10
+version=1.2.11
 
-source=(https://github.com/arvidn/libtorrent/releases/download/libtorrent-${version}/$name-$version.tar.gz
+source=(https://github.com/arvidn/libtorrent/releases/download/v$version/$name-$version.tar.gz
         https://github.com/arvidn/libtorrent/pull/5026.patch)
 
 build() {
@@ -53,11 +53,11 @@ _boost="boost_python3"
 
   PYTHON=/usr/bin/python3 \
   ../$name-$version/configure --prefix=/usr \
-                                                 --enable-python-binding \
-                                                 --enable-examples \
-                                                 --disable-static \
-                                                 --with-libiconv \
-                                                 --with-boost-python=$_boost
+                              --enable-python-binding \
+                              --enable-examples \
+                              --disable-static \
+                              --with-libiconv \
+                              --with-boost-python=$_boost
 
 make
 make DESTDIR="$PKG" install
