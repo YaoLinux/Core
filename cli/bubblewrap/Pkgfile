@@ -8,6 +8,7 @@ url="https://github.com/projectatomic/bubblewrap"
 
 name=bubblewrap
 version=0.4.1
+release=2
 
 PKGMK_KEEP_SOURCES="no"
 
@@ -23,7 +24,7 @@ build() {
 
 	cd $name-$version
 	./configure --prefix=/usr \
-                    --with-priv-mode=setuid
+                    --with-priv-mode=none
 	make
 }
 
