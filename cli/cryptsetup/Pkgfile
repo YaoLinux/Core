@@ -8,6 +8,7 @@ url="https://gitlab.com/cryptsetup/cryptsetup/"
 
 name=cryptsetup
 version=2.3.4
+release=2
 
 source=(https://www.kernel.org/pub/linux/utils/cryptsetup/v${version%.*}/${name}-${version}.tar.xz)
 
@@ -16,6 +17,7 @@ build(){
   cd $name-${version}
 
   ./configure --prefix=/usr \
+              --sbindir=/sbin \
               --disable-static
     
   make
