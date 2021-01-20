@@ -1,0 +1,24 @@
+description="Linux-native io_uring I/O access library"
+url="https://git.kernel.dk/cgit/liburing/"
+
+packager="YaolinuxTeam"
+maintainer="Dania"
+
+name=liburing
+version=0.7
+
+makedepends=(git)
+
+source=(https://git.kernel.dk/cgit/$name/snapshot/$name-$version.tar.gz)
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr \
+              --mandir=/usr/share/man
+
+  make
+  make DESTDIR=$PKG install
+
+  install -Dm 644 LICENSE $PKG/usr/share/licenses/$name/LICENSE
+}
