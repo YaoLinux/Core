@@ -1,0 +1,48 @@
+description="A programming language designed for extending applications (version 5.1)"
+url="http://www.lua.org"
+
+packager="Yaolinux Team"
+maintainer="rems"
+
+name=lua52
+version=5.2.4
+
+source=(http://www.lua.org/ftp/lua-$version.tar.gz
+        lua-5.2.4-shared_library-1.patch
+        lua52.pc)
+
+build(){
+    cd lua-$version
+    
+    patch -Np1 -i ../lua-5.2.4-shared_library-1.patch
+    
+    sed -i '/#define LUA_ROOT/s:/usr/local/:/usr/:' src/luaconf.h
+    
+    sed -r -e '/^LUA_(SO|A|T)=/ s/lua/lua5.2/' \
+           -e '/^LUAC_T=/ s/luac/luac5.2/' \
+           -i src/Makefile
+
+    make MYCFLAGS="-fPIC" linux
+
+    make INSTALL_TOP=$PKG/usr \
+        TO_BIN='lua5.2 luac5.2' \
+        TO_LIB="liblua5.2.a liblua5.2.so liblua5.2.so.5.2 liblua5.2.so.$version" \
+        INSTALL_INC=$PKG/usr/include/lua5.2 \
+        INSTALL_DATA="cp -d" \
+        INSTALL_MAN=$PKG/usr/share/man/man1 \
+        install
+
+    rm -r $PKG/usr/share/lua
+
+    # pkg-config, change name so that others lua version can be installed
+    install -Dm644 ../lua52.pc $PKG/usr/lib/pkgconfig/lua5.2.pc
+
+    # symlinks
+    ln -s liblua5.2.so $PKG/usr/lib/liblua.so.5.2
+    ln -s liblua5.2.so $PKG/usr/lib/liblua.so.$version
+
+    # rename man pages
+    cd $PKG/usr/share/man/man1
+    mv lua.1 lua5.2.1
+    mv luac.1 luac5.2.1
+}
