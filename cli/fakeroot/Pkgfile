@@ -1,0 +1,25 @@
+description="Tool for simulating superuser privileges"
+url="https://tracker.debian.org/pkg/fakeroot"
+
+packager="Yaolinux Team"
+maintainer="Dania"
+
+name=fakeroot
+version=1.25.3
+
+source=(https://deb.debian.org/debian/pool/main/f/$name/${name}_${version}.orig.tar.gz)
+
+
+build () {
+    cd $name-$version
+ 
+   sed -i '/^SUBDIRS/d' doc/Makefile.am
+
+    ./bootstrap
+
+    ./configure --prefix=/usr
+
+    make
+    make DESTDIR=$PKG install
+}
+
