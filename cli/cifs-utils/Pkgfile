@@ -8,7 +8,7 @@ url="http://wiki.samba.org/index.php/LinuxCIFS_utils"
 
 name=cifs-utils
 version=6.11
-release=2
+release=3
 
 source=(http://ftp.samba.org/pub/linux-cifs/$name/$name-$version.tar.bz2)
 
