@@ -14,6 +14,8 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 build=xorg
 
 package() {
+
+mkdir -p "$PKG"/etc/X11/xorg.conf.d/
 ln -sf ../../../usr/share/X11/xorg.conf.d/70-synaptics.conf "$PKG"/etc/X11/xorg.conf.d/70-synaptics.conf
 }
 
