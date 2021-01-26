@@ -8,6 +8,7 @@ maintainer="rems"
 
 name=python-qt
 version=5.15.2
+release=2
 
 source=(https://pypi.python.org/packages/source/P/PyQt5/PyQt5-$version.tar.gz)
 build() {
@@ -15,17 +16,12 @@ build() {
 cd PyQt5-$version
 
 python3 configure.py   \
+        -v /usr/share/sip \
+        -q /usr/bin/qmake \
         --no-sip-files \
         --confirm-license \
         --qsci-api
 
 make
 make DESTDIR=$PKG INSTALL_ROOT=$PKG install -j1
-
-# Already in python2-qt
-mkdir -p $PKG/usr/local/{bin,share/qt/qsci/api/python}
-mv  $PKG/usr/{,local}/bin/pylupdate5
-mv $PKG/usr/{,local}/bin/pyrcc5
-mv $PKG/usr/{,local}/bin/pyuic5
-mv $PKG/usr/{,local}/share/qt/qsci/api/python/PyQt5.api
 }
