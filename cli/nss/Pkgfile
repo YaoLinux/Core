@@ -7,14 +7,14 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=nss
-version=3.59
+version=3.61
 
 source=(http://ftp.mozilla.org/pub/mozilla.org/security/nss/releases/NSS_${version//./_}_RTM/src/nss-$version.tar.gz \
-	  http://www.linuxfromscratch.org/patches/blfs/svn/nss-$version-standalone-1.patch)
+	  http://www.linuxfromscratch.org/patches/blfs/svn/nss-3.60.1-standalone-1.patch)
 
 build () {
 	cd $name-$version
-	patch -Np1 -i ../nss-$version-standalone-1.patch
+	patch -Np1 -i ../nss-3.60.1-standalone-1.patch
 	cd nss
 
 # Compilation
