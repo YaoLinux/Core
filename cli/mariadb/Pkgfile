@@ -7,12 +7,9 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=mariadb
-version=10.5.7
-release=2
-yaolinux_version=1.0-RC2
+version=10.5.8
 
-source=(http://downloads.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz
-	ftp://ftp.osuosl.org/pub/mariadb/$name-$version/source/$name-$version.tar.gz)
+source=(http://ftp.osuosl.org/pub/mariadb/$name-$version/source/$name-$version.tar.gz)
 
 PKGMK_GROUPS=(devel lib man doc service)
 
@@ -128,8 +125,4 @@ EOF
 
 # Cleanup
 rm -r $PKG/usr/share/mysql/test
-
-# Service
-cd $SRC/yaolinux-${yaolinux_version}
-make DESTDIR=$PKG install-mysqld
 }
