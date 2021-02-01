@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=parted
-version=3.3
+version=3.4
 
 source=(http://ftp.gnu.org/gnu/$name/$name-$version.tar.xz)
 
