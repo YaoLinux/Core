@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=mobile-broadband-provider-info
-version=20190618
+version=20201225
 
 makedepends=(libxslt)
 
