@@ -4,7 +4,7 @@ url="http://www.unicode.org/emoji/"
 packager="Yaolinux Team"
 
 name=unicode-emoji
-version=13.0
+version=13.1
 release=2
 
 source=(http://www.unicode.org/Public/emoji/11.0/emoji-data.txt
