@@ -7,23 +7,15 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=p7zip
-version=16.02
+version=17.03-15215a2
 
-source=(http://downloads.sourceforge.net/sourceforge/$name/${name}_${version}_src_all.tar.bz2
-        CVE-2016-9296.patch
-        CVE-2017-17969.patch
-	CVE-2018-5996.patch
-        CVE-2018-10115.patch
-        gcc10-conversion.patch)
+_commit=15215a2890ad6955cad2a72131b66af1f2958b29
+
+KGMK_KEEP_SOURCES="no"
+source=(https://github.com/jinfeihan57/p7zip/archive/${_commit}.tar.gz)
 
 build() {
-	cd ${name}_$version
-
-	patch -Np1 -i ../gcc10-conversion.patch
-	patch -Np1 -i ../CVE-2016-9296.patch
-	patch -Np1 -i ../CVE-2017-17969.patch
-	patch -Np1 -i ../CVE-2018-5996.patch
-	patch -Np1 -i ../CVE-2018-10115.patch
+	cd ${name}-${_commit}
 
 	[[ `uname -m` = x86_64 ]] \
 	&& cp makefile.linux_amd64_asm makefile.machine \
