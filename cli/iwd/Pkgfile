@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="Dania"
 
 name=iwd
-version=1.9
+version=1.11
 
 source=(https://www.kernel.org/pub/linux/network/wireless/$name-$version.tar.xz)
 
