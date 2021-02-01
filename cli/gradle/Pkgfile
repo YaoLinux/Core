@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 maintainer="graknu"
 
 name=gradle
-version=6.6.1
+version=6.8.1
 release=3
 
 source=(https://downloads.gradle-dn.com/distributions/gradle-${version}-bin.zip
