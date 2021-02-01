@@ -1,0 +1,22 @@
+description="Free version of the SSH connectivity tools - Server"
+url="http://www.openssh.org/"
+
+maintainer="rems"
+packager="Yaolinux Team"
+
+makedepends=(mariadb)
+
+name=mariadb-server
+version=10.5.8
+
+yaolinux_version=1.0-RC3
+
+source=(http://download.yaolinux.org/yaolinux/files/yaolinux-${yaolinux_version}.tar.xz)
+
+
+build() {
+
+cd yaolinux-${yaolinux_version}
+
+make DESTDIR=$PKG install-mysqld
+}
