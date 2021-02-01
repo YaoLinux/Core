@@ -5,7 +5,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=unrar
-version=6.0.1
+version=6.0.3
 
 source=(
 http://www.rarlab.com/rar/unrarsrc-$version.tar.gz)
