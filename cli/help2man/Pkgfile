@@ -7,7 +7,7 @@ description="Conversion tool to create man files"
 url="https://www.gnu.org/software/help2man/"
 
 name=help2man
-version=1.47.16
+version=1.47.17
 
 source=(https://ftp.gnu.org/gnu/help2man/$name-$version.tar.xz)
 
