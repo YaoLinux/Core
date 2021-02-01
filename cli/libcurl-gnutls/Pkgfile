@@ -7,7 +7,7 @@ maintainer="Graknu"
 packager="Yaolinux Team"
 
 name=libcurl-gnutls
-version=7.73.0
+version=7.74.0
 
 source=(http://curl.haxx.se/download/curl-$version.tar.xz)
 
