@@ -7,7 +7,7 @@ description="A text-mode partitioning tool that works on GUID Partition Table (G
 url="https://www.rodsbooks.com/gdisk/"
 
 name=gptfdisk
-version=1.0.5
+version=1.0.6
 release=5
 
 source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-$version.tar.gz 
