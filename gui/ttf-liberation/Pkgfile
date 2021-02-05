@@ -9,7 +9,7 @@ maintainer="rems"
 run=(fontforge)
 
 name=ttf-liberation
-version=2.1.1
+version=2.1.2
 
 source=(https://github.com/liberationfonts/liberation-fonts/archive/$version/liberation-fonts-$version.tar.gz)
 
