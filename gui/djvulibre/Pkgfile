@@ -9,7 +9,7 @@ maintainer="rems"
 run=(librsvg hicolor-icon-theme)
 
 name=djvulibre
-version=3.5.27
+version=3.5.28
 release=3
 
 source=(http://downloads.sourceforge.net/djvu/$name-$version.tar.gz)
