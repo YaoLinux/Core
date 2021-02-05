@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=samba
-version=4.13.2
+version=4.13.4
 
 source=(https://download.samba.org/pub/samba/stable/$name-$version.tar.gz)
 
