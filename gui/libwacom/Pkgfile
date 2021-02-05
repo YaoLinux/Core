@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=libwacom
-version=1.6
+version=1.8
 release=2
 
 source=(https://github.com/linuxwacom/libwacom/releases/download/${name}-${version}/${name}-${version}.tar.bz2)
