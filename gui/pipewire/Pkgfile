@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=pipewire
-version=0.3.17
+version=0.3.20
 release=2
 
 source=(https://github.com/PipeWire/pipewire/archive/$version/pipewire-$version.tar.gz)
