@@ -6,7 +6,7 @@ packager="Yaolinux Team"
 
 name=xorg-xf86-video-amdgpu
 version=19.1.0
-release=2
+release=3
 
 _name=${name/xorg-/}
 
@@ -14,6 +14,4 @@ source=(http://ftp.x.org/pub/individual//driver/${_name}-$version.tar.bz2)
 
 build=xorg
 
-prepare=() {
 CFLAGS+=' -fcommon' # https://wiki.gentoo.org/wiki/Gcc_10_porting_notes/fno_common
-}
