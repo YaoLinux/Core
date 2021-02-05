@@ -11,7 +11,7 @@ run=(xdg-utils gtk-update-icon-cache)
 PKGMK_GROUPS=(devel man)
 
 name=cups
-version=2.3.3op1
+version=2.3.3op2
 
 run=(xdg-utils gtk-update-icon-cache)
 
