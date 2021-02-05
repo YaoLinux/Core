@@ -7,7 +7,7 @@ packager="Yaolinux Team"
 maintainer="rems"
 
 name=cups-filters
-version=1.28.6
+version=1.28.7
 
 source=( http://www.openprinting.org/download/$name/$name-$version.tar.xz)
 build() {
