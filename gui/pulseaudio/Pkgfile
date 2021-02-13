@@ -9,7 +9,7 @@ maintainer="rems"
 run=(bluez sbc)
 
 name=pulseaudio
-version=14.0
+version=14.2
 
 source=(https://freedesktop.org/software/pulseaudio/releases/pulseaudio-$version.tar.xz)
 
