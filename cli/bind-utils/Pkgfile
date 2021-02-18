@@ -5,14 +5,11 @@ description="The BIND package includes the client side programs nslookup, dig an
 url="http://www.isc.org/downloads/bind/"
 
 name=bind-utils
-version=9.16.8
-
-makedepends=(libuv)
+version=9.16.12
 
 source=(https://ftp.isc.org/isc/bind9/${version}/bind-${version}.tar.xz)
 
-makedepends=(kerberos libxml2 openssl python libcap python-ply)
-run=(python-ply)
+makedepends=(kerberos libxml2 openssl libcap libuv)
 
 build(){
 
@@ -22,9 +19,9 @@ build(){
                 --disable-static \
                 --mandir=/usr/share/man \
                 --localstatedir=/var    \
-                --with-python=/usr/bin/python3 \
                 --enable-threads        \
-                --with-openssl
+                --with-openssl \
+                --without-python
 
 	make -C lib/dns
 	make -C lib/isc
@@ -32,6 +29,7 @@ build(){
 	make -C lib/isccfg
 	make -C lib/irs
 	make -C bin/dig
+	make -C doc
 
 }
 
@@ -40,9 +38,10 @@ package(){
 
     cd bind-$version
 	make DESTDIR=$PKG -C bin/dig install
+	install -vdm0755 $PKG/usr/share/man/man1
+	cp -v doc/man/{dig.1,host.1,nslookup.1} $PKG/usr/share/man/man1
 
 # doc
 	install -dm755 "$PKG/usr/share/licenses/$name-$version/"
 	install -Dm644 LICENSE COPYRIGHT "$PKG/usr/share/licenses/$name-$version/"
 }
-
